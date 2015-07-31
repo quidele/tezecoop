@@ -1,0 +1,21 @@
+select * from tb_cupones 
+where IdRecibo=1000150236
+
+------------------------------------------------------
+
+select * from tb_movimientoscontables where 
+IdRecibo = 1000150236
+
+
+delete from tb_movimientoscontables where 
+IdRecibo = 1000150236
+
+------------------------------------------------------
+
+select flAnulado from tb_Recibos
+where IdRecibo = 1000150236
+
+update tb_Recibos
+set flAnulado=1 
+where
+IdRecibo = 1000150236

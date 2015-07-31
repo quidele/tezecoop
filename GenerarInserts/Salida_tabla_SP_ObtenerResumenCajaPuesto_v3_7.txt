@@ -1,0 +1,1 @@
+INSERT INTO SP_ObtenerResumenCajaPuesto_v3_7 (IdCampo,nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda)  VALUES (8657,'SP_ObtenerResumenCajaPuesto_v3_7','@nrCaja','@nrCaja','INTEGER','10',null,null,null,null);

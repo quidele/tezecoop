@@ -1,0 +1,37 @@
+NUEVOS REQUERIMIENTOS
+
+ 
+
+En los puestos:
+
+
+1- Se necesita que en la pantalla del sistema en los puestos quede siempre maximizada y que no se pueda minimizar nunca, es decir que el botón de minimizar este bloqueado. Es necesario este cambio porque cuando ingresan por VNC desde la administración para ver que hacen los puesto las operadoras minimizan la pantalla, lo cual le impide a la administración la visión total del sistema.
+ 
+
+2- Se necesita que en la búsqueda de maestro de clientes (En la pantalla de Venta de Viajes al presionar el botón "+" donde se puede agregar un nuevo cliente) se agregue un nuevo filtro llamado "Tipo" para discriminar entre los clientes "Particulares" y los clientes de "Empresas". 
+
+Cuando se requiera utilizar este filtro debe aparecer una lista de valores (Combo) para elegir únicamente entre las palabras "Particular" y "Empresa" o alguna funcionalidad similar que no permita ingresar más que esas dos palabras.
+
+Esto es necesario porque la lista de clientes es muy extensa y de esta forma se reducirá considerablemente la lista obtenida y facilitará la búsqueda manual.
+
+
+3- Se necesita que en la lista de clientes, los clientes que se encuentren bloqueados aparezcan de otro color en el listado de clientes.
+
+También es necesario que al cliente bloqueado no se le permita cargar ninguna factura, ni realizar acción alguna.
+
+
+
+En la administración:
+
+
+4- Se necesita que en la búsqueda de maestro de clientes se agregue un nuevo filtro llamado "Tipo" para discriminar entre los clientes "Particulares" y los clientes de "Empresas". Cuando se requiera utilizar este filtro debe aparecer una lista de valores para elegir únicamente entre las palabras "Particular" y "Empresa" o alguna funcionalidad similar que no permita ingresar más que esas palabras.
+
+ 
+5- Se necesita que en la lista de maestro de clientes, los clientes que se encuentren bloqueados aparezcan de otro color en el listado de clientes. Actualmente existe un campo "flag" llamado "Bloqueado" pero el mismo no realiza ninguna acción cuando se activa. Utilizar este mismo campo y asignarle la funcionalidad correspondiente.
+
+También es necesario que al cliente bloqueado no se le permita cargar ninguna factura, ni realizar acción alguna. 
+ 
+
+6- Se necesita que en el "Resumen de Licenciatarios" cuando una factura es cargada en forma manual la misma se muestre de otro color, para identificarla rápidamente del listado obtenido.
+
+ 

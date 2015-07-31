@@ -1,0 +1,1 @@
+select " INSERT INTO PUB.zprov_quimicos VALUES (" , proveedor,",'", razon, "','" , activo, "') " from  proveedor

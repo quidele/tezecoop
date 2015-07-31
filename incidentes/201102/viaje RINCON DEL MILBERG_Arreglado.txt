@@ -1,0 +1,7 @@
+select * from TB_Productos
+where dsProducto = 'RINCON DEL MILBERG- TIGRE'
+and tpOperacion is NULL
+
+update TB_Productos set tpOperacion='Viaje'
+where dsProducto = 'RINCON DEL MILBERG- TIGRE'
+and tpOperacion is NULL

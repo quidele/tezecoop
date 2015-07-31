@@ -1,0 +1,23 @@
+use dbSG2000_Pruebas
+go
+
+delete a from TB_Cupones a, TB_Comprobantes b
+where year(b.dtComprobante)<2010
+and a.nrTalonarioCliente = b.nrTalonario 
+and a.tpComprobanteCliente = b.tpComprobante 
+and a.tpLetraCliente = b.tpLetra 
+and a.nrComprabanteCliente = b.nrComprobante 
+
+
+
+delete a from TB_ComprobantesDetalle a, TB_Comprobantes b
+where year(b.dtComprobante)<2010
+and a.nrTalonario = b.nrTalonario 
+and a.tpComprobante = b.tpComprobante 
+and a.tpLetra = b.tpLetra 
+and a.nrComprobante = b.nrComprobante 
+
+
+delete a from TB_Comprobantes a
+where year(dtComprobante)<2010
+

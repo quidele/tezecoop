@@ -1,0 +1,7 @@
+version 3.8 pruebas en el cliente
+
+CORRIGIR BUG en la carga del viaje, se produce un error si se ingresa - o , en el campo bultos
+
+
+Corregir el Programa.
+

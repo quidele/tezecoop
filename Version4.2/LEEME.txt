@@ -1,0 +1,28 @@
+
+TENER EN CUENTA EL CIERRE DE LA CAJA, no tener en
+cuenta los valores de la licencia 990.
+
+Ventas de Viajes
+El viaje debe hacerse en Cuenta Corriente
+por lo tanto el cliente debe estar dado de alta.
+
+Imputacion caja puesto a la administración
+Verificar como trabaja la imputacion del viaje realizado en cuenta corriente
+
+
+Cobro de la Cuenta Corriente
+Verificar como se realiza el asiento contable
+
+
+
+Chequear el tema de Reporte cuando compensar que emita Cobro de Cuenta Corriente
+
+
+Corrección de funcionalidad falta compensar, armar un nuevo SP para la versión 4.2  
+que no incluya la factura/cupones de la licencia 990 
+
+Cambiar titulo del reporte   rpt_detallefacturactacte_v1.rpt
+Cambiar el titulo de Detalle de Viajes Realizados / Facturas Cobradas
+
+Eulises.
+

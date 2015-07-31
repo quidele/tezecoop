@@ -1,0 +1,49 @@
+Tareas a Desarrollar 
+	Realizar la reversion de la imputacion de las cajas de los puestos OK	
+	Validar que un movimiento contable introducido por sistema no sea modificado  
+	por la operadora (En proceso) 	OK
+	Realizar una visualizacion de la caja de los licenciatarios a un nivel elevado  OK
+	En el movimiento contable hacer visible el campo de caja puesto que permita 	
+	mostrar el nro de caja puesto imputada (OK)
+
+	Realizar varias pruebas al momento de realizar la compensacion 
+
+
+	ANALIZAR QUE CONCEPTOS deben exluirse de la caja de la Administracion (caja global) 
+	USAR EL CAMPO flSumaenAdm
+
+
+	Realizar el calculo de saldos para cada una de las cajas
+	mejorar la visualizacion de la caja de Resumen de la ADM, para los tres tipos de cajas
+
+	Cambiar los montos imputados al momento de realizar el pago al licenciatario
+		Recordar que se imputar como egreso a la caja de lic  dinero del monto del viaje - la (comision + IVA)  esto viajes al contado
+		Verificar funcionamiento porque puede que la logica actual resuelva la problematica!!!!!!!
+
+ACTUALIZACION DE REPORTES
+prod
+	rpt_pagolicenciatario_v1_5.rpt
+pruebas
+	rpt_detallefacturactacte_v1.rpt
+	rpt_pagolicenciatario_v1_5.rpt
+	rpt_resumendecajaadm_v2_9.rpt
+
+
+RECORDAR AJUDTAR LOS MOVIMIENTOS CONTABLES 1 y 2 que no poseen conceptos
+
+TERMINAR EL PROYECTO 
+	rpt_CierredeCajaADMDetalleControl_v2_9
+
+
+
+	
+
+
+
+
+
+	
+
+
+
+

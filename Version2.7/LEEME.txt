@@ -1,0 +1,10 @@
+CAMBIAR EL PATH DE LOS REPORTES
+
+
+Actualizar los siguientes reportes
+	rpt_cierredecaja_imprimev1.rpt
+
+Verificar los siguientes reportes 
+	rpt_cierredecaja_imprime_valores.rpt
+	rpt_comprobantesmanuales_cajapuesto_v2_3.rpt
+

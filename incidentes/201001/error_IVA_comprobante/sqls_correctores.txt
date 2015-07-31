@@ -1,0 +1,26 @@
+
+
+
+SELECT      nrTalonario, nrComprobante, tpComprobante, tpLetra, dtComprobante, cdCliente, cdCondVenta, tpComision, tpMoneda, tpIVA, vlTotalGeneral, 
+                      vlPagoPesos, vlPagoEuros, vlPagoDolares, dsLeyenda, flManual, dtInsercion, flSincronizado, dsUsuario, nrCaja, dtCaja, nrPuesto, dsDomicilio, 
+                      nrLicencia, nrBultos, nrPasajeros, nrDoc, dsRazonSocial, nmNombre, nmApellido, nmLicenciatario, cdPostal, nmLocalidad, cdCodBar, dsEmail, nrTel, 
+                      nrCAI, dtVencimiento, vlDiaDolar, vlDiaEuro, dsOpcional1, dsOpcional2, dsOpcional3, dsOpcional4, flAnulado, dtAnulado, nmEmpleado, 
+                      IdReciboCtaCte, flCargaErronea, problema, dsUsuario_Supervisor, dtComprobante_hora, dtActualizacion, flEliminar, vlSubtotal, vlIVA, 
+                      tpModificacionCajaPuesto, dsObservacionCajaPuesto
+FROM         TB_Comprobantes
+WHERE     (nrTalonario = '0005') AND (nrComprobante = '00101236')
+
+
+SELECT    * from 
+TB_Cupones
+WHERE     (nrTalonarioCliente = '0005') AND (nrComprabanteCliente = '00101236')
+
+
+
+SELECT     nrTalonario, nrComprobante, tpComprobante, tpLetra, nrItem, cdProducto, dsProducto, tpOperacion, qtCantidad, vlPorcentaje, vlPrecioPeaje, 
+                      vlPrecioViaje, vlTotalItem, dtInsercion, flSincronizado, vlKilometros, dtActualizacion, flEliminar, nrPuesto, nrCaja
+FROM         TB_ComprobantesDetalle
+WHERE     (nrTalonario = '0005') AND (nrComprobante = '00101236')
+
+
+2000004877

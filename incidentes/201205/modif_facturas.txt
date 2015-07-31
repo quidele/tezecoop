@@ -1,0 +1,75 @@
+
+
+
+select 'SP_ActualizarComprobante_v3_7        @nrTalonario_param =''' + a.nrTalonario  + ''',',
+										   ' @nrComprobante_param = ''' + a.nrComprobante + ''',',
+										   ' @tpComprobante_param =''' + a.tpComprobante  + ''',',
+										   ' @tpLetra_param = '''+ a.tpLetra + ''',',
+										   ' @nrTalonario_new_param ='''+ a.nrTalonario + ''',',
+										   ' @nrComprobante_new_param ='''+ a.nrComprobante  + ''',',
+										   ' @tpComprobante_new_param =''-'+ a.tpComprobante + ''',',
+										   ' @tpLetra_new_param = ''' +  a.tpLetra + ''',',
+										   ' @dtComprobante_new_param = '''+ convert(varchar,a.dtComprobante,103) + ''',',
+										   ' @cdCondVenta_new_param = ''' + a.cdCondventa + ''',',
+										   ' @tpComision_new_param = ''' + a.tpComision + + ''',',
+										   ' @vlComision_new_param =' + convert(varchar,b.vlComision) + ',' ,
+										   ' @nrCierre_param = null; '
+from 
+tb_comprobantes a , tb_cupones b 
+where a.nrComprobante = '00095226' and
+	  a.nrTalonario = '0002' and 
+	  a.nrComprobante = b.nrComprabanteCliente and
+	  a.nrTalonario   = b.nrTalonarioCliente and
+	  a.tpComprobante = b.tpComprobanteCliente and
+	  a.tpletra       = b.tpletraCliente
+	  
+
+
+SET DATEFORMAT DMY 
+
+BEGIN TRAN
+
+
+EXEC SP_ActualizarComprobante_v3_7        
+@nrTalonario_param ='0002',	 @nrComprobante_param = '00095226    ',	 
+@tpComprobante_param ='-B',	 @tpLetra_param = 'M',	 @nrTalonario_new_param ='0002',
+	 @nrComprobante_new_param ='00095226    ',	 @tpComprobante_new_param ='-B',
+	 	 @tpLetra_new_param = 'M',	 @dtComprobante_new_param = '05/06/2007',
+	 	 	 @cdCondVenta_new_param = 'Contado',	 
+	 	 	 @tpComision_new_param = 'A Clientes',	 @vlComision_new_param =4,	
+	 	 	  @nrCierre_param = null 
+
+COMMIT TRAN 
+ROLLBACK TRAN 
+
+SP_HELPTEXT SP_ActualizarComprobante_v3_7  
+
+
+PENDIENTE A PROCESAR
+
+select 'exec SP_ActualizarComprobante_v3_7        @nrTalonario_param =''' + a.nrTalonario  + ''',',
+										   ' @nrComprobante_param = ''' + a.nrComprobante + ''',',
+										   ' @tpComprobante_param =''' + a.tpComprobante  + ''',',
+										   ' @tpLetra_param = '''+ a.tpLetra + ''',',
+										   ' @nrTalonario_new_param ='''+ a.nrTalonario + ''',',
+										   ' @nrComprobante_new_param ='''+ a.nrComprobante  + ''',',
+										   ' @tpComprobante_new_param =''-'+ a.tpComprobante + ''',',
+										   ' @tpLetra_new_param = ''' +  a.tpLetra + ''',',
+										   ' @dtComprobante_new_param = '''+ convert(varchar,a.dtComprobante,103) + ''',',
+										   ' @cdCondVenta_new_param = ''' + a.cdCondventa + ''',',
+										   ' @tpComision_new_param = ''' + a.tpComision + + ''',',
+										   ' @vlComision_new_param =' + convert(varchar,b.vlComision) + ',' ,
+										   ' @nrCierre_param = null; '
+from 
+tb_comprobantes a , tb_cupones b 
+where 
+	  a.nrComprobante = b.nrComprabanteCliente and
+	  a.nrTalonario   = b.nrTalonarioCliente and
+	  a.tpComprobante = b.tpComprobanteCliente and
+	  a.tpletra       = b.tpletraCliente
+	  and a.nrTalonario = '0002'
+      and a.tpComprobante ='B'
+      and a.nrComprobante >= 95291 
+      and a.tpLetra='M' and YEAR(a.dtComprobante)<2011
+      order by a.nrComprobante
+

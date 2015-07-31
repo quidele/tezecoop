@@ -1,0 +1,2 @@
+en el reporte rpt_resumendecajaadm_v1.rpt
+cambiar de posicion el saldo diario y el saldo final!

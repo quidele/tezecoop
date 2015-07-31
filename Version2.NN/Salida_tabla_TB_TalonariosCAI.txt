@@ -1,0 +1,2 @@
+INSERT INTO TB_TalonariosCAI (nrTalonario,tpComprobante,tpLetra,nrCAI,dtDesde,dtFin)  VALUES ('1','FA','A',1231231212,02/07/2008,31/07/2008);
+INSERT INTO TB_TalonariosCAI (nrTalonario,tpComprobante,tpLetra,nrCAI,dtDesde,dtFin)  VALUES ('1','FA','B',123223232323,02/07/2008,07/08/2008);

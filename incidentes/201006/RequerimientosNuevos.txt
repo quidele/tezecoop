@@ -1,0 +1,7 @@
+Nuevos requerimientos:
+
+1) Arreglar el reporte que sale impreso en el listado de recaudación.
+2) Revisar porque aparece un dibujo de una carpeta al lado de cada registro, si no hay observaciones (El reporte es uno q utiliza Mariana)
+3) Agregar en el reporte de recaudación que se pueda filtrar por nro. de licencia.
+4) Puestos: Quiere que en los puestos, la venta de viaje realice la busqueda por localidad y partido, ya que actualmente solo busca por localidad. Quiere que haga la busqueda al igual que lo hace hoy el maestro de productos.
+Por ej. cuando buscas por Lomas de Zamora que traiga todos los items que tengan como partido Lomas de Zamora. Actualmente solo trae un registro.

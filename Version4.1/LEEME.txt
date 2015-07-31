@@ -1,0 +1,15 @@
+
+Corregir el formato de fecha hora dividirlo en dos 
+	rpt_cierredecaja_imprime_valores_v4_1.rpt (corregido)
+
+Verificar el reporte xq no funciona
+	rpt_resumenlicenciatarioagrupado_v3_9.rpt (corregido)
+
+Realizar pruebas de facturacion para verificar que el SP
+sco_Puestos_v4_1 funciona correctamente.
+
+
+
+
+
+

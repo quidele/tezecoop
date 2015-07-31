@@ -1,0 +1,13 @@
+frmPrincipal = 0, 0, 319, 317, Z, 22, 22, 389, 339, C
+frmSeleccion = 22, 22, 341, 339, C, 0, 0, 319, 317, C
+Conexion = 110, 110, 422, 453, 
+cConexion = -105, 60, 381, 403, 
+cAplicacion = -7, 102, 479, 445, 
+basSql = -11, 46, 475, 388, 
+frmEtiqueta = 132, 132, 456, 475, C, 110, 110, 434, 453, C
+frmCalendar = 22, 22, 345, 357, C, 110, 110, 433, 445, C
+frmLogin = 0, 0, 348, 450, , 125, 125, 473, 575, C
+cEmpresa = 150, 150, 498, 600, 
+CbasSQL_OYG = 25, 25, 612, 348, 
+CImprimeEtiqueta = 75, 75, 662, 398, 
+CProveedor = 88, 88, 481, 528, 

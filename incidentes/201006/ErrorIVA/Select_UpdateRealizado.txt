@@ -1,0 +1,26 @@
+exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param='RI'
+ 
+exec SP_CalcularIVA
+    @tpCategoriaIVA_param='RI',
+    @vlMonto_param=1477.41,
+    @vlAlicuota_param=21,
+    @precio_menos_iva_param=1
+    
+    
+exec SP_CalcularSubtotalIVA
+  @tpCategoriaIVA_param='RI',
+  @vlMonto_param=1477.41,
+  @vlAlicuota_param=21
+
+------------------------------------------------
+
+select * from dbo.TB_Cupones a
+where a.nrCupon= 9000703436 
+
+------------------------------------------------
+
+Se corrrió este Update:
+
+UPDATE TB_Cupones 
+SET vlSubtotal = 1221 , vlIVA = 256.41 
+WHERE nrCupon= 9000703436 

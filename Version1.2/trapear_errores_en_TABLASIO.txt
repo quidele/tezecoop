@@ -1,0 +1,16 @@
+---------------------------
+Atención
+---------------------------
+Error [SQL Server]Instrucción DELETE en conflicto con la restricción COLUMN REFERENCE 'FK_TB_Usuarios_TB_NivelAcceso'. El conflicto ha aparecido en la base de datos 'dbSG2000', tabla 'TB_Usuarios', column 'tpAcceso'.
+---------------------------
+Aceptar   
+---------------------------
+
+
+---------------------------
+Atención
+---------------------------
+Error: no se pudo insertar el registro, [SQL Server]Infracción de la restricción PRIMARY KEY 'PK_TB_NivelAcceso'. No se puede insertar una clave duplicada en el objeto 'TB_NivelAcceso'.
+---------------------------
+Aceptar   
+---------------------------

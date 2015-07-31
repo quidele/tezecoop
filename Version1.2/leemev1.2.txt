@@ -1,0 +1,29 @@
+
+Nuevos Campos 
+
+nrTalonario_manual_empresa
+nrTalonario_manual_ctacte
+
+nrComprobante_manual_empresa_ult
+nrComprobante_manual_ctacte_ult
+
+tpLetra
+tpLetraEmpresa
+tpLetraRecibo
+
+
+Se agregó un campo tpNivelJerarquico en la tabla TB_Usuarios
+
+
+cargar las deficiones de,los SPs en el diccionario de datos
+
+	sco_AccesosOpcionesMenu
+
+
+Se agregó un campo dsUsuario_Supervisor en la tabla TB_Usuarios
+
+
+
+	1027	Cajas	PAGO DE COMPROBANTES	0	Salida de Dinero
+	1028	Cajas	COMISIÓN COOPERATIVA	0	Entrada de Dinero
+	1063	Cajas	COBRO DE CTA. CTE	0	Entrada de Dinero

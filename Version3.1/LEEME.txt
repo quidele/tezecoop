@@ -1,0 +1,23 @@
+2.- Reporte de Cierre Caja de la Administración: mostrar el saldo de la comisiones en forma agrupada y situarlo abajo del reporte
+	nombre del reporte: rpt_resumendecajaadm_v3_1.rpt
+     Mostrar el saldo de todas la cajas puestos imputadas en dicha caja
+
+3.- Realizar un reporte de detalle de la cajas puestos imputadas en la caja de la
+     Administración
+
+
+AGREGAR INDICES A LA TABLA DE MOVIMIENTOS
+a los siguientes campos
+	nrCaja
+	IdRecibo
+	dsUsuario
+	nrCajaPuesto
+
+
+
+
+	
+
+
+
+

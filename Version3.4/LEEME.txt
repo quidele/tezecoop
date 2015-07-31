@@ -1,0 +1,7 @@
+Hola Eulises, necesito estas dos cosas:
+1.- la comision de los retornos es de 3 pesos siempre que lo facturado sea igual a lo cargado como retorno, en otro caso la comision sera igual a la tabla de comisiones.
+2.- en la facturacion, cuando agregan un destino y el valor es igual al cargado como capital no permita agregarlo. 
+3.- Agregar validacion monto destino = a nro de licencia, avisar el monto ingresado coincide con el
+    de una licencia
+4.- Usar el parámetro de valor de retorno establecido en el abm de comisiones como valor predefinido
+    de retorno

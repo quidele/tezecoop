@@ -1,0 +1,145 @@
+11/12/2013 18:42:53 | Exec  sco_TB_Productos_v4_1 
+11/12/2013 18:42:55 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+11/12/2013 18:43:00 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+11/12/2013 18:43:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+11/12/2013 18:43:01 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+11/12/2013 18:43:04 | Exec sp_obtenerCajasRechazadas_v2_9 
+11/12/2013 18:43:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+11/12/2013 18:43:07 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+11/12/2013 18:43:07 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+11/12/2013 18:43:08 | Exec SP_ValorPromoRetorno
+11/12/2013 18:43:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+11/12/2013 18:43:08 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+11/12/2013 18:43:08 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+11/12/2013 18:43:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+11/12/2013 18:43:10 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+11/12/2013 18:43:14 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_FondoFijoCajaAnterior_v3_7'
+11/12/2013 18:43:14 | Exec sco_FondoFijoCajaAnterior_v3_7 @nrPuesto = 2 
+11/12/2013 18:43:15 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_ObtenerMaxnrCaja_v2_8'
+11/12/2013 18:43:16 | Exec SP_ObtenerMaxnrCaja_v2_8 @nrPuesto = 2 
+11/12/2013 18:43:16 |  INSERT TB_Cajas (nrCaja ,vlFondoFijoEuros ,nrPuesto ,dsUsuario ,vlFondoFijoReales ,dtApertura ,dtCierre ,vlDiaDolar ,vlDiaEuro ,vlSaldoInicialPesos ,vlSaldoInicialReales ,vlSaldoInicialEuros ,vlFondoFijoPesos ,dsDiferenciaDeCierre ,vlDiaReal ,vlFondoFijoDolares ,vlSaldoInicialDolares ,vlSaldoFinalDolares ,vlCierreDolares ,vlSaldoFinalRealDolares ,vlDiferenciaDeCierre ,dtObservacion ,dsObservacion ,vlSaldoFinalPesos ,vlSaldoFinalReales ,vlSaldoFinalEuros ,vlTotalSaldoFinal ,vlSaldoFinalRealPesos ,vlSaldoFinalRealReales ,vlSaldoFinalRealEuros ,vlTotalSaldoFinalReal ,vlCierrePesos ,vlCierreReales ,vlCierreEuros ,vlTotalSaldoCierre ,flSincronizado ,hrApertura )  VALUES (2000007518 ,null ,2 ,'BFAZZALARI' ,null ,'11/12/2013 18:43:14' ,null ,4.50 ,5.70 ,1000.00 ,0.00 ,50.00 ,null ,null ,2.2 ,null ,100.00 ,100.00 ,-100.00 ,null ,0.00 ,null ,null ,1000.00 ,0.00 ,50.00 ,0.00 ,null ,null ,null ,0.00 ,-1000.00 ,0.00 ,-50.00 ,0 ,0 ,'18:43' )
+11/12/2013 18:43:16 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+11/12/2013 18:43:16 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto2  = '2000007518'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cajas'  AND  DiccionariodeDatos.nmCampo = 'nrCaja'  
+11/12/2013 18:43:17 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+11/12/2013 18:43:17 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:43:17 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:43:19 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+11/12/2013 18:43:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:43:24 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+11/12/2013 18:43:24 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 2000007518 
+11/12/2013 18:43:24 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_1'
+11/12/2013 18:43:24 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:24 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:24 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Puestos_v4_1'
+11/12/2013 18:43:25 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:43:25 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+11/12/2013 18:43:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198' 
+11/12/2013 18:43:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198' 
+11/12/2013 18:43:31 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+11/12/2013 18:43:31 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 198 
+11/12/2013 18:43:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 198 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198' 
+11/12/2013 18:43:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 198 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198' 
+11/12/2013 18:43:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 198 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198' 
+11/12/2013 18:43:37 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 198 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104' 
+11/12/2013 18:43:37 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 198 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104' 
+11/12/2013 18:43:37 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 302 
+11/12/2013 18:43:37 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 302 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104' 
+11/12/2013 18:43:37 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 302 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104' 
+11/12/2013 18:43:37 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 302 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104' 
+11/12/2013 18:43:41 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 302 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:41 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 302 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:41 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 520 
+11/12/2013 18:43:41 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:41 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:41 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:56 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:56 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:58 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:43:58 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:44:02 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:44:02 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 520 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,198|''Viaje'',null,104|''Viaje'',null,218' 
+11/12/2013 18:44:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:54:58 | Exec  sco_TB_Productos_v4_1 
+11/12/2013 18:54:58 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+11/12/2013 18:55:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+11/12/2013 18:55:05 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+11/12/2013 18:55:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+11/12/2013 18:55:05 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+11/12/2013 18:55:05 | Exec sp_obtenerCajasRechazadas_v2_9 
+11/12/2013 18:55:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+11/12/2013 18:55:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+11/12/2013 18:55:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+11/12/2013 18:55:05 | Exec SP_ValorPromoRetorno
+11/12/2013 18:55:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+11/12/2013 18:55:05 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+11/12/2013 18:55:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+11/12/2013 18:55:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+11/12/2013 18:55:05 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+11/12/2013 18:55:06 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+11/12/2013 18:55:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:55:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+11/12/2013 18:55:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+11/12/2013 18:55:08 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 2000007518 
+11/12/2013 18:55:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+11/12/2013 18:55:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_1'
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Puestos_v4_1'
+11/12/2013 18:55:08 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sco_Puestos_v4_1 @nrPuesto_param = 2 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+11/12/2013 18:55:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+11/12/2013 18:55:12 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84' 
+11/12/2013 18:55:12 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84' 
+11/12/2013 18:55:12 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+11/12/2013 18:55:12 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 84 
+11/12/2013 18:55:12 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 84 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84' 
+11/12/2013 18:55:12 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 84 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84' 
+11/12/2013 18:55:12 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 84 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84' 
+11/12/2013 18:55:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+11/12/2013 18:55:14 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 2  AND  TB_Proveedores.flEliminar = 0  
+11/12/2013 18:55:18 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 84 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198' 
+11/12/2013 18:55:18 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 84 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198' 
+11/12/2013 18:55:18 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 282 
+11/12/2013 18:55:18 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 282 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198' 
+11/12/2013 18:55:18 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 282 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198' 
+11/12/2013 18:55:18 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 282 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198' 
+11/12/2013 18:55:22 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 282 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:22 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 282 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:22 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 480 
+11/12/2013 18:55:22 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:22 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:22 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:32 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:32 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:34 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:34 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:34 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:34 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:35 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:35 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:36 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:36 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 480 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,84|''Viaje'',null,198|''Viaje'',null,198' 
+11/12/2013 18:55:37 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 

@@ -1,0 +1,9 @@
+select *  from tb_cajas where nrCaja = 1000005153
+
+select * from TB_CajasPuestosCierres where nrCaja = 1000005153
+
+set dateformat dmy  
+
+update tb_cajas 
+set  dtCierre = '06/03/2010 21:52:00.000' 
+where nrCaja = 1000005153  and dtCierre is null

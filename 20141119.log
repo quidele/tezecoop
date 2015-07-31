@@ -1,0 +1,63 @@
+19/11/2014 10:59:42 | Exec  sco_TB_Productos_v4_1 
+19/11/2014 10:59:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+19/11/2014 10:59:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+19/11/2014 10:59:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+19/11/2014 10:59:49 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+19/11/2014 10:59:50 | Exec sp_obtenerCajasRechazadas_v2_9 
+19/11/2014 10:59:50 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+19/11/2014 10:59:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+19/11/2014 10:59:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+19/11/2014 10:59:51 | Exec SP_ValorPromoRetorno
+19/11/2014 10:59:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+19/11/2014 10:59:51 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+19/11/2014 10:59:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+19/11/2014 10:59:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+19/11/2014 10:59:56 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+19/11/2014 10:59:57 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+19/11/2014 10:59:57 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+19/11/2014 10:59:58 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+19/11/2014 11:00:05 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajasPuestos_v2_5'
+19/11/2014 11:00:06 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.tpAcceso = 'Puestos' AND VW_CajasPuestos_v2_5.dtApertura >= '04/11/2014 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '19/11/2014 23:59:59'  AND   nrCaja Like ('%%%') AND VW_CajasPuestos_v2_5.dsUsuario = 'BFAZZALARI'   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+19/11/2014 11:00:17 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+19/11/2014 11:00:35 | Exec  sco_TB_Productos_v4_1 
+19/11/2014 11:00:35 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+19/11/2014 11:05:00 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('VERONICAB%') AND TB_Usuarios.flEliminar = 0
+19/11/2014 11:05:00 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('VERONICA%') AND TB_Usuarios.flEliminar = 0
+19/11/2014 11:05:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'VERONICA'  AND  TB_Usuarios.flEliminar = 0  
+19/11/2014 11:05:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+19/11/2014 11:05:03 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'VERONICA' 
+19/11/2014 11:05:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+19/11/2014 11:05:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+19/11/2014 11:05:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+19/11/2014 11:05:03 | Exec SP_ValorPromoRetorno
+19/11/2014 11:05:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+19/11/2014 11:05:03 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+19/11/2014 11:05:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+19/11/2014 11:05:03 | Exec sco_validarVencimientosCAI_v4_1
+19/11/2014 11:05:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+19/11/2014 11:05:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+19/11/2014 11:05:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+19/11/2014 11:05:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+19/11/2014 11:05:08 |  SELECT TB_Comisiones.cdComision ,TB_Comisiones.dsComision  FROM TB_Comisiones 
+19/11/2014 11:05:11 |  SELECT TB_Productos.cdProducto ,TB_Productos.dsProducto ,TB_Productos.vlPrecioViaje ,TB_Productos.vlPrecioPeaje ,TB_Productos.ObsHoras ,TB_Productos.vlPrecioViajeSinPeaje ,TB_Productos.vlKilometros ,TB_Productos.flMuestraenlaWEB ,TB_Productos.flIncluyeComisionRetorno ,TB_Productos.tpDestino ,TB_Productos.cdComision ,TB_Productos.vlPrecioViaje ,TB_Productos.obsHoras  FROM TB_Productos  WHERE  dsProducto Like ('%%%') AND TB_Productos.flEliminar = 0   Order by TB_Productos.dsProducto ASC 
+19/11/2014 11:06:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+19/11/2014 11:06:06 | Exec  sco_TB_Productos_v4_1 
+19/11/2014 11:06:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+19/11/2014 11:06:09 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'VERONICA'  AND  TB_Usuarios.flEliminar = 0  
+19/11/2014 11:06:09 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+19/11/2014 11:06:09 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'VERONICA' 
+19/11/2014 11:06:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+19/11/2014 11:06:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+19/11/2014 11:06:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+19/11/2014 11:06:09 | Exec SP_ValorPromoRetorno
+19/11/2014 11:06:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+19/11/2014 11:06:09 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+19/11/2014 11:06:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+19/11/2014 11:06:09 | Exec sco_validarVencimientosCAI_v4_1
+19/11/2014 11:06:11 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+19/11/2014 11:06:11 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+19/11/2014 11:06:11 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+19/11/2014 11:06:13 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+19/11/2014 11:06:13 |  SELECT TB_Comisiones.cdComision ,TB_Comisiones.dsComision  FROM TB_Comisiones 
+19/11/2014 11:06:15 |  SELECT TB_Productos.cdProducto ,TB_Productos.dsProducto ,TB_Productos.vlPrecioViaje ,TB_Productos.vlPrecioPeaje ,TB_Productos.ObsHoras ,TB_Productos.vlPrecioViajeSinPeaje ,TB_Productos.vlKilometros ,TB_Productos.flMuestraenlaWEB ,TB_Productos.flIncluyeComisionRetorno ,TB_Productos.tpDestino ,TB_Productos.cdComision ,TB_Productos.vlPrecioViaje ,TB_Productos.obsHoras  FROM TB_Productos  WHERE  dsProducto Like ('%%%') AND TB_Productos.flEliminar = 0   Order by TB_Productos.dsProducto ASC 
+19/11/2014 11:11:29 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 

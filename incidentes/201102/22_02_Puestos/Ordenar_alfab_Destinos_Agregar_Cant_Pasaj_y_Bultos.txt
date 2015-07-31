@@ -1,0 +1,5 @@
+1- En la venta de viajes no esta ordenando los destinos en forma alfabetica.
+Por ej: Puerto madero y puerto nuevo
+
+
+2- Agregar en la pantalla de venta de viajes los campos "Cant de pasajeros" y "Bultos" al realizar <Enter> continuamente para la facturación.

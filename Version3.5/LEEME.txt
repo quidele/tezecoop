@@ -1,0 +1,47 @@
+1) En el reporte que utiliza Sergio para ver los destinos de los viajes y que haya habian hablado semanas anteriores quiere que se le agregue el campo "Observaciones" luego del campo "Destino" y antes del campo "Facturado".
+Hacer lo mismo en el reporte que utilizan en los puestos.
+Es necesario este pedido para poder ver a donde se realizaron los viajes a capital, ya que ahora con la validación que se agregó hace poco del monto $118 no pueden al no poder agregar mas las calles al cargar el viaje, deben hacerlo en el campo observaciones.
+
+
+2) En resumen de licenciatario no esta funcionando bien la seleccion de registros. Cuando queres seleccionar un registro no lo hace, hace lo que quiere... no cambia de registro con el mouse. Cuando maximas las pantalla pasa lo mismo o peor! Solo se puede llegar al registro con las flechitas del teclado.
+
+3) Por default, en el resumen del licenciatario que aparezca seleccionado la opción "Todos lo´s´ Viajes Facturados al licenciatario".
+
+4) Armar un nuevo reporte que tenga subtotales de los distintos tipos de viajes facturados que se realizan. (Ver planilla Facturados2010_04.xls que se encuentra en esta carpeta).
+
+
+Pendiente: 
+Grabar el campos dsLeyenda de la tabla tb_cupones al momento de grabar la factura 
+
+Modificar el reporte de resumenes de licenciatario para que incluya si fue a capital o no dsLeyenda de tb_cupones
+
+
+Pendiente terminar de programar el reporte:
+		rpt_resumenlicenciatario_v3_5.rpt
+
+
+Pendiente terminar de programar el reporte de recaudacion
+		rpt_recaudacion_v3_5.rpt
+			Subtotales en Megrita
+			Totales mas grandes
+			
+Administacion resumen de licenciatarios  
+	Viajes facturados  = 
+		Marzo Resumenes Licenciatarios 
+		Marzo de Reportes Recaudaciones
+
+
+Nuevos requerimientos:
+
+1) Arreglar el reporte que sale impreso en el listado de recaudación.
+2) Revisar porque aparece un dibujo de una carpeta al lado de cada registro, si no hay observaciones (El reporte es uno q utiliza Mariana)
+3) Agregar en el reporte de recaudación que se pueda filtrar por nro. de licencia.
+4) Puestos: Quiere que en los puestos, la venta de viaje realice la busqueda por localidad y partido, ya que actualmente solo busca por localidad. Quiere que haga la busqueda al igual que lo hace hoy el maestro de productos.
+Por ej. cuando buscas por Lomas de Zamora que traiga todos los items que tengan como partido Lomas de Zamora. Actualmente solo trae un registro.
+
+
+
+
+
+
+

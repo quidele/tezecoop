@@ -1,0 +1,23 @@
+PENDIENTE: 
+
+  modificar en prod el reporte rpt_resumendecajaadm_v3_3.rpt 
+
+
+  agregar campo de vlCierreReales a la tabla [TB_ValoresDesimputacionesCajasPuestos]}
+	
+  recodificar el sp  SP_rpt_resumendecajaadm_v3_2 ok
+  
+  recodificar el sp  [sp_desimputarcajapuesto_v3_2] OK
+  
+  recodificar el sp   sp_grabarValoresImputacionesDesimputacionesCajasPuestos_v3_2 OK
+
+  recodificar el sp [SP_obtenerCajasPuestosImputadas_v3_2] OK
+ 
+  recodificar el sp [SP_obtenerCajasPuestosImputadasyDesImputadas_v3_2] OK
+
+  recodificar sp_obtiene_falta_compensar_2_4 OK
+
+  verificar el uso de la tabla TB_CajasPuestosCierres y sus dependencias caja ejemplo 2000002258 (En Proceso)
+
+
+

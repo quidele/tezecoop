@@ -1,0 +1,7 @@
+Puestos
+
+1- Segun las chicas de los puestos no encuentran a un cliente que estaba cargado. Pero no recordaba cual era el cliente y en un principio le pase el manual
+de como se busca y se crean clientes.
+
+2- Sergio probó en pruebas crear un cliente en contado y lo busco por el nro. de cliente (en este caso 1454) y solo lo trae si pone "mostrar todos"
+

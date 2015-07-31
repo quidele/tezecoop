@@ -1,0 +1,8 @@
+
+   
+  Agregar logica segun corresponda a Factura A y B , en faturas B bloquear
+  el valor del IVA y subtotal.
+
+
+
+

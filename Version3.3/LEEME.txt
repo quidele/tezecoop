@@ -1,0 +1,77 @@
+
+
+TAREAS A REALIZAR 
+
+ 
+
+Versión 3.3 
+
+ 
+
+- Realizar un filtro en el formulario de  Resumen de Movimientos Contables que oculte los conceptos que no se muestran en las cajas de los licenciatarios y de la cooperativa (Solicitado por el contador).
+
+ 
+
+- Compensación de tickets
+
+            - Cuando se compensa por una "X" cantidad de tickets, debe validarlo por día (para cada licencia). 
+
+            - Avisar con un mensaje cuando se este superando la cantidad máxima de viajes que se puede compensar en el día. 
+
+            - Ir contando la cantidad de viajes seleccionados, en esta cantidad no tomar en cuenta los retornos.
+
+ 
+
+- Actualizar el saldo final pesificado a la hora de consultar el reporte de Resumen de Caja Diaria. Error que se detectó en la versión 3.2.
+
+            Esto ocurre si la caja esta abierta.
+
+ 
+
+Próximas versiones
+
+ 
+
+- Agrupar todos los conceptos que son de Entrada y Salida a la vez (sumar).
+
+ 
+
+- Arreglar en todas las pantallas la "X" para cerrar las ventanas... ya que al presionar la "X" cierra todas las ventanas y no la actual.
+
+Soluciones Posibles.
+
+ 
+
+- Armar una grilla para que en la base manejen el tema de los retornos.
+
+Esta grilla debe contener las columnas: Licencia, fecha y Hora, Destino. 
+
+
+     * En esta grilla se debe permitir filtrar por día y por el día actual.    
+
+     * Es necesario que los datos aparezcan en orden descendente con respecto a la fecha y hora (Del ultimo viaje al primero).
+
+
+     * Refrescar la grilla cada 1 minuto.
+
+ 
+
+- Preparar al sistema para que puede realizar la facturación de los retornos desde la base.
+
+            Para esta tarea se utilizará el punto de venta de la pergola.
+
+            Las impresión del comprobante será dirigida a un puesto determinado, este podrá seleccionar el tickets de retorno  disponibles e imprimirlos.
+
+
+- Agregar en la caja de administracion, en el reporte de caja diaria, una nueva fila con los totales.
+
+
+- Quiere que en la opción de "Resumen de mov. contables" se vea:
+
+       *El saldo inicial y final
+       *Los valores de los cierres diarios
+       *Comisiones e IVA de los viajes (Que si bien el lo oculto, necesita que esos conceptos queden visibles)
+
+- ESPERA TU LLAMDO AL MEDIODIA!
+
+

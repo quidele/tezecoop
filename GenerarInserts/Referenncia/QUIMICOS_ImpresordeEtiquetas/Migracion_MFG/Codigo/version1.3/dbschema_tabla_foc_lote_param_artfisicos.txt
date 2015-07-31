@@ -1,0 +1,109 @@
+FOC_LOTE
+
+
+DBSCHEMA Schema Utility       INFORMIX-SQL Version 5.10.UC1                   
+Copyright (C) 1984-1997 Informix Software, Inc.                               
+Software Serial Number AAC#R320023                                            
+{ TABLE "oyg".foc_lote row size = 185 number of columns = 20 index size = 18 }
+create table "oyg".foc_lote                                                   
+  (                                                                           
+    anio decimal(4,0) not null,                                               
+    nro_lote decimal(8,0) not null,                                           
+    articulo decimal(8,0) not null,                                           
+    fecha_recep date not null,                                                
+    fecha_vto date not null,                                                  
+    proveedor decimal(8,0) not null,                                          
+    remito char(15) not null,                                                 
+    impreso char(1) not null,                                                 
+    oper_alta char(3) not null,                                               
+    fecha_alta datetime year to second not null,                              
+    anulado char(1) not null,                                                 
+    enviado char(1) not null,                                                 
+    informe_rec decimal(8,0),                                                 
+    cantidad decimal(17,4) not null,                                          
+    oper_ir char(3),                                                          
+    fecha_ir datetime year to second,                                         
+    fecha_vto date not null,                                
+    proveedor decimal(8,0) not null,                        
+    remito char(15) not null,                               
+    impreso char(1) not null,                               
+    oper_alta char(3) not null,                             
+    fecha_alta datetime year to second not null,            
+    anulado char(1) not null,                               
+    enviado char(1) not null,                               
+    informe_rec decimal(8,0),                               
+    cantidad decimal(17,4) not null,                        
+    oper_ir char(3),                                        
+    fecha_ir datetime year to second,                       
+    cant_ok decimal(17,4) not null,                         
+    cant_rech decimal(17,4) not null,                       
+    fecha_cc date,                                          
+    observ_cc char(80),                                     
+    primary key (anio,nro_lote) constraint "oyg".u4698_89   
+  );                              
+revoke all on "oyg".foc_lote from "public";         
+
+
+ART_FISICOS
+
+DBSCHEMA Schema Utility       INFORMIX-SQL Version 5.10.UC1                     
+Copyright (C) 1984-1997 Informix Software, Inc.                                 
+Software Serial Number AAC#R320023                                              
+{ TABLE "informix".art_fisicos row size = 79 number of columns = 18 index size =
+                                                                                
+              33 }                                                              
+create table "informix".art_fisicos                                             
+  (                                                                             
+    articulo decimal(8,0),                                                      
+    grupo_stock char(4),                                                        
+    stk_x_cant char(1),                                                         
+    stk_x_area char(1),                                                         
+    stk_x_peso char(1),                                                         
+    coef_area_cant decimal(2,0),                                                
+    coef_peso_cant decimal(2,0),                                                
+    coef_peso_area decimal(2,0),                                                
+    uni_stk char(4),                                                            
+    stk_min_uni decimal(17,4),                                                  
+    stk_max_uni decimal(17,4),                                                  
+    punto_pedido_uni decimal(17,4),                                             
+    stk_min_dias decimal(3,0),                                                  
+    stk_max_dias decimal(3,0),                                                  
+    stk_x_peso char(1),                                                         
+    coef_area_cant decimal(2,0),                                                
+    coef_peso_cant decimal(2,0),                                                
+    coef_peso_area decimal(2,0),                                                
+    uni_stk char(4),                                                            
+    stk_min_uni decimal(17,4),                                                  
+    stk_max_uni decimal(17,4),                                                  
+    punto_pedido_uni decimal(17,4),                                             
+    stk_min_dias decimal(3,0),                                                  
+    stk_max_dias decimal(3,0),                                                  
+    punto_pedido_dias decimal(3,0),                                             
+    fec_ult_cons date,                                                          
+    fec_ult_ing date,                                                           
+    peso decimal(17,4)                                                          
+  );                                                                            
+revoke all on "informix".art_fisicos from "public";                             
+                                                                                
+create unique index "oyg".i1_art_fisicos on "informix".art_fisicos (articulo);  
+create unique index "oyg".i2_art_fisicos on "informix".art_fisicos (grupo_stock,
+articulo);                                                                      
+                                                                                
+PARAM        
+
+DBSCHEMA Schema Utility       INFORMIX-SQL Version 5.10.UC1                     
+Copyright (C) 1984-1997 Informix Software, Inc.                                 
+Software Serial Number AAC#R320023                                              
+{ TABLE "informix".param row size = 71 number of columns = 3 index size = 43 }  
+create table "informix".param                                                   
+  (                                                                             
+    arg char(16) not null,                                                      
+    alfa char(50),                                                              
+    numero decimal(8,0)                                                         
+  );                                                                            
+revoke all on "informix".param from "public";                                   
+                                                                                
+create index "oyg".i1_param on "informix".param (arg);                          
+create index "oyg".i2_param on "informix".param (numero);                       
+                                                                                
+                                                                                

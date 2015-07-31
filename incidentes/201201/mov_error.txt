@@ -1,0 +1,22 @@
+tpMovimiento	tpOperacion	(No column name)	(No column name)	(No column name)
+NULL	Entrada de Dinero	22241,5	577	0
+NULL	Salida de Dinero	1689,05	0	0
+Desimputacion	Entrada de Dinero	8735	114	34
+Desimputacion	Salida de Dinero	22225,45	577	0
+
+
+
+
+
+
+IdMovimiento	dsMovimiento	IdRecibo	IdProveedor	dsProveedor	cdConcepto	tpConcepto	dsConcepto	tpOperacion	vlPesos	vlDolares	vlEuros	nrRecibo	nrFactura	nrCaja	dsUsuario	dtMovimiento	dsObservacion	nrAnio	dsUsuario_Supervisor	nrCajaPuesto	tpCajaImputacion	dsUsuarioCajaPuesto	tpMovimiento
+1000269307	Pago a Licenciatario	1000193944	NULL	Licencia Nro. 89	1027	Cajas	PAGO DE COMPROBANTES	Salida de Dinero	2025	20	0	1000193944	NULL	9000002710	MARIANA	2012-01-10 13:06:40.000	NULL	NULL	NULL	-1000007056	Caja de los Licenciatarios	NULL	NULL
+1000269308	Pago a Licenciatario en Reales	1000193944	NULL	Licencia Nro. 89	2030	Cajas	PAGO DE COMPROBANTES EN REALES	Salida de Dinero	360	0	0	1000193944	NULL	9000002710	MARIANA	2012-01-10 13:06:40.000	NULL	NULL	NULL	-1000007056	Caja de los Licenciatarios	NULL	NULL
+1000269301	Pago a Licenciatario	1000193941	NULL	Licencia Nro. 117	1027	Cajas	PAGO DE COMPROBANTES	Salida de Dinero	166	0	0	1000193941	NULL	9000002710	MARIANA	2012-01-10 12:17:23.000	NULL	NULL	NULL	-1000007056	Caja de los Licenciatarios	NULL	NULL
+1000269303	Pago a Licenciatario	1000193943	NULL	Licencia Nro. 110	1027	Cajas	PAGO DE COMPROBANTES	Salida de Dinero	2128	51	0	1000193943	NULL	9000002710	MARIANA	2012-01-10 12:46:46.000	NULL	NULL	NULL	-1000007056	Caja de los Licenciatarios	NULL	NULL
+1000270831	Pago a Licenciatario	1000193944	NULL	Licencia Nro. 89	1027	Cajas	PAGO DE COMPROBANTES	Entrada de Dinero	2025	20	0	1000193944	NULL	9000002718	MARIANA	2012-01-10 13:06:40.000	NULL	NULL	SGAROBBIO	-1000007056	Caja de los Licenciatarios	NULL	Desimputacion
+1000270832	Pago a Licenciatario en Reales	1000193944	NULL	Licencia Nro. 89	2030	Cajas	PAGO DE COMPROBANTES EN REALES	Entrada de Dinero	360	0	0	1000193944	NULL	9000002718	MARIANA	2012-01-10 13:06:40.000	NULL	NULL	SGAROBBIO	-1000007056	Caja de los Licenciatarios	NULL	Desimputacion
+1000270833	Pago a Licenciatario	1000193943	NULL	Licencia Nro. 110	1027	Cajas	PAGO DE COMPROBANTES	Entrada de Dinero	2128	51	0	1000193943	NULL	9000002718	MARIANA	2012-01-10 12:46:46.000	NULL	NULL	SGAROBBIO	-1000007056	Caja de los Licenciatarios	NULL	Desimputacion
+1000270834	Pago a Licenciatario	1000193941	NULL	Licencia Nro. 117	1027	Cajas	PAGO DE COMPROBANTES	Entrada de Dinero	166	0	0	1000193941	NULL	9000002718	MARIANA	2012-01-10 12:17:23.000	NULL	NULL	SGAROBBIO	-1000007056	Caja de los Licenciatarios	NULL	Desimputacion
+1000270836	Pago a Licenciatario	1000193942	NULL	Licencia Nro. 17	1027	Cajas	PAGO DE COMPROBANTES	Entrada de Dinero	2383	43	34	1000193942	NULL	9000002718	MARIANA	2012-01-10 12:35:29.000	NULL	NULL	SGAROBBIO	-1000007056	Caja de los Licenciatarios	NULL	Desimputacion
+1000269302	Pago a Licenciatario	1000193942	NULL	Licencia Nro. 17	1027	Cajas	PAGO DE COMPROBANTES	Salida de Dinero	2383	43	34	1000193942	NULL	9000002710	MARIANA	2012-01-10 12:35:29.000	NULL	NULL	NULL	-1000007056	Caja de los Licenciatarios	NULL	NULL

@@ -1,0 +1,4 @@
+INSERT INTO TB_Talonarios (nrTalonario,tpComprobante,tpLetra,nrComprobante,flManual,flActivo,flVisible,flEliminar)  VALUES ('1','FA','A',0,'A',True,True,False);
+INSERT INTO TB_Talonarios (nrTalonario,tpComprobante,tpLetra,nrComprobante,flManual,flActivo,flVisible,flEliminar)  VALUES ('1','FA','B',0,'A',True,True,False);
+INSERT INTO TB_Talonarios (nrTalonario,tpComprobante,tpLetra,nrComprobante,flManual,flActivo,flVisible,flEliminar)  VALUES ('1','FM','A',0,'M',True,True,False);
+INSERT INTO TB_Talonarios (nrTalonario,tpComprobante,tpLetra,nrComprobante,flManual,flActivo,flVisible,flEliminar)  VALUES ('1','FM','B',0,'M',True,True,False);

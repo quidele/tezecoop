@@ -1,0 +1,8 @@
+
+PENDIENTE
+
+1.- Modificar el stored procedure sp_obtiene_falta_compensar
+Para que tome en cuenta las parametrizaciones de las fechas de
+compensaciones
+Restar al valor suma_vlPagoPesos las retenciones que poseen los
+cupones seleccionados

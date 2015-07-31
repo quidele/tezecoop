@@ -1,0 +1,6 @@
+Formula
+@imprime_vlIVA
+if {TB_Comprobantes_Imprime.tpIVA}="RI" then {TB_Comprobantes_Imprime.vlIVA} else 0
+
+@imprime_vlSubtotal
+if {TB_Comprobantes_Imprime.tpIVA}="RI" then {TB_Comprobantes_Imprime.vlSubtotal} else 0

@@ -1,0 +1,15 @@
+ 
+Crear formularios para 
+   Tipo de Comprobante
+   Talonario 
+   Talonario CAI
+   Puesto Talonario
+
+Terminar tb_lonarios adm de CAIs
+TB_TalonariosPuesto
+
+1	tpDestino	varchar	50	1
+0	tpFacturacion	varchar	50	1
+
+
+

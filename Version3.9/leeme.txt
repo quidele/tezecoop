@@ -1,0 +1,35 @@
+
+nuevos reportes   pendiente actualizar reportes de pruebas
+rpt_resumenlicenciatario_v3_9
+rpt_resumenlicenciatarioagrupado_v3_9
+
+
+Pendiente 
+Determinar el concepto de imputación de vamos a emplear en el asiento contable
+Realizar pruebas unitarias 
+realizar pruebas integrales
+
+
+
+Grabar la tabla de auditorias para llevar el registro de cambios
+de la cotización para caja que realizó el cambio.
+A su vez la registracion anterior no sirve para determinar la ultima
+caja la que ha modificado la cotización
+
+Lógica la tener en cuenta la caja que realizó el cambio de
+cotizacion de una la moneda
+
+Escenario REAPERTURA DE CAJA
+Existe cambio de cotización?
+SI
+	El ultimo cambio de la cotizacion lo hizo la caja actual ?
+	SI 
+		Entonces en caja apertura no se realiza
+		el pedido de monto  y grabacion de los asientos
+
+	NO
+		Entonces realizamos  el pedido de monto y
+		 grabacion de los asientos correspodientes
+		
+No no hacemos nada
+

@@ -1,0 +1,1 @@
+INSERT INTO plantillas_excel (id,aplicacion,nombre,hoja_xls,ruta_archivo,fila_datos,columnas,filas,base_destino,procedimiento,carp_archivo_tmp,separador)  VALUES (10,'presupuestos','definicion tablas_v3_2_5','destinos','C:\limpiar',2,8,1000,'LOCAL','spu_carga_destinos','C:\limpiar','|');

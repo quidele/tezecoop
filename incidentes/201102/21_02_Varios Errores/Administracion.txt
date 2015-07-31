@@ -1,0 +1,16 @@
+Administración
+
+
+1- Se genero una liquidacion d cta cte. y cuando se quiere compensar (selecciona el registro) dice q no se encuentra el cliente.
+El nro. de cliente es 4022. CORREGIDO
+
+Genere el mismo caso en pruebas y no me deja seleccionar el registro, algo no quedo bien en esta pantalla.
+
+
+
+2- En la caja 6079 del 5/2 en el listado de cajas de los puestos, dice diferencia $10 cuando le da doble click le dice 0,10 centavos. CORREGIDO
+
+3- Sergio quiere saber como solucionaste el tema de la diferencia en el reporte del día sabado con los reales, ya que le dijiste que cuando cerraba la caja se iba a arreglar.
+El dice que sigue todo igual pero que esta bien que siga igual porque aparentemente estaba bien el tema ese. 
+LLAMALO PORQUE COMO YO NO ESTABA TAN AL TANTO DEL ERROR NO ENTENDI BIEN CUAL ES SU CONSULTA.
+

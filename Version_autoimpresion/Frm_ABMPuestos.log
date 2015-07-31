@@ -1,0 +1,89 @@
+Line 22: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
+Line 93: Class MSComctlLib.ImageList of control imgABMPuestosResaltado was not a loaded control class.
+Line 147: Class MSComctlLib.ImageList of control imgABMPuestos was not a loaded control class.
+Line 885: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
+Line 933: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
+Line 971: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
+Line 987: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 11: Property Icon in Frm_ABMPuestos had an invalid file reference.
+Line 29: The property name _ExtentX in tlb_ABM is invalid.
+Line 30: The property name _ExtentY in tlb_ABM is invalid.
+Line 31: The property name ButtonWidth in tlb_ABM is invalid.
+Line 32: The property name ButtonHeight in tlb_ABM is invalid.
+Line 34: The property name Style in tlb_ABM is invalid.
+Line 35: The property name ImageList in tlb_ABM is invalid.
+Line 36: The property name HotImageList in tlb_ABM is invalid.
+Line 37: The property name _Version in tlb_ABM is invalid.
+Line 89: The property name Buttons in tlb_ABM is invalid.
+Line 92: Property MouseIcon in tlb_ABM had an invalid file reference.
+Line 96: The property name _ExtentX in imgABMPuestosResaltado is invalid.
+Line 97: The property name _ExtentY in imgABMPuestosResaltado is invalid.
+Line 99: The property name ImageWidth in imgABMPuestosResaltado is invalid.
+Line 100: The property name ImageHeight in imgABMPuestosResaltado is invalid.
+Line 101: The property name MaskColor in imgABMPuestosResaltado is invalid.
+Line 102: The property name _Version in imgABMPuestosResaltado is invalid.
+Line 106: Property Picture in ListImage1 had an invalid file reference.
+Line 110: Property Picture in ListImage2 had an invalid file reference.
+Line 114: Property Picture in ListImage3 had an invalid file reference.
+Line 118: Property Picture in ListImage4 had an invalid file reference.
+Line 122: Property Picture in ListImage5 had an invalid file reference.
+Line 126: Property Picture in ListImage6 had an invalid file reference.
+Line 130: Property Picture in ListImage7 had an invalid file reference.
+Line 134: Property Picture in ListImage8 had an invalid file reference.
+Line 138: Property Picture in ListImage9 had an invalid file reference.
+Line 142: Property Picture in ListImage10 had an invalid file reference.
+Line 145: The property name Images in imgABMPuestosResaltado is invalid.
+Line 150: The property name _ExtentX in imgABMPuestos is invalid.
+Line 151: The property name _ExtentY in imgABMPuestos is invalid.
+Line 153: The property name ImageWidth in imgABMPuestos is invalid.
+Line 154: The property name ImageHeight in imgABMPuestos is invalid.
+Line 155: The property name MaskColor in imgABMPuestos is invalid.
+Line 156: The property name _Version in imgABMPuestos is invalid.
+Line 160: Property Picture in ListImage1 had an invalid file reference.
+Line 164: Property Picture in ListImage2 had an invalid file reference.
+Line 168: Property Picture in ListImage3 had an invalid file reference.
+Line 172: Property Picture in ListImage4 had an invalid file reference.
+Line 176: Property Picture in ListImage5 had an invalid file reference.
+Line 180: Property Picture in ListImage6 had an invalid file reference.
+Line 184: Property Picture in ListImage7 had an invalid file reference.
+Line 188: Property Picture in ListImage8 had an invalid file reference.
+Line 192: Property Picture in ListImage9 had an invalid file reference.
+Line 196: Property Picture in ListImage10 had an invalid file reference.
+Line 199: The property name Images in imgABMPuestos is invalid.
+Line 891: The property name _ExtentX in ProgressBar is invalid.
+Line 892: The property name _ExtentY in ProgressBar is invalid.
+Line 893: The property name _Version in ProgressBar is invalid.
+Line 936: The property name _ExtentX in ImgOperadores is invalid.
+Line 937: The property name _ExtentY in ImgOperadores is invalid.
+Line 939: The property name ImageWidth in ImgOperadores is invalid.
+Line 940: The property name ImageHeight in ImgOperadores is invalid.
+Line 941: The property name MaskColor in ImgOperadores is invalid.
+Line 942: The property name _Version in ImgOperadores is invalid.
+Line 946: Property Picture in ListImage1 had an invalid file reference.
+Line 950: Property Picture in ListImage2 had an invalid file reference.
+Line 954: Property Picture in ListImage3 had an invalid file reference.
+Line 958: Property Picture in ListImage4 had an invalid file reference.
+Line 962: Property Picture in ListImage5 had an invalid file reference.
+Line 966: Property Picture in ListImage6 had an invalid file reference.
+Line 969: The property name Images in ImgOperadores is invalid.
+Line 977: The property name _ExtentX in ImageCombo1 is invalid.
+Line 978: The property name _ExtentY in ImageCombo1 is invalid.
+Line 979: The property name _Version in ImageCombo1 is invalid.
+Line 983: The property name Indentation in ImageCombo1 is invalid.
+Line 984: The property name Locked in ImageCombo1 is invalid.
+Line 985: The property name ImageList in ImageCombo1 is invalid.
+Line 993: The property name _ExtentX in lstBusqueda is invalid.
+Line 994: The property name _ExtentY in lstBusqueda is invalid.
+Line 995: The property name View in lstBusqueda is invalid.
+Line 996: The property name LabelEdit in lstBusqueda is invalid.
+Line 997: The property name LabelWrap in lstBusqueda is invalid.
+Line 998: The property name HideSelection in lstBusqueda is invalid.
+Line 1001: The property name FullRowSelect in lstBusqueda is invalid.
+Line 1002: The property name _Version in lstBusqueda is invalid.
+Line 1018: The property name NumItems in lstBusqueda is invalid.
+Line 1023: The property name ColumnHeader(1) in lstBusqueda is invalid.
+Line 1029: The property name ColumnHeader(2) in lstBusqueda is invalid.
+Line 1035: The property name ColumnHeader(3) in lstBusqueda is invalid.
+Line 1041: The property name ColumnHeader(4) in lstBusqueda is invalid.
+Line 1047: The property name ColumnHeader(5) in lstBusqueda is invalid.
+Line 1053: The property name ColumnHeader(6) in lstBusqueda is invalid.

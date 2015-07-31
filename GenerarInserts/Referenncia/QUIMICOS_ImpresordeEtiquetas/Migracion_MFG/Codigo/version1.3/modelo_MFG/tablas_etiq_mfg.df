@@ -1,0 +1,270 @@
+ADD TABLE "zfoc_lote"
+  AREA "Schema Area"
+  DESCRIPTION "Tabla para la gestion de lotes quimicos"
+  DUMP-NAME "zfoc_lot"
+
+ADD FIELD "anio" OF "zfoc_lote" AS integer 
+  FORMAT "9999"
+  INITIAL "0"
+  POSITION 2
+  SQL-WIDTH 4
+  ORDER 10
+  MANDATORY
+
+ADD FIELD "nro_lote" OF "zfoc_lote" AS integer 
+  FORMAT "99999999"
+  INITIAL "0"
+  POSITION 3
+  SQL-WIDTH 4
+  ORDER 20
+  MANDATORY
+
+ADD FIELD "articulo" OF "zfoc_lote" AS character 
+  FORMAT "X(12)"
+  INITIAL ""
+  POSITION 4
+  SQL-WIDTH 24
+  ORDER 30
+
+ADD FIELD "fecha_recep" OF "zfoc_lote" AS date 
+  FORMAT "99/99/99"
+  INITIAL ?
+  POSITION 5
+  SQL-WIDTH 4
+  ORDER 40
+
+ADD FIELD "fecha_vto" OF "zfoc_lote" AS date 
+  FORMAT "99/99/99"
+  INITIAL ?
+  POSITION 6
+  SQL-WIDTH 4
+  ORDER 50
+
+ADD FIELD "proveedor" OF "zfoc_lote" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  POSITION 7
+  SQL-WIDTH 16
+  ORDER 60
+
+ADD FIELD "remito" OF "zfoc_lote" AS character 
+  FORMAT "X(15)"
+  INITIAL ""
+  POSITION 8
+  SQL-WIDTH 30
+  ORDER 70
+
+ADD FIELD "impreso" OF "zfoc_lote" AS character 
+  FORMAT "X(1)"
+  INITIAL ""
+  POSITION 9
+  SQL-WIDTH 2
+  ORDER 80
+
+ADD FIELD "oper_alta" OF "zfoc_lote" AS character 
+  FORMAT "X(10)"
+  INITIAL ""
+  POSITION 10
+  SQL-WIDTH 20
+  ORDER 90
+
+ADD FIELD "fecha_alta" OF "zfoc_lote" AS date 
+  FORMAT "99/99/99"
+  INITIAL ?
+  POSITION 11
+  SQL-WIDTH 4
+  ORDER 100
+
+ADD FIELD "anulado" OF "zfoc_lote" AS character 
+  FORMAT "X(1)"
+  INITIAL ""
+  POSITION 12
+  SQL-WIDTH 2
+  ORDER 110
+
+ADD FIELD "enviado" OF "zfoc_lote" AS character 
+  FORMAT "X(1)"
+  INITIAL ""
+  POSITION 13
+  SQL-WIDTH 2
+  ORDER 120
+
+ADD FIELD "informe_rec" OF "zfoc_lote" AS integer 
+  FORMAT "99999999"
+  INITIAL "0"
+  POSITION 14
+  SQL-WIDTH 4
+  ORDER 130
+
+ADD FIELD "cantidad" OF "zfoc_lote" AS decimal 
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  POSITION 15
+  SQL-WIDTH 17
+  DECIMALS 2
+  ORDER 140
+
+ADD FIELD "oper_ir" OF "zfoc_lote" AS character 
+  FORMAT "X(10)"
+  INITIAL ""
+  POSITION 16
+  SQL-WIDTH 20
+  ORDER 150
+
+ADD FIELD "fecha_ir" OF "zfoc_lote" AS date 
+  FORMAT "99/99/99"
+  INITIAL ?
+  POSITION 17
+  SQL-WIDTH 4
+  ORDER 160
+
+ADD FIELD "cant_ok" OF "zfoc_lote" AS decimal 
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  POSITION 18
+  SQL-WIDTH 17
+  DECIMALS 2
+  ORDER 170
+
+ADD FIELD "cant_rech" OF "zfoc_lote" AS decimal 
+  FORMAT "->>,>>9.99"
+  INITIAL "0"
+  POSITION 19
+  SQL-WIDTH 17
+  DECIMALS 2
+  ORDER 180
+
+ADD FIELD "fecha_cc" OF "zfoc_lote" AS date 
+  FORMAT "99/99/99"
+  INITIAL ?
+  POSITION 20
+  SQL-WIDTH 4
+  ORDER 190
+
+ADD FIELD "observ_cc" OF "zfoc_lote" AS character 
+  FORMAT "X(100)"
+  INITIAL ""
+  POSITION 21
+  SQL-WIDTH 200
+  ORDER 200
+
+ADD FIELD "prov_razon_abrev" OF "zfoc_lote" AS character 
+  FORMAT "X(80)"
+  INITIAL ""
+  POSITION 22
+  SQL-WIDTH 160
+  ORDER 210
+
+ADD FIELD "arti_desc_abrev" OF "zfoc_lote" AS character 
+  FORMAT "X(80)"
+  INITIAL ""
+  POSITION 23
+  SQL-WIDTH 160
+  ORDER 220
+
+ADD INDEX "pri_anio_lote" ON "zfoc_lote" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "anio" ASCENDING 
+  INDEX-FIELD "nro_lote" ASCENDING 
+
+ADD INDEX "idx_arti" ON "zfoc_lote" 
+  AREA "Schema Area"
+  INDEX-FIELD "articulo" ASCENDING 
+
+ADD INDEX "idx_inforec" ON "zfoc_lote" 
+  AREA "Schema Area"
+  INDEX-FIELD "informe_rec" ASCENDING 
+
+ADD INDEX "idx_prov" ON "zfoc_lote" 
+  AREA "Schema Area"
+  INDEX-FIELD "proveedor" ASCENDING 
+
+ADD INDEX "idx_remito" ON "zfoc_lote" 
+  AREA "Schema Area"
+  INDEX-FIELD "remito" ASCENDING 
+
+ADD TABLE "zprov_quimicos"
+  AREA "Schema Area"
+  DESCRIPTION "Tabla de proveedores para la gesti¢n de qu¡micos , sistema de impresi¢n de etiquetas"
+  DUMP-NAME "zprov_qu"
+
+ADD FIELD "proveedor" OF "zprov_quimicos" AS character 
+  FORMAT "X(8)"
+  INITIAL ""
+  POSITION 2
+  SQL-WIDTH 16
+  ORDER 10
+  MANDATORY
+
+ADD FIELD "razon_abrev" OF "zprov_quimicos" AS character 
+  FORMAT "X(80)"
+  INITIAL ""
+  POSITION 3
+  SQL-WIDTH 160
+  ORDER 20
+
+ADD FIELD "activo" OF "zprov_quimicos" AS character 
+  FORMAT "X(1)"
+  INITIAL ""
+  POSITION 4
+  SQL-WIDTH 2
+  ORDER 30
+  MANDATORY
+
+ADD INDEX "pri_proveedor" ON "zprov_quimicos" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "proveedor" ASCENDING 
+
+ADD INDEX "idx_razon" ON "zprov_quimicos" 
+  AREA "Schema Area"
+  INDEX-FIELD "razon_abrev" ASCENDING 
+
+ADD TABLE "zarti_quimicos"
+  AREA "Schema Area"
+  DUMP-NAME "zarti_qu"
+
+ADD FIELD "articulo" OF "zarti_quimicos" AS character 
+  FORMAT "X(12)"
+  INITIAL ""
+  POSITION 2
+  SQL-WIDTH 24
+  ORDER 10
+
+ADD FIELD "cant_dias" OF "zarti_quimicos" AS integer 
+  FORMAT "9999"
+  INITIAL "0"
+  POSITION 3
+  SQL-WIDTH 4
+  ORDER 20
+
+ADD INDEX "pri_arti" ON "zarti_quimicos" 
+  AREA "Schema Area"
+  PRIMARY
+  INDEX-FIELD "articulo" ASCENDING 
+
+ADD TABLE "znum_quimicos"
+  AREA "Schema Area"
+  DESCRIPTION "Tabla que lleva la numeracion de los lotes creados en las recpeciones de quimicos"
+  DUMP-NAME "znum_qui"
+
+ADD FIELD "anio" OF "znum_quimicos" AS integer 
+  FORMAT "9999"
+  INITIAL "0"
+  POSITION 2
+  SQL-WIDTH 4
+  ORDER 10
+
+ADD FIELD "nro_lote_sig" OF "znum_quimicos" AS integer 
+  FORMAT "99999999"
+  INITIAL "0"
+  POSITION 3
+  SQL-WIDTH 4
+  ORDER 20
+
+.
+PSC
+cpstream=ibm850
+.
+0000005292

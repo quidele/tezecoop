@@ -1,0 +1,7 @@
+select * from TB_Cupones as a
+where 
+a.nrLicencia= 124 
+and dtCupon > GETDATE()-9
+and a.flCompensado= 0
+and flAnulado=0
+order by dtCupon

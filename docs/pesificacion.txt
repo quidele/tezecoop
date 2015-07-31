@@ -1,0 +1,7 @@
+
+VW_SumaCajaADM
+
+
+La Caja ADM Queda Pesificada a la pesificación Actual,
+no se tiene en cuenta el la cotizacion Vieja
+

@@ -1,0 +1,19 @@
+   
+select * from tb_cupones 
+where IdRecibo=1000150086
+
+select * from tb_cupones 
+where IdReciboCtacte=1000150086
+
+delete from tb_movimientoscontables where 
+IdRecibo = 1000150086
+
+delete from tb_Recibos where 
+IdRecibo = 1000150086
+
+update tb_Recibos
+set flAnulado=1 where
+IdRecibo = 1000150086
+
+
+select * from  tb_Recibos where IdRecibo  in (1000150086,1000150087)

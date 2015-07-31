@@ -1,0 +1,30 @@
+
+Analizar el comportamiento del SP  SP_obtenerCajasPuestosImputadasyDesImputadas_v3_2
+para reprogramar la logica para que devuelva la diferencia provocada por la desimputacion y la reimputacion de una caja puesto
+que no a imputado esta caja de adm!
+
+Reportes Creados en la Versión
+  
+	rpt_resumendecajaadm_v3_2.rpt =>  Informar las diferencias provocadas por las desimputaciones
+		Generar el SP SP_rpt_resumendecajaadm_v3_2
+	rpt_cajaspuestosimputadas_v3_2.rpt => informar cajas imputadas y desimputadas
+		Generar el SP SP_rpt_resumendecajaadm_v3_2
+		Generar el SP_obtenerCajasPuestosImputadas_v3_2
+
+
+Realizar el renombrado de los reportes prod a prueba de la version 3.2
+
+Realizar el pasaje al server de la cooperativa 
+ 
+Que la imputacion no requiera la aprobacion del usuario cuando dicha caja fue modificada!
+
+Al desimputar que mal los valores de reporte de caja adm. Saldos de las cajas imputadas, ademas
+cambiar por el label Saldos de las cajas Desimputadas/imputadas,
+
+Al desim[utar una caja que hasufrido una desimputacion de uyna caja anterior de la administracion 
+toma mas registros de los que deberia, registros de la desimputacion anterior no los deberia tomar en cuenta.
+
+
+
+	rpt_cajaspuestosimputadas_v3_1.rpt  => rpt_cajaspuestosimputadasdesimputadas_v3_2.rpt
+	rpt_resumendecajaadm_v3_1.rpt        => rpt_resumendecajaadm_v3_2.rpt 

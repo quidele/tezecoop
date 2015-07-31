@@ -1,0 +1,6 @@
+
+  Agrandar el campo de CUIT en el reporte, agregando el ancho de 3 tres caracteres mas.
+  en el reporte de empresion de la factura, acomodar la letra y numeros
+  Agregar la Letra (tpComprobnate) al reporte de caja "rpt_cierredecaja_imprime.rpt"
+   
+

@@ -1,0 +1,23 @@
+CASO DE PRUEBA NORMAL
+nro de caja: 5000000005
+saldos Finales 
+	350,00
+	70,00
+	15,00
+
+
+
+
+
+
+
+	select a.cdCondVenta, vlTotalGeneral, a.vlPagoPesos, a.vlPagoEuros, a.vlPagoDolares, b.vlComision, b.vlIVA from 
+               tb_comprobantes a, tb_cupones b  where nrCaja = 1000000010
+	and   a.nrComprobante = b.nrComprabanteCliente 
+        and   a.tpComprobante = b.tpComprobanteCliente  
+        and   a.nrTalonario = b.nrTalonarioCliente
+        and   a.tpletra = b.tpletracliente
+        
+        select vlDiaDolar, vlDiaEuro from tb_cajas where  nrCaja = 1000000010
+
+

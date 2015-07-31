@@ -1,0 +1,2 @@
+INSERT INTO Conexion (Id_conexion,plataforma,ambiente,nombre,driver,url,usuario,password)  VALUES (22,'.NET','Produccion','LOCAL',null,'Data Source=127.0.0.1;Database=dbSG2000','USRSG2013','ITf0nBD');
+INSERT INTO Conexion (Id_conexion,plataforma,ambiente,nombre,driver,url,usuario,password)  VALUES (23,'JAVA','Produccion','local','sun.jdbc.odbc.JdbcOdbcDriver','jdbc:odbc:cueros_prod','sysprogress','sysprogress');

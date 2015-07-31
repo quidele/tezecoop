@@ -1,0 +1,7 @@
+Fecha: <Impact Normal  12>  valor_fecha <Impact Normal  17>
+Vto: <Impact Normal  12>  valor_vto <Impact Normal  17>
+Lote Nº: <Impact Normal  12>
+98/00002321 <Impact Normal  36>
+
+
+

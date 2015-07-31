@@ -1,0 +1,229 @@
+[Root]
+Most Recent Package=Taxi Ezeiza
+
+
+[Package|Taxi Ezeiza|Root]
+SubWizProgID=PDWizard.SetupPkgSubWiz
+BuildFolder=D:\Eulises\misTrabajos\CoopTaxisEzeiza\MIGRACION_SERVER\Dist
+
+[Package|Taxi Ezeiza|Configure DAO ISAMs]
+Applicable=No
+Jet 2.x=No
+
+[Package|Taxi Ezeiza|Configure DAO ODBC]
+JetWorkspace=
+ODBCDirect=
+
+[Package|Taxi Ezeiza|Files Found]
+
+[Package|Taxi Ezeiza|Files Released]
+rpt_Recibo.rpt=
+rpt_factura.rpt=
+rpt_CierredeCaja.rpt=
+Plantilla.xls=
+Config.ini=
+U2FXLS.DLL=
+U2FWORDW.DLL=
+U2FWKS.DLL=
+U2FTEXT.DLL=
+U2FSEPV.DLL=
+U2FRTF.DLL=
+U2FREC.DLL=
+U2FHTML.DLL=
+U2FDIF.DLL=
+U2FCR.DLL=
+U2DMAPI.DLL=
+CRXLAT32.DLL=
+
+[Package|Taxi Ezeiza|Missing Dependency Information]
+C:\Archivos de programa\Microsoft Office\Office\EXCEL9.OLB=
+C:\WINDOWS\system32\msstdfmt.dll=
+C:\Archivos de programa\Archivos comunes\System\ado\msado27.tlb=
+C:\WINDOWS\system32\iphlpapi.dll=
+
+[Package|Taxi Ezeiza|Out-of-Date Dependency Information]
+C:\WINDOWS\system32\crystl32.ocx=
+C:\WINDOWS\system32\msmask32.ocx=
+C:\WINDOWS\system32\MSComCt2.ocx=
+C:\WINDOWS\system32\Tabctl32.ocx=
+C:\WINDOWS\system32\mscomctl.ocx=
+C:\WINDOWS\system32\scrrun.dll=
+C:\WINDOWS\system32\MSRDO20.DLL=
+C:\WINNT\system32\crystl32.ocx=
+C:\WINNT\system32\msmask32.ocx=
+C:\WINNT\system32\MSComCt2.ocx=
+C:\WINNT\system32\Tabctl32.ocx=
+C:\WINNT\system32\scrrun.dll=
+
+[Package|Taxi Ezeiza|Files Added]
+d:\eulises\mistrabajos\cooptaxisezeiza\factory_produccion\factory_desarrollo\config.ini=
+d:\eulises\mistrabajos\cooptaxisezeiza\factory_produccion\factory_desarrollo\plantilla.xls=
+
+[Package|Taxi Ezeiza|Files Removed]
+
+[Package|Taxi Ezeiza|Files In Project]
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=Yes
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=Yes
+C:\Archivos de programa\Archivos comunes\System\ado\msado27.tlb=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\GestionDeViajes.exe=Yes
+C:\WINDOWS\system32\msvbvm60.dll=Yes
+C:\WINDOWS\system32\oleaut32.dll=Yes
+C:\WINDOWS\system32\olepro32.dll=Yes
+C:\WINDOWS\system32\asycfilt.dll=Yes
+C:\WINDOWS\system32\stdole2.tlb=Yes
+C:\WINDOWS\system32\iphlpapi.dll=Yes
+C:\WINDOWS\system32\MSSTDFMT.DLL=Yes
+C:\WINDOWS\system32\scrrun.dll=Yes
+C:\WINDOWS\system32\msvcrt.dll=Yes
+C:\WINDOWS\system32\mscomctl.ocx=Yes
+C:\WINDOWS\system32\TABCTL32.OCX=Yes
+C:\WINDOWS\system32\MSCOMCT2.OCX=Yes
+C:\WINDOWS\system32\msmask32.ocx=Yes
+C:\WINDOWS\system32\VB6STKIT.DLL=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Config.ini=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Plantilla.xls=Yes
+
+[Package|Taxi Ezeiza|Configure Registry Files]
+Applicable=No
+
+[Package|Taxi Ezeiza|Configure Remote Servers]
+Applicable=No
+
+[Package|Taxi Ezeiza|Install Locations]
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\GestionDeViajes.exe=$(AppPath)
+C:\WINDOWS\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\COMCAT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Archivos comunes\Designer\MSCDRUN.DLL=$(CommonFiles)\Designer
+C:\WINDOWS\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINDOWS\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINDOWS\system32\msstdfmt.dll=$(WinSysPath)
+C:\WINDOWS\system32\MSBIND.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Office\Office\EXCEL9.OLB=$(WinSysPath)
+C:\WINDOWS\system32\scrrun.dll=$(WinSysPath)
+C:\WINDOWS\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\WINDOWS\system32\mscomctl.ocx=$(WinSysPath)
+C:\WINDOWS\system32\Tabctl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\MSComCt2.ocx=$(WinSysPath)
+C:\WINDOWS\system32\msmask32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\crystl32.ocx=$(WinSysPath)
+C:\WINDOWS\system32\CRPE32.DLL=$(WinSysPath)
+C:\WINDOWS\system32\implode.dll=$(WinSysPath)
+C:\WINDOWS\system32\pg32.dll=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\CO2C40EN.DLL=$(WinSysPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT20.DLL=$(WinSysPathSysFile)
+C:\WINDOWS\Crystal\CRXLAT32.DLL=$(WinPath)\Crystal
+C:\WINDOWS\system32\p2bbnd.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2bdao.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2ctdao.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2irdao.dll=$(WinSysPath)
+C:\WINDOWS\system32\p2sodbc.dll=$(WinSysPath)
+C:\WINDOWS\system32\u2ddisk.dll=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2DMAPI.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FCR.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FDIF.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FHTML.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FREC.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FRTF.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FSEPV.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FTEXT.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FWKS.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FWORDW.DLL=$(WinPath)\Crystal
+C:\WINDOWS\Crystal\U2FXLS.DLL=$(WinPath)\Crystal
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP.EXE=$(AppPath)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\SETUP1.EXE=$(WinPath)
+C:\WINDOWS\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\ST6UNST.EXE=$(WinPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\Config.ini=$(AppPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\Plantilla.xls=$(AppPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_CierredeCaja.rpt=$(AppPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_factura.rpt=$(AppPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_Recibo.rpt=$(AppPath)
+G:\nuevoBackup\nuevoBackup\GestionDeViajes.exe=$(AppPath)
+C:\WINNT\system32\msvbvm60.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\oleaut32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\olepro32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\asycfilt.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\stdole2.tlb=$(WinSysPathSysFile)
+C:\Archivos de programa\Archivos comunes\System\ado\msado27.tlb=$(WinSysPath)
+C:\WINNT\system32\MSRDO20.DLL=$(WinSysPath)
+C:\WINNT\system32\RDOCURS.DLL=$(WinSysPath)
+C:\WINNT\system32\MSSTDFMT.DLL=$(WinSysPath)
+C:\WINNT\system32\MSBIND.DLL=$(WinSysPath)
+C:\WINNT\system32\scrrun.dll=$(WinSysPath)
+C:\WINNT\system32\msvcrt.dll=$(WinSysPathSysFile)
+C:\Archivos de programa\Archivos comunes\Microsoft Shared\DAO\DAO350.DLL=$(MSDAOPath)
+C:\WINNT\system32\MSJET35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSJTER35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSJINT35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\vbajet32.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\expsrv.dll=$(WinSysPathSysFile)
+C:\WINNT\system32\MSRD2X35.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\MSREPL35.DLL=$(WinSysPathSysFile)
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MSVCRT40.DLL=$(WinSysPathSysFile)
+C:\WINNT\system32\VB5DB.DLL=$(WinSysPath)
+C:\WINNT\system32\MSCOMCTL.OCX=$(WinSysPath)
+C:\WINNT\system32\Tabctl32.ocx=$(WinSysPath)
+C:\WINNT\system32\MSComCt2.ocx=$(WinSysPath)
+C:\WINNT\system32\msmask32.ocx=$(WinSysPath)
+C:\WINNT\system32\crystl32.ocx=$(WinSysPath)
+C:\WINNT\system32\crpe32.dll=$(WinSysPath)
+C:\WINNT\system32\implode.dll=$(WinSysPath)
+C:\WINNT\system32\pg32.dll=$(WinSysPath)
+C:\WINNT\system32\p2bbnd.dll=$(WinSysPath)
+C:\WINNT\system32\p2bdao.dll=$(WinSysPath)
+C:\WINNT\system32\p2ctdao.dll=$(WinSysPath)
+C:\WINNT\system32\p2irdao.dll=$(WinSysPath)
+C:\WINNT\system32\p2sodbc.dll=$(WinSysPath)
+C:\WINNT\system32\u2ddisk.dll=$(WinPath)\Crystal
+C:\WINNT\system32\VB6STKIT.DLL=$(WinSysPathSysFile)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\GestionDeViajes.exe=$(AppPath)
+C:\WINDOWS\system32\iphlpapi.dll=$(WinSysPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Config.ini=$(AppPath)
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Plantilla.xls=$(AppPath)
+
+[Package|Taxi Ezeiza|Configure Shared Files]
+Applicable=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\GestionDeViajes.exe=No
+C:\Archivos de programa\Microsoft Visual Studio\VB98\Wizards\PDWizard\Redist\MDAC_TYP.EXE=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\Config.ini=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\Plantilla.xls=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_CierredeCaja.rpt=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_factura.rpt=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Codigo\rpt_Recibo.rpt=No
+G:\nuevoBackup\nuevoBackup\GestionDeViajes.exe=No
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\GestionDeViajes.exe=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Config.ini=Yes
+D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo\Plantilla.xls=Yes
+
+[Package|Taxi Ezeiza|Distribution]
+Type=single
+Size=
+Title=Sistema de Gestión de Viajes
+
+[Package|Taxi Ezeiza|IconGroups]
+Group0=Sistema de Gestión de Viajes
+PrivateGroup0=False
+Parent0=$(Programs)
+
+[Package|Taxi Ezeiza|Sistema de Gestión de Viajes]
+Icon1=GestionDeViajes.exe
+Title1=Sistema de Gestión de Viajes
+StartIn1=$(AppPath)
+Key1=Icon1
+
+[Package|Taxi Ezeiza|Package]
+PackageFolder=D:\Eulises\misTrabajos\CoopTaxisEzeiza\MIGRACION_SERVER\Dist
+ProjectFolder=D:\Eulises\misTrabajos\CoopTaxisEzeiza\Factory_Produccion\Factory_Desarrollo
+ServerSideCab=
+File1=D:\Eulises\misTrabajos\CoopTaxisEzeiza\MIGRACION_SERVER\Dist\setup.exe
+File2=D:\Eulises\misTrabajos\CoopTaxisEzeiza\MIGRACION_SERVER\Dist\Setup.Lst
+File3=D:\Eulises\misTrabajos\CoopTaxisEzeiza\MIGRACION_SERVER\Dist\GestionDeViajes.CAB
+Handler1=PDWizard.FolderDplySubWiz
+Handler2=PDWizard.WebPostDplySubWiz

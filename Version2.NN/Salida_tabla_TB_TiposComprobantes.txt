@@ -1,0 +1,8 @@
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('FA','FACTURA AUTOMATICA',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('FM','FACTURA MANUAL',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('NCA','NOTA DE CREDITO AUTOMATICA',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('NCM','NOTA DE CREDITO MANUAL',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('NDA','NOTA DE DEBITO AUTOMATICA',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('NDM','NOTA DE DEBITO MANUAL',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('RA','RECIBO AUTOMATICO',True,True);
+INSERT INTO TB_tiposComprobantes (tpComprobante,dsTipoComprobante,flActivo,flVisible)  VALUES ('RM','RECIBO MANUAL',True,True);

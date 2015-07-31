@@ -1,0 +1,8 @@
+Antes de la Bajada de los comprobantes
+
+suma_vlPagoPesos	suma_vlPagoEuros	suma_vlPagoDolares	suma_vlPagoReales	dtcupon_hora_corte
+80647,55	264	3806	1060	15/10/2011 05:59:59
+
+posterior a la bajada
+suma_vlPagoPesos	suma_vlPagoEuros	suma_vlPagoDolares	suma_vlPagoReales	dtcupon_hora_corte
+52369,55	191	2839	780	15/10/2011 05:59:59

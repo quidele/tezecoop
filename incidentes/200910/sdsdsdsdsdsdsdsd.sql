@@ -1,0 +1,1 @@
+ Exec SP_obtenerImputacion_v2_9 @nrCaja_param = 3000000032 ,@AsientoModelo_param = 'REGISTRACION_CAJA_PUESTO' 

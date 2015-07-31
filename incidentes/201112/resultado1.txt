@@ -1,0 +1,26 @@
+cdConcepto  dsConcepto                                                                                           moneda vlImporte              tpOperacion                                        tpCajaImputacion
+----------- ---------------------------------------------------------------------------------------------------- ------ ---------------------- -------------------------------------------------- --------------------------------------------------
+2000        Ingreso de dinero caja de los puestos (Contado)                                                      PES    2470                   Entrada de Dinero                                  Caja de los Licenciatarios
+2004        Ingreso Retención IVA (Contado)                                                                      PES    366,2                  Entrada de Dinero                                  Caja de la Cooperativa
+2008        Egreso Retención IVA (Contado)                                                                       PES    366,2                  Salida de Dinero                                   Caja de los Licenciatarios
+2013        Ingreso de dinero de Caja cooperativa (CC)                                                           PES    180                    Entrada de Dinero                                  Caja de los Licenciatarios
+2021        Egreso de dinero a Caja Lic. pago (CC)                                                               PES    180                    Salida de Dinero                                   Caja de la Cooperativa
+2019        Ingreso de dinero por comisiones(Contado)                                                            PES    70                     Entrada de Dinero                                  Caja de la Cooperativa
+2007        Egreso de dinero por comisiones (Contado)                                                            PES    70                     Salida de Dinero                                   Caja de los Licenciatarios
+2000        Ingreso de dinero caja de los puestos (Contado)                                                      USD    43                     Entrada de Dinero                                  Caja de los Licenciatarios
+2000        Ingreso de dinero caja de los puestos (Contado)                                                      EUR    32                     Entrada de Dinero                                  Caja de los Licenciatarios
+2014        Ingreso de dinero por comisiones(CD)                                                                 PES    14                     Entrada de Dinero                                  Caja de la Cooperativa
+2017        Egreso de dinero por comisiones (CD)                                                                 PES    14                     Salida de Dinero                                   Caja de los Licenciatarios
+2018        Egreso de dinero por comisiones (CC)                                                                 PES    14                     Salida de Dinero                                   Caja de los Licenciatarios
+2015        Ingreso de dinero por comisiones(CC)                                                                 PES    14                     Entrada de Dinero                                  Caja de la Cooperativa
+2010        Ingreso de dinero por comisiones (Retorno)                                                           PES    7                      Entrada de Dinero                                  Caja de la Cooperativa
+2016        Egreso de dinero por comisiones (Retorno)                                                            PES    7                      Salida de Dinero                                   Caja de los Licenciatarios
+
+(15 row(s) affected)
+
+cdConcepto  dsConcepto                                                                                           moneda vlImporte              tpOperacion                                        tpCajaImputacion
+----------- ---------------------------------------------------------------------------------------------------- ------ ---------------------- -------------------------------------------------- --------------------------------------------------
+2012        Ingreso de dinero caja de los puestos (CD)                                                           PES    180                    Entrada de Dinero                                  Caja de los Licenciatarios
+2011        Ingreso de dinero caja de los puestos (Retorno)                                                      PES    150                    Entrada de Dinero                                  Caja de los Licenciatarios
+
+(2 row(s) affected)

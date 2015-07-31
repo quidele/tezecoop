@@ -1,0 +1,1 @@
+if {TB_Comprobantes_Imprime.tpIVA}="RI" then "A Responsable Inscripto" else if   {TB_Comprobantes_Imprime.tpIVA}="CF" then  "A Consumidor Final"  else  if {TB_Comprobantes_Imprime.tpIVA}="NR" then "A No Responsable" else   if {TB_Comprobantes_Imprime.tpIVA}="EX" then "A Excento"  else   if {TB_Comprobantes_Imprime.tpIVA}="EX" then "A Monotributista"  else "A Otro"

@@ -1,0 +1,94 @@
+
+
+/* define variable global_userid as character.*/
+
+for each ad_mstr  /* where ad_addr > "B2265" */ :
+   display   ad_mstr with 1 col. 
+   /* update  ad_mstr. */ 
+end.
+
+/* B2265 */ 
+
+/* select  *   from PUB.ad_mstr where ad_addr like 'P%' */ 
+
+
+campo reparado en su contenido 
+	ad__qad05 de la tabla ad_mstr 
+
+
+
+
+---------------------------
+ODBC SDK 2.0 C++ Demo
+---------------------------
+SQL State: S1000
+Native: -210012
+Message: [MERANT][ODBC PROGRESS driver][PROGRESS]Column zpart__chr02 in table PUB.zpart_mstr has value exceeding its max length or precision.
+
+---------------------------
+Aceptar   
+---------------------------
+
+select * from   PUB.zlote_mstr 
+
+-- Grabando la tabla de prueba 
+
+insert  into PUB.zlote_mstr ( zlote_lote,	zlote_prod,	zlote_prov)
+values('02-EULI',1,'01-PROVE')
+
+
+update  PUB.zlote_mstr 
+set zlote_prov = 'ZZ-PROVE'
+
+delete  from PUB.zlote_mstr where  zlote_lote ='03-EULI'
+
+
+update    PUB.zlote_mstr 
+set zlote_fecha = '12/28/09'
+
+select   ad_name, ad_sort from PUB.ad_mstr  where  ad_sort =''
+
+' Actualizando los registros en blanco de ad_sort 
+
+update  PUB.ad_mstr  set ad_sort = ad_name  where  ad_sort =''
+
+
+select ad_addr , ad_sort, ad_date, ad_mod_date from PUB.ad_mstr where ad_mod_date is null
+
+
+-- actualizando la tabla de proveedores, campo de fecha de Modificacion
+update   PUB.ad_mstr set ad_mod_date= '07/20/09'  where ad_mod_date is null
+
+
+-- filtro para proveedores tabla ad_mstr
+select  ad_addr , ad_sort, ad_mod_date   from PUB.ad_mstr where ad_mod_date > '07/20/01'  
+
+
+-- actualizando la tabla de Prodcutos
+update PUB.pt_mstr set pt_mod_date = '07/20/09' where pt_mod_date is null
+
+-- seleccionando la tabla del Productos
+select  pt_part, pt_desc1  from PUB.pt_mstr  where pt_mod_date  > '07/20/01'  
+
+
+
+
+
+---- obteniendo el maestro de lotes y la tabla de relaciones 
+select b.* from PUB.zcue_mstr a, PUB.zrel_det  b where a.zcue_lote = b.zrel_lote
+
+---- obteniendo el maestro de lotes y la tabla de relaciones 
+select b.* from PUB.zcue_mstr a, PUB.zrel_det  b where a.zcue_lote = b.zrel_lote_dest
+
+
+--Obteniendo las recepciones
+select zrecu_rec, zrecu_prov1 , zrecu_rto1,  zrecu_prov2 , zrecu_rto2  
+from PUB.zrecu_hist
+
+--Obteniendo las recepciones, campos agregados
+select zrecu_rec,zrecu_prov1,zrecu_rto1,zrecu_prov2,zrecu_rto2,zrecu_orden,zrecu_part,zrecu_fecha,zrecu_hora,zrecu_siter,zrecu_lp,zrecu_ld,zrecu_trans,zrecu_rstrans,zrecu_guia,zrecu_certsan,zrecu_pat, zrecu_balpub  ,zrecu_kgbrpb,  zrecu_tarapb, zrecu_kgnepb, zrecu_kgnrto, zrecu_cantr, zrecu_estado, zrecu_liqu, zrecu_liqdte, zrecu_merma1, zrecu_merma2, zrecu_merma3 from  PUB.zrecu_hist
+
+HKEY_CURRENT_USER\Software\VB and VBA Program Settings\fonseca\Opciones_MFG_BD_EBCUEROS
+
+PUB.z
+

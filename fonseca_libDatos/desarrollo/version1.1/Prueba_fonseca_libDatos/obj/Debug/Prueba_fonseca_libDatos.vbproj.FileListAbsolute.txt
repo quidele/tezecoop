@@ -1,0 +1,13 @@
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\Prueba_fonseca_libDatos.exe
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\Prueba_fonseca_libDatos.pdb
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\Prueba_fonseca_libDatos.xml
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\fonseca_libDatos.dll
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\fonseca_libDatos.pdb
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\bin\Debug\fonseca_libDatos.xml
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\ResolveAssemblyReference.cache
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.frmPrueba_libDatos.resources
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.Resources.resources
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.vbproj.GenerateResource.Cache
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.exe
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.xml
+C:\Fonseca\fonseca_lib\dotnet\fonseca_libDatos\desarrollo\version1.1\Prueba_fonseca_libDatos\obj\Debug\Prueba_fonseca_libDatos.pdb
