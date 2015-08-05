@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MsComCtl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ABMConceptos 
    Caption         =   "Maestro de Conceptos"
    ClientHeight    =   7185
@@ -16,15 +16,15 @@ Begin VB.Form Frm_ABMConceptos
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   4
       Top             =   0
       Width           =   9915
       _ExtentX        =   17489
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgABMConceptos"
@@ -409,7 +409,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Pertenece a:"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -429,7 +429,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Creado por"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -448,7 +448,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Tipo de Operación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -467,7 +467,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Tipo de Concepto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -486,7 +486,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Cod. de Concepto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -506,7 +506,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Valor Concepto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -525,7 +525,7 @@ Begin VB.Form Frm_ABMConceptos
             Caption         =   "Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -692,7 +692,7 @@ Begin VB.Form Frm_ABMConceptos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
