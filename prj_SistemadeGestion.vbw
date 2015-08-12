@@ -92,5 +92,5 @@ Frm_ResumenMovimientosContablesCajaLicenciatarios = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Frm_Recaudaciones = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Frm_ABMClientes = 0, 0, 0, 0, C, 0, 0, 0, 0, C
 Frm_ABMProveedores = 0, 0, 0, 0, C, 0, 0, 0, 0, C
-Frm_ABMAuditorias = 0, 0, 0, 0, C, 0, 0, 0, 0, C
+Frm_ABMAuditorias = 0, 0, 0, 0, C, 25, 25, 904, 460, C
 frm_CambiosCotizacion = 0, 0, 0, 0, C, 0, 0, 0, 0, C
