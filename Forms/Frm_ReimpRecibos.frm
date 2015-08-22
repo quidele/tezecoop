@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   105316353
+         Format          =   6488065
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   105316353
+         Format          =   6488065
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -317,15 +317,15 @@ Begin VB.Form Frm_ReimpRecibos
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   630
       Left            =   0
       TabIndex        =   0
       Top             =   0
       Width           =   9885
       _ExtentX        =   17436
-      _ExtentY        =   1164
-      ButtonWidth     =   2196
-      ButtonHeight    =   1111
+      _ExtentY        =   1111
+      ButtonWidth     =   2011
+      ButtonHeight    =   1058
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgReimpRecibosResaltado"
@@ -913,7 +913,7 @@ Dim strSQL                  As String
     End If
     
     If Me.lstBusqueda.SelectedItem.SubItems(2) = "Detalle de Cobro a Cta. Cte." Then
-        MsgBox "No se puede anular un detalle de liquidación  de Cobro a Cta. Cte.", vbInformation + vbDefaultButton1, "Atención"
+        MsgBox "La anulacion de un detalle de liquidación de Cta. Cte. se debe realizar desde: Ventas => Anular Comprobantes.", vbInformation + vbDefaultButton1, "Atención"
         Exit Sub
     End If
     

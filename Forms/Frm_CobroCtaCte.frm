@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar a Cuentas Corrientes"
@@ -164,15 +164,15 @@ Begin VB.Form frm_CobroCtaCte
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   630
       Left            =   0
       TabIndex        =   0
       Top             =   0
       Width           =   10320
       _ExtentX        =   18203
-      _ExtentY        =   1164
-      ButtonWidth     =   2566
-      ButtonHeight    =   1111
+      _ExtentY        =   1111
+      ButtonWidth     =   2328
+      ButtonHeight    =   1058
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgCobroClientes"
@@ -718,6 +718,23 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.dsDetalle", strDetalle
     
     
+    Dim strSQL As String
+    '***********************************************************'
+    ' Modificacion EZE V4.6
+    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=" + objConfig.nrPuesto + ", "
+    strSQL = strSQL + "@tipo_iva = " + objParametros.ObtenerValor("FacturarCtaCte.tpIVA") + ",  "
+    strSQL = strSQL + "@auto_impresor = " + IIf(objConfig.tpImpresion = "CONTINUO", "S", "N") + "; "
+    
+    
+    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+        MsgBox "No se encuentra bien definido el número de talonario" + _
+               vbCrLf + " para el puesto o punto de venta que ingresó al sistema." + vbCrLf + "Error extendido: " + objbasededatos.Error, vbCritical + vbDefaultButton1, "Atención"
+        Exit Sub
+    End If
+    
+    objParametros.GrabarValor "FacturarCtaCte.nrTalonario", objbasededatos.rs_resultados("nrTalonario")
+    objParametros.GrabarValor "FacturarCtaCte.nrComprobante", objbasededatos.rs_resultados("nrComprobante")
+    objParametros.GrabarValor "FacturarCtaCte.tpLetra", Trim(objbasededatos.rs_resultados("tpLetra"))
     
     
     ' REVEER CTA. CTES
@@ -797,7 +814,7 @@ Private Sub imprimirCobroCliente(IdRecibo As String, _
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     If Err Then
-            MsgBox "Error al generar el reporte: " + Err.Description, vbCritical, "Atención"
+            MsgBox "Error al generar el reporte: " + Err.Description + vbCrLf + " Nombre del archivo : " + vbCrLf + Frm_Principal.CrystalReport1.ReportFileName, vbCritical, "Atención"
     End If
     On Error GoTo 0
 

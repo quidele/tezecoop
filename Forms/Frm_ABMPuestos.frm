@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ABMPuestos 
    Caption         =   "Maestro de Puestos"
    ClientHeight    =   7110
@@ -17,15 +17,15 @@ Begin VB.Form Frm_ABMPuestos
    ScaleWidth      =   11265
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   630
       Left            =   0
       TabIndex        =   7
       Top             =   0
       Width           =   11265
       _ExtentX        =   19870
-      _ExtentY        =   1164
-      ButtonWidth     =   2566
-      ButtonHeight    =   1111
+      _ExtentY        =   1111
+      ButtonWidth     =   2328
+      ButtonHeight    =   1058
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgABMPuestosResaltado"
@@ -756,7 +756,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   158466049
+               Format          =   113639425
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -770,7 +770,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   158466049
+               Format          =   113639425
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 

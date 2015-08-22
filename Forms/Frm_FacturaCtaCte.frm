@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_FacturaCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte."
@@ -19,15 +19,15 @@ Begin VB.Form Frm_FacturaCtaCte
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   630
       Left            =   0
       TabIndex        =   5
       Top             =   0
       Width           =   9195
       _ExtentX        =   16219
-      _ExtentY        =   1164
-      ButtonWidth     =   2566
-      ButtonHeight    =   1111
+      _ExtentY        =   1111
+      ButtonWidth     =   2328
+      ButtonHeight    =   1058
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgVentaPasajes"
@@ -1386,28 +1386,21 @@ Dim strValor   As String
 
 
     objParametros.GrabarValor "Facturar", "NO"
+    
+    
     EstadoABM = facturar
     
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
     limpiarControles
     SelecionarItemCombo
     
-    '***********************************************************'
-    ' Modificacion EZE II
-    strSQL = "sco_Puestos_v4_1 @nrPuesto_param=" + objConfig.nrPuesto
-    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
-        MsgBox "No se encuentra definido el número de talonario" + _
-               vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
-        End
-    End If
     
-    strValor = Trim(objbasededatos.rs_resultados("nrTalonario_auto_ctacte"))
+    
+    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrTalonario")
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objConfig.nrPuesto, strValor
-    
-    strValor = Trim(objbasededatos.rs_resultados("nrComprobante_auto_ctacte_ult"))
+    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrComprobante")
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objConfig.nrPuesto, strValor
-
-    ObtenerCampo("tpComprobante").Text = Trim(objbasededatos.rs_resultados("tpLetraRecibo_manual"))
+    ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
     
     
     '***********************************************************
@@ -2789,6 +2782,7 @@ Dim cdCodBarLic         As String
             DoEvents
             Sleep (500)
             Frm_Principal.CrystalReport1.Action = 1
+            objParametros.GrabarValor "Frm_FacturaCtaCte.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
          End If
     On Error GoTo 0
     
@@ -2823,6 +2817,7 @@ Dim cdCodBarLic         As String
            DoEvents
             Sleep (500)
             Frm_Principal.CrystalReport1.Action = 1
+            objParametros.GrabarValor "Frm_FacturaCtaCte.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
          End If
     On Error GoTo 0
     
