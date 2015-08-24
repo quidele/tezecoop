@@ -111,7 +111,9 @@ declare 	@flFacturaCtacte	as		bit
 				@nrComprobante_auto_ctacte_ult as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
 				null	as nrCAI,
-				null    as dtCai	
+				null    as dtCai,
+				@flFacturaCtacte	as flFacturaCtacte
+				return;	
 		end
 		
 		if @tipo_iva = 'CF' 
@@ -120,7 +122,8 @@ declare 	@flFacturaCtacte	as		bit
 					@nrComprobante_automatico_ult as nrComprobante,
 					@tpLetra				    as tpLetra,
 					@nrCAI_Talonario_auto	as nrCAI,
-					@dtCAI_Talonario_auto   as dtCai
+					@dtCAI_Talonario_auto   as dtCai,
+					@flFacturaCtacte	as flFacturaCtacte
 			return;					
 		end 
 						
@@ -130,7 +133,8 @@ declare 	@flFacturaCtacte	as		bit
 					@nrComprobante_auto_empresa_ult as nrComprobante,
 					@tpLetraEmpresa				    as tpLetra,
 					@nrCAI_Talonario_auto_empresa	as nrCAI,
-					@dtCAI_Talonario_auto_empresa   as dtCai
+					@dtCAI_Talonario_auto_empresa   as dtCai,
+					@flFacturaCtacte	as flFacturaCtacte
 			return;
 		end
 		
@@ -139,8 +143,8 @@ declare 	@flFacturaCtacte	as		bit
 				@nrComprobante_auto_ctacte_ult as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
 				null	as nrCAI,
-				null    as dtCai
-		
+				null    as dtCai,
+				@flFacturaCtacte	as flFacturaCtacte
 		return;
 	end
 
@@ -152,7 +156,10 @@ declare 	@flFacturaCtacte	as		bit
 			@nrComprobante_auto_ctacte_ult as nrComprobante,
 			@tpLetraRecibo				    as tpLetra,
 			null	as nrCAI,
-			null    as dtCai	
+			null    as dtCai,	
+			@flFacturaCtacte	as flFacturaCtacte
+			
+			return;	
 	end
 		
 	--- Si no es autoimpesor
@@ -162,7 +169,8 @@ declare 	@flFacturaCtacte	as		bit
 				@nrComprobante_manual_ctacte_ult as nrComprobante,
 				@tpLetraRecibo_manual		    as tpLetra,
 				null	as nrCAI,
-				null    as dtCai
+				null    as dtCai,
+				@flFacturaCtacte	as flFacturaCtacte
 		return;					
 	end 
 					
@@ -172,7 +180,8 @@ declare 	@flFacturaCtacte	as		bit
 				@nrComprobante_manual_empresa_ult as nrComprobante,
 				@tpLetraEmpresa_manual				    as tpLetra,
 				null	as nrCAI,
-				null   as dtCai
+				null   as dtCai,
+				@flFacturaCtacte	as flFacturaCtacte
 		return;
 	end
 	
@@ -181,8 +190,8 @@ declare 	@flFacturaCtacte	as		bit
 			@nrComprobante_manual_ctacte_ult as nrComprobante,
 			@tpLetraRecibo_manual		    as tpLetra,
 			null	as nrCAI,
-			null    as dtCai
-	
+			null    as dtCai,
+			@flFacturaCtacte	as flFacturaCtacte
 	
 end;
 

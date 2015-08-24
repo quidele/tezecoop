@@ -1019,7 +1019,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   95682561
+         Format          =   103022593
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3120,7 +3120,8 @@ Dim strValor    As String
     strValor = Trim(objbasededatos.rs_resultados_valor("dtCAI"))
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
 
-
+    flFacturaCtacte = objbasededatos.rs_resultados_valor("flFacturaCtacte")
+    
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion", "administracion.cajapuesto"
         If objParametros.ObtenerValor("Frm_VentaPasajes.numeracion_correlativa") = "NO" Then
