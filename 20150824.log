@@ -1,0 +1,107 @@
+24/08/2015 15:09:52 | Exec  sco_TB_Productos_v4_1 
+24/08/2015 15:09:53 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+24/08/2015 15:09:56 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+24/08/2015 15:10:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+24/08/2015 15:10:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+24/08/2015 15:10:03 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+24/08/2015 15:10:04 | Exec sp_obtenerCajasRechazadas_v2_9 
+24/08/2015 15:10:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+24/08/2015 15:10:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/08/2015 15:10:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/08/2015 15:10:05 | Exec SP_ValorPromoRetorno
+24/08/2015 15:10:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+24/08/2015 15:10:05 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/08/2015 15:10:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/08/2015 15:10:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+24/08/2015 15:10:05 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+24/08/2015 15:10:07 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_FondoFijoCajaAnterior_v3_7'
+24/08/2015 15:10:07 | Exec sco_FondoFijoCajaAnterior_v3_7 @nrPuesto = 1 
+24/08/2015 15:10:09 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_ObtenerMaxnrCaja_v2_8'
+24/08/2015 15:10:09 | Exec SP_ObtenerMaxnrCaja_v2_8 @nrPuesto = 1 
+24/08/2015 15:10:09 |  INSERT TB_Cajas (nrCaja ,vlFondoFijoEuros ,nrPuesto ,dsUsuario ,vlFondoFijoReales ,dtApertura ,dtCierre ,vlDiaDolar ,vlDiaEuro ,vlSaldoInicialPesos ,vlSaldoInicialReales ,vlSaldoInicialEuros ,vlFondoFijoPesos ,dsDiferenciaDeCierre ,vlDiaReal ,vlFondoFijoDolares ,vlSaldoInicialDolares ,vlSaldoFinalDolares ,vlCierreDolares ,vlSaldoFinalRealDolares ,vlDiferenciaDeCierre ,dtObservacion ,dsObservacion ,vlSaldoFinalPesos ,vlSaldoFinalReales ,vlSaldoFinalEuros ,vlTotalSaldoFinal ,vlSaldoFinalRealPesos ,vlSaldoFinalRealReales ,vlSaldoFinalRealEuros ,vlTotalSaldoFinalReal ,vlCierrePesos ,vlCierreReales ,vlCierreEuros ,vlTotalSaldoCierre ,flSincronizado ,hrApertura )  VALUES (1000010086 ,null ,1 ,'BFAZZALARI' ,null ,'24/08/2015 15:10:07' ,null ,9.10 ,10 ,1000.00 ,0.00 ,50.00 ,null ,null ,3.21 ,null ,100.00 ,100.00 ,-100.00 ,null ,0.00 ,null ,null ,1000.00 ,0.00 ,50.00 ,0.00 ,null ,null ,null ,0.00 ,-1000.00 ,0.00 ,-50.00 ,0 ,0 ,'15:10' )
+24/08/2015 15:10:09 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+24/08/2015 15:10:09 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '1000010086'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cajas'  AND  DiccionariodeDatos.nmCampo = 'nrCaja'  
+24/08/2015 15:10:10 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+24/08/2015 15:10:10 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+24/08/2015 15:10:10 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+24/08/2015 15:11:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+24/08/2015 15:11:01 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010086 
+24/08/2015 15:11:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+24/08/2015 15:11:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_1'
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Puestos_v4_1'
+24/08/2015 15:11:01 | Exec sco_Puestos_v4_1 @nrPuesto_param = 1 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sco_Puestos_v4_1 @nrPuesto_param = 1 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sco_Puestos_v4_1 @nrPuesto_param = 1 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sco_Puestos_v4_1 @nrPuesto_param = 1 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+24/08/2015 15:11:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Clientes'
+24/08/2015 15:11:08 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.nmApellido ,TB_Clientes.nmNombre ,TB_Clientes.dsDomicilio ,TB_Clientes.nrDoc ,TB_Clientes.nmLocalidad ,TB_Clientes.dsEmail ,TB_Clientes.nrTel ,TB_Clientes.cdPostal ,TB_Clientes.tpIVA ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.flEliminar = 0  AND  TB_Clientes.cdCliente = 4013  AND ( TB_Clientes.dtBaja > '24-08-2015'  OR  TB_Clientes.dtBaja IS NULL  )  
+24/08/2015 15:11:08 | Exec sco_Puestos_v4_1 @nrPuesto_param = 1 
+24/08/2015 15:11:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:11:08 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 15:37:18 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+24/08/2015 17:06:22 | Exec  sco_TB_Productos_v4_1 
+24/08/2015 17:06:23 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+24/08/2015 17:06:26 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+24/08/2015 17:06:26 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+24/08/2015 17:06:26 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+24/08/2015 17:06:28 | Exec sp_obtenerCajasRechazadas_v2_9 
+24/08/2015 17:06:28 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+24/08/2015 17:06:28 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/08/2015 17:06:28 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/08/2015 17:06:28 | Exec SP_ValorPromoRetorno
+24/08/2015 17:06:28 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+24/08/2015 17:06:28 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/08/2015 17:06:28 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/08/2015 17:06:28 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+24/08/2015 17:06:28 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+24/08/2015 17:06:30 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+24/08/2015 17:06:30 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+24/08/2015 17:06:30 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+24/08/2015 17:06:31 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+24/08/2015 17:06:31 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010086 
+24/08/2015 17:06:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+24/08/2015 17:06:31 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_1'
+24/08/2015 17:06:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/08/2015 17:06:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/08/2015 17:06:31 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:06:42 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v1_0'
+24/08/2015 17:06:53 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v1_0'
+24/08/2015 17:06:54 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v1_0'
+24/08/2015 17:06:54 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v1_0'
+24/08/2015 17:13:37 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v1_0'
+24/08/2015 17:13:41 | Exec spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null 
+24/08/2015 17:13:42 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:42 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:50 | Exec spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null 
+24/08/2015 17:13:50 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:52 | Exec spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null 
+24/08/2015 17:13:52 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:52 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:52 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:52 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:13:52 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+24/08/2015 17:14:03 | Exec spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param = 1 ,@tipo_iva = 'RI' ,@auto_impresor = 'S' ,@tpFormadePago = null 
+24/08/2015 17:14:03 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:03 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:10 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Clientes'
+24/08/2015 17:14:10 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.nmApellido ,TB_Clientes.nmNombre ,TB_Clientes.dsDomicilio ,TB_Clientes.nrDoc ,TB_Clientes.nmLocalidad ,TB_Clientes.dsEmail ,TB_Clientes.nrTel ,TB_Clientes.cdPostal ,TB_Clientes.tpIVA ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.flEliminar = 0  AND  TB_Clientes.cdCliente = 4013  AND ( TB_Clientes.dtBaja > '24-08-2015'  OR  TB_Clientes.dtBaja IS NULL  )  
+24/08/2015 17:14:14 | Exec spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = 'Cuenta Corriente' 
+24/08/2015 17:14:14 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:14 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:14 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:14 | Exec sp_obtenerComision_v4_1 @vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/08/2015 17:14:23 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 

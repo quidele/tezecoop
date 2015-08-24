@@ -5,6 +5,14 @@ go
 
 
 
+delete from diccionariodedatos  where  nmTabla =  'spu_obtener_puntosdeventa_facturacion_v1_0'
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtener_puntosdeventa_facturacion_v1_0','@nrPuesto_param','@nrPuesto_param','INTEGER','3',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtener_puntosdeventa_facturacion_v1_0','@tipo_iva','@tipo_iva','VARCHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtener_puntosdeventa_facturacion_v1_0','@auto_impresor','@auto_impresor','CHAR','1',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtener_puntosdeventa_facturacion_v1_0','@tpFormadePago','@tpFormadePago','CHAR','20',null,null,null,null,null,null,null,null,null,null,null,null);
+
+
 
 
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtener_puntosdeventa_facturacion_v1_0' )
@@ -21,8 +29,9 @@ go
 --  Exec dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S
 create procedure dbo.spu_obtener_puntosdeventa_facturacion_v1_0
 @nrPuesto_param    int=null,
-@tipo_iva		   char(10)='RI',
-@auto_impresor     char(1)='S'
+@tipo_iva		   char(10)='CF',
+@auto_impresor     char(1)='S',
+@tpFormadePago	   varchar(20)=null
 as
 begin
 declare 	@nrPuesto 	as		smallint			
@@ -96,6 +105,15 @@ declare 	@flFacturaCtacte	as		bit
 	if @auto_impresor ='S' 
 	begin
 	
+		if @tpFormadePago='Cuenta Corriente' 
+		begin
+			select  @nrTalonario_auto_ctacte       as nrTalonario,
+				@nrComprobante_auto_ctacte_ult as nrComprobante,
+				@tpLetraRecibo				    as tpLetra,
+				null	as nrCAI,
+				null    as dtCai	
+		end
+		
 		if @tipo_iva = 'CF' 
 		begin
 			select  @nrTalonario_automatico       as nrTalonario,
@@ -127,12 +145,22 @@ declare 	@flFacturaCtacte	as		bit
 	end
 
 
+
+	if @tpFormadePago='Cuenta Corriente' 
+	begin
+		select  @nrTalonario_auto_ctacte       as nrTalonario,
+			@nrComprobante_auto_ctacte_ult as nrComprobante,
+			@tpLetraRecibo				    as tpLetra,
+			null	as nrCAI,
+			null    as dtCai	
+	end
+		
 	--- Si no es autoimpesor
 	if @tipo_iva = 'CF' 
 	begin
-		select  @nrTalonario_manual       as nrTalonario,
-				@nrComprobante_manual_ult as nrComprobante,
-				@tpLetra_manual			 as tpLetra,
+		select  @nrTalonario_manual_ctacte       as nrTalonario,
+				@nrComprobante_manual_ctacte_ult as nrComprobante,
+				@tpLetraRecibo_manual		    as tpLetra,
 				null	as nrCAI,
 				null    as dtCai
 		return;					

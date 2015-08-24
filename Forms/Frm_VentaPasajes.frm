@@ -1019,7 +1019,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   106561537
+         Format          =   95682561
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3078,39 +3078,15 @@ Dim strSQL_Params As String
     limpiarControles
     SelecionarItemCombo
     
-    
-    '***********************************************************
-    ' Modificacion EZE II
-    objSPs.nmStoredProcedure = "sco_Puestos_v4_1"
-    objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
-    
-    If Not objSPs.ExecSP Then
-        MsgBox "No se encuentra definido el número de talonario" + _
-               vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
-        End
-    End If
-    
-    '/*INICIO agregado en la version 4.1 */
-    If IsNull(objbasededatos.rs_resultados("flFacturaCtacte")) Then
-        flFacturaCtacte = False
-    Else
-        flFacturaCtacte = objbasededatos.rs_resultados("flFacturaCtacte")
-    End If
-    '/*FIN agregado en la version 4.1 */
-    
-    
-    strValor = Trim(objbasededatos.rs_resultados("nrTalonario_automatico"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-    
-    strValor = Trim(objbasededatos.rs_resultados("nrComprobante_automatico_ult"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-
-    ObtenerCampo("tpComprobante").Text = objbasededatos.rs_resultados("tpLetra")
-    '***********************************************************
 
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
 
 End Sub
+
+
+
+
+
 
 Private Sub obtener_num_Proxima_Factura()
 Dim strSQL      As String
@@ -3118,8 +3094,11 @@ Dim strValor    As String
 
     '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "sco_Puestos_v4_1"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v1_0"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
+    objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
+    objSPs.setearCampoValor "@auto_impresor", IIf(objConfig.tpImpresion = "CONTINUO", "S", "N")
+    objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
 
     If Not objSPs.ExecSP Then
         MsgBox "No se encuentra definido el número de talonario" + _
@@ -3127,63 +3106,21 @@ Dim strValor    As String
         End
     End If
     
-    Select Case ObtenerCampo("tpIVA")
-    Case "RI" ' facturación Empresas Responsables inscriptas
-        If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "automatica" Then
-            strValor = Trim(objbasededatos.rs_resultados("nrTalonario_auto_empresa"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("nrComprobante_auto_empresa_ult"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("tpLetraEmpresa"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            ' agregado en la version 1.8  - autoimpresion Empresas RI
-            strValor = Trim(objbasededatos.rs_resultados_valor("nrCAI_Talonario_auto_empresa"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados_valor("dtCAI_Talonario_auto"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-        Else
-            ' Facturacion manual
-            strValor = Trim(objbasededatos.rs_resultados("nrTalonario_manual_empresa"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("nrComprobante_manual_empresa_ult"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("tpLetraEmpresa"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = ""
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = ""
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-        End If
-    Case Else
-        If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "automatica" Then
-            ' Facturacion para Consumidores finales
-            strValor = Trim(objbasededatos.rs_resultados("nrTalonario_automatico"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("nrComprobante_automatico_ult"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("tpLetra"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            ' agregado en la version 1.8 - autoimpresion CF
-            strValor = Trim(objbasededatos.rs_resultados_valor("nrCAI_Talonario_auto"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados_valor("dtCAI_Talonario_auto"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+       
+    strValor = Trim(objbasededatos.rs_resultados("nrTalonario"))
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    strValor = Trim(objbasededatos.rs_resultados("nrComprobante"))
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    strValor = Trim(objbasededatos.rs_resultados("tpLetra"))
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    ' agregado en la version 1.8  - autoimpresion Empresas RI
+    strValor = Trim(objbasededatos.rs_resultados_valor("nrCAI"))
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    strValor = Trim(objbasededatos.rs_resultados_valor("dtCAI"))
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
 
-        Else
-           ' Facturacion para Consumidores finales - Facturacion manual
-            strValor = Trim(objbasededatos.rs_resultados("nrTalonario_manual"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("nrComprobante_manual_ult"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            strValor = Trim(objbasededatos.rs_resultados("tpLetra"))
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-            objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-        End If
-    End Select
-    
+
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion", "administracion.cajapuesto"
         If objParametros.ObtenerValor("Frm_VentaPasajes.numeracion_correlativa") = "NO" Then
