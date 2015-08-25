@@ -641,7 +641,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   5175
          TabIndex        =   42
          ToolTipText     =   "Imprimir la Factura"
-         Top             =   6975
+         Top             =   6960
          Width           =   3960
       End
       Begin VB.TextBox txtFields 
@@ -1019,7 +1019,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   103022593
+         Format          =   95223809
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3372,12 +3372,13 @@ Private Function validarEntradadedatos() As Boolean
         End If
     End If
     
-    
+
     If ObtenerCampo("nrTalonario") = "0000" Then
         MsgBox "El talonario ingresado no es válido, por favor comuníquese con el administrador del sistema.", vbCritical, "Atención"
         AvisarError "nrTalonario", True
         validarEntradadedatos = False
     End If
+
     
     If ObtenerCampo("nrComprobante") = "" Or ObtenerCampo("nrComprobante") = "00000000" Or (Not IsNumeric(ObtenerCampo("nrComprobante"))) Then
         MsgBox "El número de comprobnate ingresado no es válido.", vbCritical, "Atención"
@@ -3391,19 +3392,20 @@ Private Function validarEntradadedatos() As Boolean
     ' validación incluida en la versión 1.8
     ' validación de talonarios automáticos
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "automatica" Then
-        
-        If Not objAFIP.verificarCAI(objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))) Then
-            MsgBox "El número de CAI del talonario no es válido, no se puede realizar la factura, comuníquese con el administrador del sistema.", vbCritical, "Atención"
-            validarEntradadedatos = False
-            Exit Function
-        End If
-        
-        
-        
-        If Not objAFIP.verificarVencimientoCAI(objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))) Then
-            MsgBox "El número de CAI del talonario ha vencido, no se puede realizar la factura, comuníquese con el administrador del sistema.", vbCritical, "Atención"
-            validarEntradadedatos = False
-            Exit Function
+        '/* agregado en la version 4.6 */
+        If ObtenerCampo("tpComprobante").Text <> "X" Then
+            If Not objAFIP.verificarCAI(objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))) Then
+                MsgBox "El número de CAI del talonario no es válido, no se puede realizar la factura, comuníquese con el administrador del sistema.", vbCritical, "Atención"
+                validarEntradadedatos = False
+                Exit Function
+            End If
+            
+            '/* agregado en la version 4.6 */
+            If Not objAFIP.verificarVencimientoCAI(objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "dtVencimiento", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))) Then
+                MsgBox "El número de CAI del talonario ha vencido, no se puede realizar la factura, comuníquese con el administrador del sistema.", vbCritical, "Atención"
+                validarEntradadedatos = False
+                Exit Function
+            End If
         End If
         
     End If
