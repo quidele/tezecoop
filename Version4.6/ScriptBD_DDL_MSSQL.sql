@@ -116,7 +116,7 @@ declare 	@flFacturaCtacte	as		bit
 				return;	
 		end
 		
-		if @tipo_iva = 'CF' 
+		if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 		begin
 			select  @nrTalonario_automatico       as nrTalonario,
 					@nrComprobante_automatico_ult as nrComprobante,
@@ -163,7 +163,7 @@ declare 	@flFacturaCtacte	as		bit
 	end
 		
 	--- Si no es autoimpesor
-	if @tipo_iva = 'CF' 
+	if @tipo_iva = 'CF'  or  @tipo_iva = 'EX'
 	begin
 		select  @nrTalonario_manual_ctacte       as nrTalonario,
 				@nrComprobante_manual_ctacte_ult as nrComprobante,

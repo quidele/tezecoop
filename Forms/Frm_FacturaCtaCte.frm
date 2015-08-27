@@ -957,6 +957,7 @@ Option Explicit
  
 Dim EstadoABM         As Byte
 Dim objControl        As New CControl
+Dim vlparametro_PUESTO_FACTURACION_CTA_CTE As String
 
 
 Private Function limpiarControles()
@@ -1187,7 +1188,7 @@ Dim resp   As Integer
            '**********************************************************
            '-- modificado para la versión 1.4
            ObjTablasIO.nmTabla = "TB_Puestos"
-           ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objConfig.nrPuesto
+           ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", vlparametro_PUESTO_FACTURACION_CTA_CTE
            
            Select Case ObtenerCampo("tpComprobante")
            Case "A" ' RI
@@ -1219,7 +1220,7 @@ Dim resp   As Integer
            On Error GoTo 0
            ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpComprobante")
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "SI"
-           Sleep (6000)
+           Sleep (8000)
            Unload Me
     Else
          objbasededatos.RollBackTrans
@@ -1252,9 +1253,9 @@ Dim strValor  As String
     Case "cdCondVenta"
        Select Case ObtenerCampo("cdCondVenta").Text
        Case "Retorno", "Tarjeta de Débito", "Tarjeta de Crédito"
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
             ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
             ObtenerCampo("tpComprobante") = "C"
@@ -1262,20 +1263,20 @@ Dim strValor  As String
             ObtenerCampo("tpComprobante") = "X"
             ObtenerCampo("tpComision").Text = "A Clientes"
             ObtenerCampo("tpComision").Locked = False
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Recibos", "IdRecibo", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Recibos", "IdRecibo", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
             ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
        Case "Cobro en Destino"
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
             ObtenerCampo("tpComprobante") = "C"
             ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
         Case Else
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
             ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
             ObtenerCampo("tpComprobante") = "C"
@@ -1384,6 +1385,9 @@ Private Sub Form_Load()
 Dim strSQL     As String
 Dim strValor   As String
 
+    
+    ' Eulises: obtener parametro PUESTO_FACTURACION_CTA_CTE
+    vlparametro_PUESTO_FACTURACION_CTA_CTE = objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE")
 
     objParametros.GrabarValor "Facturar", "NO"
     
@@ -1393,13 +1397,13 @@ Dim strValor   As String
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
     limpiarControles
     SelecionarItemCombo
-    
+
     
     
     strValor = objParametros.ObtenerValor("FacturarCtaCte.nrTalonario")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     strValor = objParametros.ObtenerValor("FacturarCtaCte.nrComprobante")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
     
     
@@ -1407,9 +1411,9 @@ Dim strValor   As String
     ' Agregado en la version 1.8  - autoimpresion Empresas RI
     ' hasta que se habiliten la facturacion en la adm se setean el null
     strValor = "" ' Trim(objbasededatos.rs_resultados("nrCAI_Talonario_auto_empresa"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     strValor = "" 'Trim(objbasededatos.rs_resultados("dtCAI_Talonario_auto"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     '***********************************************************
 
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
@@ -1425,7 +1429,7 @@ Dim strValor    As String
 
     '***********************************************************
     ' Modificacion EZE II
-    strSQL = "sco_Puestos_v4_1 @nrPuesto_param=" + objConfig.nrPuesto
+    strSQL = "sco_Puestos_v4_1 @nrPuesto_param=" + vlparametro_PUESTO_FACTURACION_CTA_CTE
     If Not objbasededatos.ExecStoredProcedures(strSQL) Then
         MsgBox "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
@@ -1433,18 +1437,18 @@ Dim strValor    As String
     End If
     
     strValor = Trim(objbasededatos.rs_resultados("nrTalonario_auto_ctacte"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     
     strValor = Trim(objbasededatos.rs_resultados("nrComprobante_auto_ctacte_ult"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objConfig.nrPuesto, strValor
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
 
     ObtenerCampo("tpComprobante").Text = objbasededatos.rs_resultados("tpLetra")
            
    ' Modificación EZE II - VER LOAD DE FORMULARIO
-    strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", objConfig.nrPuesto)
+    strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
    
-    strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objConfig.nrPuesto)
+    strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
 
     '***********************************************************
@@ -1478,9 +1482,9 @@ Dim ItemList    As ListItem
            
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "NO"
            
-           strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", objConfig.nrPuesto)
+           strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
            ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-           strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objConfig.nrPuesto)
+           strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
            ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
            ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
            ObtenerCampo("nrCaja").Text = objParametros.ObtenerValor("nrCaja")
@@ -1587,10 +1591,10 @@ Dim strValor As String
         ObjTablasIO.setearCampoOperadorValor "dsEmail", "<-", ObtenerCampo("dsEmail").Text
       
         If UCase(ObtenerCampo("cdCliente").Text) = UCase("(Nuevo)") Then
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Clientes", "cdCliente", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Clientes", "cdCliente", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObjTablasIO.setearCampoOperadorValor "cdCliente", "<-", strValor
             ObjTablasIO.Insertar
-            objDiccionariodeDatos.GuardarSiguienteValor "TB_Clientes", "cdCliente", objConfig.nrPuesto
+            objDiccionariodeDatos.GuardarSiguienteValor "TB_Clientes", "cdCliente", vlparametro_PUESTO_FACTURACION_CTA_CTE
             ObtenerCampo("cdCliente").Text = strValor
         Else
             ObjTablasIO.setearCampoOperadorValor "cdCliente", _
@@ -1663,7 +1667,7 @@ Dim vlComision    As Single
         ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "<-", ObtenerCampo("tpComprobante").Text
         
         ObjTablasIO.setearCampoOperadorValor "cdCliente", "<-", ObtenerCampo("cdCliente").Text
-        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", objConfig.nrPuesto
+        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", vlparametro_PUESTO_FACTURACION_CTA_CTE
         ObjTablasIO.setearCampoOperadorValor "nrLicencia", "<-", ObtenerCampo("nrLicencia").Text
         ObjTablasIO.setearCampoOperadorValor "nmLicenciatario", "<-", ObtenerCampo("nmLicenciatario").Text
         ObjTablasIO.setearCampoOperadorValor "vlMontoCupon", "<-", ObtenerCampo("vlTotalGeneral").Text
@@ -1715,7 +1719,7 @@ Dim vlComision    As Single
         ObjTablasIO.setearCampoOperadorValor "dsHoraViaje", "<-", CStr(Format(Now, "HH:MM"))
         
         
-        ' strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Cupones", "nrCupon", objConfig.nrPuesto)
+        ' strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Cupones", "nrCupon", vlparametro_PUESTO_FACTURACION_CTA_CTE)
         
         objSPs.nmStoredProcedure = "SP_ObtenerMaxnrCupon_v1_3"
         objSPs.setearCampoValor "@nrPuesto", objParametros.ObtenerValor("nrPuesto")
@@ -1724,14 +1728,14 @@ Dim vlComision    As Single
         End If
         
         strValor = CStr(objbasededatos.rs_resultados("nrMaxCupon").value)
-        objDiccionariodeDatos.GuardarValorCampo "TB_Cupones", "nrCupon", objConfig.nrPuesto, strValor
+        objDiccionariodeDatos.GuardarValorCampo "TB_Cupones", "nrCupon", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
         
         strValor = CStr(CDbl(strValor) + 1)
         ObjTablasIO.setearCampoOperadorValor "nrCupon", "<-", strValor
 
         If ObjTablasIO.Insertar Then
             GrabarTabladeCupones = True
-            objDiccionariodeDatos.GuardarSiguienteValor "TB_Cupones", "nrCupon", objConfig.nrPuesto
+            objDiccionariodeDatos.GuardarSiguienteValor "TB_Cupones", "nrCupon", vlparametro_PUESTO_FACTURACION_CTA_CTE
         Else
             GrabarTabladeCupones = False
         End If
@@ -1804,7 +1808,7 @@ Dim bHayItems As Boolean
             ObjTablasIO.setearCampoOperadorValor "vlPorcentaje", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "vlPrecioPeaje", "<-", Me.lstItemsFactura.ListItems(i).SubItems(4)
             ObjTablasIO.setearCampoOperadorValor "vlPrecioViaje", "<-", Me.lstItemsFactura.ListItems(i).SubItems(5)
-            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Productos", "cdProducto", objConfig.nrPuesto)
+            strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Productos", "cdProducto", vlparametro_PUESTO_FACTURACION_CTA_CTE)
             ObjTablasIO.setearCampoOperadorValor "cdProducto", "<-", strValor
             ObjTablasIO.Insertar
             
@@ -1817,7 +1821,7 @@ Dim bHayItems As Boolean
                 Me.lstItemsFactura.ListItems(i).SubItems(2), _
                 Me.lstItemsFactura.ListItems(i).SubItems(5)
 
-            objDiccionariodeDatos.GuardarSiguienteValor "TB_Productos", "cdProducto", objConfig.nrPuesto
+            objDiccionariodeDatos.GuardarSiguienteValor "TB_Productos", "cdProducto", vlparametro_PUESTO_FACTURACION_CTA_CTE
             Me.lstItemsFactura.ListItems(i).Text = strValor
             
             
@@ -1955,12 +1959,12 @@ Dim strSQL       As String
 
               
     strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "nrCAI", objConfig.nrPuesto)
+    ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObjTablasIO.setearCampoOperadorValor _
     "nrCAI", "<-", strValor
     
     strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "dtVencimiento", objConfig.nrPuesto)
+    ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObjTablasIO.setearCampoOperadorValor _
     "dtVencimiento", "<-", strValor
     
@@ -2002,12 +2006,12 @@ Dim strSQL       As String
                 Guardarregistro = False
             Else
                 If ObtenerCampo("tpComprobante").Text = "X" Then
-                    objDiccionariodeDatos.GuardarSiguienteValor "TB_Recibos", "IdRecibo", objConfig.nrPuesto
+                    objDiccionariodeDatos.GuardarSiguienteValor "TB_Recibos", "IdRecibo", vlparametro_PUESTO_FACTURACION_CTA_CTE
                 Else
                     If ObtenerCampo("tpComprobante").Text = "X" Then
-                        objDiccionariodeDatos.GuardarSiguienteValor "TB_Recibos", "IdRecibo", objConfig.nrPuesto
+                        objDiccionariodeDatos.GuardarSiguienteValor "TB_Recibos", "IdRecibo", vlparametro_PUESTO_FACTURACION_CTA_CTE
                     Else
-                        objDiccionariodeDatos.GuardarSiguienteValor "TB_Comprobantes", "nrComprobante", objConfig.nrPuesto
+                        objDiccionariodeDatos.GuardarSiguienteValor "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE
                     End If
                 End If
                 Guardarregistro = True
@@ -2089,12 +2093,12 @@ Dim strValor     As String
               "dsOpcional1", "<-", CStr(Format(Now, "HH:MM"))
                 
     strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "nrCAI", objConfig.nrPuesto)
+    ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObjTablasIO.setearCampoOperadorValor _
     "nrCAI", "<-", strValor
     
     strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "dtVencimiento", objConfig.nrPuesto)
+    ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     ObjTablasIO.setearCampoOperadorValor _
     "dtVencimiento", "<-", strValor
     
@@ -2142,10 +2146,10 @@ Dim strCodAFIP   As String
     strCodAFIP = strCodAFIP + objAFIP.obtenerTipodeComprobante()
     strCodAFIP = strCodAFIP + CompletarCerosaIzquierda(ObtenerCampo("nrTalonario").Text, 4)
     strCodAFIP = strCodAFIP + objDiccionariodeDatos.ObtenerValorActual _
-                ("TB_Comprobantes", "nrCAI", objConfig.nrPuesto)
+                ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
     
     strCodAFIP = strCodAFIP + Format(objDiccionariodeDatos.ObtenerValorActual _
-                ("TB_Comprobantes", "dtVencimiento", objConfig.nrPuesto), "DDMMYYYY")
+                ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE), "DDMMYYYY")
                 
    ObtenerCodBarrasAFIP = strCodAFIP
 
@@ -2748,7 +2752,7 @@ Dim cdCodBarLic         As String
     End Select
     
     
-    Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter
+    Frm_Principal.CrystalReport1.Destination = crptToWindow  ' crptToPrinter , crptToWindow
     Frm_Principal.CrystalReport1.PrinterStartPage = 1
     Frm_Principal.CrystalReport1.PrinterStopPage = 1
     
@@ -2774,7 +2778,7 @@ Dim cdCodBarLic         As String
 
         
     ' Aparece la venta duplicado
-    On Error Resume Next
+    ' On Error Resume Next
     DoEvents
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
@@ -2784,7 +2788,9 @@ Dim cdCodBarLic         As String
             Frm_Principal.CrystalReport1.Action = 1
             objParametros.GrabarValor "Frm_FacturaCtaCte.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
          End If
-    On Error GoTo 0
+    'On Error GoTo 0
+    
+    Exit Function
     
 '    Siempre Imprimiremos Original y duplicado
 '    If objConfig.tpImpresion = "CONTINUO" Then
