@@ -1,0 +1,58 @@
+27/08/2015 17:09:39 | Exec  sco_TB_Productos_v4_1 
+27/08/2015 17:09:40 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+27/08/2015 17:09:45 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+27/08/2015 17:09:45 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+27/08/2015 17:09:45 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+27/08/2015 17:09:46 | Exec sp_obtenerCajasRechazadas_v2_9 
+27/08/2015 17:09:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+27/08/2015 17:09:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+27/08/2015 17:09:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+27/08/2015 17:09:46 | Exec SP_ValorPromoRetorno
+27/08/2015 17:09:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+27/08/2015 17:09:46 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+27/08/2015 17:09:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+27/08/2015 17:09:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+27/08/2015 17:09:46 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+27/08/2015 17:09:47 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003767  
+27/08/2015 17:09:47 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+27/08/2015 17:09:47 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003767 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+27/08/2015 17:09:47 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 1161922.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 173.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 163.00 ,TB_Cajas.vlCierrePesos  = 185167.1 ,TB_Cajas.vlCierreDolares  = 163 ,TB_Cajas.vlCierreEuros  = 173   WHERE TB_Cajas.nrCaja = 9000003767  
+27/08/2015 17:09:48 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+27/08/2015 17:09:48 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+27/08/2015 17:09:48 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003767  AND  TB_Cajas.flEstado = 0  
+27/08/2015 17:09:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+27/08/2015 17:09:48 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003766 
+27/08/2015 17:09:48 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003767 
+27/08/2015 17:09:48 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+27/08/2015 17:09:48 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003767 
+27/08/2015 17:09:48 | Exec sco_validarVencimientosCAI_v4_1
+27/08/2015 17:09:50 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+27/08/2015 17:09:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+27/08/2015 17:09:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+27/08/2015 17:09:52 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+27/08/2015 17:09:52 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto ,TB_Puestos.dsPuesto ,TB_Puestos.nrTalonario_manual ,TB_Puestos.nrTalonario_manual ,TB_Puestos.nrTalonario_automatico ,TB_Puestos.nrTalonario_automatico ,TB_Puestos.nrComprobante_manual_ult ,TB_Puestos.nrComprobante_manual_ult ,TB_Puestos.nrComprobante_automatico_ult ,TB_Puestos.nrComprobante_automatico_ult ,TB_Puestos.tpletra ,TB_Puestos.tpletra ,TB_Puestos.flFacturaCtacte  FROM TB_Puestos  WHERE  dsPuesto Like ('%%%') AND TB_Puestos.flEliminar = 0   Order by TB_Puestos.dsPuesto ASC 
+27/08/2015 17:09:54 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+27/08/2015 17:10:03 | Exec  sco_TB_Productos_v4_1 
+27/08/2015 17:10:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+27/08/2015 17:10:06 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('s%') AND TB_Usuarios.flEliminar = 0
+27/08/2015 17:10:06 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('se%') AND TB_Usuarios.flEliminar = 0
+27/08/2015 17:10:08 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+27/08/2015 17:10:08 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('s%') AND TB_Usuarios.flEliminar = 0
+27/08/2015 17:10:12 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'SGAROBBIO'  AND  TB_Usuarios.flEliminar = 0  
+27/08/2015 17:10:12 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+27/08/2015 17:10:12 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'SGAROBBIO' 
+27/08/2015 17:10:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+27/08/2015 17:10:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+27/08/2015 17:10:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+27/08/2015 17:10:12 | Exec SP_ValorPromoRetorno
+27/08/2015 17:10:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+27/08/2015 17:10:12 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+27/08/2015 17:10:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+27/08/2015 17:10:12 | Exec sco_validarVencimientosCAI_v4_1
+27/08/2015 17:10:14 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+27/08/2015 17:10:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Sistemas1' ,@p_operaconcaja = 1 
+27/08/2015 17:10:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Sistemas1' ,@p_operaconcaja = 1 
+27/08/2015 17:10:17 |  select distinct grupo_parametro from TB_Parametros where grupo_parametro is not null union select '(Todos)' as grupo_parametro   
+27/08/2015 17:10:17 |  SELECT TB_Parametros.dsParametro ,TB_Parametros.vlParametro ,TB_Parametros.tpParametro ,TB_Parametros.flEditable ,TB_Parametros.flEditable ,TB_Parametros.grupo_parametro  FROM TB_Parametros  WHERE  vlParametro Like ('%%%') Order by TB_Parametros.vlParametro ASC 
+27/08/2015 17:10:17 |  SELECT TB_Parametros.dsParametro ,TB_Parametros.vlParametro ,TB_Parametros.tpParametro ,TB_Parametros.flEditable ,TB_Parametros.flEditable ,TB_Parametros.grupo_parametro  FROM TB_Parametros  WHERE  vlParametro Like ('%%%') Order by TB_Parametros.vlParametro ASC 
+27/08/2015 17:20:29 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Sistemas1' ,@p_operaconcaja = 1 
