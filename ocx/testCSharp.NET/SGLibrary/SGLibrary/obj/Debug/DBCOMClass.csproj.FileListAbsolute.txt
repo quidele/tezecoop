@@ -1,0 +1,15 @@
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.dll
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\ClassLibrary2\bin\Debug\ClassLibrary2.pdb
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.dll
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\ClassLibrary2\obj\Debug\ClassLibrary2.pdb
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\ClassLibrary2\obj\Debug\DBCOMClass.csprojResolveAssemblyReference.cache
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\SGLibrary\bin\Debug\SGLibrary.dll
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\SGLibrary\bin\Debug\SGLibrary.pdb
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\SGLibrary\bin\Debug\SGLibrary.tlb
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\SGLibrary\obj\Debug\SGLibrary.dll
+C:\Documents\Fonseca\Cursos 2015\TDD\PracticaVB.net\ENTITY\ClassLibrary2\SGLibrary\obj\Debug\SGLibrary.pdb
+C:\limpiar\tezecoop\SGLibrary\SGLibrary\bin\Debug\SGLibrary.dll
+C:\limpiar\tezecoop\SGLibrary\SGLibrary\bin\Debug\SGLibrary.pdb
+C:\limpiar\tezecoop\SGLibrary\SGLibrary\bin\Debug\SGLibrary.tlb
+C:\limpiar\tezecoop\SGLibrary\SGLibrary\obj\Debug\SGLibrary.dll
+C:\limpiar\tezecoop\SGLibrary\SGLibrary\obj\Debug\SGLibrary.pdb

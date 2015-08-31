@@ -804,7 +804,7 @@ Private Sub imprimirCobroCliente(IdRecibo As String, _
     Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_DetalleFacturaCtaCte_v1.rpt"
     
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
-    Frm_Principal.CrystalReport1.Destination = crptToWindow  ' crptToPrinter , crptToWindow
+    Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter , crptToWindow
     Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Detalle de Viajes Realizados a Cta. Cte. "
     Frm_Principal.CrystalReport1.StoredProcParam(0) = IdRecibo
     Frm_Principal.CrystalReport1.StoredProcParam(1) = 0

@@ -19,15 +19,15 @@ Begin VB.Form Frm_FacturaCtaCte
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   630
       Left            =   0
       TabIndex        =   5
       Top             =   0
       Width           =   9195
       _ExtentX        =   16219
-      _ExtentY        =   1164
-      ButtonWidth     =   2566
-      ButtonHeight    =   1111
+      _ExtentY        =   1111
+      ButtonWidth     =   2328
+      ButtonHeight    =   1058
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgVentaPasajes"
@@ -2752,7 +2752,7 @@ Dim cdCodBarLic         As String
     End Select
     
     
-    Frm_Principal.CrystalReport1.Destination = crptToWindow  ' crptToPrinter , crptToWindow
+    Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter , crptToWindow
     Frm_Principal.CrystalReport1.PrinterStartPage = 1
     Frm_Principal.CrystalReport1.PrinterStopPage = 1
     
@@ -2778,19 +2778,17 @@ Dim cdCodBarLic         As String
 
         
     ' Aparece la venta duplicado
-    ' On Error Resume Next
+    On Error Resume Next
     DoEvents
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     If Err Then
-            DoEvents
-            Sleep (500)
-            Frm_Principal.CrystalReport1.Action = 1
-            objParametros.GrabarValor "Frm_FacturaCtaCte.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
-         End If
-    'On Error GoTo 0
+        MsgBox "Error al facturar la cta cte. " + Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
+    End If
+    On Error GoTo 0
     
     Exit Function
+    
     
 '    Siempre Imprimiremos Original y duplicado
 '    If objConfig.tpImpresion = "CONTINUO" Then
