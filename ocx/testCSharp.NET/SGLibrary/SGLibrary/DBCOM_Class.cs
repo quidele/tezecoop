@@ -1,9 +1,9 @@
-﻿using System;
+﻿
+using System;
 using System.Runtime.InteropServices;
 using System.IO;
 using System.Text;
-
-
+using System.Xml;
 
 
 
@@ -38,6 +38,36 @@ namespace SGLibrary
 
         public string  Init()
         {
+
+            StringWriter stringWriter = new StringWriter();
+            XmlTextWriter xmltextWriter = new XmlTextWriter("c:\\eulises_test.xml", null); 
+
+            // Start document
+            xmltextWriter.WriteStartDocument();
+            xmltextWriter.WriteStartElement("ROOT");
+
+            
+            
+            //Create a page element
+            xmltextWriter.WriteStartElement("Page");
+            xmltextWriter.WriteAttributeString("Action", "propiedad_action");
+            xmltextWriter.WriteAttributeString("Atributo2", "Atributo2" );
+            xmltextWriter.WriteEndElement();
+            
+
+
+            // Same for the other lists 
+            // End document
+            xmltextWriter.WriteEndElement();
+            xmltextWriter.Flush();
+            xmltextWriter.Close();
+            stringWriter.Flush();
+
+
+            Form1 f = new Form1();
+
+            f.ShowDialog(); 
+
             return ("procedure INIT ok");   
         }
        
