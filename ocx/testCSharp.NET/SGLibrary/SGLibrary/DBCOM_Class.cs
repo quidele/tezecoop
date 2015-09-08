@@ -46,15 +46,11 @@ namespace SGLibrary
             xmltextWriter.WriteStartDocument();
             xmltextWriter.WriteStartElement("ROOT");
 
-            
-            
             //Create a page element
             xmltextWriter.WriteStartElement("Page");
             xmltextWriter.WriteAttributeString("Action", "propiedad_action");
             xmltextWriter.WriteAttributeString("Atributo2", "Atributo2" );
             xmltextWriter.WriteEndElement();
-            
-
 
             // Same for the other lists 
             // End document
