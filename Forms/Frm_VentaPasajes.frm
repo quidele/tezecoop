@@ -1019,7 +1019,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   95223809
+         Format          =   117571585
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1666,15 +1666,15 @@ Begin VB.Form Frm_VentaPasajes
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   1
       Top             =   0
       Width           =   9600
       _ExtentX        =   16933
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgVentaPasajes"
@@ -3091,13 +3091,13 @@ End Sub
 Private Sub obtener_num_Proxima_Factura()
 Dim strSQL      As String
 Dim strValor    As String
-
+    
     '***********************************************************
     ' Modificación version 1.4
     objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v1_0"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
-    objSPs.setearCampoValor "@auto_impresor", IIf(objConfig.tpImpresion = "CONTINUO", "S", "N")
+    objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
     objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
 
     If Not objSPs.ExecSP Then
