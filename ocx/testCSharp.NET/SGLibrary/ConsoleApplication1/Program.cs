@@ -12,8 +12,11 @@ namespace ConsoleApplication1
     {
         static void Main(string[] args)
         {
-            DBCOM_Class db = new DBCOM_Class();
-            db.Init(); 
+            Console.WriteLine(" AMBIENTE PC  64 BITS : " + Environment.Is64BitOperatingSystem.ToString()); 
+            ServiceDestinos service = new ServiceDestinos();
+            Console.WriteLine(service.Inicializar());
+            Console.ReadKey(); 
+
         }
     }
 }

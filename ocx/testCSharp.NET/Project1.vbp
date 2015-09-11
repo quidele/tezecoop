@@ -1,9 +1,10 @@
 Type=Exe
-Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#C:\Windows\SysWOW64\stdole2.tlb#OLE Automation
-Reference=*\G{79004038-44F8-41B2-93F4-96808837BCF8}#1.4#0#C:\Users\quidele\AppData\Local\Apps\2.0\KQJWVYN2.D94\6VM5WWEB.MBK\dist..tion_0000000000000000_0001.0004_8cea13037934b5a6\fonseca_libCOM.tlb#fonseca_libCOM
-Reference=*\G{A86223A5-CE14-48C7-8821-1B9F10216B4C}#1.0#0#C:\limpiar\tezecoop\SGLibrary\SGLibrary\bin\Debug\SGLibrary.tlb#SGLibrary
+Reference=*\G{00020430-0000-0000-C000-000000000046}#2.0#0#..\..\..\..\..\..\..\Windows\SysWOW64\stdole2.tlb#OLE Automation
+Reference=*\G{79004038-44F8-41B2-93F4-96808837BCF8}#1.4#0#..\..\..\..\..\AppData\Local\Apps\2.0\KQJWVYN2.D94\6VM5WWEB.MBK\dist..tion_0000000000000000_0001.0004_8cea13037934b5a6\fonseca_libCOM.tlb#fonseca_libCOM
+Reference=*\G{A86223A5-CE14-48C7-8821-1B9F10216B4C}#1.0#0#SGLibrary\SGLibrary\bin\Debug\SGLibrary.tlb#SGLibrary
 Form=Form1.frm
 Startup="Form1"
+ExeName32="Project1.exe"
 Command32=""
 Name="Project1"
 HelpContextID="0"

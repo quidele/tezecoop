@@ -10,8 +10,9 @@ namespace SGLibrary_Pruebas
         [TestMethod]
         public void TestMethod1()
         {
-            DBCOM_Class db = new DBCOM_Class();
-            db.Init(); 
+            ServiceDestinos service = new ServiceDestinos();
+            Console.WriteLine(service.Inicializar());
+            Console.ReadKey(); 
         }
     }
 }

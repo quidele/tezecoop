@@ -21,6 +21,10 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_o
 
 go
 
+
+
+
+
 --sp_help 'TB_Puestos'
 --  exec  dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S'
 --  exec  dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S'
@@ -64,6 +68,9 @@ declare 	@dtCAI_Talonario_auto	as		datetime
 declare 	@nrCAI_Talonario_auto_empresa	as		decimal			
 declare 	@dtCAI_Talonario_auto_empresa	as		datetime			
 declare 	@flFacturaCtacte	as		bit			
+
+    if @nrPuesto_param= 9
+		set @nrPuesto_param = 4
 
 
 	select
@@ -162,12 +169,13 @@ declare 	@flFacturaCtacte	as		bit
 			return;	
 	end
 		
+		--select * from TB_Puestos
 	--- Si no es autoimpesor
 	if @tipo_iva = 'CF'  or  @tipo_iva = 'EX'
 	begin
-		select  @nrTalonario_manual_ctacte       as nrTalonario,
-				@nrComprobante_manual_ctacte_ult as nrComprobante,
-				@tpLetraRecibo_manual		    as tpLetra,
+		select  @nrTalonario_manual       as nrTalonario,
+				@nrComprobante_manual_ult as nrComprobante,
+				@tpLetra		    as tpLetra,
 				null	as nrCAI,
 				null    as dtCai,
 				@flFacturaCtacte	as flFacturaCtacte
@@ -196,4 +204,6 @@ declare 	@flFacturaCtacte	as		bit
 end;
 
 
-go
+
+
+

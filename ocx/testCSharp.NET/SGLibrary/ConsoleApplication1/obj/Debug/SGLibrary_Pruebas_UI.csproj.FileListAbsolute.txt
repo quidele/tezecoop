@@ -1,6 +1,10 @@
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\SGLibrary.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\EntityFramework.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\SGLibrary.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\EntityFramework.xml
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

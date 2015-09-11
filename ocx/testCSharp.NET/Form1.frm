@@ -38,9 +38,14 @@ End Sub
 Private Sub Form_Load()
 Dim obj As Object
 
-  Set obj = CreateObject("SGLibrary.DBCOM_Class")
+    ' Set obj = CreateObject("SGLibrary.DBCOM_Class")
+    ' MsgBox obj.Init
+
+
+    Set obj = CreateObject("SGLibrary.ServiceDestinos")
     
-    MsgBox obj.Init
+    MsgBox obj.Inicializar
+
 
 
 End Sub

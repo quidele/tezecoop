@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DBCOMClass", "SGLibrary\DBCOMClass.csproj", "{E9661B85-C206-42A0-A96F-F50D9DE8421C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGLibrary", "SGLibrary\SGLibrary.csproj", "{E9661B85-C206-42A0-A96F-F50D9DE8421C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGLibrary_Pruebas", "SGLibrary_Pruebas\SGLibrary_Pruebas.csproj", "{A093D621-8D3E-47B1-9EE1-2ADE2E00EA0D}"
 EndProject

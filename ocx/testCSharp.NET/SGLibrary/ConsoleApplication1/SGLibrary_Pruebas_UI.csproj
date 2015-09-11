@@ -48,9 +48,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\SGLibrary\DBCOMClass.csproj">
+    <ProjectReference Include="..\SGLibrary\SGLibrary.csproj">
       <Project>{e9661b85-c206-42a0-a96f-f50d9de8421c}</Project>
-      <Name>DBCOMClass</Name>
+      <Name>SGLibrary</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
