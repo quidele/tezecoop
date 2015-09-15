@@ -1,0 +1,10 @@
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.exe.config
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.exe
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\ConsoleApplication1.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\SGLibrary.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\EntityFramework.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\SGLibrary.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Release\EntityFramework.xml
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Release\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Release\ConsoleApplication1.exe
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Release\ConsoleApplication1.pdb
