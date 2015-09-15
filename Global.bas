@@ -101,6 +101,7 @@ Sub Main()
 Dim lnrCaja As String
 
 
+
     objConfigRegional.ConfigurarSistema
     
     

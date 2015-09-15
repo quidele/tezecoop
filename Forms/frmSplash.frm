@@ -52,7 +52,7 @@ Begin VB.Form frm_Splash
       Caption         =   "Versión 1.0"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -136,6 +136,7 @@ Attribute VB_Exposed = False
 Option Explicit
 
 Dim contar As Integer
+Dim objExecCmd As New CEjeProgramas
 
 Private Sub Form_Activate()
 
@@ -144,6 +145,11 @@ Private Sub Form_Activate()
     Screen.MousePointer = vbDefault
     Unload Me
     
+    ' Agregado v4.6
+    On Error Resume Next
+    objExecCmd.ExecCmd ("InstalarComponentes.bat")
+    On Error GoTo 0
+    'MsgBox "Componentes instalados OK"
 
     
     
