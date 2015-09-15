@@ -1,9 +1,9 @@
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary_Pruebas.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary_Pruebas.pdb
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\EntityFramework.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.pdb
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\bin\x86\Debug\EntityFramework.xml
-C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.pdb

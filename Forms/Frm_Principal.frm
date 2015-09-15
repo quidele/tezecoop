@@ -4,8 +4,8 @@ Begin VB.MDIForm Frm_Principal
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   165
-   ClientTop       =   765
+   ClientLeft      =   225
+   ClientTop       =   855
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"

@@ -38,7 +38,7 @@ namespace SGLibrary
 
         public string  Init()
         {
-
+/*
             StringWriter stringWriter = new StringWriter();
             XmlTextWriter xmltextWriter = new XmlTextWriter("c:\\eulises_test.xml", null); 
 
@@ -59,8 +59,9 @@ namespace SGLibrary
             xmltextWriter.Close();
             stringWriter.Flush();
 
+            */
 
-            Form1 f = new Form1();
+            FrmSeleccionarImpresora f = new FrmSeleccionarImpresora();
 
             f.ShowDialog(); 
 

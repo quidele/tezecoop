@@ -19,15 +19,15 @@ Begin VB.Form Frm_FacturaCtaCte
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   5
       Top             =   0
       Width           =   9195
       _ExtentX        =   16219
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgVentaPasajes"
@@ -958,6 +958,8 @@ Option Explicit
 Dim EstadoABM         As Byte
 Dim objControl        As New CControl
 Dim vlparametro_PUESTO_FACTURACION_CTA_CTE As String
+' V4.6
+Dim objServicePrinter As Object
 
 
 Private Function limpiarControles()
@@ -1386,6 +1388,11 @@ Dim strSQL     As String
 Dim strValor   As String
 
     
+        ' v4.6
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter"
+    Set objServicePrinter = CreateObject("SGLibrary.ServicePrinter")
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter OK "
+    
     ' Eulises: obtener parametro PUESTO_FACTURACION_CTA_CTE
     vlparametro_PUESTO_FACTURACION_CTA_CTE = objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE")
 
@@ -1505,10 +1512,8 @@ Dim ItemList    As ListItem
            Set ItemList = lstItemsFactura.ListItems.Add(1, , "999")
            ItemList.SubItems(1) = objParametros.ObtenerValor("FacturarCtaCte.dsDetalle")
            ItemList.SubItems(5) = objParametros.ObtenerValor("FacturarCtaCte.vlTotal")
-           
            ObtenerCampo("nrLicencia").Text = "999"
            ObtenerCampo("nmLicenciatario").Text = "Coop. Taxi Ezeiza"
-           
            HabilitarCampos "cdCliente", False
            HabilitarCampos "dsRazonSocial", False
            HabilitarCampos "nrDoc", False
@@ -2751,6 +2756,15 @@ Dim cdCodBarLic         As String
         End Select
     End Select
     
+
+    '/******************************************************
+    '/* Version 4.6  Solicitamos la impreso en la cual se desea imprimir
+    ' MsgBox "SELECCIONE LA IMPRESORA"
+    objServicePrinter.ConfigPrinter
+    '/*  Cierrre Version 4.6
+    '/******************************************************
+    
+    
     
     Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter , crptToWindow
     Frm_Principal.CrystalReport1.PrinterStartPage = 1
@@ -2786,6 +2800,11 @@ Dim cdCodBarLic         As String
         MsgBox "Error al facturar la cta cte. " + Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
     End If
     On Error GoTo 0
+    
+
+    Sleep (5)
+    ' MsgBox "antes de RollbackPrinter "
+    objServicePrinter.RollbackPrinter
     
     Exit Function
     

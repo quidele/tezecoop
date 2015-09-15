@@ -1,0 +1,40 @@
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\Printer Selection_MarkupCompile.cache
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\Printer Selection.g.resources
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\Printer_Selection.Properties.Resources.resources
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\bin\Debug\Printer Selection.exe
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\bin\Debug\Printer Selection.pdb
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\Printer Selection.exe
+C:\Documents and Settings\CARMELO\Impostazioni locali\Dati applicazioni\Temporary Projects\Printer Selection\obj\x86\Debug\Printer Selection.pdb
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection.exe
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection.pdb
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\bin\Debug\Printer Selection.exe
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\bin\Debug\Printer Selection.pdb
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\MainWindow.baml
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\MainWindow.g.cs
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\App.g.cs
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection_MarkupCompile.cache
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection.g.resources
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\Printer_Selection.Properties.Resources.resources
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Documents and Settings\CARMELO\documenti\visual studio 2010\Projects\Printer Selection\Printer Selection\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Documents and Settings\CARMELO\Desktop\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection.exe
+C:\Documents and Settings\CARMELO\Desktop\Printer Selection\Printer Selection\obj\x86\Debug\Printer Selection.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection.exe
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\bin\Debug\Printer Selection.exe
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\bin\Debug\Printer Selection.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection.csprojResolveAssemblyReference.cache
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\MainWindow.baml
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\MainWindow.g.cs
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\App.g.cs
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection_MarkupCompile.cache
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection.g.resources
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer_Selection.Properties.Resources.resources
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\reference\Impostare la stampante predefinita con WMI\C#\Printer Selection\obj\x86\Debug\Printer Selection.csproj.GenerateResource.Cache

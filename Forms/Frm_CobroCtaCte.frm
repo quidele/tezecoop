@@ -164,15 +164,15 @@ Begin VB.Form frm_CobroCtaCte
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   0
       Top             =   0
       Width           =   10320
       _ExtentX        =   18203
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgCobroClientes"
@@ -559,6 +559,13 @@ Option Explicit
     
 Dim EstadoABM As Byte
 Dim objControl As New CControl
+' V4.6
+Dim objServicePrinter As Object
+
+
+
+
+
 
 
 Public Sub RefrescarProgressbar(pAvance As Long)
@@ -811,12 +818,23 @@ Private Sub imprimirCobroCliente(IdRecibo As String, _
     
     ' Aparece la venta original
     On Error Resume Next
+    
+    '/******************************************************
+    '/* Version 4.6  Solicitamos la impreso en la cual se desea imprimir
+    ' MsgBox "SELECCIONE LA IMPRESORA"
+    objServicePrinter.ConfigPrinter
+    '/*  Cierrre Version 4.6
+    '/******************************************************
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     If Err Then
             MsgBox "Error al generar el reporte: " + Err.Description + vbCrLf + " Nombre del archivo : " + vbCrLf + Frm_Principal.CrystalReport1.ReportFileName, vbCritical, "Atención"
     End If
     On Error GoTo 0
+
+    Sleep (5)
+    ' MsgBox "antes de RollbackPrinter "
+    objServicePrinter.RollbackPrinter
 
 End Sub
 
@@ -863,6 +881,10 @@ End Sub
 
 Private Sub Form_Load()
 
+    ' v4.6
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter"
+    Set objServicePrinter = CreateObject("SGLibrary.ServicePrinter")
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter OK "
     
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
     limpiarControles
