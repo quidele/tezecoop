@@ -8,3 +8,4 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibr
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.csproj.GenerateResource.Cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.csprojResolveAssemblyReference.cache
