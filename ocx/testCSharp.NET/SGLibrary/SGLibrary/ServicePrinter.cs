@@ -14,7 +14,7 @@ namespace SGLibrary
     public interface Printer_Interface
     {
         [DispId(20)]
-        string ConfigPrinter();
+        string ConfigPrinter(string windowsname);
         [DispId(21)]
         void RollbackPrinter();
 
@@ -44,10 +44,11 @@ namespace SGLibrary
         }
 
 
-        public string ConfigPrinter()
+        public string ConfigPrinter(string windowstitle)
         {
                 Trace.TraceInformation("ConfigPrinter");
                 FrmSeleccionarImpresora f = new FrmSeleccionarImpresora();
+                f.Text = "Seleccionar Impresora: " + windowstitle.ToUpper(); 
                 f.ShowDialog();
                 return "ConfigurarImpresora la clase ServicePrinter";
 

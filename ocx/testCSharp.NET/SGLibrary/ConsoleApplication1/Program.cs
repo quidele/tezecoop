@@ -30,7 +30,7 @@ namespace ConsoleApplication1
              **/
 
             ServicePrinter service = new ServicePrinter();
-            Console.WriteLine(service.ConfigPrinter());
+            Console.WriteLine(service.ConfigPrinter("impresión de factura"));
             Console.ReadKey();
             service.RollbackPrinter();
             Console.WriteLine("RollbackPrinter realizado");

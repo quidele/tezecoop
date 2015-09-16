@@ -822,7 +822,7 @@ Private Sub imprimirCobroCliente(IdRecibo As String, _
     '/******************************************************
     '/* Version 4.6  Solicitamos la impreso en la cual se desea imprimir
     ' MsgBox "SELECCIONE LA IMPRESORA"
-    objServicePrinter.ConfigPrinter
+    objServicePrinter.ConfigPrinter "impresión del recibo"
     '/*  Cierrre Version 4.6
     '/******************************************************
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"

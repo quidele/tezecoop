@@ -2760,7 +2760,7 @@ Dim cdCodBarLic         As String
     '/******************************************************
     '/* Version 4.6  Solicitamos la impreso en la cual se desea imprimir
     ' MsgBox "SELECCIONE LA IMPRESORA"
-    objServicePrinter.ConfigPrinter
+    objServicePrinter.ConfigPrinter "impresion de la factura"
     '/*  Cierrre Version 4.6
     '/******************************************************
     

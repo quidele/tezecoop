@@ -41,7 +41,7 @@
             this.cbImpresoras.FormattingEnabled = true;
             this.cbImpresoras.Location = new System.Drawing.Point(31, 47);
             this.cbImpresoras.Name = "cbImpresoras";
-            this.cbImpresoras.Size = new System.Drawing.Size(286, 21);
+            this.cbImpresoras.Size = new System.Drawing.Size(322, 21);
             this.cbImpresoras.TabIndex = 0;
             // 
             // btn_selecccionar
@@ -78,7 +78,7 @@
             this.txtImpresora.Location = new System.Drawing.Point(31, 176);
             this.txtImpresora.Name = "txtImpresora";
             this.txtImpresora.ReadOnly = true;
-            this.txtImpresora.Size = new System.Drawing.Size(286, 20);
+            this.txtImpresora.Size = new System.Drawing.Size(322, 20);
             this.txtImpresora.TabIndex = 4;
             this.txtImpresora.Visible = false;
             // 
@@ -86,7 +86,8 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(346, 263);
+            this.ClientSize = new System.Drawing.Size(380, 263);
+            this.ControlBox = false;
             this.Controls.Add(this.txtImpresora);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);

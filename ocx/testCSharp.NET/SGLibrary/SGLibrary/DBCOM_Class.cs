@@ -58,7 +58,6 @@ namespace SGLibrary
             xmltextWriter.Flush();
             xmltextWriter.Close();
             stringWriter.Flush();
-
             */
 
             FrmSeleccionarImpresora f = new FrmSeleccionarImpresora();

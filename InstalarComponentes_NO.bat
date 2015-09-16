@@ -1,4 +1,4 @@
-MD C:\windows\Compontes
-xcopy Compontes  C:\windows\Compontes /i  /Y 
-cd C:\windows\Compontes
-C:\Windows\Compontes\instalarOCX.bat
+MD C:\windows\Componentes
+xcopy Componentes  C:\windows\Componentes /i  /Y 
+cd C:\windows\Componentes
+C:\Windows\Componentes\instalarOCX.bat
