@@ -101,7 +101,7 @@ Begin VB.Form frm_CobroCtaCte
          Strikethrough   =   0   'False
       EndProperty
       Height          =   585
-      Left            =   105
+      Left            =   120
       TabIndex        =   5
       Tag             =   "cmdCompensar"
       Top             =   6630
@@ -714,7 +714,7 @@ Dim i             As Integer
     
     ObjTablasIO.Seleccionar
     If ObjTablasIO.rs_resultados.EOF Then Exit Sub
-    strDetalle = "Viajes Realizados en Cta. Cte. según recibo Nro. " + IdRecibo
+    strDetalle = "Viajes según recibo Nro. " + IdRecibo
     objParametros.GrabarValor "FacturarCtaCte.IdRecibo", IdRecibo
     objParametros.GrabarValor "FacturarCtaCte.vlTotal", ObtenerCampo("vlAcumPesos").Text
     objParametros.GrabarValor "FacturarCtaCte.cdCliente", Me.lstBusqueda.SelectedItem.Text
