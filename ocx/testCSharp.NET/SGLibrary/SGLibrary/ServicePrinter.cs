@@ -46,6 +46,7 @@ namespace SGLibrary
 
         public string ConfigPrinter(string windowstitle)
         {
+                
                 Trace.TraceInformation("ConfigPrinter");
                 FrmSeleccionarImpresora f = new FrmSeleccionarImpresora();
                 f.Text = "Seleccionar Impresora: " + windowstitle.ToUpper(); 

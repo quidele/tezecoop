@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using SGLibrary;
 using System.Management;
-
+using System.Windows;
 
 
 namespace ConsoleApplication1
@@ -17,6 +17,8 @@ namespace ConsoleApplication1
         static void Main(string[] args)
         {
 
+
+           
 
             /*DBCOM_Class service = new DBCOM_Class();
             service.Init(); 

@@ -1,0 +1,12 @@
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\SGLibrary.dll.config
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\SGLibrary.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\SGLibrary.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\EntityFramework.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\EntityFramework.xml
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.FrmSeleccionarImpresora.resources
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.dll
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\SGLibrary.tlb
+C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache

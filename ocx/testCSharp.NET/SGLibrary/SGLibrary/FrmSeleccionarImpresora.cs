@@ -30,6 +30,11 @@ namespace SGLibrary
 
         }
 
+        private void button1_Click(object sender, EventArgs e)
+        {
+            this.printDialog1.ShowDialog();
+        }
+
         
     }
 }

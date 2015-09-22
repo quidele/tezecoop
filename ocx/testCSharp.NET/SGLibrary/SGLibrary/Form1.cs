@@ -18,7 +18,7 @@ namespace SGLibrary
 
         private void Form1_Load(object sender, EventArgs e)
         {
-
+            this.printDialog1.ShowDialog();
         }
     }
 }
