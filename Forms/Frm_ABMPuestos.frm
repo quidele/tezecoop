@@ -17,15 +17,15 @@ Begin VB.Form Frm_ABMPuestos
    ScaleWidth      =   11265
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   7
       Top             =   0
       Width           =   11265
       _ExtentX        =   19870
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgABMPuestosResaltado"
@@ -756,7 +756,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   113639425
+               Format          =   111542273
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -770,7 +770,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   113639425
+               Format          =   111542273
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -1245,6 +1245,20 @@ Dim nrComprobante_manual_ult_modificado As String
 Dim nrComprobante_manual_empresa_ult_modificado As String
 Dim nrComprobante_manual_ctacte_ult_modificado As String
  
+' ADD version 4.6
+Dim nrTalonario_automatico_anterior     As String
+Dim tpLetra_anterior    As String
+Dim nrTalonario_auto_empresa_anterior   As String
+Dim tpLetraEmpresa_anterior_anterior    As String
+Dim nrTalonario_auto_ctacte_anterior    As String
+Dim tpLetraRecibo_anterior  As String
+Dim nrTalonario_manual_anterior     As String
+Dim tpLetra_manual_anterior     As String
+Dim nrTalonario_manual_empresa_anterior     As String
+Dim tpLetraEmpresa_manual_anterior  As String
+Dim nrTalonario_manual_ctacte_anterior  As String
+Dim tpLetraRecibo_manual_anterior   As String
+
  
 
 Public Sub RefrescarProgressbar(pAvance As Long)
@@ -1691,7 +1705,7 @@ End Sub
 ' modificacion inluida en la version 3.2
 Private Sub guardamoslosValoresIniciales()
 
-    
+
     nrComprobante_automatico_ult_anterior = ObtenerCampo("nrComprobante_automatico_ult")
     nrComprobante_auto_empresa_ult_anterior = ObtenerCampo("nrComprobante_auto_empresa_ult")
     nrComprobante_auto_ctacte_ult_anterior = ObtenerCampo("nrComprobante_auto_ctacte_ult")
@@ -1699,6 +1713,20 @@ Private Sub guardamoslosValoresIniciales()
     nrComprobante_manual_empresa_ult_anterior = ObtenerCampo("nrComprobante_manual_empresa_ult")
     nrComprobante_manual_ctacte_ult_anterior = ObtenerCampo("nrComprobante_manual_ctacte_ult")
     
+    ' ADD version 4.6
+    
+    nrTalonario_automatico_anterior = ObtenerCampo("nrTalonario_automatico")
+    tpLetra_anterior = ObtenerCampo("tpLetra")
+    nrTalonario_auto_empresa_anterior = ObtenerCampo("nrTalonario_auto_empresa")
+    tpLetraEmpresa_anterior_anterior = ObtenerCampo("tpLetraEmpresa")
+    nrTalonario_auto_ctacte_anterior = ObtenerCampo("nrTalonario_auto_ctacte")
+    tpLetraRecibo_anterior = ObtenerCampo("tpLetraRecibo")
+    nrTalonario_manual_anterior = ObtenerCampo("nrTalonario_manual")
+    tpLetra_manual_anterior = ObtenerCampo("tpLetra_manual")
+    nrTalonario_manual_empresa_anterior = ObtenerCampo("nrTalonario_manual_empresa")
+    tpLetraEmpresa_manual_anterior = ObtenerCampo("tpLetraEmpresa_manual")
+    nrTalonario_manual_ctacte_anterior = ObtenerCampo("nrTalonario_manual_ctacte")
+    tpLetraRecibo_manual_anterior = ObtenerCampo("tpLetraRecibo_manual")
     
 End Sub
 
@@ -1975,6 +2003,14 @@ Dim strPrefijo  As String
 Dim strValor    As String
 Dim strSQL      As String
 
+    'INI version 4.6
+    objbasededatos.BeginTrans
+
+    Select Case EstadoABM
+    Case modificacion
+        determinarAsignarValoresCamposModificados
+    End Select
+    'FIN version 4.6
     
     ObjTablasIO.nmTabla = "TB_Puestos"
     For Each Control In Me.Controls
@@ -1997,13 +2033,8 @@ Dim strSQL      As String
         End If
     Next
     
-    
-
     Select Case EstadoABM
     Case modificacion
-    
-            determinarAsignarValoresCamposModificados
-    
             strSQL = "  sup_Puestos_v4_1 "
             strSQL = strSQL + " @nrPuesto_param=" + ObtenerCampo("nrPuesto") + " , "
             strSQL = strSQL + " @dsPuesto_param='" + ObtenerCampo("dsPuesto") + "' , "
@@ -2030,7 +2061,6 @@ Dim strSQL      As String
             strSQL = strSQL + "@tpLetraEmpresa_manual_param='" + ObtenerCampo("tpLetraEmpresa_manual") + "', "
             strSQL = strSQL + "@tpLetraRecibo_manual_param='" + ObtenerCampo("tpLetraRecibo_manual") + "',"
             
-            
             ' Paramtros de la version de la version 1.8
             strSQL = strSQL + "@nrCAI_Talonario_auto_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrCAI_Talonario_auto"), "DECIMAL", "nrCAI_Talonario_auto") + ", "
             strSQL = strSQL + "@dtCAI_Talonario_auto_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("dtCAI_Talonario_auto"), "SMALLDATETIME", "dtCAI_Talonario_auto") + ", "
@@ -2042,20 +2072,24 @@ Dim strSQL      As String
             objbasededatos.getDateasString
             
             If Not objbasededatos.ExecStoredProcedures2(strSQL) Then
+                objbasededatos.RollBackTrans 'ADD version 4.6
                 MsgBox "Error: no se pudo actualizar el registro. " + _
                 objbasededatos.Error, vbCritical + vbDefaultButton1, "Atención"
                 Guardarregistro = False
             Else
+                objbasededatos.CommitTrans 'ADD version 4.6
                 MsgBox "El registro ha sido guardado con éxito.", _
                     vbInformation + vbDefaultButton1, "Atención"
                 Guardarregistro = True
             End If
     Case alta
             If Not ObjTablasIO.Insertar Then
+                objbasededatos.RollBackTrans 'ADD version 4.6
                 MsgBox "Error: no se pudo insertar el registro, " _
                 + ObjTablasIO.Error, vbCritical + vbDefaultButton1, "Atención"
                 Guardarregistro = False
             Else
+                objbasededatos.CommitTrans 'ADD version 4.6
                 objDiccionariodeDatos.GuardarSiguienteValor "TB_Puestos", "nrPuesto", objConfig.nrPuesto
                 MsgBox "El registro ha sido guardado con éxito.", _
                     vbInformation + vbDefaultButton1, "Atención"
@@ -2067,19 +2101,31 @@ Dim strSQL      As String
 End Function
 
 
-
+'MOD Eulises v4.6
 Private Sub determinarAsignarValoresCamposModificados()
+Dim strSQL As String
 
-    nrComprobante_automatico_ult_modificado = IIf(nrComprobante_automatico_ult_anterior <> ObtenerCampo("nrComprobante_automatico_ult"), ObtenerCampo("nrComprobante_automatico_ult"), "")
-    nrComprobante_auto_empresa_ult_modificado = IIf(nrComprobante_auto_empresa_ult_anterior <> ObtenerCampo("nrComprobante_auto_empresa_ult"), ObtenerCampo("nrComprobante_auto_empresa_ult"), "")
-    nrComprobante_auto_ctacte_ult_modificado = IIf(nrComprobante_auto_ctacte_ult_anterior <> ObtenerCampo("nrComprobante_auto_ctacte_ult"), ObtenerCampo("nrComprobante_auto_ctacte_ult"), "")
-    nrComprobante_manual_ult_modificado = IIf(nrComprobante_manual_ult_anterior <> ObtenerCampo("nrComprobante_manual_ult"), ObtenerCampo("nrComprobante_manual_ult"), "")
-    nrComprobante_manual_empresa_ult_modificado = IIf(nrComprobante_manual_empresa_ult_anterior <> ObtenerCampo("nrComprobante_manual_empresa_ult"), ObtenerCampo("nrComprobante_manual_empresa_ult"), "")
-    nrComprobante_manual_ctacte_ult_modificado = IIf(nrComprobante_manual_ctacte_ult_anterior <> ObtenerCampo("nrComprobante_manual_ctacte_ult"), ObtenerCampo("nrComprobante_manual_ctacte_ult"), "")
+    strSQL = "  sco_Puestos_v4_1 "
+    strSQL = strSQL + " @nrPuesto_param=" + ObtenerCampo("nrPuesto")
+                                                   
+    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+        On Error Resume Next
+        objbasededatos.rs_resultados.Close
+        On Error GoTo 0
+        MsgBox "ERROR: " + objbasededatos.Error, vbCritical + vbDefaultButton1, "Atencion"
+        Exit Sub
+    End If
     
-
-
-
+    If nrTalonario_automatico_anterior = ObtenerCampo("nrTalonario_automatico") Then nrComprobante_automatico_ult_modificado = IIf(nrComprobante_automatico_ult_anterior <> ObtenerCampo("nrComprobante_automatico_ult"), ObtenerCampo("nrComprobante_automatico_ult"), objbasededatos.rs_resultados("nrComprobante_automatico_ult"))  '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    If nrTalonario_auto_empresa_anterior = ObtenerCampo("nrTalonario_auto_empresa") Then nrComprobante_auto_empresa_ult_modificado = IIf(nrComprobante_auto_empresa_ult_anterior <> ObtenerCampo("nrComprobante_auto_empresa_ult"), ObtenerCampo("nrComprobante_auto_empresa_ult"), objbasededatos.rs_resultados("nrComprobante_auto_empresa_ult")) '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    If nrTalonario_auto_ctacte_anterior = ObtenerCampo("nrTalonario_auto_ctacte") Then nrComprobante_auto_ctacte_ult_modificado = IIf(nrComprobante_auto_ctacte_ult_anterior <> ObtenerCampo("nrComprobante_auto_ctacte_ult"), ObtenerCampo("nrComprobante_auto_ctacte_ult"), objbasededatos.rs_resultados("nrComprobante_auto_ctacte_ult")) '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    
+    If nrTalonario_manual_anterior = ObtenerCampo("nrTalonario_manual") Then nrComprobante_manual_ult_modificado = IIf(nrComprobante_manual_ult_anterior <> ObtenerCampo("nrComprobante_manual_ult"), ObtenerCampo("nrComprobante_manual_ult"), objbasededatos.rs_resultados("nrComprobante_manual_ult")) '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    If nrTalonario_manual_empresa_anterior = ObtenerCampo("nrTalonario_manual_empresa") Then nrComprobante_manual_empresa_ult_modificado = IIf(nrComprobante_manual_empresa_ult_anterior <> ObtenerCampo("nrComprobante_manual_empresa_ult"), ObtenerCampo("nrComprobante_manual_empresa_ult"), objbasededatos.rs_resultados("nrComprobante_manual_empresa_ult")) '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    If nrTalonario_manual_ctacte_anterior = ObtenerCampo("nrTalonario_manual_ctacte") Then nrComprobante_manual_ctacte_ult_modificado = IIf(nrComprobante_manual_ctacte_ult_anterior <> ObtenerCampo("nrComprobante_manual_ctacte_ult"), ObtenerCampo("nrComprobante_manual_ctacte_ult"), ObtenerCampo("nrComprobante_manual_ctacte_ult")) '  V 4.6  en vez de enviar vacio debe enviar el de la base de datos '
+    
+    
+    
 End Sub
 
 

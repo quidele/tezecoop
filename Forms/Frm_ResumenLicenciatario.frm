@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_ResumenLicenciatario 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
@@ -263,7 +263,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -356,7 +356,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Fecha del viaje"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   111935489
+            Format          =   116457473
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,14 +394,14 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   111935489
+            Format          =   116457473
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
             Caption         =   "Hasta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -419,7 +419,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Desde"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -512,7 +512,7 @@ Begin VB.Form frm_ResumenLicenciatario
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -586,7 +586,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Falta Compensar"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -624,7 +624,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -645,7 +645,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -684,7 +684,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -705,7 +705,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -726,7 +726,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -851,7 +851,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1021,7 +1021,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Licenciatario"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1178,7 +1178,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Observación Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1197,7 +1197,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1216,7 +1216,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Destinos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1235,7 +1235,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1254,7 +1254,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1273,7 +1273,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1292,7 +1292,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Observación de Pago"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1311,7 +1311,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Fecha y Hora del Viaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1346,7 +1346,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Nro. de Cupón"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

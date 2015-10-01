@@ -59,7 +59,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -84,7 +84,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -110,7 +110,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -136,7 +136,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -162,7 +162,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -209,7 +209,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Caption         =   "Cond. de Venta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

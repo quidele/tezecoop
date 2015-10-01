@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_Acceso 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Acceso - Version 2.0"
@@ -57,7 +57,7 @@ Begin VB.Form Frm_Acceso
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

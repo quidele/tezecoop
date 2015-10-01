@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -259,7 +259,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Compensar"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -367,7 +367,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Saldo/Cobro Anterior"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -385,7 +385,7 @@ Begin VB.Form frm_PagoLicenciatario
                BackColor       =   &H8000000F&
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   700
                   Underline       =   0   'False
@@ -425,7 +425,7 @@ Begin VB.Form frm_PagoLicenciatario
                BorderStyle     =   1  'Fixed Single
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   700
                   Underline       =   0   'False
@@ -509,7 +509,7 @@ Begin VB.Form frm_PagoLicenciatario
                BorderStyle     =   1  'Fixed Single
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   700
                   Underline       =   0   'False
@@ -530,7 +530,7 @@ Begin VB.Form frm_PagoLicenciatario
                BorderStyle     =   1  'Fixed Single
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   700
                   Underline       =   0   'False
@@ -551,7 +551,7 @@ Begin VB.Form frm_PagoLicenciatario
                BorderStyle     =   1  'Fixed Single
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   700
                   Underline       =   0   'False
@@ -761,7 +761,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -800,7 +800,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -821,7 +821,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -842,7 +842,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -863,7 +863,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1119,7 +1119,7 @@ Begin VB.Form frm_PagoLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1464,7 +1464,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1483,7 +1483,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Fecha y Hora del Viaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1502,7 +1502,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Observación de Pago"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1521,7 +1521,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1540,7 +1540,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1559,7 +1559,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1578,7 +1578,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Destinos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1613,7 +1613,7 @@ Begin VB.Form frm_PagoLicenciatario
          Caption         =   "Nro. de Cupón"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

@@ -51,7 +51,7 @@ Begin VB.Form frm_MsgSinBotonporDefecto
          BorderStyle     =   0  'None
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

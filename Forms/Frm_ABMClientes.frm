@@ -1,7 +1,7 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
 Begin VB.Form Frm_ABMClientes 
    Caption         =   "Maestro de Clientes"
    ClientHeight    =   7170
@@ -291,53 +291,53 @@ Begin VB.Form Frm_ABMClientes
          TabCaption(0)   =   "Datos &Personales"
          TabPicture(0)   =   "Frm_ABMClientes.frx":336D
          Tab(0).ControlEnabled=   0   'False
-         Tab(0).Control(0)=   "lblLabels(16)"
+         Tab(0).Control(0)=   "txtFields(8)"
          Tab(0).Control(0).Enabled=   0   'False
-         Tab(0).Control(1)=   "lblLabels(15)"
+         Tab(0).Control(1)=   "txtFields(1)"
          Tab(0).Control(1).Enabled=   0   'False
-         Tab(0).Control(2)=   "lblLabels(5)"
+         Tab(0).Control(2)=   "txtFields(11)"
          Tab(0).Control(2).Enabled=   0   'False
-         Tab(0).Control(3)=   "lblLabels(6)"
+         Tab(0).Control(3)=   "txtFields(10)"
          Tab(0).Control(3).Enabled=   0   'False
-         Tab(0).Control(4)=   "lblLabels(7)"
+         Tab(0).Control(4)=   "txtFields(7)"
          Tab(0).Control(4).Enabled=   0   'False
-         Tab(0).Control(5)=   "lblLabels(8)"
+         Tab(0).Control(5)=   "txtFields(6)"
          Tab(0).Control(5).Enabled=   0   'False
-         Tab(0).Control(6)=   "lblLabels(9)"
+         Tab(0).Control(6)=   "txtFields(5)"
          Tab(0).Control(6).Enabled=   0   'False
-         Tab(0).Control(7)=   "lblLabels(10)"
+         Tab(0).Control(7)=   "Combox1(0)"
          Tab(0).Control(7).Enabled=   0   'False
-         Tab(0).Control(8)=   "lblLabels(11)"
+         Tab(0).Control(8)=   "txtFields(9)"
          Tab(0).Control(8).Enabled=   0   'False
-         Tab(0).Control(9)=   "lblLabels(12)"
+         Tab(0).Control(9)=   "txtFields(13)"
          Tab(0).Control(9).Enabled=   0   'False
-         Tab(0).Control(10)=   "lblLabels(13)"
+         Tab(0).Control(10)=   "txtFields(14)"
          Tab(0).Control(10).Enabled=   0   'False
-         Tab(0).Control(11)=   "DTPicker1(1)"
+         Tab(0).Control(11)=   "DTPicker1(0)"
          Tab(0).Control(11).Enabled=   0   'False
-         Tab(0).Control(12)=   "DTPicker1(0)"
+         Tab(0).Control(12)=   "DTPicker1(1)"
          Tab(0).Control(12).Enabled=   0   'False
-         Tab(0).Control(13)=   "txtFields(14)"
+         Tab(0).Control(13)=   "lblLabels(13)"
          Tab(0).Control(13).Enabled=   0   'False
-         Tab(0).Control(14)=   "txtFields(13)"
+         Tab(0).Control(14)=   "lblLabels(12)"
          Tab(0).Control(14).Enabled=   0   'False
-         Tab(0).Control(15)=   "txtFields(9)"
+         Tab(0).Control(15)=   "lblLabels(11)"
          Tab(0).Control(15).Enabled=   0   'False
-         Tab(0).Control(16)=   "Combox1(0)"
+         Tab(0).Control(16)=   "lblLabels(10)"
          Tab(0).Control(16).Enabled=   0   'False
-         Tab(0).Control(17)=   "txtFields(5)"
+         Tab(0).Control(17)=   "lblLabels(9)"
          Tab(0).Control(17).Enabled=   0   'False
-         Tab(0).Control(18)=   "txtFields(6)"
+         Tab(0).Control(18)=   "lblLabels(8)"
          Tab(0).Control(18).Enabled=   0   'False
-         Tab(0).Control(19)=   "txtFields(7)"
+         Tab(0).Control(19)=   "lblLabels(7)"
          Tab(0).Control(19).Enabled=   0   'False
-         Tab(0).Control(20)=   "txtFields(10)"
+         Tab(0).Control(20)=   "lblLabels(6)"
          Tab(0).Control(20).Enabled=   0   'False
-         Tab(0).Control(21)=   "txtFields(11)"
+         Tab(0).Control(21)=   "lblLabels(5)"
          Tab(0).Control(21).Enabled=   0   'False
-         Tab(0).Control(22)=   "txtFields(1)"
+         Tab(0).Control(22)=   "lblLabels(15)"
          Tab(0).Control(22).Enabled=   0   'False
-         Tab(0).Control(23)=   "txtFields(8)"
+         Tab(0).Control(23)=   "lblLabels(16)"
          Tab(0).Control(23).Enabled=   0   'False
          Tab(0).ControlCount=   24
          TabCaption(1)   =   "Datos &Comerciales"
@@ -663,7 +663,7 @@ Begin VB.Form Frm_ABMClientes
             _ExtentX        =   476
             _ExtentY        =   582
             _Version        =   393216
-            Format          =   111935489
+            Format          =   104857601
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -677,7 +677,7 @@ Begin VB.Form Frm_ABMClientes
             _ExtentX        =   476
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   111935489
+            Format          =   104857601
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -691,14 +691,14 @@ Begin VB.Form Frm_ABMClientes
             _ExtentX        =   582
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   111935489
+            Format          =   105185281
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
             Caption         =   "Número de IIBB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -716,7 +716,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Fecha de Baja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -734,7 +734,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Fecha de Alta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -752,7 +752,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Email"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -770,7 +770,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Cargo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -788,7 +788,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Fax"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -806,7 +806,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -824,7 +824,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -842,7 +842,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -860,7 +860,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -878,7 +878,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Saldo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -896,7 +896,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Estado "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -914,7 +914,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Bloqueado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -932,7 +932,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Fecha de Finalización"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -950,7 +950,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "IIBB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -968,7 +968,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -986,7 +986,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Tope de Crédito:"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1004,7 +1004,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Ordenanza 3337"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1022,7 +1022,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Tipo de Doc."
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1040,7 +1040,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Documento"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1058,7 +1058,7 @@ Begin VB.Form Frm_ABMClientes
             Caption         =   "Forma de Pago"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1077,7 +1077,7 @@ Begin VB.Form Frm_ABMClientes
          Caption         =   "Razón Social"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1094,7 +1094,7 @@ Begin VB.Form Frm_ABMClientes
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1112,7 +1112,7 @@ Begin VB.Form Frm_ABMClientes
          Caption         =   "Nro. de Cliente"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1130,7 +1130,7 @@ Begin VB.Form Frm_ABMClientes
          Caption         =   "Apellido"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1148,7 +1148,7 @@ Begin VB.Form Frm_ABMClientes
          Caption         =   "Nombre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1314,7 +1314,7 @@ Begin VB.Form Frm_ABMClientes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

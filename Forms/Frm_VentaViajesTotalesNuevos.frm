@@ -281,7 +281,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -314,7 +314,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "ó"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -332,7 +332,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "ó"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -351,7 +351,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "Total Pesos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -371,7 +371,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "Total u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -391,7 +391,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "Total Euros"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -411,7 +411,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "A Cobrar"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -431,7 +431,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "A Pagar"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -451,7 +451,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "Vuelto"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -470,7 +470,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "ó"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -488,7 +488,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "ó"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -506,7 +506,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "+"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -524,7 +524,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "+"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -543,7 +543,7 @@ Begin VB.Form Frm_VentaViajesTotalesNuevos
          Caption         =   "Cond. de Venta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False

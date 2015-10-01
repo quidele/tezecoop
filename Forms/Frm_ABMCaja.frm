@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_ABMCaja 
    Caption         =   "Manejo de Cajas"
    ClientHeight    =   8280
@@ -338,7 +338,7 @@ Begin VB.Form frm_ABMCaja
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -361,7 +361,7 @@ Begin VB.Form frm_ABMCaja
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -382,7 +382,7 @@ Begin VB.Form frm_ABMCaja
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -403,7 +403,7 @@ Begin VB.Form frm_ABMCaja
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -662,7 +662,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "U$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -681,7 +681,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Fondo Fijo próxima Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -699,7 +699,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Saldo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -718,7 +718,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -737,7 +737,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Reales"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -756,7 +756,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Pesos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -775,7 +775,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Inicial"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -794,7 +794,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Motivo en Diferencia de Cierre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -813,7 +813,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Diferencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -832,7 +832,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Final Sup."
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -851,7 +851,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Cierre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -870,7 +870,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Final Real"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -889,7 +889,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Totales Pesificados"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -975,7 +975,7 @@ Begin VB.Form frm_ABMCaja
                Caption         =   "Ultima Modif."
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -994,7 +994,7 @@ Begin VB.Form frm_ABMCaja
                Caption         =   "Observación"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8,25
+                  Size            =   8.25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -1131,7 +1131,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Valor Real"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1150,7 +1150,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1169,7 +1169,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Fecha de Cierre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1188,7 +1188,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Valor Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1207,7 +1207,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Valor Dolar u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1226,7 +1226,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Fecha de Apertura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1245,7 +1245,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Nro. de Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1264,7 +1264,7 @@ Begin VB.Form frm_ABMCaja
             Caption         =   "Nro. de Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1477,7 +1477,7 @@ Begin VB.Form frm_ABMCaja
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1540,7 +1540,7 @@ Begin VB.Form frm_ABMCaja
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   111935489
+         Format          =   117243905
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1554,14 +1554,14 @@ Begin VB.Form frm_ABMCaja
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   111935489
+         Format          =   117243905
          CurrentDate     =   38267
       End
       Begin VB.Label lblFechaHasta 
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1578,7 +1578,7 @@ Begin VB.Form frm_ABMCaja
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
