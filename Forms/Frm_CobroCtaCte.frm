@@ -728,7 +728,7 @@ Dim i             As Integer
     Dim strSQL As String
     '***********************************************************'
     ' Modificacion EZE V4.6
-    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=" + objConfig.nrPuesto + ", "
+    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=" + objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE") + ", "
     strSQL = strSQL + "@tipo_iva = " + objParametros.ObtenerValor("FacturarCtaCte.tpIVA") + ",  "
     strSQL = strSQL + "@auto_impresor = " + IIf(objConfig.tpImpresion = "CONTINUO", "S", "N") + "; "
     
