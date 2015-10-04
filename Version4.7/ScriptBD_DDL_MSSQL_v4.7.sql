@@ -61,6 +61,8 @@ go
 
 */
 
+
+
 create procedure dbo.spu_obtener_puntosdeventa_facturacion_v2_0
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
@@ -99,22 +101,23 @@ declare 	@dtCAI_Talonario_auto	as		datetime
 declare 	@nrCAI_Talonario_auto_empresa	as		decimal			
 declare 	@dtCAI_Talonario_auto_empresa	as		datetime			
 declare 	@flFacturaCtacte	as		bit			
-declare	@nrComprobante_automatico_nd_ult	as int
-declare	@nrComprobante_auto_empresa_nd_ult	as int
-declare	@nrComprobante_auto_ctacte_nd_ult	as int
-declare	@nrComprobante_manual_nd_ult	as int
-declare	@nrComprobante_manual_empresa_nd_ult	as int
-declare	@nrComprobante_manual_ctacte_nd_ult	as int
-declare	@nrComprobante_automatico_nc_ult	as int
-declare	@nrComprobante_auto_empresa_nc_ult	as int
-declare	@nrComprobante_auto_ctacte_nc_ult	as int
-declare	@nrComprobante_manual_nc_ult	as int
-declare	@nrComprobante_manual_empresa_nc_ult	as int
-declare	@nrComprobante_manual_ctacte_nc_ult	as int
+declare	    @nrComprobante_automatico_nd_ult	as int
+declare	    @nrComprobante_auto_empresa_nd_ult	as int
+declare	    @nrComprobante_auto_ctacte_nd_ult	as int
+declare	    @nrComprobante_manual_nd_ult	as int
+declare	    @nrComprobante_manual_empresa_nd_ult	as int
+declare	    @nrComprobante_manual_ctacte_nd_ult	as int
+declare	    @nrComprobante_automatico_nc_ult	as int
+declare	    @nrComprobante_auto_empresa_nc_ult	as int
+declare	    @nrComprobante_auto_ctacte_nc_ult	as int
+declare	    @nrComprobante_manual_nc_ult	as int
+declare	    @nrComprobante_manual_empresa_nc_ult	as int
+declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 
-    if @nrPuesto_param= 9
+    /* COMENTADO version v2.0
+	   if @nrPuesto_param= 9
 		set @nrPuesto_param = 4
-
+	*/
 
 	select
 		@nrPuesto  = nrPuesto,
@@ -296,7 +299,6 @@ declare	@nrComprobante_manual_ctacte_nc_ult	as int
 			return;
 		end
 		
-		
 		select  @nrTalonario_auto_ctacte       as nrTalonario,
 				@nrComprobante_auto_ctacte_ult as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
@@ -310,7 +312,6 @@ declare	@nrComprobante_manual_ctacte_nc_ult	as int
 
 
 	--- SI NO ES AUTOIMPRESOR
-
 	if @tpFormadePago='Cuenta Corriente' 
 	begin
 	select  @nrTalonario_manual_ctacte       as nrTalonario,
@@ -322,7 +323,6 @@ declare	@nrComprobante_manual_ctacte_nc_ult	as int
 			return;	
 	end
 		
-
 	if @tipo_iva = 'CF'  or  @tipo_iva = 'EX'
 	begin
 		select  @nrTalonario_manual       as nrTalonario,
@@ -440,14 +440,14 @@ create procedure [dbo].[sup_Puestos_v4_2]
 @nrComprobante_manual_ult_param         int,
 @nrComprobante_automatico_ult_param     int,
 @flRespeta_secuencia_carga_manual_param int,
-@tpLetra_param				char(1),
+@tpLetra_param							char(1),
 -- nuevos parametros
 @nrTalonario_manual_empresa_param	int,
 @nrTalonario_manual_ctacte_param	int,
 @nrComprobante_manual_empresa_ult_param int,
 @nrComprobante_manual_ctacte_ult_param	int,
-@tpLetraEmpresa_param			char(10),
-@tpLetraRecibo_param			char(10),
+@tpLetraEmpresa_param				char(10),
+@tpLetraRecibo_param				char(10),
 @nrTalonario_auto_empresa_param		int,
 @nrTalonario_auto_ctacte_param	        int,
 @nrComprobante_auto_ctacte_ult_param	int,
@@ -463,13 +463,13 @@ create procedure [dbo].[sup_Puestos_v4_2]
 @nrComprobante_automatico_nd_ult	as int,
 @nrComprobante_auto_empresa_nd_ult	as int,
 @nrComprobante_auto_ctacte_nd_ult	as int,
-@nrComprobante_manual_nd_ult	as int,
+@nrComprobante_manual_nd_ult		as int,
 @nrComprobante_manual_empresa_nd_ult	as int,
 @nrComprobante_manual_ctacte_nd_ult	as int,
 @nrComprobante_automatico_nc_ult	as int,
 @nrComprobante_auto_empresa_nc_ult	as int,
 @nrComprobante_auto_ctacte_nc_ult	as int,
-@nrComprobante_manual_nc_ult	as int,
+@nrComprobante_manual_nc_ult		as int,
 @nrComprobante_manual_empresa_nc_ult	as int,
 @nrComprobante_manual_ctacte_nc_ult	as int
 as

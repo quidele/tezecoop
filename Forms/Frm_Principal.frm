@@ -456,6 +456,7 @@ Private Sub mnVentaViajes_Click()
   objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
   objParametros.GrabarValor "FormatoHoja", "Chico"
   
+  ' analisis version 4.7
   Frm_VentaPasajes.Show 1
     
 End Sub
@@ -692,6 +693,7 @@ Dim strnrCaja               As String
         
         objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
         
+        ' Analisis de la version 4.7 <Llamada para facturacion manual>
         Frm_VentaPasajes.Show vbModal
         Exit Sub
     End If
@@ -737,6 +739,7 @@ Dim strnrCaja               As String
     objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
     
 
+    ' Analisis de la version 4.7 <Llamada para facturacion manual>
     Frm_VentaPasajes.Show vbModal
     
     
@@ -1119,6 +1122,7 @@ Private Sub optVentadeViajesFacturaA4_Click()
     
     objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
     objParametros.GrabarValor "FormatoHoja", "Grande"
+     ' Analisis de la version 4.7 <Venta de Viajes Manual>
     Frm_VentaPasajes.Show 1
     
 End Sub

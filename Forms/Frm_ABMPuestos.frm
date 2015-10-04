@@ -216,7 +216,7 @@ Begin VB.Form Frm_ABMPuestos
       Left            =   -75
       TabIndex        =   8
       Top             =   705
-      Width           =   10365
+      Width           =   11325
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFC0C0&
@@ -224,10 +224,10 @@ Begin VB.Form Frm_ABMPuestos
          Height          =   5895
          Left            =   225
          ScaleHeight     =   5865
-         ScaleWidth      =   10005
+         ScaleWidth      =   10965
          TabIndex        =   14
          Top             =   45
-         Width           =   10035
+         Width           =   10995
          Begin VB.CheckBox Check2 
             Appearance      =   0  'Flat
             BackColor       =   &H00FFC0C0&
@@ -273,7 +273,7 @@ Begin VB.Form Frm_ABMPuestos
                Left            =   4008
                TabIndex        =   48
                Tag             =   "tpLetra_manual"
-               Top             =   552
+               Top             =   555
                Width           =   795
             End
             Begin VB.TextBox txtFields 
@@ -539,7 +539,63 @@ Begin VB.Form Frm_ABMPuestos
             Left            =   135
             TabIndex        =   17
             Top             =   780
-            Width           =   9735
+            Width           =   10800
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   27
+               Left            =   8625
+               TabIndex        =   72
+               Tag             =   "nrComprobante_automatico_nc_ult"
+               Top             =   600
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   26
+               Left            =   8625
+               TabIndex        =   71
+               Tag             =   "nrComprobante_auto_empresa_nc_ult"
+               Top             =   975
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   25
+               Left            =   7770
+               TabIndex        =   70
+               Tag             =   "nrComprobante_automatico_nd_ult"
+               Top             =   600
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   24
+               Left            =   7800
+               TabIndex        =   67
+               Tag             =   "nrComprobante_auto_empresa_nd_ult"
+               Top             =   975
+               Width           =   810
+            End
             Begin VB.TextBox txtFields 
                Appearance      =   0  'Flat
                BackColor       =   &H00FFFFFF&
@@ -547,7 +603,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   300
                Index           =   23
-               Left            =   7020
+               Left            =   6420
                TabIndex        =   65
                Tag             =   "dtCAI_Talonario_auto_empresa"
                Top             =   945
@@ -560,7 +616,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   300
                Index           =   22
-               Left            =   7035
+               Left            =   6435
                TabIndex        =   64
                Tag             =   "dtCAI_Talonario_auto"
                Top             =   585
@@ -573,11 +629,11 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   300
                Index           =   5
-               Left            =   4785
+               Left            =   4545
                TabIndex        =   61
                Tag             =   "nrCAI_Talonario_auto"
                Top             =   585
-               Width           =   2205
+               Width           =   1845
             End
             Begin VB.TextBox txtFields 
                Appearance      =   0  'Flat
@@ -586,17 +642,17 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   285
                Index           =   3
-               Left            =   4785
+               Left            =   4545
                TabIndex        =   60
                Tag             =   "nrCAI_Talonario_auto_empresa"
                Top             =   945
-               Width           =   2205
+               Width           =   1845
             End
             Begin VB.CommandButton cmdActualizarNumeracionAutomatico 
                Caption         =   "Recalcular"
                Height          =   288
                Index           =   2
-               Left            =   8400
+               Left            =   9720
                TabIndex        =   29
                Top             =   1290
                Width           =   990
@@ -605,7 +661,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Recalcular"
                Height          =   288
                Index           =   1
-               Left            =   8385
+               Left            =   9705
                TabIndex        =   28
                Top             =   930
                Width           =   990
@@ -614,7 +670,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Recalcular"
                Height          =   288
                Index           =   0
-               Left            =   8400
+               Left            =   9720
                TabIndex        =   27
                Top             =   570
                Width           =   990
@@ -631,7 +687,7 @@ Begin VB.Form Frm_ABMPuestos
                TabIndex        =   26
                Tag             =   "nrTalonario_auto_ctacte"
                Top             =   1275
-               Width           =   825
+               Width           =   585
             End
             Begin VB.TextBox txtFields 
                Alignment       =   2  'Center
@@ -641,7 +697,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   285
                Index           =   11
-               Left            =   2535
+               Left            =   2295
                TabIndex        =   25
                Tag             =   "nrComprobante_auto_ctacte_ult"
                Top             =   1275
@@ -655,7 +711,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   285
                Index           =   10
-               Left            =   3945
+               Left            =   3705
                TabIndex        =   24
                Tag             =   "tpLetraRecibo"
                Top             =   1275
@@ -673,7 +729,7 @@ Begin VB.Form Frm_ABMPuestos
                TabIndex        =   23
                Tag             =   "nrTalonario_auto_empresa"
                Top             =   945
-               Width           =   825
+               Width           =   585
             End
             Begin VB.TextBox txtFields 
                Alignment       =   2  'Center
@@ -683,7 +739,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   285
                Index           =   8
-               Left            =   2535
+               Left            =   2295
                TabIndex        =   22
                Tag             =   "nrComprobante_auto_empresa_ult"
                Top             =   945
@@ -697,7 +753,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   285
                Index           =   7
-               Left            =   3945
+               Left            =   3705
                TabIndex        =   21
                Tag             =   "tpLetraEmpresa"
                Top             =   945
@@ -715,7 +771,7 @@ Begin VB.Form Frm_ABMPuestos
                TabIndex        =   20
                Tag             =   "nrTalonario_automatico"
                Top             =   585
-               Width           =   825
+               Width           =   585
             End
             Begin VB.TextBox txtFields 
                Alignment       =   2  'Center
@@ -725,7 +781,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   300
                Index           =   4
-               Left            =   2532
+               Left            =   2295
                TabIndex        =   19
                Tag             =   "nrComprobante_automatico_ult"
                Top             =   585
@@ -739,7 +795,7 @@ Begin VB.Form Frm_ABMPuestos
                DataField       =   "nmApellido"
                Height          =   300
                Index           =   6
-               Left            =   3945
+               Left            =   3705
                TabIndex        =   18
                Tag             =   "tpLetra"
                Top             =   585
@@ -748,7 +804,7 @@ Begin VB.Form Frm_ABMPuestos
             Begin MSComCtl2.DTPicker DTPicker1 
                Height          =   330
                Index           =   1
-               Left            =   8100
+               Left            =   7500
                TabIndex        =   59
                TabStop         =   0   'False
                Top             =   570
@@ -756,13 +812,13 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   111542273
+               Format          =   66387969
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
                Height          =   330
                Index           =   2
-               Left            =   8085
+               Left            =   7485
                TabIndex        =   63
                TabStop         =   0   'False
                Top             =   930
@@ -770,8 +826,46 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   111542273
+               Format          =   66387969
                CurrentDate     =   38267
+            End
+            Begin VB.Label lblLabels 
+               BackStyle       =   0  'Transparent
+               Caption         =   "NC"
+               BeginProperty Font 
+                  Name            =   "Verdana"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   240
+               Index           =   16
+               Left            =   8640
+               TabIndex        =   69
+               Top             =   360
+               Width           =   570
+            End
+            Begin VB.Label lblLabels 
+               BackStyle       =   0  'Transparent
+               Caption         =   "ND"
+               BeginProperty Font 
+                  Name            =   "Verdana"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   240
+               Index           =   15
+               Left            =   7920
+               TabIndex        =   68
+               Top             =   360
+               Width           =   570
             End
             Begin VB.Label lblLabels 
                BackStyle       =   0  'Transparent
@@ -787,7 +881,7 @@ Begin VB.Form Frm_ABMPuestos
                EndProperty
                Height          =   240
                Index           =   14
-               Left            =   7020
+               Left            =   6420
                TabIndex        =   58
                Top             =   345
                Width           =   1245
@@ -806,7 +900,7 @@ Begin VB.Form Frm_ABMPuestos
                EndProperty
                Height          =   240
                Index           =   3
-               Left            =   4815
+               Left            =   4575
                TabIndex        =   62
                Top             =   330
                Width           =   570

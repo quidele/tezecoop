@@ -2076,7 +2076,7 @@ Private Sub cmdAgregarComprobante()
     objParametros.GrabarValor "Frm_VentasPasajes.vlDiaReal", ObtenerCampo("vlDiaReal")
     objParametros.GrabarValor "Frm_VentasPasajes.nrCierre", ObtenerCampo("nrCierre")
     
-    
+    ' Analisis de la version 4.7 <Llamada para facturacion comprobantes manuales desde Reparacion de Caja Puesto>
     Frm_VentaPasajes.Show vbModal
     
     ' Actualizamos la pantalla
