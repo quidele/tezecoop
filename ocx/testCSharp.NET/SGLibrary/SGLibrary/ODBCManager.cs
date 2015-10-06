@@ -12,8 +12,7 @@ namespace SGLibrary
     ///</summary>
     public static class ODBCManager
     {
-        
-        
+    
         ///<summary>
         /// Checks the registry to see if a DSN exists with the specified name
         ///</summary>

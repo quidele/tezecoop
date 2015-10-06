@@ -19,12 +19,27 @@ Begin VB.Form Frm_VentaPasajes
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraVentaPasajes 
-      Caption         =   "Datos de la Factura"
+      Caption         =   "Datos del Comprobate"
       Height          =   7425
       Left            =   45
       TabIndex        =   2
       Top             =   690
       Width           =   9480
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   285
+         Index           =   4
+         Left            =   1785
+         Locked          =   -1  'True
+         TabIndex        =   92
+         TabStop         =   0   'False
+         Tag             =   "tpLetra"
+         Top             =   450
+         Width           =   480
+      End
       Begin VB.TextBox txtItemFactura 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -228,13 +243,13 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "dsRazonSocial"
          Height          =   285
          Index           =   12
-         Left            =   7740
+         Left            =   8055
          Locked          =   -1  'True
          TabIndex        =   35
          TabStop         =   0   'False
          Tag             =   "nrCaja"
          Top             =   465
-         Width           =   1080
+         Width           =   1320
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
@@ -243,7 +258,7 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "dsRazonSocial"
          Height          =   285
          Index           =   11
-         Left            =   7110
+         Left            =   7425
          Locked          =   -1  'True
          TabIndex        =   34
          TabStop         =   0   'False
@@ -258,7 +273,7 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "dsRazonSocial"
          Height          =   285
          Index           =   10
-         Left            =   5295
+         Left            =   5610
          Locked          =   -1  'True
          TabIndex        =   33
          TabStop         =   0   'False
@@ -300,13 +315,13 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   285
          Index           =   1
-         Left            =   930
+         Left            =   2280
          Locked          =   -1  'True
          TabIndex        =   30
          TabStop         =   0   'False
          Tag             =   "nrTalonario"
-         Top             =   465
-         Width           =   765
+         Top             =   450
+         Width           =   630
       End
       Begin VB.ComboBox Combox1 
          Appearance      =   0  'Flat
@@ -314,7 +329,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   315
          Index           =   1
          ItemData        =   "Frm_VentaPasajes.frx":0454
-         Left            =   3090
+         Left            =   195
          List            =   "Frm_VentaPasajes.frx":0467
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
@@ -322,7 +337,7 @@ Begin VB.Form Frm_VentaPasajes
          TabStop         =   0   'False
          Tag             =   "tpComprobante"
          Top             =   450
-         Width           =   855
+         Width           =   825
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
@@ -331,12 +346,12 @@ Begin VB.Form Frm_VentaPasajes
          ForeColor       =   &H00000000&
          Height          =   285
          Index           =   0
-         Left            =   1725
+         Left            =   2940
          Locked          =   -1  'True
          TabIndex        =   28
          TabStop         =   0   'False
          Tag             =   "nrComprobante"
-         Top             =   465
+         Top             =   450
          Width           =   1350
       End
       Begin VB.TextBox txtFields 
@@ -826,7 +841,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   315
          Index           =   3
          ItemData        =   "Frm_VentaPasajes.frx":069F
-         Left            =   165
+         Left            =   1020
          List            =   "Frm_VentaPasajes.frx":06B5
          Style           =   2  'Dropdown List
          TabIndex        =   3
@@ -1012,14 +1027,14 @@ Begin VB.Form Frm_VentaPasajes
       End
       Begin MSComCtl2.DTPicker DTPicker1 
          Height          =   315
-         Left            =   3945
+         Left            =   4275
          TabIndex        =   87
          Top             =   450
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   117571585
+         Format          =   245628929
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1034,8 +1049,25 @@ Begin VB.Form Frm_VentaPasajes
          TabIndex        =   20
          TabStop         =   0   'False
          Tag             =   "dtComprobante"
-         Top             =   465
+         Top             =   450
          Width           =   1320
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Letra"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   225
+         Left            =   1815
+         TabIndex        =   93
+         Top             =   240
+         Width           =   495
       End
       Begin VB.Label Label1 
          Alignment       =   2  'Center
@@ -1143,7 +1175,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   7710
+         Left            =   8025
          TabIndex        =   76
          Top             =   225
          Width           =   870
@@ -1160,7 +1192,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   7065
+         Left            =   7380
          TabIndex        =   75
          Top             =   225
          Width           =   615
@@ -1177,7 +1209,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Left            =   5280
+         Left            =   5595
          TabIndex        =   74
          Top             =   225
          Width           =   1785
@@ -1212,10 +1244,10 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   240
          Index           =   3
-         Left            =   156
+         Left            =   1005
          TabIndex        =   72
-         Top             =   252
-         Width           =   576
+         Top             =   255
+         Width           =   570
       End
       Begin VB.Label lblLabels 
          Caption         =   "Cond. de Venta"
@@ -1248,9 +1280,9 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   225
-         Left            =   930
+         Left            =   2160
          TabIndex        =   70
-         Top             =   240
+         Top             =   225
          Width           =   780
       End
       Begin VB.Label lblLabels 
@@ -1266,7 +1298,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Index           =   12
-         Left            =   3945
+         Left            =   4470
          TabIndex        =   69
          Top             =   255
          Width           =   1050
@@ -1284,7 +1316,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   1740
+         Left            =   2955
          TabIndex        =   68
          Top             =   225
          Width           =   1170
@@ -1302,10 +1334,10 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   3060
+         Left            =   180
          TabIndex        =   67
-         Top             =   225
-         Width           =   810
+         Top             =   240
+         Width           =   480
       End
       Begin VB.Label Label19 
          Caption         =   "Licenciatario"
@@ -2523,7 +2555,7 @@ Private Function FacturarBD() As Boolean
           objComprobante.nrTalonario = ObtenerCampo("nrTalonario").Text
           objComprobante.nrComprobante = ObtenerCampo("nrComprobante").Text
           objComprobante.tpComprobante = ObtenerCampo("tpComprobante").Text
-          objComprobante.tpLetra = ObtenerCampo("tpComprobante").Text
+          objComprobante.tpLetra = ObtenerCampo("tpLetra").Text
           objComprobante.nrCierre = objParametros.ObtenerValor("Frm_VentasPasajes.nrCierre")
           ' Borrar Comprobante eliminado logicamente
           ' Si el comprobante fue cargado y posteriomente eliminado por otra caja
@@ -2603,7 +2635,7 @@ Private Function FacturarBD() As Boolean
                 objComprobante.nrTalonario = ObtenerCampo("nrTalonario").Text
                 objComprobante.nrComprobante = ObtenerCampo("nrComprobante").Text
                 objComprobante.tpComprobante = ObtenerCampo("tpComprobante").Text
-                objComprobante.tpLetra = ObtenerCampo("tpComprobante").Text
+                objComprobante.tpLetra = ObtenerCampo("tpLetra").Text
                 objComprobante.nrCierre = objParametros.ObtenerValor("Frm_VentasPasajes.nrCierre")
             
                 objComprobante.tpModificacionCajaPuesto = "Agregado"
@@ -2641,7 +2673,7 @@ Private Function FacturarBD() As Boolean
                 End Select
                 MsgBox "Factura Manual Cargada.", vbInformation + vbDefaultButton1, "Atención"
            Else
-                ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpComprobante"), objParametros.ObtenerValor("FormatoHoja")
+                ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra"), objParametros.ObtenerValor("FormatoHoja")
            End If
     Else
          objbasededatos.RollBackTrans
@@ -3050,6 +3082,12 @@ Dim strValor   As String
 Dim strSQL_Params As String
 
     
+    
+        '-- ADD Version  4.7
+    ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    Me.Caption = objParametros.ObtenerValor("Frm_VentaPasajes.TituloPrincipal")
+
+    
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
         Me.DTPicker1.Visible = False
@@ -3092,13 +3130,17 @@ Private Sub obtener_num_Proxima_Factura()
 Dim strSQL      As String
 Dim strValor    As String
     
+     
     '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v1_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
     objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
     objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
+    objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
+
+    
 
     If Not objSPs.ExecSP Then
         MsgBox "No se encuentra definido el número de talonario" + _
@@ -3112,7 +3154,9 @@ Dim strValor    As String
     strValor = Trim(objbasededatos.rs_resultados("nrComprobante"))
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
     strValor = Trim(objbasededatos.rs_resultados("tpLetra"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    ' COMENTADO VERSION 4.7
+    ' REM objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
     ' agregado en la version 1.8  - autoimpresion Empresas RI
     strValor = Trim(objbasededatos.rs_resultados_valor("nrCAI"))
@@ -3138,8 +3182,9 @@ Dim strValor    As String
     strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
     
-    strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
-    ObtenerCampo("tpComprobante").Text = strValor
+    '/* REM Version 4.7 */
+    'strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
+    'ObtenerCampo("tpComprobante").Text = strValor
     
     strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     '***********************************************************
@@ -3393,7 +3438,7 @@ Private Function validarEntradadedatos() As Boolean
     ' validación de talonarios automáticos
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "automatica" Then
         '/* agregado en la version 4.6 */
-        If ObtenerCampo("tpComprobante").Text <> "X" Then
+        If ObtenerCampo("tpLetra").Text <> "X" Then ' modificado v4.7
             If Not objAFIP.verificarCAI(objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))) Then
                 MsgBox "El número de CAI del talonario no es válido, no se puede realizar la factura, comuníquese con el administrador del sistema.", vbCritical, "Atención"
                 validarEntradadedatos = False
@@ -3508,7 +3553,7 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "<-", ObtenerCampo("nrTalonario").Text
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "<-", ObtenerCampo("nrComprobante").Text
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "<-", ObtenerCampo("tpComprobante").Text
-        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpLetra").Text ' MOD Version 4.7
         ObjTablasIO.setearCampoOperadorValor "nrItem", "<-", CStr(i)
         ObjTablasIO.setearCampoOperadorValor "cdProducto", "<-", IIf(Me.lstItemsFactura.ListItems(i).Text = "(Nuevo)", "null", Me.lstItemsFactura.ListItems(i).Text)
         ObjTablasIO.setearCampoOperadorValor "dsProducto", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_dsProducto)
@@ -3543,7 +3588,7 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "<-", ObtenerCampo("nrTalonario").Text
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "<-", ObtenerCampo("nrComprobante").Text
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "<-", ObtenerCampo("tpComprobante").Text
-        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpLetra").Text  ' MOD version 4.7
         ObjTablasIO.setearCampoOperadorValor "nrItem", "<-", CStr(i)
         ObjTablasIO.setearCampoOperadorValor "cdProducto", "<-", Me.lstItemsFactura.ListItems(i).Text
         ObjTablasIO.setearCampoOperadorValor "dsProducto", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_dsProducto)
@@ -3577,7 +3622,7 @@ Dim vlComision    As Single
         ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "<-", ObtenerCampo("nrTalonario").Text
         ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "<-", ObtenerCampo("nrComprobante").Text
         ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "<-", ObtenerCampo("tpComprobante").Text
-        ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "<-", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "<-", ObtenerCampo("tpLetra").Text  ' MOD Version 4.7
         
         ObjTablasIO.setearCampoOperadorValor "cdCliente", "<-", ObtenerCampo("cdCliente").Text
         ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", ObtenerCampo("nrPuesto").Text
@@ -3922,7 +3967,7 @@ Dim strSQL       As String
               
     
     ObjTablasIO.setearCampoOperadorValor _
-              "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+              "tpLetra", "<-", ObtenerCampo("tpLetra").Text   ' MOD Version 4.7
               
     
     ObjTablasIO.setearCampoOperadorValor _
@@ -3950,7 +3995,7 @@ Dim strSQL       As String
             If Not ObjTablasIO.Insertar Then
                 Guardarregistro = False
             Else
-                If ObtenerCampo("tpComprobante").Text = "X" Then
+                If ObtenerCampo("tpLetra").Text = "X" Then ' MOD Version 4.7
                     objDiccionariodeDatos.GuardarSiguienteValor "TB_Recibos", "IdRecibo", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
                 Else
                     objDiccionariodeDatos.GuardarSiguienteValor "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
@@ -4056,7 +4101,7 @@ Dim strValor     As String
               
     
     ObjTablasIO.setearCampoOperadorValor _
-              "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+              "tpLetra", "<-", ObtenerCampo("tpLetra").Text  ' MOD Version 4.7
               
     
     ObjTablasIO.setearCampoOperadorValor _
@@ -5662,6 +5707,7 @@ Dim lnrCaja As String
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text
         ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "->", ""

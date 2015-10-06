@@ -33,7 +33,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.txtImpresora = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
             this.SuspendLayout();
             // 
@@ -84,16 +83,6 @@
             this.txtImpresora.TabIndex = 4;
             this.txtImpresora.Visible = false;
             // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(228, 126);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(68, 32);
-            this.button1.TabIndex = 5;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
@@ -104,7 +93,6 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(380, 263);
             this.ControlBox = false;
-            this.Controls.Add(this.button1);
             this.Controls.Add(this.txtImpresora);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -127,7 +115,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtImpresora;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.PrintDialog printDialog1;
     }
 }

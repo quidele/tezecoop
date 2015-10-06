@@ -29,15 +29,16 @@ namespace ConsoleApplication1
             ServiceDestinos service = new ServiceDestinos();
             Console.WriteLine(service.Inicializar());
             Console.ReadKey(); 
-             **/
+            */
 
+            /**
             ServicePrinter service = new ServicePrinter();
             Console.WriteLine(service.ConfigPrinter("impresión de factura"));
             Console.ReadKey();
             service.RollbackPrinter();
             Console.WriteLine("RollbackPrinter realizado");
             Console.ReadKey();
- 
+            **/
 
 
         }

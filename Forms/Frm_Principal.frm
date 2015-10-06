@@ -158,6 +158,12 @@ Begin VB.MDIForm Frm_Principal
       Begin VB.Menu optAnular 
          Caption         =   "Anular Comprobante"
       End
+      Begin VB.Menu optNotasCredito 
+         Caption         =   "Notas de Crédito"
+      End
+      Begin VB.Menu optNotasDebito 
+         Caption         =   "Notas de Débito"
+      End
       Begin VB.Menu optImpresionEnblanco 
          Caption         =   "Impresión de Facturas"
          Begin VB.Menu opt_imprime_factura 
@@ -443,7 +449,6 @@ Private Sub mnVentaViajes_Click()
   ' Version 3.7: obtenemos los datos de las caja
   objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
 
-
   objParametros.GrabarValor "Frm_VentasPasajes.vlDiaEuro", objCajas.vlDiaEuro
   objParametros.GrabarValor "Frm_VentasPasajes.vlDiaDolar", objCajas.vlDiaDolar
   objParametros.GrabarValor "Frm_VentasPasajes.vlDiaReal", objCajas.vlDiaReal
@@ -454,6 +459,10 @@ Private Sub mnVentaViajes_Click()
   objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
   objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "automatica"
   objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
+  ' ADD agregado en la version 4.7
+  objParametros.GrabarValor "Frm_VentaPasajes.tpComprobante", "FA"
+  objParametros.GrabarValor "Frm_VentaPasajes.TituloPrincipal", "Venta de Viajes"
+  
   objParametros.GrabarValor "FormatoHoja", "Chico"
   
   ' analisis version 4.7
@@ -994,6 +1003,57 @@ Private Sub optNivelesdeAcceso_Click()
     Frm_ABMNivelAcceso.Show 1
     
 
+End Sub
+
+Private Sub optNotasCredito_Click()
+
+  ' Version 3.7: obtenemos los datos de las caja
+  objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
+
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaEuro", objCajas.vlDiaEuro
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaDolar", objCajas.vlDiaDolar
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaReal", objCajas.vlDiaReal
+    
+  objParametros.GrabarValor "Frm_VentaPasajes.numeracion_correlativa", "SI"
+  objParametros.GrabarValor "Frm_VentaPasajes.desde", "puesto"
+  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objConfig.nrPuesto
+  objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
+  objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "automatica"
+  objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
+  ' ADD agregado en la version 4.7
+  objParametros.GrabarValor "Frm_VentaPasajes.tpComprobante", "NC"
+  objParametros.GrabarValor "Frm_VentaPasajes.TituloPrincipal", "Notas de Crédito"
+  
+  objParametros.GrabarValor "FormatoHoja", "Chico"
+  
+  ' analisis version 4.7
+  Frm_VentaPasajes.Show 1
+End Sub
+
+Private Sub optNotasDebito_Click()
+
+  ' Version 3.7: obtenemos los datos de las caja
+  objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
+
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaEuro", objCajas.vlDiaEuro
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaDolar", objCajas.vlDiaDolar
+  objParametros.GrabarValor "Frm_VentasPasajes.vlDiaReal", objCajas.vlDiaReal
+    
+  objParametros.GrabarValor "Frm_VentaPasajes.numeracion_correlativa", "SI"
+  objParametros.GrabarValor "Frm_VentaPasajes.desde", "puesto"
+  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objConfig.nrPuesto
+  objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
+  objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "automatica"
+  objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
+  ' ADD agregado en la version 4.7
+  objParametros.GrabarValor "Frm_VentaPasajes.tpComprobante", "ND"
+  objParametros.GrabarValor "Frm_VentaPasajes.TituloPrincipal", "Notas de Débito"
+  
+  objParametros.GrabarValor "FormatoHoja", "Chico"
+  
+  ' analisis version 4.7
+  Frm_VentaPasajes.Show 1
+  
 End Sub
 
 Private Sub optPagosdelaCajaActual_Click()
