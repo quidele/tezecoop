@@ -1436,7 +1436,7 @@ Dim strValor    As String
 
     '***********************************************************
     ' Modificacion EZE II
-    strSQL = "sco_Puestos_v4_1 @nrPuesto_param=" + vlparametro_PUESTO_FACTURACION_CTA_CTE
+    strSQL = "sco_Puestos_v4_2 @nrPuesto_param=" + vlparametro_PUESTO_FACTURACION_CTA_CTE
     If Not objbasededatos.ExecStoredProcedures(strSQL) Then
         MsgBox "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"

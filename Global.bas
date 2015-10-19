@@ -1,5 +1,5 @@
 Attribute VB_Name = "Global"
-    Option Explicit
+Option Explicit
 
 Declare Sub Sleep Lib "kernel32" (ByVal dwMilliseconds As Long)
 
@@ -7,6 +7,7 @@ Global Const FACTURACION_REMOTA = "FACTURACION_REMOTA"
 Global Const ADMINISTRACION = "ADMINISTRACION"
 Global Const MAX_VALOR_COMPROBANTE = 99999999
 Global Const CANTIDAD_DECIMALES = 2
+Global Const MODO_DEBUG = 0
 
 Global objbasededatos           As CBasededatos
 Global objDiccionariodeDatos    As CDiccionariodeDatos
@@ -64,7 +65,7 @@ Enum ABM
 End Enum
 
 
-Private Function crearFactoryDAO(ptpModo_Operacion As String) As Boolean
+Public Function crearFactoryDAO(ptpModo_Operacion As String) As Boolean
 
     
     If ptpModo_Operacion = FACTURACION_REMOTA Then
@@ -100,7 +101,10 @@ End Function
 Sub Main()
 Dim lnrCaja As String
 
-
+    If App.LogMode = MODO_DEBUG Then
+        ' Realizar Pruebas
+        Modulo_Pruebas.EjecutarPruebas
+    End If
 
     objConfigRegional.ConfigurarSistema
     
@@ -181,13 +185,16 @@ Dim lnrCaja As String
     Set objSPs.DiccionarioDeDatos = objDiccionariodeDatos
     Set objSPs.lobjConfigRegional = objConfigRegional
     
+    
     frm_Splash.Show 1
+    
     CrearCarpeta objConfig.dsPathTemp
     
     
     ' validando el acceso del usuario
     Frm_Acceso.Show 1
 
+    objUsuario.ValidarUsuario
     
     If objUsuario.tpAcceso = "Puestos" And objConfig.nrPuesto = "9" Then
         MsgBox "Prohibido el acceso a los usuarios de los 'Puestos'.", vbCritical

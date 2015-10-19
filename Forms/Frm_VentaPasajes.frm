@@ -1034,7 +1034,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   245628929
+         Format          =   115736577
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2473,34 +2473,34 @@ Dim objLicenciatario  As New CLicenciatario
 End Sub
 
 
-
-Private Sub ActualizarNroComprobante()
-Dim resp As Byte
-Dim strSQL  As String
-Dim nrComprobante As Long
-
-    
-    ObjTablasIO.nmTabla = "TB_Puestos"
-    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
-    ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "->", ""
-    
-    If Not ObjTablasIO.Seleccionar() Then Exit Sub
-    
-    If ObjTablasIO.rs_resultados.EOF Then Exit Sub
-    
-    nrComprobante = ObjTablasIO.rs_resultados("nrComprobante_automatico_ult") + 1
-    ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(CStr(nrComprobante), 8)
-    
-    ObjTablasIO.nmTabla = "TB_Puestos"
-    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
-    ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-    ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
-
-    If Not ObjTablasIO.Actualizar() Then
-         Exit Sub
-    End If
-    
-End Sub
+' Version 4.7 VERIFICAR EL PROCEDIMIENTO
+'Private Sub ActualizarNroComprobante()
+'Dim resp As Byte
+'Dim strSQL  As String
+'Dim nrComprobante As Long
+'
+'
+'    ObjTablasIO.nmTabla = "TB_Puestos"
+'    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
+'    ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "->", ""
+'
+'    If Not ObjTablasIO.Seleccionar() Then Exit Sub
+'
+'    If ObjTablasIO.rs_resultados.EOF Then Exit Sub
+'
+'    nrComprobante = ObjTablasIO.rs_resultados("nrComprobante_automatico_ult") + 1
+'    ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(CStr(nrComprobante), 8)
+'
+'    ObjTablasIO.nmTabla = "TB_Puestos"
+'    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
+'    ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
+'    ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
+'
+'    If Not ObjTablasIO.Actualizar() Then
+'         Exit Sub
+'    End If
+'
+'End Sub
 
 
 Private Function FacturarBD() As Boolean
@@ -2621,6 +2621,7 @@ Private Function FacturarBD() As Boolean
            Case "administracion", "administracion.cajapuesto"
                 ' no hacemos nada
            Case Else
+                ' Version 4.7 VERIFICAR EL PROCEDIMIENTO
                If Not grabarPuesto() Then
                    objbasededatos.RollBackTrans
                    Exit Function
@@ -2688,45 +2689,28 @@ Private Function FacturarBD() As Boolean
 
 End Function
 
+' Version 4.7 VERIFICAR EL PROCEDIMIENTO
+' MDY Modificado en la version 4.7
 Private Function grabarPuesto() As Boolean
 
         grabarPuesto = False
 
-           '**********************************************************
-           '-- modificado para la versión 1.4
-           ObjTablasIO.nmTabla = "TB_Puestos"
-           ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
-           
-           If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "automatica" Then
-                Select Case ObtenerCampo("tpComprobante")
-                Case "A" ' RI
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_auto_empresa_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                Case "B" ' Consumidor Final, RNI, Otros
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                Case "X" ' Recibos
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_auto_ctacte_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                End Select
-           Else
-                Select Case ObtenerCampo("tpComprobante")
-                Case "A" ' RI
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_manual_empresa_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                Case "B" ' Consumidor Final, RNI, Otros
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_manual_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                Case "X" ' Recibos
-                     ObjTablasIO.setearCampoOperadorValor "nrComprobante_manual_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-                End Select
-           End If
-           
-           
-           ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
-
-           If Not ObjTablasIO.Actualizar() Then
-                lerror = "ERROR: " + objbasededatos.Error
-                Exit Function
-           End If
-           '**********************************************************
-           
-           grabarPuesto = True
+        '***********************************************************
+        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+        objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
+        objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
+        objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
+        objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
+        objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
+        objSPs.setearCampoValor "@nrComprobante", CStr(CLng(ObtenerCampo("nrComprobante")))
+    
+        If Not objSPs.ExecSP Then
+            MsgBox "No se puedo actualizar el numero de comprobante " + _
+                   vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
+            End
+        End If
+        
+        grabarPuesto = True
            
 End Function
 
@@ -3140,15 +3124,12 @@ Dim strValor    As String
     objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
     objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
 
-    
-
     If Not objSPs.ExecSP Then
         MsgBox "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
         End
     End If
-    
-       
+           
     strValor = Trim(objbasededatos.rs_resultados("nrTalonario"))
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
     strValor = Trim(objbasededatos.rs_resultados("nrComprobante"))
@@ -3166,6 +3147,7 @@ Dim strValor    As String
 
     flFacturaCtacte = objbasededatos.rs_resultados_valor("flFacturaCtacte")
     
+	' VERSION 4.7 VERIFICAR LA SIGUIENTE LOGICA DE OBTENCION DE PROXIMO NUMERO
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion", "administracion.cajapuesto"
         If objParametros.ObtenerValor("Frm_VentaPasajes.numeracion_correlativa") = "NO" Then

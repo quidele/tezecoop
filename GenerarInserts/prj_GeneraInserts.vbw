@@ -1,9 +1,9 @@
 FrmAdmMetadata = 132, 132, 764, 444, , 44, 44, 676, 356, C
 CBasededatos = 88, 88, 720, 400, 
-Mod_General = 0, 0, 632, 312, Z
+Mod_General = 0, 0, 632, 312, 
 CArchivo = 0, 0, 0, 0, C
 CDiccionariodeDatos = 108, 108, 725, 551, C
 CConfigRegional = 27, 27, 847, 371, C
 CTablasIO = 135, 135, 752, 578, C
-CMetadata = 54, 54, 751, 497, C
+CMetadata = 54, 54, 751, 497, Z
 CFlexGridUtils = 189, 189, 886, 632, C

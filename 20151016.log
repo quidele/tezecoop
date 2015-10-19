@@ -1,0 +1,12 @@
+16/10/2015 17:43:14 | Exec sco_DiccionariodeDatos @nmtabla_param='tb_parametros'
+16/10/2015 17:43:14 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:14 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:14 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v2_0'
+16/10/2015 17:43:16 | Exec spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = 'Contado' ,@tpComprobante = 'ND' 
+16/10/2015 17:43:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:16 | Exec spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = 'Cuenta Corriente' ,@tpComprobante = 'ND' 
+16/10/2015 17:43:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+16/10/2015 17:43:16 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Puestos_v4_2'
+16/10/2015 17:43:16 | Exec sco_Puestos_v4_2 @nrPuesto_param = 4 
