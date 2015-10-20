@@ -331,7 +331,6 @@ Begin VB.Form Frm_VentaPasajes
          ItemData        =   "Frm_VentaPasajes.frx":0454
          Left            =   195
          List            =   "Frm_VentaPasajes.frx":0467
-         Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   29
          TabStop         =   0   'False
@@ -1034,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   115736577
+         Format          =   118751233
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3066,9 +3065,9 @@ Dim strValor   As String
 Dim strSQL_Params As String
 
     
-    
+    ObtenerCampo("tpComprobante").AddItem objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
         '-- ADD Version  4.7
-    ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
     Me.Caption = objParametros.ObtenerValor("Frm_VentaPasajes.TituloPrincipal")
 
     
@@ -3147,7 +3146,7 @@ Dim strValor    As String
 
     flFacturaCtacte = objbasededatos.rs_resultados_valor("flFacturaCtacte")
     
-	' VERSION 4.7 VERIFICAR LA SIGUIENTE LOGICA DE OBTENCION DE PROXIMO NUMERO
+        ' VERSION 4.7 VERIFICAR LA SIGUIENTE LOGICA DE OBTENCION DE PROXIMO NUMERO
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion", "administracion.cajapuesto"
         If objParametros.ObtenerValor("Frm_VentaPasajes.numeracion_correlativa") = "NO" Then

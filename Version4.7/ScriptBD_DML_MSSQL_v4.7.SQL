@@ -62,9 +62,11 @@ INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamani
 
 
 -- Liberamos la opcion de Menu  que realiza la liquidacion de una cta cte
+/* 
 SELECT IdOpcionMenu, dsOpcionMenu, nmOpcionMenu, tpNivelJerarquico, nrorden, nrNivelHoja, flvisible, flCajaAdm
-FROM   TB_OpcionesMenues
-WHERE  nmOpcionMenu = 'optFacturarCtaCte'
+FROM   TB_OpcionesMenues   order by nrorden
+
+*/
 
 
 -- Liberamos la opcion de Menu  que realiza la liquidacion de una cta cte para que la pueda realizar cualquier perfil y
@@ -72,3 +74,29 @@ WHERE  nmOpcionMenu = 'optFacturarCtaCte'
 update   TB_OpcionesMenues set  flCajaAdm = 0 WHERE  nmOpcionMenu = 'optFacturarCtaCte'
 
 -- Crear opciones de MENU para nd y nc
+
+
+
+delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu = ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'optNotasDebito')
+ 
+delete from TB_OpcionesMenues where nmOpcionMenu = 'optNotasCredito'
+
+declare @IdOpcionMenu int
+
+select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+
+INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Notas de Crédito','optNotasCredito','Empleado',102.1,1,1,0);
+
+
+
+select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+
+/* nuevas opciones de menu para el manejo de cajas de los puestos */
+delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu = ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'optNotasDebito')
+ 
+delete from TB_OpcionesMenues where nmOpcionMenu = 'optNotasDebito'
+
+INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Notas de Dédito','optNotasDebito','Empleado',102.2,1,1,0);
+
+
+exec SP_GenerarNuevasOpcionesdeMenues
