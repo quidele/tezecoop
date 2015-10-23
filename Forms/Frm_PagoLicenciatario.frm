@@ -17,15 +17,15 @@ Begin VB.Form frm_PagoLicenciatario
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   8
       Top             =   0
       Width           =   13185
       _ExtentX        =   23257
-      _ExtentY        =   1111
-      ButtonWidth     =   2011
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2117
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgPagoLicenciatarios"
