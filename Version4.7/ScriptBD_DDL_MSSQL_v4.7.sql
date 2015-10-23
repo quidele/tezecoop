@@ -16,16 +16,12 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Pue
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Puestos' and COLUMN_NAME='nrComprobante_manual_ctacte_nc_ult')	ALTER	TABLE	dbo.TB_Puestos	ADD	nrComprobante_manual_empresa_nc_ult	int	null
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Puestos' and COLUMN_NAME='nrComprobante_manual_ctacte_nc_ult')	ALTER	TABLE	dbo.TB_Puestos	ADD	nrComprobante_manual_ctacte_nc_ult	int	null
 
-
 go
 
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtener_puntosdeventa_facturacion_v2_0' )
 	drop procedure  dbo.spu_obtener_puntosdeventa_facturacion_v2_0
 
-
 go
-
-
 
 
 /*
@@ -905,3 +901,108 @@ end;
 
 
 go
+
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+/****************************************************************/
+ALTER PROCEDURE [dbo].[SP_PrepararReimpresiondeComprobante_v3_7] 
+@nrTalonario char(4),
+@nrComprobante char(12),
+@tpComprobante char(2), 
+@tpLetra char(1)
+AS
+begin 
+
+	DELETE TB_ComprobantesDetalle_Imprime FROM TB_Comprobantes_Imprime,  TB_ComprobantesDetalle_Imprime
+	WHERE TB_Comprobantes_Imprime.nrTalonario = TB_ComprobantesDetalle_Imprime.nrTalonario and
+	 TB_Comprobantes_Imprime.nrComprobante = TB_ComprobantesDetalle_Imprime.nrComprobante and
+	 TB_Comprobantes_Imprime.tpComprobante = TB_ComprobantesDetalle_Imprime.tpComprobante and
+	 TB_Comprobantes_Imprime.tpLetra = TB_ComprobantesDetalle_Imprime.tpLetra
+	and  datediff(minute,TB_Comprobantes_Imprime.dtInsercion, getdate())>2
+
+	DELETE  TB_Comprobantes_Imprime FROM TB_Comprobantes_Imprime WHERE
+	 datediff(minute,dtInsercion, getdate())>2
+
+
+	DELETE TB_ComprobantesDetalle_Imprime FROM  TB_ComprobantesDetalle_Imprime
+	WHERE  TB_ComprobantesDetalle_Imprime.nrTalonario=@nrTalonario AND
+	TB_ComprobantesDetalle_Imprime.nrComprobante=@nrComprobante AND 
+	TB_ComprobantesDetalle_Imprime.tpComprobante=@tpComprobante AND
+	TB_ComprobantesDetalle_Imprime.tpLetra=@tpLetra 
+
+	DELETE TB_Comprobantes_Imprime FROM  TB_Comprobantes_Imprime
+	WHERE  TB_Comprobantes_Imprime.nrTalonario=@nrTalonario AND
+	TB_Comprobantes_Imprime.nrComprobante=@nrComprobante AND 
+	TB_Comprobantes_Imprime.tpComprobante=@tpComprobante AND
+	TB_Comprobantes_Imprime.tpLetra=@tpLetra;
+
+	INSERT INTO [TB_Comprobantes_Imprime]
+	    (nrTalonario, nrComprobante, tpComprobante, tpLetra, 
+	    dtComprobante, cdCondVenta, tpComision, cdCliente, 
+	    tpMoneda, tpIVA, vlTotalGeneral, vlPagoPesos, vlPagoEuros, 
+	    vlPagoDolares, dsLeyenda, flManual, dtInsercion, 
+	    flSincronizado, dsUsuario, nrCaja, dtCaja, nrPuesto, 
+	    dsDomicilio, nrLicencia, nrBultos, nrPasajeros, nrDoc, 
+	    dsRazonSocial, nmNombre, nmApellido, nmLicenciatario, 
+	    cdPostal, nmLocalidad, cdCodBar, dsEmail, nrTel, nrCAI, 
+	    dtVencimiento, vlDiaDolar, vlDiaEuro, dsOpcional1, 
+	    dsOpcional2, dsOpcional3, dsOpcional4, flAnulado, dtAnulado, 
+	    nmEmpleado,vlIVA,vlSubTotal,vlPagoReales,vlDiaReal)
+	SELECT nrTalonario, nrComprobante, rtrim(tpComprobante) as tpComprobante, tpLetra, 
+	    dtComprobante, cdCondVenta, tpComision, cdCliente, 
+	    tpMoneda, tpIVA, vlTotalGeneral, vlPagoPesos, vlPagoEuros, 
+	    vlPagoDolares, dsLeyenda, flManual, dtInsercion, 
+	    flSincronizado, dsUsuario, nrCaja, dtCaja, nrPuesto, 
+	    dsDomicilio, nrLicencia, nrBultos, nrPasajeros, nrDoc, 
+	    dsRazonSocial, nmNombre, nmApellido, nmLicenciatario, 
+	    cdPostal, nmLocalidad, cdCodBar, dsEmail, nrTel, nrCAI, 
+	    dtVencimiento, vlDiaDolar, vlDiaEuro, dsOpcional1, 
+	    dsOpcional2, dsOpcional3, dsOpcional4, flAnulado, dtAnulado, 
+	    nmEmpleado,vlIVA,vlSubTotal, vlPagoReales, vlDiaReal
+	FROM TB_Comprobantes WHERE TB_Comprobantes.nrTalonario=@nrTalonario AND
+	TB_Comprobantes.nrComprobante=@nrComprobante AND 
+	TB_Comprobantes.tpComprobante=@tpComprobante AND
+	TB_Comprobantes.tpLetra=@tpLetra;
+
+
+	INSERT INTO [TB_ComprobantesDetalle_Imprime]
+	    (nrTalonario, nrComprobante, tpComprobante, tpLetra, nrItem, 
+	    cdProducto, dsProducto, tpOperacion, qtCantidad, vlPorcentaje, 
+	    vlPrecioPeaje, vlPrecioViaje, vlTotalItem, dtInsercion, 
+	    flSincronizado)
+	SELECT nrTalonario, nrComprobante, rtrim(tpComprobante) as tpComprobante, tpLetra, 
+	    nrItem, cdProducto, dsProducto, tpOperacion, qtCantidad, 
+	    vlPorcentaje, vlPrecioPeaje, vlPrecioViaje, vlTotalItem, 
+	    dtInsercion, flSincronizado
+	FROM TB_ComprobantesDetalle WHERE TB_ComprobantesDetalle.nrTalonario=@nrTalonario AND
+	TB_ComprobantesDetalle.nrComprobante=@nrComprobante AND 
+	TB_ComprobantesDetalle.tpComprobante=@tpComprobante AND
+	TB_ComprobantesDetalle.tpLetra=@tpLetra ;
+	
+	
+	update  a
+	set a.nrTelLicenciatario = isnull(b.nrTel,'5480-0066'), 
+	    a.dsOpcional4 = (select isnull(vlPrecioViaje, 350)  from tb_productos    where  cdProducto = 90020)
+	from TB_Comprobantes_Imprime a , TB_proveedores b
+	where a.nrLicencia = b.nrLicencia and
+	      a.nrTalonario=@nrTalonario  and
+	      a.nrComprobante=@nrComprobante and
+	      a.tpComprobante=@tpComprobante and 
+	      a.tpLetra=@tpLetra;
+
+
+	update  a
+	set a.nrCAI = b.nrCAI_Talonario_auto_empresa ,
+	    a.dtVencimiento  = b.dtCAI_Talonario_auto_empresa
+	from TB_Comprobantes_Imprime a inner join TB_Puestos  b on 
+							convert(int , a.nrTalonario) = b.nrTalonario_auto_empresa
+	where a.nrCAI is null and  (a.tpComprobante = 'A'  or a.tpLetra = 'A')  and a.tpIVA = 'RI' and
+	      a.nrTalonario=@nrTalonario  and
+	      a.nrComprobante=@nrComprobante and
+	      a.tpComprobante=@tpComprobante and 
+	      a.tpLetra=@tpLetra;
+
+return 1; 
+
+end

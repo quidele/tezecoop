@@ -81,9 +81,9 @@ Begin VB.Form frm_Splash
       EndProperty
       ForeColor       =   &H00400000&
       Height          =   600
-      Left            =   5025
+      Left            =   5010
       TabIndex        =   4
-      Top             =   3030
+      Top             =   3045
       Width           =   3540
    End
    Begin VB.Label Label2 
@@ -139,6 +139,13 @@ Dim contar As Integer
 Dim objExecCmd As New CEjeProgramas
 
 Private Sub Form_Activate()
+
+    
+    If App.LogMode = MODO_DEBUG Then
+        ' Realizar Pruebas
+        Me.Visible = False
+    End If
+
 
     Screen.MousePointer = vbHourglass
     objProductos.buscarTodoslosProductos

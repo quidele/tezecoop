@@ -31,10 +31,25 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
          Height          =   285
+         Index           =   16
+         Left            =   225
+         Locked          =   -1  'True
+         TabIndex        =   93
+         TabStop         =   0   'False
+         Tag             =   "tpComprobante"
+         Top             =   450
+         Width           =   510
+      End
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   285
          Index           =   4
          Left            =   1785
          Locked          =   -1  'True
-         TabIndex        =   92
+         TabIndex        =   91
          TabStop         =   0   'False
          Tag             =   "tpLetra"
          Top             =   450
@@ -49,7 +64,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   8
          Left            =   8640
          Locked          =   -1  'True
-         TabIndex        =   91
+         TabIndex        =   90
          Tag             =   "cdComision"
          Top             =   3735
          Visible         =   0   'False
@@ -73,7 +88,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   0
          Left            =   6150
          Locked          =   -1  'True
-         TabIndex        =   89
+         TabIndex        =   88
          TabStop         =   0   'False
          Tag             =   "vlSaldoReales"
          Text            =   "0"
@@ -97,7 +112,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   285
          Index           =   2
          Left            =   6150
-         TabIndex        =   37
+         TabIndex        =   36
          Tag             =   "vlPagoReales"
          Text            =   "0"
          Top             =   6300
@@ -121,7 +136,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   0
          Left            =   6150
          Locked          =   -1  'True
-         TabIndex        =   88
+         TabIndex        =   87
          TabStop         =   0   'False
          Tag             =   "vlTotalReales"
          Text            =   "0"
@@ -132,7 +147,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Nuevo"
          Height          =   285
          Left            =   4230
-         TabIndex        =   86
+         TabIndex        =   85
          Top             =   1335
          Visible         =   0   'False
          Width           =   1050
@@ -142,7 +157,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   855
          Picture         =   "Frm_VentaPasajes.frx":030A
          Style           =   1  'Graphical
-         TabIndex        =   85
+         TabIndex        =   84
          Top             =   1035
          Width           =   285
       End
@@ -155,7 +170,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   2
          Left            =   6810
          Locked          =   -1  'True
-         TabIndex        =   83
+         TabIndex        =   82
          Tag             =   "tpFormadePago"
          Top             =   1365
          Width           =   2040
@@ -178,7 +193,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   121
          Left            =   2985
          Locked          =   -1  'True
-         TabIndex        =   82
+         TabIndex        =   81
          TabStop         =   0   'False
          Tag             =   "vlIVA"
          Text            =   "0"
@@ -203,7 +218,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   120
          Left            =   1170
          Locked          =   -1  'True
-         TabIndex        =   80
+         TabIndex        =   79
          TabStop         =   0   'False
          Tag             =   "vlSubtotal"
          Text            =   "0"
@@ -218,7 +233,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   285
          Index           =   15
          Left            =   7170
-         TabIndex        =   49
+         TabIndex        =   48
          Tag             =   "nrPasajeros"
          Top             =   5400
          Width           =   480
@@ -231,7 +246,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   285
          Index           =   14
          Left            =   7950
-         TabIndex        =   51
+         TabIndex        =   50
          Tag             =   "nrBultos"
          Top             =   5400
          Width           =   405
@@ -245,7 +260,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   12
          Left            =   8055
          Locked          =   -1  'True
-         TabIndex        =   35
+         TabIndex        =   34
          TabStop         =   0   'False
          Tag             =   "nrCaja"
          Top             =   465
@@ -260,7 +275,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   11
          Left            =   7425
          Locked          =   -1  'True
-         TabIndex        =   34
+         TabIndex        =   33
          TabStop         =   0   'False
          Tag             =   "nrPuesto"
          Top             =   465
@@ -275,7 +290,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   10
          Left            =   5610
          Locked          =   -1  'True
-         TabIndex        =   33
+         TabIndex        =   32
          TabStop         =   0   'False
          Tag             =   "nmEmpleado"
          Top             =   465
@@ -289,7 +304,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   285
          Index           =   8
          Left            =   120
-         TabIndex        =   32
+         TabIndex        =   31
          TabStop         =   0   'False
          Tag             =   "dsLeyenda"
          Top             =   5985
@@ -303,7 +318,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   120
          List            =   "Frm_VentaPasajes.frx":041A
          Style           =   2  'Dropdown List
-         TabIndex        =   31
+         TabIndex        =   30
          Tag             =   "cdCondVenta"
          Top             =   5400
          Width           =   1725
@@ -317,26 +332,11 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   1
          Left            =   2280
          Locked          =   -1  'True
-         TabIndex        =   30
+         TabIndex        =   29
          TabStop         =   0   'False
          Tag             =   "nrTalonario"
          Top             =   450
          Width           =   630
-      End
-      Begin VB.ComboBox Combox1 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
-         Height          =   315
-         Index           =   1
-         ItemData        =   "Frm_VentaPasajes.frx":0454
-         Left            =   195
-         List            =   "Frm_VentaPasajes.frx":0467
-         Style           =   2  'Dropdown List
-         TabIndex        =   29
-         TabStop         =   0   'False
-         Tag             =   "tpComprobante"
-         Top             =   450
-         Width           =   825
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
@@ -485,7 +485,7 @@ Begin VB.Form Frm_VentaPasajes
          Enabled         =   0   'False
          Height          =   285
          Left            =   8328
-         Picture         =   "Frm_VentaPasajes.frx":047A
+         Picture         =   "Frm_VentaPasajes.frx":0454
          Style           =   1  'Graphical
          TabIndex        =   21
          Top             =   3750
@@ -508,7 +508,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   285
          Index           =   9
          Left            =   5160
-         TabIndex        =   36
+         TabIndex        =   35
          Tag             =   "vlPagoEuros"
          Text            =   "0"
          Top             =   6300
@@ -532,7 +532,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   17
          Left            =   7110
          ScrollBars      =   2  'Vertical
-         TabIndex        =   38
+         TabIndex        =   37
          Tag             =   "vlPagoDolares"
          Text            =   "0"
          Top             =   6300
@@ -556,7 +556,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   18
          Left            =   8070
          ScrollBars      =   2  'Vertical
-         TabIndex        =   40
+         TabIndex        =   39
          TabStop         =   0   'False
          Tag             =   "vlPagoPesos"
          Text            =   "0"
@@ -641,7 +641,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdCalcular 
          Height          =   285
          Left            =   9105
-         Picture         =   "Frm_VentaPasajes.frx":057A
+         Picture         =   "Frm_VentaPasajes.frx":0554
          Style           =   1  'Graphical
          TabIndex        =   0
          TabStop         =   0   'False
@@ -653,7 +653,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "&Facturar"
          Height          =   375
          Left            =   5175
-         TabIndex        =   42
+         TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
          Top             =   6960
          Width           =   3960
@@ -730,10 +730,10 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.ComboBox Combox1 
          BackColor       =   &H00E0E0E0&
          Height          =   315
-         Index           =   2
-         ItemData        =   "Frm_VentaPasajes.frx":066C
+         Index           =   1
+         ItemData        =   "Frm_VentaPasajes.frx":0646
          Left            =   1890
-         List            =   "Frm_VentaPasajes.frx":0679
+         List            =   "Frm_VentaPasajes.frx":0653
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComision"
@@ -838,21 +838,21 @@ Begin VB.Form Frm_VentaPasajes
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         Index           =   3
-         ItemData        =   "Frm_VentaPasajes.frx":069F
-         Left            =   1020
-         List            =   "Frm_VentaPasajes.frx":06B5
+         Index           =   2
+         ItemData        =   "Frm_VentaPasajes.frx":0679
+         Left            =   750
+         List            =   "Frm_VentaPasajes.frx":068F
          Style           =   2  'Dropdown List
          TabIndex        =   3
          TabStop         =   0   'False
          Tag             =   "tpIVA"
          Top             =   450
-         Width           =   780
+         Width           =   1050
       End
       Begin MSComctlLib.ListView lstBusquedaProductos 
          Height          =   1590
          Left            =   120
-         TabIndex        =   39
+         TabIndex        =   38
          Top             =   1950
          Width           =   8685
          _ExtentX        =   15319
@@ -939,7 +939,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin MSComctlLib.ListView lstItemsFactura 
          Height          =   1065
          Left            =   120
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   4065
          Width           =   8670
          _ExtentX        =   15293
@@ -1027,13 +1027,13 @@ Begin VB.Form Frm_VentaPasajes
       Begin MSComCtl2.DTPicker DTPicker1 
          Height          =   315
          Left            =   4275
-         TabIndex        =   87
+         TabIndex        =   86
          Top             =   450
          Width           =   1335
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   118751233
+         Format          =   252837889
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1064,7 +1064,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   1815
-         TabIndex        =   93
+         TabIndex        =   92
          Top             =   240
          Width           =   495
       End
@@ -1082,7 +1082,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   6150
-         TabIndex        =   90
+         TabIndex        =   89
          Top             =   5760
          Width           =   975
       End
@@ -1090,7 +1090,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Forma de Pago:"
          Height          =   225
          Left            =   5550
-         TabIndex        =   84
+         TabIndex        =   83
          Top             =   1380
          Width           =   1230
       End
@@ -1107,7 +1107,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   330
          Left            =   135
-         TabIndex        =   81
+         TabIndex        =   80
          Top             =   7050
          Width           =   900
       End
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   330
          Left            =   2535
-         TabIndex        =   79
+         TabIndex        =   78
          Top             =   7020
          Width           =   435
       End
@@ -1141,7 +1141,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   7005
-         TabIndex        =   78
+         TabIndex        =   77
          Top             =   5190
          Width           =   945
       End
@@ -1158,7 +1158,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   7950
-         TabIndex        =   77
+         TabIndex        =   76
          Top             =   5205
          Width           =   615
       End
@@ -1175,7 +1175,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   8025
-         TabIndex        =   76
+         TabIndex        =   75
          Top             =   225
          Width           =   870
       End
@@ -1192,7 +1192,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   7380
-         TabIndex        =   75
+         TabIndex        =   74
          Top             =   225
          Width           =   615
       End
@@ -1209,7 +1209,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   5595
-         TabIndex        =   74
+         TabIndex        =   73
          Top             =   225
          Width           =   1785
       End
@@ -1226,7 +1226,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   135
-         TabIndex        =   73
+         TabIndex        =   72
          Top             =   5745
          Width           =   4230
       End
@@ -1244,7 +1244,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   240
          Index           =   3
          Left            =   1005
-         TabIndex        =   72
+         TabIndex        =   71
          Top             =   255
          Width           =   570
       End
@@ -1262,7 +1262,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   225
          Index           =   2
          Left            =   135
-         TabIndex        =   71
+         TabIndex        =   70
          Top             =   5175
          Width           =   1620
       End
@@ -1280,7 +1280,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   2160
-         TabIndex        =   70
+         TabIndex        =   69
          Top             =   225
          Width           =   780
       End
@@ -1298,7 +1298,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   225
          Index           =   12
          Left            =   4470
-         TabIndex        =   69
+         TabIndex        =   68
          Top             =   255
          Width           =   1050
       End
@@ -1316,7 +1316,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   255
          Index           =   0
          Left            =   2955
-         TabIndex        =   68
+         TabIndex        =   67
          Top             =   225
          Width           =   1170
       End
@@ -1334,7 +1334,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   255
          Index           =   1
          Left            =   180
-         TabIndex        =   67
+         TabIndex        =   66
          Top             =   240
          Width           =   480
       End
@@ -1351,7 +1351,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   4500
-         TabIndex        =   66
+         TabIndex        =   65
          Top             =   5190
          Width           =   1455
       End
@@ -1368,7 +1368,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   3645
-         TabIndex        =   65
+         TabIndex        =   64
          Top             =   5190
          Width           =   750
       End
@@ -1386,7 +1386,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   8115
-         TabIndex        =   64
+         TabIndex        =   63
          Top             =   5760
          Width           =   1080
       End
@@ -1404,7 +1404,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   7215
-         TabIndex        =   63
+         TabIndex        =   62
          Top             =   5745
          Width           =   945
       End
@@ -1422,7 +1422,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   5115
-         TabIndex        =   62
+         TabIndex        =   61
          Top             =   5760
          Width           =   1050
       End
@@ -1439,7 +1439,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   390
          Left            =   150
-         TabIndex        =   61
+         TabIndex        =   60
          Top             =   6345
          Width           =   4050
       End
@@ -1448,7 +1448,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "A Cobrar"
          Height          =   255
          Left            =   4200
-         TabIndex        =   60
+         TabIndex        =   59
          Top             =   6060
          Width           =   915
       End
@@ -1457,7 +1457,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "A Pagar"
          Height          =   255
          Left            =   4200
-         TabIndex        =   59
+         TabIndex        =   58
          Top             =   6360
          Width           =   915
       End
@@ -1466,7 +1466,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Vuelto"
          Height          =   255
          Left            =   4200
-         TabIndex        =   58
+         TabIndex        =   57
          Top             =   6675
          Width           =   915
       End
@@ -1483,7 +1483,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   210
-         TabIndex        =   57
+         TabIndex        =   56
          Top             =   825
          Width           =   840
       End
@@ -1500,7 +1500,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   1095
-         TabIndex        =   56
+         TabIndex        =   55
          Top             =   795
          Width           =   2565
       End
@@ -1517,7 +1517,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   5865
-         TabIndex        =   55
+         TabIndex        =   54
          Top             =   810
          Width           =   930
       End
@@ -1534,7 +1534,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   255
          Left            =   3765
-         TabIndex        =   54
+         TabIndex        =   53
          Top             =   810
          Width           =   1275
       End
@@ -1553,7 +1553,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   255
          Index           =   4
          Left            =   180
-         TabIndex        =   53
+         TabIndex        =   52
          Top             =   1350
          Width           =   3000
       End
@@ -1570,7 +1570,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   228
          Left            =   7092
-         TabIndex        =   52
+         TabIndex        =   51
          Top             =   3516
          Width           =   1092
       End
@@ -1587,7 +1587,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   228
          Left            =   5448
-         TabIndex        =   50
+         TabIndex        =   49
          Top             =   3528
          Width           =   528
       End
@@ -1604,7 +1604,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   228
          Left            =   4392
-         TabIndex        =   48
+         TabIndex        =   47
          Top             =   3528
          Width           =   912
       End
@@ -1621,7 +1621,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   228
          Left            =   3276
-         TabIndex        =   47
+         TabIndex        =   46
          Top             =   3516
          Width           =   1044
       End
@@ -1638,7 +1638,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   225
          Left            =   165
-         TabIndex        =   46
+         TabIndex        =   45
          Top             =   3510
          Width           =   1455
       End
@@ -1656,7 +1656,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   225
          Index           =   5
          Left            =   1920
-         TabIndex        =   45
+         TabIndex        =   44
          Top             =   5190
          Width           =   1620
       End
@@ -1673,7 +1673,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   330
          Left            =   135
-         TabIndex        =   44
+         TabIndex        =   43
          Top             =   6780
          Width           =   4050
       End
@@ -1690,7 +1690,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
          Height          =   228
          Left            =   6312
-         TabIndex        =   43
+         TabIndex        =   42
          Top             =   3516
          Width           =   564
       End
@@ -1766,7 +1766,7 @@ Begin VB.Form Frm_VentaPasajes
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_VentaPasajes.frx":06D1
+      MouseIcon       =   "Frm_VentaPasajes.frx":06AB
       Begin MSComctlLib.ImageList imgVentaPasajesResaltado 
          Left            =   5850
          Top             =   885
@@ -1780,43 +1780,43 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   10
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0833
+               Picture         =   "Frm_VentaPasajes.frx":080D
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":094F
+               Picture         =   "Frm_VentaPasajes.frx":0929
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0AA3
+               Picture         =   "Frm_VentaPasajes.frx":0A7D
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0BB3
+               Picture         =   "Frm_VentaPasajes.frx":0B8D
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0CB5
+               Picture         =   "Frm_VentaPasajes.frx":0C8F
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0E09
+               Picture         =   "Frm_VentaPasajes.frx":0DE3
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0F15
+               Picture         =   "Frm_VentaPasajes.frx":0EEF
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1591
+               Picture         =   "Frm_VentaPasajes.frx":156B
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":16F9
+               Picture         =   "Frm_VentaPasajes.frx":16D3
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1B4D
+               Picture         =   "Frm_VentaPasajes.frx":1B27
                Key             =   "Salir"
             EndProperty
          EndProperty
@@ -1834,47 +1834,47 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1FA1
+               Picture         =   "Frm_VentaPasajes.frx":1F7B
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":20B9
+               Picture         =   "Frm_VentaPasajes.frx":2093
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":220D
+               Picture         =   "Frm_VentaPasajes.frx":21E7
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2325
+               Picture         =   "Frm_VentaPasajes.frx":22FF
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2431
+               Picture         =   "Frm_VentaPasajes.frx":240B
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2585
+               Picture         =   "Frm_VentaPasajes.frx":255F
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":268D
+               Picture         =   "Frm_VentaPasajes.frx":2667
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2D09
+               Picture         =   "Frm_VentaPasajes.frx":2CE3
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2E69
+               Picture         =   "Frm_VentaPasajes.frx":2E43
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":32BD
+               Picture         =   "Frm_VentaPasajes.frx":3297
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":3711
+               Picture         =   "Frm_VentaPasajes.frx":36EB
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -3065,12 +3065,11 @@ Dim strValor   As String
 Dim strSQL_Params As String
 
     
-    ObtenerCampo("tpComprobante").AddItem objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    
         '-- ADD Version  4.7
-    ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    
     Me.Caption = objParametros.ObtenerValor("Frm_VentaPasajes.TituloPrincipal")
 
-    
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
         Me.DTPicker1.Visible = False
@@ -3098,8 +3097,6 @@ Dim strSQL_Params As String
     
     limpiarControles
     SelecionarItemCombo
-    
-
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
 
 End Sub
@@ -3121,7 +3118,7 @@ Dim strValor    As String
     objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
     objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
     objSPs.setearCampoValor "@tpFormadePago", ObtenerCampo("tpFormadePago").Text
-    objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
+    objSPs.setearCampoValor "@tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
 
     If Not objSPs.ExecSP Then
         MsgBox "No se encuentra definido el número de talonario" + _
@@ -3134,10 +3131,13 @@ Dim strValor    As String
     strValor = Trim(objbasededatos.rs_resultados("nrComprobante"))
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
     strValor = Trim(objbasededatos.rs_resultados("tpLetra"))
-    ' COMENTADO VERSION 4.7
-    ' REM objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
-    
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    
+    ' COMENTADO VERSION 4.7
+    strValor = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
+    
+    
     ' agregado en la version 1.8  - autoimpresion Empresas RI
     strValor = Trim(objbasededatos.rs_resultados_valor("nrCAI"))
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
@@ -3146,7 +3146,7 @@ Dim strValor    As String
 
     flFacturaCtacte = objbasededatos.rs_resultados_valor("flFacturaCtacte")
     
-        ' VERSION 4.7 VERIFICAR LA SIGUIENTE LOGICA DE OBTENCION DE PROXIMO NUMERO
+    ' VERSION 4.7 VERIFICAR LA SIGUIENTE LOGICA DE OBTENCION DE PROXIMO NUMERO
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion", "administracion.cajapuesto"
         If objParametros.ObtenerValor("Frm_VentaPasajes.numeracion_correlativa") = "NO" Then
@@ -3164,10 +3164,11 @@ Dim strValor    As String
     ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
     
     '/* REM Version 4.7 */
-    'strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
-    'ObtenerCampo("tpComprobante").Text = strValor
+    strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpComprobante", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
+    ObtenerCampo("tpComprobante").Text = strValor
     
     strValor = objDiccionariodeDatos.ObtenerValorActual("TB_Comprobantes", "tpLetra", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
+    ObtenerCampo("tpLetra").Text = strValor
     '***********************************************************
     
 End Sub
@@ -3947,8 +3948,8 @@ Dim strSQL       As String
               "dsOpcional2", "<-", ConcatenarDestinos()
               
     
-    ObjTablasIO.setearCampoOperadorValor _
-              "tpLetra", "<-", ObtenerCampo("tpLetra").Text   ' MOD Version 4.7
+    ' REM ObjTablasIO.setearCampoOperadorValor _
+    ' REM           "tpLetra", "<-", ObtenerCampo("tpLetra").Text   ' MOD Version 4.7
               
     
     ObjTablasIO.setearCampoOperadorValor _

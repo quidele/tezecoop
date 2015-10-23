@@ -186,6 +186,7 @@ Dim lnrCaja As String
     Set objSPs.lobjConfigRegional = objConfigRegional
     
     
+    
     frm_Splash.Show 1
     
     CrearCarpeta objConfig.dsPathTemp
