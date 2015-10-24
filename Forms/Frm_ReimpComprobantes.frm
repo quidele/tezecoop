@@ -17,15 +17,15 @@ Begin VB.Form Frm_ReimpComprobantes
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   33
       Top             =   0
       Width           =   10815
       _ExtentX        =   19076
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgReimpComprobantes"
@@ -198,329 +198,6 @@ Begin VB.Form Frm_ReimpComprobantes
          EndProperty
       End
    End
-   Begin VB.Frame fraBusqComprobantes 
-      BorderStyle     =   0  'None
-      Height          =   6885
-      Left            =   -45
-      TabIndex        =   30
-      Top             =   660
-      Width           =   10815
-      Begin VB.Frame fra_ProgressBar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "Exportando los datos ....."
-         ForeColor       =   &H80000008&
-         Height          =   1650
-         Left            =   1950
-         TabIndex        =   71
-         Top             =   3090
-         Visible         =   0   'False
-         Width           =   5340
-         Begin MSComctlLib.ProgressBar ProgressBar 
-            Height          =   480
-            Left            =   300
-            TabIndex        =   72
-            Top             =   615
-            Width           =   4575
-            _ExtentX        =   8070
-            _ExtentY        =   847
-            _Version        =   393216
-            Appearance      =   0
-         End
-         Begin VB.Label Label25 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "Porcentaje "
-            Height          =   255
-            Left            =   315
-            TabIndex        =   75
-            Top             =   375
-            Width           =   855
-         End
-         Begin VB.Label lblvlPorcentaje 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "10 %"
-            Height          =   255
-            Left            =   1155
-            TabIndex        =   74
-            Top             =   375
-            Width           =   510
-         End
-         Begin VB.Label Label20 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "100 %"
-            Height          =   240
-            Left            =   4380
-            TabIndex        =   73
-            Top             =   390
-            Width           =   510
-         End
-      End
-      Begin VB.CommandButton cmdBuscar 
-         Height          =   375
-         Left            =   5685
-         Picture         =   "Frm_ReimpComprobantes.frx":403E
-         Style           =   1  'Graphical
-         TabIndex        =   70
-         Top             =   735
-         Width           =   375
-      End
-      Begin VB.TextBox txtBusqueda 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   330
-         Left            =   4380
-         TabIndex        =   26
-         Top             =   315
-         Width           =   4845
-      End
-      Begin MSComctlLib.ImageList ImgOperadores 
-         Left            =   7215
-         Top             =   1560
-         _ExtentX        =   1005
-         _ExtentY        =   1005
-         BackColor       =   -2147483648
-         ImageWidth      =   16
-         ImageHeight     =   16
-         MaskColor       =   12632256
-         _Version        =   393216
-         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
-            NumListImages   =   6
-            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4140
-               Key             =   "Similar"
-            EndProperty
-            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4252
-               Key             =   "Igual"
-            EndProperty
-            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4364
-               Key             =   "MayoroIgual"
-            EndProperty
-            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4476
-               Key             =   "Mayor"
-            EndProperty
-            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4588
-               Key             =   "MenoroIgual"
-            EndProperty
-            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":469A
-               Key             =   "Menor"
-            EndProperty
-         EndProperty
-      End
-      Begin MSComctlLib.ImageCombo ImageCombo1 
-         Height          =   330
-         Left            =   2565
-         TabIndex        =   29
-         Top             =   315
-         Width           =   1680
-         _ExtentX        =   2963
-         _ExtentY        =   582
-         _Version        =   393216
-         ForeColor       =   -2147483640
-         BackColor       =   14737632
-         OLEDropMode     =   1
-         Indentation     =   1
-         Locked          =   -1  'True
-         ImageList       =   "ImgOperadores"
-      End
-      Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5445
-         Left            =   105
-         TabIndex        =   27
-         Top             =   1335
-         Width           =   9375
-         _ExtentX        =   16536
-         _ExtentY        =   9604
-         View            =   3
-         LabelEdit       =   1
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         FullRowSelect   =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         NumItems        =   12
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Object.Tag             =   "nrComprobante"
-            Text            =   "Comprobante"
-            Object.Width           =   2646
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Object.Tag             =   "nrTalonario"
-            Text            =   "Talonario"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Object.Tag             =   "tpComprobante"
-            Text            =   "Letra"
-            Object.Width           =   1411
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Object.Tag             =   "dtComprobante"
-            Text            =   "Fecha "
-            Object.Width           =   2293
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Object.Tag             =   "flManual"
-            Text            =   "Facturado"
-            Object.Width           =   2822
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Object.Tag             =   "cdCondVenta"
-            Text            =   "Cond. Venta"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Object.Tag             =   "cdCliente"
-            Text            =   "Cliente"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "dsRazonSocial"
-            Text            =   "Razon Social"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
-            Object.Tag             =   "nrLicencia"
-            Text            =   "Licencia"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
-            Object.Tag             =   "nrCaja"
-            Text            =   "Caja"
-            Object.Width           =   2734
-         EndProperty
-         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   10
-            Object.Tag             =   "dsUsuario"
-            Text            =   "Usuario"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   11
-            Object.Tag             =   "tpLetra"
-            Text            =   "tpLetra"
-            Object.Width           =   2
-         EndProperty
-      End
-      Begin VB.ComboBox cmbCampos 
-         BackColor       =   &H00E0E0E0&
-         Height          =   315
-         Left            =   150
-         Style           =   2  'Dropdown List
-         TabIndex        =   28
-         Top             =   330
-         Width           =   2400
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   360
-         Index           =   0
-         Left            =   1410
-         TabIndex        =   66
-         Tag             =   "dtDesde"
-         Top             =   720
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   635
-         _Version        =   393216
-         Format          =   116391937
-         CurrentDate     =   38267
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   345
-         Index           =   1
-         Left            =   3915
-         TabIndex        =   67
-         Tag             =   "dtHasta"
-         Top             =   750
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   609
-         _Version        =   393216
-         Format          =   116391937
-         CurrentDate     =   38267
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Fecha Desde"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   10
-         Left            =   90
-         TabIndex        =   69
-         Top             =   840
-         Width           =   1200
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Hasta"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   9
-         Left            =   3195
-         TabIndex        =   68
-         Top             =   825
-         Width           =   645
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Valor para la busqueda"
-         Height          =   210
-         Left            =   4305
-         TabIndex        =   32
-         Top             =   90
-         Width           =   1755
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Campo"
-         Height          =   210
-         Left            =   165
-         TabIndex        =   31
-         Top             =   105
-         Width           =   795
-      End
-   End
    Begin VB.Frame fraReimpComprobantes 
       BorderStyle     =   0  'None
       Enabled         =   0   'False
@@ -532,10 +209,40 @@ Begin VB.Form Frm_ReimpComprobantes
       Begin VB.Frame Frame2 
          Caption         =   "Datos de la Factura"
          Height          =   5190
-         Left            =   255
+         Left            =   240
          TabIndex        =   41
          Top             =   1515
          Width           =   10320
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdComprobante"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   26
+            Left            =   3630
+            Locked          =   -1  'True
+            TabIndex        =   81
+            TabStop         =   0   'False
+            Tag             =   "tpLetra"
+            Top             =   660
+            Width           =   360
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdComprobante"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   25
+            Left            =   3120
+            Locked          =   -1  'True
+            TabIndex        =   80
+            TabStop         =   0   'False
+            Tag             =   "tpComprobante"
+            Top             =   660
+            Width           =   525
+         End
          Begin VB.TextBox txtFields 
             Alignment       =   2  'Center
             Appearance      =   0  'Flat
@@ -545,26 +252,10 @@ Begin VB.Form Frm_ReimpComprobantes
             Index           =   24
             Left            =   5085
             Locked          =   -1  'True
-            TabIndex        =   79
+            TabIndex        =   78
             Tag             =   "vlPagoReales"
             Top             =   4005
             Width           =   1200
-         End
-         Begin VB.ComboBox Combox1 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            Height          =   315
-            Index           =   1
-            ItemData        =   "Frm_ReimpComprobantes.frx":47AC
-            Left            =   3132
-            List            =   "Frm_ReimpComprobantes.frx":47BF
-            Locked          =   -1  'True
-            Style           =   2  'Dropdown List
-            TabIndex        =   78
-            TabStop         =   0   'False
-            Tag             =   "tpComprobante"
-            Top             =   645
-            Width           =   855
          End
          Begin VB.TextBox txtFields 
             Appearance      =   0  'Flat
@@ -585,9 +276,9 @@ Begin VB.Form Frm_ReimpComprobantes
             BackColor       =   &H00E0E0E0&
             Height          =   315
             Index           =   2
-            ItemData        =   "Frm_ReimpComprobantes.frx":47D2
+            ItemData        =   "Frm_ReimpComprobantes.frx":403E
             Left            =   240
-            List            =   "Frm_ReimpComprobantes.frx":47E8
+            List            =   "Frm_ReimpComprobantes.frx":4054
             Style           =   2  'Dropdown List
             TabIndex        =   65
             Tag             =   "cdCondVenta"
@@ -677,8 +368,8 @@ Begin VB.Form Frm_ReimpComprobantes
             TabIndex        =   12
             TabStop         =   0   'False
             Tag             =   "dtComprobante"
-            Top             =   645
-            Width           =   1365
+            Top             =   660
+            Width           =   1380
          End
          Begin VB.TextBox txtFields 
             Alignment       =   2  'Center
@@ -815,7 +506,7 @@ Begin VB.Form Frm_ReimpComprobantes
             TabIndex        =   13
             TabStop         =   0   'False
             Tag             =   "dsUsuario"
-            Top             =   645
+            Top             =   660
             Width           =   1800
          End
          Begin VB.TextBox txtFields 
@@ -830,7 +521,7 @@ Begin VB.Form Frm_ReimpComprobantes
             TabIndex        =   14
             TabStop         =   0   'False
             Tag             =   "nrPuesto"
-            Top             =   645
+            Top             =   660
             Width           =   600
          End
          Begin VB.TextBox txtFields 
@@ -845,7 +536,7 @@ Begin VB.Form Frm_ReimpComprobantes
             TabIndex        =   15
             TabStop         =   0   'False
             Tag             =   "nrCaja"
-            Top             =   645
+            Top             =   660
             Width           =   1920
          End
          Begin VB.TextBox txtFields 
@@ -939,6 +630,24 @@ Begin VB.Form Frm_ReimpComprobantes
                Object.Width           =   2858
             EndProperty
          End
+         Begin VB.Label lblLabels 
+            Caption         =   "Letra"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   4
+            Left            =   3615
+            TabIndex        =   82
+            Top             =   435
+            Width           =   465
+         End
          Begin VB.Label Label23 
             Alignment       =   2  'Center
             Caption         =   "Total Reales"
@@ -953,7 +662,7 @@ Begin VB.Form Frm_ReimpComprobantes
             EndProperty
             Height          =   255
             Left            =   5025
-            TabIndex        =   80
+            TabIndex        =   79
             Top             =   3765
             Width           =   1170
          End
@@ -1090,7 +799,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Width           =   1455
          End
          Begin VB.Label lblLabels 
-            Caption         =   "Tipo"
+            Caption         =   "Doc"
             BeginProperty Font 
                Name            =   "Verdana"
                Size            =   8.25
@@ -1105,7 +814,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Left            =   3105
             TabIndex        =   53
             Top             =   405
-            Width           =   810
+            Width           =   375
          End
          Begin VB.Label lblLabels 
             Caption         =   "Comprobante"
@@ -1138,7 +847,7 @@ Begin VB.Form Frm_ReimpComprobantes
             EndProperty
             Height          =   225
             Index           =   12
-            Left            =   3990
+            Left            =   4110
             TabIndex        =   51
             Top             =   435
             Width           =   1050
@@ -1227,7 +936,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Height          =   255
             Left            =   5325
             TabIndex        =   46
-            Top             =   405
+            Top             =   420
             Width           =   1785
          End
          Begin VB.Label Label11 
@@ -1244,7 +953,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Height          =   255
             Left            =   7110
             TabIndex        =   45
-            Top             =   405
+            Top             =   420
             Width           =   615
          End
          Begin VB.Label Label12 
@@ -1261,7 +970,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Height          =   255
             Left            =   7755
             TabIndex        =   44
-            Top             =   405
+            Top             =   420
             Width           =   870
          End
          Begin VB.Label Label14 
@@ -1557,6 +1266,329 @@ Begin VB.Form Frm_ReimpComprobantes
             Top             =   195
             Width           =   795
          End
+      End
+   End
+   Begin VB.Frame fraBusqComprobantes 
+      BorderStyle     =   0  'None
+      Height          =   6885
+      Left            =   -45
+      TabIndex        =   30
+      Top             =   660
+      Width           =   10815
+      Begin VB.Frame fra_ProgressBar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "Exportando los datos ....."
+         ForeColor       =   &H80000008&
+         Height          =   1650
+         Left            =   1950
+         TabIndex        =   71
+         Top             =   3090
+         Visible         =   0   'False
+         Width           =   5340
+         Begin MSComctlLib.ProgressBar ProgressBar 
+            Height          =   480
+            Left            =   300
+            TabIndex        =   72
+            Top             =   615
+            Width           =   4575
+            _ExtentX        =   8070
+            _ExtentY        =   847
+            _Version        =   393216
+            Appearance      =   0
+         End
+         Begin VB.Label Label25 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "Porcentaje "
+            Height          =   255
+            Left            =   315
+            TabIndex        =   75
+            Top             =   375
+            Width           =   855
+         End
+         Begin VB.Label lblvlPorcentaje 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "10 %"
+            Height          =   255
+            Left            =   1155
+            TabIndex        =   74
+            Top             =   375
+            Width           =   510
+         End
+         Begin VB.Label Label20 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "100 %"
+            Height          =   240
+            Left            =   4380
+            TabIndex        =   73
+            Top             =   390
+            Width           =   510
+         End
+      End
+      Begin VB.CommandButton cmdBuscar 
+         Height          =   375
+         Left            =   5685
+         Picture         =   "Frm_ReimpComprobantes.frx":40B5
+         Style           =   1  'Graphical
+         TabIndex        =   70
+         Top             =   735
+         Width           =   375
+      End
+      Begin VB.TextBox txtBusqueda 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   4380
+         TabIndex        =   26
+         Top             =   315
+         Width           =   4845
+      End
+      Begin MSComctlLib.ImageList ImgOperadores 
+         Left            =   7215
+         Top             =   1560
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483648
+         ImageWidth      =   16
+         ImageHeight     =   16
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   6
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":41B7
+               Key             =   "Similar"
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":42C9
+               Key             =   "Igual"
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":43DB
+               Key             =   "MayoroIgual"
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":44ED
+               Key             =   "Mayor"
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":45FF
+               Key             =   "MenoroIgual"
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ReimpComprobantes.frx":4711
+               Key             =   "Menor"
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ImageCombo ImageCombo1 
+         Height          =   330
+         Left            =   2565
+         TabIndex        =   29
+         Top             =   315
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   582
+         _Version        =   393216
+         ForeColor       =   -2147483640
+         BackColor       =   14737632
+         OLEDropMode     =   1
+         Indentation     =   1
+         Locked          =   -1  'True
+         ImageList       =   "ImgOperadores"
+      End
+      Begin MSComctlLib.ListView lstBusqueda 
+         Height          =   5445
+         Left            =   105
+         TabIndex        =   27
+         Top             =   1335
+         Width           =   9375
+         _ExtentX        =   16536
+         _ExtentY        =   9604
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         FullRowSelect   =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         NumItems        =   12
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Object.Tag             =   "nrComprobante"
+            Text            =   "Comprobante"
+            Object.Width           =   2646
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Object.Tag             =   "nrTalonario"
+            Text            =   "Talonario"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Object.Tag             =   "tpComprobante"
+            Text            =   "Doc"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "tpLetra"
+            Text            =   "Letra"
+            Object.Width           =   1235
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Object.Tag             =   "dtComprobante"
+            Text            =   "Fecha"
+            Object.Width           =   2293
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Object.Tag             =   "flManual"
+            Text            =   "Facturado"
+            Object.Width           =   2822
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Object.Tag             =   "cdCondVenta"
+            Text            =   "Cond. Venta"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
+            Object.Tag             =   "cdCliente"
+            Text            =   "Cliente"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Object.Tag             =   "dsRazonSocial"
+            Text            =   "Razon Social"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Object.Tag             =   "nrLicencia"
+            Text            =   "Licencia"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
+            Object.Tag             =   "nrCaja"
+            Text            =   "Caja"
+            Object.Width           =   2734
+         EndProperty
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
+            Object.Tag             =   "dsUsuario"
+            Text            =   "Usuario"
+            Object.Width           =   2540
+         EndProperty
+      End
+      Begin VB.ComboBox cmbCampos 
+         BackColor       =   &H00E0E0E0&
+         Height          =   315
+         Left            =   150
+         Style           =   2  'Dropdown List
+         TabIndex        =   28
+         Top             =   330
+         Width           =   2400
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   360
+         Index           =   0
+         Left            =   1410
+         TabIndex        =   66
+         Tag             =   "dtDesde"
+         Top             =   720
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   635
+         _Version        =   393216
+         Format          =   89391105
+         CurrentDate     =   38267
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   345
+         Index           =   1
+         Left            =   3915
+         TabIndex        =   67
+         Tag             =   "dtHasta"
+         Top             =   750
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   89391105
+         CurrentDate     =   38267
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Fecha Desde"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   10
+         Left            =   90
+         TabIndex        =   69
+         Top             =   840
+         Width           =   1200
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Hasta"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   9
+         Left            =   3195
+         TabIndex        =   68
+         Top             =   825
+         Width           =   645
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Valor para la busqueda"
+         Height          =   210
+         Left            =   4305
+         TabIndex        =   32
+         Top             =   90
+         Width           =   1755
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Campo"
+         Height          =   210
+         Left            =   165
+         TabIndex        =   31
+         Top             =   105
+         Width           =   795
       End
    End
 End
@@ -1939,10 +1971,10 @@ Dim Valor   As Variant
     ObjTablasIO.setearCampoOperadorValor "nrTalonario", _
     "=", Me.lstBusqueda.SelectedItem.ListSubItems(1), " AND "
     ObjTablasIO.setearCampoOperadorValor "nrCaja", _
-    "=", Me.lstBusqueda.SelectedItem.ListSubItems(9), " AND "
+    "=", Me.lstBusqueda.SelectedItem.ListSubItems(10), " AND "
     
     ObjTablasIO.setearCampoOperadorValor "tpLetra", _
-    "=", Me.lstBusqueda.SelectedItem.ListSubItems(11), " AND "
+    "=", Me.lstBusqueda.SelectedItem.ListSubItems(3), " AND "
     
     ObjTablasIO.setearCampoOperadorValor "tpComprobante", _
     "=", Me.lstBusqueda.SelectedItem.ListSubItems(2), " AND "
@@ -2563,10 +2595,10 @@ Private Sub ActualizarColumnadeTipoFacturacion()
 Dim i As Long
 
     For i = 1 To Me.lstBusqueda.ListItems.Count
-        If Me.lstBusqueda.ListItems(i).ListSubItems.Item(4) = "M" Then
-            Me.lstBusqueda.ListItems(i).ListSubItems.Item(4) = "Manualmente"
+        If Me.lstBusqueda.ListItems(i).ListSubItems.Item(5) = "M" Then
+            Me.lstBusqueda.ListItems(i).ListSubItems.Item(5) = "Manualmente"
         Else
-           Me.lstBusqueda.ListItems(i).ListSubItems.Item(4) = "Por Sistema"
+           Me.lstBusqueda.ListItems(i).ListSubItems.Item(5) = "Por Sistema"
         End If
     Next i
 
