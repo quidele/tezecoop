@@ -162,7 +162,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		if @tpComprobante ='ND'  
 		begin
 			-- COMPLETAR LOGICA
-			if @tpFormadePago='Cuenta Corriente' 
+			/* if @tpFormadePago='Cuenta Corriente' 
 			begin
 				select  @nrTalonario_auto_ctacte    as nrTalonario,
 					@nrComprobante_auto_ctacte_nd_ult  as nrComprobante,
@@ -171,7 +171,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 					null    as dtCai,
 					@flFacturaCtacte	as flFacturaCtacte
 					return;	
-			end
+			end */
 		
 			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 			begin
@@ -210,7 +210,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		if @tpComprobante ='NC'
 		begin
 			-- COMPLETAR LOGICA
-			if @tpFormadePago='Cuenta Corriente' 
+			/* if @tpFormadePago='Cuenta Corriente' 
 			begin
 				select  @nrTalonario_auto_ctacte    as nrTalonario,
 					@nrComprobante_auto_ctacte_nc_ult  as nrComprobante,
@@ -219,7 +219,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 					null    as dtCai,
 					@flFacturaCtacte	as flFacturaCtacte
 					return;	
-			end
+			end */
 		
 			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 			begin
@@ -339,7 +339,9 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 			null	as nrCAI,
 			null    as dtCai,
 			@flFacturaCtacte	as flFacturaCtacte
-	
+
+
+--- agregar try catch para evitar errores por numeros configurados en null	
 end;
 
 
@@ -696,7 +698,7 @@ begin
 		if @tpComprobante ='ND'  
 		begin
 			-- COMPLETAR LOGICA
-			if @tpFormadePago='Cuenta Corriente' 
+			/*if @tpFormadePago='Cuenta Corriente' 
 			begin
 				/* select  @nrTalonario_auto_ctacte    as nrTalonario,
 					@nrComprobante_auto_ctacte_nd_ult  as nrComprobante,
@@ -707,7 +709,7 @@ begin
 				*/
 				update  x set nrComprobante_auto_ctacte_nd_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
 				return;	
-			end
+			end*/
 		
 			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 			begin
@@ -753,7 +755,7 @@ begin
 		if @tpComprobante ='NC'
 		begin
 			-- COMPLETAR LOGICA
-			if @tpFormadePago='Cuenta Corriente' 
+			/* if @tpFormadePago='Cuenta Corriente' 
 			begin
 				/* select  @nrTalonario_auto_ctacte    as nrTalonario,
 					@nrComprobante_auto_ctacte_nc_ult  as nrComprobante,
@@ -764,7 +766,7 @@ begin
 				*/
 				update  x set nrComprobante_auto_ctacte_nc_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
 				return;	
-			end
+			end*/
 		
 			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 			begin

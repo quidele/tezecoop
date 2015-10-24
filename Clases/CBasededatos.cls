@@ -887,7 +887,7 @@ Dim anio   As String
         FormatearValorSQL = "null"
         Exit Function
     End If
-    
+
     If Trim(CStr(pValor)) = "" Then
         FormatearValorSQL = "null"
         Exit Function

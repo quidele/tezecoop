@@ -168,11 +168,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "dsRazonSocial"
          Height          =   285
          Index           =   2
-         Left            =   6810
+         Left            =   6795
          Locked          =   -1  'True
          TabIndex        =   82
          Tag             =   "tpFormadePago"
-         Top             =   1365
+         Top             =   1305
          Width           =   2040
       End
       Begin VB.TextBox txtFields 
@@ -385,7 +385,7 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "dsRazonSocial"
          Height          =   285
          Index           =   13
-         Left            =   3660
+         Left            =   3645
          TabIndex        =   26
          Tag             =   "nrLicencia"
          Top             =   5400
@@ -478,8 +478,8 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   135
          TabIndex        =   22
          Tag             =   "dsProductoBuscado"
-         Top             =   1590
-         Width           =   3165
+         Top             =   1650
+         Width           =   5955
       End
       Begin VB.CommandButton cmdAgregarItemFactura 
          Enabled         =   0   'False
@@ -744,10 +744,10 @@ Begin VB.Form Frm_VentaPasajes
          Appearance      =   0  'Flat
          Caption         =   "Agregar Destino"
          Height          =   315
-         Left            =   3324
+         Left            =   6180
          TabIndex        =   10
          TabStop         =   0   'False
-         Top             =   1575
+         Top             =   1635
          Width           =   1455
       End
       Begin VB.TextBox txtItemFactura 
@@ -851,7 +851,7 @@ Begin VB.Form Frm_VentaPasajes
       End
       Begin MSComctlLib.ListView lstBusquedaProductos 
          Height          =   1590
-         Left            =   120
+         Left            =   135
          TabIndex        =   38
          Top             =   1950
          Width           =   8685
@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   252837889
+         Format          =   88932353
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1089,9 +1089,9 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.Label Label33 
          Caption         =   "Forma de Pago:"
          Height          =   225
-         Left            =   5550
+         Left            =   5655
          TabIndex        =   83
-         Top             =   1380
+         Top             =   1350
          Width           =   1230
       End
       Begin VB.Label Label32 
@@ -2883,7 +2883,11 @@ Dim tabindexsig As Integer
         Case "cdCondVenta"
             ObtenerCampo("tpComision").SetFocus
         Case "tpComision"
-            ObtenerCampo("nrLicencia").SetFocus
+            If ObtenerCampo("tpComprobante").Text = "FA" Then
+                ObtenerCampo("nrLicencia").SetFocus
+            Else
+                ObtenerCampo("dsLeyenda").SetFocus
+            End If
         End Select
     Case vbKeyBack, vbKeyLeft
         Select Case Me.Combox1(Index).Tag
@@ -3122,8 +3126,9 @@ Dim strValor    As String
 
     If Not objSPs.ExecSP Then
         MsgBox "No se encuentra definido el número de talonario" + _
-               vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
-        End
+               vbCrLf + " para el puesto o punto de venta que ingresó al sistema." + vbCrLf + " Error extendido: " + objSPs.Error, vbCritical + vbDefaultButton1, "Atención"
+        Unload Me
+        Exit Sub
     End If
            
     strValor = Trim(objbasededatos.rs_resultados("nrTalonario"))
@@ -4269,6 +4274,29 @@ Private Sub txtFields_Change(Index As Integer)
         AvisarError "nrPasajeros", False
     Case "nrComprobante"
         AvisarError "nrComprobante", False
+    Case "tpComprobante"  ' Agregado en la version 4.7
+        Dim strNombreCompleto As String
+        If ObtenerCampo("tpComprobante").Text = "NC" Or ObtenerCampo("tpComprobante").Text = "ND" Then
+            ObtenerCampo("nrLicencia").Text = "999"
+            
+        ObjTablasIO.nmTabla = "TB_Proveedores"
+        ObjTablasIO.setearCampoOperadorValor "tpCategoria", "=", "Licenciatario", " AND "
+        ObjTablasIO.setearCampoOperadorValor _
+        "nrLicencia", "=", ObtenerCampo("nrLicencia").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "flEliminar", "=", "0"
+    
+        ObjTablasIO.setearCampoOperadorValor "nmNombre", "->", ""
+        ObjTablasIO.setearCampoOperadorValor "nmApellido", "->", ""
+        ObjTablasIO.Seleccionar
+        If Not ObjTablasIO.rs_resultados.EOF Then
+            strNombreCompleto = IIf(IsNull(ObjTablasIO.rs_resultados("nmApellido").value), "", ObjTablasIO.rs_resultados("nmApellido").value) + " "
+            strNombreCompleto = strNombreCompleto & IIf(IsNull(ObjTablasIO.rs_resultados("nmNombre").value), "", ObjTablasIO.rs_resultados("nmNombre").value)
+            ObtenerCampo("nmLicenciatario").Text = strNombreCompleto
+       End If
+            HabilitarCampos "nrLicencia", False
+            ObtenerCampo("nrLicencia").Enabled = False
+            
+        End If
     End Select
 
 End Sub

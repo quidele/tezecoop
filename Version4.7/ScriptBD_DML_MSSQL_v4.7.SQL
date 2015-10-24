@@ -100,3 +100,6 @@ INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJer
 
 
 exec SP_GenerarNuevasOpcionesdeMenues
+
+
+UPDATE   TB_Proveedores SET  nrLicencia = NULL where nmApellido = 'tango' AND nrLicencia = 999

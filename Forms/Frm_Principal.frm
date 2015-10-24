@@ -1016,7 +1016,7 @@ Private Sub optNotasCredito_Click()
     
   objParametros.GrabarValor "Frm_VentaPasajes.numeracion_correlativa", "SI"
   objParametros.GrabarValor "Frm_VentaPasajes.desde", "puesto"
-  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objConfig.nrPuesto
+  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND")
   objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
   objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "automatica"
   objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
@@ -1041,7 +1041,7 @@ Private Sub optNotasDebito_Click()
     
   objParametros.GrabarValor "Frm_VentaPasajes.numeracion_correlativa", "SI"
   objParametros.GrabarValor "Frm_VentaPasajes.desde", "puesto"
-  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objConfig.nrPuesto
+  objParametros.GrabarValor "Frm_VentaPasajes.nrPuesto", objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND")
   objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
   objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "automatica"
   objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"

@@ -95,7 +95,6 @@ Dim resp As Integer
     ' If Not Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_2_ndync " + vbCrLf
     
     
-    MsgBox "Version 4.7 Reprogamar el procedimiento Frm_VentaPasajes.grabarPuesto  pensar en el sp spu_obtener_puntosdeventa_facturacion_v2_0 y en base a el crear versión de ACTUALIZACION "
         
     If strResultadoPruebas <> "" Then
         MsgBox strResultadoPruebas

@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   89391105
+         Format          =   88932353
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,7 +1535,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   89391105
+         Format          =   88932353
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
@@ -2112,10 +2112,10 @@ Dim strValor    As String
             If ObtenerCampo("flManual") = "Manualmente" Then
                 MsgBox "No se debe reimprimir una factura realiza en forma manual. ", vbInformation + vbDefaultButton1, "Atención"
                 If objSeguridad.ObtenerPermisoSupervisor() Then
-                    ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpComprobante"), objParametros.ObtenerValor("FormatoHoja")
+                    ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra"), objParametros.ObtenerValor("FormatoHoja")
                 End If
             Else
-                ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpComprobante"), objParametros.ObtenerValor("FormatoHoja")
+                ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra"), objParametros.ObtenerValor("FormatoHoja")
             End If
     Case "Exportar"
           ExportaraExcel
