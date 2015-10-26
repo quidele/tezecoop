@@ -1,0 +1,4 @@
+Corregir las grabacion de ND y NC no tienen retencion(comision)
+
+
+Notas de Credito deben grabarse con signo invertido en la tabla de cupones

@@ -752,7 +752,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   117964801
+            Format          =   89194497
             CurrentDate     =   38435
          End
          Begin VB.Label Label27 
@@ -1578,7 +1578,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   113049601
+         Format          =   89194497
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1592,7 +1592,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   113049601
+         Format          =   89194497
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -2765,7 +2765,7 @@ Dim strMotivo        As String
     'vlComision = objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerlistadecodigosdestinos())
     
     ' modificado en la version 4.3
-    vlComision = FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision()), 2)
+    vlComision = FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante")), 2)
      
     ' Modificado en la versión 2.5
     objSPs.nmStoredProcedure = "SP_ActualizarComprobante_v3_7"

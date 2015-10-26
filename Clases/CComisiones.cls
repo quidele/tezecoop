@@ -78,10 +78,12 @@ Option Explicit
 '
 'End Function
 
-Public Function obtenerComision(pvlTotalGeneral As Single, pCondicion_Venta As String, tpComision As String, pdsCodigoDestinos As String) As Single
+Public Function obtenerComision(pvlTotalGeneral As Single, pCondicion_Venta As String, _
+                                tpComision As String, pdsCodigoDestinos As String, tpComprobante_param As String) As Single
 
 
-    objSPs.nmStoredProcedure = "sp_obtenerComision_v4_1"
+    objSPs.nmStoredProcedure = "sp_obtenerComision_v4_2"
+    objSPs.setearCampoValor "@tpComprobante_param", tpComprobante_param
     objSPs.setearCampoValor "@vlTotalGeneral_param", pvlTotalGeneral
     objSPs.setearCampoValor "@tpComision_param", tpComision
     objSPs.setearCampoValor "@tpCliente_param", tpComision

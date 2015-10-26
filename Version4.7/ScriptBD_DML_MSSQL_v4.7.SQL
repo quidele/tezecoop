@@ -103,3 +103,14 @@ exec SP_GenerarNuevasOpcionesdeMenues
 
 
 UPDATE   TB_Proveedores SET  nrLicencia = NULL where nmApellido = 'tango' AND nrLicencia = 999
+
+go
+
+delete from diccionariodedatos where nmtabla ='sp_obtenerComision_v4_2' 
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_2','@tpComprobante_param','@tpComprobante_param','CHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_2','@vlTotalGeneral_param','@vlTotalGeneral_param','FLOAT','10',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_2','@tpComision_param','@tpComision_param','VARCHAR','50',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_2','@tpCliente_param','@tpCliente_param','VARCHAR','50',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_2','@dsCodigoDestinos_param','@dsCodigoDestinos_param','VARCHAR','100',null,null,null,null,null,null,null,null,null,null,null,null);
+

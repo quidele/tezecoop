@@ -1128,116 +1128,128 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   19
+         NumItems        =   21
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "nrLicencia"
             Text            =   "Licencia"
-            Object.Width           =   2117
+            Object.Width           =   1940
          EndProperty
          BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   1
+            Object.Tag             =   "tpComprobanteCliente"
+            Text            =   "Doc"
+            Object.Width           =   1235
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
             Object.Tag             =   "nrComprabanteCliente"
             Text            =   "Comprobante"
             Object.Width           =   2646
          EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "tpLetraCliente"
+            Text            =   "Letra"
+            Object.Width           =   882
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
             Object.Tag             =   "vlMontoCupon"
             Text            =   "Total Fact."
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
             Object.Tag             =   "tpCupon"
             Text            =   "Cond. Venta"
             Object.Width           =   2822
          EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
             Object.Tag             =   "vlPagoPesos"
             Text            =   "Pago $"
             Object.Width           =   1587
          EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
             Object.Tag             =   "vlPagoDolares"
             Text            =   "Pago u$s"
             Object.Width           =   1587
          EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
             Object.Tag             =   "vlPagoEuros"
             Text            =   "Pago EU"
             Object.Width           =   1587
          EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
             Object.Tag             =   "vlPagoReales"
             Text            =   "Pago Real"
             Object.Width           =   1587
          EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
             Object.Tag             =   "vlComision"
             Text            =   "Retención"
             Object.Width           =   1587
          EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
             Object.Tag             =   "nrTalonarioCliente"
             Text            =   "Talonario"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   10
+         BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   12
             Object.Tag             =   "dtCupon"
             Text            =   "Fecha y Hora del Viaje"
             Object.Width           =   3528
          EndProperty
-         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   11
+         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   13
             Object.Tag             =   "flCobradoalCliente"
             Text            =   "Cobrado"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   12
+         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   14
             Object.Tag             =   "flCompensado"
             Text            =   "Compensado"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   13
+         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   15
             Object.Tag             =   "cdCodBar"
             Text            =   "Cod. de Barras"
-            Object.Width           =   4586
+            Object.Width           =   2
          EndProperty
-         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   14
+         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   16
             Object.Tag             =   "nrCupon"
             Text            =   "Nro. Cupon"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   15
+         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   17
             Object.Tag             =   "cdCliente"
             Text            =   "Cod. Cliente"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   16
+         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   18
             Object.Tag             =   "dsObservacion"
             Text            =   "Observación"
             Object.Width           =   5292
          EndProperty
-         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   17
+         BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   19
             Object.Tag             =   "vlIVA"
             Text            =   "IVA"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   18
+         BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   20
             Object.Tag             =   "flAnulado"
             Text            =   "flAnulado"
             Object.Width           =   2
@@ -1637,8 +1649,9 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Const C_dtCupon = 10
-Const C_vlIVA = 17
+Const C_dtCupon = 12
+Const C_vlIVA = 19
+Const C_nrCupon = 16
 
 
 Dim EstadoABM  As Byte
@@ -1654,7 +1667,7 @@ Const CONCEPTO_COBRO_IVA_AL_LICENCIATARIO = "1064"
 Const CONCEPTO_PAGO_A_LOS_LICENCIATARIOS_EN_REAL = "2030"
 Const CONCEPTO_COBRO_A_CUENTA_CORRIENTE_990 = "2034"
 
-Const C_TPCUPON = 3
+Const C_TPCUPON = 4
 
 
 Public COBRO_COMISION_CD_RE_OBLIGATORIA As String
@@ -2087,7 +2100,7 @@ Dim Valor   As Variant
     
     ObjTablasIO.nmTabla = "TB_Cupones"
     ObjTablasIO.setearCampoOperadorValor "nrCupon", _
-    "=", Me.lstBusqueda.SelectedItem.SubItems(14)
+    "=", Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
     
     ObjTablasIO.setearCampoOperadorValor "nrCupon", "->", ""
     ObjTablasIO.setearCampoOperadorValor "nrLicencia", "->", ""
@@ -2471,7 +2484,9 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "vlPagoReales", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlComision", "->", ""
          ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "->", ""
          ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""

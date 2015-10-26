@@ -655,7 +655,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   5175
          TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
-         Top             =   6960
+         Top             =   6945
          Width           =   3960
       End
       Begin VB.TextBox txtFields 
@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   88932353
+         Format          =   50528257
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2247,7 +2247,8 @@ Dim resp         As Byte
     ObtenerCampo("vlSaldoDolares").Text = "0,00"
     ObtenerCampo("vlSaldoReales").Text = "0,00"
     
-    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision()), 2)
+    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
+                        ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
     
 End Sub
@@ -2516,7 +2517,6 @@ Private Function FacturarBD() As Boolean
     
     
     objbasededatos.BeginTrans
-    
 
             
     
@@ -2565,6 +2565,9 @@ Private Function FacturarBD() As Boolean
          End If
          '/***********************************************************************/
     End Select
+           
+           
+    
            
     If Guardarregistro(EstadoABM) Then
            If Not GrabarItemsFactura() Then
@@ -2824,7 +2827,7 @@ Dim strValor  As String
     End Select
 
     ' llamada 1
-    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision()), 2)
+    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
 End Sub
 
@@ -3008,7 +3011,11 @@ Private Sub Form_Activate()
     On Error Resume Next
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
-        ObtenerCampo("dsProductoBuscado").SetFocus
+        If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
+            ObtenerCampo("cdCliente").SetFocus
+        Else
+            ObtenerCampo("dsProductoBuscado").SetFocus
+        End If
     Case Else
         ObtenerCampo("nrComprobante").SetFocus
     End Select
@@ -3114,6 +3121,7 @@ Private Sub obtener_num_Proxima_Factura()
 Dim strSQL      As String
 Dim strValor    As String
     
+    ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
      
     '***********************************************************
     ' Modificación version 1.4
@@ -3287,7 +3295,6 @@ Dim strValor    As String
             EstadoABM = alta
            End If
            limpiarControles
-           
            obtener_num_Proxima_Factura
            
            ' Modificación EZE II - VER LOAD DE FORMULARIO
@@ -3307,7 +3314,7 @@ Dim strValor    As String
              lblCotizacionDia.Caption = lblCotizacionDia.Caption + " Real " + _
            CStr(FormatNumber(CSng(objParametros.ObtenerValor("Frm_VentasPasajes.vlDiaReal")), 2)) + " "
            objProductos.CargarTodalaMatrizdeProductos Me.lstBusquedaProductos
-           PresentarPantalla Button
+           ' PresentarPantalla Button
            AvisarError "nrLicencia", False
            AvisarError "cdCliente", False
            AvisarError "nrPasajeros", False
@@ -3474,7 +3481,9 @@ Private Function validarEntradadedatos() As Boolean
         validarEntradadedatos = False
     End If
 
-    If ObtenerCampo("tpIVA").Text = "RI" Then
+    If ObtenerCampo("tpIVA").Text = "RI" Or ObtenerCampo("tpComprobante").Text = "ND" Or _
+                                ObtenerCampo("tpComprobante").Text = "NC" Then
+        
         If ObtenerCampo("dsRazonSocial").Text = "" Or _
             ObtenerCampo("dsRazonSocial").Text = "Consumidor Final" Then
             MsgBox "Debe ingresar una razón social.", vbInformation + vbDefaultButton1, "Atención"
@@ -3603,7 +3612,7 @@ Dim vlComision    As Single
     
         
         ' obtener la comision
-        vlComision = objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral").Text), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision())
+        vlComision = objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral").Text), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text)
         
         ObjTablasIO.nmTabla = "TB_Cupones"
         ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "<-", ObtenerCampo("nrTalonario").Text
@@ -3853,6 +3862,12 @@ Dim strSQL       As String
 
     ' obtener  el ultimo numero de factura
     obtener_num_Proxima_Factura
+    
+        
+    If UCase(ObtenerCampo("tpLetra").Text) = "X" Then
+        ObtenerCampo("tpComprobante").Text = "RE"  ' Recibo
+    End If
+    
     
 
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -4164,8 +4179,18 @@ Dim i  As Integer
            HabilitarCampos "vlKilometros", False
            HabilitarCampos "vlPrecioViaje", False
            cmdAgregarItemFactura.Enabled = False
+           ' MODIFICADO en la V4.7
            On Error Resume Next
-           ObtenerCampo("dsProductoBuscado").SetFocus
+            Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
+            Case "puesto"
+                If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
+                ObtenerCampo("cdCliente").SetFocus
+                Else
+                ObtenerCampo("dsProductoBuscado").SetFocus
+                End If
+            Case Else
+                ObtenerCampo("nrComprobante").SetFocus
+            End Select
            On Error GoTo 0
            Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
            Case "administracion", "administracion.cajapuesto"

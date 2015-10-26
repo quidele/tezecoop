@@ -209,37 +209,51 @@ Begin VB.Form Frm_FacturaCtaCte
       TabIndex        =   7
       Top             =   705
       Width           =   8970
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         DataField       =   "cdComprobante"
+         ForeColor       =   &H00000000&
+         Height          =   285
+         Index           =   25
+         Left            =   2985
+         Locked          =   -1  'True
+         TabIndex        =   41
+         TabStop         =   0   'False
+         Tag             =   "tpComprobante"
+         Top             =   480
+         Width           =   585
+      End
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         DataField       =   "cdComprobante"
+         ForeColor       =   &H00000000&
+         Height          =   285
+         Index           =   26
+         Left            =   3555
+         Locked          =   -1  'True
+         TabIndex        =   40
+         TabStop         =   0   'False
+         Tag             =   "tpLetra"
+         Top             =   480
+         Width           =   405
+      End
       Begin VB.ComboBox Combox1 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          Height          =   315
-         Index           =   3
+         Index           =   2
          ItemData        =   "Frm_FacturaCtaCte.frx":39C4
          Left            =   120
          List            =   "Frm_FacturaCtaCte.frx":39DA
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   42
+         TabIndex        =   39
          TabStop         =   0   'False
          Tag             =   "tpIVA"
          Top             =   480
          Width           =   780
-      End
-      Begin VB.ComboBox Combox1 
-         BackColor       =   &H00E0E0E0&
-         ForeColor       =   &H00000000&
-         Height          =   315
-         Index           =   1
-         ItemData        =   "Frm_FacturaCtaCte.frx":39F6
-         Left            =   3060
-         List            =   "Frm_FacturaCtaCte.frx":3A09
-         Locked          =   -1  'True
-         Style           =   2  'Dropdown List
-         TabIndex        =   39
-         TabStop         =   0   'False
-         Tag             =   "tpComprobante"
-         Top             =   465
-         Width           =   855
       End
       Begin VB.TextBox txtFields 
          BackColor       =   &H00E0E0E0&
@@ -259,7 +273,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Left            =   4845
          Locked          =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   36
+         TabIndex        =   35
          TabStop         =   0   'False
          Tag             =   "nmLicenciatario"
          Text            =   "Coop. Taxi Ezeiza"
@@ -274,7 +288,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   285
          Index           =   13
          Left            =   4020
-         TabIndex        =   35
+         TabIndex        =   34
          Tag             =   "nrLicencia"
          Text            =   "999"
          Top             =   4485
@@ -284,10 +298,10 @@ Begin VB.Form Frm_FacturaCtaCte
       Begin VB.ComboBox Combox1 
          BackColor       =   &H00E0E0E0&
          Height          =   315
-         Index           =   2
-         ItemData        =   "Frm_FacturaCtaCte.frx":3A1C
+         Index           =   1
+         ItemData        =   "Frm_FacturaCtaCte.frx":39F6
          Left            =   1890
-         List            =   "Frm_FacturaCtaCte.frx":3A29
+         List            =   "Frm_FacturaCtaCte.frx":3A03
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -370,7 +384,7 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   16
          TabStop         =   0   'False
          Tag             =   "dtComprobante"
-         Top             =   465
+         Top             =   480
          Width           =   1335
       End
       Begin VB.TextBox txtFields 
@@ -433,9 +447,9 @@ Begin VB.Form Frm_FacturaCtaCte
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_FacturaCtaCte.frx":3A4F
+         ItemData        =   "Frm_FacturaCtaCte.frx":3A29
          Left            =   120
-         List            =   "Frm_FacturaCtaCte.frx":3A65
+         List            =   "Frm_FacturaCtaCte.frx":3A3F
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   0
@@ -469,7 +483,7 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   12
          TabStop         =   0   'False
          Tag             =   "nmEmpleado"
-         Top             =   465
+         Top             =   480
          Width           =   1800
       End
       Begin VB.TextBox txtFields 
@@ -484,7 +498,7 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   11
          TabStop         =   0   'False
          Tag             =   "nrPuesto"
-         Top             =   465
+         Top             =   480
          Width           =   615
       End
       Begin VB.TextBox txtFields 
@@ -499,13 +513,13 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   9
          TabStop         =   0   'False
          Tag             =   "nrCaja"
-         Top             =   465
+         Top             =   480
          Width           =   1080
       End
       Begin MSComctlLib.ListView lstItemsFactura 
          Height          =   1350
          Left            =   135
-         TabIndex        =   34
+         TabIndex        =   33
          Top             =   1680
          Width           =   8640
          _ExtentX        =   15240
@@ -577,7 +591,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
       End
       Begin VB.Label lblLabels 
-         Caption         =   "Tipo"
+         Caption         =   "Doc"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -588,11 +602,29 @@ Begin VB.Form Frm_FacturaCtaCte
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
-         Index           =   6
-         Left            =   3030
-         TabIndex        =   41
-         Top             =   180
-         Width           =   810
+         Index           =   8
+         Left            =   2970
+         TabIndex        =   43
+         Top             =   240
+         Width           =   375
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Letra"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   7
+         Left            =   3465
+         TabIndex        =   42
+         Top             =   240
+         Width           =   465
       End
       Begin VB.Label lblLabels 
          Caption         =   " IVA"
@@ -607,9 +639,9 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   240
          Index           =   4
-         Left            =   165
-         TabIndex        =   40
-         Top             =   195
+         Left            =   90
+         TabIndex        =   38
+         Top             =   240
          Width           =   690
       End
       Begin VB.Label Label19 
@@ -625,7 +657,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   4860
-         TabIndex        =   38
+         TabIndex        =   37
          Top             =   4245
          Visible         =   0   'False
          Width           =   1455
@@ -643,7 +675,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   4005
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   4245
          Visible         =   0   'False
          Width           =   750
@@ -662,7 +694,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   225
          Index           =   5
          Left            =   1920
-         TabIndex        =   33
+         TabIndex        =   32
          Top             =   3105
          Width           =   1620
       End
@@ -679,7 +711,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   165
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   1440
          Width           =   1455
       End
@@ -696,7 +728,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   3765
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   810
          Width           =   1275
       End
@@ -713,7 +745,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   5865
-         TabIndex        =   30
+         TabIndex        =   29
          Top             =   810
          Width           =   930
       End
@@ -730,7 +762,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   1095
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   795
          Width           =   2565
       End
@@ -747,7 +779,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   210
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   825
          Width           =   1140
       End
@@ -765,27 +797,9 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   135
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   3750
          Width           =   1080
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Tipo"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   1
-         Left            =   3060
-         TabIndex        =   26
-         Top             =   225
-         Width           =   810
       End
       Begin VB.Label lblLabels 
          Caption         =   "Comprobante"
@@ -802,7 +816,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Index           =   0
          Left            =   1740
          TabIndex        =   25
-         Top             =   225
+         Top             =   240
          Width           =   1170
       End
       Begin VB.Label lblLabels 
@@ -836,9 +850,9 @@ Begin VB.Form Frm_FacturaCtaCte
             Strikethrough   =   0   'False
          EndProperty
          Height          =   225
-         Left            =   930
+         Left            =   825
          TabIndex        =   23
-         Top             =   240
+         Top             =   255
          Width           =   780
       End
       Begin VB.Label lblLabels 
@@ -908,7 +922,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Left            =   5280
          TabIndex        =   19
-         Top             =   225
+         Top             =   240
          Width           =   1785
       End
       Begin VB.Label Label11 
@@ -925,7 +939,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Left            =   7065
          TabIndex        =   18
-         Top             =   225
+         Top             =   240
          Width           =   615
       End
       Begin VB.Label Label12 
@@ -942,7 +956,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Left            =   7710
          TabIndex        =   17
-         Top             =   225
+         Top             =   240
          Width           =   870
       End
    End
@@ -1220,7 +1234,7 @@ Dim resp   As Integer
                Exit Sub
            End If
            On Error GoTo 0
-           ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpComprobante")
+           ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra")
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "SI"
            Sleep (8000)
            Unload Me
@@ -1411,9 +1425,13 @@ Dim strValor   As String
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     strValor = objParametros.ObtenerValor("FacturarCtaCte.nrComprobante")
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
+    ObtenerCampo("tpComprobante").Text = "FA"
     
+    strValor = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
+    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     
+  
+      ObtenerCampo("tpLetra").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
     '***********************************************************
     ' Agregado en la version 1.8  - autoimpresion Empresas RI
     ' hasta que se habiliten la facturacion en la adm se setean el null
@@ -1430,37 +1448,6 @@ End Sub
 
 
 
-Private Sub obtener_num_Proxima_Factura()
-Dim strSQL      As String
-Dim strValor    As String
-
-    '***********************************************************
-    ' Modificacion EZE II
-    strSQL = "sco_Puestos_v4_2 @nrPuesto_param=" + vlparametro_PUESTO_FACTURACION_CTA_CTE
-    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
-        MsgBox "No se encuentra definido el número de talonario" + _
-               vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
-        End
-    End If
-    
-    strValor = Trim(objbasededatos.rs_resultados("nrTalonario_auto_ctacte"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    
-    strValor = Trim(objbasededatos.rs_resultados("nrComprobante_auto_ctacte_ult"))
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-
-    ObtenerCampo("tpComprobante").Text = objbasededatos.rs_resultados("tpLetra")
-           
-   ' Modificación EZE II - VER LOAD DE FORMULARIO
-    strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-   
-    strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
-
-    '***********************************************************
-    
-End Sub
 
 
 Private Sub SelecionarItemCombo()
@@ -1502,6 +1489,9 @@ Dim ItemList    As ListItem
            ObtenerCampo("dsRazonSocial").Text = objParametros.ObtenerValor("FacturarCtaCte.dsRazonSocial")
            ObtenerCampo("nrDoc").Text = objParametros.ObtenerValor("FacturarCtaCte.nrDoc")
            ObtenerCampo("dsEmail").Text = objParametros.ObtenerValor("FacturarCtaCte.dsEmail")
+           ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("FacturarCtaCte.tpComprobante")
+           ObtenerCampo("tpLetra").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
+           
            ' version 1.4
            If objParametros.ObtenerValor("FacturarCtaCte.tpIVA") = "" Then
                 ObtenerCampo("tpIVA").Text = "CF"
@@ -1875,27 +1865,29 @@ Dim strSQL       As String
 
 
 
-    strValor = ""
-    strSQL = " SP_ObtenerMaxNroComprobanteporTalonario "
-                        strSQL = strSQL + "@nrTalonario='" + ObtenerCampo("nrTalonario").Text + "',"
-                        strSQL = strSQL + "@tpLetra='" + ObtenerCampo("tpComprobante").Text + "',"
-                        strSQL = strSQL + "@tpComprobante='" + ObtenerCampo("tpComprobante").Text + "'"
-                                                
-    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
-        Guardarregistro = False
-        Exit Function
-    End If
-
-    strValor = CStr(objbasededatos.rs_resultados(0).value)
-                                        
-    If ObtenerCampo("tpComprobante").Text = "C" Then
-        objDiccionariodeDatos.GuardarValorCampo _
-            "TB_Comprobantes", "nrComprobante", _
-            ObtenerCampo("nrPuesto").Text, strValor
-    End If
-
-    strValor = ReemplazarPalabra(FormatNumber(CDbl(strValor) + 1, 0), ".", "")
-    ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
+'    strValor = ""
+'    strSQL = " SP_ObtenerMaxNroComprobanteporTalonario "
+'                        strSQL = strSQL + "@nrTalonario='" + ObtenerCampo("nrTalonario").Text + "',"
+'                        strSQL = strSQL + "@tpLetra='" + ObtenerCampo("tpComprobante").Text + "',"
+'                        strSQL = strSQL + "@tpComprobante='" + ObtenerCampo("tpComprobante").Text + "'"
+'
+'    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+'        Guardarregistro = False
+'        Exit Function
+'    End If
+'
+'    strValor = CStr(objbasededatos.rs_resultados(0).value)
+'
+'    If ObtenerCampo("tpComprobante").Text = "C" Then
+'        objDiccionariodeDatos.GuardarValorCampo _
+'            "TB_Comprobantes", "nrComprobante", _
+'            ObtenerCampo("nrPuesto").Text, strValor
+'    End If
+'
+'    strValor = ReemplazarPalabra(FormatNumber(CDbl(strValor) + 1, 0), ".", "")
+'    ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
+    
+    
 
     ObjTablasIO.nmTabla = "TB_Comprobantes"
     
@@ -1990,8 +1982,8 @@ Dim strSQL       As String
               "dsOpcional2", "<-", ConcatenarDestinos()
               
     
-    ObjTablasIO.setearCampoOperadorValor _
-              "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+    ' ObjTablasIO.setearCampoOperadorValor _
+    '           "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
               
     
     ObjTablasIO.setearCampoOperadorValor _

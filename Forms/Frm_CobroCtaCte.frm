@@ -723,15 +723,18 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.dsEmail", AdaptarNulos(ObjTablasIO.rs_resultados("dsEmail").value, "")
     objParametros.GrabarValor "FacturarCtaCte.tpIVA", AdaptarNulos(ObjTablasIO.rs_resultados("tpIVA").value, "")
     objParametros.GrabarValor "FacturarCtaCte.dsDetalle", strDetalle
+    objParametros.GrabarValor "FacturarCtaCte.tpComprobante", "FA"
+    
     
     
     Dim strSQL As String
     '***********************************************************'
     ' Modificacion EZE V4.6
-    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v1_0 @nrPuesto_param=" + objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE") + ", "
+    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=" + objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE") + ", "
     strSQL = strSQL + "@tipo_iva = " + objParametros.ObtenerValor("FacturarCtaCte.tpIVA") + ",  "
-    strSQL = strSQL + "@auto_impresor = " + IIf(objConfig.tpImpresion = "CONTINUO", "S", "N") + "; "
-    
+    strSQL = strSQL + "@auto_impresor = " + IIf(objConfig.tpImpresion = "CONTINUO", "S", "N") + ", "
+    strSQL = strSQL + "@tpFormadePago = null,  "
+    strSQL = strSQL + "@tpComprobante = '" + objParametros.ObtenerValor("FacturarCtaCte.tpComprobante") + "'"
     
     If Not objbasededatos.ExecStoredProcedures(strSQL) Then
         MsgBox "No se encuentra bien definido el número de talonario" + _
