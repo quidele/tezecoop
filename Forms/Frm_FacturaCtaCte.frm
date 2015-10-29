@@ -1621,7 +1621,7 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "<-", ObtenerCampo("nrTalonario").Text
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "<-", ObtenerCampo("nrComprobante").Text
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "<-", ObtenerCampo("tpComprobante").Text
-        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "<-", ObtenerCampo("tpLetra").Text
         ObjTablasIO.setearCampoOperadorValor "nrItem", "<-", CStr(i)
         ObjTablasIO.setearCampoOperadorValor "cdProducto", "<-", Me.lstItemsFactura.ListItems(i).Text
         ObjTablasIO.setearCampoOperadorValor "dsProducto", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(1)
@@ -1659,7 +1659,7 @@ Dim vlComision    As Single
         ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "<-", ObtenerCampo("nrTalonario").Text
         ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "<-", ObtenerCampo("nrComprobante").Text
         ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "<-", ObtenerCampo("tpComprobante").Text
-        ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "<-", ObtenerCampo("tpComprobante").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "<-", ObtenerCampo("tpLetra").Text
         
         ObjTablasIO.setearCampoOperadorValor "cdCliente", "<-", ObtenerCampo("cdCliente").Text
         ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", vlparametro_PUESTO_FACTURACION_CTA_CTE

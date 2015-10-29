@@ -46,6 +46,11 @@ go
 	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'NC'
 	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'NC'
 
+	Exec spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,
+	@tpFormadePago = 'Cuenta Corriente' ,@tpComprobante = 'NC' 
+
+	select * from tb_puestos    where nrPuesto = 4 
+
 */
 
 
@@ -210,7 +215,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		if @tpComprobante ='NC'
 		begin
 			-- COMPLETAR LOGICA
-			/* if @tpFormadePago='Cuenta Corriente' 
+			/*if @tpFormadePago='Cuenta Corriente' 
 			begin
 				select  @nrTalonario_auto_ctacte    as nrTalonario,
 					@nrComprobante_auto_ctacte_nc_ult  as nrComprobante,
