@@ -3259,7 +3259,14 @@ Dim iCantRetornos   As Integer
             If Me.cmbCampos.Text = "Cliente" Then
                 Select Case objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i)
                 Case "Contado"
-                   vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
+                  ' MOD Y ADD Version 4.7
+                   If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i) = "FA" Or _
+                        Len(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i)) = 1 Or _
+                            objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i) = "ND" Then
+                        vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
+                   Else
+                        vlAcumPesos = vlAcumPesos - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
+                   End If
                    vlAcumDolares = "0"
                    vlAcumEuros = "0"
                    vlAcumComision = "0"
@@ -3283,11 +3290,23 @@ Dim iCantRetornos   As Integer
                    vlAcumReales = vlAcumReales - 0
                    vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
                 Case "Contado"
-                   vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoPesos", i)
-                   vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
-                   vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
-                   vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
-                   vlAcumReales = vlAcumReales + AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
+                ' MOD Y ADD Version 4.7
+                   If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i) = "FA" Or _
+                        Len(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i)) = 1 Or _
+                            objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpComprobanteCliente", i) = "ND" Then
+                        vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoPesos", i)
+                        vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
+                        vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
+                        vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                        vlAcumReales = vlAcumReales + AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
+                   Else   ' para Notas de Credito
+                        vlAcumPesos = vlAcumPesos - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoPesos", i)
+                        vlAcumDolares = vlAcumDolares - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
+                        vlAcumEuros = vlAcumEuros - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
+                        vlAcumComision = vlAcumComision - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                        vlAcumReales = vlAcumReales - AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
+                   End If
+                   
                 Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito"
                    vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)

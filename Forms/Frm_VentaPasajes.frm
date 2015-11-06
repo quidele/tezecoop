@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   278724609
+         Format          =   116981761
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3127,16 +3127,8 @@ Dim strSQL      As String
 Dim strValor    As String
     
     ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
-    
-    ' Las nc y nd deben seran realizadas a contado
-    If objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "ND" Or objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "NC" Then
-        ObtenerCampo("cdCondVenta").Clear ' Limpiamos opciones
-        ObtenerCampo("cdCondVenta") = "Contado"
-    End If
-    
-    
-    MsgBox "VER ObtenerCampo(tpComprobante) = 'Contado' "
-    
+
+
      
     '***********************************************************
     ' Modificación version 1.4
@@ -5612,6 +5604,14 @@ End Sub
 Private Sub cargarCondVentas(pcdCliente As String)
 
     ObtenerCampo("cdCondVenta").Clear
+    
+    
+    ' Las nc y nd deben seran realizadas a contado
+    If objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "ND" Or objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "NC" Then
+        ObtenerCampo("cdCondVenta").Clear ' Limpiamos opciones
+        ObtenerCampo("cdCondVenta").AddItem "Contado"
+        Exit Sub
+    End If
 
     Select Case pcdCliente
     Case "1"
@@ -5639,6 +5639,15 @@ Dim ltipo_destino    As String
 Dim lcdCondVenta     As String
 Dim lcdCliente       As String
 
+    
+    
+    ' Las nc y nd deben seran realizadas a contado
+    If objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "ND" Or objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "NC" Then
+        ObtenerCampo("cdCondVenta").Clear ' Limpiamos opciones
+        ObtenerCampo("cdCondVenta").AddItem "Contado"
+        ObtenerCampo("cdCondVenta").Text = "Contado"
+        Exit Sub
+    End If
     
     ltipo_destino = obtenerTipoDestinoComision(ConcatenarDestinos())
     
