@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   50528257
+         Format          =   278724609
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1950,6 +1950,8 @@ Dim strtag  As String
     ObtenerCampo("nrPasajeros").Text = ""
     ObtenerCampo("nrBultos").Text = ""
     
+    
+    
 End Function
 
 
@@ -2582,34 +2584,37 @@ Private Function FacturarBD() As Boolean
                 Exit Function
            End If
            
-           '/* INICIO  modificado en la version 2.5  */
-           Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
-           Case "administracion.cajapuesto"
-                Select Case ObtenerCampo("cdCondVenta").Text
-                Case "Contado"
-                    If Not ActualizarCaja() Then
-                           objbasededatos.RollBackTrans
-                           lerror = "Se ha producido un error, no se pudo grabar la factura." + vbCrLf + _
-                                  " la caja no se pudo actualizar, por favor intente nuevamente. o reinicie el sistema."
-                          Exit Function
-                    End If
-                End Select
-           Case Else
-                Select Case objUsuario.tpAcceso
-                Case "Puestos"
-                    Select Case ObtenerCampo("cdCondVenta").Text
-                    Case "Contado"
-                        If Not ActualizarCaja() Then
-                               objbasededatos.RollBackTrans
-                               lerror = "Se ha producido un error, no se pudo grabar la factura." + vbCrLf + _
-                                      " la caja no se pudo actualizar, por favor intente nuevamente. o reinicie el sistema."
-                              Exit Function
-                        End If
-                    End Select
-                End Select
-           End Select
-           '/* FIN  modificado en la version 2.5  */
            
+           '/* INICIO  modificado en la version 2.5  */
+           '/* ADD Version 4.7 Si es factura actulizamos el saldo de la caja puesto NC y ND no
+           If ObtenerCampo("tpComprobante").Text = "FA" Then
+            Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
+            Case "administracion.cajapuesto"
+                 Select Case ObtenerCampo("cdCondVenta").Text
+                 Case "Contado"
+                     If Not ActualizarCaja() Then
+                            objbasededatos.RollBackTrans
+                            lerror = "Se ha producido un error, no se pudo grabar la factura." + vbCrLf + _
+                                   " la caja no se pudo actualizar, por favor intente nuevamente. o reinicie el sistema."
+                           Exit Function
+                     End If
+                 End Select
+            Case Else
+                 Select Case objUsuario.tpAcceso
+                 Case "Puestos"
+                     Select Case ObtenerCampo("cdCondVenta").Text
+                     Case "Contado"
+                         If Not ActualizarCaja() Then
+                                objbasededatos.RollBackTrans
+                                lerror = "Se ha producido un error, no se pudo grabar la factura." + vbCrLf + _
+                                       " la caja no se pudo actualizar, por favor intente nuevamente. o reinicie el sistema."
+                               Exit Function
+                         End If
+                     End Select
+                 End Select
+            End Select
+           End If
+           '/* FIN  modificado en la version 2.5  */
            '**********************************************************
            '* Código creado para Gestión V2
            ' Actualizamos los numeros de talonarios y comprobantes
@@ -2969,7 +2974,7 @@ Private Sub DTPicker1_KeyDown(KeyCode As Integer, Shift As Integer)
 
   Select Case KeyCode
   Case vbKeyReturn
-        If ObtenerCampo("tpComprobante") = "A" Then
+        If ObtenerCampo("tpComprobante") = "FA" Then
             ObtenerCampo("cdcliente").SetFocus
         Else
             ObtenerCampo("dsProductoBuscado").SetFocus
@@ -2985,7 +2990,7 @@ Private Sub DTPicker1_KeyPress(KeyAscii As Integer)
     
   Select Case KeyAscii
   Case vbKeyReturn
-    If ObtenerCampo("tpComprobante") = "A" Then
+    If ObtenerCampo("tpComprobante") = "FA" Then
         ObtenerCampo("cdcliente").SetFocus
     Else
         ObtenerCampo("dsProductoBuscado").SetFocus
@@ -3122,6 +3127,16 @@ Dim strSQL      As String
 Dim strValor    As String
     
     ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
+    
+    ' Las nc y nd deben seran realizadas a contado
+    If objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "ND" Or objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante") = "NC" Then
+        ObtenerCampo("cdCondVenta").Clear ' Limpiamos opciones
+        ObtenerCampo("cdCondVenta") = "Contado"
+    End If
+    
+    
+    MsgBox "VER ObtenerCampo(tpComprobante) = 'Contado' "
+    
      
     '***********************************************************
     ' Modificación version 1.4
