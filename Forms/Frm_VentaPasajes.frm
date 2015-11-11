@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   116981761
+         Format          =   127926273
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5361,7 +5361,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_Continuo_v3_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_7.rpt"
         End Select
         
     End Select
@@ -5482,7 +5482,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_CuponChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v3_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_7.rpt"
         End Select
     Case Else
         Select Case objConfig.tpImpresion
@@ -5491,7 +5491,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v3_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_7.rpt"
         End Select
     End Select
     

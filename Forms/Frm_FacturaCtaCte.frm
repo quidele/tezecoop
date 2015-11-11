@@ -1202,26 +1202,12 @@ Dim resp   As Integer
            End If
             
            '**********************************************************
-           '-- modificado para la versión 1.4
-           ObjTablasIO.nmTabla = "TB_Puestos"
-           ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", vlparametro_PUESTO_FACTURACION_CTA_CTE
-           
-           Select Case ObtenerCampo("tpComprobante")
-           Case "A" ' RI
-                ObjTablasIO.setearCampoOperadorValor "nrComprobante_auto_empresa_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-           Case "B" ' Consumidor Final, RNI, Otros
-                ObjTablasIO.setearCampoOperadorValor "nrComprobante_automatico_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-           Case "X" ' Recibos
-                ObjTablasIO.setearCampoOperadorValor "nrComprobante_auto_ctacte_ult", "<-", CStr(CLng(ObtenerCampo("nrComprobante")))
-           End Select
-           
-           ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
-
-           If Not ObjTablasIO.Actualizar() Then
+           ' Version 4.7 VERIFICAR EL PROCEDIMIENTO
+            If Not grabarPuesto() Then
                 objbasededatos.RollBackTrans
                 MsgBox "ERROR: " + objbasededatos.Error, vbInformation + vbDefaultButton1, "Atención"
                 Exit Sub
-           End If
+            End If
            '**********************************************************
            
            On Error Resume Next
@@ -1446,6 +1432,30 @@ Dim strValor   As String
     
 End Sub
 
+
+' Version 4.7 VERIFICAR EL PROCEDIMIENTO
+' MDY Modificado en la version 4.7
+Private Function grabarPuesto() As Boolean
+
+        grabarPuesto = False
+
+        '***********************************************************
+        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+        objSPs.setearCampoValor "@nrPuesto_param", vlparametro_PUESTO_FACTURACION_CTA_CTE
+        objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
+        objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("FacturarCtaCte.tipofacturacion")) = "MANUAL", "N", "S")
+        objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
+        objSPs.setearCampoValor "@nrComprobante", CStr(CLng(ObtenerCampo("nrComprobante")))
+    
+        If Not objSPs.ExecSP Then
+            MsgBox "No se puedo actualizar el numero de comprobante " + _
+                   vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
+            End
+        End If
+        
+        grabarPuesto = True
+           
+End Function
 
 
 
@@ -2744,7 +2754,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v3_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_7.rpt"
         End Select
     End Select
     

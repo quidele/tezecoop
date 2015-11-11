@@ -342,3 +342,4 @@
 06/11/2015 17:35:56 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
 06/11/2015 17:36:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Recibos'
 06/11/2015 17:36:04 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '06/11/2015 00:00:00'  AND  TB_Recibos.dtRecibo <= '06/11/2015 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+06/11/2015 17:49:58 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 

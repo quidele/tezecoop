@@ -51,6 +51,8 @@ go
 
 	select * from tb_puestos    where nrPuesto = 4 
 
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=4, @tipo_iva = EX,  @auto_impresor = S, @tpFormadePago = null,  @tpComprobante = 'FA'
+
 */
 
 
@@ -271,6 +273,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		
 		if @tipo_iva = 'CF' or @tipo_iva = 'EX'
 		begin
+			print 'Sale por ACA - 1'
 			select  @nrTalonario_automatico       as nrTalonario,
 					@nrComprobante_automatico_ult as nrComprobante,
 					@tpLetra				    as tpLetra,
@@ -683,6 +686,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_a
 
 go
 
+---  Exec spu_actualizar_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,@tpComprobante = 'FA' ,@nrComprobante = 134139 
 create procedure dbo.spu_actualizar_puntosdeventa_facturacion_v2_0
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
@@ -911,6 +915,15 @@ go
 
 
 
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes_Imprime' 
+			and COLUMN_NAME='dsCodDocAfip')	
+			ALTER	TABLE	dbo.TB_Comprobantes_Imprime	ADD	dsCodDocAfip	varchar(10); 
+
+---
+go
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /****************************************************************/
 ALTER PROCEDURE [dbo].[SP_PrepararReimpresiondeComprobante_v3_7] 
@@ -955,7 +968,7 @@ begin
 	    cdPostal, nmLocalidad, cdCodBar, dsEmail, nrTel, nrCAI, 
 	    dtVencimiento, vlDiaDolar, vlDiaEuro, dsOpcional1, 
 	    dsOpcional2, dsOpcional3, dsOpcional4, flAnulado, dtAnulado, 
-	    nmEmpleado,vlIVA,vlSubTotal,vlPagoReales,vlDiaReal)
+	    nmEmpleado,vlIVA,vlSubTotal,vlPagoReales,vlDiaReal, dsCodDocAfip)
 	SELECT nrTalonario, nrComprobante, rtrim(tpComprobante) as tpComprobante, tpLetra, 
 	    dtComprobante, cdCondVenta, tpComision, cdCliente, 
 	    tpMoneda, tpIVA, vlTotalGeneral, vlPagoPesos, vlPagoEuros, 
@@ -965,8 +978,10 @@ begin
 	    dsRazonSocial, nmNombre, nmApellido, nmLicenciatario, 
 	    cdPostal, nmLocalidad, cdCodBar, dsEmail, nrTel, nrCAI, 
 	    dtVencimiento, vlDiaDolar, vlDiaEuro, dsOpcional1, 
-	    dsOpcional2, dsOpcional3, dsOpcional4, flAnulado, dtAnulado, 
-	    nmEmpleado,vlIVA,vlSubTotal, vlPagoReales, vlDiaReal
+	    dsOpcional2, dsOpcional3,  dsOpcional4, 
+		flAnulado, dtAnulado, 
+	    nmEmpleado,vlIVA,vlSubTotal, vlPagoReales, vlDiaReal, 
+		'COD. ' +  dbo.ufn_obtnerCodComprobanteAFIP (tpComprobante ,tpLetra)  as dsCodDocAfip  -- Recuperamos el Código de AFIP
 	FROM TB_Comprobantes WHERE TB_Comprobantes.nrTalonario=@nrTalonario AND
 	TB_Comprobantes.nrComprobante=@nrComprobante AND 
 	TB_Comprobantes.tpComprobante=@tpComprobante AND
@@ -1122,5 +1137,46 @@ declare @factura_comi             as float
 						  
 
 end
+
+go
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='ufn_obtnerCodComprobanteAFIP' )
+	drop function  dbo.ufn_obtnerCodComprobanteAFIP
+
+go
+
+/*  
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('FA','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('ND','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('NC','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('FA','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('ND','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('NC','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('FA','C')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('ND','C')
+	select  dbo.ufn_obtnerCodComprobanteAFIP ('NC','C')
+*/
+
+create function  dbo.ufn_obtnerCodComprobanteAFIP ( @tpcompprobante char(2), @tpLetra char(1))
+RETURNS char(2)
+AS
+BEGIN
+declare  @cod_tipo_comprobante int 
+
+	select  @cod_tipo_comprobante = cod_tipo_comprobante  from tipo_comprobanteAFIP  where  tpComprobante = @tpcompprobante
+																		and  tpLetra = @tpLetra
+	return RIGHT('0' + convert(varchar,@cod_tipo_comprobante),2)
+
+END
+
+go
+
+
+
+select * from TB_Comprobantes_Imprime 
+
+
+
 
 

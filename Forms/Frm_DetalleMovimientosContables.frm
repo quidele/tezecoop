@@ -820,7 +820,7 @@ End Sub
 Private Sub imprimirCobroCtaCte(IdRecibo As String)
 
     Frm_Principal.LimpiarReporte
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_DetalleFacturaCtaCte_v1.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_v4_7.rpt"
     
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     Frm_Principal.CrystalReport1.Destination = crptToWindow
