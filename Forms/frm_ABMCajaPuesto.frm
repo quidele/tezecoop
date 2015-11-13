@@ -33,7 +33,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -54,7 +54,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -76,7 +76,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -98,7 +98,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -119,7 +119,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -140,7 +140,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -163,7 +163,7 @@ Begin VB.Form frm_ABMCajaPuesto
          DataField       =   "nmNombre"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -184,7 +184,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -205,7 +205,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -228,7 +228,7 @@ Begin VB.Form frm_ABMCajaPuesto
          DataField       =   "nmNombre"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -268,7 +268,7 @@ Begin VB.Form frm_ABMCajaPuesto
          DataField       =   "nmNombre"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -290,7 +290,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -312,7 +312,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -334,7 +334,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -357,7 +357,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -408,7 +408,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Reales"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -428,7 +428,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Total Real"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -447,7 +447,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Total Sist."
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -464,7 +464,7 @@ Begin VB.Form frm_ABMCajaPuesto
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -483,7 +483,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Fondo Fijo próxima Caja"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -501,7 +501,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Saldos Finales (incluido el fondo fijo)"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -519,7 +519,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Observación Cierre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -539,7 +539,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Totales Pesos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -559,7 +559,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Euros"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -579,7 +579,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "U$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -599,7 +599,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Pesos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -618,7 +618,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Diferencia"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -637,7 +637,7 @@ Begin VB.Form frm_ABMCajaPuesto
          Caption         =   "Motivo en Diferencia de Cierre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

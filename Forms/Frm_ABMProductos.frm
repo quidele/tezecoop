@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ABMProductos 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Maestro de Productos"
@@ -363,7 +363,7 @@ Begin VB.Form Frm_ABMProductos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -495,7 +495,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Comisión Retorno"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -516,7 +516,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Se muestra en la WEB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -634,7 +634,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Se muestra en la facturación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -720,7 +720,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -739,7 +739,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Predefinido como:"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -758,7 +758,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Precio x Kilometro"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -777,7 +777,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -796,7 +796,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -815,7 +815,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Kilometros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -834,7 +834,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Orden de la Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -853,7 +853,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Precio sin Peajes"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -872,7 +872,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Tipo de Operación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -891,7 +891,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Porcentaje (1 a 100%)"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -910,7 +910,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Peaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -929,7 +929,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Observación Horas"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -948,7 +948,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Cod. de Producto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -967,7 +967,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Precio del Viaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -986,7 +986,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False

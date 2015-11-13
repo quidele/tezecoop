@@ -433,7 +433,7 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -519,7 +519,7 @@ Begin VB.Form Frm_SalidaEstudioContable
          Caption         =   "Facturación"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -537,7 +537,7 @@ Begin VB.Form Frm_SalidaEstudioContable
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

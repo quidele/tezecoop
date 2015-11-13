@@ -316,7 +316,7 @@ Begin VB.Form Frm_ResumenMovimientosContables
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -373,7 +373,7 @@ Begin VB.Form Frm_ResumenMovimientosContables
       _ExtentX        =   2990
       _ExtentY        =   635
       _Version        =   393216
-      Format          =   254803969
+      Format          =   105971713
       CurrentDate     =   38267
    End
    Begin MSComCtl2.DTPicker DTPicker1 
@@ -387,7 +387,7 @@ Begin VB.Form Frm_ResumenMovimientosContables
       _ExtentX        =   2990
       _ExtentY        =   609
       _Version        =   393216
-      Format          =   254869505
+      Format          =   105971713
       CurrentDate     =   38267
    End
    Begin MSComctlLib.ImageList ImgOperadores 
@@ -502,7 +502,7 @@ Begin VB.Form Frm_ResumenMovimientosContables
       Caption         =   "Fecha Desde"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -520,7 +520,7 @@ Begin VB.Form Frm_ResumenMovimientosContables
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

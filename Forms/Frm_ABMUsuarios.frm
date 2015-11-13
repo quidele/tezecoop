@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ABMUsuarios 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Maestro de Usuarios"
@@ -340,7 +340,7 @@ Begin VB.Form Frm_ABMUsuarios
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -600,7 +600,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Nivel Jerárquico"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -622,7 +622,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Tipo de Acceso"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -644,7 +644,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -666,7 +666,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "CUIL / DNI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -688,7 +688,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -710,7 +710,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -732,7 +732,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Clave"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -754,7 +754,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Nombre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -776,7 +776,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -798,7 +798,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Apellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -820,7 +820,7 @@ Begin VB.Form Frm_ABMUsuarios
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False

@@ -420,7 +420,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Letra"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -439,7 +439,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Ultimo Número"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -458,7 +458,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Talonario"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -477,7 +477,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Consumidor Final"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -496,7 +496,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "A Empresas"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -515,7 +515,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Recibo Cta. Ctes."
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -812,7 +812,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   88932353
+               Format          =   123600897
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -826,7 +826,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   88932353
+               Format          =   123600897
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -834,7 +834,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "NC"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -853,7 +853,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "ND"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -872,7 +872,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Vencimiento"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -891,7 +891,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "CAI"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -910,7 +910,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Recibo Cta. Ctes."
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -929,7 +929,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "A Empresas"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -948,7 +948,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Consumidor Final"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -967,7 +967,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Talonario"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -986,7 +986,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Ultimo Número"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -1005,7 +1005,7 @@ Begin VB.Form Frm_ABMPuestos
                Caption         =   "Letra"
                BeginProperty Font 
                   Name            =   "Verdana"
-                  Size            =   8.25
+                  Size            =   8,25
                   Charset         =   0
                   Weight          =   400
                   Underline       =   0   'False
@@ -1054,7 +1054,7 @@ Begin VB.Form Frm_ABMPuestos
             Caption         =   "Nro de Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1073,7 +1073,7 @@ Begin VB.Form Frm_ABMPuestos
             Caption         =   "Descripción de Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1231,7 +1231,7 @@ Begin VB.Form Frm_ABMPuestos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

@@ -2884,6 +2884,13 @@ Dim cdCliente               As String
         End If
     End If
     
+    ' Add version 4.7
+    If Me.cmbCampos.Text = "Cliente" Then
+        If CSng(ObtenerCampo("vlSaldoPesos").Text) < 0 Then
+            MsgBox "El saldo de la cuenta corriente no puede quedar en negativo, debe ajustar con una NC.", vbInformation + vbDefaultButton1, "Compensación"
+            Exit Function
+        End If
+    End If
     
         
     

@@ -52,7 +52,7 @@ Begin VB.Form frm_Splash
       Caption         =   "Versión 1.0"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

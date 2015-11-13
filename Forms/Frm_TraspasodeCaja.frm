@@ -220,7 +220,7 @@ Begin VB.Form Frm_TraspasodeCaja
       Caption         =   "Se traspasa esta caja a:"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

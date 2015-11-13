@@ -15,6 +15,331 @@ Begin VB.Form Frm_AnularComprobantes
    ScaleHeight     =   7800
    ScaleWidth      =   10875
    StartUpPosition =   2  'CenterScreen
+   Begin VB.Frame fraBusqComprobantes 
+      BorderStyle     =   0  'None
+      Height          =   6885
+      Left            =   15
+      TabIndex        =   31
+      Top             =   690
+      Width           =   10815
+      Begin VB.Frame fra_ProgressBar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "Exportando los datos ....."
+         ForeColor       =   &H80000008&
+         Height          =   1650
+         Left            =   2265
+         TabIndex        =   72
+         Top             =   2610
+         Visible         =   0   'False
+         Width           =   5340
+         Begin MSComctlLib.ProgressBar ProgressBar 
+            Height          =   480
+            Left            =   315
+            TabIndex        =   73
+            Top             =   615
+            Width           =   4575
+            _ExtentX        =   8070
+            _ExtentY        =   847
+            _Version        =   393216
+            Appearance      =   0
+         End
+         Begin VB.Label Label24 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "Porcentaje "
+            Height          =   255
+            Index           =   0
+            Left            =   315
+            TabIndex        =   76
+            Top             =   375
+            Width           =   855
+         End
+         Begin VB.Label lblvlPorcentaje 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "10 %"
+            Height          =   255
+            Left            =   1155
+            TabIndex        =   75
+            Top             =   375
+            Width           =   510
+         End
+         Begin VB.Label Label20 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "100 %"
+            Height          =   240
+            Left            =   4365
+            TabIndex        =   74
+            Top             =   390
+            Width           =   510
+         End
+      End
+      Begin VB.CommandButton cmdBuscar 
+         Height          =   360
+         Left            =   5760
+         Picture         =   "Frm_AnularComprobantes.frx":030A
+         Style           =   1  'Graphical
+         TabIndex        =   71
+         Top             =   780
+         Width           =   375
+      End
+      Begin VB.TextBox txtBusqueda 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   4305
+         TabIndex        =   28
+         Text            =   "*"
+         Top             =   315
+         Width           =   4920
+      End
+      Begin MSComctlLib.ImageList ImgOperadores 
+         Left            =   7215
+         Top             =   1560
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483648
+         ImageWidth      =   16
+         ImageHeight     =   16
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   6
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":040C
+               Key             =   "Similar"
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":051E
+               Key             =   "Igual"
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":0630
+               Key             =   "MayoroIgual"
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":0742
+               Key             =   "Mayor"
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":0854
+               Key             =   "MenoroIgual"
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":0966
+               Key             =   "Menor"
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ImageCombo ImageCombo1 
+         Height          =   330
+         Left            =   2565
+         TabIndex        =   30
+         Top             =   315
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   582
+         _Version        =   393216
+         ForeColor       =   -2147483640
+         BackColor       =   14737632
+         OLEDropMode     =   1
+         Indentation     =   1
+         Locked          =   -1  'True
+         ImageList       =   "ImgOperadores"
+      End
+      Begin VB.ComboBox cmbCampos 
+         BackColor       =   &H00E0E0E0&
+         Height          =   315
+         Left            =   150
+         Style           =   2  'Dropdown List
+         TabIndex        =   29
+         Top             =   330
+         Width           =   2400
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   360
+         Index           =   0
+         Left            =   1470
+         TabIndex        =   67
+         Tag             =   "dtDesde"
+         Top             =   750
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   635
+         _Version        =   393216
+         Format          =   122814465
+         CurrentDate     =   38267
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   345
+         Index           =   1
+         Left            =   3975
+         TabIndex        =   68
+         Tag             =   "dtHasta"
+         Top             =   780
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   105447425
+         CurrentDate     =   38267
+      End
+      Begin MSComctlLib.ListView lstBusqueda 
+         Height          =   5445
+         Left            =   90
+         TabIndex        =   78
+         Top             =   1185
+         Width           =   9135
+         _ExtentX        =   16113
+         _ExtentY        =   9604
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         FullRowSelect   =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Verdana"
+            Size            =   8,25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         NumItems        =   12
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Object.Tag             =   "nrComprobante"
+            Text            =   "Comprobante"
+            Object.Width           =   2646
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Object.Tag             =   "nrTalonario"
+            Text            =   "Talonario"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Object.Tag             =   "tpComprobante"
+            Text            =   "Doc"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "tpLetra"
+            Text            =   "Letra"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Object.Tag             =   "dtComprobante"
+            Text            =   "Fecha "
+            Object.Width           =   2293
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Object.Tag             =   "flManual"
+            Text            =   "Facturado"
+            Object.Width           =   2822
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Object.Tag             =   "cdCondVenta"
+            Text            =   "Cond. Venta"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
+            Object.Tag             =   "cdCliente"
+            Text            =   "Cliente"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Object.Tag             =   "dsRazonSocial"
+            Text            =   "Razon Social"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Object.Tag             =   "nrLicencia"
+            Text            =   "Licencia"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
+            Object.Tag             =   "nrCaja"
+            Text            =   "Caja"
+            Object.Width           =   2734
+         EndProperty
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
+            Object.Tag             =   "dsUsuario"
+            Text            =   "Usuario"
+            Object.Width           =   2540
+         EndProperty
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Fecha Desde"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8,25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   10
+         Left            =   150
+         TabIndex        =   70
+         Top             =   870
+         Width           =   1200
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Hasta"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8,25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   9
+         Left            =   3255
+         TabIndex        =   69
+         Top             =   855
+         Width           =   645
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Valor para la busqueda"
+         Height          =   210
+         Left            =   4305
+         TabIndex        =   33
+         Top             =   90
+         Width           =   1755
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Campo"
+         Height          =   210
+         Left            =   165
+         TabIndex        =   32
+         Top             =   105
+         Width           =   795
+      End
+   End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
       Height          =   660
@@ -85,7 +410,7 @@ Begin VB.Form Frm_AnularComprobantes
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_AnularComprobantes.frx":030A
+      MouseIcon       =   "Frm_AnularComprobantes.frx":0A78
       Begin MSComctlLib.ImageList imgReimpComprobantesResaltado 
          Left            =   7005
          Top             =   30
@@ -99,51 +424,51 @@ Begin VB.Form Frm_AnularComprobantes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   12
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":046C
+               Picture         =   "Frm_AnularComprobantes.frx":0BDA
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0588
+               Picture         =   "Frm_AnularComprobantes.frx":0CF6
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":06DC
+               Picture         =   "Frm_AnularComprobantes.frx":0E4A
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":07EC
+               Picture         =   "Frm_AnularComprobantes.frx":0F5A
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":08EE
+               Picture         =   "Frm_AnularComprobantes.frx":105C
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0A42
+               Picture         =   "Frm_AnularComprobantes.frx":11B0
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0B4E
+               Picture         =   "Frm_AnularComprobantes.frx":12BC
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":11CA
+               Picture         =   "Frm_AnularComprobantes.frx":1938
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1332
+               Picture         =   "Frm_AnularComprobantes.frx":1AA0
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1786
+               Picture         =   "Frm_AnularComprobantes.frx":1EF4
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1BDA
+               Picture         =   "Frm_AnularComprobantes.frx":2348
                Key             =   "Imprimir"
             EndProperty
             BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2254
+               Picture         =   "Frm_AnularComprobantes.frx":29C2
                Key             =   "Anular"
             EndProperty
          EndProperty
@@ -161,51 +486,51 @@ Begin VB.Form Frm_AnularComprobantes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   12
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2364
+               Picture         =   "Frm_AnularComprobantes.frx":2AD2
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":247C
+               Picture         =   "Frm_AnularComprobantes.frx":2BEA
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":25D0
+               Picture         =   "Frm_AnularComprobantes.frx":2D3E
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":26E8
+               Picture         =   "Frm_AnularComprobantes.frx":2E56
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":27F4
+               Picture         =   "Frm_AnularComprobantes.frx":2F62
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2948
+               Picture         =   "Frm_AnularComprobantes.frx":30B6
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2A50
+               Picture         =   "Frm_AnularComprobantes.frx":31BE
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":30CC
+               Picture         =   "Frm_AnularComprobantes.frx":383A
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":322C
+               Picture         =   "Frm_AnularComprobantes.frx":399A
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":3680
+               Picture         =   "Frm_AnularComprobantes.frx":3DEE
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":3AD4
+               Picture         =   "Frm_AnularComprobantes.frx":4242
                Key             =   "Imprimir"
             EndProperty
             BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":414E
+               Picture         =   "Frm_AnularComprobantes.frx":48BC
                Key             =   "Anular"
             EndProperty
          EndProperty
@@ -369,7 +694,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -387,7 +712,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -405,7 +730,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -422,7 +747,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Cliente"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -439,7 +764,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Razón Social "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -456,7 +781,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -474,7 +799,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "CUIT / DNI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -491,7 +816,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Apellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -509,7 +834,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Nombre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -527,7 +852,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "E-Mail"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -613,7 +938,7 @@ Begin VB.Form Frm_AnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -652,9 +977,9 @@ Begin VB.Form Frm_AnularComprobantes
             BackColor       =   &H00E0E0E0&
             Height          =   315
             Index           =   2
-            ItemData        =   "Frm_AnularComprobantes.frx":425E
+            ItemData        =   "Frm_AnularComprobantes.frx":49CC
             Left            =   240
-            List            =   "Frm_AnularComprobantes.frx":4274
+            List            =   "Frm_AnularComprobantes.frx":49E2
             Style           =   2  'Dropdown List
             TabIndex        =   65
             Tag             =   "cdCondVenta"
@@ -740,7 +1065,7 @@ Begin VB.Form Frm_AnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -778,7 +1103,7 @@ Begin VB.Form Frm_AnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -953,7 +1278,7 @@ Begin VB.Form Frm_AnularComprobantes
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -995,7 +1320,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Doc"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1013,7 +1338,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Letra"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1033,7 +1358,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Comprobante Anulado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1053,7 +1378,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Total Reales"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1069,7 +1394,7 @@ Begin VB.Form Frm_AnularComprobantes
          Begin VB.Label lblCotizacionDia 
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1088,7 +1413,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Total Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1108,7 +1433,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1127,7 +1452,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Total Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1144,7 +1469,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1162,7 +1487,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Licenciatario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1180,7 +1505,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1198,7 +1523,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1216,7 +1541,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Nro. Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1233,7 +1558,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Cond. de Venta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1251,7 +1576,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Tipo de IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1269,7 +1594,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1286,7 +1611,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1303,7 +1628,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1320,7 +1645,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Nro. Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1337,7 +1662,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Bultos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1354,7 +1679,7 @@ Begin VB.Form Frm_AnularComprobantes
             Caption         =   "Pasajeros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1367,331 +1692,6 @@ Begin VB.Form Frm_AnularComprobantes
             Top             =   945
             Width           =   945
          End
-      End
-   End
-   Begin VB.Frame fraBusqComprobantes 
-      BorderStyle     =   0  'None
-      Height          =   6885
-      Left            =   15
-      TabIndex        =   31
-      Top             =   690
-      Width           =   10815
-      Begin VB.Frame fra_ProgressBar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "Exportando los datos ....."
-         ForeColor       =   &H80000008&
-         Height          =   1650
-         Left            =   2265
-         TabIndex        =   72
-         Top             =   2610
-         Visible         =   0   'False
-         Width           =   5340
-         Begin MSComctlLib.ProgressBar ProgressBar 
-            Height          =   480
-            Left            =   315
-            TabIndex        =   73
-            Top             =   615
-            Width           =   4575
-            _ExtentX        =   8070
-            _ExtentY        =   847
-            _Version        =   393216
-            Appearance      =   0
-         End
-         Begin VB.Label Label24 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "Porcentaje "
-            Height          =   255
-            Index           =   0
-            Left            =   315
-            TabIndex        =   76
-            Top             =   375
-            Width           =   855
-         End
-         Begin VB.Label lblvlPorcentaje 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "10 %"
-            Height          =   255
-            Left            =   1155
-            TabIndex        =   75
-            Top             =   375
-            Width           =   510
-         End
-         Begin VB.Label Label20 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "100 %"
-            Height          =   240
-            Left            =   4365
-            TabIndex        =   74
-            Top             =   390
-            Width           =   510
-         End
-      End
-      Begin VB.CommandButton cmdBuscar 
-         Height          =   360
-         Left            =   5760
-         Picture         =   "Frm_AnularComprobantes.frx":42D5
-         Style           =   1  'Graphical
-         TabIndex        =   71
-         Top             =   780
-         Width           =   375
-      End
-      Begin VB.TextBox txtBusqueda 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   330
-         Left            =   4305
-         TabIndex        =   28
-         Text            =   "*"
-         Top             =   315
-         Width           =   4920
-      End
-      Begin MSComctlLib.ImageList ImgOperadores 
-         Left            =   7215
-         Top             =   1560
-         _ExtentX        =   1005
-         _ExtentY        =   1005
-         BackColor       =   -2147483648
-         ImageWidth      =   16
-         ImageHeight     =   16
-         MaskColor       =   12632256
-         _Version        =   393216
-         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
-            NumListImages   =   6
-            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":43D7
-               Key             =   "Similar"
-            EndProperty
-            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":44E9
-               Key             =   "Igual"
-            EndProperty
-            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":45FB
-               Key             =   "MayoroIgual"
-            EndProperty
-            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":470D
-               Key             =   "Mayor"
-            EndProperty
-            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":481F
-               Key             =   "MenoroIgual"
-            EndProperty
-            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":4931
-               Key             =   "Menor"
-            EndProperty
-         EndProperty
-      End
-      Begin MSComctlLib.ImageCombo ImageCombo1 
-         Height          =   330
-         Left            =   2565
-         TabIndex        =   30
-         Top             =   315
-         Width           =   1680
-         _ExtentX        =   2963
-         _ExtentY        =   582
-         _Version        =   393216
-         ForeColor       =   -2147483640
-         BackColor       =   14737632
-         OLEDropMode     =   1
-         Indentation     =   1
-         Locked          =   -1  'True
-         ImageList       =   "ImgOperadores"
-      End
-      Begin VB.ComboBox cmbCampos 
-         BackColor       =   &H00E0E0E0&
-         Height          =   315
-         Left            =   150
-         Style           =   2  'Dropdown List
-         TabIndex        =   29
-         Top             =   330
-         Width           =   2400
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   360
-         Index           =   0
-         Left            =   1470
-         TabIndex        =   67
-         Tag             =   "dtDesde"
-         Top             =   750
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   635
-         _Version        =   393216
-         Format          =   88932353
-         CurrentDate     =   38267
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   345
-         Index           =   1
-         Left            =   3975
-         TabIndex        =   68
-         Tag             =   "dtHasta"
-         Top             =   780
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   609
-         _Version        =   393216
-         Format          =   88932353
-         CurrentDate     =   38267
-      End
-      Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5445
-         Left            =   90
-         TabIndex        =   78
-         Top             =   1185
-         Width           =   9135
-         _ExtentX        =   16113
-         _ExtentY        =   9604
-         View            =   3
-         LabelEdit       =   1
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         FullRowSelect   =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         NumItems        =   12
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Object.Tag             =   "nrComprobante"
-            Text            =   "Comprobante"
-            Object.Width           =   2646
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Object.Tag             =   "nrTalonario"
-            Text            =   "Talonario"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Object.Tag             =   "tpComprobante"
-            Text            =   "Doc"
-            Object.Width           =   1411
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Object.Tag             =   "tpLetra"
-            Text            =   "Letra"
-            Object.Width           =   1411
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Object.Tag             =   "dtComprobante"
-            Text            =   "Fecha "
-            Object.Width           =   2293
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Object.Tag             =   "flManual"
-            Text            =   "Facturado"
-            Object.Width           =   2822
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Object.Tag             =   "cdCondVenta"
-            Text            =   "Cond. Venta"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "cdCliente"
-            Text            =   "Cliente"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
-            Object.Tag             =   "dsRazonSocial"
-            Text            =   "Razon Social"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
-            Object.Tag             =   "nrLicencia"
-            Text            =   "Licencia"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   10
-            Object.Tag             =   "nrCaja"
-            Text            =   "Caja"
-            Object.Width           =   2734
-         EndProperty
-         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   11
-            Object.Tag             =   "dsUsuario"
-            Text            =   "Usuario"
-            Object.Width           =   2540
-         EndProperty
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Fecha Desde"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   10
-         Left            =   150
-         TabIndex        =   70
-         Top             =   870
-         Width           =   1200
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Hasta"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   9
-         Left            =   3255
-         TabIndex        =   69
-         Top             =   855
-         Width           =   645
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Valor para la busqueda"
-         Height          =   210
-         Left            =   4305
-         TabIndex        =   33
-         Top             =   90
-         Width           =   1755
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Campo"
-         Height          =   210
-         Left            =   165
-         TabIndex        =   32
-         Top             =   105
-         Width           =   795
       End
    End
 End
@@ -2081,7 +2081,7 @@ Dim Valor   As Variant
     ObjTablasIO.setearCampoOperadorValor "nrCaja", _
     "=", Me.lstBusqueda.SelectedItem.ListSubItems(10), " AND "
     ObjTablasIO.setearCampoOperadorValor "tpLetra", _
-    "=", Me.lstBusqueda.SelectedItem.ListSubItems(11), " AND "
+    "=", Me.lstBusqueda.SelectedItem.ListSubItems(3), " AND "
     ObjTablasIO.setearCampoOperadorValor "tpComprobante", _
     "=", Me.lstBusqueda.SelectedItem.ListSubItems(2), " AND "
     ObjTablasIO.setearCampoOperadorValor "flEliminar", "=", "0"

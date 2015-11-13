@@ -356,7 +356,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -394,7 +394,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -492,7 +492,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -530,7 +530,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -703,7 +703,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -752,7 +752,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             _ExtentX        =   2355
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   89194497
+            Format          =   105906177
             CurrentDate     =   38435
          End
          Begin VB.Label Label27 
@@ -760,7 +760,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Total Real"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -777,7 +777,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Comprobante Eliminado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -794,7 +794,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -812,7 +812,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Cond. de Venta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -830,7 +830,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Facturado:"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -847,7 +847,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Comprobante Anulado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -863,7 +863,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          Begin VB.Label lblCotizacionDia 
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -881,7 +881,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Total Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -899,7 +899,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -917,7 +917,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Total Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -934,7 +934,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -951,7 +951,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Licenciatario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -968,7 +968,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Tipo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -986,7 +986,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1004,7 +1004,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1022,7 +1022,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Nro. Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1039,7 +1039,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Tipo de IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1057,7 +1057,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1074,7 +1074,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1091,7 +1091,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1108,7 +1108,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Nro. Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1125,7 +1125,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Bultos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1142,7 +1142,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Pasajeros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1307,7 +1307,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1325,7 +1325,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1343,7 +1343,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1360,7 +1360,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Cliente"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1377,7 +1377,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Razón Social "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1394,7 +1394,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1412,7 +1412,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "CUIT / DNI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1429,7 +1429,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Apellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1446,7 +1446,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "Nombre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1463,7 +1463,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
             Caption         =   "E-Mail"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1578,7 +1578,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   89194497
+         Format          =   217055233
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1592,7 +1592,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   89194497
+         Format          =   217055233
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -1617,7 +1617,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1703,7 +1703,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1721,7 +1721,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1756,7 +1756,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
       Caption         =   "Comprobante Anulado"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

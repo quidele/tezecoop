@@ -378,7 +378,7 @@ Begin VB.Form Frm_ReimpComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -416,7 +416,7 @@ Begin VB.Form Frm_ReimpComprobantes
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -592,7 +592,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -634,7 +634,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Letra"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -653,7 +653,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Total Reales"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -680,7 +680,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Comprobante Anulado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -697,7 +697,7 @@ Begin VB.Form Frm_ReimpComprobantes
          Begin VB.Label lblCotizacionDia 
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -715,7 +715,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Total Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -733,7 +733,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -751,7 +751,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Total Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -768,7 +768,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -785,7 +785,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Licenciatario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -802,7 +802,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Doc"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -820,7 +820,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -838,7 +838,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -856,7 +856,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Nro. Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -873,7 +873,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Cond. de Venta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -891,7 +891,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Tipo de IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -909,7 +909,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -926,7 +926,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -943,7 +943,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -960,7 +960,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Nro. Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -977,7 +977,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Bultos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -994,7 +994,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Pasajeros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1131,7 +1131,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1149,7 +1149,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1167,7 +1167,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Cliente"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1184,7 +1184,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Razón Social "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1201,7 +1201,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1219,7 +1219,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "CUIT / DNI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1236,7 +1236,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Apellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1253,7 +1253,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Caption         =   "Nombre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1419,7 +1419,7 @@ Begin VB.Form Frm_ReimpComprobantes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   127598593
+         Format          =   123863041
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,14 +1535,14 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   127598593
+         Format          =   123863041
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1560,7 +1560,7 @@ Begin VB.Form Frm_ReimpComprobantes
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

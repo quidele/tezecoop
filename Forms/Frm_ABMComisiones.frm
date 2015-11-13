@@ -354,7 +354,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Tipo de Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -373,7 +373,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Comisión a Empleados"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -392,7 +392,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -411,7 +411,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -430,7 +430,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Monto Máximo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -449,7 +449,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Descripción de la Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -468,7 +468,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Monto Mínimo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -487,7 +487,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Fecha Actualización"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -506,7 +506,7 @@ Begin VB.Form Frm_ABMComisiones
             Caption         =   "Nro. de Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -674,7 +674,7 @@ Begin VB.Form Frm_ABMComisiones
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

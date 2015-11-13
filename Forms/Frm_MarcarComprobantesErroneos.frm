@@ -343,7 +343,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -379,7 +379,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -545,7 +545,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Appearance      =   1
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -586,7 +586,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          Begin VB.Label lblCotizacionDia 
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -604,7 +604,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Total Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -622,7 +622,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -640,7 +640,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Total Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -657,7 +657,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -674,7 +674,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Licenciatario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -691,7 +691,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Tipo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -709,7 +709,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -727,7 +727,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -745,7 +745,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Nro. Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -762,7 +762,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Cond. de Venta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -780,7 +780,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Tipo de IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -798,7 +798,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -815,7 +815,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -832,7 +832,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -849,7 +849,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Nro. Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -866,7 +866,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Bultos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -883,7 +883,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Pasajeros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1038,7 +1038,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1056,7 +1056,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1074,7 +1074,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1091,7 +1091,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Cliente"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1108,7 +1108,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Razón Social "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1125,7 +1125,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1143,7 +1143,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "CUIT / DNI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1160,7 +1160,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Apellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1177,7 +1177,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "Nombre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1194,7 +1194,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
             Caption         =   "E-Mail"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1309,7 +1309,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          Appearance      =   1
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1393,7 +1393,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   117309441
+         Format          =   105447425
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1407,14 +1407,14 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   117309441
+         Format          =   105447425
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1432,7 +1432,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

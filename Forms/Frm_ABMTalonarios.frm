@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ABMTalonarios 
    Caption         =   "Talonarios"
    ClientHeight    =   7230
@@ -337,7 +337,7 @@ Begin VB.Form Frm_ABMTalonarios
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -575,7 +575,7 @@ Begin VB.Form Frm_ABMTalonarios
             _ExtentX        =   450
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   158269441
+            Format          =   123273217
             CurrentDate     =   38267
          End
          Begin MSComctlLib.ListView lstTalonariosCAIs 
@@ -600,7 +600,7 @@ Begin VB.Form Frm_ABMTalonarios
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -639,7 +639,7 @@ Begin VB.Form Frm_ABMTalonarios
             _ExtentX        =   450
             _ExtentY        =   556
             _Version        =   393216
-            Format          =   158269441
+            Format          =   105316353
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -649,7 +649,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Descripción "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -669,7 +669,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Fin"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -688,7 +688,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "CAI"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -707,7 +707,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Inicio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -728,7 +728,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Letra"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -750,7 +750,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Activo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -772,7 +772,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Ult. Número"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -794,7 +794,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Manual/Auto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -816,7 +816,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Tipo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -838,7 +838,7 @@ Begin VB.Form Frm_ABMTalonarios
             Caption         =   "Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False

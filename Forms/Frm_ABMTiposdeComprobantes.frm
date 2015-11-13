@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_ABMTiposdeComprobantes 
    Caption         =   "Tipos de Comprobantes"
    ClientHeight    =   7230
@@ -17,13 +17,13 @@ Begin VB.Form Frm_ABMTiposdeComprobantes
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   1920
+      Height          =   660
       Left            =   0
       TabIndex        =   8
       Top             =   0
       Width           =   8115
       _ExtentX        =   14314
-      _ExtentY        =   3387
+      _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
       Appearance      =   1
@@ -337,7 +337,7 @@ Begin VB.Form Frm_ABMTiposdeComprobantes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -454,7 +454,7 @@ Begin VB.Form Frm_ABMTiposdeComprobantes
             Caption         =   "Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -476,7 +476,7 @@ Begin VB.Form Frm_ABMTiposdeComprobantes
             Caption         =   "Tipo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False

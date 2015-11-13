@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   128057345
+         Format          =   123469825
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   128057345
+         Format          =   41156609
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -203,7 +203,7 @@ Begin VB.Form Frm_ReimpRecibos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -282,7 +282,7 @@ Begin VB.Form Frm_ReimpRecibos
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -300,7 +300,7 @@ Begin VB.Form Frm_ReimpRecibos
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

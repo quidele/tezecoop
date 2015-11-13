@@ -194,7 +194,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Dinero en caja Euros"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -213,7 +213,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Dinero en Caja u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -232,7 +232,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Dinero en Caja Reales"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -251,7 +251,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Euro"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -271,7 +271,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Dolar u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -291,7 +291,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Real"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -311,7 +311,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Real"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -331,7 +331,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Dolar u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -351,7 +351,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Valor Euro"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -370,7 +370,7 @@ Begin VB.Form frm_CambiosCotizacion
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -389,7 +389,7 @@ Begin VB.Form frm_CambiosCotizacion
          Caption         =   "Observación por cambio de cotización"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

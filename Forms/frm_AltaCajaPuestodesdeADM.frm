@@ -35,7 +35,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          DataField       =   "nmNombre"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -122,7 +122,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -143,7 +143,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          BackColor       =   &H00FFFFFF&
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -166,7 +166,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          DataField       =   "nmNombre"
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -222,7 +222,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   116457473
+         Format          =   123273217
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -236,7 +236,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   116457473
+         Format          =   123273217
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker nrHoraApertura 
@@ -250,7 +250,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          _ExtentY        =   556
          _Version        =   393216
          CustomFormat    =   "HH:MM"
-         Format          =   116457474
+         Format          =   123273218
          CurrentDate     =   36494
       End
       Begin MSComCtl2.DTPicker nrHoraCierre 
@@ -264,7 +264,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          _ExtentY        =   556
          _Version        =   393216
          CustomFormat    =   "HH:MM"
-         Format          =   116719618
+         Format          =   123273218
          CurrentDate     =   36494
       End
       Begin VB.Label lblLabels 
@@ -272,7 +272,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Valor Real"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -291,7 +291,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Valor Dolar u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -310,7 +310,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Valor Euro"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -329,7 +329,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Fecha Apertura"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -348,7 +348,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Fecha de Cierre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -367,7 +367,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Puesto"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -385,7 +385,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Usuario"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -402,7 +402,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          BackStyle       =   0  'Transparent
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -421,7 +421,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Fondo Fijo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -439,7 +439,7 @@ Begin VB.Form frm_AltaCajaPuestodesdeADM
          Caption         =   "Observación Cierre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

@@ -22,7 +22,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -49,7 +49,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -110,7 +110,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -235,7 +235,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -296,7 +296,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -451,7 +451,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Default         =   -1  'True
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -473,7 +473,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -500,7 +500,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -525,7 +525,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -550,7 +550,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -577,7 +577,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -604,7 +604,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -631,7 +631,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -656,7 +656,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -681,7 +681,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -706,7 +706,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -731,7 +731,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       DataField       =   "nmNombre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -907,7 +907,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1239,7 +1239,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Cot. Real"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1256,7 +1256,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Puesto"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1283,7 +1283,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Estado:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1302,7 +1302,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Cot. Euro"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1319,7 +1319,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Cot. Dolar"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1337,7 +1337,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Saldo Inicial:"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -1356,7 +1356,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Operador"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1373,7 +1373,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Nombre del Puesto"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1390,7 +1390,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Fecha de Cierre"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -1407,7 +1407,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
       Caption         =   "Nro. de Caja"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8.25
+         Size            =   8,25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

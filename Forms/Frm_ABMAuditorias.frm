@@ -332,7 +332,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Caja Nro."
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -351,7 +351,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Módulo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -370,7 +370,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Función"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -389,7 +389,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -408,7 +408,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -427,7 +427,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Fecha Actualización"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -446,7 +446,7 @@ Begin VB.Form Frm_ABMAuditorias
             Caption         =   "Id. Auditoria"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -623,7 +623,7 @@ Begin VB.Form Frm_ABMAuditorias
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -686,7 +686,7 @@ Begin VB.Form Frm_ABMAuditorias
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   105250817
+         Format          =   123273217
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -700,14 +700,14 @@ Begin VB.Form Frm_ABMAuditorias
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   105709569
+         Format          =   106037249
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -725,7 +725,7 @@ Begin VB.Form Frm_ABMAuditorias
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

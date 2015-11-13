@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_BusquedaMovimientosContables 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Busqueda Movimientos Contables"
@@ -360,7 +360,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -480,7 +480,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   158466049
+         Format          =   122814465
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -494,14 +494,14 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   158466049
+         Format          =   122814465
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -519,7 +519,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   8,25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -634,7 +634,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -657,7 +657,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -680,7 +680,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             CausesValidation=   0   'False
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -717,7 +717,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             DataField       =   "nmApellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -741,7 +741,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             DataField       =   "nmApellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -766,7 +766,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             DataField       =   "nmApellido"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -876,7 +876,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -917,7 +917,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -936,7 +936,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Nro. de Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -955,7 +955,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Fecha"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -974,7 +974,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Descripción del Movimiento"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -994,7 +994,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Total Pesos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1013,7 +1013,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1032,7 +1032,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Total Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1051,7 +1051,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "+"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1070,7 +1070,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "+"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1090,7 +1090,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Operación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1112,7 +1112,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Tipo "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1132,7 +1132,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Concepto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1154,7 +1154,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Número de Recibo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1176,7 +1176,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Número de Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1196,7 +1196,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Proveedor"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1215,7 +1215,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
             Caption         =   "Código"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   8,25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
