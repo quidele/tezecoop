@@ -1427,6 +1427,36 @@ GO
 
 
 
+/****** Object:  Table [dbo].[tipo_comprobanteAFIP]    Script Date: 14/11/2015 17:30:26 ******/
+if exists (select * from sys.tables  where name = 'tipo_comprobanteAFIP')
+	DROP TABLE [dbo].[tipo_comprobanteAFIP]
+
+GO
+
+/****** Object:  Table [dbo].[tipo_comprobanteAFIP]    Script Date: 14/11/2015 17:30:26 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[tipo_comprobanteAFIP](
+	[cod_tipo_comprobante] [int] NOT NULL,
+	[Descripción] [nvarchar](255) NULL,
+	[tpComprobante] [nchar](2) NULL,
+	[tpLetra] [nchar](10) NULL,
+ CONSTRAINT [PK_tipo_comprobanteAFIP] PRIMARY KEY CLUSTERED 
+(
+	[cod_tipo_comprobante] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+
+
+
 
 
 
