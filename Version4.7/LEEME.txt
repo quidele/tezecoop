@@ -2,3 +2,7 @@ Corregir las grabacion de ND y NC no tienen retencion(comision)
 
 
 Notas de Credito deben grabarse con signo invertido en la tabla de cupones
+
+MEJORAR ESTE QUERY
+
+ SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE  nrComprobante Like ('%%%') AND TB_Comprobantes.flAnulado = 0  AND  TB_Comprobantes.flEliminar = 0  AND  TB_Comprobantes.dtComprobante >= '14/11/2015 00:00:00'  AND  TB_Comprobantes.dtComprobante <= '14/11/2015 23:59:59'   Order by TB_Comprobantes.nrComprobante ASC 

@@ -1869,7 +1869,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo)
     Frm_Principal.LimpiarReporte
     
     If tpRecibo = "Cliente" Then
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_DetalleFacturaCtaCte_V1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_v4_7.rpt"
         Frm_Principal.CrystalReport1.WindowState = crptMaximized
         Frm_Principal.CrystalReport1.Destination = crptToWindow
         Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Recibo - Cobro a Cuenta Corriente"
@@ -3015,8 +3015,12 @@ Dim cdCliente               As String
             CompensarCupones = False
             Exit Function
         End If
+        
+        cdCliente = ObjTablasIO.rs_resultados("cdCliente")
     End If
     
+    
+
     ' grabar el recibo
     IdRecibo = grabarRecibo(IdRecibo, cdCliente, strdsRazonSocial)
     

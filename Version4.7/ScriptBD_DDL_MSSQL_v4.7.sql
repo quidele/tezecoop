@@ -1174,7 +1174,259 @@ go
 
 
 
-select * from TB_Comprobantes_Imprime 
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_MontoEscrito' )
+	drop function  dbo.[UDF_MontoEscrito]
+
+go
+
+
+CREATE FUNCTION [dbo].[UDF_MontoEscrito]
+(
+       @Numero decimal(18,2)
+)
+RETURNS nvarchar(512)
+AS
+BEGIN
+      DECLARE @lnEntero INT,
+  @lcRetorno VARCHAR(512),
+  @lnTerna INT,
+  @lcMiles VARCHAR(512),
+  @lcCadena VARCHAR(512),
+  @lnUnidades INT,
+  @lnDecenas INT,
+  @lnCentenas INT,
+  @lnFraccion INT
+ 
+  SELECT @lnEntero = CAST(@Numero AS INT),
+    @lnFraccion = (@Numero - @lnEntero) * 100,
+    @lcRetorno = '',
+    @lnTerna = 1
+ 
+  WHILE @lnEntero > 0
+  BEGIN
+ 
+    SELECT @lcCadena = ''
+    SELECT @lnUnidades = @lnEntero % 10
+    SELECT @lnEntero = CAST(@lnEntero/10 AS INT)
+    SELECT @lnDecenas = @lnEntero % 10
+    SELECT @lnEntero = CAST(@lnEntero/10 AS INT)
+    SELECT @lnCentenas = @lnEntero % 10
+    SELECT @lnEntero = CAST(@lnEntero/10 AS INT)
+ 
+ 
+    SELECT @lcCadena =
+    CASE
+      WHEN @lnUnidades = 1 AND @lnTerna = 1 THEN 'UNO ' + @lcCadena
+      WHEN @lnUnidades = 1 AND @lnTerna <> 1 THEN 'UN ' + @lcCadena
+      WHEN @lnUnidades = 2 THEN 'DOS ' + @lcCadena
+      WHEN @lnUnidades = 3 THEN 'TRES ' + @lcCadena
+      WHEN @lnUnidades = 4 THEN 'CUATRO ' + @lcCadena
+      WHEN @lnUnidades = 5 THEN 'CINCO ' + @lcCadena
+      WHEN @lnUnidades = 6 THEN 'SEIS ' + @lcCadena
+      WHEN @lnUnidades = 7 THEN 'SIETE ' + @lcCadena
+      WHEN @lnUnidades = 8 THEN 'OCHO ' + @lcCadena
+      WHEN @lnUnidades = 9 THEN 'NUEVE ' + @lcCadena
+      ELSE @lcCadena
+    END  
+ 
+    SELECT @lcCadena =
+    CASE
+      WHEN @lnDecenas = 1 THEN
+        CASE @lnUnidades
+          WHEN 0 THEN 'DIEZ '
+          WHEN 1 THEN 'ONCE '
+          WHEN 2 THEN 'DOCE '
+          WHEN 3 THEN 'TRECE '
+          WHEN 4 THEN 'CATORCE '
+          WHEN 5 THEN 'QUINCE '
+          ELSE 'DIECI' + @lcCadena
+        END
+      WHEN @lnDecenas = 2 AND @lnUnidades = 0 THEN 'VEINTE ' + @lcCadena
+      WHEN @lnDecenas = 2 AND @lnUnidades <> 0 THEN 'VEINTI' + @lcCadena
+      WHEN @lnDecenas = 3 AND @lnUnidades = 0 THEN 'TREINTA ' + @lcCadena
+      WHEN @lnDecenas = 3 AND @lnUnidades <> 0 THEN 'TREINTA Y ' + @lcCadena
+      WHEN @lnDecenas = 4 AND @lnUnidades = 0 THEN 'CUARENTA ' + @lcCadena
+      WHEN @lnDecenas = 4 AND @lnUnidades <> 0 THEN 'CUARENTA Y ' + @lcCadena
+      WHEN @lnDecenas = 5 AND @lnUnidades = 0 THEN 'CINCUENTA ' + @lcCadena
+      WHEN @lnDecenas = 5 AND @lnUnidades <> 0 THEN 'CINCUENTA Y ' + @lcCadena
+      WHEN @lnDecenas = 6 AND @lnUnidades = 0 THEN 'SESENTA ' + @lcCadena
+      WHEN @lnDecenas = 6 AND @lnUnidades <> 0 THEN 'SESENTA Y ' + @lcCadena
+      WHEN @lnDecenas = 7 AND @lnUnidades = 0 THEN 'SETENTA ' + @lcCadena
+      WHEN @lnDecenas = 7 AND @lnUnidades <> 0 THEN 'SETENTA Y ' + @lcCadena
+      WHEN @lnDecenas = 8 AND @lnUnidades = 0 THEN 'OCHENTA ' + @lcCadena
+      WHEN @lnDecenas = 8 AND @lnUnidades <> 0 THEN 'OCHENTA Y ' + @lcCadena
+      WHEN @lnDecenas = 9 AND @lnUnidades = 0 THEN 'NOVENTA ' + @lcCadena
+      WHEN @lnDecenas = 9 AND @lnUnidades <> 0 THEN 'NOVENTA Y ' + @lcCadena
+      ELSE @lcCadena
+    END
+ 
+ 
+ 
+    SELECT @lcCadena =
+    CASE
+      WHEN @lnCentenas = 1 AND @lnUnidades = 0 AND @lnDecenas = 0 THEN 'CIEN ' + @lcCadena
+      WHEN @lnCentenas = 1 AND NOT(@lnUnidades = 0 AND @lnDecenas = 0) THEN 'CIENTO ' + @lcCadena
+      WHEN @lnCentenas = 2 THEN 'DOSCIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 3 THEN 'TRESCIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 4 THEN 'CUATROCIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 5 THEN 'QUINIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 6 THEN 'SEISCIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 7 THEN 'SETECIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 8 THEN 'OCHOCIENTOS ' + @lcCadena
+      WHEN @lnCentenas = 9 THEN 'NOVECIENTOS ' + @lcCadena
+      ELSE @lcCadena
+    END
+ 
+ 
+    SELECT @lcCadena =
+    CASE
+      WHEN @lnTerna = 1 THEN @lcCadena
+      WHEN @lnTerna = 2 AND (@lnUnidades + @lnDecenas + @lnCentenas <> 0) THEN @lcCadena + ' MIL '
+      WHEN @lnTerna = 3 AND (@lnUnidades + @lnDecenas + @lnCentenas <> 0) AND
+        @lnUnidades = 1 AND @lnDecenas = 0 AND @lnCentenas = 0 THEN @lcCadena + ' MILLON '
+      WHEN @lnTerna = 3 AND (@lnUnidades + @lnDecenas + @lnCentenas <> 0) AND
+        NOT (@lnUnidades = 1 AND @lnDecenas = 0 AND @lnCentenas = 0) THEN @lcCadena + ' MILLONES '
+      WHEN @lnTerna = 4 AND (@lnUnidades + @lnDecenas + @lnCentenas <> 0) THEN @lcCadena + ' MIL MILLONES '
+      ELSE ''
+    END
+ 
+ 
+    SELECT @lcRetorno = @lcCadena  + @lcRetorno
+    SELECT @lnTerna = @lnTerna + 1
+ 
+  END
+ 
+  IF @lnTerna = 1 
+    SELECT @lcRetorno = 'CERO'
+ 
+  set @lcRetorno = RTRIM(@lcRetorno) + ' CON ' + LTRIM(STR(@lnFraccion,2)) + '/100'
+     
+      RETURN @lcRetorno
+END
+ 
+
+go
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='SP_rpt_DetalleFacturaCtaCte_v4_7' )
+	drop procedure  dbo.SP_rpt_DetalleFacturaCtaCte_v4_7
+
+go
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+-- exec [SP_rpt_DetalleFacturaCtaCte_v4_7] 1000275545 ,0
+-- exec [SP_rpt_DetalleFacturaCtaCte_v4_7] 1000275544 ,0
+-- exec [SP_rpt_DetalleFacturaCtaCte_v4_7] 1000275549 ,1
+
+--select * from tb_recibos where  IdRecibo =  1000275547
+
+
+CREATE PROCEDURE [SP_rpt_DetalleFacturaCtaCte_v4_7]
+@IdRecibo_param numeric,
+@esIdRecibo_param numeric=null
+AS
+
+set dateformat dmy
+
+	select @esIdRecibo_param=isnull(@esIdRecibo_param,0)
+	
+
+	SELECT TB_Comprobantes.dtComprobante,
+			 TB_Comprobantes.dsOpcional1,
+			 TB_Comprobantes.dsOpcional2,
+		     case TB_Comprobantes.tpComprobante  when 'NC' then -1 * TB_Cupones.vlMontoCupon else TB_Cupones.vlMontoCupon End as vlMontoCupon, 
+			 TB_Cupones.nrTalonarioCliente,
+			 TB_Cupones.nrComprabanteCliente,
+			 TB_Recibos.IdRecibo,
+			 TB_Recibos.dtRecibo,
+			 TB_Recibos.cdCliente,
+			 TB_Comprobantes.dsRazonSocial,
+			 TB_Comprobantes.tpComprobante,
+			 TB_Comprobantes.tpLetra
+			 INTo #tmp_resultados
+		FROM
+			 TB_Comprobantes TB_Comprobantes,
+			 TB_Cupones TB_Cupones,
+			 TB_Recibos TB_Recibos
+		WHERE
+		    TB_Comprobantes.nrTalonario = TB_Cupones.nrTalonarioCliente AND
+		    TB_Comprobantes.nrComprobante = TB_Cupones.nrComprabanteCliente AND
+		    TB_Comprobantes.tpLetra = TB_Cupones.tpLetraCliente AND
+		    TB_Comprobantes.tpComprobante = TB_Cupones.tpComprobanteCliente AND
+		    TB_Cupones.IdReciboCtaCte = TB_Recibos.IdRecibo and
+		    TB_Recibos.IdRecibo = @IdRecibo_param
+
+	delete from #tmp_resultados
+
+	if @esIdRecibo_param=0
+		insert into #tmp_resultados
+		SELECT TB_Comprobantes.dtComprobante,
+			 TB_Comprobantes.dsOpcional1,
+			 TB_Comprobantes.dsOpcional2,
+		     case TB_Comprobantes.tpComprobante  when 'NC' then -1 * TB_Cupones.vlMontoCupon else TB_Cupones.vlMontoCupon End as vlMontoCupon, 
+			 TB_Cupones.nrTalonarioCliente,
+			 TB_Cupones.nrComprabanteCliente,
+			 TB_Recibos.IdRecibo,
+			 TB_Recibos.dtRecibo,
+			 TB_Recibos.cdCliente,
+			 TB_Comprobantes.dsRazonSocial,
+			 TB_Comprobantes.tpComprobante,
+			 TB_Comprobantes.tpLetra
+		FROM
+			 TB_Comprobantes TB_Comprobantes,
+			 TB_Cupones TB_Cupones,
+			 TB_Recibos TB_Recibos
+		WHERE
+		    TB_Comprobantes.nrTalonario = TB_Cupones.nrTalonarioCliente AND
+		    TB_Comprobantes.nrComprobante = TB_Cupones.nrComprabanteCliente AND
+		    TB_Comprobantes.tpLetra = TB_Cupones.tpLetraCliente AND
+		    TB_Comprobantes.tpComprobante = TB_Cupones.tpComprobanteCliente AND
+		    TB_Cupones.IdReciboCtaCte = TB_Recibos.IdRecibo and
+		    TB_Recibos.IdRecibo = @IdRecibo_param
+		ORDER BY
+		    TB_Recibos.IdRecibo ASC
+	else
+		insert into #tmp_resultados
+		SELECT TB_Comprobantes.dtComprobante,
+			 TB_Comprobantes.dsOpcional1,
+			 TB_Comprobantes.dsOpcional2,
+			 case TB_Comprobantes.tpComprobante  when 'NC' then -1 * TB_Cupones.vlMontoCupon else TB_Cupones.vlMontoCupon End as vlMontoCupon, 
+			 TB_Cupones.nrTalonarioCliente,
+			 TB_Cupones.nrComprabanteCliente,
+			 TB_Recibos.IdRecibo,
+			 TB_Recibos.dtRecibo,
+			 TB_Recibos.cdCliente,
+			 TB_Comprobantes.dsRazonSocial,
+			 TB_Comprobantes.tpComprobante,
+			 TB_Comprobantes.tpLetra
+		FROM
+			TB_Comprobantes TB_Comprobantes,
+			TB_Cupones TB_Cupones,
+			TB_Recibos TB_Recibos
+		WHERE
+		    TB_Comprobantes.nrTalonario = TB_Cupones.nrTalonarioCliente AND
+		    TB_Comprobantes.nrComprobante = TB_Cupones.nrComprabanteCliente AND
+		    TB_Comprobantes.tpLetra = TB_Cupones.tpLetraCliente AND
+		    TB_Comprobantes.tpComprobante = TB_Cupones.tpComprobanteCliente AND
+		    TB_Cupones.IdRecibo = TB_Recibos.IdRecibo and
+		    TB_Recibos.IdRecibo = @IdRecibo_param
+		ORDER BY
+		    TB_Recibos.IdRecibo ASC
+
+	declare @vlTotal decimal(12,2)
+	declare @descripcion_vlTotal varchar(60)
+
+	select @vlTotal =  sum(vlMontoCupon), 
+		   @descripcion_vlTotal ='PESOS '+ dbo.[UDF_MontoEscrito] (sum(vlMontoCupon))
+		from #tmp_resultados
+
+	select *, @vlTotal as vlTotal, @descripcion_vlTotal as descripcion_vlTotal from  #tmp_resultados
+
+GO
+
+
+
 
 
 
