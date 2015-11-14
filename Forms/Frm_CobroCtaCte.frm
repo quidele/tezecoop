@@ -93,7 +93,7 @@ Begin VB.Form frm_CobroCtaCte
       Caption         =   "Facturar"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -438,7 +438,7 @@ Begin VB.Form frm_CobroCtaCte
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -811,11 +811,11 @@ Private Sub imprimirCobroCliente(IdRecibo As String, _
 
     Frm_Principal.LimpiarReporte
 
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_v4_7.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_liq_v4_7.rpt"
     
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter , crptToWindow
-    Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Detalle de Viajes Realizados a Cta. Cte. "
+    Frm_Principal.CrystalReport1.WindowTitle = "Impresión de LIQUIDACION DE VIAJES REALIZADOS EN CTA. CTE"
     Frm_Principal.CrystalReport1.StoredProcParam(0) = IdRecibo
     Frm_Principal.CrystalReport1.StoredProcParam(1) = 0
     

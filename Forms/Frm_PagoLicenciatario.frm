@@ -1869,7 +1869,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo)
     Frm_Principal.LimpiarReporte
     
     If tpRecibo = "Cliente" Then
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_v4_7.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_recibotacte_v4_7.rpt"
         Frm_Principal.CrystalReport1.WindowState = crptMaximized
         Frm_Principal.CrystalReport1.Destination = crptToWindow
         Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Recibo - Cobro a Cuenta Corriente"
@@ -1880,7 +1880,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo)
         Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
         Frm_Principal.CrystalReport1.Action = 1
         If Err Then
-            MsgBox "Error al generar el reporte: " + Err.Description, vbCritical, "Atención"
+            MsgBox "Error al generar el reporte: " + Err.Description + " Reporte " + Frm_Principal.CrystalReport1.WindowTitle, vbCritical, "Atención"
         End If
         On Error GoTo 0
     Else

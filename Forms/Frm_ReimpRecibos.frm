@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   105054209
+         Format          =   91815937
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   116719617
+         Format          =   91815937
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -801,7 +801,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo As String)
         End If
         On Error GoTo 0
     Case "Recibo de Cobranza de Cta. Cte."
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_detallefacturactacte_v4_7.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_recibotacte_v4_7.rpt"
         Frm_Principal.CrystalReport1.WindowState = crptMaximized
         Frm_Principal.CrystalReport1.Destination = crptToWindow
         Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Recibo - Cobro a Cuenta Corriente"

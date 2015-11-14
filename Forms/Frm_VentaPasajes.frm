@@ -77,7 +77,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -102,7 +102,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -125,7 +125,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -182,7 +182,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -207,7 +207,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -359,7 +359,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -398,7 +398,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -424,7 +424,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -450,7 +450,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -498,7 +498,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -521,7 +521,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -545,7 +545,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -570,7 +570,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -595,7 +595,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -620,7 +620,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -871,7 +871,7 @@ Begin VB.Form Frm_VentaPasajes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -959,7 +959,7 @@ Begin VB.Form Frm_VentaPasajes
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   122814465
+         Format          =   91815937
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1055,7 +1055,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Letra"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1073,7 +1073,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Total Real"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1098,7 +1098,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Sub-Total"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "IVA:"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1132,7 +1132,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Pasajeros"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1149,7 +1149,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Bultos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1166,7 +1166,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Nro. Caja"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1183,7 +1183,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Puesto"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1200,7 +1200,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Cajera"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1217,7 +1217,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Observación"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1234,7 +1234,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   " IVA"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1252,7 +1252,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Cond. de Venta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1271,7 +1271,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Talón"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1288,7 +1288,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1306,7 +1306,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Comprobante"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1324,7 +1324,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1342,7 +1342,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Licenciatario"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1359,7 +1359,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Licencia"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1377,7 +1377,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Total Pesos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1395,7 +1395,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Total u$s"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1413,7 +1413,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Total Euros"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1430,7 +1430,7 @@ Begin VB.Form Frm_VentaPasajes
          Alignment       =   2  'Center
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1474,7 +1474,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Cliente"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1491,7 +1491,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Razón Social / Nombre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1508,7 +1508,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "E-Mail"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1525,7 +1525,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "CUIT / DNI"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1542,7 +1542,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Ingrese el Destino"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1561,7 +1561,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Precio Total"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1578,7 +1578,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Peaje"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1595,7 +1595,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Porcentaje"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1612,7 +1612,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Operación"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1629,7 +1629,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Descripción"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1646,7 +1646,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Comisión"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1664,7 +1664,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Comisión: $ 0,00"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1681,7 +1681,7 @@ Begin VB.Form Frm_VentaPasajes
          Caption         =   "Kms"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -5525,6 +5525,10 @@ Dim cdCodBarLic         As String
     On Error Resume Next
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
+    If Err Then
+        MsgBox "Error: " + Err.Description + vbCrLf + " Reporte:  " + Frm_Principal.CrystalReport1.WindowTitle, vbCritical, "Atención"
+        ImprimirFactura = False
+    End If
     On Error GoTo 0
     
     If objConfig.tpImpresion = "CONTINUO" Then
