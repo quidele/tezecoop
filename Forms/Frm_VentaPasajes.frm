@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   91815937
+         Format          =   94175233
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2147,20 +2147,23 @@ Dim j              As Integer
     vlPorcentaje = 0
     vlTotalViajes = 0
     
-    j = 1
-    For i = 1 To Me.lstItemsFactura.ListItems.Count
-        If Me.lstItemsFactura.ListItems.Item(i).SubItems(const_tpOperacion) = "Viaje" Then
-            vlTotalViajes = vlTotalViajes + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
-            If j = 1 Then
-                strDato = ReemplazarPalabra(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto), "  (" + CStr(j) + " DESTINO) ", "")
-                Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto) = strDato + "  (" + CStr(j) + " DESTINO) "
-            Else
-                strDato = ReemplazarPalabra(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto), "  (" + CStr(j) + " DESTINOS) ", "")
-                Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto) = strDato + "  (" + CStr(j) + " DESTINOS) "
+    
+    If ObtenerCampo("tpcomprobante") = "FA" Then
+        j = 1
+        For i = 1 To Me.lstItemsFactura.ListItems.Count
+            If Me.lstItemsFactura.ListItems.Item(i).SubItems(const_tpOperacion) = "Viaje" Then
+                vlTotalViajes = vlTotalViajes + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
+                If j = 1 Then
+                    strDato = ReemplazarPalabra(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto), "  (" + CStr(j) + " DESTINO) ", "")
+                    Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto) = strDato + "  (" + CStr(j) + " DESTINO) "
+                Else
+                    strDato = ReemplazarPalabra(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto), "  (" + CStr(j) + " DESTINOS) ", "")
+                    Me.lstItemsFactura.ListItems.Item(i).SubItems(const_dsProducto) = strDato + "  (" + CStr(j) + " DESTINOS) "
+                End If
+                j = j + 1
             End If
-            j = j + 1
-        End If
-    Next
+        Next
+    End If
     
     For i = 1 To Me.lstItemsFactura.ListItems.Count
         Select Case Me.lstItemsFactura.ListItems.Item(i).SubItems(const_tpOperacion)
