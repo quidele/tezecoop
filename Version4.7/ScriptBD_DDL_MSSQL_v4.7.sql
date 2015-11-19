@@ -1456,7 +1456,110 @@ GO
 
 
 
+-- NUEVO SP para generar el CITI ventas 
 
+go
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCodDOC_CITIT' )
+	drop function  dbo.UDF_obtenerCodDOC_CITIT
+
+go
+
+
+CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT (@tpComprobante char(2), @tpLetra char(1) )
+RETURNS int
+AS
+BEGIN
+	declare @codigo_CITI int
+	set @codigo_CITI = 0
+	select @codigo_CITI =  case 
+				 WHEN @tpComprobante = 'FA' AND @tpLetra =  'A'  THEN  1
+				 WHEN @tpComprobante = 'ND' AND @tpLetra =  'A'  THEN  2
+				 WHEN @tpComprobante = 'NC' AND @tpLetra =  'A'  THEN  3
+				 WHEN @tpComprobante = 'ND' AND @tpLetra =  'B'  THEN  7
+				 WHEN @tpComprobante = 'FA' AND @tpLetra =  'B'  THEN  6
+				 WHEN @tpComprobante = 'NC' AND @tpLetra =  'B'  THEN  8
+				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  2
+				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  3
+				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  7
+				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  8
+				 
+				END
+	
+	return @codigo_CITI
+END
+
+go
+
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas' )
+	drop procedure  dbo.spu_obtieneDatosCITIVentas
+
+
+go
+
+
+---  exec  dbo.spu_obtieneDatosCITIVentas 2, 2015
+
+create procedure  dbo.spu_obtieneDatosCITIVentas (@mes int, @anio int) 
+as
+begin
+/*
+
+		Select '1' As tipoRegistro, A.fec_comp, B.cod_citi, A.serie_comp, A.nro_comp, A.nro_comp, 
+		RTRIM(LTRIM(C.cod_dgi)) As cod_dgi, replace(A.nro_dgi,'-','') As nro_dgi, RTRIM(LTRIM(A.nom_tit)) As nom_tit, 
+		ABS(A.imp_total) As imp_total, ABS(A.imp_exen) As imp_exen, 
+		ABS(A.imp_neto) As imp_neto , A.porc_imp, ABS(A.imp_iva) As imp_iva, ABS(A.imp_exen) As imp_exen, 
+		(SELECT MAX(cantidad) FROM TB_Comprobantes  WHERE nro_trans=A.nro_trans) As Cantidad, 
+		'00000000' As FecRet, '000000000000000' As ImpRet 
+		FROM TB_Comprobantes A, ct_docxletraciti B, ct_impuxtit C 
+		WHERE A.cod_doc=B.cod_doc And A.letra_doc=B.letra_doc And A.nro_dgi=C.nro_dgi 
+		ORDER BY A.nro_trans, A.linea DESC  
+		*/
+
+		Select '1' As tipoRegistro, A.dtComprobante as  fec_comp, dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ) cod_citi, 
+				A.nrTalonario  as  serie_comp ,  A.nrComprobante as  nro_comp, 
+				case  tpIVA when 'RI'  then '80'  
+							else '0'   END As cod_dgi,
+				replace(A.nrDoc,'-','') As nro_dgi, 
+				case tpIVA when 'RI'  then A.dsRazonSocial 
+				else 'Consumidor Final' END as nom_tit, 
+		ABS(A.vlTotalGeneral) As imp_total, ABS(0) As imp_exen, 
+		ABS(A.vlSubtotal) As imp_neto , 0, ABS(A.vlIVA) As imp_iva, ABS(0) As imp_exen, 
+		/* (SELECT MAX(cantidad) FROM TB_Comprobantes  WHERE nro_trans=A.nro_trans) */ 0 As Cantidad, 
+		'00000000' As FecRet, '000000000000000' As ImpRet 
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = @mes  and year(A.dtComprobante) = @anio 
+
+
+
+end 
+
+
+
+go
+
+
+
+select  top 1 nrDOC, nmApellido , nmNombre  from tb_comprobantes   where  year ( dtComprobante ) = 2015
+
+select  distinct tpIVA from tb_comprobantes   where  year ( dtComprobante ) = 2015
+
+select  DISTINCT cod_dgi  from ct_impuxtit C 
+
+
+
+
+
+
+
+CF =
+EX =
+OT =
+RI = 80
 
 
 
