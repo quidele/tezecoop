@@ -985,7 +985,7 @@ begin
 	    dsOpcional2, dsOpcional3,  dsOpcional4, 
 		flAnulado, dtAnulado, 
 	    nmEmpleado,vlIVA,vlSubTotal, vlPagoReales, vlDiaReal, 
-		'COD. ' +  dbo.ufn_obtnerCodComprobanteAFIP (tpComprobante ,tpLetra)  as dsCodDocAfip  -- Recuperamos el Código de AFIP
+		'COD. ' +  dbo.ufn_obtnerCodComprobanteAFIP_v4_7 (tpComprobante ,tpLetra)  as dsCodDocAfip  -- Recuperamos el Código de AFIP
 	FROM TB_Comprobantes WHERE TB_Comprobantes.nrTalonario=@nrTalonario AND
 	TB_Comprobantes.nrComprobante=@nrComprobante AND 
 	TB_Comprobantes.tpComprobante=@tpComprobante AND

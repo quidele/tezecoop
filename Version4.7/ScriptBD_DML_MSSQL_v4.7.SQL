@@ -205,7 +205,9 @@ INSERT INTO tipo_comprobanteAFIP (cod_tipo_comprobante,Descripción,tpComprobante
 INSERT INTO tipo_comprobanteAFIP (cod_tipo_comprobante,Descripción,tpComprobante,tpLetra)  VALUES (104,'NOTA DE CREDITO DE ASIGNACION',null,null);
 
 
-delete from TB_Parametros  where dsParametro = 'MONTO_EXIGE_CUIT_CUIL_DNI'
+delete from TB_Parametros  where dsParametro = 'MONTO_EXIGE_CUIT_CUIL'
 
-INSERT INTO TB_Parametros (dsParametro,vlParametro,tpParametro,nrTamanio,dtActualizacion,observacion,grupo_parametro,flEditable)  VALUES ('MONTO_EXIGE_CUIT_CUIL_DNI','6','ENTERO',1000,GETDATE(),'creado en la versión 4.7.','Mòdulo de Ventas',1);
+INSERT INTO TB_Parametros (dsParametro,vlParametro,tpParametro,nrTamanio,dtActualizacion,observacion,grupo_parametro,flEditable)  VALUES ('MONTO_EXIGE_CUIT_CUIL','1000','ENTERO',6,GETDATE(),'creado en la versión 4.7.','Mòdulo de Ventas',1);
 
+
+UPDATE x set tpTipo = 'CUIT' , nrTamanio = 13 from DiccionariodeDatos x  where nmTabla = 'tb_comprobantes' and nmCampo = 'nrDOC'
