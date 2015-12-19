@@ -82,7 +82,7 @@ Public Function obtenerComision(pvlTotalGeneral As Single, pCondicion_Venta As S
                                 tpComision As String, pdsCodigoDestinos As String, tpComprobante_param As String) As Single
 
 
-    objSPs.nmStoredProcedure = "sp_obtenerComision_v4_2"
+    objSPs.nmStoredProcedure = "sp_obtenerComision_v4_7"
     objSPs.setearCampoValor "@tpComprobante_param", tpComprobante_param
     objSPs.setearCampoValor "@vlTotalGeneral_param", pvlTotalGeneral
     objSPs.setearCampoValor "@tpComision_param", tpComision

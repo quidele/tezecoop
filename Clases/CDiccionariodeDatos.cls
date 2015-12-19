@@ -658,6 +658,18 @@ Dim strNro   As String
     
     Select Case UCase(Me.tpTipo)
     Case "BIT", "S/N":
+    Case "CUIT", "CUIL"
+            If Not (KeyAscii = 44 Or KeyAscii = 46) Then
+                strNro = pControl.Text + Chr(KeyAscii)
+                If (KeyAscii >= 48 And KeyAscii <= 57) Or (KeyAscii = 45) Or _
+                   (KeyAscii = 42) Or (KeyAscii = 37) Then
+                    ValidarEntrada = KeyAscii
+                Else
+                    ValidarEntrada = vbKeyReturn
+                End If
+            Else
+                ValidarEntrada = vbKeyReturn
+            End If
     Case "COUNTER", "INTEGER", "NRO_COMPROBANTE", "NRO_TALONARIO", "SMALLINT", "INT", "ENTERO":
              If Not (KeyAscii = 44 Or KeyAscii = 46) Then
                 strNro = pControl.Text + Chr(KeyAscii)
@@ -720,7 +732,7 @@ Dim strNro   As String
     Me.ObtenerCampo pnmTabla, pControl.Tag
     
     Select Case UCase(Me.tpTipo)
-    Case "BIT", "COUNTER", "INTEGER", "VARCHAR", "NRO_COMPROBANTE", "SMALLINT", "INT", "INT_CERO_POSITIVO":
+    Case "BIT", "COUNTER", "INTEGER", "VARCHAR", "NRO_COMPROBANTE", "SMALLINT", "INT", "INT_CERO_POSITIVO", "CUIT", "CUIL":
     Case "SMALLDATETIME":
             If IsNull(pControl.Text) And pControl.Text = "" Then
                 pControl.Text = ""
@@ -786,7 +798,7 @@ Dim strNro   As String
 
     Me.ObtenerCampo pnmTabla, pnmCampo
     Select Case UCase(Me.tpTipo)
-    Case "BIT", "COUNTER", "INTEGER", "SMALLINT", "INT", "INT_CERO_POSITIVO":
+    Case "BIT", "COUNTER", "INTEGER", "SMALLINT", "INT", "INT_CERO_POSITIVO", "CUIT", "CUIL":
         If IsNull(pValor) And pValor = "" Then
             FormatearCampoValor = ""
         Else

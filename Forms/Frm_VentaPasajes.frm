@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   94175233
+         Format          =   201261057
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3135,7 +3135,7 @@ Dim strValor    As String
      
     '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
     objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
@@ -3542,6 +3542,18 @@ Private Function validarEntradadedatos() As Boolean
 '        End If
         
         
+    End If
+    
+    
+    
+    If CSng(ObtenerCampo("vlPagoPesos").Text) > CSng(objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL")) Then
+        If ObtenerCampo("nrDoc").Text = "" Then
+            MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente y el CUIT o CUIL .", vbInformation + vbDefaultButton1, "Atención"
+            AvisarError "nrDoc", True
+            ObtenerCampo("nrDoc").SetFocus
+            validarEntradadedatos = False
+            Exit Function
+        End If
     End If
     
     
@@ -5460,14 +5472,14 @@ Dim cdCodBarLic         As String
     cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(Trim(ObtenerCampo("nrLicencia").Text), 3)
     cdCodBarLic = objAFIP.StrToI2of5(cdCodBarLic)
     
-    objSPs.nmStoredProcedure = "SP_PrepararReimpresiondeComprobante_v3_7"
+    objSPs.nmStoredProcedure = "SP_PrepararReimpresiondeComprobante_v4_7"
     objSPs.setearCampoValor "@nrTalonario", pnrTalonario
     objSPs.setearCampoValor "@nrComprobante", pnrComprobante
     objSPs.setearCampoValor "@tpComprobante", tpComprobante
     objSPs.setearCampoValor "@tpLetra", ptpLetra
     
     If Not objSPs.ExecSP Then
-        MsgBox " Error al intentar imprimir la factura, Functión: SP_PrepararReimpresiondeComprobante_v3_7", vbCritical, "Atención"
+        MsgBox " Error al intentar imprimir la factura, Functión: SP_PrepararReimpresiondeComprobante_v4_7", vbCritical, "Atención"
         Exit Function
     End If
     

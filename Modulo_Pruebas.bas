@@ -91,8 +91,8 @@ Dim resp As Integer
     strResultadoPruebas = ""
     ' If Not Prueba_ObtenerTalonariosND() Then strResultadoPruebas = strResultadoPruebas + vbCrLf + "Error en Prueba_ObtenerTalonariosND " + vbCrLf
     ' If Not Prueba_ObtenerTalonariosNDRICtaCte() Then strResultadoPruebas = strResultadoPruebas + vbCrLf + "Error en Prueba_ObtenerTalonariosNDRICtaCte " + vbCrLf
-    ' If Not Prueba_sco_Puestos_v4_2_ndync() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_2_ndync " + vbCrLf
-    ' If Not Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_2_ndync " + vbCrLf
+    ' If Not Prueba_sco_Puestos_v4_7_ndync() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_7_ndync " + vbCrLf
+    ' If Not Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_7_ndync " + vbCrLf
     
     
         
@@ -121,7 +121,7 @@ Public Function Prueba_ObtenerTalonariosND() As Boolean
     
    '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"
@@ -188,7 +188,7 @@ Public Function Prueba_ObtenerTalonariosNDRICtaCte() As Boolean
     
    '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"
@@ -242,10 +242,10 @@ Public Function Prueba_ObtenerTalonariosNDRICtaCte() As Boolean
     
 End Function
 
-Public Function Prueba_sco_Puestos_v4_2_ndync() As Boolean
+Public Function Prueba_sco_Puestos_v4_7_ndync() As Boolean
     Dim l_strResultadoPruebas As String
     
-    Prueba_sco_Puestos_v4_2_ndync = False
+    Prueba_sco_Puestos_v4_7_ndync = False
 
     l_strResultadoPruebas = ""
 
@@ -256,11 +256,11 @@ Public Function Prueba_sco_Puestos_v4_2_ndync() As Boolean
     
       '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "sco_Puestos_v4_2"
+    objSPs.nmStoredProcedure = "sco_Puestos_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND")
     
     If Not objSPs.ExecSP Then
-        l_strResultadoPruebas = "Error al ejecutar sco_Puestos_v4_2 " + _
+        l_strResultadoPruebas = "Error al ejecutar sco_Puestos_v4_7 " + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema."
         Exit Function
     End If
@@ -281,7 +281,7 @@ Public Function Prueba_sco_Puestos_v4_2_ndync() As Boolean
     If l_strResultadoPruebas <> "" Then
         strResultadoPruebas = strResultadoPruebas + l_strResultadoPruebas
     Else
-        Prueba_sco_Puestos_v4_2_ndync = True
+        Prueba_sco_Puestos_v4_7_ndync = True
     End If
 End Function
 
@@ -298,7 +298,7 @@ Dim valor_original As Variant
     
     '**********************************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"
@@ -336,7 +336,7 @@ Dim valor_original As Variant
     
     '**********************************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"

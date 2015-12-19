@@ -18,8 +18,8 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Pue
 
 go
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtener_puntosdeventa_facturacion_v2_0' )
-	drop procedure  dbo.spu_obtener_puntosdeventa_facturacion_v2_0
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtener_puntosdeventa_facturacion_v4_7' )
+	drop procedure  dbo.spu_obtener_puntosdeventa_facturacion_v4_7
 
 go
 
@@ -27,37 +27,37 @@ go
 /*
 	
 
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'FA'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'FA'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'FA'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'FA'
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=4, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'FA', 
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'FA'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'FA'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'FA'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'FA'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'FA', 
 
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'ND'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'ND'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'ND'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'ND'
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=4, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'ND'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'ND'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'ND'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'ND'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'ND'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'ND'
 
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=4, @tipo_iva = 'RI',  @auto_impresor = S, @tpComprobante	= 'ND', @tpFormadePago =  "Cuenta Corriente"	
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'NC'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'NC'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'NC'
-	exec  dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'NC'
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'NC'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = 'RI',  @auto_impresor = S, @tpComprobante	= 'ND', @tpFormadePago =  "Cuenta Corriente"	
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'NC'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='RI',@auto_impresor='S', @tpComprobante	= 'NC'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='S', @tpComprobante	= 'NC'
+	exec  dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9,@tipo_iva='X',@auto_impresor='N', @tpComprobante	= 'NC'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=9, @tipo_iva = CF,  @auto_impresor = S, @tpComprobante	= 'NC'
 
-	Exec spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,
+	Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,
 	@tpFormadePago = 'Cuenta Corriente' ,@tpComprobante = 'NC' 
 
 	select * from tb_puestos    where nrPuesto = 4 
 
-	Exec dbo.spu_obtener_puntosdeventa_facturacion_v2_0 @nrPuesto_param=4, @tipo_iva = EX,  @auto_impresor = S, @tpFormadePago = null,  @tpComprobante = 'FA'
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = EX,  @auto_impresor = S, @tpFormadePago = null,  @tpComprobante = 'FA'
 
 */
 
 
 
-create procedure dbo.spu_obtener_puntosdeventa_facturacion_v2_0
+create procedure dbo.spu_obtener_puntosdeventa_facturacion_v4_7
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
 @auto_impresor     char(1)='S',
@@ -355,18 +355,18 @@ end;
 
 go
 
-if exists ( SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sco_Puestos_v4_2' )
-	drop procedure  dbo.sco_Puestos_v4_2
+if exists ( SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sco_Puestos_v4_7' )
+	drop procedure  dbo.sco_Puestos_v4_7
 
 go
 
 /*
 
-exec sco_Puestos_v4_2 @nrPuesto_param = 4
+exec sco_Puestos_v4_7 @nrPuesto_param = 4
 
 */
 
-create procedure dbo.sco_Puestos_v4_2
+create procedure dbo.sco_Puestos_v4_7
 @nrPuesto_param int=null,
 @dsPuesto_param varchar(50)=null
 as
@@ -427,12 +427,12 @@ end;
 
 go
 
-if exists ( SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sup_Puestos_v4_2' )
-	drop procedure  dbo.sup_Puestos_v4_2
+if exists ( SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sup_Puestos_v4_7' )
+	drop procedure  dbo.sup_Puestos_v4_7
 
 go
 
-create procedure [dbo].[sup_Puestos_v4_2]
+create procedure [dbo].[sup_Puestos_v4_7]
 @nrPuesto_param 	                int,
 @dsPuesto_param 	                varchar(50),
 @dsIP_param     	                varchar(50)=null,
@@ -680,14 +680,14 @@ end;
 
 go
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_actualizar_puntosdeventa_facturacion_v2_0' )
-	drop procedure  dbo.spu_actualizar_puntosdeventa_facturacion_v2_0
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_actualizar_puntosdeventa_facturacion_v4_7' )
+	drop procedure  dbo.spu_actualizar_puntosdeventa_facturacion_v4_7
 
 
 go
 
----  Exec spu_actualizar_puntosdeventa_facturacion_v2_0 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,@tpComprobante = 'FA' ,@nrComprobante = 134139 
-create procedure dbo.spu_actualizar_puntosdeventa_facturacion_v2_0
+---  Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 4 ,@tipo_iva = 'EX' ,@auto_impresor = 'S' ,@tpComprobante = 'FA' ,@nrComprobante = 134139 
+create procedure dbo.spu_actualizar_puntosdeventa_facturacion_v4_7
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
 @auto_impresor     char(1)='S',
@@ -923,10 +923,14 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Com
 ---
 go
 
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='SP_PrepararReimpresiondeComprobante_v4_7' )
+	drop procedure  dbo.SP_PrepararReimpresiondeComprobante_v4_7
 
+
+go
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 /****************************************************************/
-ALTER PROCEDURE [dbo].[SP_PrepararReimpresiondeComprobante_v3_7] 
+CREATE PROCEDURE [dbo].[SP_PrepararReimpresiondeComprobante_v4_7] 
 @nrTalonario char(4),
 @nrComprobante char(12),
 @tpComprobante char(2), 
@@ -1032,15 +1036,15 @@ end
 go
 
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sp_obtenerComision_v4_2' )
-	drop procedure  dbo.sp_obtenerComision_v4_2
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='sp_obtenerComision_v4_7' )
+	drop procedure  dbo.sp_obtenerComision_v4_7
 
 
 
 go
 
 
-create procedure sp_obtenerComision_v4_2
+create procedure sp_obtenerComision_v4_7
 (@tpComprobante_param     char(2),
  @vlTotalGeneral_param    float,  
  @tpComision_param        varchar(50),  
@@ -1141,8 +1145,8 @@ end
 go
 
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='ufn_obtnerCodComprobanteAFIP' )
-	drop function  dbo.ufn_obtnerCodComprobanteAFIP
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='ufn_obtnerCodComprobanteAFIP_v4_7' )
+	drop function  dbo.ufn_obtnerCodComprobanteAFIP_v4_7
 
 go
 
@@ -1158,7 +1162,7 @@ go
 	select  dbo.ufn_obtnerCodComprobanteAFIP ('NC','C')
 */
 
-create function  dbo.ufn_obtnerCodComprobanteAFIP ( @tpcompprobante char(2), @tpLetra char(1))
+create function  dbo.ufn_obtnerCodComprobanteAFIP_v4_7 ( @tpcompprobante char(2), @tpLetra char(1))
 RETURNS char(2)
 AS
 BEGIN
@@ -1173,15 +1177,19 @@ END
 go
 
 
-
-
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_MontoEscrito' )
-	drop function  dbo.[UDF_MontoEscrito]
+-- select * from tipo_comprobanteAFIP
 
 go
 
 
-CREATE FUNCTION [dbo].[UDF_MontoEscrito]
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_MontoEscrito_v4_7' )
+	drop function  dbo.[UDF_MontoEscrito_v4_7]
+
+go
+
+
+CREATE FUNCTION [dbo].[UDF_MontoEscrito_v4_7]
 (
        @Numero decimal(18,2)
 )
@@ -1418,10 +1426,11 @@ set dateformat dmy
 	declare @descripcion_vlTotal varchar(60)
 
 	select @vlTotal =  sum(vlMontoCupon), 
-		   @descripcion_vlTotal ='PESOS '+ dbo.[UDF_MontoEscrito] (sum(vlMontoCupon))
+		   @descripcion_vlTotal ='PESOS '+ dbo.[UDF_MontoEscrito_v4_7] (sum(vlMontoCupon))
 		from #tmp_resultados
 
 	select *, @vlTotal as vlTotal, @descripcion_vlTotal as descripcion_vlTotal from  #tmp_resultados
+	order by  tpLetra, nrTalonarioCliente , nrComprabanteCliente
 
 GO
 
@@ -1460,31 +1469,31 @@ GO
 
 go
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCodDOC_CITIT' )
-	drop function  dbo.UDF_obtenerCodDOC_CITIT
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCodDOC_CITIT_v4_7' )
+	drop function  dbo.UDF_obtenerCodDOC_CITIT_v4_7
 
 go
 
 
-CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT (@tpComprobante char(2), @tpLetra char(1) )
-RETURNS int
+CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_7 (@tpComprobante char(2), @tpLetra char(1))
+RETURNS varchar(2)
 AS
 BEGIN
-	declare @codigo_CITI int
+	declare @codigo_CITI varchar(2)
 	set @codigo_CITI = 0
 	select @codigo_CITI =  case 
 				 WHEN @tpComprobante = 'FA' AND @tpLetra =  'A'  THEN  1
 				 WHEN @tpComprobante = 'ND' AND @tpLetra =  'A'  THEN  2
 				 WHEN @tpComprobante = 'NC' AND @tpLetra =  'A'  THEN  3
-				 WHEN @tpComprobante = 'ND' AND @tpLetra =  'B'  THEN  7
 				 WHEN @tpComprobante = 'FA' AND @tpLetra =  'B'  THEN  6
+				 WHEN @tpComprobante = 'ND' AND @tpLetra =  'B'  THEN  7		 
 				 WHEN @tpComprobante = 'NC' AND @tpLetra =  'B'  THEN  8
 				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
-				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  2
-				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  3
-				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  7
+				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+				 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
 				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
-				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  8
+				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+				 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
 				 
 				END
 	
@@ -1493,47 +1502,181 @@ END
 
 go
 
+		
 
-
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas' )
-	drop procedure  dbo.spu_obtieneDatosCITIVentas
-
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerFormatoNumericoAFIP_v4_7' )
+	drop function  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7
 
 go
 
 
----  exec  dbo.spu_obtieneDatosCITIVentas 2, 2015
+-- select  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4534, 20, 2) 
+-- select  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 2) 
+-- select  len(dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 2))
+-- select  LEN(dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 2)) 
 
-create procedure  dbo.spu_obtieneDatosCITIVentas (@mes int, @anio int) 
+
+
+-- select  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4534, 20, 3) 
+-- select  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 3) 
+-- select  len(dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 3))
+-- select  LEN(dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (123.4, 20, 3)) 
+-- SELECT  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 60, 15, 2)
+-- SELECT  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 60, 15, 5)
+-- SELECT  LEN(dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 60, 15, 5))
+-- SELECT  dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 60.000, 20, 5)
+
+-- SELECT CHARINDEX('.','60');
+
+
+CREATE FUNCTION dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (@numero as varchar(100), @tamanio as integer, @decimales integer)
+RETURNS varchar(50)
+AS
+BEGIN
+	
+	declare  @numero_formateado  varchar(50)
+	declare  @posicion_decimal    int
+	declare  @parte_entera        int
+	declare  @parte_decimal       int
+	
+	set @posicion_decimal = CHARINDEX('.',@numero);
+	IF @posicion_decimal = 0 
+	begin
+		SET  @numero_formateado = right( replicate ('0',@tamanio) + convert(varchar,@numero)  + replicate('0', @decimales) ,@tamanio) 
+		return @numero_formateado
+	end
+	
+	set  @parte_entera  = SUBSTRING(@numero,1,@posicion_decimal - 1)
+	set  @parte_decimal = SUBSTRING(@numero,@posicion_decimal + 1 , len(@numero))
+	
+	set @numero_formateado = replicate ('0',@tamanio) + convert(varchar,@parte_entera) +   left(left(convert(varchar,@parte_decimal), @decimales)  + replicate('0', @decimales), @decimales)
+	set @numero_formateado = right(@numero_formateado,@tamanio) 
+	
+	-- print @parte_entera
+	-- print @parte_decimal
+	return @numero_formateado
+
+END
+
+GO
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerFormatoCUITAFIP_v4_7' )
+	drop function  dbo.UDF_obtenerFormatoCUITAFIP_v4_7
+
+go
+
+-- select  dbo.UDF_obtenerFormatoCUITAFIP (123.4534, 20) 
+
+
+CREATE FUNCTION dbo.UDF_obtenerFormatoCUITAFIP_v4_7 (@numero as varchar(100), @tamanio as integer)
+RETURNS varchar(50)
+AS
+BEGIN
+	
+	declare  @numero_formateado  varchar(50)
+	declare  @posicion_decimal    int
+	declare  @parte_entera        int
+	declare  @parte_decimal       int
+	
+	if @numero is null  
+	begin	
+		set @numero_formateado  = replicate  ('0', @tamanio)
+		return @numero_formateado
+	end
+
+	set @numero_formateado = replace (lTRIM(RTRIM(@numero)),'-','')
+	set @numero_formateado = replace (@numero_formateado,'.','')
+
+	if isnumeric(@numero_formateado)=1 
+		set @numero_formateado =  right(replicate('0', @tamanio) +  @numero_formateado,@tamanio)
+	else
+		set @numero_formateado =  replicate('0', @tamanio)
+
+	return @numero_formateado
+
+END
+
+go
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_7' )
+	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_7
+	
+
+go
+
+---  exec  dbo.spu_obtieneDatosCITIVentas_v4_7 1, 2015
+
+create procedure  dbo.spu_obtieneDatosCITIVentas_v4_7(@mes int, @anio int) 
 as
 begin
-/*
 
-		Select '1' As tipoRegistro, A.fec_comp, B.cod_citi, A.serie_comp, A.nro_comp, A.nro_comp, 
-		RTRIM(LTRIM(C.cod_dgi)) As cod_dgi, replace(A.nro_dgi,'-','') As nro_dgi, RTRIM(LTRIM(A.nom_tit)) As nom_tit, 
-		ABS(A.imp_total) As imp_total, ABS(A.imp_exen) As imp_exen, 
-		ABS(A.imp_neto) As imp_neto , A.porc_imp, ABS(A.imp_iva) As imp_iva, ABS(A.imp_exen) As imp_exen, 
-		(SELECT MAX(cantidad) FROM TB_Comprobantes  WHERE nro_trans=A.nro_trans) As Cantidad, 
-		'00000000' As FecRet, '000000000000000' As ImpRet 
-		FROM TB_Comprobantes A, ct_docxletraciti B, ct_impuxtit C 
-		WHERE A.cod_doc=B.cod_doc And A.letra_doc=B.letra_doc And A.nro_dgi=C.nro_dgi 
-		ORDER BY A.nro_trans, A.linea DESC  
-		*/
-
-		Select '1' As tipoRegistro, A.dtComprobante as  fec_comp, dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ) cod_citi, 
-				A.nrTalonario  as  serie_comp ,  A.nrComprobante as  nro_comp, 
+		/* Select TOP 10  convert(varchar, A.dtComprobante,112) as  fec_comp,  -- Fecha de Comprobante
+				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ),3) as  cod_citi,  -- Tipo de Comprobante
+				right( replicate('0',5) + A.nrTalonario,5)  as  serie_comp,	-- Punto de Venta 
+				right( replicate('0',20) + A.nrComprobante,20 ) as  nro_comp,   -- NUmero de Comprobante}
+				right( replicate('0',20) + A.nrComprobante,20 ) as  nro_comphasta,   -- NUmero de Comprobante hasta
 				case  tpIVA when 'RI'  then '80'  
-							else '0'   END As cod_dgi,
-				replace(A.nrDoc,'-','') As nro_dgi, 
-				case tpIVA when 'RI'  then A.dsRazonSocial 
-				else 'Consumidor Final' END as nom_tit, 
-		ABS(A.vlTotalGeneral) As imp_total, ABS(0) As imp_exen, 
-		ABS(A.vlSubtotal) As imp_neto , 0, ABS(A.vlIVA) As imp_iva, ABS(0) As imp_exen, 
-		/* (SELECT MAX(cantidad) FROM TB_Comprobantes  WHERE nro_trans=A.nro_trans) */ 0 As Cantidad, 
-		'00000000' As FecRet, '000000000000000' As ImpRet 
+							else '99'   END As cod_dgi,
+				case tpIVA when 'RI'   then  replace(A.nrDoc,'-','') 
+							else '00000000000' END As nro_dgi,  --- Código del Documento del Comprador
+				Left (  case tpIVA when 'RI'  then A.dsRazonSocial  
+				else 'Consumidor Final' END   + Replicate(' ',30) , 30)  as nom_tit,  -- Nombre y Apellido del Comprador
+		--vlTotalGeneral,
+		dbo.UDF_obtenerFormatoNumericoAFIP ( vlTotalGeneral, 15, 2)      As imp_total,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP (ABS(isnull(A.vlIVA,0)),15,2) As imp_iva,				--  importe total conceptos que no integran el neto gravado		
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_perc_no_cate,						--  percepcion a no categorizados
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_exen,						--  importe operaciones exentas
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_perc_ctas ,				--  importe percepciones o pagos a ctas impuestos nacionales
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_perc_iibb ,				--  importe percepciones de ingresos brutos
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_perc_ip ,					--  importe percepciones de impuestos municipales
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2) As imp_impuestos_internos ,		--  importe impuestos internos
+		'PES'      as cod_moneda,					--  codigo de moneda
+		dbo.UDF_obtenerFormatoNumericoAFIP (1,10,6)	   as tipo_cambio,			        --  tipo de cambio
+		'v'      as cant_alicuotas_iva,			--  cantidad alicuotas iva  
+		dbo.UDF_obtenerFormatoNumericoAFIP (0,15,2)      as otros_tributos,			    --  otros tributos
+		convert(varchar, A.dtComprobante + 10,112)  as fecha_venc -- fecha de vencimiento de pago 
 		FROM TB_Comprobantes A 
-		WHERE month(A.dtComprobante) = @mes  and year(A.dtComprobante) = @anio 
+		WHERE month(A.dtComprobante) = @mes  and year(A.dtComprobante) = @anio
+		
+		SELECT  dbo.UDF_obtenerFormatoCUITAFIP(30501032545,20)  
+		*/ 
 
+		Select    convert(varchar, A.dtComprobante,112) -- as  fec_comp,  -- Fecha de Comprobante
+				+ right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_7(tpComprobante , tpLetra ),3) --  as  cod_citi,  -- Tipo de Comprobante
+				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
+				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
+				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
+				+ case  tpIVA when 'RI'  then '80'  
+							else '99'   END -- As cod_dgi,
+				--, A.nrDoc
+				--, A.vlTotalGeneral, 
+				+  case tpIVA when 'RI'   then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20)  else REPLICATE('0',20) END -- As nro_dgi,  --- Código del Documento del Comprador
+				+ Left (  case tpIVA when 'RI'  then A.dsRazonSocial   
+				else 'Consumidor Final' END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
+		--vlTotalGeneral,
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral, 15, 2)   --    As imp_total,     --  importe total del operacion
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2) --  As imp_iva,				--  importe total conceptos que no integran el neto gravado		
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_no_cate,						--  percepcion a no categorizados
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_exen,						--  importe operaciones exentas
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_ctas ,				--  importe percepciones o pagos a ctas impuestos nacionales
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_iibb ,				--  importe percepciones de ingresos brutos
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_ip ,					--  importe percepciones de impuestos municipales
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_impuestos_internos ,		--  importe impuestos internos
+		+ 'PES'      -- as cod_moneda,					--  codigo de moneda
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (1,10,6)	--    as tipo_cambio,			        --  tipo de cambio
+		+ '1'     -- as cant_alicuotas_iva,			--  cantidad alicuotas iva  
+		+ ' '     -- as cant_alicuotas_iva,			--  codigo de operacion
+		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2)     --  as otros_tributos,			    --  otros tributos
+		+ convert(varchar, A.dtComprobante + 10,112) --  as fecha_venc -- fecha de vencimiento de pago 
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = @mes   and year(A.dtComprobante) = @anio 
+		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')
+		AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')
+
+
+		return 0; 
 
 
 end 
@@ -1542,26 +1685,18 @@ end
 
 go
 
+/*
+
+Eliminado versiones originales con nombre erroneos
+drop function  dbo.ufn_obtnerCodComprobanteAFIP
+drop function  dbo.[UDF_MontoEscrito]
+drop function  dbo.UDF_obtenerCodDOC_CITIT
+drop procedure  dbo.spu_obtieneDatosCITIVentas
+drop function  dbo.UDF_obtenerFormatoCUITAFIP
+drop function dbo.UDF_obtenerFormatoNumericoAFIP
+
+*/
 
 
-select  top 1 nrDOC, nmApellido , nmNombre  from tb_comprobantes   where  year ( dtComprobante ) = 2015
-
-select  distinct tpIVA from tb_comprobantes   where  year ( dtComprobante ) = 2015
-
-select  DISTINCT cod_dgi  from ct_impuxtit C 
-
-
-
-
-
-
-
-CF =
-EX =
-OT =
-RI = 80
-
-
-
-
+go
 

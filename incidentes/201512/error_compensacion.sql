@@ -1,0 +1,1 @@
+select * from tb_cupones where IdRecibo  = 1000284437

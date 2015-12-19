@@ -96,6 +96,7 @@ Dim strMSG As String
         Exit Function
     End If
     
+    
     Me.dsParametro = ObjTablasIO.rs_resultados("dsParametro")
     
     On Error Resume Next
