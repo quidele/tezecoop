@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   201261057
+         Format          =   234815489
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2706,7 +2706,7 @@ Private Function grabarPuesto() As Boolean
         grabarPuesto = False
 
         '***********************************************************
-        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
         objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
         objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
         objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")

@@ -260,7 +260,7 @@ Begin VB.Form Frm_FacturaCtaCte
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -394,7 +394,7 @@ Begin VB.Form Frm_FacturaCtaCte
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -594,7 +594,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Doc"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -612,7 +612,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Letra"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -630,7 +630,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   " IVA"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -648,7 +648,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Licenciatario"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -666,7 +666,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Licencia"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -684,7 +684,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Comisión"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -702,7 +702,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Descripción"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -719,7 +719,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "CUIT / DNI"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -736,7 +736,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "E-Mail"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -753,7 +753,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Razón Social / Nombre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -770,7 +770,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Cliente"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -788,7 +788,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Total Pesos"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -805,7 +805,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Comprobante"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -823,7 +823,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Fecha"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -842,7 +842,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Talón"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -859,7 +859,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Cond. de Venta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -877,7 +877,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   " IVA"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -895,7 +895,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Observación"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -912,7 +912,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Cajera"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -929,7 +929,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Puesto"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -946,7 +946,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Caption         =   "Nro. Caja"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1440,7 +1440,7 @@ Private Function grabarPuesto() As Boolean
         grabarPuesto = False
 
         '***********************************************************
-        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
         objSPs.setearCampoValor "@nrPuesto_param", vlparametro_PUESTO_FACTURACION_CTA_CTE
         objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
         objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("FacturarCtaCte.tipofacturacion")) = "MANUAL", "N", "S")

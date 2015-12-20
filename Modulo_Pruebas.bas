@@ -92,7 +92,7 @@ Dim resp As Integer
     ' If Not Prueba_ObtenerTalonariosND() Then strResultadoPruebas = strResultadoPruebas + vbCrLf + "Error en Prueba_ObtenerTalonariosND " + vbCrLf
     ' If Not Prueba_ObtenerTalonariosNDRICtaCte() Then strResultadoPruebas = strResultadoPruebas + vbCrLf + "Error en Prueba_ObtenerTalonariosNDRICtaCte " + vbCrLf
     ' If Not Prueba_sco_Puestos_v4_7_ndync() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_7_ndync " + vbCrLf
-    ' If Not Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_7_ndync " + vbCrLf
+    ' If Not Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7() Then strResultadoPruebas = strResultadoPruebas + "Error en Prueba_sco_Puestos_v4_7_ndync " + vbCrLf
     
     
         
@@ -287,12 +287,12 @@ End Function
 
 
 
-Public Function Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0() As Boolean
+Public Function Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7() As Boolean
 Dim valor_original As Variant
 
     If objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND") <> 4 Then
         strResultadoPruebas = "Error PUESTO_FACTURACION_ND <>  4 "
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
     
@@ -308,7 +308,7 @@ Dim valor_original As Variant
     If Not objSPs.ExecSP Then
         strResultadoPruebas = "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema."
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
         
@@ -317,7 +317,7 @@ Dim valor_original As Variant
     
    '**********************************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"
@@ -329,7 +329,7 @@ Dim valor_original As Variant
     If Not objSPs.ExecSP Then
         strResultadoPruebas = "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema."
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
     
@@ -346,20 +346,20 @@ Dim valor_original As Variant
     If Not objSPs.ExecSP Then
         strResultadoPruebas = "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema."
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
            
 
     If objbasededatos.rs_resultados("nrComprobante") <> -3 Then
         strResultadoPruebas = "Error nrComprobante, VALOR ESPERADO -3   VALOR ENTREGADO " + CStr(objbasededatos.rs_resultados("nrComprobante"))
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
     
     '**********************************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v2_0"
+    objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValorBD("PUESTO_FACTURACION_ND"))
     objSPs.setearCampoValor "@tipo_iva", "CF"
     objSPs.setearCampoValor "@auto_impresor", "S"
@@ -371,11 +371,11 @@ Dim valor_original As Variant
     If Not objSPs.ExecSP Then
         strResultadoPruebas = "No se encuentra definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema."
-        Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = False
+        Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = False
         Exit Function
     End If
     
-    Prueba_spu_actualizar_puntosdeventa_facturacion_v2_0 = True
+    Prueba_spu_actualizar_puntosdeventa_facturacion_v4_7 = True
     
 End Function
 
