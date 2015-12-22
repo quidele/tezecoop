@@ -22,15 +22,15 @@ Begin VB.Form frm_ResumenLicenciatario
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   0
       Top             =   0
       Width           =   12000
       _ExtentX        =   21167
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgResumenLicenciatarios"
@@ -263,7 +263,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -356,7 +356,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Fecha del viaje"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   105840641
+            Format          =   114819073
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,14 +394,14 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   105840641
+            Format          =   114819073
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
             Caption         =   "Hasta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -419,7 +419,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Desde"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -512,7 +512,7 @@ Begin VB.Form frm_ResumenLicenciatario
          CausesValidation=   0   'False
          BeginProperty Font 
             Name            =   "MS Sans Serif"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -586,7 +586,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Falta Compensar"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -624,7 +624,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -645,7 +645,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -684,7 +684,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -705,7 +705,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -726,7 +726,7 @@ Begin VB.Form frm_ResumenLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -851,7 +851,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -860,7 +860,7 @@ Begin VB.Form frm_ResumenLicenciatario
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   23
+         NumItems        =   24
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "nrLicencia"
             Text            =   "Licencia"
@@ -928,74 +928,81 @@ Begin VB.Form frm_ResumenLicenciatario
          EndProperty
          BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   11
-            Key             =   "tpComprobanteCliente"
-            Object.Tag             =   "tpComprobanteCliente"
-            Text            =   "Letra"
-            Object.Width           =   1587
+            Key             =   "tpcomprobantecliente"
+            Object.Tag             =   "tpcomprobantecliente"
+            Text            =   "Doc"
+            Object.Width           =   2540
          EndProperty
          BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   12
+            Key             =   "tpLetraCliente"
+            Object.Tag             =   "tpLetraCliente"
+            Text            =   "Letra"
+            Object.Width           =   1587
+         EndProperty
+         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   13
             Object.Tag             =   "nrTalonarioCliente"
             Text            =   "Talonario"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   13
+         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   14
             Object.Tag             =   "nrComprabanteCliente"
             Text            =   "Comprabante"
             Object.Width           =   2646
          EndProperty
-         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   14
+         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   15
             Object.Tag             =   "flCompensado"
             Text            =   "Compensado"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   15
+         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   16
             Object.Tag             =   "dtCompensado"
             Text            =   "Fecha de Compensado"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   16
+         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   17
             Object.Tag             =   "dsUsuario"
             Text            =   "Usuario"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   17
+         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   18
             Object.Tag             =   "nrCajaLicenciatario"
             Text            =   "Nro. de Caja"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   18
+         BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   19
             Object.Tag             =   "nrCupon"
             Text            =   "Nro. Cupon"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   19
+         BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   20
             Object.Tag             =   "dsObservacion"
             Text            =   "Observación"
             Object.Width           =   3528
          EndProperty
-         BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   20
+         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   21
             Key             =   "flManual"
             Object.Tag             =   "flManual"
             Text            =   "Viaje Manual"
             Object.Width           =   0
          EndProperty
-         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   21
+         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   22
             Object.Tag             =   "datotellic"
             Text            =   "datotellic"
             Object.Width           =   0
          EndProperty
-         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   22
+         BeginProperty ColumnHeader(24) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   23
             Object.Tag             =   "datostelchoferes"
             Text            =   "datostelchoferes"
             Object.Width           =   0
@@ -1021,7 +1028,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Licenciatario"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1178,7 +1185,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Observación Factura"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1197,7 +1204,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1216,7 +1223,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Destinos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1235,7 +1242,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Talonario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1254,7 +1261,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Comprobante"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1273,7 +1280,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Licencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1292,7 +1299,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Observación de Pago"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1311,7 +1318,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Caption         =   "Fecha y Hora del Viaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1346,7 +1353,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Caption         =   "Nro. de Cupón"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1370,11 +1377,12 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Const grilla_columna_datostelchoferes = 22
-Const grilla_columna_datotellic = 21
-Const grilla_columna_nrCupon = 18
-Const grilla_columna_dsObservacion = 19
-Const grilla_columna_flmanual = 20
+Const grilla_columna_datostelchoferes = 23
+Const grilla_columna_datotellic = 22
+Const grilla_columna_nrCupon = 19
+Const grilla_columna_dsObservacion = 20
+Const grilla_columna_flmanual = 21
+
 
 
 Dim EstadoABM As Byte
