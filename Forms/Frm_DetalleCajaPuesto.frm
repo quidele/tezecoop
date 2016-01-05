@@ -885,7 +885,7 @@ Begin VB.Form Frm_DetalleCajaPuesto
    End
    Begin MSComctlLib.ListView lstBusqueda 
       Height          =   4680
-      Left            =   210
+      Left            =   195
       TabIndex        =   24
       Top             =   1725
       Width           =   10020
@@ -2069,6 +2069,7 @@ Private Sub cmdAgregarComprobante()
     objParametros.GrabarValor "Frm_VentaPasajes.modo", "Facturar"
     objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", "manual"
     objParametros.GrabarValor "Frm_VentaPasajes.numeracion_correlativa", "NO"
+    objParametros.GrabarValor "Frm_VentaPasajes.desde", "administracion.cajapuesto"
     
     ' seteamos las cotizaciones
     objParametros.GrabarValor "Frm_VentasPasajes.vlDiaEuro", ObtenerCampo("vlDiaEuro")

@@ -1841,3 +1841,29 @@ drop function dbo.UDF_obtenerFormatoNumericoAFIP
 
 go
 
+
+
+alter  procedure sp_marcarTipodeActualizacionCajaPuesto_v3_7(
+@nrTalonario_param   	  	as varchar(4),
+@nrComprobante_param 	  	as varchar(8),
+@tpComprobante_param 	  	as varchar(4),
+@tpLetra_param       	  	as varchar(2),
+@tpModificacionCajaPuesto_param  varchar(50), /* Agregado, Eliminado, Anulado, Modificado*/
+					      /* En Analisis: Desanulado, Deseliminado */
+@dsObservacionCajaPuesto_param   varchar(400)=null)			       
+as
+begin 
+
+	update  [TB_Comprobantes]
+	set	 tpModificacionCajaPuesto = @tpModificacionCajaPuesto_param,
+		 dsObservacionCajaPuesto  = left(@tpModificacionCajaPuesto_param+': '+ isnull(@dsObservacionCajaPuesto_param,'') + ' / '+isnull(dsObservacionCajaPuesto,''),400) 
+	where 
+		 nrTalonario =  @nrTalonario_param    and
+		 nrComprobante = @nrComprobante_param and
+	         tpComprobante = @tpComprobante_param and
+		 tpLetra = @tpLetra_param
+
+
+end
+
+
