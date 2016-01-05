@@ -345,7 +345,7 @@ Begin VB.Form Frm_VentaPasajes
          ForeColor       =   &H00000000&
          Height          =   285
          Index           =   0
-         Left            =   2940
+         Left            =   2925
          Locked          =   -1  'True
          TabIndex        =   28
          TabStop         =   0   'False
@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   93650945
+         Format          =   91357185
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5784,7 +5784,7 @@ Dim lnrCaja As String
         ObjTablasIO.setearCampoOperadorValor "flManual", "=", "M", " AND "
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante").Text, " AND "
-        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
+        ' ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text
         ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "->", ""
