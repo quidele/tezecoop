@@ -745,6 +745,8 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.nrTalonario", objbasededatos.rs_resultados("nrTalonario")
     objParametros.GrabarValor "FacturarCtaCte.nrComprobante", objbasededatos.rs_resultados("nrComprobante")
     objParametros.GrabarValor "FacturarCtaCte.tpLetra", Trim(objbasededatos.rs_resultados("tpLetra"))
+    objParametros.GrabarValor "FacturarCtaCte.nrCAI", Trim(objbasededatos.rs_resultados("nrCAI"))
+    objParametros.GrabarValor "FacturarCtaCte.dtVencimiento", Trim(objbasededatos.rs_resultados("dtCAI"))
     
     
     ' REVEER CTA. CTES

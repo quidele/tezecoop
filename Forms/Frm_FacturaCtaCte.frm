@@ -1421,9 +1421,9 @@ Dim strValor   As String
     '***********************************************************
     ' Agregado en la version 1.8  - autoimpresion Empresas RI
     ' hasta que se habiliten la facturacion en la adm se setean el null
-    strValor = "" ' Trim(objbasededatos.rs_resultados("nrCAI_Talonario_auto_empresa"))
+    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrCAI")
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    strValor = "" 'Trim(objbasededatos.rs_resultados("dtCAI_Talonario_auto"))
+    strValor = objParametros.ObtenerValor("FacturarCtaCte.dtVencimiento")
     objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     '***********************************************************
 

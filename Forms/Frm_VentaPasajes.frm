@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   91357185
+         Format          =   116523009
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
