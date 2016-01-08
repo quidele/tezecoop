@@ -105,7 +105,7 @@ go
 		into tmp_comprobantes_sin_cuit
 		FROM TB_Comprobantes A  inner join TB_Proveedores B  on  A.nrLicencia = b.nrLicencia 
 		WHERE  year(A.dtComprobante) = 2015  
-		AND  vlTotalGeneral   > 1000  and   dbo.ufn_ValidarCUIT (A.nrDoc )= 0
+		AND  vlTotalGeneral   > 999  and   dbo.ufn_ValidarCUIT (A.nrDoc )= 0
 		AND tpComprobante  <>'X'
 
 		--- select * from tmp_comprobantes_sin_cuit order by nrLicenciaProveedor 
@@ -113,7 +113,7 @@ go
 
 		alter table tmp_comprobantes_sin_cuit add idtabla int identity(1,1)
 
-		
+		--select * from tmp_comprobantes_sin_cuit
 		/****************************************************************************/
 		/***** REPROCESAR															*/ 
 		/****************************************************************************/
@@ -141,7 +141,7 @@ go
 		/* cursor de comprobante - proveedores involucrados */
 		DECLARE cur_01 CURSOR FOR SELECT nrTalonario ,  nrComprobante , tpComprobante , tpLetra, nrLicenciaProveedor ,
 		nrCUIT_proveedor, nrCUIT_Proveedor_OK, nombre_completo_proveedor 
-		FROM tmp_comprobantes_sin_cuit where nrLicenciaCliente = '000000'
+		FROM tmp_comprobantes_sin_cuit where nrLicenciaCliente = '000000' ORDER BY nrLicenciaProveedor
 
 		
 		OPEN cur_01
@@ -154,6 +154,7 @@ go
 
 			select  @nrLicenciaCliente = null, @nrCUITCliente = null, @nombre_completo_cliente = null
 
+			--select * from tmp_comprobantes_sin_cuit
 			-- Seleccionar talonario a afectar 
 			select  
 					@nrTalonario_seleccionado = nrTalonario ,     
@@ -164,10 +165,11 @@ go
 					@nrCUITCliente = isnull(@nrCUIT_proveedor,'NO VALIDO') ,
 					@nombre_completo_cliente = @nombre_completo_proveedor 
 			from    tmp_comprobantes_sin_cuit
-			where   nrLicenciaCliente = '000000' and nrLicenciaCliente <> @nrLicenciaProveedor
+			where   nrLicenciaCliente = '000000' and nrLicenciaProveedor <> @nrLicenciaProveedor
 
 			if @nrLicenciaCliente is null
 			begin
+				print ' sale por break'
 				break
 			end
 
@@ -191,4 +193,4 @@ go
 		
 		
 
-		select * from tmp_comprobantes_sin_cuit
+		select * from tmp_comprobantes_sin_cuit ORDER BY nrLicenciaProveedor
