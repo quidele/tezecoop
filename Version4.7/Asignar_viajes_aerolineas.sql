@@ -18,7 +18,7 @@ select top 10 nrTalonario , nrComprobante , tpComprobante , tpLetra into tb_comp
 
  delete from tb_comproAerolineas
 
-  insert into tb_comproAerolineas (nrTalonario , nrComprobante , tpComprobante , tpLetra ) Values ('0006' , '00005731    ' , 'A' , 'A')
+ insert into tb_comproAerolineas (nrTalonario , nrComprobante , tpComprobante , tpLetra ) Values ('0006' , '00005731    ' , 'A' , 'A')
  insert into tb_comproAerolineas (nrTalonario , nrComprobante , tpComprobante , tpLetra ) Values ('0006' , '00006238    ' , 'A' , 'A')
  insert into tb_comproAerolineas (nrTalonario , nrComprobante , tpComprobante , tpLetra ) Values ('0006' , '00006233    ' , 'A' , 'A')
  insert into tb_comproAerolineas (nrTalonario , nrComprobante , tpComprobante , tpLetra ) Values ('0006' , '00006228    ' , 'A' , 'A')
@@ -159,18 +159,28 @@ from  tb_comprobantes  x inner join  tb_comproAerolineas  y
 							on  x.nrTalonario = y.nrTalonario 
 								and  x.nrComprobante  = y.nrComprobante 
 									and  x.tpComprobante   = y.tpComprobante 
-										and  x.tpLetra    = y.tpLetra  and  nrDoc is null and (cdCliente = '1' or cdCliente is null)
+										and  x.tpLetra    = y.tpLetra  
+										  --- and  nrDoc is null and (cdCliente = '1' or cdCliente is null)
 
 
- select cdCliente   from  TB_Cupones   x inner join  tb_comproAerolineas  y  
+update x set  cdCliente = 111   --- Actualizamos la tabla de cupones 
+from  tb_cupones  x inner join  tb_comproAerolineas  y  
+							on  x.nrTalonarioCliente  = y.nrTalonario 
+								and  x.nrComprabantecliente  = y.nrComprobante 
+									and  x.tpComprobanteCliente   = y.tpComprobante 
+										and  x.tpLetraCliente    = y.tpLetra  
+
+
+select cdCliente   from  TB_Cupones   x inner join  tb_comproAerolineas  y  
 							on  x.nrTalonarioCliente = y.nrTalonario 
 								and  x.nrComprabanteCliente   = y.nrComprobante 
 									and  x.tpComprobanteCliente    = y.tpComprobante 
-										and  x.tpLetraCliente     = y.tpLetra and  (cdCliente = '1' or cdCliente is null)
+										and  x.tpLetraCliente     = y.tpLetra 
+											--- and  (cdCliente = '1' or cdCliente is null)
 
 
 
-select * from TB_Clientes  where cdCliente = 111
+
 
 
 

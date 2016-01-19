@@ -169,7 +169,7 @@ go
 
 			if @nrLicenciaCliente is null
 			begin
-				print ' sale por break'
+				print ' sale por break  '
 				break
 			end
 
@@ -177,8 +177,8 @@ go
 
 			update  tmp_comprobantes_sin_cuit set	nrLicenciaCliente = @nrLicenciaCliente, 
 					nrCUITCliente   = @nrCUITCliente ,   nombre_completo_cliente  =  @nombre_completo_cliente
-				where nrTalonario =  @nrTalonario_seleccionado and nrComprobante =  @nrComprobante_seleccionado
-			 and   tpComprobante = @tpComprobante_seleccionado and tpLetra =  @tpLetra_seleccionado	   
+			where nrTalonario =  @nrTalonario_seleccionado and nrComprobante =  @nrComprobante_seleccionado
+				and   tpComprobante = @tpComprobante_seleccionado and tpLetra =  @tpLetra_seleccionado	   
 			 
    
 			 
