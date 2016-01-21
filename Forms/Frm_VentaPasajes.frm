@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   116523009
+         Format          =   104988673
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5534,8 +5534,10 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
     Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
     Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
+    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
     
-    
+        
     ' Aparece la venta duplicado
     On Error Resume Next
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
@@ -5570,6 +5572,8 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
     Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
     Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
+    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
     
     ' Aparece la venta duplicado
     On Error Resume Next
@@ -5597,6 +5601,8 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
     Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
     Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
+    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
     
     ' Aparece la venta duplicado
     On Error Resume Next

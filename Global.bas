@@ -341,7 +341,7 @@ Dim lnrCaja As String
         MsgBox strSQL
     End If
             
-    objbasededatos.ExecuteSQL (strSQL)
+    ' objbasededatos.ExecuteSQL (strSQL)
              
 
     
