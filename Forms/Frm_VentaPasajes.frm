@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   104988673
+         Format          =   243007489
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5549,11 +5549,27 @@ Dim cdCodBarLic         As String
     On Error GoTo 0
     
     If objConfig.tpImpresion = "CONTINUO" Then
+               
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+            Exit Function
+        End If
+        
         ImprimirFactura = True
         Exit Function
     End If
     
     If objConfig.nrCantidaddeCopias = 1 Then
+        
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+            Exit Function
+        End If
+        
         ImprimirFactura = True
         Exit Function
     End If
@@ -5582,6 +5598,14 @@ Dim cdCodBarLic         As String
     On Error GoTo 0
     
     If objConfig.nrCantidaddeCopias = 2 Then
+    
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+            Exit Function
+        End If
+        
         ImprimirFactura = True
         Exit Function
     End If
@@ -5609,6 +5633,14 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.PrintReport
     On Error GoTo 0
+    
+    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
+        
         
     
 End Function
