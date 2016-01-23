@@ -622,7 +622,7 @@ End Function
 
 Public Function Exec_SP_PrepararReimpresiondeComprobante _
                         (pnrTalonario As String, pnrComprobante As String, _
-                         ptpComprobante As String, ptpLetra As String) As Boolean
+                         ptpComprobante As String, ptpLetra As String, pdsUsuario As String) As Boolean
 Dim rsCmd  As Object
 Dim strSQL As String
 
@@ -640,6 +640,7 @@ Dim strSQL As String
     rsCmd.Parameters(2) = rsCmd.CreateParameter("nrComprobante", , adParamInput, , pnrComprobante)
     rsCmd.Parameters(3) = rsCmd.CreateParameter("tpComprobante", , adParamInput, , ptpComprobante)
     rsCmd.Parameters(4) = rsCmd.CreateParameter("tpLetra", , adParamInput, , ptpLetra)
+    rsCmd.Parameters(5) = rsCmd.CreateParameter("tpLetra", , adParamInput, , pdsUsuario)
     
     rsCmd.Execute
     

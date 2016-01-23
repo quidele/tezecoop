@@ -117,12 +117,6 @@ INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamani
 INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_7','@tpCliente_param','@tpCliente_param','VARCHAR','50',null,null,null,null,null,null,null,null,null,null,null,null);
 INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('sp_obtenerComision_v4_7','@dsCodigoDestinos_param','@dsCodigoDestinos_param','VARCHAR','100',null,null,null,null,null,null,null,null,null,null,null,null);
 
-delete from diccionariodedatos where nmtabla ='SP_PrepararReimpresiondeComprobante_v4_7'
-
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@nrComprobante','@nrComprobante','VARCHAR','12',null,null,null,null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@nrTalonario','@nrTalonario','VARCHAR','4',null,null,null,null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@tpComprobante','@tpComprobante','VARCHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@tpLetra','@tpLetra','VARCHAR','1',null,null,null,null,null,null,null,null,null,null,null,null);
 
 
 
@@ -225,3 +219,22 @@ INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,
 INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_actualizar_puntosdeventa_facturacion_v2_0','@tipo_iva','@tipo_iva','VARCHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
 INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_actualizar_puntosdeventa_facturacion_v2_0','@tpComprobante','@tpComprobante','CHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
 INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_actualizar_puntosdeventa_facturacion_v2_0','@tpFormadePago','@tpFormadePago','CHAR','20',null,null,null,null,null,null,null,null,null,null,null,null);
+
+
+-----------------------------------------------------------------
+-----------------------------------------------------------------
+
+
+delete from diccionariodedatos where nmtabla ='SP_PrepararReimpresiondeComprobante_v4_7'
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@nrComprobante','@nrComprobante','VARCHAR','12',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@nrTalonario','@nrTalonario','VARCHAR','4',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@tpComprobante','@tpComprobante','VARCHAR','2',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@tpLetra','@tpLetra','VARCHAR','1',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_PrepararReimpresiondeComprobante_v4_7','@dsUsuario','@dsUsuario','VARCHAR','20',null,null,null,null,null,null,null,null,null,null,null,null);
+
+
+
+delete from diccionariodedatos where nmtabla ='SP_eliminarTablasImpresion_v4_7'
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('SP_eliminarTablasImpresion_v4_7','@dsUsuario','@dsUsuario','VARCHAR','20',null,null,null,null,null,null,null,null,null,null,null,null);

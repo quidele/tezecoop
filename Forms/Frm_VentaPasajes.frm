@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   241762305
+         Format          =   246874113
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5350,8 +5350,7 @@ Dim cdCodBarLic         As String
     
     
     objbasededatos.Exec_SP_PrepararReimpresiondeComprobante _
-    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra
-
+    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra, objUsuario.dsUsuario
     strCodbarAFIP = ObtenerCodBarrasAFIP()
     strCodbarAFIPI2to5 = objAFIP.StrToI2of5(strCodbarAFIP)
     strCodbarAFIP = strCodbarAFIP + objAFIP.DigitoVerificador(strCodbarAFIP)
@@ -5421,6 +5420,11 @@ Dim cdCodBarLic         As String
     
     
     If objConfig.tpImpresion = "CONTINUO" Then
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        End If
         ImprimirFactura_OLD = True
         Exit Function
     End If
@@ -5450,6 +5454,13 @@ Dim cdCodBarLic         As String
             Frm_Principal.CrystalReport1.Action = 1
          End If
     On Error GoTo 0
+    
+    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
     
 End Function
 

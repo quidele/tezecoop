@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   92012545
+         Format          =   248774657
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   92012545
+         Format          =   248774657
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3772,7 +3772,7 @@ Dim strValorPromo       As String
     strValorPromo = objConfig.vlValorPromo
     
     objbasededatos.Exec_SP_PrepararReimpresiondeComprobante _
-    pnrTalonario, pnrComprobante, ptpComprobante, pLetra
+    pnrTalonario, pnrComprobante, ptpComprobante, pLetra, objUsuario.dsUsuario
     
     strCodbarAFIP = ObtenerCampo("dsOpcional3").Text
     strCodbarAFIPI2to5 = objAFIP.StrToI2of5(strCodbarAFIP)
@@ -3845,6 +3845,13 @@ Dim strValorPromo       As String
             MsgBox "Error al generar el reporte: " + Err.Description, vbCritical, "Atención"
     End If
     On Error GoTo 0
+    
+    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
 
 
 End Function

@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   119013377
+         Format          =   247857153
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,7 +1535,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   119013377
+         Format          =   247857153
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
@@ -2912,7 +2912,7 @@ Dim cdCodBarLic         As String
     
 
     objbasededatos.Exec_SP_PrepararReimpresiondeComprobante _
-    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra
+    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra, objUsuario.dsUsuario
 
     strCodbarAFIP = ObtenerCampo("dsOpcional3").Text
     strCodbarAFIPI2to5 = objAFIP.StrToI2of5(strCodbarAFIP)
@@ -2990,6 +2990,11 @@ Dim cdCodBarLic         As String
     On Error GoTo 0
     
     If objConfig.tpImpresion = "CONTINUO" Then
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        End If
         ImprimirFactura = True
         Exit Function
     End If
@@ -3025,5 +3030,12 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     On Error GoTo 0
+    
+    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
 
 End Function

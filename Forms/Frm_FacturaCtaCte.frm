@@ -2729,7 +2729,7 @@ Dim cdCodBarLic         As String
     cdCodBarLic = objAFIP.StrToI2of5(cdCodBarLic)
     
     objbasededatos.Exec_SP_PrepararReimpresiondeComprobante _
-    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra
+    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra, objUsuario.dsUsuario
 
     strCodbarAFIP = ObtenerCodBarrasAFIP()
     strCodbarAFIPI2to5 = objAFIP.StrToI2of5(strCodbarAFIP)
@@ -2807,6 +2807,13 @@ Dim cdCodBarLic         As String
     Sleep (5)
     ' MsgBox "antes de RollbackPrinter "
     objServicePrinter.RollbackPrinter
+    
+    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
     
     Exit Function
     
