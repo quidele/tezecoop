@@ -652,7 +652,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdFacturar 
          Caption         =   "&Facturar"
          Height          =   375
-         Left            =   5175
+         Left            =   5160
          TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
          Top             =   6945
@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   243007489
+         Format          =   241762305
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5477,6 +5477,7 @@ Dim cdCodBarLic         As String
     objSPs.setearCampoValor "@nrComprobante", pnrComprobante
     objSPs.setearCampoValor "@tpComprobante", tpComprobante
     objSPs.setearCampoValor "@tpLetra", ptpLetra
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
     
     If Not objSPs.ExecSP Then
         MsgBox " Error al intentar imprimir la factura, Functión: SP_PrepararReimpresiondeComprobante_v4_7", vbCritical, "Atención"
