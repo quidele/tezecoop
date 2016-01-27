@@ -1,7 +1,7 @@
-CBasededatos = 198, 207, 1161, 737, Z
+CBasededatos = 198, 207, 1161, 737, 
 CTablasIO = 44, 46, 1096, 512, 
 CDiccionariodeDatos = 44, 46, 809, 426, 
-Global = 33, 264, 1085, 730, 
+Global = 33, 264, 1085, 730, Z
 CControl = 0, 0, 838, 388, 
 CUsuario = 0, 0, 0, 0, C
 CConfig = 225, 225, 1292, 696, C

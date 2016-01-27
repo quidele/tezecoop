@@ -315,31 +315,31 @@ Dim lnrCaja As String
     End Select
     
     
-   Dim strSQL As String
-   
-   strSQL = " alter  procedure sp_marcarTipodeActualizacionCajaPuesto_v3_7(" + vbCrLf + _
-        " @nrTalonario_param          as varchar(4)," + vbCrLf + _
-        "  @nrComprobante_param        as varchar(8)," + vbCrLf + _
-        "  @tpComprobante_param        as varchar(4)," + vbCrLf + _
-        " @tpLetra_param              as varchar(2)," + vbCrLf + _
-        " @tpModificacionCajaPuesto_param  varchar(50), /* Agregado, Eliminado, Anulado, Modificado*/  " + vbCrLf + _
-        "                           /* En Analisis: Desanulado, Deseliminado */ " + vbCrLf + _
-        " @dsObservacionCajaPuesto_param   varchar(400)=null) " + vbCrLf + _
-        " as " + vbCrLf + _
-        " begin " + vbCrLf + _
-         "    Update [TB_Comprobantes] " + vbCrLf + _
-         "    set  tpModificacionCajaPuesto = @tpModificacionCajaPuesto_param, " + vbCrLf + _
-         "         dsObservacionCajaPuesto  = left(@tpModificacionCajaPuesto_param+': '+ isnull(@dsObservacionCajaPuesto_param,'') + ' / '+isnull(dsObservacionCajaPuesto,''),400) " + vbCrLf + _
-         "    Where " + vbCrLf + _
-         "         nrTalonario =  @nrTalonario_param    and " + vbCrLf + _
-          "        nrComprobante = @nrComprobante_param and " + vbCrLf + _
-            "          tpComprobante = @tpComprobante_param and " + vbCrLf + _
-             "     tpLetra = @tpLetra_param " + vbCrLf + "End /* DESDE VB */ "
-             
-    If App.LogMode = MODO_DEBUG Then
-        ' Realizar Pruebas
-        MsgBox strSQL
-    End If
+'   Dim strSQL As String
+'
+'   strSQL = " alter  procedure sp_marcarTipodeActualizacionCajaPuesto_v3_7(" + vbCrLf + _
+'        " @nrTalonario_param          as varchar(4)," + vbCrLf + _
+'        "  @nrComprobante_param        as varchar(8)," + vbCrLf + _
+'        "  @tpComprobante_param        as varchar(4)," + vbCrLf + _
+'        " @tpLetra_param              as varchar(2)," + vbCrLf + _
+'        " @tpModificacionCajaPuesto_param  varchar(50), /* Agregado, Eliminado, Anulado, Modificado*/  " + vbCrLf + _
+'        "                           /* En Analisis: Desanulado, Deseliminado */ " + vbCrLf + _
+'        " @dsObservacionCajaPuesto_param   varchar(400)=null) " + vbCrLf + _
+'        " as " + vbCrLf + _
+'        " begin " + vbCrLf + _
+'         "    Update [TB_Comprobantes] " + vbCrLf + _
+'         "    set  tpModificacionCajaPuesto = @tpModificacionCajaPuesto_param, " + vbCrLf + _
+'         "         dsObservacionCajaPuesto  = left(@tpModificacionCajaPuesto_param+': '+ isnull(@dsObservacionCajaPuesto_param,'') + ' / '+isnull(dsObservacionCajaPuesto,''),400) " + vbCrLf + _
+'         "    Where " + vbCrLf + _
+'         "         nrTalonario =  @nrTalonario_param    and " + vbCrLf + _
+'          "        nrComprobante = @nrComprobante_param and " + vbCrLf + _
+'            "          tpComprobante = @tpComprobante_param and " + vbCrLf + _
+'             "     tpLetra = @tpLetra_param " + vbCrLf + "End /* DESDE VB */ "
+'
+'    If App.LogMode = MODO_DEBUG Then
+'        ' Realizar Pruebas
+'        MsgBox strSQL
+'    End If
             
     ' objbasededatos.ExecuteSQL (strSQL)
              

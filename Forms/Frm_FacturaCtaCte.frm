@@ -6,7 +6,7 @@ Begin VB.Form Frm_FacturaCtaCte
    ClientHeight    =   5925
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   9195
+   ClientWidth     =   9840
    Icon            =   "Frm_FacturaCtaCte.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -14,7 +14,7 @@ Begin VB.Form Frm_FacturaCtaCte
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   5925
-   ScaleWidth      =   9195
+   ScaleWidth      =   9840
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -23,8 +23,8 @@ Begin VB.Form Frm_FacturaCtaCte
       Left            =   0
       TabIndex        =   5
       Top             =   0
-      Width           =   9195
-      _ExtentX        =   16219
+      Width           =   9840
+      _ExtentX        =   17357
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -1641,7 +1641,7 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "vlPrecioViaje", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(5)
         ObjTablasIO.setearCampoOperadorValor "dtInsercion", "<-", CStr(Date)
         ObjTablasIO.setearCampoOperadorValor "nrCaja", "<-", ObtenerCampo("nrCaja").Text
-        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", ObtenerCampo("nrPuesto").Text
+        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", vlparametro_PUESTO_FACTURACION_CTA_CTE
         
         
         If ObjTablasIO.Insertar() Then
@@ -1727,7 +1727,7 @@ Dim vlComision    As Single
         ' strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Cupones", "nrCupon", vlparametro_PUESTO_FACTURACION_CTA_CTE)
         
         objSPs.nmStoredProcedure = "SP_ObtenerMaxnrCupon_v1_3"
-        objSPs.setearCampoValor "@nrPuesto", objParametros.ObtenerValor("nrPuesto")
+        objSPs.setearCampoValor "@nrPuesto", vlparametro_PUESTO_FACTURACION_CTA_CTE
         If Not objSPs.ExecSP() Then
             Exit Function
         End If
@@ -2791,7 +2791,8 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
     Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
     Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
-
+    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
         
     ' Aparece la venta duplicado
     On Error Resume Next
@@ -2799,6 +2800,12 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     If Err Then
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+            Exit Function
+        End If
         MsgBox "Error al facturar la cta cte. " + Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
     End If
     On Error GoTo 0
@@ -2811,12 +2818,26 @@ Dim cdCodBarLic         As String
     objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
     objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
     If Not objSPs.ExecSP Then
+    
+        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+        If Not objSPs.ExecSP Then
+            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+            Exit Function
+        End If
         MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
         Exit Function
     End If
     
     Exit Function
     
+    
+   objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
+    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
+    If Not objSPs.ExecSP Then
+        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
+        Exit Function
+    End If
     
 '    Siempre Imprimiremos Original y duplicado
 '    If objConfig.tpImpresion = "CONTINUO" Then
@@ -2840,6 +2861,8 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
     Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
     Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
+    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
 
     ' Aparece la venta duplicado
     On Error Resume Next
