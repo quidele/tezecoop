@@ -1562,6 +1562,12 @@ create procedure  dbo.spu_obtieneDatosCITIVentas_v4_7(@mes int, @anio int)
 as
 begin
 
+
+		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones')
+					DROP TABLE RTMP_auxiliarPermisosRenglones
+		CREATE TABLE RTMP_auxiliarPermisosRenglones (Renglon VARCHAR(400))
+
+		INSERT INTO RTMP_auxiliarPermisosRenglones (Renglon)
 		/* Select TOP 10  convert(varchar, A.dtComprobante,112) as  fec_comp,  -- Fecha de Comprobante
 				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ),3) as  cod_citi,  -- Tipo de Comprobante
 				right( replicate('0',5) + A.nrTalonario,5)  as  serie_comp,	-- Punto de Venta 
@@ -1593,7 +1599,7 @@ begin
 		SELECT  dbo.UDF_obtenerFormatoCUITAFIP(30501032545,20)  
 		*/ 
 
-		Select    convert(varchar, A.dtComprobante,112) -- as  fec_comp,  -- Fecha de Comprobante
+		Select convert(varchar, A.dtComprobante,112) -- as  fec_comp,  -- Fecha de Comprobante
 				+ right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_7(tpComprobante , tpLetra ),3) --  as  cod_citi,  -- Tipo de Comprobante
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
@@ -1623,9 +1629,12 @@ begin
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
 		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
-		AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
+		--AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
 		AND tpLetra <>'X' 
 
+		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
+
+		exec  [dbo].[spu_generarArchivo] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones' , @nombre_archivo = @nombre_archivo
 
 		return 0; 
 
@@ -1634,83 +1643,6 @@ end
 
 
 go
-
-
-Select *
-		FROM TB_Comprobantes A 
-		WHERE month(A.dtComprobante) = 1   and year(A.dtComprobante) = 2015 
-		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
-		AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
-			AND ( convert(varchar, A.dtComprobante,112) 
-				+ right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_7(tpComprobante , tpLetra ),3) --  as  cod_citi,  -- Tipo de Comprobante
-				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
-				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
-				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
-				+ case  tpIVA when 'RI'  then '80'  
-							else '99'   END -- As cod_dgi,
-				--, A.nrDoc
-				--, A.vlTotalGeneral, 
-				+  case tpIVA when 'RI'   then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20)  else REPLICATE('0',20) END -- As nro_dgi,  --- Código del Documento del Comprador
-				+ Left (  case tpIVA when 'RI'  then A.dsRazonSocial   
-				else 'Consumidor Final' END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
-		--vlTotalGeneral,
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral, 15, 2)   --    As imp_total,     --  importe total del operacion
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2) --  As imp_iva,				--  importe total conceptos que no integran el neto gravado		
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_no_cate,						--  percepcion a no categorizados
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_exen,						--  importe operaciones exentas
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_ctas ,				--  importe percepciones o pagos a ctas impuestos nacionales
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_iibb ,				--  importe percepciones de ingresos brutos
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_perc_ip ,					--  importe percepciones de impuestos municipales
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2) -- As imp_impuestos_internos ,		--  importe impuestos internos
-		+ 'PES'      -- as cod_moneda,					--  codigo de moneda
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (1,10,6)	--    as tipo_cambio,			        --  tipo de cambio
-		+ '1'     -- as cant_alicuotas_iva,			--  cantidad alicuotas iva  
-		+ ' '     -- as cant_alicuotas_iva,			--  codigo de operacion
-		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2)) is null      --  as otros_tributos,			    --  otros tributos 
-
-
-/*
-	DECLARE @cPathDecidir VARCHAR(80)='F:\DEPARTAMENTOS\IMPOEXPO\ROMANEOS'
-	DECLARE @barra AS VARCHAR(1)
-	DECLARE @nNameFile AS VARCHAR(30)
-	DECLARE @query VARCHAR(300)
-	DECLARE @rom VARCHAR(6)
-
-	SET @cPathDecidir = replace(@cPathDecidir,'F:','\\stg-dmz-fs\datos$')
-
-	---------------- BLOQUE 12 -----------------	
-	IF EXISTS (SELECT * FROM sys.tables WHERE name = 'RTMP_SubTotGradetTOT') DROP TABLE RTMP_SubTotGradetTOT
-	CREATE TABLE RTMP_SubTotGradetTOT(Bloque INT, Linea INT, Renglon CHAR(99))
-
-
-	INSERT INTO RTMP_SubTotGradetTOT (Bloque, Linea, Renglon)
-
-	SELECT Bloque, Linea, Renglon /* * INTO #SubTotGradetTOT */
-	FROM(
-	SELECT 12 AS Bloque,
-		   1 AS LINEA,
-			SPACE(71) + 
-			REPLICATE('-', 18) AS Renglon
-	UNION	    
-	SELECT DISTINCT 
-		   12 AS Bloque,
-		   2 AS LINEA,	
-		   SPACE(79) + 
-		   REPLICATE(' ', 10 - LEN(CAST(CAST(TOTAL as decimal(38,2)) AS varchar))) + ---Espacios en blanco a la derecha
-		   CAST(CAST(TOTAL as decimal(38,2)) AS varchar) AS Renglon 
-	FROM RTMP_SubTotGrade_2/*#SubTotGrade */
-	) t1
-
-
-	INSERT INTO rtmp_PackingList_GenerarArchivo
-	SELECT Bloque, Renglon FROM RTMP_SubTotGradetTOT /*#SubTotGradetTOT*/ ORDER BY Linea	    
-	    
-	          	    
-
-	--SELECT Renglon FROM Magma_ERP.dbo.tmp_PackingList_GenerarArchivo ORDER BY Bloque
-	set @query = 'bcp "SELECT Renglon FROM Magma_ERP.dbo.rtmp_PackingList_GenerarArchivo ORDER BY Bloque" queryout '+@cPathDecidir+@nNameFile+' -c -t -T' 
-	exec xp_cmdshell @query--, NO_OUTPUT 
-*/
 
 go
 
@@ -1987,16 +1919,49 @@ end
 
 
 
+go
 
 
-select top 10 * from TB_Comprobantes  where tpComprobante = 'FA' order by dtComprobante desc
+-- To allow advanced options to be changed.
+EXEC sp_configure 'show advanced options', 1;
+GO
+-- To update the currently configured value for advanced options.
+RECONFIGURE;
+GO
+-- To enable the feature.
+EXEC sp_configure 'xp_cmdshell', 1;
+GO
+-- To update the currently configured value for this feature.
+RECONFIGURE;
+GO
 
-0006
-00632568    
-FA
-B
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarArchivo' )
+	drop procedure  [dbo].[spu_generarArchivo]
 
 
-select * from sys.procedures  where name like '%sco%_v3_7%'
+go
 
-sco_Comprobantes_cajapuesto_v3_7
+
+--   exec  [dbo].[spu_generarArchivo] @sql_select = 'select nmNombre +'' ''+ nmApellido from  dbSG2000.DBO.TB_Proveedores'
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+CREATE PROCEDURE [dbo].[spu_generarArchivo]
+(
+	@sql_select      VARCHAR(400),
+	@ruta_archivo	 VARCHAR(400) = 'C:\GestiondeViajes\AFIP\',
+	@nombre_archivo  VARCHAR(80)='salidaAFIP.txt'
+)
+AS
+BEGIN 
+
+		DECLARE @query VARCHAR(500)
+		
+		
+	
+		SET @query = 'bcp "' + @sql_select + '" queryout '+@ruta_archivo+@nombre_archivo+' -c -t -T' 
+		print @query
+		EXEC xp_cmdshell @query, NO_OUTPUT 
+
+END
+
+
