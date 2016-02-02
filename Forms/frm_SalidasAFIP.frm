@@ -1,7 +1,7 @@
 VERSION 5.00
 Begin VB.Form frm_SalidasAFIP 
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Crear una caja puesto desde la Administración"
+   Caption         =   "Salidas AFIP"
    ClientHeight    =   3255
    ClientLeft      =   45
    ClientTop       =   330
@@ -19,19 +19,45 @@ Begin VB.Form frm_SalidasAFIP
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
       Height          =   3030
-      Left            =   105
+      Left            =   90
       ScaleHeight     =   3000
       ScaleWidth      =   5820
       TabIndex        =   0
       TabStop         =   0   'False
-      Top             =   90
+      Top             =   105
       Width           =   5850
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         DataField       =   "dsRazonSocial"
+         Height          =   285
+         Index           =   0
+         Left            =   975
+         TabIndex        =   7
+         Tag             =   "anio"
+         Top             =   1170
+         Width           =   810
+      End
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         DataField       =   "dsRazonSocial"
+         Height          =   285
+         Index           =   13
+         Left            =   150
+         TabIndex        =   6
+         Tag             =   "mes"
+         Top             =   1170
+         Width           =   810
+      End
       Begin VB.CommandButton cmdAceptar 
          Caption         =   "&Aceptar"
          Height          =   375
          Left            =   105
          TabIndex        =   3
-         Top             =   2145
+         Top             =   1995
          Width           =   1050
       End
       Begin VB.CommandButton cmdCancelar 
@@ -40,16 +66,54 @@ Begin VB.Form frm_SalidasAFIP
          Height          =   375
          Left            =   1230
          TabIndex        =   2
-         Top             =   2145
+         Top             =   1995
          Width           =   1050
       End
       Begin VB.ComboBox cbPuestos 
          Height          =   315
+         ItemData        =   "frm_SalidasAFIP.frx":0000
          Left            =   180
+         List            =   "frm_SalidasAFIP.frx":0007
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   465
          Width           =   3495
+      End
+      Begin VB.Label Label2 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Año"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   990
+         TabIndex        =   9
+         Top             =   930
+         Width           =   570
+      End
+      Begin VB.Label Label1 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Mes"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   165
+         TabIndex        =   8
+         Top             =   915
+         Width           =   570
       End
       Begin VB.Label lbldiferencia 
          BackStyle       =   0  'Transparent
@@ -71,7 +135,7 @@ Begin VB.Form frm_SalidasAFIP
       End
       Begin VB.Label Label3 
          BackColor       =   &H00FFC0C0&
-         Caption         =   "Puesto"
+         Caption         =   "Aplicativo"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -154,31 +218,8 @@ Private Sub BloquearControles(pbValor As Boolean)
 End Sub
 
 
-Private Sub cbPuestos_Change()
 
-    If Me.cbPuestos.Text <> "" Then
-        objCajas.ObtenerFondoCajaAnterior objPuestos.obtenerNroPuesto(Me.cbPuestos.Text)
-        ObtenerCampo("vlFondoFijoPesos") = objCajas.vlFondoFijoPesos
-        ObtenerCampo("vlFondoFijoDolares") = objCajas.vlFondoFijoDolares
-        ObtenerCampo("vlFondoFijoEuros") = objCajas.vlFondoFijoEuros
-        ObtenerCampo("vlFondoFijoReales") = objCajas.vlFondoFijoReales
-        
-    End If
-    
-    
-End Sub
 
-Private Sub cbPuestos_Click()
-
-    If Me.cbPuestos.Text <> "" Then
-        objCajas.ObtenerFondoCajaAnterior objPuestos.obtenerNroPuesto(Me.cbPuestos.Text)
-        ObtenerCampo("vlFondoFijoPesos") = objCajas.vlFondoFijoPesos
-        ObtenerCampo("vlFondoFijoDolares") = objCajas.vlFondoFijoDolares
-        ObtenerCampo("vlFondoFijoEuros") = objCajas.vlFondoFijoEuros
-        ObtenerCampo("vlFondoFijoReales") = objCajas.vlFondoFijoReales
-    End If
-    
-End Sub
 
 
 
@@ -188,49 +229,26 @@ Dim rs         As Object
 
     
     
-    
+    objbasededatos.CommandTimeout = 120 * 10
     
     ' cargmos los puestos de facturacion
-    Set rs = objPuestos.obtenerPuestosDisponibles
-    objControl.CargarComboConData Me.cbPuestos, rs, rs("dsPuesto"), rs("nrPuesto")
+    'Set rs = objPuestos.obtenerPuestosDisponibles
+    'objControl.CargarComboConData Me.cbPuestos, rs, rs("dsPuesto"), rs("nrPuesto")
     
 
 
 End Sub
 
-Private Function ObtenerValoresNumericos(pTag As String) As Single
-
-    If Trim(ObtenerCampo(pTag).Text) = "" Then
-        ObtenerValoresNumericos = 0
-    Else
-        ObtenerValoresNumericos = CSng(ObtenerCampo(pTag).Text)
-    End If
-    
-End Function
-
-
-Private Function ObtenerPesos(pTag As String) As Single
-Dim vlDiaEuro  As Single
-Dim vlDiaDolar As Single
-
-    vlDiaEuro = objCajas.vlDiaEuro
-    vlDiaDolar = objCajas.vlDiaDolar
-        
-    If Trim(ObtenerCampo(pTag).Text) = "" Then
-        ObtenerPesos = 0
-    Else
-        Select Case pTag
-        Case "vlTotalSaldoFinalReal"
-            ObtenerPesos = ObtenerValoresNumericos("vlSaldoFinalRealEuros") * vlDiaEuro
-            ObtenerPesos = ObtenerPesos + ObtenerValoresNumericos("vlSaldoFinalRealDolares") * vlDiaDolar
-            ObtenerPesos = ObtenerPesos + ObtenerValoresNumericos("vlSaldoFinalRealPesos")
-        End Select
-    End If
-    
-End Function
 
 
 
+
+
+Private Sub Form_Unload(Cancel As Integer)
+
+    objbasededatos.CommandTimeout = 120
+
+End Sub
 
 Private Sub txtFields_Change(Index As Integer)
 
@@ -284,11 +302,11 @@ Dim resp As Byte
         
         If resp = vbNo Then Exit Sub
         
-        
+        MousePointer = vbHourglass
         If generarArchivo() Then
             Unload Me
         End If
-        
+        MousePointer = vbDefault
         
         
 End Sub
@@ -305,17 +323,25 @@ Dim strCaja     As String
 Dim nrPuesto    As String
 Dim objControl  As New CControl
 
+
     generarArchivo = False
 
-    objSPs.nmStoredProcedure = "SP_ObtenerMaxnrCaja_v2_8"
-    objSPs.setearCampoValor "@nrPuesto", nrPuesto
+    
+    
+    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_v4_8"
+    objSPs.setearCampoValor "@mes", ObtenerCampo("mes")
+    objSPs.setearCampoValor "@anio", ObtenerCampo("anio")
+    
     If Not objSPs.ExecSP() Then
         MsgBox "ERROR: " + objSPs.Error, vbCritical, "Atención"
         Exit Function
     End If
+    
 
+    MsgBox "El proceso se ha generado con éxito, verifique la generación del archivo en la carpeta AFIP.", vbInformation, "Atención"
     
     
+    generarArchivo = True
     
     
     

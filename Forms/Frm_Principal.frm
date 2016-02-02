@@ -277,6 +277,9 @@ Begin VB.MDIForm Frm_Principal
       Begin VB.Menu optIVAVentas 
          Caption         =   "IVA Ventas"
       End
+      Begin VB.Menu optSalidasAFIP 
+         Caption         =   "Salidas AFIP"
+      End
    End
 End
 Attribute VB_Name = "Frm_Principal"
@@ -1148,6 +1151,12 @@ Private Sub optReversionCajaPuestoCajaADM_Click()
     Frm_ResumenAsientoCP.Show vbModal
 
 
+End Sub
+
+Private Sub optSalidasAFIP_Click()
+
+    frm_SalidasAFIP.Show 1
+    
 End Sub
 
 Private Sub optTalonarios_Click()

@@ -139,6 +139,8 @@ Dim strParametros      As String
         End If
         Set lrs = Nothing
     End If
+    
+    
            
     On Error Resume Next
     If Not lObjbasededatos.ExecStoredProcedures_Params(Me.nmStoredProcedure, strParametros) Then

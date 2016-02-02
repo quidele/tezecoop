@@ -38,6 +38,7 @@ Private lrs                         As Object
 Private lrs_Diccionariodedatos      As Object
 Private lrecordAffected             As Double
 Private lrecordAffected_local       As Double
+Private lCommandTimeout             As Integer
 
 '/*************************************************/
 '/* Actualización Sistema Local                   */
@@ -140,6 +141,15 @@ Property Let dsMotorBD(Valor As String)
 End Property
 
 
+Property Get CommandTimeout() As String
+    CommandTimeout = lCommandTimeout
+End Property
+
+Property Let CommandTimeout(Valor As String)
+    lCommandTimeout = Valor
+End Property
+
+
 Public Function abrirBD() As Boolean
 Dim strDriver     As String
 Dim strDataSource As String
@@ -152,7 +162,7 @@ Dim strConection  As String
     
     strDataSource = "DSN=" + Me.dsDSN + ";UID=" + Me.dsUID + ";PWD=sonrisa14"
     
-    lobjConn.CommandTimeout = 120
+    lobjConn.CommandTimeout = lCommandTimeout
     lobjConn.CursorLocation = adUseServer
     strConection = strDataSource
     
@@ -179,7 +189,7 @@ Dim strConection  As String
     
     strDataSource = "DSN=" + Me.dsDSN + ";UID=" + Me.dsUID + ";PWD=sonrisa14"
     
-    lobjConn_diccionario.CommandTimeout = 120
+    lobjConn_diccionario.CommandTimeout = lCommandTimeout
     lobjConn_diccionario.CursorLocation = adUseServer
     strConection = strDataSource
     
@@ -402,7 +412,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerResumenCajaPuesto"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("resultado", , adParamReturnValue)
@@ -425,7 +435,7 @@ Dim strSQL As String
     Set rsCmd = CreateObject("ADODB.Command")
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_GeneraTarifas"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
@@ -451,7 +461,7 @@ Dim strSQL As String
     Set rsCmd.ActiveConnection = lobjConn
     
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxIDRecibo"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
@@ -472,7 +482,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxIDMovimiento"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("IdMovimiento", , adParamReturnValue)
@@ -495,7 +505,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxcdCliente"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("retorno", , adParamReturnValue)
@@ -515,7 +525,7 @@ Dim strSQL As String
     Set rsCmd = CreateObject("ADODB.Command")
     Set rsCmd.ActiveConnection = lobjConn
 
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxcdConcepto"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("retorno", , adParamReturnValue)
@@ -537,7 +547,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxcdProveedor"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("retorno", , adParamReturnValue)
@@ -559,7 +569,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxcdProducto"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("retorno", , adParamReturnValue)
@@ -580,7 +590,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerMaxcdComision"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("retorno", , adParamReturnValue)
@@ -606,7 +616,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_SumarMovimientosContablesporPeriodo_v3_3"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
@@ -632,7 +642,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_PrepararReimpresiondeComprobante_v4_7"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
@@ -664,7 +674,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ResumenAgrupLicenciatario"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
@@ -699,7 +709,7 @@ Dim strSQL As String
     
     Set rsCmd.ActiveConnection = lobjConn
     
-    rsCmd.CommandTimeout = 120
+    rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_CalculaSaldoInicial_v2_9"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue, 0, 0)
@@ -1092,3 +1102,7 @@ Public Function rs_resultados_valor(pnom_valor As Variant) As String
     End If
     
 End Function
+
+Private Sub Class_Initialize()
+    lCommandTimeout = 120
+End Sub
