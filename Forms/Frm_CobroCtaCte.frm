@@ -695,14 +695,7 @@ Dim i             As Integer
         Exit Sub
     End If
     
-    IdRecibo = objbasededatos.SP_ObtenerMaxIDRecibo
-     
-    ' Comenzar una transaccion
-    If IdRecibo = "" Then
-           MsgBox "Se produjo un error, reintente nuevamente", vbCritical + vbDefaultButton1, "Atención"
-           Exit Sub
-    End If
-    
+
     ObjTablasIO.nmTabla = "TB_Clientes"
     ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""
     ObjTablasIO.setearCampoOperadorValor "dsRazonSocial", "->", ""
@@ -713,7 +706,24 @@ Dim i             As Integer
     ObjTablasIO.setearCampoOperadorValor "flEliminar", "=", "0"
     
     ObjTablasIO.Seleccionar
-    If ObjTablasIO.rs_resultados.EOF Then Exit Sub
+    If ObjTablasIO.rs_resultados.EOF Then
+        MsgBox "El cliente ingresado no es valido", vbCritical + vbDefaultButton1, "Atención"
+        Exit Sub
+    End If
+    
+    
+    ' Comentado en la version 4.8
+    ' IdRecibo = objbasededatos.SP_ObtenerMaxIDRecibo
+    
+    IdRecibo = grabarRecibo(Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text)
+     
+    ' Comenzar una transaccion
+    If IdRecibo = "" Then
+           MsgBox "Se produjo un error al obtener el Nro de Recibo, reintente nuevamente", vbCritical + vbDefaultButton1, "Atención"
+           Exit Sub
+    End If
+        
+    
     strDetalle = "Viajes según recibo Nro. " + IdRecibo
     objParametros.GrabarValor "FacturarCtaCte.IdRecibo", IdRecibo
     objParametros.GrabarValor "FacturarCtaCte.vlTotal", ObtenerCampo("vlAcumPesos").Text
@@ -726,7 +736,6 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.tpComprobante", "FA"
     
     
-    
     Dim strSQL As String
     '***********************************************************'
     ' Modificacion EZE V4.6
@@ -737,6 +746,7 @@ Dim i             As Integer
     strSQL = strSQL + "@tpComprobante = '" + objParametros.ObtenerValor("FacturarCtaCte.tpComprobante") + "'"
     
     If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+         eliminarRecibo (IdRecibo)  ' eliminamos el remito grabado inicialmente
         MsgBox "No se encuentra bien definido el número de talonario" + _
                vbCrLf + " para el puesto o punto de venta que ingresó al sistema." + vbCrLf + "Error extendido: " + objbasededatos.Error, vbCritical + vbDefaultButton1, "Atención"
         Exit Sub
@@ -753,30 +763,34 @@ Dim i             As Integer
     Frm_FacturaCtaCte.Show 1
     
     If objParametros.ObtenerValor("FacturarCtaCte.Facturado") = "SI" Then
-    
         objbasededatos.BeginTrans
-        IdRecibo = grabarRecibo(Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text)
+        ' IdRecibo = grabarRecibo(Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text)
         If IdRecibo = "" Then
             objbasededatos.RollBackTrans
+             eliminarRecibo (IdRecibo)  ' eliminamos el remito grabado inicialmente
             MsgBox "Se ha producido un error, por favor intente realizar nuevamente la operación", vbCritical + vbDefaultButton1, "Atención"
             Exit Sub
         End If
         ' Actualizar el flag flCobradoalCliente
         If Not ActualizarFlagCobradoAlCliente(IdRecibo) Then
             objbasededatos.RollBackTrans
+             eliminarRecibo (IdRecibo)  ' eliminamos el remito grabado inicialmente
             MsgBox "Se ha producido un error, por favor intente realizar nuevamente la operación", vbCritical + vbDefaultButton1, "Atención"
             Exit Sub
         Else
             objbasededatos.CommitTrans
             imprimirCobroCliente IdRecibo, Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text
         End If
+    Else
+         eliminarRecibo (IdRecibo)  ' en caso de no facturar, eliminamos el remito grabado inicialmente
     End If
+    
     txtBusqueda_KeyPress 13
     
 End Sub
 
 
-Private Function ActualizarFlagCobradoAlCliente(pIdRecibo As String) As Boolean
+Private Function ActualizarFlagCobradoAlCliente(pidRecibo As String) As Boolean
 Dim i As Integer
 
     ActualizarFlagCobradoAlCliente = False
@@ -791,7 +805,7 @@ Dim i As Integer
             ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "<-", CStr(Now())
             ObjTablasIO.setearCampoOperadorValor "nrCajaCtaCte", "<-", objParametros.ObtenerValor("nrCaja")
             ObjTablasIO.setearCampoOperadorValor "dtCajaCtaCte", "<-", objbasededatos.getDateasString()
-            ObjTablasIO.setearCampoOperadorValor "IdReciboCtaCte", "<-", pIdRecibo
+            ObjTablasIO.setearCampoOperadorValor "IdReciboCtaCte", "<-", pidRecibo
             ObjTablasIO.setearCampoOperadorValor "dsUsuario", "<-", objUsuario.dsUsuario
             If Not ObjTablasIO.Actualizar Then
                 ActualizarFlagCobradoAlCliente = False
@@ -1431,7 +1445,15 @@ Dim strValor As String
 
 End Function
 
-Private Function grabarMovimientoContable(pIdRecibo As String, _
+Private Function eliminarRecibo(pidRecibo As String) As Boolean
+           
+    ObjTablasIO.nmTabla = "TB_Recibos"
+    ObjTablasIO.setearCampoOperadorValor "IdRecibo", "=", pidRecibo
+    eliminarRecibo = ObjTablasIO.Eliminar
+
+End Function
+
+Private Function grabarMovimientoContable(pidRecibo As String, _
 pcdConcepto As String, pnrCaja As String, pdsMovimiento As String, _
 pnmProveedor As String, pvlDolares As String, pvlPesos As String, _
 pvlEuros As String, pdsUsuario As String) As Boolean
@@ -1440,7 +1462,7 @@ pvlEuros As String, pdsUsuario As String) As Boolean
    objMovimientos.limpiarObjeto
 
     objMovimientos.cdConcepto = pcdConcepto
-    objMovimientos.IdRecibo = pIdRecibo
+    objMovimientos.IdRecibo = pidRecibo
     objMovimientos.nrCaja = pnrCaja
     objMovimientos.dsMovimiento = pdsMovimiento
     objMovimientos.dsProveedor = pnmProveedor

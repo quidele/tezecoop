@@ -187,10 +187,16 @@ go
 		
 		END
 
+
 		CLOSE cur_01;
 		DEALLOCATE cur_01;
 
 		
+		update tmp_comprobantes_sin_cuit set  nombre_completo_cliente = 'FATIMA LOPEZ GONZALEZ', nrCUITCliente = '27-95440395-0' where nrLicenciaCliente = 96
+
 		
 
 		select * from tmp_comprobantes_sin_cuit ORDER BY nrLicenciaProveedor
+
+
+		
