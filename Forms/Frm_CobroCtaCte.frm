@@ -711,6 +711,17 @@ Dim i             As Integer
         Exit Sub
     End If
     
+    Dim dsRazonSocial As String
+    Dim nrDoc As String
+    Dim dsEmail As String
+    Dim tpIVA As String
+    
+    dsRazonSocial = AdaptarNulos(ObjTablasIO.rs_resultados("dsRazonSocial").value, "")
+    nrDoc = AdaptarNulos(ObjTablasIO.rs_resultados("nrDoc").value, "")
+    dsEmail = AdaptarNulos(ObjTablasIO.rs_resultados("dsEmail").value, "")
+    tpIVA = AdaptarNulos(ObjTablasIO.rs_resultados("tpIVA").value, "")
+    
+    
     
     ' Comentado en la version 4.8
     ' IdRecibo = objbasededatos.SP_ObtenerMaxIDRecibo
@@ -728,10 +739,10 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.IdRecibo", IdRecibo
     objParametros.GrabarValor "FacturarCtaCte.vlTotal", ObtenerCampo("vlAcumPesos").Text
     objParametros.GrabarValor "FacturarCtaCte.cdCliente", Me.lstBusqueda.SelectedItem.Text
-    objParametros.GrabarValor "FacturarCtaCte.dsRazonSocial", AdaptarNulos(ObjTablasIO.rs_resultados("dsRazonSocial").value, "")
-    objParametros.GrabarValor "FacturarCtaCte.nrDoc", AdaptarNulos(ObjTablasIO.rs_resultados("nrDoc").value, "")
-    objParametros.GrabarValor "FacturarCtaCte.dsEmail", AdaptarNulos(ObjTablasIO.rs_resultados("dsEmail").value, "")
-    objParametros.GrabarValor "FacturarCtaCte.tpIVA", AdaptarNulos(ObjTablasIO.rs_resultados("tpIVA").value, "")
+    objParametros.GrabarValor "FacturarCtaCte.dsRazonSocial", dsRazonSocial
+    objParametros.GrabarValor "FacturarCtaCte.nrDoc", nrDoc
+    objParametros.GrabarValor "FacturarCtaCte.dsEmail", dsEmail
+    objParametros.GrabarValor "FacturarCtaCte.tpIVA", tpIVA
     objParametros.GrabarValor "FacturarCtaCte.dsDetalle", strDetalle
     objParametros.GrabarValor "FacturarCtaCte.tpComprobante", "FA"
     
@@ -790,7 +801,7 @@ Dim i             As Integer
 End Sub
 
 
-Private Function ActualizarFlagCobradoAlCliente(pidRecibo As String) As Boolean
+Private Function ActualizarFlagCobradoAlCliente(pIdRecibo As String) As Boolean
 Dim i As Integer
 
     ActualizarFlagCobradoAlCliente = False
@@ -805,7 +816,7 @@ Dim i As Integer
             ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "<-", CStr(Now())
             ObjTablasIO.setearCampoOperadorValor "nrCajaCtaCte", "<-", objParametros.ObtenerValor("nrCaja")
             ObjTablasIO.setearCampoOperadorValor "dtCajaCtaCte", "<-", objbasededatos.getDateasString()
-            ObjTablasIO.setearCampoOperadorValor "IdReciboCtaCte", "<-", pidRecibo
+            ObjTablasIO.setearCampoOperadorValor "IdReciboCtaCte", "<-", pIdRecibo
             ObjTablasIO.setearCampoOperadorValor "dsUsuario", "<-", objUsuario.dsUsuario
             If Not ObjTablasIO.Actualizar Then
                 ActualizarFlagCobradoAlCliente = False
@@ -1445,15 +1456,15 @@ Dim strValor As String
 
 End Function
 
-Private Function eliminarRecibo(pidRecibo As String) As Boolean
+Private Function eliminarRecibo(pIdRecibo As String) As Boolean
            
     ObjTablasIO.nmTabla = "TB_Recibos"
-    ObjTablasIO.setearCampoOperadorValor "IdRecibo", "=", pidRecibo
+    ObjTablasIO.setearCampoOperadorValor "IdRecibo", "=", pIdRecibo
     eliminarRecibo = ObjTablasIO.Eliminar
 
 End Function
 
-Private Function grabarMovimientoContable(pidRecibo As String, _
+Private Function grabarMovimientoContable(pIdRecibo As String, _
 pcdConcepto As String, pnrCaja As String, pdsMovimiento As String, _
 pnmProveedor As String, pvlDolares As String, pvlPesos As String, _
 pvlEuros As String, pdsUsuario As String) As Boolean
@@ -1462,7 +1473,7 @@ pvlEuros As String, pdsUsuario As String) As Boolean
    objMovimientos.limpiarObjeto
 
     objMovimientos.cdConcepto = pcdConcepto
-    objMovimientos.IdRecibo = pidRecibo
+    objMovimientos.IdRecibo = pIdRecibo
     objMovimientos.nrCaja = pnrCaja
     objMovimientos.dsMovimiento = pdsMovimiento
     objMovimientos.dsProveedor = pnmProveedor

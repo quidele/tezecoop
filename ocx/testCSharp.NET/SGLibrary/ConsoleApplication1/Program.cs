@@ -40,6 +40,10 @@ namespace ConsoleApplication1
             Console.ReadKey();
             **/
 
+            ServiceDestinos service = new ServiceDestinos();
+            Console.WriteLine(service.Inicializar());
+            Console.ReadKey(); 
+
 
         }
     }

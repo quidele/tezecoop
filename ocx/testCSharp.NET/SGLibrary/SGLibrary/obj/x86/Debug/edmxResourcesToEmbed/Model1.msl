@@ -25,5 +25,36 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="plantillas_excel">
+      <EntityTypeMapping TypeName="dbSG2000Model.plantillas_excel">
+        <MappingFragment StoreEntitySet="plantillas_excel">
+          <ScalarProperty Name="separador" ColumnName="separador" />
+          <ScalarProperty Name="carp_archivo_tmp" ColumnName="carp_archivo_tmp" />
+          <ScalarProperty Name="procedimiento" ColumnName="procedimiento" />
+          <ScalarProperty Name="base_destino" ColumnName="base_destino" />
+          <ScalarProperty Name="filas" ColumnName="filas" />
+          <ScalarProperty Name="columas" ColumnName="columas" />
+          <ScalarProperty Name="fila_datos" ColumnName="fila_datos" />
+          <ScalarProperty Name="ruta_archivo" ColumnName="ruta_archivo" />
+          <ScalarProperty Name="hoja_xls" ColumnName="hoja_xls" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="aplicacion" ColumnName="aplicacion" />
+          <ScalarProperty Name="idplantilla" ColumnName="idplantilla" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="plantillas_excel_detalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.plantillas_excel_detalle">
+        <MappingFragment StoreEntitySet="plantillas_excel_detalle">
+          <ScalarProperty Name="valor" ColumnName="valor" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="tipo_detalle" ColumnName="tipo_detalle" />
+          <ScalarProperty Name="columna" ColumnName="columna" />
+          <ScalarProperty Name="fila" ColumnName="fila" />
+          <ScalarProperty Name="idplantilla" ColumnName="idplantilla" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

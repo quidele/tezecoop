@@ -1,0 +1,4 @@
+C:\Users\quidele\Documents\personal\tezecoop\Importador_Excel\ejemplos_csharp\ExcelUsingCSharp_demo\MyTeamApp\obj\x86\Debug\EjemploCSharpXLS1.csprojResolveAssemblyReference.cache
+C:\Users\quidele\Documents\personal\tezecoop\Importador_Excel\ejemplos_csharp\ExcelUsingCSharp_demo\MyTeamApp\obj\x86\Debug\MyTeamApp.Form1.resources
+C:\Users\quidele\Documents\personal\tezecoop\Importador_Excel\ejemplos_csharp\ExcelUsingCSharp_demo\MyTeamApp\obj\x86\Debug\EjemploCSharpXLS1.MyTeamApp.Properties.Resources.resources
+C:\Users\quidele\Documents\personal\tezecoop\Importador_Excel\ejemplos_csharp\ExcelUsingCSharp_demo\MyTeamApp\obj\x86\Debug\EjemploCSharpXLS1.csproj.GenerateResource.Cache

@@ -1,0 +1,5 @@
+
+
+B-8-152275
+
+select  * from TB_Comprobantes  where nrTalonario = '0008' and nrComprobante = '00152275'

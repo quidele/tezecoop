@@ -2649,9 +2649,8 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
     Case vbKeyBack
         Select Case Me.txtFields(Index).Tag
         Case "dsLeyenda"
-            ObtenerCampo("tpComision").SetFocus
+            If Not (Len(Me.txtFields(Index).Text) > 1) Then ObtenerCampo("tpComision").SetFocus
         End Select
-    
     Case Else
         KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Comprobantes", _
                             Me.txtFields(Index), KeyAscii)

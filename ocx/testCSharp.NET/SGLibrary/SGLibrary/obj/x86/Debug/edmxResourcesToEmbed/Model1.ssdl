@@ -1,8 +1,43 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="dbSG2000ModelStoreContainer">
+    <EntitySet Name="plantillas_excel" EntityType="dbSG2000Model.Store.plantillas_excel" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="plantillas_excel_detalle" EntityType="dbSG2000Model.Store.plantillas_excel_detalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_plantillas_excel_detalle_plantillas_excel" Association="dbSG2000Model.Store.FK_plantillas_excel_detalle_plantillas_excel">
+      <End Role="plantillas_excel" EntitySet="plantillas_excel" />
+      <End Role="plantillas_excel_detalle" EntitySet="plantillas_excel_detalle" />
+    </AssociationSet>
   </EntityContainer>
+  <EntityType Name="plantillas_excel">
+    <Key>
+      <PropertyRef Name="idplantilla" />
+    </Key>
+    <Property Name="idplantilla" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="aplicacion" Type="varchar" MaxLength="50" />
+    <Property Name="nombre" Type="varchar" MaxLength="50" />
+    <Property Name="hoja_xls" Type="varchar" MaxLength="50" />
+    <Property Name="ruta_archivo" Type="varchar" MaxLength="4000" />
+    <Property Name="fila_datos" Type="int" />
+    <Property Name="columas" Type="int" />
+    <Property Name="filas" Type="int" />
+    <Property Name="base_destino" Type="varchar" MaxLength="50" />
+    <Property Name="procedimiento" Type="varchar" MaxLength="100" />
+    <Property Name="carp_archivo_tmp" Type="varchar" MaxLength="4000" />
+    <Property Name="separador" Type="char" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="plantillas_excel_detalle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idplantilla" Type="int" Nullable="false" />
+    <Property Name="fila" Type="int" Nullable="false" />
+    <Property Name="columna" Type="int" Nullable="false" />
+    <Property Name="tipo_detalle" Type="varchar" MaxLength="20" />
+    <Property Name="nombre" Type="varchar" MaxLength="100" />
+    <Property Name="valor" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="TB_Productos">
     <Key>
       <PropertyRef Name="cdProducto" />
@@ -26,4 +61,16 @@
     <Property Name="tpDestino" Type="varchar" MaxLength="20" />
     <Property Name="cdComision" Type="int" />
   </EntityType>
+  <Association Name="FK_plantillas_excel_detalle_plantillas_excel">
+    <End Role="plantillas_excel" Type="dbSG2000Model.Store.plantillas_excel" Multiplicity="1" />
+    <End Role="plantillas_excel_detalle" Type="dbSG2000Model.Store.plantillas_excel_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plantillas_excel">
+        <PropertyRef Name="idplantilla" />
+      </Principal>
+      <Dependent Role="plantillas_excel_detalle">
+        <PropertyRef Name="idplantilla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

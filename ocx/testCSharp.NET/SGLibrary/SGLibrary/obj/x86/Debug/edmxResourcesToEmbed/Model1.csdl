@@ -2,6 +2,12 @@
 <Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
   <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
+    <EntitySet Name="plantillas_excel" EntityType="dbSG2000Model.plantillas_excel" />
+    <EntitySet Name="plantillas_excel_detalle" EntityType="dbSG2000Model.plantillas_excel_detalle" />
+    <AssociationSet Name="FK_plantillas_excel_detalle_plantillas_excel" Association="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel">
+      <End Role="plantillas_excel" EntitySet="plantillas_excel" />
+      <End Role="plantillas_excel_detalle" EntitySet="plantillas_excel_detalle" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -26,4 +32,47 @@
     <Property Name="tpDestino" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
     <Property Name="cdComision" Type="Int32" />
   </EntityType>
+  <EntityType Name="plantillas_excel">
+    <Key>
+      <PropertyRef Name="idplantilla" />
+    </Key>
+    <Property Type="Int32" Name="idplantilla" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="aplicacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="hoja_xls" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="ruta_archivo" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="fila_datos" />
+    <Property Type="Int32" Name="columas" />
+    <Property Type="Int32" Name="filas" />
+    <Property Type="String" Name="base_destino" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="procedimiento" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="carp_archivo_tmp" MaxLength="4000" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="separador" MaxLength="10" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="plantillas_excel_detalle" Relationship="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel" FromRole="plantillas_excel" ToRole="plantillas_excel_detalle" />
+  </EntityType>
+  <EntityType Name="plantillas_excel_detalle">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="idplantilla" Nullable="false" />
+    <Property Type="Int32" Name="fila" Nullable="false" />
+    <Property Type="Int32" Name="columna" Nullable="false" />
+    <Property Type="String" Name="tipo_detalle" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombre" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="valor" MaxLength="100" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="plantillas_excel" Relationship="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel" FromRole="plantillas_excel_detalle" ToRole="plantillas_excel" />
+  </EntityType>
+  <Association Name="FK_plantillas_excel_detalle_plantillas_excel">
+    <End Type="dbSG2000Model.plantillas_excel" Role="plantillas_excel" Multiplicity="1" />
+    <End Type="dbSG2000Model.plantillas_excel_detalle" Role="plantillas_excel_detalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="plantillas_excel">
+        <PropertyRef Name="idplantilla" />
+      </Principal>
+      <Dependent Role="plantillas_excel_detalle">
+        <PropertyRef Name="idplantilla" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
