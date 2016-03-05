@@ -1,0 +1,4 @@
+05/03/2016 10:03:29 | Exec  sco_TB_Productos_v4_1 
+05/03/2016 10:03:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/03/2016 10:04:37 | Exec  sco_TB_Productos_v4_1 
+05/03/2016 10:04:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
