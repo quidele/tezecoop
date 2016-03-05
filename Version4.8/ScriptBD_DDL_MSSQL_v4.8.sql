@@ -136,7 +136,7 @@ go
 CREATE PROCEDURE [dbo].[spu_generarArchivo_v4_8]
 (
 	@sql_select      VARCHAR(400),
-	@ruta_archivo	 VARCHAR(400) = 'C:\GestiondeViajes\AFIP\',
+	@ruta_archivo	 VARCHAR(400) = 'C:\Gestion\AFIP\',
 	@nombre_archivo  VARCHAR(80)='salidaAFIP.txt'
 )
 AS
