@@ -124,7 +124,7 @@ RECONFIGURE;
 GO
 
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarArchivo' )
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarArchivo_v4_8' )
 	drop procedure  [dbo].[spu_generarArchivo_v4_8]
 
 

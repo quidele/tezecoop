@@ -124,14 +124,14 @@ RECONFIGURE;
 GO
 
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarArchivo' )
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarArchivo_v4_8' )
 	drop procedure  [dbo].[spu_generarArchivo_v4_8]
 
 
 go
 
 
---   exec  [dbo].[spu_generarArchivo] @sql_select = 'select nmNombre +'' ''+ nmApellido from  dbSG2000.DBO.TB_Proveedores'
+--   exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select nmNombre +'' ''+ nmApellido from  dbSG2000.DBO.TB_Proveedores'
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 CREATE PROCEDURE [dbo].[spu_generarArchivo_v4_8]
 (
