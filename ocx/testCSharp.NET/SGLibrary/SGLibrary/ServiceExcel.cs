@@ -36,16 +36,34 @@ namespace SGLibrary
             listaProductos.Clear();
             for (int index = 2; index <= lastRow; index++)
             {
-                System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "D" + index.ToString()).Cells.Value;
+                System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
                 listaProductos.Add(new TB_Productos
                 {
                     cdProducto = Int32.Parse ( MyValues.GetValue(1, 1).ToString()),
                     dsProducto  = MyValues.GetValue(1, 2).ToString(),
-                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 3).ToString()),
-                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 4).ToString())
+                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()),
+                    vlPrecioPeaje =   Double.Parse (MyValues.GetValue(1, 4).ToString()),
+                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()),
                 });
+
+
             }
+
+            
+            foreach (TB_Productos p in listaProductos)
+            {
+               Console.WriteLine (  p.dsProducto + " "+ p.vlPrecioViaje.ToString ()) ; 
+            }
+
             return listaProductos;
+        }
+
+
+        public static void CerrarExcel()
+        {
+            ServiceExcel.MyBook.Close(false);
+            GC.Collect(); 
+
         }
 
     }

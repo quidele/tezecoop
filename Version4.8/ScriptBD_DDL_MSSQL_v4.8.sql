@@ -3,6 +3,10 @@ use dbSG2000
 go
 
 
+-- Mejora de Perfomance ALTER TABLE TB_Comprobantes ALTER COLUMN dtComprobante date
+
+
+
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_8' )
 	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_8
 	

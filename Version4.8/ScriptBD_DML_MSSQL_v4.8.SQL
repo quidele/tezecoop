@@ -21,3 +21,4 @@ select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
 INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Salidas AFIP','optSalidasAFIP','Empleado',213,1,1,0);
 
 exec SP_GenerarNuevasOpcionesdeMenues
+

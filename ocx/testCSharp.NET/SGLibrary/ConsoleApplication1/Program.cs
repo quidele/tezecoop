@@ -40,9 +40,20 @@ namespace ConsoleApplication1
             Console.ReadKey();
             **/
 
-            ServiceDestinos service = new ServiceDestinos();
+            /* 
+             * ServiceDestinos service = new ServiceDestinos();
             Console.WriteLine(service.Inicializar());
+            Console.ReadKey(); */
+
+
+            ServiceExcel.InitializeExcel ("C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls");
+            ServiceExcel.ReadMyExcel ();
+            ServiceExcel.CerrarExcel();
             Console.ReadKey(); 
+            
+           /* service.
+            C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls*/
+
 
 
         }
