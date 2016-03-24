@@ -6,7 +6,7 @@ Begin VB.Form frm_CobroCtaCte
    ClientHeight    =   7425
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   10320
+   ClientWidth     =   12690
    ClipControls    =   0   'False
    Icon            =   "Frm_CobroCtaCte.frx":0000
    KeyPreview      =   -1  'True
@@ -15,7 +15,7 @@ Begin VB.Form frm_CobroCtaCte
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   7425
-   ScaleWidth      =   10320
+   ScaleWidth      =   12690
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fra_ProgressBar 
@@ -168,8 +168,8 @@ Begin VB.Form frm_CobroCtaCte
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   10320
-      _ExtentX        =   18203
+      Width           =   12690
+      _ExtentX        =   22384
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -417,8 +417,8 @@ Begin VB.Form frm_CobroCtaCte
       Left            =   120
       TabIndex        =   8
       Top             =   1605
-      Width           =   10050
-      _ExtentX        =   17727
+      Width           =   12390
+      _ExtentX        =   21855
       _ExtentY        =   8652
       View            =   3
       LabelEdit       =   1
@@ -561,6 +561,10 @@ Dim EstadoABM As Byte
 Dim objControl As New CControl
 ' V4.6
 Dim objServicePrinter As Object
+
+
+
+Dim nrCaja_CtaCte As String
 
 
 
@@ -872,6 +876,16 @@ End Sub
 
 Private Sub Form_Activate()
 
+
+
+        If Not objCajas.ObtenerCajadeADMAbierta() Then
+            MsgBox "Para realizar esta tarea debe existir una caja de la ADM abierta, no se puede continuar", vbInformation, "Atención"
+            Unload Me
+            Exit Sub
+        End If
+    
+        objParametros.GrabarValor "FacturarCtaCte.nrCaja", objCajas.nrCaja
+        
         On Error Resume Next
         Me.txtBusqueda.SetFocus
         On Error GoTo 0

@@ -1491,7 +1491,7 @@ Dim ItemList    As ListItem
            strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
            ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
            ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
-           ObtenerCampo("nrCaja").Text = objParametros.ObtenerValor("nrCaja")
+           ObtenerCampo("nrCaja").Text = objParametros.ObtenerValor("FacturarCtaCte.nrCaja")
            ObtenerCampo("nrPuesto").Text = objParametros.ObtenerValor("nrPuesto")
            ObtenerCampo("nmEmpleado").Text = objUsuario.nmEmpleado
            ObtenerCampo("vlTotalGeneral").Text = objParametros.ObtenerValor("FacturarCtaCte.vlTotal")
