@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   246874113
+         Format          =   115998721
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2212,7 +2212,7 @@ Dim resp         As Byte
     vlSubtotal = vlTotalPesos
     
 
-    If objAFIP.Supera_KM_IVA_segunMonto(ObtenerCampo("tpIVA"), vlKilometros, vlTotalPesos) Then
+    If objAFIP.Supera_KM_IVA_segunMonto(ObtenerCampo("tpIVA"), vlKilometros, vlTotalPesos, ObtenerCampo("tpComprobante")) Then
         ' obtenemos los valores del IVA
         If objAFIP.preguntaOperadora(ObtenerCampo("tpIVA"), vlKilometros, vlTotalPesos) Then
             

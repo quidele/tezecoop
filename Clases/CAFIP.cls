@@ -173,7 +173,7 @@ End Function
 
 
 ' version 1.4
-Public Function Supera_KM_IVA_segunMonto(ptpIVA As String, pvlKilometros As Long, pvlMonto As Single) As Boolean
+Public Function Supera_KM_IVA_segunMonto(ptpIVA As String, pvlKilometros As Long, pvlMonto As Single, ptpComprobante As String) As Boolean
 
     objSPs.nmStoredProcedure = "SP_Supera_KM_IVA_segunMonto_2_0"
     objSPs.setearCampoValor "@tpCategoriaIVA_param", ptpIVA
