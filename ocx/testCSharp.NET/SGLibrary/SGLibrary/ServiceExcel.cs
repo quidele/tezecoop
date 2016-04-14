@@ -3,13 +3,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Excel;
+using System.Runtime.InteropServices;
 
 namespace SGLibrary
 {
-    public class ServiceExcel
+
+
+
+
+    public class ServiceExcel 
     {
 
-        
         private static Workbook MyBook = null;
         private static Application MyApp = null;
         private static Worksheet MySheet = null;
@@ -18,22 +22,26 @@ namespace SGLibrary
 
         public static List<TB_Productos> listaProductos = new List<TB_Productos>();
 
-        public static void InitializeExcel(string nombreArchivoXLS)
+        public  void InitializeExcel(String pNombreArchivo)
         {
-
-            MyApp = new Application();
-            MyApp.Visible = false;
-            MyBook = MyApp.Workbooks.Open(nombreArchivoXLS);
-            MySheet = MyBook.Sheets[1]; // Explict cast is not required here
-            lastRow = MySheet.Cells.SpecialCells(XlCellType.xlCellTypeLastCell).Row;
-            TB_Productos producto = new TB_Productos();
-            
+                MyApp = new Application();
+                MyApp.Visible = false;
+                MyBook = MyApp.Workbooks.Open(pNombreArchivo);
+                MySheet = MyBook.Sheets[1]; // Explict cast is not required here
+                lastRow = MySheet.Cells.SpecialCells(XlCellType.xlCellTypeLastCell).Row;
+                /* TB_Productos producto = new TB_Productos();  */
+          
         }
 
 
-        public static List<TB_Productos> ReadMyExcel()
+        public  List<TB_Productos> ReadMyExcel()
         {
             listaProductos.Clear();
+
+            Func<String, bool> myFunc = (x) =>  (x.CompareTo ("SI")==1) ;
+            
+            /* bool result = myFunc(4); // returns false of course */
+
             for (int index = 2; index <= lastRow; index++)
             {
                 System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
@@ -44,22 +52,50 @@ namespace SGLibrary
                     vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()),
                     vlPrecioPeaje =   Double.Parse (MyValues.GetValue(1, 4).ToString()),
                     vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()),
+                    flMuestraenlaWEB = myFunc(MyValues.GetValue(1, 6).ToString()) 
+                    
                 });
 
 
             }
 
-            
-            foreach (TB_Productos p in listaProductos)
+            /* ActualizarTarifas(listaProductos);*/ 
+ 
+            /* foreach (TB_Productos p in listaProductos)
             {
-               Console.WriteLine (  p.dsProducto + " "+ p.vlPrecioViaje.ToString ()) ; 
-            }
+                Console.WriteLine( p.cdProducto + " - "+ p.dsProducto + " -  " + p.vlPrecioViaje.ToString() + p.flMuestraenlaWEB  ); 
+            }*/
 
             return listaProductos;
         }
 
 
-        public static void CerrarExcel()
+
+        public  void ActualizarTarifas(List<TB_Productos> listaTarifas)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+
+                foreach (TB_Productos p in listaTarifas)
+                {
+
+                     // realizar busqueda
+                    var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.cdProducto select c).First () ;
+                    viajedestino.vlPrecioViaje = p.vlPrecioViaje;
+                    Console.WriteLine(p.cdProducto + " - " + p.dsProducto + " -  " + p.vlPrecioViaje.ToString() + p.flMuestraenlaWEB); 
+                    break;
+                    
+                }
+
+            context.SaveChanges(); 
+            }
+
+            
+
+        }
+
+        public  void CerrarExcel()
         {
             ServiceExcel.MyBook.Close(false);
             GC.Collect(); 

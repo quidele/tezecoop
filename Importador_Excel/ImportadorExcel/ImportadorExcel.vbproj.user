@@ -1,4 +1,5 @@
-﻿<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
   <PropertyGroup>
     <ProjectView>ShowAllFiles</ProjectView>
     <PublishUrlHistory>C:\Users\quidele\Documents\Personal\eze\tezecoop\Importador_Excel\implementaciones\|c:\limpiar\Importador_Excel\|\\192.1.1.205\mfgpro\Magma\produccion\Presupuestos\|publish\</PublishUrlHistory>

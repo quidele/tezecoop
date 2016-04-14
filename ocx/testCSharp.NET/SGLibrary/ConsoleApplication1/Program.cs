@@ -13,7 +13,7 @@ namespace ConsoleApplication1
     class Program
     {
 
-      
+        [STAThread]
         static void Main(string[] args)
         {
 
@@ -45,11 +45,18 @@ namespace ConsoleApplication1
             Console.WriteLine(service.Inicializar());
             Console.ReadKey(); */
 
+            ServiceTarifas miServiceTarifas = new ServiceTarifas();
 
-            ServiceExcel.InitializeExcel ("C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls");
-            ServiceExcel.ReadMyExcel ();
-            ServiceExcel.CerrarExcel();
+            miServiceTarifas.cargarTarifas(); 
+
+            /* ServiceExcel miExcel = new ServiceExcel();
+            // ServiceExcel.InitializeExcel ();
+            miExcel.InitializeExcel(); 
+            miExcel.ReadMyExcel ();
+            miExcel.CerrarExcel();
             Console.ReadKey(); 
+             */
+            
             
            /* service.
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls*/
