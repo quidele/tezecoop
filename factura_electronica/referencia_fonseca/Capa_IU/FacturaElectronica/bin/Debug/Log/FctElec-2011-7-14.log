@@ -1,0 +1,68 @@
+14/07/2011 01:19:52 p.m. - Error al cerrar el data reader de SQL
+14/07/2011 01:21:52 p.m. - ----------- INICIO -----------
+14/07/2011 01:21:52 p.m. - Comprobante N°: 1000001
+14/07/2011 01:21:52 p.m. - Id Solicitud: 554072
+14/07/2011 01:21:56 p.m. - Cliente: DEL RIO ROBERTO DANIEL                                                                              
+14/07/2011 01:21:56 p.m. - Usuario: turinad
+14/07/2011 01:21:57 p.m. - Nombre del equipo: PC0071
+14/07/2011 01:21:57 p.m. - Insertando comprobantes en Base FE
+14/07/2011 01:22:04 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+14/07/2011 01:22:05 p.m. - No se puede insertar el valor NULL en la columna 'CbteTipo', tabla '@tmp_resul_spu_obtenerComprobanteML'. La columna no admite valores NULL. Error de INSERT.
+Se terminó la instrucción.
+Tipo de comprobante
+ 
+comparacion de variables Tributo
+251.83
+ 
+14/07/2011 01:22:34 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+14/07/2011 02:35:06 p.m. - Error al cerrar el data reader de SQL
+14/07/2011 02:35:48 p.m. - ----------- INICIO -----------
+14/07/2011 02:35:48 p.m. - Comprobante N°: 1000001
+14/07/2011 02:35:48 p.m. - Id Solicitud: 554072
+14/07/2011 02:35:49 p.m. - Cliente: DEL RIO ROBERTO DANIEL                                                                              
+14/07/2011 02:35:49 p.m. - Usuario: turinad
+14/07/2011 02:35:49 p.m. - Nombre del equipo: PC0071
+14/07/2011 02:35:49 p.m. - Insertando comprobantes en Base FE
+14/07/2011 02:35:50 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+14/07/2011 02:35:51 p.m. - Resultado observación: OK
+14/07/2011 02:36:25 p.m. - Observaciones: 
+14/07/2011 02:36:26 p.m. - Chequeando resultados de FE
+14/07/2011 02:36:29 p.m. - Obtener Comprobantes
+14/07/2011 02:37:16 p.m. - Iniciando el proceso de solicitud de CAE
+14/07/2011 02:52:02 p.m. - Error al cerrar el data reader de SQL
+14/07/2011 03:13:44 p.m. - Error al cerrar el data reader de SQL
+14/07/2011 03:13:50 p.m. - ----------- INICIO -----------
+14/07/2011 03:13:50 p.m. - Comprobante N°: 1000001
+14/07/2011 03:13:50 p.m. - Id Solicitud: 554072
+14/07/2011 03:13:50 p.m. - Cliente: DEL RIO ROBERTO DANIEL                                                                              
+14/07/2011 03:13:50 p.m. - Usuario: turinad
+14/07/2011 03:13:50 p.m. - Nombre del equipo: PC0071
+14/07/2011 03:13:50 p.m. - Insertando comprobantes en Base FE
+14/07/2011 03:13:50 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+14/07/2011 03:13:50 p.m. - Resultado observación: OK
+14/07/2011 03:13:50 p.m. - Observaciones: 
+14/07/2011 03:13:50 p.m. - Chequeando resultados de FE
+14/07/2011 03:13:50 p.m. - Obtener Comprobantes
+14/07/2011 03:13:50 p.m. - Iniciando el proceso de solicitud de CAE
+14/07/2011 03:14:45 p.m. - Modo de operacion: Produccion
+14/07/2011 03:14:45 p.m. - No existen registros para procesar en comprobantes ASOC
+14/07/2011 03:14:45 p.m. - Solicitando Token y Firma
+14/07/2011 03:14:56 p.m. - Buscando archivo: TA_PROD_ML_14-7-2011.xml
+14/07/2011 03:14:56 p.m. - El archivo buscado no existe o no se encuentra.
+14/07/2011 03:15:01 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+14/07/2011 03:15:01 p.m. - Generando el Login Ticket Request
+14/07/2011 03:15:01 p.m. - Firmando el Login Ticket Request
+14/07/2011 03:15:01 p.m. - ***Leyendo certificado: 
+14/07/2011 03:15:01 p.m. - ***Certificados disponibles en el repositorio:My
+14/07/2011 03:15:01 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+14/07/2011 03:15:01 p.m. - ***Firmando bytes del mensaje...
+14/07/2011 03:15:01 p.m. - ***OK mensaje firmado
+14/07/2011 03:15:18 p.m. - Analizando el Ticket Response recibido del WSAA
+14/07/2011 03:15:18 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_20-5-2011.xml
+14/07/2011 03:15:18 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_14-7-2011.xml con Sign y Token.
+14/07/2011 03:15:18 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMTA4OTkxNzAxIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEwNjY3MjQzIiBleHBfdGltZT0iMTMxMDcxMDUwMyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+14/07/2011 03:15:18 p.m. - Sign tIX5P+9glZLvcp+D7m+HXvkOrhxKTKYQt16LwogZbBcPikx3JX1vfnLaRJ/teOVG1cL2k6JpRhV0hriWI3jReP7PlMWviuhK6+xikA7NiC4uneCOnVTGyrqtrkljl6GmhtSG1ol3oB4rPTj109ngbDcVlIh69zVYZnySj721FJU=
+14/07/2011 03:15:28 p.m. - Adaptando formato Afip - Producción
+14/07/2011 03:15:29 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMTA4OTkxNzAxIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEwNjY3MjQzIiBleHBfdGltZT0iMTMxMDcxMDUwMyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+14/07/2011 03:15:30 p.m. - Sign tIX5P+9glZLvcp+D7m+HXvkOrhxKTKYQt16LwogZbBcPikx3JX1vfnLaRJ/teOVG1cL2k6JpRhV0hriWI3jReP7PlMWviuhK6+xikA7NiC4uneCOnVTGyrqtrkljl6GmhtSG1ol3oB4rPTj109ngbDcVlIh69zVYZnySj721FJU=
+14/07/2011 03:15:33 p.m. - Último Nro de Comprobante en AFIP: 0

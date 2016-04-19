@@ -1,0 +1,69 @@
+31/08/2012 03:02:41 p.m. - Error al cerrar el data reader de SQL
+31/08/2012 03:05:29 p.m. - Error al cerrar el data reader de SQL
+31/08/2012 03:05:42 p.m. - Error al cerrar el data reader de SQL
+31/08/2012 03:06:56 p.m. - ----------- INICIO -----------
+31/08/2012 03:06:57 p.m. - Buscando archivo: TA_PROD_ML_31-8-2012.xml
+31/08/2012 03:06:57 p.m. - El archivo buscado no existe o no se encuentra.
+31/08/2012 03:07:02 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+31/08/2012 03:07:02 p.m. - Generando el Login Ticket Request
+31/08/2012 03:07:02 p.m. - Firmando el Login Ticket Request
+31/08/2012 03:07:02 p.m. - ***Leyendo certificado: 
+31/08/2012 03:07:02 p.m. - ***Certificados disponibles en el repositorio:My
+31/08/2012 03:07:02 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+31/08/2012 03:07:02 p.m. - ***Firmando bytes del mensaje...
+31/08/2012 03:07:02 p.m. - ***OK mensaje firmado
+31/08/2012 03:07:06 p.m. - Analizando el Ticket Response recibido del WSAA
+31/08/2012 03:07:06 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_19-10-2011.xml
+31/08/2012 03:07:06 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_21-10-2011.xml
+31/08/2012 03:07:06 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_8-9-2011.xml
+31/08/2012 03:07:06 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_31-8-2012.xml con Sign y Token.
+31/08/2012 03:07:21 p.m. - ----------- INICIO -----------
+31/08/2012 03:07:21 p.m. - Buscando archivo: TA_PROD_ML_31-8-2012.xml
+31/08/2012 03:07:21 p.m. - Token y Sign leidos correctamente
+31/08/2012 03:07:34 p.m. - ----------- INICIO -----------
+31/08/2012 03:07:34 p.m. - Comprobante N°: 1000820
+31/08/2012 03:07:34 p.m. - Id Solicitud: 854667
+31/08/2012 03:07:34 p.m. - Cliente: RIS SA                                                                                              
+31/08/2012 03:07:34 p.m. - Usuario: turinad
+31/08/2012 03:07:34 p.m. - Nombre del equipo: PC0071
+31/08/2012 03:07:34 p.m. - Insertando comprobantes en Base FE
+31/08/2012 03:07:34 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+31/08/2012 03:07:34 p.m. - Resultado observación: OK
+31/08/2012 03:07:34 p.m. - Observaciones: 
+31/08/2012 03:07:34 p.m. - Chequeando resultados de FE
+31/08/2012 03:07:34 p.m. - Obtener Comprobantes
+31/08/2012 03:07:34 p.m. - Iniciando el proceso de solicitud de CAE
+31/08/2012 03:07:34 p.m. - Modo de operacion: Produccion
+31/08/2012 03:07:34 p.m. - No existen registros para procesar en comprobantes ASOC
+31/08/2012 03:07:34 p.m. - Solicitando Token y Firma
+31/08/2012 03:07:34 p.m. - Buscando archivo: TA_PROD_ML_31-8-2012.xml
+31/08/2012 03:07:34 p.m. - Token y Sign leidos correctamente
+31/08/2012 03:07:34 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMjE5MTE3MDYiIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzNDY0MzY0NzQiIGV4cF90aW1lPSIxMzQ2NDc5NzM0IiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+31/08/2012 03:07:34 p.m. - Sign GgMR+GwB62m1E5peRHSfj8KPvp1S6KWoziRo2crOYoecCnMsGnhxx0QlLjzIvQIQl3IFKU39Du3WYwp6GpnTNe2bXwwMbJrswl1MV5i/KiGSZHRsJjiEAhcGsiDjdwM38Zc8YSM7B8Cvaar/kLsqjoumwD0gZet9kh5F+YsSg9I=
+31/08/2012 03:07:34 p.m. - Adaptando formato Afip - Producción
+31/08/2012 03:07:34 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMjE5MTE3MDYiIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzNDY0MzY0NzQiIGV4cF90aW1lPSIxMzQ2NDc5NzM0IiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+31/08/2012 03:07:34 p.m. - Sign GgMR+GwB62m1E5peRHSfj8KPvp1S6KWoziRo2crOYoecCnMsGnhxx0QlLjzIvQIQl3IFKU39Du3WYwp6GpnTNe2bXwwMbJrswl1MV5i/KiGSZHRsJjiEAhcGsiDjdwM38Zc8YSM7B8Cvaar/kLsqjoumwD0gZet9kh5F+YsSg9I=
+31/08/2012 03:07:34 p.m. - Último Nro de Comprobante en AFIP: 819
+31/08/2012 03:07:34 p.m. - Lista de Detalle_IVA creada
+31/08/2012 03:07:34 p.m. - Lista de Detalle_tributo creada
+31/08/2012 03:07:34 p.m. - Adaptación Produccion Completa
+31/08/2012 03:07:34 p.m. - Estableciendo comunicación con AFIP
+31/08/2012 03:07:35 p.m. - Respuesta: A
+31/08/2012 03:07:35 p.m. - <--INICIA GRABACION CAE--> 
+31/08/2012 03:07:35 p.m. - ID: 854667
+31/08/2012 03:07:35 p.m. - CAE: 62357469122863
+31/08/2012 03:07:35 p.m. - CAEFchVto: 20120910
+31/08/2012 03:07:35 p.m. - DocNro AFIP: 820
+31/08/2012 03:07:35 p.m. - CbteFch: 31/08/2012 12:00:00 a.m.
+31/08/2012 03:07:35 p.m. - <FINALIZA GRABACION CAE> 
+31/08/2012 03:07:35 p.m. - Comprobante_Aprobado
+31/08/2012 03:07:35 p.m. - Actualizando base de datos local y Magma
+31/08/2012 03:07:35 p.m. - Commit Realizado con éxito!!!
+31/08/2012 03:07:35 p.m. - Grabando estado de envío
+31/08/2012 03:07:35 p.m. - Comprobante_Asignado
+31/08/2012 03:07:35 p.m. - Obtención de CAE exitosa
+31/08/2012 03:07:35 p.m. - La operación finalizó correctamente
+31/08/2012 03:07:38 p.m. - Observaciones: 
+31/08/2012 03:08:05 p.m. - ----------- INICIO -----------
+31/08/2012 03:08:05 p.m. - Buscando archivo: TA_PROD_ML_31-8-2012.xml
+31/08/2012 03:08:05 p.m. - Token y Sign leidos correctamente

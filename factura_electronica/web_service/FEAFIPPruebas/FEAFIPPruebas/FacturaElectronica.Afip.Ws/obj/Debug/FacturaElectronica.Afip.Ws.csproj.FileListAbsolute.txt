@@ -1,0 +1,6 @@
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\bin\Debug\FacturaElectronica.Afip.Ws.dll.config
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\bin\Debug\FacturaElectronica.Afip.Ws.dll
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\bin\Debug\FacturaElectronica.Afip.Ws.pdb
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\obj\Debug\FacturaElectronica.Afip.Ws.dll
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\obj\Debug\FacturaElectronica.Afip.Ws.pdb
+C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FacturaElectronica.Afip.Ws\obj\Debug\FacturaElectronica.Afip.Ws.csprojResolveAssemblyReference.cache

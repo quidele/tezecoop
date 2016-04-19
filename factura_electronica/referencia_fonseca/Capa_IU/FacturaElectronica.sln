@@ -1,0 +1,56 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2012
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FacturaElectronicaWS", "FacturaElectronica\FacturaElectronicaWS.vbproj", "{18395535-F09B-4333-A00D-1BD15A02622E}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "fonseca_libDatos", "..\..\..\..\..\fonseca_lib\Fonseca_libDatos\produccion\version1.1\fonseca_libDatos\fonseca_libDatos.vbproj", "{390F83C9-9AB0-4939-AAC0-3703568D47E2}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DAOFacturacionElectronica", "..\..\..\..\..\fonseca_lib\LibreriasDAO\DAOFacturacionElectronica\DAOFacturacionElectronica.vbproj", "{EBB300D1-8875-4FCE-89D5-48ACA515B517}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "FacturacionElectronica", "..\Capa_Negocio\FacturacionElectronica\FacturacionElectronica.vbproj", "{91401D27-FE61-478B-82CF-F988DB4FDF99}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Fonseca_lib_controles", "..\..\..\..\..\fonseca_lib\Fonseca_lib_controles\Fonseca_lib_controles\Fonseca_lib_controles.vbproj", "{F15DF023-79D8-44FA-8466-33917D86D616}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "Fonseca_libFunciones", "..\..\..\..\..\fonseca_lib\Fonseca_libFunciones\Fonseca_libFunciones\Fonseca_libFunciones.vbproj", "{3C591B3C-04CF-41C2-9AF0-686FB08787FC}"
+EndProject
+Project("{F184B08F-C81C-45F6-A57F-5ABD9991F28F}") = "DAOSistemaMagma", "..\..\..\..\..\fonseca_lib\LibreriasDAO\DAOSistemaMagma\DAOSistemaMagma.vbproj", "{5B082585-4368-424A-8238-78C6201E00F9}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{18395535-F09B-4333-A00D-1BD15A02622E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{18395535-F09B-4333-A00D-1BD15A02622E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{18395535-F09B-4333-A00D-1BD15A02622E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{18395535-F09B-4333-A00D-1BD15A02622E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{390F83C9-9AB0-4939-AAC0-3703568D47E2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{390F83C9-9AB0-4939-AAC0-3703568D47E2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{390F83C9-9AB0-4939-AAC0-3703568D47E2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{390F83C9-9AB0-4939-AAC0-3703568D47E2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EBB300D1-8875-4FCE-89D5-48ACA515B517}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EBB300D1-8875-4FCE-89D5-48ACA515B517}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EBB300D1-8875-4FCE-89D5-48ACA515B517}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EBB300D1-8875-4FCE-89D5-48ACA515B517}.Release|Any CPU.Build.0 = Release|Any CPU
+		{91401D27-FE61-478B-82CF-F988DB4FDF99}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{91401D27-FE61-478B-82CF-F988DB4FDF99}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{91401D27-FE61-478B-82CF-F988DB4FDF99}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{91401D27-FE61-478B-82CF-F988DB4FDF99}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F15DF023-79D8-44FA-8466-33917D86D616}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F15DF023-79D8-44FA-8466-33917D86D616}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F15DF023-79D8-44FA-8466-33917D86D616}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F15DF023-79D8-44FA-8466-33917D86D616}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3C591B3C-04CF-41C2-9AF0-686FB08787FC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3C591B3C-04CF-41C2-9AF0-686FB08787FC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3C591B3C-04CF-41C2-9AF0-686FB08787FC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3C591B3C-04CF-41C2-9AF0-686FB08787FC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5B082585-4368-424A-8238-78C6201E00F9}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5B082585-4368-424A-8238-78C6201E00F9}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5B082585-4368-424A-8238-78C6201E00F9}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5B082585-4368-424A-8238-78C6201E00F9}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

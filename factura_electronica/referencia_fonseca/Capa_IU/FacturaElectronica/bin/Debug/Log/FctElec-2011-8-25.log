@@ -1,0 +1,14 @@
+25/08/2011 11:32:27 - Error al cerrar el data reader de SQL
+25/08/2011 11:32:58 - ----------- INICIO -----------
+25/08/2011 11:32:58 - Comprobante N°: 1000002
+25/08/2011 11:32:58 - Id Solicitud: 591083
+25/08/2011 11:32:58 - Cliente: INTI INST.NAC.TECN.INDUST. CTRO. INVESTIGAC                                                         
+25/08/2011 11:32:59 - Usuario: turinad
+25/08/2011 11:32:59 - Nombre del equipo: PC0071
+25/08/2011 11:33:00 - Insertando comprobantes en Base FE
+25/08/2011 11:33:00 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+25/08/2011 11:33:00 - No se puede insertar el valor NULL en la columna 'ImpTrib', tabla 'FacturaElectronica.dbo.comprobantes_ml'. La columna no admite valores NULL. Error de INSERT.
+Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_detalle_iva_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+Se terminó la instrucción.
+25/08/2011 11:33:08 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'

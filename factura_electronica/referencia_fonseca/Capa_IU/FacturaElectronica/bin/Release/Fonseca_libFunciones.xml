@@ -1,0 +1,147 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+Fonseca_libFunciones
+</name>
+</assembly>
+<members>
+<member name="M:Fonseca_libFunciones.DgvFunciones.GenerarListaSeparada(System.Collections.ArrayList,System.Char)">
+	<summary>
+ Devuelve una cadena separada por un caracter a partir de una lista. La lista debe ser string. Version_6.1
+ </summary>
+	<param name="pLista"></param>
+	<param name="pCaracterSeparador"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.CrearLaunchingCellStyle(System.Windows.Forms.DataGridViewCellPaintingEventArgs@,System.Drawing.Brush,System.Drawing.Pen,System.Drawing.Color)">
+	<summary>
+ Le da el estilo a la celda que se usará para disparar una seleccion de items. Version_6.1
+ </summary>
+	<param name="e"></param>
+	<param name="BrushAngulo"></param>
+	<param name="PenAngulo"></param>
+	<param name="colorFondo"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.MakeEditableColumn(System.Windows.Forms.DataGridViewColumn@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="dgv_col"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.MakeReadOnlyColumn(System.Windows.Forms.DataGridViewColumn@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="dgv_col"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.MakeReadOnlyCell(System.Windows.Forms.DataGridViewCell@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="dgv_cell"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.MakeEditableCell(System.Windows.Forms.DataGridViewCell@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="dgv_cell"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.DgvFunciones.ValidarFilasRepetidas(System.Windows.Forms.DataGridView,System.String)">
+	<summary>
+ Valida valores repetidos para una columna de la tabla DGV. Version_6.2
+ </summary>
+	<param name="dgv"></param>
+	<param name="nom_col"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.GrpFunciones.presentarPanelesPantalla(System.Windows.Forms.GroupBox,System.Int32,System.Int32)">
+	<summary>
+ Presenta los paneles en el tamaño y localizacion predefinidos.
+ </summary>
+	<param name="pGroupBox"></param>
+	<param name="pFormWidth"></param>
+	<param name="pFormHeight"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.GrpFunciones.presentarPanelesPantalla(System.Windows.Forms.Panel,System.Int32,System.Int32)">
+	<summary>
+ Presenta los paneles en el tamaño y localizacion predefinidos.
+ </summary>
+	<param name="pPanel"></param>
+	<param name="pFormWidth"></param>
+	<param name="pFormHeight"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.GrpFunciones.CentrarPanelesFormulario(System.Windows.Forms.Panel@,System.Int32,System.Int32)">
+	<summary>
+ Presenta los paneles centrados.
+ </summary>
+	<param name="pPanel"></param>
+	<param name="pFormWidth"></param>
+	<param name="pFormHeight"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.GrpFunciones.CentrarPanelesFormulario(System.Windows.Forms.Panel@,System.Windows.Forms.GroupBox@)">
+	<summary>
+ Presenta los paneles centrados.
+ </summary>
+	<param name="pPanel"></param>
+	<param name="pGroupBox"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.GrpFunciones.CentrarObjetosEnPantalla(System.Object)">
+	<summary>
+ Localiza en el centro a formularios y a controles en un formulario
+ </summary>
+	<param name="Objeto"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.Funciones_Lotes.ExtraerNro_LoteQuimicos(System.Object)">
+	<summary>
+ Para formato de lotes de químicos. "[anio(yy)]/[Nro_lote]".
+ </summary>
+	<param name="pNro_lote"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.Funciones_Lotes.ExtraerAnioQuimicos(System.Object)">
+	<summary>
+ Para formato de lotes de químicos. "[anio(yy)]/[Nro_lote]".
+ </summary>
+	<param name="pNro_lote"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.Funciones_Lotes.ExtraerCod_Doc(System.Object)">
+	<summary>
+ Para formato de lotes de cueros. "[Cod_doc]-[Serie_doc]-[Nro_doc]".
+ </summary>
+	<param name="pNro_lote"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.TextBoxesFunciones.MakeEditableTextBox(System.Windows.Forms.Control@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="txtBox"></param>
+	<remarks></remarks>
+</member><member name="M:Fonseca_libFunciones.TextBoxesFunciones.MakeReadOnlyTextBox(System.Windows.Forms.Control@)">
+	<summary>
+ Version_6.2
+ </summary>
+	<param name="txtBox"></param>
+	<remarks></remarks>
+</member><member name="P:Fonseca_libFunciones.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:Fonseca_libFunciones.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="T:Fonseca_libFunciones.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+</members>
+</doc>

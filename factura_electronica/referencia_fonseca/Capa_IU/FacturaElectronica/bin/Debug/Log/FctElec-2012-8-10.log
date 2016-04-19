@@ -1,0 +1,75 @@
+10/08/2012 12:00:42  - Error al cerrar el data reader de SQL
+10/08/2012 12:01:03  - ----------- INICIO -----------
+10/08/2012 12:01:04  - Comprobante N°: 1000001
+10/08/2012 12:01:04  - Id Solicitud: 830057
+10/08/2012 12:01:04  - Cliente: MATTEL ARGENTINA SA                                                                                 
+10/08/2012 12:01:05  - Usuario: QUIDELE
+10/08/2012 12:01:05  - Nombre del equipo: PC0157
+10/08/2012 12:01:06  - Insertando comprobantes en Base FE
+10/08/2012 12:01:09  - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+10/08/2012 12:01:09  - La suma de ImpIVA + ImpNeto + ImpOpEx + ImpTotConc + ImpTrib debe ser igual a ImpTotal
+10/08/2012 12:01:09  - Resultado observación: ERROR
+10/08/2012 12:01:12  - Observaciones: 
+10/08/2012 12:01:13  - Chequeando resultados de FE
+10/08/2012 12:01:30  - La suma de ImpIVA + ImpNeto + ImpOpEx + ImpTotConc + ImpTrib debe ser igual a ImpTotal
+10/08/2012 12:01:41  - ----------- INICIO -----------
+10/08/2012 12:01:41  - Comprobante N°: 1000001
+10/08/2012 12:01:41  - Id Solicitud: 830057
+10/08/2012 12:01:41  - Cliente: MATTEL ARGENTINA SA                                                                                 
+10/08/2012 12:01:41  - Usuario: QUIDELE
+10/08/2012 12:01:41  - Nombre del equipo: PC0157
+10/08/2012 12:01:41  - Insertando comprobantes en Base FE
+10/08/2012 12:01:51  - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+10/08/2012 12:15:30  - Resultado observación: OK
+10/08/2012 12:15:30  - Observaciones: 
+10/08/2012 12:15:30  - Chequeando resultados de FE
+10/08/2012 12:15:30  - Obtener Comprobantes
+10/08/2012 12:15:30  - Iniciando el proceso de solicitud de CAE
+10/08/2012 12:15:30  - Modo de operacion: Produccion
+10/08/2012 12:15:30  - No existen registros para procesar en comprobantes ASOC
+10/08/2012 12:15:30  - Solicitando Token y Firma
+10/08/2012 12:15:30  - Buscando archivo: TA_PROD_ML_10-8-2012.xml
+10/08/2012 12:15:30  - El archivo buscado no existe o no se encuentra.
+10/08/2012 12:15:35  - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+10/08/2012 12:15:35  - Generando el Login Ticket Request
+10/08/2012 12:15:35  - Firmando el Login Ticket Request
+10/08/2012 12:15:35  - ***Leyendo certificado: 
+10/08/2012 12:15:35  - ***Certificados disponibles en el repositorio:My
+10/08/2012 12:15:35  - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/08/2012 12:15:35  - ***Firmando bytes del mensaje...
+10/08/2012 12:15:35  - ***OK mensaje firmado
+10/08/2012 12:15:37  - Analizando el Ticket Response recibido del WSAA
+10/08/2012 12:15:37  - Eliminando archivo: C:\Users\quidele\Documents\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_19-10-2011.xml
+10/08/2012 12:15:37  - Eliminando archivo: C:\Users\quidele\Documents\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_21-10-2011.xml
+10/08/2012 12:15:37  - Eliminando archivo: C:\Users\quidele\Documents\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_8-8-2012.xml
+10/08/2012 12:15:37  - Eliminando archivo: C:\Users\quidele\Documents\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_8-9-2011.xml
+10/08/2012 12:15:37  - Finalizada correctamente la creación del archivo XML TA_PROD_ML_10-8-2012.xml con Sign y Token.
+10/08/2012 12:15:37  - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI4MTkzODMwNzYiIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzNDQ2MTE4NzYiIGV4cF90aW1lPSIxMzQ0NjU1MTM2IiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+10/08/2012 12:15:37  - Sign Gq8bI1Wr2czez28e23Bravg0rCkfwvmLWOmRz4NElHqYkDPgxhARHbJhPsSmxxvF5lbVxudXSxukUC04NpdN9GYfRg5MRyrlDIYHT4RfJdOdAiOb6sZa86yRhd1Wgw8qDmIwuCgPSsmxhxZ6x0gbnay6Jk/xT3aZED/s9jEANdY=
+10/08/2012 12:15:37  - Adaptando formato Afip - Producción
+10/08/2012 12:15:37  - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI4MTkzODMwNzYiIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzNDQ2MTE4NzYiIGV4cF90aW1lPSIxMzQ0NjU1MTM2IiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+10/08/2012 12:15:37  - Sign Gq8bI1Wr2czez28e23Bravg0rCkfwvmLWOmRz4NElHqYkDPgxhARHbJhPsSmxxvF5lbVxudXSxukUC04NpdN9GYfRg5MRyrlDIYHT4RfJdOdAiOb6sZa86yRhd1Wgw8qDmIwuCgPSsmxhxZ6x0gbnay6Jk/xT3aZED/s9jEANdY=
+10/08/2012 12:15:37  - Último Nro de Comprobante en AFIP: 0
+10/08/2012 12:15:37  - Lista de Detalle_IVA creada
+10/08/2012 12:15:37  - Lista de Detalle_tributo creada
+10/08/2012 12:15:37  - Adaptación Produccion Completa
+10/08/2012 12:15:37  - Estableciendo comunicación con AFIP
+10/08/2012 12:15:38  - Respuesta: A
+10/08/2012 12:15:38  - <--INICIA GRABACION CAE--> 
+10/08/2012 12:15:38  - ID: 830057
+10/08/2012 12:15:38  - CAE: 62327373795996
+10/08/2012 12:15:38  - CAEFchVto: 20120818
+10/08/2012 12:15:38  - DocNro AFIP: 1
+10/08/2012 12:15:38  - CbteFch: 08/08/2012 12:00:00 
+10/08/2012 12:15:38  - <FINALIZA GRABACION CAE> 
+10/08/2012 12:15:38  - Comprobante_Aprobado
+10/08/2012 12:15:38  - Actualizando base de datos local y Magma
+10/08/2012 12:15:40  - Commit Realizado con éxito!!!
+10/08/2012 12:15:40  - Grabando estado de envío
+10/08/2012 12:15:40  - Comprobante_Asignado
+10/08/2012 12:15:40  - Obtención de CAE exitosa
+10/08/2012 12:15:40  - La operación finalizó correctamente
+10/08/2012 12:15:53  - Observaciones: 
+10/08/2012 12:16:21  - ----------- INICIO -----------
+10/08/2012 12:16:22  - Buscando archivo: TA_PROD_ML_10-8-2012.xml
+10/08/2012 12:16:22  - Token y Sign leidos correctamente
