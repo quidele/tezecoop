@@ -9,5 +9,4 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibr
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\bin\x86\Debug\EntityFramework.xml
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources

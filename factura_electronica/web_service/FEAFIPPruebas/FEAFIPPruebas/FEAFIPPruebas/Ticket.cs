@@ -4,52 +4,53 @@ using System.Linq;
 using System.Text;
 using System.Security.Cryptography.X509Certificates;
 
-namespace FacturaElectronica.Afip.Business.Wsaa
+namespace FEAFIPPruebas
 {
     /// <summary> 
     /// Clase principal 
     /// </summary> 
     /// <remarks></remarks> 
-    public class Ticket
+    public   abstract class Ticket
     {
+        private Int64 _cuit;
+        private string _sign;
+        private string _token; 
+ 
+ 
 
-        // Valores por defecto, globales en esta clase 
-        public const string DEFAULT_URLWSAAWSDL = "https://wsaa.afip.gov.ar/ws/services/LoginCms?WSDL";
-        public const string DEFAULT_SERVICIO = "wsfe";
-        public const string DEFAULT_CERTSIGNERSUBJECT = "C=AR, O=Curtiembre Fonseca S.A., SERIALNUMBER=CUIT 30559697857, CN=Ricardo Badano";
-
-        /// <summary> 
-        /// Funcion Main (consola) 
-        /// </summary> 
-        /// <param name="args">Argumentos de linea de comandos</param> 
-        /// <returns>0 si terminó bien, valores negativos si hubieron errores</returns> 
-        /// <remarks></remarks> 
-        public static bool GetTicket(out string response)
-        {
-            response = string.Empty;
-
-            try
-            {
-                string urlWsaaWsdl = DEFAULT_URLWSAAWSDL;
-                string idServicioNegocio = DEFAULT_SERVICIO;
-                string certSignerSubject = DEFAULT_CERTSIGNERSUBJECT;
-
-                // Argumentos OK, entonces procesar normalmente... 
-
-                LoginTicket objTicketRespuesta;
-                objTicketRespuesta = new LoginTicket();
-
-
-                StoreName storeName = StoreName.TrustedPeople;
-                StoreLocation storeLocation = StoreLocation.CurrentUser;
-                response = objTicketRespuesta.ObtenerLoginTicketResponse(idServicioNegocio, certSignerSubject, false, storeName, storeLocation);
-                return true;
+        public Int64 Cuit
+        { 
+            get{ return _cuit;
             }
-            catch (Exception excepcionAlObtenerTicket)
-            {
-                //ErrorsHandler.HandleError("ERROR AL OBTENER TICKET", excepcionAlObtenerTicket, true);
-                return false;
+            set{  _cuit = value;
             }
         }
+
+        public string Sign
+        {
+            get
+            {
+                return _sign;
+            }
+            set
+            {
+                _sign = value;
+            }
+        }
+
+        public string Token
+        {
+            get
+            {
+                return _token;
+            }
+            set
+            {
+                _token = value;
+            }
+        }
+
+        public abstract void GetTicket();
+        
     }
 }

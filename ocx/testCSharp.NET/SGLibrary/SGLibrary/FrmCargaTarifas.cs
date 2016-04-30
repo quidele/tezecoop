@@ -11,15 +11,18 @@ namespace SGLibrary
 {
     public partial class FrmCargaTarifas : Form
     {
+
+
         public FrmCargaTarifas()
         {
             InitializeComponent();
             nombreArchivo = ""; 
+            
         }
 
 
         private String nombreArchivo;
-
+        private List<TB_Productos> listaProductos; 
 
         public String getNombreArchivo() {
             return nombreArchivo;
@@ -32,7 +35,7 @@ namespace SGLibrary
         
         private void button1_Click(object sender, EventArgs e)
         {
-
+            this.button2.Enabled = false;
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 /* MessageBox.Show ( openFileDialog1.FileName); */ 
@@ -42,11 +45,11 @@ namespace SGLibrary
                 ServiceExcel miServiceExcel = new ServiceExcel();
                 miServiceExcel.InitializeExcel(textBox1.Text);
                 dataGridView1.AutoSize = true;
-                dataGridView1.DataSource = miServiceExcel.ReadMyExcel();
-            
+                listaProductos = miServiceExcel.ReadMyExcel();
+                dataGridView1.DataSource = listaProductos;            
 
             }
-
+            this.button2.Enabled = true;
 
             /* dataGridView1.Rows.Add(tranList[0]); */
 
@@ -55,6 +58,14 @@ namespace SGLibrary
         private void Form2_Load(object sender, EventArgs e)
         {
             textBox1.Text = ""; 
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            ServiceTarifas miServTarifas = new ServiceTarifas ();
+            miServTarifas.ActualizarTarifas(listaProductos);
+            MessageBox.Show("El proceso ha finalizado con exito");
+            this.Hide();
         }
     }
 }

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Xml;
+using System.Security.Cryptography;
 using System.Security.Cryptography.X509Certificates;
-using FEAFIPPruebas.FacturaElectronica.Afip.Ws.Wsaa;
 
 
-namespace FacturaElectronica.Afip.Business.Wsaa
+
+namespace FEAFIPPruebas
 {
     /// <summary> 
     /// Clase para crear objetos Login Tickets 
@@ -20,6 +21,10 @@ namespace FacturaElectronica.Afip.Business.Wsaa
     /// </remarks> 
     public class LoginTicket
     {
+        
+        /* ILoginCMSClient unLoginCMSClientProd;*/
+
+        
         // Entero de 32 bits sin signo que identifica el requerimiento 
         public UInt32 UniqueId;
         // Momento en que fue generado el requerimiento 
@@ -42,6 +47,13 @@ namespace FacturaElectronica.Afip.Business.Wsaa
 
         // OJO! NO ES THREAD-SAFE 
         private static UInt32 _globalUniqueID = 0;
+        private ILoginCMSClient unLoginCMSClient;
+
+        public LoginTicket(ILoginCMSClient punLoginCMSClient)
+        {
+            // TODO: Complete member initialization
+            this.unLoginCMSClient = punLoginCMSClient;
+        }
 
         /// <summary> 
         /// Construye un Login Ticket obtenido del WSAA 
@@ -136,15 +148,13 @@ namespace FacturaElectronica.Afip.Business.Wsaa
                     Console.WriteLine(cmsFirmadoBase64);
                 }
 
-                using (LoginCMSClient client = new LoginCMSClient())
-                {
-
+                
                     // AD: para revisar de qué lado esta saliendo el error
                     //client.Endpoint.Behaviors.Add(new SimpleEndpointBehavior());
 
-                    loginTicketResponse = client.loginCms(cmsFirmadoBase64);
-                    client.Close();
-                }
+                loginTicketResponse = unLoginCMSClient.loginCms(cmsFirmadoBase64);
+                    /* unLoginCMSClient.Close(); */
+                
 
                 if (this._verboseMode)
                 {

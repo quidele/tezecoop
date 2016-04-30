@@ -70,31 +70,6 @@ namespace SGLibrary
         }
 
 
-
-        public  void ActualizarTarifas(List<TB_Productos> listaTarifas)
-        {
-
-            using (var context = new dbSG2000Entities())
-            {
-
-                foreach (TB_Productos p in listaTarifas)
-                {
-
-                     // realizar busqueda
-                    var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.cdProducto select c).First () ;
-                    viajedestino.vlPrecioViaje = p.vlPrecioViaje;
-                    Console.WriteLine(p.cdProducto + " - " + p.dsProducto + " -  " + p.vlPrecioViaje.ToString() + p.flMuestraenlaWEB); 
-                    break;
-                    
-                }
-
-            context.SaveChanges(); 
-            }
-
-            
-
-        }
-
         public  void CerrarExcel()
         {
             ServiceExcel.MyBook.Close(false);

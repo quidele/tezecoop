@@ -47,7 +47,9 @@ namespace ConsoleApplication1
 
             ServiceTarifas miServiceTarifas = new ServiceTarifas();
 
-            miServiceTarifas.cargarTarifas(); 
+            miServiceTarifas.cargarTarifas();
+
+            Console.ReadKey(); 
 
             /* ServiceExcel miExcel = new ServiceExcel();
             // ServiceExcel.InitializeExcel ();

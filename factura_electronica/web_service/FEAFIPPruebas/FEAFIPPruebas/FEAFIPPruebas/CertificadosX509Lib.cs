@@ -5,7 +5,7 @@ using System.Text;
 using System.Security.Cryptography.X509Certificates;
 using System.Security.Cryptography.Pkcs;
 
-namespace FacturaElectronica.Afip.Business.Wsaa
+namespace FEAFIPPruebas
 {
     /// <summary> 
     /// Libreria de utilidades para manejo de certificados 

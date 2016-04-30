@@ -46,15 +46,33 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CertificadosX509Lib.cs" />
-    <Compile Include="LoginTicket.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\Reference.cs">
+    <Compile Include="ComprobanteHomo.cs" />
+    <Compile Include="ComprobanteProd.cs" />
+    <Compile Include="IComprobante.cs" />
+    <Compile Include="LoginCMSClientHomo.cs" />
+    <Compile Include="ILoginCMSClient.cs" />
+    <Compile Include="LoginCMSClientProd.cs" />
+    <Compile Include="Service References\wsaa_homo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service References\wsfe_v1\Reference.cs">
+    <Compile Include="Service References\wsaa_prod\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="TicketHomo.cs" />
+    <Compile Include="TicketProd.cs" />
+    <Compile Include="LoginTicket.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service References\wsfev1_prod\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\wsfev1_homo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -63,39 +81,304 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\FEAFIPPruebas.FacturaElectronica.Afip.Ws.Wsaa.loginCmsResponse.datasource">
+    <None Include="Service References\wsaa_homo\FEAFIPPruebas.wsaa_homo.loginCmsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\LoginCms.wsdl" />
-    <None Include="Service References\wsfe_v1\service.wsdl" />
+    <None Include="Service References\wsaa_homo\LoginCms.wsdl" />
+    <None Include="Service References\wsaa_prod\FEAFIPPruebas.wsaa_prod.loginCmsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsaa_prod\LoginCms.wsdl" />
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEAConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEARegInformativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEASinMovimientoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEASinMovimientoInformarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEASolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECAESolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECompConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECompTotXRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECompUltimoAutorizadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEDummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetCotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetPtosVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposConceptoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposIvaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposMonedasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposOpcionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposPaisesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEParamGetTiposTributosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_homo\FEAFIPPruebas.wsfev1_homo.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEAConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEARegInformativoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEASinMovimientoConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEASinMovimientoInformarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEASolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECAESolicitarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECompConsultarResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECompTotXRequestResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECompUltimoAutorizadoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEDummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetCotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetPtosVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposConceptoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposDocResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposIvaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposMonedasResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposOpcionalResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposPaisesResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEParamGetTiposTributosResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\FEAFIPPruebas.wsfev1_prod.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\wsfev1_prod\service.wsdl" />
+    <None Include="Service References\wsfev1_homo\service.wsdl" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
-    <WCFMetadataStorage Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\" />
-    <WCFMetadataStorage Include="Service References\wsfe_v1\" />
+    <WCFMetadataStorage Include="Service References\wsaa_homo\" />
+    <WCFMetadataStorage Include="Service References\wsaa_prod\" />
+    <WCFMetadataStorage Include="Service References\wsfev1_prod\" />
+    <WCFMetadataStorage Include="Service References\wsfev1_homo\" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\configuration91.svcinfo" />
+    <None Include="Service References\wsfev1_prod\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\configuration.svcinfo" />
+    <None Include="Service References\wsfev1_prod\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\FacturaElectronica.Afip.Ws.Wsaa\Reference.svcmap">
+    <None Include="Service References\wsfev1_prod\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsfe_v1\configuration91.svcinfo" />
+    <None Include="Service References\wsfev1_homo\configuration91.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsfe_v1\configuration.svcinfo" />
+    <None Include="Service References\wsfev1_homo\configuration.svcinfo" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Service References\wsfe_v1\Reference.svcmap">
+    <None Include="Service References\wsfev1_homo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_homo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_homo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_homo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_prod\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_prod\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\wsaa_prod\Reference.svcmap">
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
