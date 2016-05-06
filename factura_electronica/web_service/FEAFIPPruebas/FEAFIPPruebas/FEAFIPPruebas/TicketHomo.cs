@@ -63,7 +63,8 @@ namespace FEAFIPPruebas
             FEAuthRequest feAuthRequest = new FEAuthRequest();
             feAuthRequest.Cuit = Convert.ToInt64(cuit);
             feAuthRequest.Sign = loginTicket.Sign;
-            feAuthRequest.Token = loginTicket.Token;*/
+            feAuthRequest.Token = loginTicket.Token;
+             */
 
         }
 

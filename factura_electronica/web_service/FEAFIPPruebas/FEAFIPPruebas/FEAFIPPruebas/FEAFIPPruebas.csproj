@@ -46,6 +46,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="CertificadosX509Lib.cs" />
+    <Compile Include="Comprobante.cs" />
     <Compile Include="ComprobanteHomo.cs" />
     <Compile Include="ComprobanteProd.cs" />
     <Compile Include="IComprobante.cs" />

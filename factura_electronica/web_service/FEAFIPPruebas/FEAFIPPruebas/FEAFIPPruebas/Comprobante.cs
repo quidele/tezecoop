@@ -6,8 +6,7 @@ using System.Threading.Tasks;
 
 namespace FEAFIPPruebas
 {
-    interface IComprobante
+    public class Comprobante
     {
-        Comprobante ObtenerCompUltimoAutorizado(); 
     }
 }
