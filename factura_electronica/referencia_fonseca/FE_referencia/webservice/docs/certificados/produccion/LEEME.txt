@@ -1,4 +1,0 @@
-Certificados para instalar en la PC del usuario
-PC0157_54a649c0eba0fc50.p12
-PC001_4c4492a797565764.p12
-
