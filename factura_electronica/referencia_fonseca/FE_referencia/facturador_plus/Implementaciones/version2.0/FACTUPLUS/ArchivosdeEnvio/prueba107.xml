@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comprobantes>
+<comprobante idsolicitud="124061" > 
+<tipo>19</tipo> 
+<ptovta>11</ptovta> 
+<cuitemisor>66666666666</cuitemisor> 
+<fechaemision>2010-06-29</fechaemision> 
+<idioma>2</idioma> 
+<concepto>1</concepto> 
+<ape>S</ape> 
+<moneda>002</moneda> 
+<tipocambio>3.879</tipocambio> 
+<destinocmp>212</destinocmp> 
+<tipodocreceptor>80</tipodocreceptor> 
+<nrodocreceptor>55000002126</nrodocreceptor> 
+<receptor>EDSIM LEATHER CO., INC.</receptor> 
+<domicilioreceptor>131 WEST 35TH ST, 14TH FL. NEW YORK - N.Y. 10001NEW YORK - N.Y. 10001 USA, U.S.A.</domicilioreceptor> 
+<importetotal>15578.55</importetotal> 
+<formaspago>
+<formapago>
+<codigo>99</codigo> 
+<descripcion>14 DIAS             </descripcion> 
+</formapago>
+</formaspago>
+<incoterms>FOB</incoterms> 
+<detalleincoterms>FREE ON BOARD BUENOS</detalleincoterms> 
+<otrosdatoscomerciales>DESTINATION: NEW YORK&#x0D;MV: NEWPORT CARGO S.A.&#x0D;&#x0D;Covering shipment from Buenos Aires, Argentina of &#x0D;
+2 PACKAGES - MARKS: EL 1798 / 1799</otrosdatoscomerciales> 
+
+<detalles><detalle><desc>S-PREMIER BRANDY 11-13 SEL 05 MEDIUM    &#x0D;   7989.00 Sq.Ft      at U$S      1.950</desc><importe>15578.55</importe></detalle></detalles><otrosdatosgenerales>&#x0D;</otrosdatosgenerales> 
+</comprobante>
+
+</comprobantes>
+<?xml version="1.0" encoding="UTF-8"?>
+<comprobantes>
+<comprobante idsolicitud="124061" > 
+<tipo>19</tipo> 
+<ptovta>11</ptovta> 
+<cuitemisor>30559697857</cuitemisor> 
+<fechaemision>2010-06-29</fechaemision> 
+<idioma>2</idioma> 
+<concepto>1</concepto> 
+<ape>S</ape> 
+<moneda>002</moneda> 
+<tipocambio>3.879</tipocambio> 
+<destinocmp>212</destinocmp> 
+<tipodocreceptor>80</tipodocreceptor> 
+<nrodocreceptor>55000002126</nrodocreceptor> 
+<receptor>EDSIM LEATHER CO., INC.</receptor> 
+<domicilioreceptor>131 WEST 35TH ST, 14TH FL. NEW YORK - N.Y. 10001NEW YORK - N.Y. 10001 USA, U.S.A.</domicilioreceptor> 
+<importetotal>15578.55</importetotal> 
+<formaspago>
+<formapago>
+<codigo>99</codigo> 
+<descripcion>14 DIAS             </descripcion> 
+</formapago>
+</formaspago>
+<incoterms>FOB</incoterms> 
+<detalleincoterms>FREE ON BOARD BUENOS</detalleincoterms> 
+<otrosdatoscomerciales>DESTINATION: NEW YORK&#x0D;MV: NEWPORT CARGO S.A.&#x0D;&#x0D;Covering shipment from Buenos Aires, Argentina of &#x0D;
+2 PACKAGES - MARKS: EL 1798 / 1799</otrosdatoscomerciales> 
+
+<detalles><detalle><desc>S-PREMIER BRANDY 11-13 SEL 05 MEDIUM    &#x0D;   7989.00 Sq.Ft      at U$S      1.950</desc><importe>15578.55</importe></detalle></detalles><otrosdatosgenerales>&#x0D;</otrosdatosgenerales> 
+</comprobante>
+
+</comprobantes>

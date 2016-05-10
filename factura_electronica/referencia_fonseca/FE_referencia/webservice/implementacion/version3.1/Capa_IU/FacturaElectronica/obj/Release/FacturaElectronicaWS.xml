@@ -1,0 +1,294 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FacturaElectronicaWS
+</name>
+</assembly>
+<members>
+<member name="M:FacturaElectronicaWS.Frm_ObtenerCAE.ActualizarInformacionSistema_v2">
+	<summary>
+ Muestra los datos de versión actualizados. Version_6.1
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.Frm_ObtenerCAE.AplicarEstiloDeGrillas(System.Windows.Forms.DataGridView)">
+	<summary>
+ Aplica el estilo de las grillas del formulario. Version_6.3
+ </summary>
+	<param name="dgv"></param>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.Frm_ObtenerCAE.ObtenerObjetoConfiguracion(System.String)">
+	<summary>
+ Obtiene un objeto de tipo Configuracion para frm_mdi_principal. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:FacturaElectronicaWS.Frm_ObtenerCAE.ObtenerVersionRealSistema">
+	<summary>
+ Version_6.1
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.#ctor">
+	<summary>
+ Constructor usado para obtener el accesibleName, pero no sirve para abrir el form.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.#ctor(System.String,System.String,System.String,System.Collections.Generic.List{fonseca_libDatos.Conexion},System.String,System.Collections.Generic.List{fonseca_libDatos.Seguridad},System.String,System.String)">
+	<summary>
+ Constructor verdadero. Los parámetros son indispensables.
+ </summary>
+	<param name="pUsuario"></param>
+	<param name="pBase"></param>
+	<param name="pVersion"></param>
+	<param name="pListaConexiones"></param>
+	<param name="pAmbiente"></param>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ActualizarNuevosValores(fonseca_libDatos.Config.Configuraciones,System.String,System.String,System.String)">
+	<summary>
+ Actualiza la configuracion con los nuevos valores. Version_6.3
+ </summary>
+	<param name="pConfiguraciones"></param>
+	<param name="pAmbiente"></param>
+	<param name="pTipoConexion"></param>
+	<returns></returns>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ConfigurarControles(System.Collections.Generic.List{fonseca_libDatos.Conexion},fonseca_libDatos.Config.Configuraciones)">
+	<summary>
+ Configura los controles de la pantalla. Version_6.3
+ </summary>
+	<param name="pListaConexiones"></param>
+	<param name="pObjConfiguraciones"></param>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.GuardarObjetoConfiguracion(fonseca_libDatos.Config.Configuraciones,System.String)">
+	<summary>
+ Guarda un objeto de tipo configuracion para frm_mdi_principa. Version_6.3
+ </summary>
+	<param name="pObjConfig"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ObtenerClaveAdministrador">
+	<summary>
+ Obtiene la clave de administrador. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ObtenerValoresConfiguracion(fonseca_libDatos.Config.Configuraciones,System.String)">
+	<summary>
+ Obtiene valores de configuracion desde la propiedad. Version_6.3
+ </summary>
+	<param name="pConfiguraciones"></param>
+	<param name="pPropiedad"></param>
+	<returns></returns>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ObtenerValoresPosibles(System.Collections.Generic.List{fonseca_libDatos.Conexion},System.String)">
+	<summary>
+ Obtiene valores posibles para una propiedad. Version_6.3
+ </summary>
+	<param name="pLista"></param>
+	<param name="pPropiedad"></param>
+	<returns></returns>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.RealizarConsultaDePrueba(fonseca_libDatos.Config.Configuraciones,System.Collections.Generic.List{fonseca_libDatos.Conexion})">
+	<summary>
+ Realiza una cosulta a la base de seguridad de la nueva configuracion elegida. Version_6.3
+ </summary>
+	<param name="pNuevaConfiguracion"></param>
+	<param name="pListaConexiones"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ValidarClave(System.String)">
+	<summary>
+ Valida la clave ingresada con la clave de administrador. Version_6.3
+ </summary>
+	<param name="pClave"></param>
+	<returns></returns>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_config_v2.ValidarConexionSeleccionada(System.Collections.Generic.List{fonseca_libDatos.Conexion},System.String,System.String)">
+	<summary>
+ Valida que la conexion seleccionada exista en la lista de conexiones. Version_6.3
+ </summary>
+	<param name="pLista"></param>
+	<param name="pAmbiente"></param>
+	<param name="pTipoConexion"></param>
+	<returns></returns>
+	<remarks>MVC-NA</remarks>
+</member><member name="M:FacturaElectronicaWS.frm_logViewer.Buscar">
+	<summary>
+ Busca el el log local. Versrion_6.3
+ </summary>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.frm_logViewer.Buscar(System.String)">
+	<summary>
+ Busca en una ubicacion indicada por la ruta pasada por parametro.
+ </summary>
+	<param name="pPathOfFile"></param>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.GeneralFunctions.ObtenerVersionRealSistemaObject">
+	<summary>
+ Version_6.1
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:FacturaElectronicaWS.GeneralFunctions.ObtenerVersionRealSistema">
+	<summary>
+ Version_6.1
+ </summary>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="P:FacturaElectronicaWS.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources._Next">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.agregar_editar_icono_6607_96">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.anadir_mas_verde_icono_6162_128">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.anadir_mas_verde_icono_6162_32">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_01_da">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_01_g">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_01_go">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_02_da">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_02_g">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_02_go">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_03_da">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_03_g">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.barra_03_go">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.bbtb_Tr_green">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.busqueda_ico">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Configuracion">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Configuracion_h">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Documento_ico">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Ejecutar">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Ejecutar_2">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Icon similar a (Icono).
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Exit_021">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_01_o">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_02_c">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_02_h">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_02_l">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_02_o">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.folder_02_oh">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.ICONO_empresa">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Mediciones">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Mediciones_h">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.procesos">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.procesos_h">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.Refresh_icon_4">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.treeview_01">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="P:FacturaElectronicaWS.Resources.treeview_02">
+	<summary>
+  Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+</summary>
+</member><member name="T:FacturaElectronicaWS.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member>
+</members>
+</doc>

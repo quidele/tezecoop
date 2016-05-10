@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comprobante idsolicitud="124160">
+	<tipo>19</tipo>
+	<ptovta>2</ptovta>
+	<nro>1586</nro>
+	<tipocodaut>E</tipocodaut>
+	<codaut>60266021048417</codaut>
+	<vtocodaut>2010-07-15</vtocodaut>
+	<cuitemisor>66666666666</cuitemisor>
+	<ivaemisor>1</ivaemisor>
+	<domicilioemisor>Domicilio Prueba Emisor E </domicilioemisor>
+	<fechaemision>2010-07-05</fechaemision>
+	<fechacreacion>2010-07-01</fechacreacion>
+	<idioma>2</idioma>
+	<concepto>1</concepto>
+	<ape>S</ape>
+	<moneda>PES</moneda>
+	<tipocambio>1</tipocambio>
+	<destinocmp>212</destinocmp>
+	<tipodocreceptor>80</tipodocreceptor>
+	<nrodocreceptor>55000002126</nrodocreceptor>
+	<ivareceptor>9</ivareceptor>
+	<receptor>EDSIM LEATHER CO., INC.</receptor>
+	<domicilioreceptor>131 WEST 35TH ST, 14TH FL. NEW YORK - N.Y. 10001 NEW YORK - N.Y. 10001 USA, U.S.A.</domicilioreceptor>
+	<importetotal>0.01</importetotal>
+	<formaspago>
+		<formapago>
+			<codigo>99</codigo>
+			<descripcion>CASH</descripcion>
+		</formapago>
+	</formaspago>
+	<incoterms>FOB</incoterms>
+	<detalleincoterms>FOB</detalleincoterms>
+	<otrosdatoscomerciales>Covering shipment from Buenos Aires, Argentina of</otrosdatoscomerciales>
+	<detalles>
+		<detalle item="1">
+			<desc>-</desc>
+			<unimed>0</unimed>
+			<importe>0.01</importe>
+		</detalle>
+	</detalles>
+	<otrosdatosgenerales>Say pesos zero and 1/100</otrosdatosgenerales>
+	<codtarea>7440</codtarea>
+	<estadocmp>AC</estadocmp>
+</comprobante>

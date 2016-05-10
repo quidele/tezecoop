@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+factuElectroML
+</name>
+</assembly>
+<members>
+<member name="M:WindowsApplication1.CertificadosX509.ObtieneCertificadoDelCertStoreMy(System.String,System.String)">
+	<summary>
+ Lee un certificado del repositorio My 
+ </summary>
+	<param name="argDnCertificado">DN del certificado a buscar</param>
+ ''' <param name="argNameCertificado">Nombre del certificado a buscar</param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.CertificadosX509.FirmaBytesMensaje(System.Byte[],System.Security.Cryptography.X509Certificates.X509Certificate2)">
+	<summary>
+ Firma mensaje
+ </summary>
+	<param name="argBytesMsg">Bytes del mensaje</param>
+	<param name="argCertFirmante">Certificado usado para firmar</param>
+	<returns>Bytes del mensaje firmado</returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.CertificadosX509.ObtieneCertificadoDesdeArchivo(System.String)">
+	<summary>
+ Lee certificado de disco
+ </summary>
+	<param name="argArchivo">Ruta del certificado a leer.</param>
+	<returns>Un objeto certificado X509</returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.RegionalUtils._IntegerToWords(System.Int64)">
+	<summary> 
+ Retorna un string representando el número argNumero en palabras.
+ </summary>
+</member><member name="M:WindowsApplication1.RegionalUtils._EnteroAPalabras(System.Int64)">
+	<summary>
+ Retorna un string representando el número argNumero en palabras.
+ </summary>
+</member><member name="M:WindowsApplication1.AccesoAFIP.obtenerTicketHomologacion">
+	<summary>
+ Funcion ejecutar 
+ </summary>
+	<returns>0 si terminó bien, valores negativos si hubieron errores</returns>
+	<remarks></remarks>
+</member><member name="M:WindowsApplication1.AdmFacturaElectronica.AdaptarFormatoAFIPHOMO">
+	<summary>
+ Adapta el comprobante al formato de AFIP para Homologación
+ </summary>
+	<returns>Boolean</returns>
+</member><member name="M:WindowsApplication1.AdmFacturaElectronica.AdaptarFormatoAFIPPROD">
+	<summary>
+ Adapta el comprobante al formato de AFIP para Producción
+ </summary>
+	<returns>Boolean</returns>
+</member><member name="M:WindowsApplication1.Encriptado.EncryptText(System.String,System.String)">
+	<summary>
+ Devuelve una clave encriptada a partir de un nombre de usuario
+ </summary>
+	<param name="strUsuario"></param>
+	<param name="strPass"></param>
+	<returns>String</returns>
+</member><member name="M:WindowsApplication1.Encriptado.DecryptText(System.String,System.String)">
+	<summary>
+ Devuelve la clave original desencriptada a partir de su propio nombre de usuario
+ </summary>
+	<param name="strPassEncript"></param>
+	<param name="strUsuario"></param>
+	<returns>string</returns>
+</member>
+</members>
+</doc>

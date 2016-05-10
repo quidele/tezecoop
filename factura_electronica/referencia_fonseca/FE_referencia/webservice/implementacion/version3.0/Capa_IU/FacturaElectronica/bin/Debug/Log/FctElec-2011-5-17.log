@@ -1,0 +1,855 @@
+17/05/2011 09:15:48 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:17:14 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:17:44 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:19:40 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:21:15 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:24:09 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:28:57 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:34:05 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:34:42 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:36:05 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:38:26 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:39:20 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:40:39 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:40:59 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:41:25 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:43:23 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:46:00 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:46:50 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:47:13 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:47:35 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:48:16 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 09:49:26 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:00:06 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:02:49 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:06:13 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:06:34 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:07:27 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:08:42 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:09:25 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:19:57 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:20:27 a.m. - ----------- INICIO -----------
+17/05/2011 10:20:27 a.m. - 1000482
+17/05/2011 10:20:27 a.m. - 473580
+17/05/2011 10:20:27 a.m. - Usuario: turinad
+17/05/2011 10:20:27 a.m. - Nombre del equipo: PC0071
+17/05/2011 10:20:27 a.m. - Insertando comprobantes en FE
+17/05/2011 10:20:27 a.m. - Observaciones: 
+17/05/2011 10:20:27 a.m. - Chequeando resultados de FE
+17/05/2011 10:20:27 a.m. - Obtener Comprobantes
+17/05/2011 10:20:27 a.m. - Solicitando CAE a AFIP
+17/05/2011 10:20:27 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 10:20:27 a.m. - Solicitando Token
+17/05/2011 10:20:27 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 10:20:38 a.m. - Generando el Login Ticket Request
+17/05/2011 10:20:38 a.m. - Firmando el Login Ticket Request
+17/05/2011 10:20:38 a.m. - ***Leyendo certificado: 
+17/05/2011 10:20:38 a.m. - ***Certificados disponibles en el repositorio:My
+17/05/2011 10:20:38 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+17/05/2011 10:20:38 a.m. - ***Firmando bytes del mensaje...
+17/05/2011 10:20:38 a.m. - ***OK mensaje firmado
+17/05/2011 10:20:49 a.m. - Analizando el Ticket Response recibido del WSAA
+17/05/2011 10:20:50 a.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_17-5-2011.xml con Sign y Token.
+17/05/2011 10:20:50 a.m. - Adaptando Formatos a AFIP
+17/05/2011 10:21:02 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 10:21:15 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 10:24:09 a.m. - Lista de Items creada
+17/05/2011 10:24:11 a.m. - Lista de PermisosDestino creada
+17/05/2011 10:24:15 a.m. - Adaptacion Homologacion Completa
+17/05/2011 10:24:21 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 10:25:02 a.m. - Actualizando datos del comprobante
+17/05/2011 10:25:17 a.m. - Actualizando base de datos local y Magma
+17/05/2011 10:25:33 a.m. - Commit Realizado con éxito!!!
+17/05/2011 10:25:34 a.m. - Grabando estado de envío
+17/05/2011 10:25:36 a.m. - Comprobante_Asignado
+17/05/2011 10:25:43 a.m. - Obtención de CAE exitosa
+17/05/2011 10:28:57 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:29:11 a.m. - ----------- INICIO -----------
+17/05/2011 10:29:11 a.m. - 1000481
+17/05/2011 10:29:11 a.m. - 473578
+17/05/2011 10:29:11 a.m. - Usuario: turinad
+17/05/2011 10:29:11 a.m. - Nombre del equipo: PC0071
+17/05/2011 10:29:11 a.m. - Insertando comprobantes en FE
+17/05/2011 10:29:11 a.m. - Observaciones: 
+17/05/2011 10:29:11 a.m. - Chequeando resultados de FE
+17/05/2011 10:29:11 a.m. - Obtener Comprobantes
+17/05/2011 10:29:11 a.m. - Solicitando CAE a AFIP
+17/05/2011 10:29:12 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 10:29:12 a.m. - Solicitando Token
+17/05/2011 10:29:12 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 10:29:12 a.m. - Adaptando Formatos a AFIP
+17/05/2011 10:29:13 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 10:29:20 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 10:29:24 a.m. - Lista de Items creada
+17/05/2011 10:29:24 a.m. - Lista de PermisosDestino creada
+17/05/2011 10:29:24 a.m. - Adaptacion Homologacion Completa
+17/05/2011 10:29:25 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 10:29:49 a.m. - Actualizando datos del comprobante
+17/05/2011 10:29:49 a.m. - Actualizando base de datos local y Magma
+17/05/2011 10:29:49 a.m. - Commit Realizado con éxito!!!
+17/05/2011 10:29:49 a.m. - Grabando estado de envío
+17/05/2011 10:29:49 a.m. - Comprobante_Asignado
+17/05/2011 10:29:49 a.m. - Obtención de CAE exitosa
+17/05/2011 10:30:00 a.m. - Observaciones: 
+17/05/2011 10:34:28 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:36:18 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:36:22 a.m. - ----------- INICIO -----------
+17/05/2011 10:36:22 a.m. - 1000483
+17/05/2011 10:36:22 a.m. - 473582
+17/05/2011 10:36:22 a.m. - Usuario: turinad
+17/05/2011 10:36:23 a.m. - Nombre del equipo: PC0071
+17/05/2011 10:36:23 a.m. - Insertando comprobantes en FE
+17/05/2011 10:36:23 a.m. - Observaciones: 
+17/05/2011 10:36:23 a.m. - Chequeando resultados de FE
+17/05/2011 10:36:23 a.m. - Obtener Comprobantes
+17/05/2011 10:36:23 a.m. - Solicitando CAE a AFIP
+17/05/2011 10:36:23 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 10:36:23 a.m. - Solicitando Token
+17/05/2011 10:36:23 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 10:36:23 a.m. - Adaptando Formatos a AFIP
+17/05/2011 10:36:26 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 10:36:36 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 10:36:37 a.m. - Lista de Items creada
+17/05/2011 10:36:37 a.m. - Lista de PermisosDestino creada
+17/05/2011 10:36:37 a.m. - Adaptacion Homologacion Completa
+17/05/2011 10:36:38 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 10:36:41 a.m. - Actualizando datos del comprobante
+17/05/2011 10:36:58 a.m. - 
+17/05/2011 10:37:06 a.m. - Observaciones: 
+17/05/2011 10:37:58 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 10:38:04 a.m. - ----------- INICIO -----------
+17/05/2011 10:38:04 a.m. - 1000483
+17/05/2011 10:38:04 a.m. - 473582
+17/05/2011 10:38:04 a.m. - Usuario: turinad
+17/05/2011 10:38:04 a.m. - Nombre del equipo: PC0071
+17/05/2011 10:38:04 a.m. - Insertando comprobantes en FE
+17/05/2011 10:38:04 a.m. - Observaciones: 
+17/05/2011 10:38:04 a.m. - Chequeando resultados de FE
+17/05/2011 10:38:04 a.m. - Obtener Comprobantes
+17/05/2011 10:38:04 a.m. - Solicitando CAE a AFIP
+17/05/2011 10:38:04 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 10:38:04 a.m. - Solicitando Token
+17/05/2011 10:38:04 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 10:38:04 a.m. - Adaptando Formatos a AFIP
+17/05/2011 10:38:06 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 10:38:13 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 10:38:15 a.m. - Lista de Items creada
+17/05/2011 10:38:15 a.m. - Lista de PermisosDestino creada
+17/05/2011 10:38:16 a.m. - Adaptacion Homologacion Completa
+17/05/2011 10:38:16 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 10:38:18 a.m. - Actualizando datos del comprobante
+17/05/2011 10:38:26 a.m. - Obtención de CAE exitosa
+17/05/2011 10:38:27 a.m. - Observaciones: 
+17/05/2011 11:07:47 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:08:03 a.m. - ----------- INICIO -----------
+17/05/2011 11:08:03 a.m. - 1000484
+17/05/2011 11:08:03 a.m. - 473584
+17/05/2011 11:08:03 a.m. - Usuario: turinad
+17/05/2011 11:08:03 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:08:03 a.m. - Insertando comprobantes en FE
+17/05/2011 11:08:03 a.m. - Observaciones: 
+17/05/2011 11:08:03 a.m. - Chequeando resultados de FE
+17/05/2011 11:08:03 a.m. - Obtener Comprobantes
+17/05/2011 11:08:03 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:08:03 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:08:04 a.m. - Solicitando Token
+17/05/2011 11:08:04 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:08:04 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:08:08 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:10:43 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:10:47 a.m. - ----------- INICIO -----------
+17/05/2011 11:10:47 a.m. - 1000485
+17/05/2011 11:10:47 a.m. - 473585
+17/05/2011 11:10:47 a.m. - Usuario: turinad
+17/05/2011 11:10:47 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:10:47 a.m. - Insertando comprobantes en FE
+17/05/2011 11:10:47 a.m. - Observaciones: 
+17/05/2011 11:10:47 a.m. - Chequeando resultados de FE
+17/05/2011 11:10:47 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:11:24 a.m. - ----------- INICIO -----------
+17/05/2011 11:11:24 a.m. - 1000485
+17/05/2011 11:11:24 a.m. - 473585
+17/05/2011 11:11:24 a.m. - Usuario: turinad
+17/05/2011 11:11:24 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:11:24 a.m. - Insertando comprobantes en FE
+17/05/2011 11:11:24 a.m. - Observaciones: 
+17/05/2011 11:11:25 a.m. - Chequeando resultados de FE
+17/05/2011 11:11:25 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:11:53 a.m. - ----------- INICIO -----------
+17/05/2011 11:11:53 a.m. - 1000487
+17/05/2011 11:11:53 a.m. - 473590
+17/05/2011 11:11:53 a.m. - Usuario: turinad
+17/05/2011 11:11:53 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:11:53 a.m. - Insertando comprobantes en FE
+17/05/2011 11:11:53 a.m. - Observaciones: 
+17/05/2011 11:11:53 a.m. - Chequeando resultados de FE
+17/05/2011 11:11:53 a.m. - Obtener Comprobantes
+17/05/2011 11:11:53 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:11:53 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:11:53 a.m. - Solicitando Token
+17/05/2011 11:11:53 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:11:53 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:11:55 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:12:01 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:12:22 a.m. - Lista de Items creada
+17/05/2011 11:12:24 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:12:24 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:12:28 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:12:53 a.m. - Actualizando datos del comprobante
+17/05/2011 11:13:08 a.m. - Obtención de CAE exitosa
+17/05/2011 11:13:09 a.m. - Observaciones: 
+17/05/2011 11:13:23 a.m. - ----------- INICIO -----------
+17/05/2011 11:13:23 a.m. - 1000486
+17/05/2011 11:13:23 a.m. - 473586
+17/05/2011 11:13:23 a.m. - Usuario: turinad
+17/05/2011 11:13:23 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:13:23 a.m. - Insertando comprobantes en FE
+17/05/2011 11:13:23 a.m. - Observaciones: 
+17/05/2011 11:13:23 a.m. - Chequeando resultados de FE
+17/05/2011 11:13:23 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:13:35 a.m. - ----------- INICIO -----------
+17/05/2011 11:13:35 a.m. - 1000488
+17/05/2011 11:13:35 a.m. - 473594
+17/05/2011 11:13:35 a.m. - Usuario: turinad
+17/05/2011 11:13:35 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:13:35 a.m. - Insertando comprobantes en FE
+17/05/2011 11:13:35 a.m. - Observaciones: 
+17/05/2011 11:13:35 a.m. - Chequeando resultados de FE
+17/05/2011 11:13:35 a.m. - Obtener Comprobantes
+17/05/2011 11:13:35 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:13:35 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:13:35 a.m. - Solicitando Token
+17/05/2011 11:13:35 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:13:35 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:13:37 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:13:39 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:13:41 a.m. - Lista de Items creada
+17/05/2011 11:13:41 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:13:41 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:13:41 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:13:43 a.m. - Actualizando datos del comprobante
+17/05/2011 11:13:47 a.m. - Obtención de CAE exitosa
+17/05/2011 11:13:48 a.m. - Observaciones: 
+17/05/2011 11:13:59 a.m. - ----------- INICIO -----------
+17/05/2011 11:13:59 a.m. - 1000484
+17/05/2011 11:13:59 a.m. - 473584
+17/05/2011 11:13:59 a.m. - Usuario: turinad
+17/05/2011 11:13:59 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:13:59 a.m. - Insertando comprobantes en FE
+17/05/2011 11:13:59 a.m. - Observaciones: 
+17/05/2011 11:13:59 a.m. - Chequeando resultados de FE
+17/05/2011 11:13:59 a.m. - Obtener Comprobantes
+17/05/2011 11:13:59 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:13:59 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:13:59 a.m. - Solicitando Token
+17/05/2011 11:13:59 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:13:59 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:14:01 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:14:02 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:14:03 a.m. - Lista de Items creada
+17/05/2011 11:14:03 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:14:03 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:14:04 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:14:06 a.m. - Actualizando datos del comprobante
+17/05/2011 11:14:33 a.m. - Obtención de CAE exitosa
+17/05/2011 11:14:34 a.m. - Observaciones: 
+17/05/2011 11:14:43 a.m. - ----------- INICIO -----------
+17/05/2011 11:14:43 a.m. - 1000485
+17/05/2011 11:14:43 a.m. - 473585
+17/05/2011 11:14:43 a.m. - Usuario: turinad
+17/05/2011 11:14:43 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:14:43 a.m. - Insertando comprobantes en FE
+17/05/2011 11:14:43 a.m. - Observaciones: 
+17/05/2011 11:14:43 a.m. - Chequeando resultados de FE
+17/05/2011 11:14:43 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:16:38 a.m. - ----------- INICIO -----------
+17/05/2011 11:16:38 a.m. - 1000485
+17/05/2011 11:16:38 a.m. - 473585
+17/05/2011 11:16:38 a.m. - Usuario: turinad
+17/05/2011 11:16:38 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:16:38 a.m. - Insertando comprobantes en FE
+17/05/2011 11:16:38 a.m. - Observaciones: 
+17/05/2011 11:16:38 a.m. - Chequeando resultados de FE
+17/05/2011 11:16:38 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:18:46 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:19:04 a.m. - ----------- INICIO -----------
+17/05/2011 11:19:05 a.m. - 1000485
+17/05/2011 11:19:05 a.m. - 473585
+17/05/2011 11:19:05 a.m. - Usuario: turinad
+17/05/2011 11:19:06 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:19:06 a.m. - Insertando comprobantes en FE
+17/05/2011 11:19:16 a.m. - Observaciones: 
+17/05/2011 11:19:19 a.m. - Chequeando resultados de FE
+17/05/2011 11:20:44 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:21:23 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:23:33 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:25:06 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:26:18 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:26:55 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:27:41 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:28:45 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:29:11 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:29:25 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:30:47 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:31:15 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:31:18 a.m. - ----------- INICIO -----------
+17/05/2011 11:31:18 a.m. - 1000485
+17/05/2011 11:31:18 a.m. - 473585
+17/05/2011 11:31:18 a.m. - Usuario: turinad
+17/05/2011 11:31:18 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:31:18 a.m. - Insertando comprobantes en FE
+17/05/2011 11:31:18 a.m. - Observaciones: 
+17/05/2011 11:31:18 a.m. - Chequeando resultados de FE
+17/05/2011 11:31:18 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:31:23 a.m. - ----------- INICIO -----------
+17/05/2011 11:31:23 a.m. - 1000483
+17/05/2011 11:31:23 a.m. - 473582
+17/05/2011 11:31:23 a.m. - Usuario: turinad
+17/05/2011 11:31:23 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:31:23 a.m. - Insertando comprobantes en FE
+17/05/2011 11:31:23 a.m. - Observaciones: 
+17/05/2011 11:31:24 a.m. - Chequeando resultados de FE
+17/05/2011 11:31:24 a.m. - Obtener Comprobantes
+17/05/2011 11:31:24 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:31:24 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:31:24 a.m. - Solicitando Token
+17/05/2011 11:31:24 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:31:24 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:31:35 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:31:50 a.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+17/05/2011 11:31:50 a.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+17/05/2011 11:31:52 a.m. - Observaciones: 
+17/05/2011 11:31:55 a.m. - ----------- INICIO -----------
+17/05/2011 11:31:55 a.m. - 1000483
+17/05/2011 11:31:55 a.m. - 473582
+17/05/2011 11:31:55 a.m. - Usuario: turinad
+17/05/2011 11:31:55 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:31:55 a.m. - Insertando comprobantes en FE
+17/05/2011 11:31:55 a.m. - Observaciones: 
+17/05/2011 11:31:55 a.m. - Chequeando resultados de FE
+17/05/2011 11:31:55 a.m. - Obtener Comprobantes
+17/05/2011 11:31:55 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:31:55 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:31:55 a.m. - Solicitando Token
+17/05/2011 11:31:55 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:31:55 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:31:55 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:31:55 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:31:56 a.m. - Lista de Items creada
+17/05/2011 11:31:56 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:31:56 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:31:56 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:31:56 a.m. - Actualizando datos del comprobante
+17/05/2011 11:31:58 a.m. - Obtención de CAE exitosa
+17/05/2011 11:31:59 a.m. - Observaciones: 
+17/05/2011 11:32:01 a.m. - ----------- INICIO -----------
+17/05/2011 11:32:01 a.m. - 1000484
+17/05/2011 11:32:01 a.m. - 473584
+17/05/2011 11:32:01 a.m. - Usuario: turinad
+17/05/2011 11:32:01 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:32:01 a.m. - Insertando comprobantes en FE
+17/05/2011 11:32:01 a.m. - Observaciones: 
+17/05/2011 11:32:01 a.m. - Chequeando resultados de FE
+17/05/2011 11:32:01 a.m. - Obtener Comprobantes
+17/05/2011 11:32:01 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:32:01 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:32:01 a.m. - Solicitando Token
+17/05/2011 11:32:01 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:32:01 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:32:01 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:32:02 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:32:02 a.m. - Lista de Items creada
+17/05/2011 11:32:02 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:32:02 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:32:02 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:32:04 a.m. - Actualizando datos del comprobante
+17/05/2011 11:32:06 a.m. - Obtención de CAE exitosa
+17/05/2011 11:32:07 a.m. - Observaciones: 
+17/05/2011 11:32:09 a.m. - ----------- INICIO -----------
+17/05/2011 11:32:09 a.m. - 1000487
+17/05/2011 11:32:09 a.m. - 473590
+17/05/2011 11:32:09 a.m. - Usuario: turinad
+17/05/2011 11:32:09 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:32:09 a.m. - Insertando comprobantes en FE
+17/05/2011 11:32:09 a.m. - Observaciones: 
+17/05/2011 11:32:09 a.m. - Chequeando resultados de FE
+17/05/2011 11:32:09 a.m. - Obtener Comprobantes
+17/05/2011 11:32:09 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:32:09 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:32:09 a.m. - Solicitando Token
+17/05/2011 11:32:09 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:32:09 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:32:09 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:32:09 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:32:09 a.m. - Lista de Items creada
+17/05/2011 11:32:09 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:32:09 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:32:09 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:32:09 a.m. - Actualizando datos del comprobante
+17/05/2011 11:32:11 a.m. - Obtención de CAE exitosa
+17/05/2011 11:32:13 a.m. - Observaciones: 
+17/05/2011 11:33:53 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:33:56 a.m. - ----------- INICIO -----------
+17/05/2011 11:33:56 a.m. - 1000484
+17/05/2011 11:33:56 a.m. - 473584
+17/05/2011 11:33:56 a.m. - Usuario: turinad
+17/05/2011 11:33:56 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:33:56 a.m. - Insertando comprobantes en FE
+17/05/2011 11:33:56 a.m. - Observaciones: 
+17/05/2011 11:33:56 a.m. - Chequeando resultados de FE
+17/05/2011 11:33:56 a.m. - Obtener Comprobantes
+17/05/2011 11:33:56 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:33:56 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:33:56 a.m. - Solicitando Token
+17/05/2011 11:33:56 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:33:56 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:33:56 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:34:02 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:34:02 a.m. - Lista de Items creada
+17/05/2011 11:34:02 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:34:02 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:34:02 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:34:03 a.m. - Actualizando datos del comprobante
+17/05/2011 11:34:05 a.m. - Obtención de CAE exitosa
+17/05/2011 11:34:06 a.m. - Observaciones: 
+17/05/2011 11:34:09 a.m. - ----------- INICIO -----------
+17/05/2011 11:34:09 a.m. - 1000488
+17/05/2011 11:34:09 a.m. - 473594
+17/05/2011 11:34:09 a.m. - Usuario: turinad
+17/05/2011 11:34:09 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:34:09 a.m. - Insertando comprobantes en FE
+17/05/2011 11:34:09 a.m. - Observaciones: 
+17/05/2011 11:34:09 a.m. - Chequeando resultados de FE
+17/05/2011 11:34:09 a.m. - Obtener Comprobantes
+17/05/2011 11:34:09 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:34:09 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:34:09 a.m. - Solicitando Token
+17/05/2011 11:34:09 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:34:09 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:34:09 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:34:10 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:34:10 a.m. - Lista de Items creada
+17/05/2011 11:34:10 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:34:10 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:34:10 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:34:10 a.m. - Actualizando datos del comprobante
+17/05/2011 11:34:11 a.m. - Obtención de CAE exitosa
+17/05/2011 11:34:13 a.m. - Observaciones: 
+17/05/2011 11:34:16 a.m. - ----------- INICIO -----------
+17/05/2011 11:34:16 a.m. - 1000487
+17/05/2011 11:34:16 a.m. - 473590
+17/05/2011 11:34:16 a.m. - Usuario: turinad
+17/05/2011 11:34:16 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:34:16 a.m. - Insertando comprobantes en FE
+17/05/2011 11:34:16 a.m. - Observaciones: 
+17/05/2011 11:34:16 a.m. - Chequeando resultados de FE
+17/05/2011 11:34:16 a.m. - Obtener Comprobantes
+17/05/2011 11:34:16 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:34:16 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:34:16 a.m. - Solicitando Token
+17/05/2011 11:34:16 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:34:16 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:34:16 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:34:16 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:34:16 a.m. - Lista de Items creada
+17/05/2011 11:34:16 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:34:16 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:34:16 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:34:17 a.m. - Actualizando datos del comprobante
+17/05/2011 11:34:18 a.m. - Obtención de CAE exitosa
+17/05/2011 11:34:19 a.m. - Observaciones: 
+17/05/2011 11:37:27 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:37:35 a.m. - ----------- INICIO -----------
+17/05/2011 11:37:35 a.m. - 1000483
+17/05/2011 11:37:35 a.m. - 473582
+17/05/2011 11:37:35 a.m. - Usuario: turinad
+17/05/2011 11:37:35 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:37:35 a.m. - Insertando comprobantes en FE
+17/05/2011 11:37:35 a.m. - Observaciones: 
+17/05/2011 11:37:35 a.m. - Chequeando resultados de FE
+17/05/2011 11:37:35 a.m. - Obtener Comprobantes
+17/05/2011 11:37:35 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:37:35 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:37:35 a.m. - Solicitando Token
+17/05/2011 11:37:35 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:37:35 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:37:35 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:37:44 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:37:44 a.m. - Lista de Items creada
+17/05/2011 11:37:44 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:37:44 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:37:44 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:37:44 a.m. - Actualizando datos del comprobante
+17/05/2011 11:37:47 a.m. - Obtención de CAE exitosa
+17/05/2011 11:37:48 a.m. - Observaciones: 
+17/05/2011 11:43:10 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:43:16 a.m. - ----------- INICIO -----------
+17/05/2011 11:43:16 a.m. - 1000485
+17/05/2011 11:43:16 a.m. - 473585
+17/05/2011 11:43:16 a.m. - Usuario: turinad
+17/05/2011 11:43:16 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:43:16 a.m. - Insertando comprobantes en FE
+17/05/2011 11:43:16 a.m. - Observaciones: 
+17/05/2011 11:43:16 a.m. - Chequeando resultados de FE
+17/05/2011 11:43:16 a.m. - ERROR: El boleto no tiene asignado el número definitivo 
+ERROR: El boleto no tiene asignado el número definitivo 
+
+17/05/2011 11:43:27 a.m. - ----------- INICIO -----------
+17/05/2011 11:43:27 a.m. - 1000483
+17/05/2011 11:43:27 a.m. - 473582
+17/05/2011 11:43:27 a.m. - Usuario: turinad
+17/05/2011 11:43:27 a.m. - Nombre del equipo: PC0071
+17/05/2011 11:43:27 a.m. - Insertando comprobantes en FE
+17/05/2011 11:43:27 a.m. - Observaciones: 
+17/05/2011 11:43:27 a.m. - Chequeando resultados de FE
+17/05/2011 11:43:27 a.m. - Obtener Comprobantes
+17/05/2011 11:43:27 a.m. - Solicitando CAE a AFIP
+17/05/2011 11:43:27 a.m. - No existen registros para procesar en v_cmpasociados_EX
+17/05/2011 11:43:27 a.m. - Solicitando Token
+17/05/2011 11:43:27 a.m. - Modo de operacion: 'Homologacion'
+17/05/2011 11:43:27 a.m. - Adaptando Formatos a AFIP
+17/05/2011 11:43:27 a.m. - Adaptando formato Afip - Homologacion - EX
+17/05/2011 11:43:33 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+17/05/2011 11:43:33 a.m. - Lista de Items creada
+17/05/2011 11:43:33 a.m. - Lista de PermisosDestino creada
+17/05/2011 11:43:33 a.m. - Adaptacion Homologacion Completa
+17/05/2011 11:43:33 a.m. - Estableciendo comunicación con AFIP
+17/05/2011 11:43:33 a.m. - Actualizando datos del comprobante
+17/05/2011 11:43:38 a.m. - Obtención de CAE exitosa
+17/05/2011 11:43:39 a.m. - Observaciones: 
+17/05/2011 11:54:12 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 11:59:48 a.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:01:02 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:01:20 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:02:33 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:02:55 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:03:20 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:03:45 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:05:03 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:05:34 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:08:02 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:11:17 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:12:24 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:14:02 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:14:49 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:17:12 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:18:06 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+17/05/2011 12:27:42 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:29:56 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:30:16 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:30:43 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:30:52 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:31:18 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:31:38 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:31:51 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:32:24 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:37:34 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:40:26 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:44:16 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:44:23 p.m. - Generando el Login Ticket Request
+17/05/2011 12:44:24 p.m. - Firmando el Login Ticket Request
+17/05/2011 12:44:24 p.m. - ***Leyendo certificado: 
+17/05/2011 12:44:24 p.m. - ***Certificados disponibles en el repositorio:My
+17/05/2011 12:44:25 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+17/05/2011 12:44:25 p.m. - ***Firmando bytes del mensaje...
+17/05/2011 12:44:25 p.m. - ***OK mensaje firmado
+17/05/2011 12:44:39 p.m. - Analizando el Ticket Response recibido del WSAA
+17/05/2011 12:44:39 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_ML_17-5-2011.xml con Sign y Token.
+17/05/2011 12:48:34 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:49:05 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:49:43 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 12:50:21 p.m. - ----------- INICIO -----------
+17/05/2011 12:50:21 p.m. - 1000026
+17/05/2011 12:50:21 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 12:50:21 p.m. - Usuario: turinad
+17/05/2011 12:50:21 p.m. - Nombre del equipo: PC0071
+17/05/2011 12:50:21 p.m. - Insertando comprobantes en FE
+17/05/2011 12:50:24 p.m. - Observaciones: 
+17/05/2011 12:50:24 p.m. - Chequeando resultados de FE
+17/05/2011 12:50:24 p.m. - Obtener Comprobantes
+17/05/2011 12:50:24 p.m. - Solicitando CAE a AFIP
+17/05/2011 12:50:24 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 12:50:24 p.m. - Solicitando Token
+17/05/2011 12:50:24 p.m. - Modo de operacion: 'Homologacion'
+17/05/2011 12:50:24 p.m. - Adaptando Formatos
+17/05/2011 12:50:24 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 12:50:24 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNTc1NDYwNDc0IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY0Njg5NyIgZXhwX3RpbWU9IjEzMDU2OTAxNTciIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 12:50:24 p.m. - Sign WoH+97fRlLV1xafZQZxrt/YMnenIxpicDNeLc48YQdYZSj0oFGVD4k2TwNkpUg2J988xT22QssLWG7MnnI8Pl6YRTjPOot/TbM5WXwSjbJHkI9ZGml1VZfUxwhz/JDAC9K12do3JCBKD0R5yuWlAdtGpvxX7L7YVNiBjhNwamVA=
+17/05/2011 12:50:27 p.m. - Último Nro de Comprobante en AFIP (Homo): 109
+17/05/2011 12:50:28 p.m. - Lista de Detalle_IVA creada
+17/05/2011 12:50:28 p.m. - Lista de Detalle_tributos creada
+17/05/2011 12:50:28 p.m. - Adaptacion Homologacion Completa
+17/05/2011 12:50:28 p.m. - Estableciendo comunicación con AFIP
+17/05/2011 12:50:29 p.m. - Observaciones insertadas correctamente en TABLA
+17/05/2011 12:50:29 p.m. - Actualizando datos del comprobante
+17/05/2011 12:50:29 p.m. - Error del comprobante
+17/05/2011 12:50:29 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+17/05/2011 12:50:34 p.m. - Observaciones: 
+17/05/2011 12:50:34 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto.
+17/05/2011 12:54:22 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 01:04:43 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 01:08:26 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 01:08:46 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+Intente nuevamente.
+17/05/2011 01:08:55 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+Intente nuevamente.
+17/05/2011 01:25:50 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 01:27:17 p.m. - ----------- INICIO -----------
+17/05/2011 01:27:19 p.m. - Comprobante N°: 1000026
+17/05/2011 01:29:15 p.m. - Id Solicitud: 473535
+17/05/2011 01:29:22 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 01:29:27 p.m. - Usuario: turinad
+17/05/2011 01:29:34 p.m. - Nombre del equipo: PC0071
+17/05/2011 01:34:00 p.m. - Insertando comprobantes en Base FE
+17/05/2011 01:36:18 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 01:42:47 p.m. - Resultado observación: OK
+17/05/2011 02:39:13 p.m. - Observaciones: 
+17/05/2011 02:40:03 p.m. - Chequeando resultados de FE
+17/05/2011 02:40:37 p.m. - Obtener Comprobantes
+17/05/2011 02:41:05 p.m. - Solicitando CAE a AFIP
+17/05/2011 02:41:42 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 02:42:08 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 02:42:28 p.m. - Solicitando Token y Firma
+17/05/2011 02:46:52 p.m. - Token y Sign leidos correctamente
+17/05/2011 02:48:05 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNTc1NDYwNDc0IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY0Njg5NyIgZXhwX3RpbWU9IjEzMDU2OTAxNTciIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 02:48:06 p.m. - Sign: WoH+97fRlLV1xafZQZxrt/YMnenIxpicDNeLc48YQdYZSj0oFGVD4k2TwNkpUg2J988xT22QssLWG7MnnI8Pl6YRTjPOot/TbM5WXwSjbJHkI9ZGml1VZfUxwhz/JDAC9K12do3JCBKD0R5yuWlAdtGpvxX7L7YVNiBjhNwamVA=
+17/05/2011 02:51:19 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+17/05/2011 02:56:34 p.m. - Generando el Login Ticket Request
+17/05/2011 02:56:40 p.m. - Firmando el Login Ticket Request
+17/05/2011 02:56:41 p.m. - ***Leyendo certificado: 
+17/05/2011 02:56:41 p.m. - ***Certificados disponibles en el repositorio:My
+17/05/2011 02:56:41 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+17/05/2011 02:56:43 p.m. - ***Firmando bytes del mensaje...
+17/05/2011 02:56:43 p.m. - ***OK mensaje firmado
+17/05/2011 02:57:01 p.m. - Analizando el Ticket Response recibido del WSAA
+17/05/2011 02:57:08 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\mercado_local\desarrollo\codigo.net\version2.0\factuElectroML\bin\Debug\TA_HOMO_ML_17-5-2011.xml
+17/05/2011 02:57:08 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_ML_17-5-2011.xml con Sign y Token.
+17/05/2011 02:58:13 p.m. - Adaptando Formatos
+17/05/2011 03:01:20 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:02:34 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+17/05/2011 03:02:41 p.m. - Observaciones: 
+17/05/2011 03:03:27 p.m. - ----------- INICIO -----------
+17/05/2011 03:03:27 p.m. - Comprobante N°: 1000026
+17/05/2011 03:03:27 p.m. - Id Solicitud: 473535
+17/05/2011 03:03:27 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:03:27 p.m. - Usuario: turinad
+17/05/2011 03:03:27 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:03:27 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:03:27 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:03:27 p.m. - Resultado observación: OK
+17/05/2011 03:03:27 p.m. - Observaciones: 
+17/05/2011 03:03:27 p.m. - Chequeando resultados de FE
+17/05/2011 03:03:27 p.m. - Obtener Comprobantes
+17/05/2011 03:03:27 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:03:27 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:03:27 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:03:27 p.m. - Solicitando Token y Firma
+17/05/2011 03:03:28 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:03:28 p.m. - Token y Sign leidos correctamente
+17/05/2011 03:03:28 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:03:28 p.m. - Sign: EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:03:28 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:03:28 p.m. - Sign EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:03:28 p.m. - Adaptando Formatos
+17/05/2011 03:03:28 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:04:26 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+17/05/2011 03:07:11 p.m. - Observaciones: 
+17/05/2011 03:07:15 p.m. - ----------- INICIO -----------
+17/05/2011 03:07:15 p.m. - Comprobante N°: 1000026
+17/05/2011 03:07:15 p.m. - Id Solicitud: 473535
+17/05/2011 03:07:15 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:07:15 p.m. - Usuario: turinad
+17/05/2011 03:07:15 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:07:15 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:07:15 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:07:15 p.m. - Resultado observación: OK
+17/05/2011 03:07:15 p.m. - Observaciones: 
+17/05/2011 03:07:15 p.m. - Chequeando resultados de FE
+17/05/2011 03:07:15 p.m. - Obtener Comprobantes
+17/05/2011 03:07:15 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:07:15 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:07:15 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:07:15 p.m. - Solicitando Token y Firma
+17/05/2011 03:07:15 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:07:15 p.m. - Token y Sign leidos correctamente
+17/05/2011 03:07:15 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:07:15 p.m. - Sign: EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:07:15 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:07:15 p.m. - Sign EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:07:15 p.m. - Adaptando Formatos
+17/05/2011 03:07:15 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:07:34 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+17/05/2011 03:07:42 p.m. - Observaciones: 
+17/05/2011 03:07:44 p.m. - ----------- INICIO -----------
+17/05/2011 03:07:44 p.m. - Comprobante N°: 1000026
+17/05/2011 03:07:44 p.m. - Id Solicitud: 473535
+17/05/2011 03:07:44 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:07:44 p.m. - Usuario: turinad
+17/05/2011 03:07:44 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:07:45 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:07:45 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:07:45 p.m. - Resultado observación: OK
+17/05/2011 03:07:45 p.m. - Observaciones: 
+17/05/2011 03:07:45 p.m. - Chequeando resultados de FE
+17/05/2011 03:07:45 p.m. - Obtener Comprobantes
+17/05/2011 03:07:45 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:07:45 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:07:45 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:07:45 p.m. - Solicitando Token y Firma
+17/05/2011 03:07:45 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:07:45 p.m. - Token y Sign leidos correctamente
+17/05/2011 03:07:45 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:07:45 p.m. - Sign: EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:07:45 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:07:45 p.m. - Sign EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:07:55 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:09:23 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+17/05/2011 03:09:29 p.m. - Observaciones: 
+17/05/2011 03:09:32 p.m. - ----------- INICIO -----------
+17/05/2011 03:09:32 p.m. - Comprobante N°: 1000026
+17/05/2011 03:09:32 p.m. - Id Solicitud: 473535
+17/05/2011 03:09:32 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:09:32 p.m. - Usuario: turinad
+17/05/2011 03:09:32 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:09:32 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:09:32 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:09:32 p.m. - Resultado observación: OK
+17/05/2011 03:09:32 p.m. - Observaciones: 
+17/05/2011 03:09:32 p.m. - Chequeando resultados de FE
+17/05/2011 03:09:32 p.m. - Obtener Comprobantes
+17/05/2011 03:09:32 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:09:32 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:09:32 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:09:32 p.m. - Solicitando Token y Firma
+17/05/2011 03:09:32 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:09:32 p.m. - Token y Sign leidos correctamente
+17/05/2011 03:09:32 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:09:32 p.m. - Sign: EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:09:32 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:09:32 p.m. - Sign EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:10:39 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:11:43 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:13:59 p.m. - ----------- INICIO -----------
+17/05/2011 03:13:59 p.m. - Comprobante N°: 1000026
+17/05/2011 03:13:59 p.m. - Id Solicitud: 473535
+17/05/2011 03:13:59 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:14:00 p.m. - Usuario: turinad
+17/05/2011 03:14:00 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:14:00 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:14:00 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:14:00 p.m. - Resultado observación: OK
+17/05/2011 03:14:00 p.m. - Observaciones: 
+17/05/2011 03:14:00 p.m. - Chequeando resultados de FE
+17/05/2011 03:14:00 p.m. - Obtener Comprobantes
+17/05/2011 03:14:00 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:14:00 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:14:00 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:14:00 p.m. - Solicitando Token y Firma
+17/05/2011 03:14:00 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:14:00 p.m. - Token y Sign leidos correctamente
+17/05/2011 03:14:00 p.m. - Token: PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:14:00 p.m. - Sign: EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:14:00 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNDEyNTQ2ODQwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NDg1NSIgZXhwX3RpbWU9IjEzMDU2OTgxMTUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:14:00 p.m. - Sign EQ2WGU+pyN4DCKD8+4ehF4nQfitBr2bEsCKgs+G1VwFdBe1NCEsMYci+nniQzyABE3E65foFzSqdFsPdAnVndgs30gYwiaxq5nyC3Fc1xJbT0eHMAAZLc6pj+i5QdXK0HMX8jba5ENLaK8uVqu1jP88dxUdrbj/VTp0Sk+a7LDk=
+17/05/2011 03:14:10 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:15:13 p.m. - Último Nro de Comprobante en AFIP (Homo): 0
+17/05/2011 03:15:36 p.m. - Lista de Detalle_IVA creada
+17/05/2011 03:15:36 p.m. - Lista de Detalle_tributos creada
+17/05/2011 03:15:36 p.m. - Adaptacion Homologacion Completa
+17/05/2011 03:15:36 p.m. - Estableciendo comunicación con AFIP
+17/05/2011 03:22:53 p.m. - Respuesta: R
+17/05/2011 03:24:28 p.m. - No había ningún extremo escuchando en https://wswhomo.afip.gov.ar/wsfev1/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información. Comprobante rechazado por error desconocido.
+17/05/2011 03:24:58 p.m. - Guardando observaciones.
+17/05/2011 03:37:06 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:37:11 p.m. - ----------- INICIO -----------
+17/05/2011 03:37:11 p.m. - Comprobante N°: 1000026
+17/05/2011 03:37:11 p.m. - Id Solicitud: 473535
+17/05/2011 03:37:11 p.m. - Cliente: ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+17/05/2011 03:37:11 p.m. - Usuario: turinad
+17/05/2011 03:37:11 p.m. - Nombre del equipo: PC0071
+17/05/2011 03:37:11 p.m. - Insertando comprobantes en Base FE
+17/05/2011 03:37:11 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+17/05/2011 03:37:11 p.m. - Resultado observación: OK
+17/05/2011 03:37:11 p.m. - Observaciones: 
+17/05/2011 03:37:11 p.m. - Chequeando resultados de FE
+17/05/2011 03:37:11 p.m. - Obtener Comprobantes
+17/05/2011 03:37:11 p.m. - Iniciando el proceso de solicitud de CAE
+17/05/2011 03:37:11 p.m. - Modo de operacion: Homologacion
+17/05/2011 03:37:11 p.m. - No existen registros para procesar en comprobantes ASOC
+17/05/2011 03:37:11 p.m. - Solicitando Token y Firma
+17/05/2011 03:37:11 p.m. - Buscando archivo: TA_HOMO_ML_17-5-2011.xml
+17/05/2011 03:37:11 p.m. - El archivo buscado no existe o no se encuentra.
+17/05/2011 03:37:17 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+17/05/2011 03:37:17 p.m. - Generando el Login Ticket Request
+17/05/2011 03:37:17 p.m. - Firmando el Login Ticket Request
+17/05/2011 03:37:17 p.m. - ***Leyendo certificado: 
+17/05/2011 03:37:17 p.m. - ***Certificados disponibles en el repositorio:My
+17/05/2011 03:37:17 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+17/05/2011 03:37:18 p.m. - ***Firmando bytes del mensaje...
+17/05/2011 03:37:18 p.m. - ***OK mensaje firmado
+17/05/2011 03:37:24 p.m. - Analizando el Ticket Response recibido del WSAA
+17/05/2011 03:37:24 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_ML_17-5-2011.xml con Sign y Token.
+17/05/2011 03:37:24 p.m. - Token y Firma obtenidos correctamente - WS
+17/05/2011 03:37:24 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMzk1MjcwNDYxIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTY1NzI4MSIgZXhwX3RpbWU9IjEzMDU3MDA1NDEiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+17/05/2011 03:37:24 p.m. - Sign jMKS8wnwVEBbZoqEi1txgiDeEEHGXDxV+GLUT3hKjozYzLrbCFkRPK8nU9P0s18VpIVf65ZNteqTPDb+FW7AA8LiSgvQhQErNH5OEVFhSjQqMNt0j3lzXyDWSB2zPap82qB2nrV+lv4u5vq7+Lbz0HMVBEAtt7xmVc+Cn+NK+KE=
+17/05/2011 03:37:29 p.m. - Adaptando formato Afip - Homologacion
+17/05/2011 03:38:13 p.m. - Último Nro de Comprobante en AFIP (Homo): 109
+17/05/2011 03:41:10 p.m. - Lista de Detalle_IVA creada
+17/05/2011 03:41:16 p.m. - Lista de Detalle_tributos creada
+17/05/2011 03:41:20 p.m. - Adaptacion Homologacion Completa
+17/05/2011 03:41:29 p.m. - Estableciendo comunicación con AFIP
+17/05/2011 03:41:49 p.m. - Respuesta: R
+17/05/2011 03:42:05 p.m. - Guardando observaciones.
+17/05/2011 03:42:11 p.m. - Observaciones insertadas correctamente en TABLA
+17/05/2011 03:42:12 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+17/05/2011 03:42:37 p.m. - Actualizando datos del comprobante
+17/05/2011 03:42:52 p.m. - Error del comprobante
+17/05/2011 03:43:09 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+17/05/2011 03:43:24 p.m. - Observaciones: 
+17/05/2011 03:43:24 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto.
+17/05/2011 03:43:33 p.m. - Observaciones: 
+17/05/2011 03:43:34 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto.
+17/05/2011 03:48:20 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:48:28 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:48:55 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:49:10 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:50:07 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:50:16 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:51:04 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:51:11 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:51:31 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 03:52:38 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:14:10 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:21:03 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:24:30 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:42:58 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:44:11 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:48:56 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:49:17 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:49:50 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:50:14 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:50:51 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:55:37 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:56:57 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:57:11 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:57:28 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 04:57:49 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 05:02:24 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 05:05:53 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 05:18:26 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 05:19:11 p.m. - Error al cerrar el data reader de SQL
+17/05/2011 05:33:54 p.m. - Error al cerrar el data reader de SQL

@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>  
+<comprobantes>  
+<comprobante idsolicitud="164049" >   <tipo>19</tipo>  
+ <ptovta>2</ptovta> 
+ <cuitemisor>66666666666</cuitemisor> 
+ <fechaemision>2010-07-04</fechaemision>   
+ <idioma>2</idioma>   <concepto>1</concepto>  
+ <ape>S</ape>   <moneda>DOL</moneda>  
+ <tipocambio>3.892</tipocambio>   
+ <destinocmp>101</destinocmp>  
+ <tipodocreceptor>80</tipodocreceptor> 
+ <nrodocreceptor>55000002126</nrodocreceptor>  
+ <idimpositivoreceptor>55000002126</idimpositivoreceptor> 
+ <receptor>EDSIM LEATHER CO., INC.</receptor> 
+ <domicilioreceptor>EDSIM LEATHER CO., INC.   131 WEST 35TH ST, 14TH FL.  - N.Y. 10001 U.S.A    M.V. BAHIA NEGRA  on June 28 - 2010  CONT INBU 535 169/2 SEAL DX 56154</domicilioreceptor>   <importetotal>233464.68</importetotal>   <formaspago>  <formapago>  
+ <codigo>99</codigo>   <descripcion>20 Days             </descripcion> 
+ </formapago>  </formaspago>  <incoterms>FOB</incoterms>  
+ <detalleincoterms>FREE ON BOARD BUENOS</detalleincoterms>  
+ <otrosdatoscomerciales>DESTINATION: NEW YORK&#x0D;MV: BAHIA NEGRA&#x0D;&#x0D;Covering shipment from Buenos Aires, Argentina of &#x0D;  22 PACKAGES - MARKS: EL 1837 / 1858</otrosdatoscomerciales>   
+ <detalles>
+ <detalle><desc>&#x0D;&#x0D;&#x0D;" WHEELY " UNFINISHED FANCY &#x0D;&#x0D;&#x0D;OWHIDE LEATHER, &#x0D; BOVINE COW NAPPA, THICKNESS 
+ &#x0D;1.1/1.3 MM.&#x0D;&#x0D;BLACK DERMA SEL 06 MEDIUM     &#x0D;   7505.50 Sq.Ft      at U$S      1.650</desc>
+ <importe>0.00</importe></detalle><detalle><desc>BLACK DERMA SEL 07 MEDIUM     &#x0D;   7497.75 Sq.Ft      at U$S      1.300</desc><importe>9747.07</importe></detalle><detalle><desc>BRANDY  SEL 05 MEDIUM    &#x0D;   2676.50 Sq.Ft      at U$S      1.950</desc><importe>5219.17</importe></detalle><detalle><desc>BRANDY  SEL 06 MEDIUM    &#x0D;   6659.50 Sq.Ft      at U$S      1.700</desc><importe>11321.15</importe></detalle><detalle><desc>BRANDY  SEL 07 MEDIUM    &#x0D;  13690.50 Sq.Ft      at U$S      1.350</desc><importe>18482.18</importe></detalle><detalle><desc>GRANITE SEL 06 MEDIUM         &#x0D;   4081.00 Sq.Ft      at U$S      1.650</desc><importe>6733.65</importe></detalle><detalle><desc>GRANITE SEL 07 MEDIUM         &#x0D;   5056.75 Sq.Ft      at U$S      1.300</desc><importe>6573.77</importe></detalle><detalle><desc>OLIVE SEL 07 MEDIUM     &#x0D;   5565.00 Sq.Ft      at U$S      1.300</desc><importe>7234.50</importe></detalle><detalle><desc>PLUM  SEL 07 MEDIUM   &#x0D;   4364.25 Sq.Ft      at U$S      1.350</desc><importe>5891.74</importe></detalle><detalle><desc>RED  SEL 07 MEDIUM    &#x0D;   7509.75 Sq.Ft      at U$S      1.350</desc><importe>10138.16</importe></detalle><detalle><desc>STONE  SEL 05 MEDIUM  &#x0D;  16311.75 Sq.Ft      at U$S      1.900</desc><importe>30992.33</importe></detalle><detalle><desc>STONE  SEL 06 MEDIUM  &#x0D;  24523.25 Sq.Ft      at U$S      1.650</desc><importe>40463.36</importe></detalle><detalle><desc>STONE  SEL 07 MEDIUM  &#x0D;   8766.75 Sq.Ft      at U$S      1.300</desc><importe>11396.78</importe></detalle><detalle><desc>STONE SEL 06 MEDIUM  &#x0D;   2601.50 Sq.Ft      at U$S      1.650</desc><importe>4292.48</importe></detalle><detalle><desc>STONE SEL 05 MEDIUM  &#x0D;   4123.00 Sq.Ft      at U$S      1.900</desc><importe>7833.70</importe></detalle><detalle><desc>VAQUERO  SEL 06 LOW END  &#x0D;  14163.50 Sq.Ft      at U$S      1.650</desc><importe>23369.78</importe></detalle><detalle><desc>VAQUERO SEL 07 LOW END  &#x0D;   8873.75 Sq.Ft      at U$S      1.300</desc><importe>11535.88</importe></detalle><detalle><desc>VAQUERO SEL 06 LOW END  &#x0D;    501.25 Sq.Ft      at U$S      1.650</desc><importe>827.06</importe></detalle><detalle><desc>VAQUERO  SEL 05 LOW END  &#x0D;   4751.50 Sq.Ft      at U$S      1.900 </desc><importe>9027.85</importe></detalle></detalles><otrosdatosgenerales>&#x0D;</otrosdatosgenerales>   </comprobante>  
+</comprobantes>  

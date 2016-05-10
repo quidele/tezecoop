@@ -1,0 +1,21 @@
+17/12/2013 16:02:44 - Error al cerrar el data reader de SQL
+17/12/2013 16:02:44 - No existen Solicitudes a Enviar
+17/12/2013 16:02:47 - No existen Solicitudes a Enviar
+17/12/2013 16:02:54 - ----------- INICIO -----------
+17/12/2013 16:02:54 - Buscando archivo: TA_PROD_ML_17-12-2013.xml
+17/12/2013 16:02:54 - El archivo buscado no existe o no se encuentra.
+17/12/2013 16:02:59 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+17/12/2013 16:02:59 - Generando el Login Ticket Request
+17/12/2013 16:02:59 - Firmando el Login Ticket Request
+17/12/2013 16:02:59 - ***Leyendo certificado: 
+17/12/2013 16:02:59 - ***Certificados disponibles en el repositorio:My
+17/12/2013 16:02:59 - ubico el certificado y lo devuelvo, salimos de la funcion 
+17/12/2013 16:02:59 - ***Firmando bytes del mensaje...
+17/12/2013 16:02:59 - ***Error al firmar: La clave no existe.
+
+17/12/2013 16:02:59 - ***Error al firmar: La clave no existe.
+
+17/12/2013 16:03:04 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+17/12/2013 16:51:33 - Error al cerrar el data reader de SQL
+17/12/2013 16:51:33 - No existen Solicitudes a Enviar
+17/12/2013 16:51:34 - No existen Solicitudes a Enviar

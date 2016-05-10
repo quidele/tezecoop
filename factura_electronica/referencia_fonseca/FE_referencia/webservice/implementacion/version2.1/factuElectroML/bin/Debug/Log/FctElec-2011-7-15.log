@@ -1,0 +1,65 @@
+15/07/2011 10:51:15 a.m. - Error al cerrar el data reader de SQL
+15/07/2011 10:51:42 a.m. - ----------- INICIO -----------
+15/07/2011 10:51:42 a.m. - Comprobante N°: 1000001
+15/07/2011 10:51:42 a.m. - Id Solicitud: 554072
+15/07/2011 10:51:43 a.m. - Cliente: DEL RIO ROBERTO DANIEL                                                                              
+15/07/2011 10:51:43 a.m. - Usuario: turinad
+15/07/2011 10:51:43 a.m. - Nombre del equipo: PC0071
+15/07/2011 10:51:43 a.m. - Insertando comprobantes en Base FE
+15/07/2011 10:51:47 a.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+15/07/2011 10:51:48 a.m. - Resultado observación: OK
+15/07/2011 10:51:50 a.m. - Observaciones: 
+15/07/2011 10:51:50 a.m. - Chequeando resultados de FE
+15/07/2011 10:51:53 a.m. - Obtener Comprobantes
+15/07/2011 10:51:58 a.m. - Iniciando el proceso de solicitud de CAE
+15/07/2011 10:53:19 a.m. - Modo de operacion: Produccion
+15/07/2011 10:53:20 a.m. - No existen registros para procesar en comprobantes ASOC
+15/07/2011 10:53:20 a.m. - Solicitando Token y Firma
+15/07/2011 10:53:29 a.m. - Buscando archivo: TA_PROD_ML_15-7-2011.xml
+15/07/2011 10:53:29 a.m. - El archivo buscado no existe o no se encuentra.
+15/07/2011 10:53:35 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+15/07/2011 10:53:40 a.m. - Generando el Login Ticket Request
+15/07/2011 10:53:40 a.m. - Firmando el Login Ticket Request
+15/07/2011 10:53:40 a.m. - ***Leyendo certificado: 
+15/07/2011 10:53:40 a.m. - ***Certificados disponibles en el repositorio:My
+15/07/2011 10:53:40 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+15/07/2011 10:53:40 a.m. - ***Firmando bytes del mensaje...
+15/07/2011 10:53:40 a.m. - ***OK mensaje firmado
+15/07/2011 10:53:49 a.m. - Analizando el Ticket Response recibido del WSAA
+15/07/2011 10:54:11 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_14-7-2011.xml
+15/07/2011 10:54:11 a.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_15-7-2011.xml con Sign y Token.
+15/07/2011 10:54:22 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxODk2NzYyNzQ3IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEwNzM3OTY3IiBleHBfdGltZT0iMTMxMDc4MTIyNyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+15/07/2011 10:54:23 a.m. - Sign UCO+qIS/+zIJerBl2a1+e/00inWT+wWQpYVfrbbEYrSbSNKPOAhYRy2r66ANxM9z/GixOnJl+kYFRP5sTZxoJuUIeb9X254X8QXGRV4fleV4X6BXR/ihIwuzLpvEW1bhe8YBWWkAt1EAjl76JV7ekEEAO9UB25B1G2Y2zj6fVjg=
+15/07/2011 10:54:31 a.m. - Adaptando formato Afip - Producción
+15/07/2011 10:54:32 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxODk2NzYyNzQ3IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEwNzM3OTY3IiBleHBfdGltZT0iMTMxMDc4MTIyNyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+15/07/2011 10:54:32 a.m. - Sign UCO+qIS/+zIJerBl2a1+e/00inWT+wWQpYVfrbbEYrSbSNKPOAhYRy2r66ANxM9z/GixOnJl+kYFRP5sTZxoJuUIeb9X254X8QXGRV4fleV4X6BXR/ihIwuzLpvEW1bhe8YBWWkAt1EAjl76JV7ekEEAO9UB25B1G2Y2zj6fVjg=
+15/07/2011 10:54:45 a.m. - Último Nro de Comprobante en AFIP: 0
+15/07/2011 10:55:12 a.m. - Lista de Detalle_IVA creada
+15/07/2011 10:55:12 a.m. - Lista de Detalle_tributo creada
+15/07/2011 10:55:12 a.m. - Adaptación Produccion Completa
+15/07/2011 10:55:18 a.m. - Estableciendo comunicación con AFIP
+15/07/2011 10:55:37 a.m. - Respuesta: A
+15/07/2011 10:55:46 a.m. - <--INICIA GRABACION CAE--> 
+15/07/2011 10:55:46 a.m. - ID: 554072
+15/07/2011 10:55:46 a.m. - CAE: 61287706233835
+15/07/2011 10:55:47 a.m. - CAEFchVto: 20110722
+15/07/2011 10:55:47 a.m. - DocNro AFIP: 1
+15/07/2011 10:55:47 a.m. - CbteFch: 12/07/2011 12:00:00 a.m.
+15/07/2011 10:55:48 a.m. - <FINALIZA GRABACION CAE> 
+15/07/2011 10:55:48 a.m. - Comprobante_Aprobado
+15/07/2011 10:55:51 a.m. - Actualizando base de datos local y Magma
+15/07/2011 10:55:57 a.m. - Commit Realizado con éxito!!!
+15/07/2011 10:55:57 a.m. - Grabando estado de envío
+15/07/2011 10:55:59 a.m. - Comprobante_Asignado
+15/07/2011 10:56:03 a.m. - Obtención de CAE exitosa
+15/07/2011 10:56:03 a.m. - La operación finalizó correctamente
+15/07/2011 10:56:06 a.m. - No existen Solicitudes a Enviar
+15/07/2011 10:56:06 a.m. - Observaciones: 
+15/07/2011 10:56:08 a.m. - No existen Solicitudes a Enviar
+15/07/2011 10:56:08 a.m. - No existen Solicitudes a Enviar
+15/07/2011 10:56:15 a.m. - ----------- INICIO -----------
+15/07/2011 10:56:17 a.m. - Buscando archivo: TA_PROD_ML_15-7-2011.xml
+15/07/2011 10:56:17 a.m. - Token y Sign leidos correctamente
+15/07/2011 10:57:37 a.m. - ----------- INICIO -----------
+15/07/2011 10:57:40 a.m. - Buscando archivo: TA_PROD_ML_15-7-2011.xml
+15/07/2011 10:57:40 a.m. - Token y Sign leidos correctamente

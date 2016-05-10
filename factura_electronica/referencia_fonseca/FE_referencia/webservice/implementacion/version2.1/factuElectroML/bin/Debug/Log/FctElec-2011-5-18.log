@@ -1,0 +1,610 @@
+18/05/2011 09:38:20 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:38:56 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:39:09 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:39:47 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:40:08 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:44:55 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:45:50 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:46:01 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:48:49 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 09:49:48 a.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 09:49:48 a.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 09:49:54 a.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 09:49:59 a.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 09:49:59 a.m. - Generando el Login Ticket Request
+18/05/2011 09:49:59 a.m. - Firmando el Login Ticket Request
+18/05/2011 09:49:59 a.m. - ***Leyendo certificado: 
+18/05/2011 09:49:59 a.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 09:49:59 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 09:50:00 a.m. - ***Firmando bytes del mensaje...
+18/05/2011 09:50:00 a.m. - ***OK mensaje firmado
+18/05/2011 09:50:09 a.m. - Analizando el Ticket Response recibido del WSAA
+18/05/2011 09:50:09 a.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_18-5-2011.xml con Sign y Token.
+18/05/2011 09:50:18 a.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 09:50:18 a.m. - Token y Sign leidos correctamente
+18/05/2011 09:51:01 a.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 09:51:01 a.m. - Token y Sign leidos correctamente
+18/05/2011 09:52:58 a.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 09:52:58 a.m. - Token y Sign leidos correctamente
+18/05/2011 10:04:01 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 10:04:27 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 10:05:18 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 10:05:26 a.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:03:39 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:04:55 p.m. - ----------- INICIO -----------
+18/05/2011 01:04:55 p.m. - 1000532
+18/05/2011 01:04:55 p.m. - 497733
+18/05/2011 01:04:55 p.m. - Usuario: quidele
+18/05/2011 01:04:55 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:04:55 p.m. - Insertando comprobantes en FE
+18/05/2011 01:04:56 p.m. - Observaciones: 
+18/05/2011 01:04:56 p.m. - Chequeando resultados de FE
+18/05/2011 01:04:56 p.m. - Obtener Comprobantes
+18/05/2011 01:04:56 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:04:56 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:04:56 p.m. - Solicitando Token
+18/05/2011 01:04:56 p.m. - Modo de operacion: 'Homologacion'
+18/05/2011 01:04:56 p.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 01:04:56 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:05:01 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:05:06 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:05:06 p.m. - Generando el Login Ticket Request
+18/05/2011 01:05:06 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:05:06 p.m. - ***Leyendo certificado: 
+18/05/2011 01:05:06 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:05:06 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:05:06 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:05:06 p.m. - ***OK mensaje firmado
+18/05/2011 01:05:08 p.m. - Analizando el Ticket Response recibido del WSAA
+18/05/2011 01:05:08 p.m. - Eliminando archivo: C:\Eulises\Fonseca\Facturacion_Electronica\mercado_local\implementacion\version2.0\factuElectroML\bin\Debug\TA_HOMO_EX_17-5-2011.xml
+18/05/2011 01:05:08 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_18-5-2011.xml con Sign y Token.
+18/05/2011 01:05:08 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjA4OTM2NjQxIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTczNDU0NSIgZXhwX3RpbWU9IjEzMDU3Nzc4MDUiIGRzdD0iY249d3NmZXgsbz1hZmlwLGM9YXIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 01:05:08 p.m. - Sign RrGBfpjLhwL2hA743tFcKYiUooYdHhlsZAeV+wAYK0oPgj2/7y510EzDi/pknxl8+DQ40f7g90yzS00QxD4fXEBQMVTCj0eQTm8PRXolInWO+N+NC4PchURJYp8PyzqNqbiSK4QSpekHRqgNoFX333EVLqdIwpxbuTLK53katRE=
+18/05/2011 01:05:08 p.m. - Adaptando Formatos a AFIP
+18/05/2011 01:05:47 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:06:03 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:06:10 p.m. - ----------- INICIO -----------
+18/05/2011 01:06:10 p.m. - 1000532
+18/05/2011 01:06:10 p.m. - 497733
+18/05/2011 01:06:10 p.m. - Usuario: quidele
+18/05/2011 01:06:10 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:06:10 p.m. - Insertando comprobantes en FE
+18/05/2011 01:06:11 p.m. - Observaciones: 
+18/05/2011 01:06:11 p.m. - Chequeando resultados de FE
+18/05/2011 01:06:11 p.m. - Obtener Comprobantes
+18/05/2011 01:06:11 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:06:11 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:06:11 p.m. - Solicitando Token
+18/05/2011 01:06:11 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:06:11 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:06:11 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:06:16 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:06:21 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:06:21 p.m. - Generando el Login Ticket Request
+18/05/2011 01:06:21 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:06:21 p.m. - ***Leyendo certificado: 
+18/05/2011 01:06:21 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:06:21 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:06:21 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:06:21 p.m. - ***OK mensaje firmado
+18/05/2011 01:06:33 p.m. - Computador no autorizado a acceder al servicio
+18/05/2011 01:06:33 p.m. - Computador no autorizado a acceder al servicio no se puede obtener el ticket de acceso
+18/05/2011 01:06:33 p.m. - no se puede obtener el ticket de acceso
+18/05/2011 01:06:39 p.m. - Observaciones: 
+18/05/2011 01:06:54 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:06:56 p.m. - ----------- INICIO -----------
+18/05/2011 01:06:56 p.m. - 1000532
+18/05/2011 01:06:56 p.m. - 497733
+18/05/2011 01:06:56 p.m. - Usuario: quidele
+18/05/2011 01:06:56 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:06:56 p.m. - Insertando comprobantes en FE
+18/05/2011 01:06:56 p.m. - Observaciones: 
+18/05/2011 01:06:56 p.m. - Chequeando resultados de FE
+18/05/2011 01:06:56 p.m. - Obtener Comprobantes
+18/05/2011 01:06:56 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:06:56 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:06:56 p.m. - Solicitando Token
+18/05/2011 01:06:56 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:06:56 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:06:56 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:07:01 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:07:06 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:07:06 p.m. - Generando el Login Ticket Request
+18/05/2011 01:07:06 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:07:06 p.m. - ***Leyendo certificado: 
+18/05/2011 01:07:06 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:07:06 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:07:07 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:07:07 p.m. - ***OK mensaje firmado
+18/05/2011 01:07:18 p.m. - Computador no autorizado a acceder al servicio
+18/05/2011 01:07:18 p.m. - Computador no autorizado a acceder al servicio no se puede obtener el ticket de acceso
+18/05/2011 01:07:18 p.m. - no se puede obtener el ticket de acceso
+18/05/2011 01:07:20 p.m. - Observaciones: 
+18/05/2011 01:07:42 p.m. - ----------- INICIO -----------
+18/05/2011 01:07:42 p.m. - 1000532
+18/05/2011 01:07:42 p.m. - 497733
+18/05/2011 01:07:42 p.m. - Usuario: quidele
+18/05/2011 01:07:42 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:07:42 p.m. - Insertando comprobantes en FE
+18/05/2011 01:07:42 p.m. - Observaciones: 
+18/05/2011 01:07:42 p.m. - Chequeando resultados de FE
+18/05/2011 01:07:42 p.m. - Obtener Comprobantes
+18/05/2011 01:07:42 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:07:42 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:07:42 p.m. - Solicitando Token
+18/05/2011 01:07:42 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:07:46 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:07:46 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:07:54 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:08:22 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:08:25 p.m. - Generando el Login Ticket Request
+18/05/2011 01:08:29 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:08:31 p.m. - ***Leyendo certificado: 
+18/05/2011 01:08:32 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:08:32 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:08:33 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:08:33 p.m. - ***OK mensaje firmado
+18/05/2011 01:09:51 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:10:02 p.m. - ----------- INICIO -----------
+18/05/2011 01:10:02 p.m. - 1000532
+18/05/2011 01:10:02 p.m. - 497733
+18/05/2011 01:10:02 p.m. - Usuario: quidele
+18/05/2011 01:10:02 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:10:02 p.m. - Insertando comprobantes en FE
+18/05/2011 01:10:02 p.m. - Observaciones: 
+18/05/2011 01:10:02 p.m. - Chequeando resultados de FE
+18/05/2011 01:10:02 p.m. - Obtener Comprobantes
+18/05/2011 01:10:02 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:10:02 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:10:02 p.m. - Solicitando Token
+18/05/2011 01:10:02 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:10:04 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:10:04 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:10:09 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:10:16 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:10:16 p.m. - Generando el Login Ticket Request
+18/05/2011 01:10:16 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:10:16 p.m. - ***Leyendo certificado: 
+18/05/2011 01:10:16 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:10:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:10:17 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:10:17 p.m. - ***OK mensaje firmado
+18/05/2011 01:26:15 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:26:19 p.m. - ----------- INICIO -----------
+18/05/2011 01:26:19 p.m. - 1000532
+18/05/2011 01:26:19 p.m. - 497733
+18/05/2011 01:26:19 p.m. - Usuario: quidele
+18/05/2011 01:26:19 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:26:19 p.m. - Insertando comprobantes en FE
+18/05/2011 01:26:19 p.m. - Observaciones: 
+18/05/2011 01:26:19 p.m. - Chequeando resultados de FE
+18/05/2011 01:26:19 p.m. - Obtener Comprobantes
+18/05/2011 01:26:19 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:26:19 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:26:19 p.m. - Solicitando Token
+18/05/2011 01:26:19 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:26:22 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:26:22 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 01:26:27 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:26:32 p.m. - Dirección https://wswhomo.afip.gov.ar/wsfev1/service.asmx lanzada correctamente.
+18/05/2011 01:26:32 p.m. - Generando el Login Ticket Request
+18/05/2011 01:26:32 p.m. - Firmando el Login Ticket Request
+18/05/2011 01:26:32 p.m. - ***Leyendo certificado: 
+18/05/2011 01:26:32 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 01:26:32 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 01:26:32 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 01:26:32 p.m. - ***OK mensaje firmado
+18/05/2011 01:26:34 p.m. - Analizando el Ticket Response recibido del WSAA
+18/05/2011 01:26:34 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_EX_18-5-2011.xml con Sign y Token.
+18/05/2011 01:26:34 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjE1NjI3ODciIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDU3MzU4MzAiIGV4cF90aW1lPSIxMzA1Nzc5MDkwIiBkc3Q9IndzZmV4Ii8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPXJpY2FyZG8gYmFkYW5vIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 01:26:34 p.m. - Sign tT8Wf3PVi0+30Djwz42KwIJbHvrQ44p9HkbqQlO6cSSCeuz32ouBEVppQ6JEirwx2QJRm/e9UdWdAW6FKmxsOB9H0b69m2JRCP70dzojl7Nb1ukok+E8U73DzgXdt5ZzBCdsAkL11M0ko4X+fXXvhrz9knQFfwSEGJ1YIE8Yokk=
+18/05/2011 01:26:34 p.m. - Adaptando Formatos a AFIP
+18/05/2011 01:26:49 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 01:31:20 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:31:22 p.m. - ----------- INICIO -----------
+18/05/2011 01:31:22 p.m. - 1000532
+18/05/2011 01:31:22 p.m. - 497733
+18/05/2011 01:31:22 p.m. - Usuario: quidele
+18/05/2011 01:31:22 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:31:22 p.m. - Insertando comprobantes en FE
+18/05/2011 01:31:23 p.m. - Observaciones: 
+18/05/2011 01:31:23 p.m. - Chequeando resultados de FE
+18/05/2011 01:31:23 p.m. - Obtener Comprobantes
+18/05/2011 01:31:23 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:31:23 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:31:23 p.m. - Solicitando Token
+18/05/2011 01:31:23 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:31:29 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:31:29 p.m. - Token y Sign leidos correctamente
+18/05/2011 01:31:29 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjE1NjI3ODciIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDU3MzU4MzAiIGV4cF90aW1lPSIxMzA1Nzc5MDkwIiBkc3Q9IndzZmV4Ii8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPXJpY2FyZG8gYmFkYW5vIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 01:31:29 p.m. - Sign tT8Wf3PVi0+30Djwz42KwIJbHvrQ44p9HkbqQlO6cSSCeuz32ouBEVppQ6JEirwx2QJRm/e9UdWdAW6FKmxsOB9H0b69m2JRCP70dzojl7Nb1ukok+E8U73DzgXdt5ZzBCdsAkL11M0ko4X+fXXvhrz9knQFfwSEGJ1YIE8Yokk=
+18/05/2011 01:31:29 p.m. - Adaptando Formatos a AFIP
+18/05/2011 01:31:35 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 01:32:54 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 01:33:39 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 01:33:42 p.m. - ----------- INICIO -----------
+18/05/2011 01:33:42 p.m. - 1000532
+18/05/2011 01:33:42 p.m. - 497733
+18/05/2011 01:33:42 p.m. - Usuario: quidele
+18/05/2011 01:33:42 p.m. - Nombre del equipo: PC0157-
+18/05/2011 01:33:42 p.m. - Insertando comprobantes en FE
+18/05/2011 01:33:42 p.m. - Observaciones: 
+18/05/2011 01:33:42 p.m. - Chequeando resultados de FE
+18/05/2011 01:33:42 p.m. - Obtener Comprobantes
+18/05/2011 01:33:42 p.m. - Solicitando CAE a AFIP
+18/05/2011 01:33:42 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 01:33:42 p.m. - Solicitando Token
+18/05/2011 01:33:42 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 01:33:42 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 01:33:42 p.m. - Token y Sign leidos correctamente
+18/05/2011 01:33:42 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjE1NjI3ODciIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDU3MzU4MzAiIGV4cF90aW1lPSIxMzA1Nzc5MDkwIiBkc3Q9IndzZmV4Ii8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPXJpY2FyZG8gYmFkYW5vIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 01:33:42 p.m. - Sign tT8Wf3PVi0+30Djwz42KwIJbHvrQ44p9HkbqQlO6cSSCeuz32ouBEVppQ6JEirwx2QJRm/e9UdWdAW6FKmxsOB9H0b69m2JRCP70dzojl7Nb1ukok+E8U73DzgXdt5ZzBCdsAkL11M0ko4X+fXXvhrz9knQFfwSEGJ1YIE8Yokk=
+18/05/2011 01:33:42 p.m. - Adaptando Formatos a AFIP
+18/05/2011 01:33:58 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:44:30 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 02:45:47 p.m. - ----------- INICIO -----------
+18/05/2011 02:45:47 p.m. - 1000532
+18/05/2011 02:45:47 p.m. - 497733
+18/05/2011 02:45:47 p.m. - Usuario: quidele
+18/05/2011 02:45:47 p.m. - Nombre del equipo: PC0157-
+18/05/2011 02:45:47 p.m. - Insertando comprobantes en FE
+18/05/2011 02:45:47 p.m. - Observaciones: 
+18/05/2011 02:45:47 p.m. - Chequeando resultados de FE
+18/05/2011 02:45:47 p.m. - Obtener Comprobantes
+18/05/2011 02:45:47 p.m. - Solicitando CAE a AFIP
+18/05/2011 02:45:47 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 02:45:47 p.m. - Solicitando Token
+18/05/2011 02:45:47 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 02:45:47 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 02:45:47 p.m. - Token y Sign leidos correctamente
+18/05/2011 02:45:47 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjE1NjI3ODciIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDU3MzU4MzAiIGV4cF90aW1lPSIxMzA1Nzc5MDkwIiBkc3Q9IndzZmV4Ii8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPXJpY2FyZG8gYmFkYW5vIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 02:45:47 p.m. - Sign tT8Wf3PVi0+30Djwz42KwIJbHvrQ44p9HkbqQlO6cSSCeuz32ouBEVppQ6JEirwx2QJRm/e9UdWdAW6FKmxsOB9H0b69m2JRCP70dzojl7Nb1ukok+E8U73DzgXdt5ZzBCdsAkL11M0ko4X+fXXvhrz9knQFfwSEGJ1YIE8Yokk=
+18/05/2011 02:45:47 p.m. - Adaptando Formatos a AFIP
+18/05/2011 02:46:02 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:51:01 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 02:51:03 p.m. - ----------- INICIO -----------
+18/05/2011 02:51:03 p.m. - 1000532
+18/05/2011 02:51:03 p.m. - 497733
+18/05/2011 02:51:03 p.m. - Usuario: quidele
+18/05/2011 02:51:03 p.m. - Nombre del equipo: PC0157-
+18/05/2011 02:51:03 p.m. - Insertando comprobantes en FE
+18/05/2011 02:51:03 p.m. - Observaciones: 
+18/05/2011 02:51:03 p.m. - Chequeando resultados de FE
+18/05/2011 02:51:03 p.m. - Obtener Comprobantes
+18/05/2011 02:51:03 p.m. - Solicitando CAE a AFIP
+18/05/2011 02:51:03 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 02:51:03 p.m. - Solicitando Token
+18/05/2011 02:51:03 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 02:51:03 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 02:51:03 p.m. - Token y Sign leidos correctamente
+18/05/2011 02:51:03 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MjE1NjI3ODciIHNyYz0iQ049d3NhYSwgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDU3MzU4MzAiIGV4cF90aW1lPSIxMzA1Nzc5MDkwIiBkc3Q9IndzZmV4Ii8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPXJpY2FyZG8gYmFkYW5vIiBzZXJ2aWNlPSJ3c2ZleCIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+18/05/2011 02:51:03 p.m. - Sign tT8Wf3PVi0+30Djwz42KwIJbHvrQ44p9HkbqQlO6cSSCeuz32ouBEVppQ6JEirwx2QJRm/e9UdWdAW6FKmxsOB9H0b69m2JRCP70dzojl7Nb1ukok+E8U73DzgXdt5ZzBCdsAkL11M0ko4X+fXXvhrz9knQFfwSEGJ1YIE8Yokk=
+18/05/2011 02:51:03 p.m. - Adaptando Formatos a AFIP
+18/05/2011 02:51:11 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:52:57 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 02:52:59 p.m. - ----------- INICIO -----------
+18/05/2011 02:52:59 p.m. - 1000532
+18/05/2011 02:52:59 p.m. - 497733
+18/05/2011 02:52:59 p.m. - Usuario: quidele
+18/05/2011 02:52:59 p.m. - Nombre del equipo: PC0157-
+18/05/2011 02:52:59 p.m. - Insertando comprobantes en FE
+18/05/2011 02:52:59 p.m. - Observaciones: 
+18/05/2011 02:52:59 p.m. - Chequeando resultados de FE
+18/05/2011 02:52:59 p.m. - Obtener Comprobantes
+18/05/2011 02:52:59 p.m. - Solicitando CAE a AFIP
+18/05/2011 02:52:59 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 02:52:59 p.m. - Solicitando Token
+18/05/2011 02:52:59 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 02:52:59 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 02:52:59 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 02:53:04 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+18/05/2011 02:53:09 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+18/05/2011 02:53:09 p.m. - Generando el Login Ticket Request
+18/05/2011 02:53:09 p.m. - Firmando el Login Ticket Request
+18/05/2011 02:53:09 p.m. - ***Leyendo certificado: 
+18/05/2011 02:53:09 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 02:53:09 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 02:53:09 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 02:53:09 p.m. - ***OK mensaje firmado
+18/05/2011 02:53:19 p.m. - Analizando el Ticket Response recibido del WSAA
+18/05/2011 02:53:30 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_EX_18-5-2011.xml con Sign y Token.
+18/05/2011 02:53:33 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 02:53:34 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 02:53:35 p.m. - Adaptando Formatos a AFIP
+18/05/2011 02:53:37 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:57:21 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:58:43 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:58:49 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Prod): 0
+18/05/2011 02:59:25 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 02:59:34 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Prod): 0
+18/05/2011 03:03:36 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:06:10 p.m. - ----------- INICIO -----------
+18/05/2011 03:06:10 p.m. - 1000532
+18/05/2011 03:06:10 p.m. - 497733
+18/05/2011 03:06:10 p.m. - Usuario: quidele
+18/05/2011 03:06:10 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:06:10 p.m. - Insertando comprobantes en FE
+18/05/2011 03:06:10 p.m. - Observaciones: 
+18/05/2011 03:06:10 p.m. - Chequeando resultados de FE
+18/05/2011 03:06:10 p.m. - Obtener Comprobantes
+18/05/2011 03:06:10 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:06:10 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:06:10 p.m. - Solicitando Token
+18/05/2011 03:06:10 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:06:10 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:06:10 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:06:10 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:06:10 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:06:10 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:06:13 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:08:07 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:14:01 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:14:14 p.m. - ----------- INICIO -----------
+18/05/2011 03:14:14 p.m. - 1000532
+18/05/2011 03:14:14 p.m. - 497733
+18/05/2011 03:14:14 p.m. - Usuario: quidele
+18/05/2011 03:14:14 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:14:14 p.m. - Insertando comprobantes en FE
+18/05/2011 03:14:14 p.m. - Observaciones: 
+18/05/2011 03:14:14 p.m. - Chequeando resultados de FE
+18/05/2011 03:14:14 p.m. - Obtener Comprobantes
+18/05/2011 03:14:14 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:14:14 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:14:14 p.m. - Solicitando Token
+18/05/2011 03:14:14 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:14:14 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:14:14 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:14:14 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:14:14 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:14:14 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:14:17 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:16:17 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:16:21 p.m. - ----------- INICIO -----------
+18/05/2011 03:16:21 p.m. - 1000532
+18/05/2011 03:16:21 p.m. - 497733
+18/05/2011 03:16:21 p.m. - Usuario: quidele
+18/05/2011 03:16:21 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:16:21 p.m. - Insertando comprobantes en FE
+18/05/2011 03:16:21 p.m. - Observaciones: 
+18/05/2011 03:16:21 p.m. - Chequeando resultados de FE
+18/05/2011 03:16:21 p.m. - Obtener Comprobantes
+18/05/2011 03:16:21 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:16:21 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:16:21 p.m. - Solicitando Token
+18/05/2011 03:16:21 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:16:21 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:16:21 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:16:21 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:16:21 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:16:21 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:16:24 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:19:40 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:19:42 p.m. - ----------- INICIO -----------
+18/05/2011 03:19:42 p.m. - 1000532
+18/05/2011 03:19:42 p.m. - 497733
+18/05/2011 03:19:42 p.m. - Usuario: quidele
+18/05/2011 03:19:42 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:19:42 p.m. - Insertando comprobantes en FE
+18/05/2011 03:19:42 p.m. - Observaciones: 
+18/05/2011 03:19:42 p.m. - Chequeando resultados de FE
+18/05/2011 03:19:42 p.m. - Obtener Comprobantes
+18/05/2011 03:19:42 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:19:42 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:19:42 p.m. - Solicitando Token
+18/05/2011 03:19:42 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:19:42 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:19:42 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:19:42 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:19:42 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:19:42 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:19:46 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:23:36 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:23:38 p.m. - ----------- INICIO -----------
+18/05/2011 03:23:38 p.m. - 1000532
+18/05/2011 03:23:38 p.m. - 497733
+18/05/2011 03:23:38 p.m. - Usuario: quidele
+18/05/2011 03:23:38 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:23:38 p.m. - Insertando comprobantes en FE
+18/05/2011 03:23:38 p.m. - Observaciones: 
+18/05/2011 03:23:38 p.m. - Chequeando resultados de FE
+18/05/2011 03:23:38 p.m. - Obtener Comprobantes
+18/05/2011 03:23:38 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:23:38 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:23:38 p.m. - Solicitando Token
+18/05/2011 03:23:38 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:23:38 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:23:38 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:23:38 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:23:38 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:23:38 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:23:41 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:36:17 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:36:19 p.m. - ----------- INICIO -----------
+18/05/2011 03:36:19 p.m. - 1000532
+18/05/2011 03:36:19 p.m. - 497733
+18/05/2011 03:36:19 p.m. - Usuario: quidele
+18/05/2011 03:36:19 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:36:19 p.m. - Insertando comprobantes en FE
+18/05/2011 03:36:19 p.m. - Observaciones: 
+18/05/2011 03:36:19 p.m. - Chequeando resultados de FE
+18/05/2011 03:36:19 p.m. - Obtener Comprobantes
+18/05/2011 03:36:19 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:36:19 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:36:19 p.m. - Solicitando Token
+18/05/2011 03:36:19 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:36:19 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:36:19 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:36:19 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:36:19 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:36:19 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:36:23 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:45:28 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:45:30 p.m. - ----------- INICIO -----------
+18/05/2011 03:45:30 p.m. - 1000532
+18/05/2011 03:45:30 p.m. - 497733
+18/05/2011 03:45:30 p.m. - Usuario: quidele
+18/05/2011 03:45:30 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:45:30 p.m. - Insertando comprobantes en FE
+18/05/2011 03:45:31 p.m. - Observaciones: 
+18/05/2011 03:45:31 p.m. - Chequeando resultados de FE
+18/05/2011 03:45:31 p.m. - Obtener Comprobantes
+18/05/2011 03:45:31 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:45:31 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:45:31 p.m. - Solicitando Token
+18/05/2011 03:45:31 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:45:31 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:45:31 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:45:31 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:45:31 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:45:31 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:45:34 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:48:21 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:48:24 p.m. - ----------- INICIO -----------
+18/05/2011 03:48:24 p.m. - 1000532
+18/05/2011 03:48:24 p.m. - 497733
+18/05/2011 03:48:24 p.m. - Usuario: quidele
+18/05/2011 03:48:24 p.m. - Nombre del equipo: PC0157-
+18/05/2011 03:48:24 p.m. - Insertando comprobantes en FE
+18/05/2011 03:48:24 p.m. - Observaciones: 
+18/05/2011 03:48:24 p.m. - Chequeando resultados de FE
+18/05/2011 03:48:24 p.m. - Obtener Comprobantes
+18/05/2011 03:48:24 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:48:24 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:48:24 p.m. - Solicitando Token
+18/05/2011 03:48:24 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 03:48:24 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 03:48:24 p.m. - Token y Sign leidos correctamente
+18/05/2011 03:48:24 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 03:48:24 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 03:48:24 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:48:28 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 03:58:37 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 03:58:45 p.m. - ----------- INICIO -----------
+18/05/2011 03:58:45 p.m. - 1000488
+18/05/2011 03:58:45 p.m. - 473594
+18/05/2011 03:58:45 p.m. - Usuario: turinad
+18/05/2011 03:58:45 p.m. - Nombre del equipo: PC0071
+18/05/2011 03:58:45 p.m. - Insertando comprobantes en FE
+18/05/2011 03:58:47 p.m. - Observaciones: 
+18/05/2011 03:58:47 p.m. - Chequeando resultados de FE
+18/05/2011 03:58:47 p.m. - Obtener Comprobantes
+18/05/2011 03:58:47 p.m. - Solicitando CAE a AFIP
+18/05/2011 03:58:47 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 03:58:47 p.m. - Solicitando Token
+18/05/2011 03:58:47 p.m. - Modo de operacion: 'Homologacion'
+18/05/2011 03:58:52 p.m. - Buscando archivo: TA_HOMO_EX_18-5-2011.xml
+18/05/2011 03:58:52 p.m. - El archivo buscado no existe o no se encuentra.
+18/05/2011 03:58:58 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+18/05/2011 03:59:03 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+18/05/2011 03:59:03 p.m. - Generando el Login Ticket Request
+18/05/2011 03:59:03 p.m. - Firmando el Login Ticket Request
+18/05/2011 03:59:03 p.m. - ***Leyendo certificado: 
+18/05/2011 03:59:03 p.m. - ***Certificados disponibles en el repositorio:My
+18/05/2011 03:59:03 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+18/05/2011 03:59:04 p.m. - ***Firmando bytes del mensaje...
+18/05/2011 03:59:04 p.m. - ***OK mensaje firmado
+18/05/2011 03:59:30 p.m. - Analizando el Ticket Response recibido del WSAA
+18/05/2011 03:59:30 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\mercado_local\implementacion\version2.0\factuElectroML\bin\Debug\TA_HOMO_EX_17-5-2011.xml
+18/05/2011 03:59:30 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_18-5-2011.xml con Sign y Token.
+18/05/2011 03:59:30 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMzAzMTgyODEiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQ1MDA0IiBleHBfdGltZT0iMTMwNTc4ODI2NCIgZHN0PSJjbj13c2ZleCxvPWFmaXAsYz1hciIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZXMgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049ZXVsaXNlcyBxdWlkZWwiIHNlcnZpY2U9IndzZmV4IiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+18/05/2011 03:59:30 p.m. - Sign Ma41FsFTmIuX/l7wvVfuqV6cL5oD79iy7t5kUUSIc+IVleyghG2FERrNI4YxVXp4fsTVk/ZyMUzdX3FlP04EGb7vfvWzhGgDLeB9zRYUzg8IiT4nea8mANjVs0lmOdu4vzrSMDimy3AAfs75G1xKpZF4yU/CR5kkCQjtaZiswc4=
+18/05/2011 03:59:30 p.m. - Adaptando Formatos a AFIP
+18/05/2011 03:59:33 p.m. - Adaptando formato Afip - Homologacion - EX
+18/05/2011 03:59:54 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+18/05/2011 03:59:54 p.m. - Lista de Items creada
+18/05/2011 03:59:54 p.m. - Lista de PermisosDestino creada
+18/05/2011 03:59:54 p.m. - Adaptacion Homologacion Completa
+18/05/2011 03:59:54 p.m. - Estableciendo comunicación con AFIP
+18/05/2011 04:00:00 p.m. - Actualizando datos del comprobante
+18/05/2011 04:04:03 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:06:14 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:06:53 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:07:17 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:09:59 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:23:48 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:25:17 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:26:24 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:26:28 p.m. - ----------- INICIO -----------
+18/05/2011 04:26:28 p.m. - 1000532
+18/05/2011 04:26:28 p.m. - 497733
+18/05/2011 04:26:28 p.m. - Usuario: quidele
+18/05/2011 04:26:28 p.m. - Nombre del equipo: PC0157-
+18/05/2011 04:26:28 p.m. - Insertando comprobantes en FE
+18/05/2011 04:26:28 p.m. - Observaciones: 
+18/05/2011 04:26:28 p.m. - Chequeando resultados de FE
+18/05/2011 04:26:28 p.m. - Obtener Comprobantes
+18/05/2011 04:26:28 p.m. - Solicitando CAE a AFIP
+18/05/2011 04:26:28 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 04:26:28 p.m. - Solicitando Token
+18/05/2011 04:26:28 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 04:26:28 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 04:26:28 p.m. - Token y Sign leidos correctamente
+18/05/2011 04:26:28 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 04:26:28 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 04:26:28 p.m. - Adaptando Formatos a AFIP
+18/05/2011 04:26:39 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:26:42 p.m. - ----------- INICIO -----------
+18/05/2011 04:26:42 p.m. - 1000532
+18/05/2011 04:26:42 p.m. - 497733
+18/05/2011 04:26:42 p.m. - Usuario: quidele
+18/05/2011 04:26:42 p.m. - Nombre del equipo: PC0157-
+18/05/2011 04:26:42 p.m. - Insertando comprobantes en FE
+18/05/2011 04:26:42 p.m. - Observaciones: 
+18/05/2011 04:26:42 p.m. - Chequeando resultados de FE
+18/05/2011 04:26:42 p.m. - Obtener Comprobantes
+18/05/2011 04:26:42 p.m. - Solicitando CAE a AFIP
+18/05/2011 04:26:42 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 04:26:42 p.m. - Solicitando Token
+18/05/2011 04:26:42 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 04:26:42 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 04:26:42 p.m. - Token y Sign leidos correctamente
+18/05/2011 04:26:42 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 04:26:42 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 04:26:42 p.m. - Adaptando Formatos a AFIP
+18/05/2011 04:26:45 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 04:27:51 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+18/05/2011 04:27:51 p.m. - No había ningún extremo escuchando en https://servicios1.afip.gov.ar/wsfex/service.asmx que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+18/05/2011 04:27:51 p.m. - 
+Intente nuevamente.
+18/05/2011 04:27:53 p.m. - Observaciones: 
+18/05/2011 04:27:59 p.m. - ----------- INICIO -----------
+18/05/2011 04:27:59 p.m. - 1000532
+18/05/2011 04:27:59 p.m. - 497733
+18/05/2011 04:27:59 p.m. - Usuario: quidele
+18/05/2011 04:27:59 p.m. - Nombre del equipo: PC0157-
+18/05/2011 04:27:59 p.m. - Insertando comprobantes en FE
+18/05/2011 04:27:59 p.m. - Observaciones: 
+18/05/2011 04:27:59 p.m. - Chequeando resultados de FE
+18/05/2011 04:27:59 p.m. - Obtener Comprobantes
+18/05/2011 04:27:59 p.m. - Solicitando CAE a AFIP
+18/05/2011 04:27:59 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 04:27:59 p.m. - Solicitando Token
+18/05/2011 04:27:59 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 04:27:59 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 04:27:59 p.m. - Token y Sign leidos correctamente
+18/05/2011 04:27:59 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 04:27:59 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 04:27:59 p.m. - Adaptando Formatos a AFIP
+18/05/2011 04:28:03 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 04:28:15 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Prod): 0
+18/05/2011 04:29:00 p.m. - Error al cerrar el data reader de SQL
+18/05/2011 04:29:03 p.m. - ----------- INICIO -----------
+18/05/2011 04:29:03 p.m. - 1000532
+18/05/2011 04:29:03 p.m. - 497733
+18/05/2011 04:29:03 p.m. - Usuario: quidele
+18/05/2011 04:29:03 p.m. - Nombre del equipo: PC0157-
+18/05/2011 04:29:03 p.m. - Insertando comprobantes en FE
+18/05/2011 04:29:03 p.m. - Observaciones: 
+18/05/2011 04:29:03 p.m. - Chequeando resultados de FE
+18/05/2011 04:29:03 p.m. - Obtener Comprobantes
+18/05/2011 04:29:03 p.m. - Solicitando CAE a AFIP
+18/05/2011 04:29:03 p.m. - No existen registros para procesar en v_cmpasociados_EX
+18/05/2011 04:29:03 p.m. - Solicitando Token
+18/05/2011 04:29:03 p.m. - Modo de operacion: 'Produccion'
+18/05/2011 04:29:03 p.m. - Buscando archivo: TA_PROD_EX_18-5-2011.xml
+18/05/2011 04:29:03 p.m. - Token y Sign leidos correctamente
+18/05/2011 04:29:03 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMTU2NjI4MjcyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NzQxMjgxIiBleHBfdGltZT0iMTMwNTc4NDU0MSIgZHN0PSJ3c2ZleCIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZSBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1yaWNhcmRvIGJhZGFubyIgc2VydmljZT0id3NmZXgiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+18/05/2011 04:29:03 p.m. - Sign TMrg872KV65tOkN+zvCa2h6r61WZFzMx+BksxXg6QcMdWjOIR6iRWO7WJZQZQvvYDQ1c7iXi+xDtmOqu0RlLTjE4nV1T4YmFpgnQWcpKhBBJaq+LIzE09LP3un2TVwt3wGq18m02lB4UbAb7P7avcrAZkF47c0qYoCvYZmC7Xkw=
+18/05/2011 04:29:03 p.m. - Adaptando Formatos a AFIP
+18/05/2011 04:29:07 p.m. - Adaptando formato Afip - Produccion - EX
+18/05/2011 04:29:45 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Prod): 0

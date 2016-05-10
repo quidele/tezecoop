@@ -1,0 +1,139 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+DAOSistemaMagma
+</name>
+</assembly>
+<members>
+<member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerUbicacionesPorNodo(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener ubicaciones por nodo. Version_6.3
+ </summary>
+	<param name="pNombreNodo"></param>
+	<param name="pObjConexion"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerUnidadesDesdeNodo(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene el codigo del articulo, codigo de unidad y nombre a partir del nodo.
+ </summary>
+	<param name="pNombreNodo"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerNombreArticulos(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener nombre artículos. Version_6.3
+ </summary>
+	<param name="pListaNombreArticulos"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerArticulosCombo(fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener una lista de articulos con campos [cod_articulo, nom_articulo, origen] para un combo. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerArticulosCuerosConPesos(fonseca_libDatos.Campo,fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene articulos de cueros y pesos. Campos [cod_articulo,nom_articulo,kilos_prom_uni]. Version_6.3
+ </summary>
+	<param name="pArtYaSeleccionados"></param>
+	<param name="pNombreNodo"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerArticulosDesdeNodo(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene una lista de articulos desde un nodo. Campos [cod_articulo,nom_articulo,cod_uni_stk]. Version_6.3
+ </summary>
+	<param name="pNodo"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerArticuloXProveedor(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener articulos por proveedor. [cod_articulo, nom_articulo]. Version_6.3
+ </summary>
+	<param name="pCodTit"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerCodigoArticuloDesdeNodo(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene el codigo del articulo, codigo de unidad y nombre a partir del nodo.
+ </summary>
+	<param name="pNombreNodo"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerCentrosdeCosto(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene una lista de centros de costo. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerSectoresPorUsuario(fonseca_libDatos.Campo,fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener sectores por usuario. Version_6.3
+ </summary>
+	<param name="pUsuario"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="P:DAOSistemaMagma.My.Resources.Resources.ResourceManager">
+	<summary>
+  Devuelve la instancia de ResourceManager almacenada en caché utilizada por esta clase.
+</summary>
+</member><member name="P:DAOSistemaMagma.My.Resources.Resources.Culture">
+	<summary>
+  Reemplaza la propiedad CurrentUICulture del subproceso actual para todas las
+  búsquedas de recursos mediante esta clase de recurso fuertemente tipado.
+</summary>
+</member><member name="T:DAOSistemaMagma.My.Resources.Resources">
+	<summary>
+  Clase de recurso fuertemente tipado, para buscar cadenas traducidas, etc.
+</summary>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerMaquinas(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene una lista de maquinas. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.RealizarConsultaDePrueba(fonseca_libDatos.Conexion)">
+	<summary>
+ Realiza una consulta de prueba. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerDepositosDelUsuario(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtener depositos de un usuario. Version_6.3
+ </summary>
+	<param name="pUsuario"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerCodigoDocumentoPorNodo(fonseca_libDatos.Campo,fonseca_libDatos.Conexion)">
+	<summary>
+ Obtiene el cod_doc a partir del nombre del nodo.
+ </summary>
+	<param name="pNodo"></param>
+	<returns></returns>
+	<remarks></remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerEmpleadosPorTipo(fonseca_libDatos.Campo,fonseca_libDatos.Campo,fonseca_libDatos.Campo,fonseca_libDatos.Conexion)">
+	<summary>
+ Obtiene una lista de empleados. Version_6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerTitularesProveedores(fonseca_libDatos.Campo,fonseca_libDatos.Conexion@)">
+	<summary>
+ Obtiene una lista de proveedores marcados como titulares. Filtro opcional categoria. Version_6.3
+ </summary>
+	<param name="pCod_categProv"></param>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member><member name="M:DAOSistemaMagma.AdmSistemaMagma.ObtenerTitularesCsChicos(fonseca_libDatos.Conexion)">
+	<summary>
+ Obtiene una lista de titulares CS Chicos. Version.6.3
+ </summary>
+	<returns></returns>
+	<remarks>MVC-Ok</remarks>
+</member>
+</members>
+</doc>

@@ -1,0 +1,475 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{91401D27-FE61-478B-82CF-F988DB4FDF99}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>FacturacionElectronica</RootNamespace>
+    <AssemblyName>FacturacionElectronica</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>Windows</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile />
+	  <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FacturacionElectronica.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FacturacionElectronica.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="System.Threading.Tasks" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoAFIP.vb" />
+    <Compile Include="AccesoAFIP_ML_PROD.vb" />
+    <Compile Include="Configuraciones.vb" />
+    <Compile Include="ConfiguracionFE.vb" />
+    <Compile Include="AccesoAFIP_ML_HOMO.vb" />
+    <Compile Include="ReglasML_HOMO.vb" />
+    <Compile Include="FuncionesGenerales.vb" />
+    <Compile Include="IReglasFE.vb" />
+    <Compile Include="PrincipalFacturadorWebService.vb" />
+    <Compile Include="ReglasFacturacionElectronica.vb" />
+    <Compile Include="ReglasGeneralesFE.vb" />
+    <Compile Include="ReglasML_PROD.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsaahomo\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsaa\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsfexhomo\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsfex\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsfe_v1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wshomofev1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsaahomo\LoginCms.wsdl" />
+    <None Include="Service References\ar.gov.afip.wsaa\LoginCms.wsdl" />
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXGetCMPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponseAuthorize.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponseLast_CMP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_CheckPermiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Ctz.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_DST_cuit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_DST_pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Idi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Inc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_LastID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Mon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_PtoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Tex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Tipo_Cbte.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\FacturacionElectronica.ar.gov.afip.wsfexhomo.FEXResponse_Umed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\service.wsdl" />
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXGetCMPResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponseAuthorize.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponseLast_CMP.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_CheckPermiso.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Ctz.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_DST_cuit.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_DST_pais.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Idi.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Inc.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_LastID.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Mon.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_PtoVenta.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Tex.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Tipo_Cbte.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\FacturacionElectronica.ar.gov.afip.wsfex.FEXResponse_Umed.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfex\service.wsdl" />
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FEPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\FacturacionElectronica.ar.gov.afip.wsfe_v1.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\service.wsdl" />
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FEPaisResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\FacturacionElectronica.ar.gov.afip.wshomofev1.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsaahomo\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsaa\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsfexhomo\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsfex\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsfe_v1\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wshomofev1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\service.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfexhomo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfex\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfex\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfex\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\Fonseca_libDatos\produccion\version1.1\fonseca_libDatos\fonseca_libDatos.vbproj">
+      <Project>{390f83c9-9ab0-4939-aac0-3703568d47e2}</Project>
+      <Name>fonseca_libDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\LibreriasDAO\DAOFacturacionElectronica\DAOFacturacionElectronica.vbproj">
+      <Project>{ebb300d1-8875-4fce-89d5-48aca515b517}</Project>
+      <Name>DAOFacturacionElectronica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\LibreriasDAO\DAOSistemaMagma\DAOSistemaMagma.vbproj">
+      <Project>{5b082585-4368-424a-8238-78c6201e00f9}</Project>
+      <Name>DAOSistemaMagma</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

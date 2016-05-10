@@ -1,0 +1,346 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18395535-F09B-4333-A00D-1BD15A02622E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>factuElectroML</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>factuElectroML.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>factuElectroML.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AccesoAFIP.vb" />
+    <Compile Include="AdmConexiones.vb" />
+    <Compile Include="AdmFacturaElectronica.vb" />
+    <Compile Include="Campo.vb" />
+    <Compile Include="cbtesasoc.vb" />
+    <Compile Include="cbtesasocDAO.vb" />
+    <Compile Include="CertificadosX509.vb" />
+    <Compile Include="Comprobantes_ml.vb" />
+    <Compile Include="Comprobantes_mlDAO.vb" />
+    <Compile Include="Detalle_iva.vb" />
+    <Compile Include="Detalle_ivaDAO.vb" />
+    <Compile Include="Detalle_tributos.vb" />
+    <Compile Include="Detalle_tributosDAO.vb" />
+    <Compile Include="Encriptado.vb" />
+    <Compile Include="Frm_obtieneCAE.Designer.vb">
+      <DependentUpon>Frm_obtieneCAE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_obtieneCAE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_progressbar.Designer.vb">
+      <DependentUpon>frm_progressbar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_progressbar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Log.vb" />
+    <Compile Include="Observaciones.vb" />
+    <Compile Include="ObservacionesDAO.vb" />
+    <Compile Include="RegionalUtils.vb" />
+    <Compile Include="ResultadoSP.vb" />
+    <Compile Include="Seguridad.vb" />
+    <Compile Include="Service References\ar.gov.afip.wsaa\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wsfe_v1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="SolicitudML.vb" />
+    <Compile Include="SolicitudMLDAO.vb" />
+    <Compile Include="SQLAdapter.vb" />
+    <Compile Include="Ticket.vb" />
+    <Compile Include="Service References\ar.gov.afip.wsaahomo\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ar.gov.afip.wshomofev1\Reference.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="worker_class.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm_obtieneCAE.resx">
+      <DependentUpon>Frm_obtieneCAE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_progressbar.resx">
+      <DependentUpon>frm_progressbar.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsaahomo\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsaa\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wsfe_v1\" />
+    <WCFMetadataStorage Include="Service References\ar.gov.afip.wshomofev1\" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wshomofev1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wshomofev1\WindowsApplication1.ar.gov.afip.wshomofev1.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\LoginCms.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaahomo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\service.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\LoginCms.wsdl" />
+    <None Include="Service References\ar.gov.afip.wsfe_v1\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.CbteTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.ConceptoTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.DocTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.DummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECAEAGetResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECAEAResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECAEASinMovConsResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECAEASinMovResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECAEResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECompConsultaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FECotizacionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FEPtoVentaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FERecuperaLastCbteResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FERegXReqResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.FETributoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.IvaTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.MonedaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Service References\ar.gov.afip.wsfe_v1\WindowsApplication1.ar.gov.afip.wsfe_v1.OpcionalTipoResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\configuration91.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\configuration.svcinfo" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Service References\ar.gov.afip.wsaa\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

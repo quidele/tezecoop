@@ -1,0 +1,26 @@
+22/10/2012 11:04:15 a.m. - Error al cerrar el data reader de SQL
+22/10/2012 11:04:16 a.m. - No existen Solicitudes a Enviar
+22/10/2012 11:04:17 a.m. - No existen Solicitudes a Enviar
+22/10/2012 01:07:55 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 01:07:55 p.m. - No existen Solicitudes a Enviar
+22/10/2012 01:07:56 p.m. - No existen Solicitudes a Enviar
+22/10/2012 04:40:14 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 04:40:27 p.m. - ----------- INICIO -----------
+22/10/2012 04:40:27 p.m. - Buscando archivo: TA_PROD_ML_22-10-2012.xml
+22/10/2012 04:40:27 p.m. - El archivo buscado no existe o no se encuentra.
+22/10/2012 04:40:32 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+22/10/2012 04:40:33 p.m. - Generando el Login Ticket Request
+22/10/2012 04:40:33 p.m. - Firmando el Login Ticket Request
+22/10/2012 04:40:33 p.m. - ***Leyendo certificado: 
+22/10/2012 04:40:33 p.m. - ***Certificados disponibles en el repositorio:My
+22/10/2012 04:40:33 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+22/10/2012 04:40:33 p.m. - ***Firmando bytes del mensaje...
+22/10/2012 04:40:33 p.m. - ***OK mensaje firmado
+22/10/2012 04:40:37 p.m. - Analizando el Ticket Response recibido del WSAA
+22/10/2012 04:40:38 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_19-10-2012.xml
+22/10/2012 04:40:38 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_22-10-2012.xml con Sign y Token.
+22/10/2012 05:04:35 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 05:06:51 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 05:07:17 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 05:07:33 p.m. - Error al cerrar el data reader de SQL
+22/10/2012 05:07:52 p.m. - Error al cerrar el data reader de SQL

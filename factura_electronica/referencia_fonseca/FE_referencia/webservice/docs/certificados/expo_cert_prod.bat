@@ -1,0 +1,1 @@
+openssl pkcs12 -export -inkey privada -in PC001_4c4492a797565764.crt -out fonseca_prod.p12 -name "fonseca_prod"

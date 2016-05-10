@@ -1,0 +1,629 @@
+11/05/2011 09:14:16 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:17:50 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:18:06 a.m. - Generando el Login Ticket Request
+11/05/2011 09:18:06 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:18:06 a.m. - ***Leyendo certificado: 
+11/05/2011 09:18:06 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:18:06 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:18:06 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:18:06 a.m. - ***OK mensaje firmado
+11/05/2011 09:18:12 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 09:19:57 a.m. - Generando el Login Ticket Request
+11/05/2011 09:19:57 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:19:57 a.m. - ***Leyendo certificado: 
+11/05/2011 09:19:57 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:19:57 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:19:57 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:19:57 a.m. - ***OK mensaje firmado
+11/05/2011 09:19:59 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 09:32:42 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:32:53 a.m. - Generando el Login Ticket Request
+11/05/2011 09:32:53 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:32:53 a.m. - ***Leyendo certificado: 
+11/05/2011 09:32:53 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:32:53 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:32:53 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:32:53 a.m. - ***OK mensaje firmado
+11/05/2011 09:32:57 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:32:57 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:33:19 a.m. - Generando el Login Ticket Request
+11/05/2011 09:33:19 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:33:19 a.m. - ***Leyendo certificado: 
+11/05/2011 09:33:19 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:33:19 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:33:19 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:33:19 a.m. - ***OK mensaje firmado
+11/05/2011 09:33:20 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:33:20 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:33:34 a.m. - Generando el Login Ticket Request
+11/05/2011 09:33:34 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:33:34 a.m. - ***Leyendo certificado: 
+11/05/2011 09:33:34 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:33:34 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:33:34 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:33:34 a.m. - ***OK mensaje firmado
+11/05/2011 09:33:35 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:33:35 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:34:05 a.m. - Generando el Login Ticket Request
+11/05/2011 09:34:05 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:34:05 a.m. - ***Leyendo certificado: 
+11/05/2011 09:34:05 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:34:05 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:34:05 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:34:05 a.m. - ***OK mensaje firmado
+11/05/2011 09:34:06 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:34:06 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:34:53 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:35:01 a.m. - Generando el Login Ticket Request
+11/05/2011 09:35:01 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:35:01 a.m. - ***Leyendo certificado: 
+11/05/2011 09:35:01 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:35:01 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:35:01 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:35:01 a.m. - ***OK mensaje firmado
+11/05/2011 09:35:04 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:35:04 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:35:23 a.m. - Generando el Login Ticket Request
+11/05/2011 09:35:23 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:35:23 a.m. - ***Leyendo certificado: 
+11/05/2011 09:35:23 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:35:23 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:35:23 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:35:23 a.m. - ***OK mensaje firmado
+11/05/2011 09:35:24 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:35:24 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:35:36 a.m. - Generando el Login Ticket Request
+11/05/2011 09:35:36 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:35:36 a.m. - ***Leyendo certificado: 
+11/05/2011 09:35:36 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:35:36 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:35:36 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:35:36 a.m. - ***OK mensaje firmado
+11/05/2011 09:35:37 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:37:29 a.m. - Generando el Login Ticket Request
+11/05/2011 09:37:29 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:37:29 a.m. - ***Leyendo certificado: 
+11/05/2011 09:37:29 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:37:29 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:37:29 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:37:29 a.m. - ***OK mensaje firmado
+11/05/2011 09:37:30 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 09:40:30 a.m. - Generando el Login Ticket Request
+11/05/2011 09:40:30 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:40:30 a.m. - ***Leyendo certificado: 
+11/05/2011 09:40:30 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:40:30 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:40:30 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:40:30 a.m. - ***OK mensaje firmado
+11/05/2011 09:40:31 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 09:44:06 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:44:16 a.m. - Generando el Login Ticket Request
+11/05/2011 09:44:16 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:44:16 a.m. - ***Leyendo certificado: 
+11/05/2011 09:44:16 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:44:16 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:44:17 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:44:17 a.m. - ***OK mensaje firmado
+11/05/2011 09:44:20 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 09:49:35 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 09:49:44 a.m. - Generando el Login Ticket Request
+11/05/2011 09:49:44 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:49:44 a.m. - ***Leyendo certificado: 
+11/05/2011 09:49:44 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:49:44 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:49:44 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:49:44 a.m. - ***OK mensaje firmado
+11/05/2011 09:49:47 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:47 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:51 a.m. - Generando el Login Ticket Request
+11/05/2011 09:49:51 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:49:51 a.m. - ***Leyendo certificado: 
+11/05/2011 09:49:51 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:49:51 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:49:51 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:49:51 a.m. - ***OK mensaje firmado
+11/05/2011 09:49:51 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:51 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:54 a.m. - Generando el Login Ticket Request
+11/05/2011 09:49:54 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:49:54 a.m. - ***Leyendo certificado: 
+11/05/2011 09:49:54 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:49:54 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:49:54 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:49:54 a.m. - ***OK mensaje firmado
+11/05/2011 09:49:54 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:54 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:56 a.m. - Generando el Login Ticket Request
+11/05/2011 09:49:56 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:49:56 a.m. - ***Leyendo certificado: 
+11/05/2011 09:49:56 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:49:56 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:49:56 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:49:56 a.m. - ***OK mensaje firmado
+11/05/2011 09:49:56 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:56 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:59 a.m. - Generando el Login Ticket Request
+11/05/2011 09:49:59 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:49:59 a.m. - ***Leyendo certificado: 
+11/05/2011 09:49:59 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:49:59 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:49:59 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:49:59 a.m. - ***OK mensaje firmado
+11/05/2011 09:49:59 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:49:59 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:01 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:01 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:01 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:01 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:01 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:01 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:01 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:02 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:02 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:03 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:03 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:03 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:03 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:03 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:03 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:03 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:03 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:03 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:05 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:05 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:05 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:05 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:05 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:05 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:05 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:05 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:05 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:06 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:06 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:06 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:06 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:06 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:06 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:07 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:07 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:07 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:08 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:08 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:08 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:08 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:08 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:08 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:08 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:08 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:09 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:09 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:10 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:10 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:10 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:10 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:10 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:10 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:10 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:10 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 09:50:26 a.m. - Generando el Login Ticket Request
+11/05/2011 09:50:26 a.m. - Firmando el Login Ticket Request
+11/05/2011 09:50:26 a.m. - ***Leyendo certificado: 
+11/05/2011 09:50:26 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 09:50:26 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 09:50:26 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 09:50:26 a.m. - ***OK mensaje firmado
+11/05/2011 09:50:30 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 10:38:44 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 10:43:15 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 10:43:20 a.m. - Generando el Login Ticket Request
+11/05/2011 10:43:20 a.m. - Firmando el Login Ticket Request
+11/05/2011 10:43:20 a.m. - ***Leyendo certificado: 
+11/05/2011 10:43:20 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 10:43:20 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 10:43:21 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 10:43:21 a.m. - ***OK mensaje firmado
+11/05/2011 10:43:22 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 10:44:10 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 10:48:46 a.m. - Generando el Login Ticket Request
+11/05/2011 10:48:46 a.m. - Firmando el Login Ticket Request
+11/05/2011 10:48:46 a.m. - ***Leyendo certificado: 
+11/05/2011 10:48:46 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 10:48:46 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 10:48:46 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 10:48:46 a.m. - ***OK mensaje firmado
+11/05/2011 10:48:50 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 10:51:53 a.m. - Generando el Login Ticket Request
+11/05/2011 10:51:53 a.m. - Firmando el Login Ticket Request
+11/05/2011 10:51:53 a.m. - ***Leyendo certificado: 
+11/05/2011 10:51:53 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 10:51:53 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 10:51:53 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 10:51:53 a.m. - ***OK mensaje firmado
+11/05/2011 10:51:54 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 10:56:01 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 10:57:27 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 10:57:31 a.m. - Generando el Login Ticket Request
+11/05/2011 10:57:31 a.m. - Firmando el Login Ticket Request
+11/05/2011 10:57:31 a.m. - ***Leyendo certificado: 
+11/05/2011 10:57:31 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 10:57:31 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 10:57:31 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 10:57:31 a.m. - ***OK mensaje firmado
+11/05/2011 10:57:34 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 10:57:49 a.m. - Generando el Login Ticket Request
+11/05/2011 10:57:49 a.m. - Firmando el Login Ticket Request
+11/05/2011 10:57:49 a.m. - ***Leyendo certificado: 
+11/05/2011 10:57:49 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 10:57:49 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 10:57:49 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 10:57:49 a.m. - ***OK mensaje firmado
+11/05/2011 10:57:50 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:03:51 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:03:55 a.m. - Generando el Login Ticket Request
+11/05/2011 11:03:55 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:03:55 a.m. - ***Leyendo certificado: 
+11/05/2011 11:03:55 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:03:55 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:03:55 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:03:55 a.m. - ***OK mensaje firmado
+11/05/2011 11:03:58 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:22:27 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:22:31 a.m. - Generando el Login Ticket Request
+11/05/2011 11:22:31 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:22:31 a.m. - ***Leyendo certificado: 
+11/05/2011 11:22:31 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:22:31 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:22:31 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:22:31 a.m. - ***OK mensaje firmado
+11/05/2011 11:22:34 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:22:44 a.m. - Generando el Login Ticket Request
+11/05/2011 11:22:44 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:22:44 a.m. - ***Leyendo certificado: 
+11/05/2011 11:22:44 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:22:44 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:22:44 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:22:44 a.m. - ***OK mensaje firmado
+11/05/2011 11:23:53 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:23:59 a.m. - Generando el Login Ticket Request
+11/05/2011 11:23:59 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:23:59 a.m. - ***Leyendo certificado: 
+11/05/2011 11:23:59 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:23:59 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:23:59 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:23:59 a.m. - ***OK mensaje firmado
+11/05/2011 11:25:13 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:25:15 a.m. - Generando el Login Ticket Request
+11/05/2011 11:25:15 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:25:15 a.m. - ***Leyendo certificado: 
+11/05/2011 11:25:15 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:25:15 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:25:15 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:25:15 a.m. - ***OK mensaje firmado
+11/05/2011 11:25:19 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:36:00 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:36:04 a.m. - Generando el Login Ticket Request
+11/05/2011 11:36:04 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:36:04 a.m. - ***Leyendo certificado: 
+11/05/2011 11:36:04 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:36:04 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:36:04 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:36:04 a.m. - ***OK mensaje firmado
+11/05/2011 11:36:07 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:36:24 a.m. - Generando el Login Ticket Request
+11/05/2011 11:36:24 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:36:24 a.m. - ***Leyendo certificado: 
+11/05/2011 11:36:24 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:36:24 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:36:24 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:36:24 a.m. - ***OK mensaje firmado
+11/05/2011 11:36:25 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:46:00  - Error al cerrar el data reader de SQL
+11/05/2011 11:46:07  - Generando el Login Ticket Request
+11/05/2011 11:46:07  - Firmando el Login Ticket Request
+11/05/2011 11:46:07  - ***Leyendo certificado: 
+11/05/2011 11:46:07  - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:46:07  - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:46:07  - ***Firmando bytes del mensaje...
+11/05/2011 11:46:07  - ***OK mensaje firmado
+11/05/2011 11:46:08  - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:46:11  - Generando el Login Ticket Request
+11/05/2011 11:46:11  - Firmando el Login Ticket Request
+11/05/2011 11:46:11  - ***Leyendo certificado: 
+11/05/2011 11:46:11  - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:46:11  - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:46:11  - ***Firmando bytes del mensaje...
+11/05/2011 11:46:11  - ***OK mensaje firmado
+11/05/2011 11:46:12  - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:46:14  - Generando el Login Ticket Request
+11/05/2011 11:46:14  - Firmando el Login Ticket Request
+11/05/2011 11:46:14  - ***Leyendo certificado: 
+11/05/2011 11:46:14  - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:46:14  - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:46:14  - ***Firmando bytes del mensaje...
+11/05/2011 11:46:14  - ***OK mensaje firmado
+11/05/2011 11:46:14  - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:46:37  - Generando el Login Ticket Request
+11/05/2011 11:46:37  - Firmando el Login Ticket Request
+11/05/2011 11:46:37  - ***Leyendo certificado: 
+11/05/2011 11:46:37  - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:46:37  - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:46:37  - ***Firmando bytes del mensaje...
+11/05/2011 11:46:37  - ***OK mensaje firmado
+11/05/2011 11:46:38  - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:51:21  - Generando el Login Ticket Request
+11/05/2011 11:51:21  - Firmando el Login Ticket Request
+11/05/2011 11:51:21  - ***Leyendo certificado: 
+11/05/2011 11:51:21  - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:51:21  - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:51:21  - ***Firmando bytes del mensaje...
+11/05/2011 11:51:21  - ***OK mensaje firmado
+11/05/2011 11:51:22  - Analizando el Ticket Response recibido del WSAA
+11/05/2011 11:56:12 a.m. - Error al cerrar el data reader de SQL
+11/05/2011 11:56:15 a.m. - Generando el Login Ticket Request
+11/05/2011 11:56:15 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:56:15 a.m. - ***Leyendo certificado: 
+11/05/2011 11:56:15 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:56:15 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:56:15 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:56:15 a.m. - ***OK mensaje firmado
+11/05/2011 11:56:19 a.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 11:56:25 a.m. - Generando el Login Ticket Request
+11/05/2011 11:56:25 a.m. - Firmando el Login Ticket Request
+11/05/2011 11:56:25 a.m. - ***Leyendo certificado: 
+11/05/2011 11:56:25 a.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 11:56:25 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 11:56:25 a.m. - ***Firmando bytes del mensaje...
+11/05/2011 11:56:25 a.m. - ***OK mensaje firmado
+11/05/2011 11:56:26 a.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:05:13 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 12:05:20 p.m. - Generando el Login Ticket Request
+11/05/2011 12:05:20 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:05:20 p.m. - ***Leyendo certificado: 
+11/05/2011 12:05:20 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:05:20 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:05:20 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:05:21 p.m. - ***OK mensaje firmado
+11/05/2011 12:05:25 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:06:21 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 12:26:41 p.m. - Generando el Login Ticket Request
+11/05/2011 12:26:41 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:26:42 p.m. - ***Leyendo certificado: 
+11/05/2011 12:26:42 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:26:42 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:26:42 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:26:42 p.m. - ***OK mensaje firmado
+11/05/2011 12:26:46 p.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 12:26:49 p.m. - Generando el Login Ticket Request
+11/05/2011 12:26:49 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:26:49 p.m. - ***Leyendo certificado: 
+11/05/2011 12:26:49 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:26:49 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:26:49 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:26:49 p.m. - ***OK mensaje firmado
+11/05/2011 12:26:52 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:29:49 p.m. - Generando el Login Ticket Request
+11/05/2011 12:29:49 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:29:49 p.m. - ***Leyendo certificado: 
+11/05/2011 12:29:49 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:29:49 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:29:49 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:29:49 p.m. - ***OK mensaje firmado
+11/05/2011 12:29:50 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:30:25 p.m. - Generando el Login Ticket Request
+11/05/2011 12:30:25 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:30:25 p.m. - ***Leyendo certificado: 
+11/05/2011 12:30:25 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:30:25 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:30:25 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:30:25 p.m. - ***OK mensaje firmado
+11/05/2011 12:30:27 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:34:08 p.m. - Generando el Login Ticket Request
+11/05/2011 12:34:08 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:34:08 p.m. - ***Leyendo certificado: 
+11/05/2011 12:34:08 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:34:08 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:34:08 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:34:08 p.m. - ***OK mensaje firmado
+11/05/2011 12:34:10 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:43:24 p.m. - Generando el Login Ticket Request
+11/05/2011 12:43:24 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:43:24 p.m. - ***Leyendo certificado: 
+11/05/2011 12:43:24 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:43:24 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:43:24 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:43:24 p.m. - ***OK mensaje firmado
+11/05/2011 12:43:25 p.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 12:44:04 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 12:47:02 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 12:47:11 p.m. - Generando el Login Ticket Request
+11/05/2011 12:47:11 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:47:11 p.m. - ***Leyendo certificado: 
+11/05/2011 12:47:11 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:47:11 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:47:11 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:47:11 p.m. - ***OK mensaje firmado
+11/05/2011 12:47:14 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:47:53 p.m. - Generando el Login Ticket Request
+11/05/2011 12:47:53 p.m. - Firmando el Login Ticket Request
+11/05/2011 12:47:53 p.m. - ***Leyendo certificado: 
+11/05/2011 12:47:53 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 12:47:53 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 12:47:53 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 12:47:53 p.m. - ***OK mensaje firmado
+11/05/2011 12:47:54 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 12:58:17 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:00:50 p.m. - Generando el Login Ticket Request
+11/05/2011 01:00:50 p.m. - Firmando el Login Ticket Request
+11/05/2011 01:00:50 p.m. - ***Leyendo certificado: 
+11/05/2011 01:00:50 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 01:00:50 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 01:00:50 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 01:00:50 p.m. - ***OK mensaje firmado
+11/05/2011 01:00:54 p.m. - No había ningún extremo escuchando en https://wsaa.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 01:05:51 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:07:31 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:19:39 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:21:03 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:21:20 p.m. - ----------- INICIO -----------
+11/05/2011 01:21:20 p.m. - 473538
+11/05/2011 01:21:20 p.m. - 473538
+11/05/2011 01:21:20 p.m. - Usuario: turinad
+11/05/2011 01:21:20 p.m. - Nombre del equipo: PC0071
+11/05/2011 01:21:20 p.m. - Insertando comprobantes en FE
+11/05/2011 01:21:23 p.m. - Observaciones: 
+11/05/2011 01:21:23 p.m. - Chequeando resultados de FE
+11/05/2011 01:21:23 p.m. - Obtener Comprobantes
+11/05/2011 01:21:23 p.m. - Solicitando CAE a AFIP
+11/05/2011 01:21:23 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 01:21:23 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 01:21:23 p.m. - Solicitando Token
+11/05/2011 01:21:23 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 01:21:23 p.m. - Generando el Login Ticket Request
+11/05/2011 01:21:23 p.m. - Firmando el Login Ticket Request
+11/05/2011 01:21:23 p.m. - ***Leyendo certificado: 
+11/05/2011 01:21:23 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 01:21:23 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 01:21:23 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 01:21:23 p.m. - ***OK mensaje firmado
+11/05/2011 01:21:31 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 01:21:31 p.m. - Adaptando Formatos a AFIP
+11/05/2011 01:21:31 p.m. - Adaptando formato Afip - Homologacion - EX
+11/05/2011 01:21:33 p.m. - La conversión de la cadena "Último Nro de Comprobante de Exp" en el tipo 'Double' no es válida.
+11/05/2011 01:21:33 p.m. - Actualizando base de datos local y Magma
+11/05/2011 01:21:36 p.m. - Commit Realizado con éxito!!!
+11/05/2011 01:21:36 p.m. - Grabando estado de envío
+11/05/2011 01:21:36 p.m. - Comprobante_Asignado
+11/05/2011 01:21:36 p.m. - Obtención de CAE exitosa
+11/05/2011 01:23:00 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 01:23:46 p.m. - ----------- INICIO -----------
+11/05/2011 01:23:46 p.m. - 473538
+11/05/2011 01:23:47 p.m. - 473538
+11/05/2011 01:23:48 p.m. - Usuario: turinad
+11/05/2011 01:23:49 p.m. - Nombre del equipo: PC0071
+11/05/2011 01:23:50 p.m. - Insertando comprobantes en FE
+11/05/2011 01:23:59 p.m. - Observaciones: 
+11/05/2011 01:23:59 p.m. - Chequeando resultados de FE
+11/05/2011 01:24:05 p.m. - Obtener Comprobantes
+11/05/2011 01:24:31 p.m. - Solicitando CAE a AFIP
+11/05/2011 01:24:50 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 01:24:52 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 01:25:09 p.m. - Solicitando Token
+11/05/2011 01:25:33 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 01:25:37 p.m. - Generando el Login Ticket Request
+11/05/2011 01:25:37 p.m. - Firmando el Login Ticket Request
+11/05/2011 01:25:37 p.m. - ***Leyendo certificado: 
+11/05/2011 01:25:37 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 01:25:37 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 01:25:37 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 01:25:37 p.m. - ***OK mensaje firmado
+11/05/2011 01:25:41 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 01:25:55 p.m. - Adaptando Formatos a AFIP
+11/05/2011 01:26:04 p.m. - Adaptando formato Afip - Homologacion - EX
+11/05/2011 01:27:11 p.m. - La conversión de la cadena "Último Nro de Comprobante de Exp" en el tipo 'Double' no es válida.
+11/05/2011 01:27:25 p.m. - Adaptando formato Afip - Homologacion - EX
+11/05/2011 01:27:35 p.m. - Adaptando formato Afip - Homologacion - EX
+11/05/2011 01:36:27 p.m. - Lista de PermisosDestino creada
+11/05/2011 01:36:29 p.m. - Adaptacion Homologacion Completa
+11/05/2011 01:36:34 p.m. - Estableciendo comunicación con AFIP
+11/05/2011 01:37:36 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+11/05/2011 01:37:41 p.m. - Actualizando base de datos local y Magma
+11/05/2011 01:37:44 p.m. - Commit Realizado con éxito!!!
+11/05/2011 01:37:50 p.m. - Grabando estado de envío
+11/05/2011 01:37:51 p.m. - Comprobante_Asignado
+11/05/2011 01:38:35 p.m. - Obtención de CAE exitosa
+11/05/2011 02:37:55 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 02:43:38 p.m. - ----------- INICIO -----------
+11/05/2011 02:43:38 p.m. - 473538
+11/05/2011 02:43:38 p.m. - 473538
+11/05/2011 02:43:38 p.m. - Usuario: turinad
+11/05/2011 02:43:38 p.m. - Nombre del equipo: PC0071
+11/05/2011 02:43:38 p.m. - Insertando comprobantes en FE
+11/05/2011 02:43:38 p.m. - Observaciones: 
+11/05/2011 02:43:38 p.m. - Chequeando resultados de FE
+11/05/2011 02:43:38 p.m. - Obtener Comprobantes
+11/05/2011 02:43:38 p.m. - Solicitando CAE a AFIP
+11/05/2011 02:43:38 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 02:43:38 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 02:43:38 p.m. - Solicitando Token
+11/05/2011 02:43:50 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 02:43:56 p.m. - Generando el Login Ticket Request
+11/05/2011 02:43:56 p.m. - Firmando el Login Ticket Request
+11/05/2011 02:43:56 p.m. - ***Leyendo certificado: 
+11/05/2011 02:43:56 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 02:43:56 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 02:43:56 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 02:43:56 p.m. - ***OK mensaje firmado
+11/05/2011 02:44:00 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 02:44:12 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información. no se puede obtener el ticket de acceso
+11/05/2011 04:54:52 p.m. - No se admite el método ReadContentAsString en el tipo de nodo XmlDeclaration. Si desea leer contenido con tipo de un elemento, utilice el método ReadElementContentAs. Línea 1, posición 3.
+11/05/2011 05:24:03 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 05:24:14 p.m. - ----------- INICIO -----------
+11/05/2011 05:24:14 p.m. - 473538
+11/05/2011 05:24:14 p.m. - 473538
+11/05/2011 05:24:14 p.m. - Usuario: turinad
+11/05/2011 05:24:14 p.m. - Nombre del equipo: PC0071
+11/05/2011 05:24:14 p.m. - Insertando comprobantes en FE
+11/05/2011 05:24:15 p.m. - Observaciones: 
+11/05/2011 05:24:15 p.m. - Chequeando resultados de FE
+11/05/2011 05:24:15 p.m. - Obtener Comprobantes
+11/05/2011 05:24:15 p.m. - Solicitando CAE a AFIP
+11/05/2011 05:24:15 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 05:24:15 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 05:24:15 p.m. - Solicitando Token
+11/05/2011 05:24:23 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 05:24:58 p.m. - Generando el Login Ticket Request
+11/05/2011 05:24:58 p.m. - Firmando el Login Ticket Request
+11/05/2011 05:24:58 p.m. - ***Leyendo certificado: 
+11/05/2011 05:24:58 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 05:24:58 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 05:24:58 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 05:24:59 p.m. - ***OK mensaje firmado
+11/05/2011 05:25:06 p.m. - Analizando el Ticket Response recibido del WSAA
+11/05/2011 05:26:51 p.m. - Adaptando Formatos a AFIP
+11/05/2011 05:27:05 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 05:48:08 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 05:48:11 p.m. - ----------- INICIO -----------
+11/05/2011 05:48:11 p.m. - 473538
+11/05/2011 05:48:11 p.m. - 473538
+11/05/2011 05:48:11 p.m. - Usuario: turinad
+11/05/2011 05:48:11 p.m. - Nombre del equipo: PC0071
+11/05/2011 05:48:11 p.m. - Insertando comprobantes en FE
+11/05/2011 05:48:11 p.m. - Observaciones: 
+11/05/2011 05:48:11 p.m. - Chequeando resultados de FE
+11/05/2011 05:48:11 p.m. - Obtener Comprobantes
+11/05/2011 05:48:11 p.m. - Solicitando CAE a AFIP
+11/05/2011 05:48:11 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 05:48:11 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 05:48:11 p.m. - Solicitando Token
+11/05/2011 05:48:17 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 05:48:46 p.m. - Generando el Login Ticket Request
+11/05/2011 05:48:46 p.m. - Firmando el Login Ticket Request
+11/05/2011 05:48:46 p.m. - ***Leyendo certificado: 
+11/05/2011 05:48:46 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 05:48:46 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 05:48:47 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 05:48:47 p.m. - ***OK mensaje firmado
+11/05/2011 05:48:50 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+11/05/2011 06:15:21 p.m. - Error al cerrar el data reader de SQL
+11/05/2011 06:15:28 p.m. - ----------- INICIO -----------
+11/05/2011 06:15:28 p.m. - 473538
+11/05/2011 06:15:28 p.m. - 473538
+11/05/2011 06:15:28 p.m. - Usuario: turinad
+11/05/2011 06:15:28 p.m. - Nombre del equipo: PC0071
+11/05/2011 06:15:28 p.m. - Insertando comprobantes en FE
+11/05/2011 06:15:28 p.m. - Observaciones: 
+11/05/2011 06:15:28 p.m. - Chequeando resultados de FE
+11/05/2011 06:15:28 p.m. - Obtener Comprobantes
+11/05/2011 06:15:28 p.m. - Solicitando CAE a AFIP
+11/05/2011 06:15:28 p.m. - No existen registros para procesar en v_cmpasociados_EX
+11/05/2011 06:15:28 p.m. - No existen registros para procesar en v_Items_EX
+11/05/2011 06:15:28 p.m. - Solicitando Token
+11/05/2011 06:15:30 p.m. - Modo de operacion: 'Homologacion'
+11/05/2011 06:15:30 p.m. - Generando el Login Ticket Request
+11/05/2011 06:15:30 p.m. - Firmando el Login Ticket Request
+11/05/2011 06:15:30 p.m. - ***Leyendo certificado: 
+11/05/2011 06:15:30 p.m. - ***Certificados disponibles en el repositorio:My
+11/05/2011 06:15:30 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+11/05/2011 06:15:30 p.m. - ***Firmando bytes del mensaje...
+11/05/2011 06:15:30 p.m. - ***OK mensaje firmado
+11/05/2011 06:15:33 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.

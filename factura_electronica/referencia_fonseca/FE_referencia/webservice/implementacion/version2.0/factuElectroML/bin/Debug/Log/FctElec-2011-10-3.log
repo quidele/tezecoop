@@ -1,0 +1,45 @@
+03/10/2011 16:32:43 - Error al cerrar el data reader de SQL
+03/10/2011 16:32:52 - ----------- INICIO -----------
+03/10/2011 16:32:54 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:32:54 - El archivo buscado no existe o no se encuentra.
+03/10/2011 16:32:59 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+03/10/2011 16:32:59 - Generando el Login Ticket Request
+03/10/2011 16:32:59 - Firmando el Login Ticket Request
+03/10/2011 16:32:59 - ***Leyendo certificado: 
+03/10/2011 16:32:59 - ***Certificados disponibles en el repositorio:My
+03/10/2011 16:32:59 - ubico el certificado y lo devuelvo, salimos de la funcion 
+03/10/2011 16:32:59 - ***Firmando bytes del mensaje...
+03/10/2011 16:32:59 - ***OK mensaje firmado
+03/10/2011 16:33:07 - Analizando el Ticket Response recibido del WSAA
+03/10/2011 16:33:07 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_2-8-2011.xml
+03/10/2011 16:33:07 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_7-9-2011.xml
+03/10/2011 16:33:07 - Finalizada correctamente la creación del archivo XML TA_PROD_ML_3-10-2011.xml con Sign y Token.
+03/10/2011 16:37:33 - Error al cerrar el data reader de SQL
+03/10/2011 16:37:43 - ----------- INICIO -----------
+03/10/2011 16:37:45 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:37:45 - Token y Sign leidos correctamente
+03/10/2011 16:40:58 - Error al cerrar el data reader de SQL
+03/10/2011 16:41:36 - Error al cerrar el data reader de SQL
+03/10/2011 16:42:14 - Error al cerrar el data reader de SQL
+03/10/2011 16:42:54 - ----------- INICIO -----------
+03/10/2011 16:43:00 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:43:00 - Token y Sign leidos correctamente
+03/10/2011 16:46:50 - ----------- INICIO -----------
+03/10/2011 16:46:51 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:46:51 - Token y Sign leidos correctamente
+03/10/2011 16:48:46 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:48:46 - Token y Sign leidos correctamente
+03/10/2011 16:49:57 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 16:49:57 - Token y Sign leidos correctamente
+03/10/2011 16:58:31 - Error al cerrar el data reader de SQL
+03/10/2011 16:58:39 - ----------- INICIO -----------
+03/10/2011 17:00:19 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 17:00:19 - Token y Sign leidos correctamente
+03/10/2011 17:04:37 - Error al cerrar el data reader de SQL
+03/10/2011 17:04:43 - ----------- INICIO -----------
+03/10/2011 17:05:45 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 17:05:45 - Token y Sign leidos correctamente
+03/10/2011 17:16:39 - Error al cerrar el data reader de SQL
+03/10/2011 17:16:45 - ----------- INICIO -----------
+03/10/2011 17:16:45 - Buscando archivo: TA_PROD_ML_3-10-2011.xml
+03/10/2011 17:16:45 - Token y Sign leidos correctamente

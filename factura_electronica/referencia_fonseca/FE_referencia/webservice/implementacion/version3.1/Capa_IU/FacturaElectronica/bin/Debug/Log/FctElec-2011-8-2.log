@@ -1,0 +1,133 @@
+02/08/2011 12:47:28 p.m. - Error al cerrar el data reader de SQL
+02/08/2011 12:47:36 p.m. - ----------- INICIO -----------
+02/08/2011 12:47:38 p.m. - Buscando archivo: TA_PROD_ML_2-8-2011.xml
+02/08/2011 12:47:38 p.m. - El archivo buscado no existe o no se encuentra.
+02/08/2011 12:47:43 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+02/08/2011 12:47:43 p.m. - Generando el Login Ticket Request
+02/08/2011 12:47:43 p.m. - Firmando el Login Ticket Request
+02/08/2011 12:47:43 p.m. - ***Leyendo certificado: 
+02/08/2011 12:47:43 p.m. - ***Certificados disponibles en el repositorio:My
+02/08/2011 12:47:43 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+02/08/2011 12:47:43 p.m. - ***Firmando bytes del mensaje...
+02/08/2011 12:47:43 p.m. - ***OK mensaje firmado
+02/08/2011 12:47:46 p.m. - Analizando el Ticket Response recibido del WSAA
+02/08/2011 12:47:46 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_15-7-2011.xml
+02/08/2011 12:47:46 p.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_2-8-2011.xml con Sign y Token.
+02/08/2011 12:48:14 p.m. - ----------- INICIO -----------
+02/08/2011 12:48:15 p.m. - Comprobante N°: 1000137
+02/08/2011 12:48:15 p.m. - Id Solicitud: 569661
+02/08/2011 12:48:15 p.m. - Cliente: ORGANIZACION CRIMA S.A.                                                                             
+02/08/2011 12:48:15 p.m. - Usuario: turinad
+02/08/2011 12:48:16 p.m. - Nombre del equipo: PC0071
+02/08/2011 12:48:16 p.m. - Insertando comprobantes en Base FE
+02/08/2011 12:48:16 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+02/08/2011 12:48:17 p.m. - Resultado observación: OK
+02/08/2011 12:48:18 p.m. - Observaciones: 
+02/08/2011 12:48:18 p.m. - Chequeando resultados de FE
+02/08/2011 12:48:21 p.m. - Obtener Comprobantes
+02/08/2011 12:48:26 p.m. - Iniciando el proceso de solicitud de CAE
+02/08/2011 12:48:46 p.m. - Modo de operacion: Produccion
+02/08/2011 12:48:46 p.m. - No existen registros para procesar en comprobantes ASOC
+02/08/2011 12:48:46 p.m. - Solicitando Token y Firma
+02/08/2011 12:48:53 p.m. - Buscando archivo: TA_PROD_ML_2-8-2011.xml
+02/08/2011 12:48:53 p.m. - Token y Sign leidos correctamente
+02/08/2011 12:48:59 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 12:48:59 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 12:49:08 p.m. - Adaptando formato Afip - Producción
+02/08/2011 12:49:08 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 12:49:08 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 12:49:08 p.m. - Último Nro de Comprobante en AFIP: 136
+02/08/2011 12:49:08 p.m. - Lista de Detalle_IVA creada
+02/08/2011 12:49:08 p.m. - Lista de Detalle_tributo creada
+02/08/2011 12:49:08 p.m. - Adaptación Produccion Completa
+02/08/2011 12:49:13 p.m. - Estableciendo comunicación con AFIP
+02/08/2011 12:51:22 p.m. - Respuesta: R
+02/08/2011 12:51:30 p.m. - Observaciones insertadas correctamente en TABLA
+02/08/2011 12:51:58 p.m. - ** Campo CbteFch Debe estar comprendido  en el  rango  N-5 y N+5 siendo N la fecha de envío del pedido  de autorización para 1 - Productos 
+02/08/2011 12:52:03 p.m. - Actualizando datos del comprobante
+02/08/2011 12:55:04 p.m. - Error al cerrar el data reader de SQL
+02/08/2011 12:55:11 p.m. - ----------- INICIO -----------
+02/08/2011 12:55:11 p.m. - Comprobante N°: 1000137
+02/08/2011 12:55:11 p.m. - Id Solicitud: 569661
+02/08/2011 12:55:11 p.m. - Cliente: ORGANIZACION CRIMA S.A.                                                                             
+02/08/2011 12:55:11 p.m. - Usuario: turinad
+02/08/2011 12:55:11 p.m. - Nombre del equipo: PC0071
+02/08/2011 12:55:11 p.m. - Insertando comprobantes en Base FE
+02/08/2011 12:55:11 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+02/08/2011 12:55:12 p.m. - Resultado observación: OK
+02/08/2011 12:55:12 p.m. - Observaciones: 
+02/08/2011 12:55:12 p.m. - Chequeando resultados de FE
+02/08/2011 12:55:12 p.m. - Obtener Comprobantes
+02/08/2011 12:55:12 p.m. - Iniciando el proceso de solicitud de CAE
+02/08/2011 12:55:14 p.m. - Modo de operacion: Produccion
+02/08/2011 12:55:15 p.m. - No existen registros para procesar en comprobantes ASOC
+02/08/2011 12:55:15 p.m. - Solicitando Token y Firma
+02/08/2011 12:55:20 p.m. - Buscando archivo: TA_PROD_ML_2-8-2011.xml
+02/08/2011 12:55:20 p.m. - Token y Sign leidos correctamente
+02/08/2011 12:55:22 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 12:55:23 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 12:55:25 p.m. - Adaptando formato Afip - Producción
+02/08/2011 12:55:25 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 12:55:25 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 12:55:26 p.m. - Último Nro de Comprobante en AFIP: 136
+02/08/2011 12:55:26 p.m. - Lista de Detalle_IVA creada
+02/08/2011 12:55:26 p.m. - Lista de Detalle_tributo creada
+02/08/2011 12:55:26 p.m. - Adaptación Produccion Completa
+02/08/2011 12:55:27 p.m. - Estableciendo comunicación con AFIP
+02/08/2011 12:55:34 p.m. - Respuesta: R
+02/08/2011 12:56:12 p.m. - Observaciones insertadas correctamente en TABLA
+02/08/2011 12:56:17 p.m. - ** Campo CbteFch Debe estar comprendido  en el  rango  N-5 y N+5 siendo N la fecha de envío del pedido  de autorización para 1 - Productos 
+02/08/2011 12:57:26 p.m. - Actualizando datos del comprobante
+02/08/2011 12:57:38 p.m. - Error del comprobante
+02/08/2011 12:57:42 p.m. - ** Campo CbteFch Debe estar comprendido  en el  rango  N-5 y N+5 siendo N la fecha de envío del pedido  de autorización para 1 - Productos 
+02/08/2011 12:57:55 p.m. - Observaciones: 
+02/08/2011 12:57:55 p.m. - 10016 Campo CbteFch Debe estar comprendido  en el  rango  N-5 y N+5 siendo N la fecha de envío del pedido  de autorización para 1 - Productos
+02/08/2011 01:01:38 p.m. - Error al cerrar el data reader de SQL
+02/08/2011 01:01:42 p.m. - ----------- INICIO -----------
+02/08/2011 01:01:42 p.m. - Comprobante N°: 1000137
+02/08/2011 01:01:42 p.m. - Id Solicitud: 569661
+02/08/2011 01:01:42 p.m. - Cliente: ORGANIZACION CRIMA S.A.                                                                             
+02/08/2011 01:01:43 p.m. - Usuario: turinad
+02/08/2011 01:01:43 p.m. - Nombre del equipo: PC0071
+02/08/2011 01:01:43 p.m. - Insertando comprobantes en Base FE
+02/08/2011 01:01:43 p.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+02/08/2011 01:01:43 p.m. - Resultado observación: OK
+02/08/2011 01:01:43 p.m. - Observaciones: 
+02/08/2011 01:01:43 p.m. - Chequeando resultados de FE
+02/08/2011 01:01:43 p.m. - Obtener Comprobantes
+02/08/2011 01:01:43 p.m. - Iniciando el proceso de solicitud de CAE
+02/08/2011 01:01:45 p.m. - Modo de operacion: Produccion
+02/08/2011 01:01:45 p.m. - No existen registros para procesar en comprobantes ASOC
+02/08/2011 01:01:45 p.m. - Solicitando Token y Firma
+02/08/2011 01:01:49 p.m. - Buscando archivo: TA_PROD_ML_2-8-2011.xml
+02/08/2011 01:01:49 p.m. - Token y Sign leidos correctamente
+02/08/2011 01:01:49 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 01:01:49 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 01:01:50 p.m. - Adaptando formato Afip - Producción
+02/08/2011 01:01:50 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzU1NDAxNTk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzEyMzAwMDAzIiBleHBfdGltZT0iMTMxMjM0MzI2MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+02/08/2011 01:01:50 p.m. - Sign ep6AU9aUmWOMHbaRhthkONm2cNuEuBHW9v5RptX0vGsmgLDLmSq4DsgFRDn0QZWpBheHuhjvN8adS2TAsshw6VHteYNn22NRUArZVLLXqhVJxF8XWEon24Ue8Dv6pMWOgJy9boiM9iU+8meCoU/RMqAHVuWOByDJIaF8cTb1HKE=
+02/08/2011 01:01:56 p.m. - Último Nro de Comprobante en AFIP: 136
+02/08/2011 01:01:56 p.m. - Lista de Detalle_IVA creada
+02/08/2011 01:01:56 p.m. - Lista de Detalle_tributo creada
+02/08/2011 01:01:56 p.m. - Adaptación Produccion Completa
+02/08/2011 01:01:56 p.m. - Estableciendo comunicación con AFIP
+02/08/2011 01:02:04 p.m. - Respuesta: A
+02/08/2011 01:02:04 p.m. - <--INICIA GRABACION CAE--> 
+02/08/2011 01:02:04 p.m. - ID: 569661
+02/08/2011 01:02:04 p.m. - CAE: 61317783718256
+02/08/2011 01:02:04 p.m. - CAEFchVto: 20110808
+02/08/2011 01:02:04 p.m. - DocNro AFIP: 137
+02/08/2011 01:02:04 p.m. - CbteFch: 29/07/2011 12:00:00 a.m.
+02/08/2011 01:02:04 p.m. - <FINALIZA GRABACION CAE> 
+02/08/2011 01:02:04 p.m. - Comprobante_Aprobado
+02/08/2011 01:02:04 p.m. - Actualizando base de datos local y Magma
+02/08/2011 01:02:04 p.m. - Commit Realizado con éxito!!!
+02/08/2011 01:02:04 p.m. - Grabando estado de envío
+02/08/2011 01:02:04 p.m. - Comprobante_Asignado
+02/08/2011 01:02:04 p.m. - Obtención de CAE exitosa
+02/08/2011 01:02:05 p.m. - La operación finalizó correctamente
+02/08/2011 01:02:13 p.m. - Observaciones: 
+02/08/2011 01:05:54 p.m. - Error al cerrar el data reader de SQL
+02/08/2011 01:05:58 p.m. - ----------- INICIO -----------
+02/08/2011 01:06:00 p.m. - Buscando archivo: TA_PROD_ML_2-8-2011.xml
+02/08/2011 01:06:00 p.m. - Token y Sign leidos correctamente

@@ -1,0 +1,32 @@
+12/07/2011 10:36:59 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:37:44 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:38:15 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:39:36 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:40:30 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:40:38 a.m. - ----------- INICIO -----------
+12/07/2011 10:40:43 a.m. - Buscando archivo: TA_PROD_ML_12-7-2011.xml
+12/07/2011 10:40:43 a.m. - El archivo buscado no existe o no se encuentra.
+12/07/2011 10:40:48 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+12/07/2011 10:40:48 a.m. - Generando el Login Ticket Request
+12/07/2011 10:40:48 a.m. - Firmando el Login Ticket Request
+12/07/2011 10:40:48 a.m. - ***Leyendo certificado: 
+12/07/2011 10:40:48 a.m. - ***Certificados disponibles en el repositorio:My
+12/07/2011 10:40:48 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+12/07/2011 10:40:48 a.m. - ***Firmando bytes del mensaje...
+12/07/2011 10:40:48 a.m. - ***OK mensaje firmado
+12/07/2011 10:41:04 a.m. - No se pudo establecer una relación de confianza para el canal seguro SSL/TLS con la autoridad 'wsaa.afip.gov.ar'.
+12/07/2011 10:41:09 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+12/07/2011 10:41:24 a.m. - Error al cerrar el data reader de SQL
+12/07/2011 10:41:40 a.m. - ----------- INICIO -----------
+12/07/2011 10:41:42 a.m. - Buscando archivo: TA_PROD_ML_12-7-2011.xml
+12/07/2011 10:41:42 a.m. - El archivo buscado no existe o no se encuentra.
+12/07/2011 10:41:47 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+12/07/2011 10:41:47 a.m. - Generando el Login Ticket Request
+12/07/2011 10:41:47 a.m. - Firmando el Login Ticket Request
+12/07/2011 10:41:47 a.m. - ***Leyendo certificado: 
+12/07/2011 10:41:47 a.m. - ***Certificados disponibles en el repositorio:My
+12/07/2011 10:41:47 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+12/07/2011 10:41:47 a.m. - ***Firmando bytes del mensaje...
+12/07/2011 10:41:47 a.m. - ***OK mensaje firmado
+12/07/2011 10:41:51 a.m. - No se pudo establecer una relación de confianza para el canal seguro SSL/TLS con la autoridad 'wsaa.afip.gov.ar'.
+12/07/2011 10:41:56 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.

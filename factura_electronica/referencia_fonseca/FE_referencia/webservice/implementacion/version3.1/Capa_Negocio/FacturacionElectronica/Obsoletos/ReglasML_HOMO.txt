@@ -1,0 +1,485 @@
+﻿Imports fonseca_libDatos
+Imports DAOFacturacionElectronica
+
+Public Class ReglasML_HOMO
+    Inherits ReglasGeneralesFE
+    Implements IReglasFE
+
+    Public Overloads ReadOnly Property [Error] As String Implements IReglasFE.Error
+        Get
+            Return MyBase.Error
+        End Get
+    End Property
+    Public Overloads ReadOnly Property ListaObtenida As ArrayList Implements IReglasFE.ListaObtenida
+        Get
+            Return MyBase.ListaObtenida
+        End Get
+    End Property
+    Public Overloads ReadOnly Property ObjetoObtenido As Object Implements IReglasFE.ObjetoObtenido
+        Get
+            Return MyBase.ObjetoObtenido
+        End Get
+    End Property
+
+
+
+
+
+    Private Sub CompletarComprobanteConResponse(ByRef pObjComprobante As comprobantes_ml_Screen, ByRef pObjRespuesta As ar.gov.afip.wshomofev1.FECAEResponse, ByVal pEstadoEnvio As String)
+        Try
+            MyBase.CompletarComprobanteConResponseML_HOMO(pObjComprobante, pObjRespuesta, pEstadoEnvio)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Sub
+
+    Public Function InsertarComprobantes(ByVal pIdSolicitud As Integer, ByRef pObjConexion As Conexion) As Boolean Implements IReglasFE.InsertarComprobantes
+        InsertarComprobantes = False
+        Dim objAdmConexionesBD As AdmConexionesBD = Nothing
+        Try
+            Me.Clear()
+
+            Dim codigoObservacion As Integer = 0
+            Dim descripcion As String = String.Empty
+
+            objAdmConexionesBD = New AdmConexionesBD(pObjConexion.TipoProveedorDatos, pObjConexion.ConnectionString, pObjConexion.Usuario, pObjConexion.Clave, _appName)
+
+            If Not objAdmConexionesBD.Begin_Transaction Then
+                Me._error = objAdmConexionesBD.Error
+                Exit Function
+            End If
+
+            Dim resp As Response = MyBase.InsertarComprobanteLocal(pIdSolicitud, objAdmConexionesBD)
+
+            If resp.resultado.Equals("OK") Then
+                descripcion = resp.resultado.ToString
+                codigoObservacion = 1
+            End If
+
+            If resp.resultado.Equals("ERROR") Then codigoObservacion = -1
+
+            If Not MyBase.InsertarObservaciones(pIdSolicitud, codigoObservacion, "Preparación de comprobante a enviar: " + descripcion, objAdmConexionesBD) Then
+                objAdmConexionesBD.Rollback_Transaction()
+                Exit Function
+            End If
+
+
+            If Not objAdmConexionesBD.Commit_Transaction() Then
+                objAdmConexionesBD.Rollback_Transaction()
+                Me._error = objAdmConexionesBD.Error
+                Exit Function
+            End If
+
+            InsertarComprobantes = True
+
+        Catch ex As Exception
+            If objAdmConexionesBD IsNot Nothing Then objAdmConexionesBD.Rollback_Transaction()
+            Me._error = ex.Message
+        Finally
+            If objAdmConexionesBD IsNot Nothing Then
+                objAdmConexionesBD.CerrarConexion()
+                objAdmConexionesBD.CerrarDataReader()
+            End If
+            If Not Me._error.Trim.Equals(String.Empty) Then
+                Log.Logger(tipoLogging.Error, Me._error)
+            End If
+        End Try
+    End Function
+
+    Private Function ObtenerComprobanteFE(ByVal pIdSolicitud As Integer, ByRef pObjConexion As Conexion) As comprobantes_ml_Screen
+        Try
+            Me.Clear()
+
+            Dim objComprobanteML As comprobantes_ml_Screen
+
+            MyBase.ObtenerComprobantesML(pIdSolicitud, pObjConexion)
+
+            If MyBase._objetoObtenido Is Nothing Then
+                Throw New Exception("No se encontró el comprobante buscado por id " + CStr(pIdSolicitud))
+            End If
+
+            objComprobanteML = CType(MyBase._objetoObtenido, comprobantes_ml_Screen)
+
+
+            objComprobanteML.DetalleIVA = MyBase.ObtenerDetalleIVA(pIdSolicitud, pObjConexion)
+            objComprobanteML.DetalleTributos = MyBase.ObtenerDetalleTributo(pIdSolicitud, pObjConexion)
+            objComprobanteML.CbtesAsociados = MyBase.ObtenerComprobanteAsociado(pIdSolicitud, pObjConexion)
+
+            Return objComprobanteML
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerComprobanteFE(ByVal pPtoVta As Integer, ByVal pCbteTipo As Integer, ByVal pCbteNro As Integer, ByVal pDnSource As String, _
+                                        ByVal pDnDestination As String, ByVal pIdServicioNegocio As String, ByVal pCuitEmpresa As String, _
+                                        ByVal pNombreCertificado As String, ByVal pDireccion As String, ByVal pMilisegundos As Integer, ByRef pObjConexion As Conexion) As comprobantes_ml_Screen Implements IReglasFE.ObtenerComprobanteFE
+        Try
+            Me.Clear()
+            Dim objTicket As Ticket
+            Dim objAccesoAFIP As New AccesoAFIP_ML_HOMO()
+            Dim rutaArchivoXML As String
+
+            rutaArchivoXML = ObtenerArchivoPath("HOMO", _tipoDeConexion, pObjConexion)
+
+            If Not objAccesoAFIP.ObtenerTicket(pDnSource, pDnDestination, pIdServicioNegocio, pNombreCertificado, pDireccion, pMilisegundos, rutaArchivoXML, DEFAULT_VERBOSE) Then
+                Throw New Exception("No se puede obtener el ticket de acceso." + vbCrLf + "Error Extendido: " + objAccesoAFIP.Error)
+            End If
+
+            objTicket = CType(objAccesoAFIP.ObjetoObtenido, Ticket)
+
+            If pCbteNro = 0 Then
+                pCbteNro = objAccesoAFIP.ObtenerUltimoNroCbteAutorizado(objTicket, pCuitEmpresa, pPtoVta, pCbteTipo)
+            End If
+
+            If Not objAccesoAFIP.BuscarComprobantesAFIP(objTicket, pCuitEmpresa, pPtoVta, pCbteTipo, pCbteNro) Then
+                _objetoObtenido = objAccesoAFIP.ObjetoObtenido
+                Throw New Exception(objAccesoAFIP.Error)
+            End If
+
+            Return CType(objAccesoAFIP.ObjetoObtenido, comprobantes_ml_Screen)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerDatosUltimoComprobante(ByVal pPtoVta As Integer, ByVal pCbteTipo As Integer, ByVal pCbteNro As Integer, ByVal pDnSource As String, _
+                                                  ByVal pDnDestination As String, ByVal pIdServicioNegocio As String, ByVal pCuitEmpresa As String, _
+                                                  ByVal pNombreCertificado As String, ByVal pDireccion As String, ByVal pMilisegundos As Integer, _
+                                                  ByRef pObjConexion As Conexion) As String Implements IReglasFE.ObtenerDatosUltimoComprobante
+        Try
+            Me.Clear()
+            Dim objComprobanteFE As comprobantes_ml_Screen
+            Dim descripcion As String = String.Empty
+            Dim detallesVarios As String = String.Empty
+
+            objComprobanteFE = ObtenerComprobanteFE(pPtoVta, pCbteTipo, pCbteNro, pDnSource, pDnDestination, pIdServicioNegocio, pCuitEmpresa, pNombreCertificado, pDireccion, pMilisegundos, pObjConexion)
+
+            For Each elemento As Detalle_iva In objComprobanteFE.DetalleIVA
+                detallesVarios += (vbCrLf + "Detalle Iva: " + vbCrLf + _
+                                    "BaseImp: " + elemento.baseImp.ToString + vbCrLf + _
+                                    "Importe: " + elemento.importe.ToString + vbCrLf + _
+                                    "Id: " + elemento.Id.ToString)
+            Next
+
+
+            For Each elemento As Detalle_tributos In objComprobanteFE.DetalleTributos
+                detallesVarios += (vbCrLf + "Detalle Tributo: " + vbCrLf + _
+                                   "Alic: " + elemento.alic.ToString + vbCrLf + _
+                                    "BaseImp: " + elemento.baseImp.ToString + vbCrLf + _
+                                    "Desc: " + elemento.descripcion.ToString + vbCrLf + _
+                                    "Importe: " + elemento.importe.ToString + vbCrLf + _
+                                    "Id: " + elemento.Id.ToString)
+            Next
+
+            For Each elemento As CbtesAsoc In objComprobanteFE.CbtesAsociados
+                detallesVarios += (vbCrLf + "Cbtes Asociados: " + vbCrLf + _
+                                   "Nro: " + elemento.Nro.ToString + vbCrLf + _
+                                    "PtoVta: " + elemento.PtoVta.ToString + vbCrLf + _
+                                    "Tipo: " + elemento.Tipo.ToString)
+            Next
+
+
+
+            For Each elemento As Observaciones In objComprobanteFE.Observaciones
+                detallesVarios += (vbCrLf + "Observaciones: " + vbCrLf + _
+                                   "Code: " + elemento.code.ToString + vbCrLf + _
+                                    "Msg: " + elemento.msg.ToString)
+            Next
+
+
+            With (objComprobanteFE)
+                descripcion = "CbteDesde: " + .CbteDesde.ToString + vbCrLf + _
+                    "CbteHasta: " + .CbteHasta.ToString + vbCrLf + _
+                    "CbteFch: " + .CbteFch.ToString + vbCrLf + _
+                    "FchVto: " + .CAEFchVto.ToString + vbCrLf + _
+                    "CodAutorizacion: " + .CAE.ToString + vbCrLf + _
+                    "CbteTipo: " + .CbteTipo.ToString + vbCrLf + _
+                    "DocNro: " + .DocNro.ToString + vbCrLf + _
+                    "DocTipo: " + .DocTipo.ToString + vbCrLf + _
+                    "FchVtoPago: " + .FchVtoPago.ToString + vbCrLf + _
+                    "PtoVta: " + .PtoVta.ToString + vbCrLf + _
+                    "Concepto: " + .Concepto.ToString + vbCrLf + _
+                    "Resultado: " + .Resultado.ToString + vbCrLf + _
+                    "EmisionTipo: " + .EmisionTipo.ToString + vbCrLf + _
+                    "FchProceso: " + .FchProceso.ToString + vbCrLf + _
+                    "FchServDesde: " + .FchServDesde.ToString + vbCrLf + _
+                    "FchServHasta: " + .FchServHasta.ToString + vbCrLf + _
+                    "MonId: " + .MonId.ToString + vbCrLf + _
+                    "ImpNeto: " + .ImpNeto.ToString + vbCrLf + _
+                    "ImpIVA: " + .ImpIVA.ToString + vbCrLf + _
+                    "ImpOpEx: " + .ImpOpEx.ToString + vbCrLf + _
+                    "ImpTotal: " + .ImpTotal.ToString + vbCrLf + _
+                    "ImpTotConc: " + .ImpTotConc.ToString + vbCrLf + _
+                    "ImpTrib: " + .ImpTrib.ToString + vbCrLf + _
+                    "MonCotiz: " + .MonCotiz.ToString + vbCrLf + _
+                    detallesVarios
+
+            End With
+
+            Return descripcion
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Overloads Function ObtenerObservaciones(ByVal pIdSolicitudes As Integer, ByRef pObjConexiones As Conexion) As Boolean Implements IReglasFE.ObtenerObservaciones
+        ObtenerObservaciones = False
+        Try
+
+            MyBase.ObtenerObservacion(pIdSolicitudes, pObjConexiones)
+
+            ObtenerObservaciones = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+        End Try
+    End Function
+
+    Public Function ObtenerSolicitudesEnviar_DT(ByRef pObjConexion As Conexion) As DataTable Implements IReglasFE.ObtenerSolicitudesEnviar_DT
+        Try
+            Return MyBase.ObtenerSolicitudesEnviarMercadoLocal_DT(pObjConexion)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerSolicitudesEnviar_Lista(ByRef pObjConexion As Conexion) As List(Of Solicitud) Implements IReglasFE.ObtenerSolicitudesEnviar_Lista
+        Try
+            Return MyBase.ObtenerSolicitudesEnviarMercadoLocal(pObjConexion)
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function SolicitarCAE(ByVal pIdSolicitud As Integer, ByVal pDnSource As String, ByVal pDnDestination As String, ByVal pIdServicioNegocio As String, _
+                                ByVal pNombreCertificado As String, ByVal pDireccion As String, ByVal pCuitEmpresa As String, ByVal pMilisegundos As Integer, _
+                                ByRef pObjConexion As Conexion) As Boolean Implements IReglasFE.SolicitarCAE
+        SolicitarCAE = False
+        Dim objAdmConexionesBD As AdmConexionesBD = Nothing
+        Try
+            Me.Clear()
+            Dim objObservaciones As Observaciones
+            Dim respuesta As String
+            Dim rutaArchivoXML As String
+            Dim objCbtesAsoc As New CbtesAsoc
+            Dim objAccesoAFIP As New AccesoAFIP_ML_HOMO()
+            Dim objTicket As Ticket
+
+
+
+            Dim objProdFECAEResponse As ar.gov.afip.wshomofev1.FECAEResponse
+
+            Dim objComprobante As comprobantes_ml_Screen = ObtenerComprobanteFE(pIdSolicitud, pObjConexion)
+
+            objAdmConexionesBD = New AdmConexionesBD(pObjConexion.TipoProveedorDatos, pObjConexion.ConnectionString, pObjConexion.Usuario, pObjConexion.Clave, _appName)
+
+            rutaArchivoXML = ObtenerArchivoPath(_ambiente, _tipoDeConexion, pObjConexion)
+
+            If Not objAccesoAFIP.ObtenerTicket(pDnSource, pDnDestination, pIdServicioNegocio, pNombreCertificado, pDireccion, pMilisegundos, rutaArchivoXML, DEFAULT_VERBOSE) Then
+                Me._error = "No se puede obtener el ticket de acceso." + vbCrLf + "Error Extendido: " + objAccesoAFIP.Error
+                Exit Function
+            End If
+
+            objTicket = CType(objAccesoAFIP.ObjetoObtenido, Ticket)
+
+            objProdFECAEResponse = objAccesoAFIP.ObtenerRespuestaAFIP(objComprobante, objTicket, pCuitEmpresa)
+            respuesta = objProdFECAEResponse.FeCabResp.Resultado
+
+            If respuesta.ToUpper.Equals("R") Then
+
+                For Each item As ar.gov.afip.wshomofev1.FEDetResponse In objProdFECAEResponse.FeDetResp
+
+                    If item.Observaciones Is Nothing Then
+
+                        For Each elem As ar.gov.afip.wshomofev1.Err In objProdFECAEResponse.Errors
+                            Me._error += elem.Code.ToString + " - " + elem.Msg
+                        Next
+
+                        If Me._error.Trim.Equals(String.Empty) Then
+                            Me._error = "¡Error desconocido!"
+                        End If
+
+                        Exit Function
+
+                    End If
+
+                    _listaObtenida = New ArrayList
+
+                    For Each elem_obs In item.Observaciones
+                        MyBase.InsertarObservaciones(pIdSolicitud, elem_obs.Code, elem_obs.Msg, objAdmConexionesBD)
+                        objObservaciones = New observaciones() With {.Code = elem_obs.Code, .Msg = elem_obs.Msg, .idsolicitud = pIdSolicitud}
+                        _listaObtenida.Add(objObservaciones)
+                        Me._error = Me._error + " * " + elem_obs.Msg.ToString + vbCrLf
+                    Next
+
+                Next
+
+                Exit Function
+            End If
+
+            If Not objAdmConexionesBD.Begin_Transaction() Then
+                Me._error = objAdmConexionesBD.Error
+                Exit Function
+            End If
+
+            Dim estadoEnvio As String = "Aprobado"
+
+            If Not ProcesarComprobante(pIdSolicitud, objProdFECAEResponse.FeDetResp(0).CAE, objProdFECAEResponse.FeDetResp(0).CAEFchVto, _
+                                       objProdFECAEResponse.FeDetResp(0).CbteDesde, objProdFECAEResponse.FeDetResp(0).CbteFch, _
+                                       estadoEnvio, objAdmConexionesBD) Then
+                objAdmConexionesBD.Rollback_Transaction()
+                Exit Function
+            End If
+
+            If Not objAdmConexionesBD.Commit_Transaction() Then
+                Me._error = objAdmConexionesBD.Error
+                objAdmConexionesBD.Rollback_Transaction()
+                Exit Function
+            End If
+
+            CompletarComprobanteConResponse(objComprobante, objProdFECAEResponse, estadoEnvio)
+
+            _listaObtenida = New ArrayList
+
+            _listaObtenida.Add(CrearObjetoObservaciones(objComprobante))
+
+            SolicitarCAE = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+            If objAdmConexionesBD IsNot Nothing Then objAdmConexionesBD.Rollback_Transaction()
+        Finally
+            If objAdmConexionesBD IsNot Nothing Then
+                objAdmConexionesBD.CerrarDataReader()
+                objAdmConexionesBD.CerrarConexion()
+            End If
+        End Try
+    End Function
+
+
+    Private Function ProcesarComprobante(ByVal pIdSolicitud As Integer, ByVal pCae As String, ByVal pCaeFchVto As String, ByVal pCbteDesde As Integer, _
+                                        ByVal pCbteFch As String, ByRef pEstadoEnvio As String, ByRef pObjAdmConexionesBD As AdmConexionesBD) As Boolean
+        ProcesarComprobante = False
+        Try
+
+            If Not MyBase.ActualizarComprobanteEnMagmaML(pIdSolicitud, pCae, pCaeFchVto, pCbteDesde, pCbteFch, pObjAdmConexionesBD) Then
+                pEstadoEnvio = "No Asignado"
+            Else
+                pEstadoEnvio = "Asignado"
+            End If
+
+            If Not MyBase.ActualizarComprobanteML(pIdSolicitud, pCae, pCaeFchVto, pEstadoEnvio, pCbteDesde, pCbteFch, pObjAdmConexionesBD) Then
+                Me._error = Me._error
+                Exit Function
+            End If
+
+            ProcesarComprobante = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+        End Try
+    End Function
+
+
+    Public Function ReprocesarComprobante(ByVal pIdSolicitud As Integer, ByRef pObjConexion As Conexion) As Boolean Implements FacturacionElectronica.IReglasFE.ReprocesarComprobante
+        ReprocesarComprobante = False
+        Dim objAdmConexionesBD As AdmConexionesBD = Nothing
+        Try
+            Dim objComprobante As comprobantes_ml_Screen = ObtenerComprobanteFE(pIdSolicitud, pObjConexion)
+
+            objAdmConexionesBD = New AdmConexionesBD(pObjConexion.TipoProveedorDatos, pObjConexion.ConnectionString, pObjConexion.Usuario, pObjConexion.Clave, _appName)
+
+            If Not ValidarEstadoReproceso(objComprobante.estado_envio.ToString) Then
+                Exit Function
+            End If
+
+            If Not objAdmConexionesBD.Begin_Transaction() Then
+                Me._error = objAdmConexionesBD.Error
+                Exit Function
+            End If
+
+            Dim estadoEnvio As String = "Aprobado"
+
+            If Not ProcesarComprobante(pIdSolicitud, objComprobante.CAE.ToString, objComprobante.CAEFchVto.ToString, _
+                                       CInt(objComprobante.CbteDesde.ToString), objComprobante.CbteFch.ToString, _
+                                       estadoEnvio, objAdmConexionesBD) Then
+                objAdmConexionesBD.Rollback_Transaction()
+                Exit Function
+            End If
+
+            If Not objAdmConexionesBD.Commit_Transaction() Then
+                Me._error = objAdmConexionesBD.Error
+                objAdmConexionesBD.Rollback_Transaction()
+                Exit Function
+            End If
+
+            objComprobante.estado_envio = Campo.ToCampo(estadoEnvio, SQLAdapter.getTipoString)
+
+            _listaObtenida = New ArrayList
+
+            _listaObtenida.Add(CrearObjetoObservaciones(objComprobante))
+
+            ReprocesarComprobante = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+            If objAdmConexionesBD IsNot Nothing Then objAdmConexionesBD.Rollback_Transaction()
+        Finally
+            If objAdmConexionesBD IsNot Nothing Then
+                objAdmConexionesBD.CerrarDataReader()
+                objAdmConexionesBD.CerrarConexion()
+            End If
+        End Try
+    End Function
+
+
+    Public Function ValidarComprobanteEnvio(ByVal pIdSolicitud As Integer, ByRef pObjConexion As Conexion) As Boolean Implements IReglasFE.ValidarComprobanteEnvio
+        ValidarComprobanteEnvio = False
+        Try
+            Me.Clear()
+            Dim listaSolicitudes As List(Of Solicitud)
+            Dim objSolicitudEnvio As Solicitud
+
+            listaSolicitudes = MyBase.ObtenerSolicitudesEnviarMercadoLocal(pObjConexion)
+
+            objSolicitudEnvio = (From item As Solicitud In listaSolicitudes Where CInt(item.idSolicitud.ToString) = pIdSolicitud).ToList(0)
+
+            'Validamos fechas
+            If (From item As Solicitud In ListaObtenida Where CDate(item.fec_doc.ToString) < CDate(objSolicitudEnvio.fec_doc.ToString) AndAlso _
+                item.cod_doc.ToString.Trim.ToUpper.Equals(objSolicitudEnvio.cod_doc.ToString.Trim.ToUpper)).ToList.Count > 0 Then
+                Me._error = "El documento '" + objSolicitudEnvio.cod_doc.ToString + "' Nº '" + objSolicitudEnvio.nro_doc.ToString + " no se puede procesar ya que exiten documentos con fecha anterior sin enviar a AFIP."
+                Me._error += vbCrLf + "Fecha del documento: " + objSolicitudEnvio.fec_doc.ToString + "."
+                Exit Function
+            End If
+            'Validamos el estado
+            If objSolicitudEnvio.estado_envio.ToString.Trim.ToUpper.Equals("AFECCONTA") Then
+                Me._error = "La factura está afectada por contaduría, para continuar debe desafectarla."
+                Exit Function
+            End If
+
+            If objSolicitudEnvio.estado_envio.ToString.Trim.ToUpper.Equals("NO ASIGNADO") Then
+                Me._error = "La factura está en estado ""No Asignado"". Es probable que ya exista en AFIP. Consulte los comprobantes existentes en AFIP para mayor seguridad."
+                Exit Function
+            End If
+
+            ValidarComprobanteEnvio = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+        End Try
+    End Function
+
+    Public Overloads Function ValidarEstadoReproceso(ByVal pEstado As String) As Boolean Implements FacturacionElectronica.IReglasFE.ValidarEstadoReproceso
+        ValidarEstadoReproceso = False
+        Try
+            Return MyBase.ValidarEstadoReproceso(pEstado)
+        Catch ex As Exception
+            Me._error = ex.Message
+        End Try
+    End Function
+
+End Class

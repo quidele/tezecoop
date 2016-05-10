@@ -1,0 +1,63 @@
+21/10/2011 15:14:54 - Error al cerrar el data reader de SQL
+21/10/2011 15:15:03 - ----------- INICIO -----------
+21/10/2011 15:15:03 - Buscando archivo: TA_PROD_ML_21-10-2011.xml
+21/10/2011 15:15:03 - El archivo buscado no existe o no se encuentra.
+21/10/2011 15:15:08 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+21/10/2011 15:15:08 - Generando el Login Ticket Request
+21/10/2011 15:15:08 - Firmando el Login Ticket Request
+21/10/2011 15:15:08 - ***Leyendo certificado: 
+21/10/2011 15:15:08 - ***Certificados disponibles en el repositorio:My
+21/10/2011 15:15:08 - ubico el certificado y lo devuelvo, salimos de la funcion 
+21/10/2011 15:15:08 - ***Firmando bytes del mensaje...
+21/10/2011 15:15:08 - ***OK mensaje firmado
+21/10/2011 15:15:12 - Analizando el Ticket Response recibido del WSAA
+21/10/2011 15:15:12 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_19-10-2011.xml
+21/10/2011 15:15:12 - Finalizada correctamente la creación del archivo XML TA_PROD_ML_21-10-2011.xml con Sign y Token.
+21/10/2011 15:16:21 - ----------- INICIO -----------
+21/10/2011 15:16:21 - Comprobante N°: 1000265
+21/10/2011 15:16:21 - Id Solicitud: 633526
+21/10/2011 15:16:21 - Cliente: NEWSAN SA                                                                                           
+21/10/2011 15:16:21 - Usuario: turinad
+21/10/2011 15:16:21 - Nombre del equipo: PC0071
+21/10/2011 15:16:21 - Insertando comprobantes en Base FE
+21/10/2011 15:16:21 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+21/10/2011 15:16:22 - Resultado observación: OK
+21/10/2011 15:16:22 - Observaciones: 
+21/10/2011 15:16:22 - Chequeando resultados de FE
+21/10/2011 15:16:22 - Obtener Comprobantes
+21/10/2011 15:16:22 - Iniciando el proceso de solicitud de CAE
+21/10/2011 15:16:22 - Modo de operacion: Produccion
+21/10/2011 15:16:22 - No existen registros para procesar en comprobantes ASOC
+21/10/2011 15:16:22 - Solicitando Token y Firma
+21/10/2011 15:16:22 - Buscando archivo: TA_PROD_ML_21-10-2011.xml
+21/10/2011 15:16:22 - Token y Sign leidos correctamente
+21/10/2011 15:16:22 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MTg0MDE0MjYxIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE5MjIwODY1IiBleHBfdGltZT0iMTMxOTI2NDEyNSIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+21/10/2011 15:16:22 - Sign p7LME7LLSf6TNqydhND4Fdmt5h6pgs3QTJUNQIwA9l/D1ui1kmYr3EhoAIzPqpQs84frOHd2iQZWvLN6KMRjqp3SJ06f1+F05L6NAT5XLstCDe2oGHS4O3+idsI/PLOEwJLPxEjLjCU5f8sN89JINSArxOt2sTGX8znmZM9fqo0=
+21/10/2011 15:16:22 - Adaptando formato Afip - Producción
+21/10/2011 15:16:22 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MTg0MDE0MjYxIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE5MjIwODY1IiBleHBfdGltZT0iMTMxOTI2NDEyNSIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+21/10/2011 15:16:22 - Sign p7LME7LLSf6TNqydhND4Fdmt5h6pgs3QTJUNQIwA9l/D1ui1kmYr3EhoAIzPqpQs84frOHd2iQZWvLN6KMRjqp3SJ06f1+F05L6NAT5XLstCDe2oGHS4O3+idsI/PLOEwJLPxEjLjCU5f8sN89JINSArxOt2sTGX8znmZM9fqo0=
+21/10/2011 15:16:37 - Último Nro de Comprobante en AFIP: 264
+21/10/2011 15:16:37 - Lista de Detalle_IVA creada
+21/10/2011 15:16:37 - Lista de Detalle_tributo creada
+21/10/2011 15:16:37 - Adaptación Produccion Completa
+21/10/2011 15:16:37 - Estableciendo comunicación con AFIP
+21/10/2011 15:16:46 - Respuesta: A
+21/10/2011 15:16:46 - <--INICIA GRABACION CAE--> 
+21/10/2011 15:16:46 - ID: 633526
+21/10/2011 15:16:46 - CAE: 61427109788424
+21/10/2011 15:16:46 - CAEFchVto: 20111031
+21/10/2011 15:16:46 - DocNro AFIP: 265
+21/10/2011 15:16:46 - CbteFch: 21/10/2011 00:00:00
+21/10/2011 15:16:46 - <FINALIZA GRABACION CAE> 
+21/10/2011 15:16:46 - Comprobante_Aprobado
+21/10/2011 15:16:46 - Actualizando base de datos local y Magma
+21/10/2011 15:16:46 - Commit Realizado con éxito!!!
+21/10/2011 15:16:46 - Grabando estado de envío
+21/10/2011 15:16:46 - Comprobante_Asignado
+21/10/2011 15:16:46 - Obtención de CAE exitosa
+21/10/2011 15:16:46 - La operación finalizó correctamente
+21/10/2011 15:17:09 - No existen Solicitudes a Enviar
+21/10/2011 15:17:09 - Observaciones: 
+21/10/2011 15:17:13 - ----------- INICIO -----------
+21/10/2011 15:17:13 - Buscando archivo: TA_PROD_ML_21-10-2011.xml
+21/10/2011 15:17:13 - Token y Sign leidos correctamente

@@ -1,0 +1,18 @@
+
+
+facturacion de Exportación 
+
+Realizar las Clases
+modelo  y DAO 
+
+En La clase AdmFacturaElectronica de debe declarar un metodo solicitarCAE_Ex 
+la logica de este metodo en similar a solicitarCAE pero usando las clases v_*
+pero usar el web service de factura de exportación.
+El metodo debe ser capaz de usar tanto el web services de producción como el de homologacion.
+Esta selección del ambiente de ejecución debe poder decidirla el objeto llamador el cual
+le indicará al metodo que ambiente de ejecucion desea utilizar.
+
+Realizar pruebas usando el web services de homologación
+
+
+

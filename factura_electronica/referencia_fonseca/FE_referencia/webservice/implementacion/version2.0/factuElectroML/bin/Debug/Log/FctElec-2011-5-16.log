@@ -1,0 +1,903 @@
+16/05/2011 09:42:04 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:43:44 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:44:11 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:48:54 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:49:07 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:49:36 a.m. - ----------- INICIO -----------
+16/05/2011 09:49:36 a.m. - 1000026
+16/05/2011 09:49:36 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+16/05/2011 09:49:36 a.m. - Usuario: turinad
+16/05/2011 09:49:36 a.m. - Nombre del equipo: PC0071
+16/05/2011 09:49:36 a.m. - Insertando comprobantes en FE
+16/05/2011 09:50:12 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:55:10 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 09:55:23 a.m. - Generando el Login Ticket Request
+16/05/2011 09:55:23 a.m. - Firmando el Login Ticket Request
+16/05/2011 09:55:23 a.m. - ***Leyendo certificado: 
+16/05/2011 09:55:23 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 09:55:23 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 09:55:24 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 09:55:24 a.m. - ***OK mensaje firmado
+16/05/2011 09:55:31 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 09:55:31 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\mercado_local\desarrollo\codigo.net\version2.0\factuElectroML\bin\Debug\TA_Homo_ML_13-5-2011.xml
+16/05/2011 09:55:31 a.m. - Finalizada correctamente la creación del archivo XML TA_Homo_ML_16-5-2011.xml con Sign y Token.
+16/05/2011 09:55:49 a.m. - No existen Solicitudes a Enviar
+16/05/2011 09:55:49 a.m. - No existen Solicitudes a Enviar
+16/05/2011 09:55:49 a.m. - No existen Solicitudes a Enviar
+16/05/2011 09:55:49 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:01:16 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 10:01:29 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 10:01:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:01:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:01:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:01:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:49:28 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 10:49:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:49:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:49:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:49:29 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:51:09 a.m. - Generando el Login Ticket Request
+16/05/2011 10:51:09 a.m. - Firmando el Login Ticket Request
+16/05/2011 10:51:09 a.m. - ***Leyendo certificado: 
+16/05/2011 10:51:09 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 10:51:09 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 10:51:10 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 10:51:10 a.m. - ***OK mensaje firmado
+16/05/2011 10:51:16 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 10:51:16 a.m. - Finalizada correctamente la creación del archivo XML TA_Homo_EX_16-5-2011.xml con Sign y Token.
+16/05/2011 10:51:48 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 10:51:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:51:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:51:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:51:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 10:52:51 a.m. - Generando el Login Ticket Request
+16/05/2011 10:52:51 a.m. - Firmando el Login Ticket Request
+16/05/2011 10:52:51 a.m. - ***Leyendo certificado: 
+16/05/2011 10:52:51 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 10:52:51 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 10:52:51 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 10:52:51 a.m. - ***OK mensaje firmado
+16/05/2011 10:52:54 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 11:10:09 a.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 11:11:05 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 11:11:05 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:11:05 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:11:05 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:11:05 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:11:55 a.m. - Generando el Login Ticket Request
+16/05/2011 11:11:55 a.m. - Firmando el Login Ticket Request
+16/05/2011 11:11:55 a.m. - ***Leyendo certificado: 
+16/05/2011 11:11:55 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 11:11:55 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 11:11:55 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 11:11:55 a.m. - ***OK mensaje firmado
+16/05/2011 11:11:59 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 11:27:50 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 11:27:51 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:27:51 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:27:51 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:27:51 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:28:20 a.m. - Generando el Login Ticket Request
+16/05/2011 11:28:20 a.m. - Firmando el Login Ticket Request
+16/05/2011 11:28:20 a.m. - ***Leyendo certificado: 
+16/05/2011 11:28:20 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 11:28:20 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 11:28:20 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 11:28:20 a.m. - ***OK mensaje firmado
+16/05/2011 11:28:24 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 11:29:39 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 11:29:39 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:29:39 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:29:39 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:29:39 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:29:52 a.m. - Generando el Login Ticket Request
+16/05/2011 11:29:52 a.m. - Firmando el Login Ticket Request
+16/05/2011 11:29:52 a.m. - ***Leyendo certificado: 
+16/05/2011 11:29:52 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 11:29:52 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 11:29:52 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 11:29:52 a.m. - ***OK mensaje firmado
+16/05/2011 11:29:56 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 11:31:30 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 11:31:30 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:31:30 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:31:30 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:31:30 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:31:43 a.m. - Generando el Login Ticket Request
+16/05/2011 11:31:43 a.m. - Firmando el Login Ticket Request
+16/05/2011 11:31:43 a.m. - ***Leyendo certificado: 
+16/05/2011 11:31:43 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 11:31:43 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 11:31:43 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 11:31:43 a.m. - ***OK mensaje firmado
+16/05/2011 11:31:46 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 11:57:48 a.m. - Error al cerrar el data reader de SQL
+16/05/2011 11:57:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:57:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:57:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:57:48 a.m. - No existen Solicitudes a Enviar
+16/05/2011 11:58:18 a.m. - Generando el Login Ticket Request
+16/05/2011 11:58:18 a.m. - Firmando el Login Ticket Request
+16/05/2011 11:58:18 a.m. - ***Leyendo certificado: 
+16/05/2011 11:58:19 a.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 11:58:19 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 11:58:19 a.m. - ***Firmando bytes del mensaje...
+16/05/2011 11:58:19 a.m. - ***OK mensaje firmado
+16/05/2011 11:58:23 a.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 12:29:52 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 12:29:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 12:29:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 12:29:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 12:29:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 12:30:06 p.m. - Generando el Login Ticket Request
+16/05/2011 12:30:06 p.m. - Firmando el Login Ticket Request
+16/05/2011 12:30:06 p.m. - ***Leyendo certificado: 
+16/05/2011 12:30:06 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 12:30:06 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 12:30:07 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 12:30:07 p.m. - ***OK mensaje firmado
+16/05/2011 12:30:13 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 12:42:34 p.m. - Generando el Login Ticket Request
+16/05/2011 12:42:34 p.m. - Firmando el Login Ticket Request
+16/05/2011 12:42:34 p.m. - ***Leyendo certificado: 
+16/05/2011 12:42:34 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 12:42:34 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 12:42:34 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 12:42:34 p.m. - ***OK mensaje firmado
+16/05/2011 12:42:35 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:07:07 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 01:07:07 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:07:07 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:07:07 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:07:07 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:11:35 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 01:11:36 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:11:36 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:11:36 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:11:36 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:11:50 p.m. - Generando el Login Ticket Request
+16/05/2011 01:11:50 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:11:50 p.m. - ***Leyendo certificado: 
+16/05/2011 01:11:51 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:11:51 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:11:51 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:11:51 p.m. - ***OK mensaje firmado
+16/05/2011 01:11:55 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:12:16 p.m. - Generando el Login Ticket Request
+16/05/2011 01:12:16 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:12:16 p.m. - ***Leyendo certificado: 
+16/05/2011 01:12:16 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:12:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:12:16 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:12:16 p.m. - ***OK mensaje firmado
+16/05/2011 01:12:16 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:14:21 p.m. - Generando el Login Ticket Request
+16/05/2011 01:14:21 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:14:21 p.m. - ***Leyendo certificado: 
+16/05/2011 01:14:21 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:14:21 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:14:21 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:14:21 p.m. - ***OK mensaje firmado
+16/05/2011 01:14:22 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:16:52 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 01:16:52 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:16:52 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:16:52 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:16:52 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:17:03 p.m. - Generando el Login Ticket Request
+16/05/2011 01:17:03 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:17:03 p.m. - ***Leyendo certificado: 
+16/05/2011 01:17:03 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:17:03 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:17:03 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:17:03 p.m. - ***OK mensaje firmado
+16/05/2011 01:17:07 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:17:07 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:17:32 p.m. - Generando el Login Ticket Request
+16/05/2011 01:17:32 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:17:32 p.m. - ***Leyendo certificado: 
+16/05/2011 01:17:32 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:17:32 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:17:32 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:17:32 p.m. - ***OK mensaje firmado
+16/05/2011 01:17:33 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:17:33 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:17:51 p.m. - Generando el Login Ticket Request
+16/05/2011 01:17:51 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:17:51 p.m. - ***Leyendo certificado: 
+16/05/2011 01:17:51 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:17:51 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:17:51 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:17:51 p.m. - ***OK mensaje firmado
+16/05/2011 01:17:52 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:20:26 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:20:34 p.m. - Generando el Login Ticket Request
+16/05/2011 01:20:34 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:20:34 p.m. - ***Leyendo certificado: 
+16/05/2011 01:20:34 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:20:34 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:20:34 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:20:34 p.m. - ***OK mensaje firmado
+16/05/2011 01:20:35 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:23:18 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:23:35 p.m. - Generando el Login Ticket Request
+16/05/2011 01:23:35 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:23:35 p.m. - ***Leyendo certificado: 
+16/05/2011 01:23:35 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:23:35 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:23:35 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:23:35 p.m. - ***OK mensaje firmado
+16/05/2011 01:23:36 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:23:39 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:23:55 p.m. - Generando el Login Ticket Request
+16/05/2011 01:23:55 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:23:55 p.m. - ***Leyendo certificado: 
+16/05/2011 01:23:55 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:23:55 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:23:55 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:23:55 p.m. - ***OK mensaje firmado
+16/05/2011 01:23:56 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:24:15 p.m. - Generando el Login Ticket Request
+16/05/2011 01:24:15 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:24:15 p.m. - ***Leyendo certificado: 
+16/05/2011 01:24:15 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:24:15 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:24:15 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:24:15 p.m. - ***OK mensaje firmado
+16/05/2011 01:24:15 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:28:38 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 01:28:38 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:28:38 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:28:38 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:28:38 p.m. - No existen Solicitudes a Enviar
+16/05/2011 01:29:03 p.m. - Generando el Login Ticket Request
+16/05/2011 01:29:03 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:29:03 p.m. - ***Leyendo certificado: 
+16/05/2011 01:29:03 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:29:03 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:29:03 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:29:03 p.m. - ***OK mensaje firmado
+16/05/2011 01:29:05 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:30:20 p.m. - Generando el Login Ticket Request
+16/05/2011 01:30:20 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:30:20 p.m. - ***Leyendo certificado: 
+16/05/2011 01:30:20 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:30:20 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:30:20 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:30:20 p.m. - ***OK mensaje firmado
+16/05/2011 01:30:21 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:30:21 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:31:26 p.m. - Generando el Login Ticket Request
+16/05/2011 01:31:26 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:31:26 p.m. - ***Leyendo certificado: 
+16/05/2011 01:31:26 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:31:26 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:31:26 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:31:26 p.m. - ***OK mensaje firmado
+16/05/2011 01:31:26 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:31:26 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 01:31:59 p.m. - Generando el Login Ticket Request
+16/05/2011 01:31:59 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:31:59 p.m. - ***Leyendo certificado: 
+16/05/2011 01:31:59 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:31:59 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:31:59 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:31:59 p.m. - ***OK mensaje firmado
+16/05/2011 01:31:59 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 01:35:04 p.m. - Generando el Login Ticket Request
+16/05/2011 01:35:04 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:35:04 p.m. - ***Leyendo certificado: 
+16/05/2011 01:35:04 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:35:04 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:35:04 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:35:04 p.m. - ***OK mensaje firmado
+16/05/2011 01:35:04 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+16/05/2011 01:35:16 p.m. - Generando el Login Ticket Request
+16/05/2011 01:35:16 p.m. - Firmando el Login Ticket Request
+16/05/2011 01:35:16 p.m. - ***Leyendo certificado: 
+16/05/2011 01:35:16 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 01:35:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 01:35:16 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 01:35:16 p.m. - ***OK mensaje firmado
+16/05/2011 01:35:17 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 02:46:24 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 02:46:25 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:46:25 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:46:25 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:46:25 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:51:53 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 02:51:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:51:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:51:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:51:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 02:52:23 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 02:52:35 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 03:01:26 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:01:26 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:01:26 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:01:27 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:01:27 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:01:54 p.m. - Generando el Login Ticket Request
+16/05/2011 03:01:54 p.m. - Firmando el Login Ticket Request
+16/05/2011 03:01:54 p.m. - ***Leyendo certificado: 
+16/05/2011 03:01:54 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 03:01:54 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 03:01:54 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 03:01:55 p.m. - ***OK mensaje firmado
+16/05/2011 03:02:01 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 03:02:01 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_16-5-2011.xml con Sign y Token.
+16/05/2011 03:05:15 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:05:15 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:05:15 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:05:15 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:05:15 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:05:34 p.m. - Generando el Login Ticket Request
+16/05/2011 03:05:34 p.m. - Firmando el Login Ticket Request
+16/05/2011 03:05:34 p.m. - ***Leyendo certificado: 
+16/05/2011 03:05:34 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 03:05:34 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 03:05:34 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 03:05:34 p.m. - ***OK mensaje firmado
+16/05/2011 03:05:38 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 03:05:38 p.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\mercado_local\desarrollo\codigo.net\version2.0\factuElectroML\bin\Debug\TA_HOMO_EX_16-1-2011.xml
+16/05/2011 03:05:38 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_16-5-2011.xml con Sign y Token.
+16/05/2011 03:16:59 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:16:59 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:16:59 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:16:59 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:16:59 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:18:22 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:18:36 p.m. - ----------- INICIO -----------
+16/05/2011 03:18:36 p.m. - 1000026
+16/05/2011 03:18:36 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+16/05/2011 03:18:36 p.m. - Usuario: turinad
+16/05/2011 03:18:36 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:18:36 p.m. - Insertando comprobantes en FE
+16/05/2011 03:18:38 p.m. - Observaciones: 
+16/05/2011 03:18:38 p.m. - Chequeando resultados de FE
+16/05/2011 03:18:38 p.m. - Obtener Comprobantes
+16/05/2011 03:18:38 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:18:38 p.m. - No existen registros para procesar en comprobantes ASOC
+16/05/2011 03:18:38 p.m. - Solicitando Token
+16/05/2011 03:18:38 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:18:43 p.m. - Generando el Login Ticket Request
+16/05/2011 03:18:43 p.m. - Firmando el Login Ticket Request
+16/05/2011 03:18:43 p.m. - ***Leyendo certificado: 
+16/05/2011 03:18:43 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 03:18:43 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 03:18:44 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 03:18:44 p.m. - ***OK mensaje firmado
+16/05/2011 03:18:48 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 03:18:48 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_ML_16-5-2011.xml con Sign y Token.
+16/05/2011 03:18:48 p.m. - Adaptando Formatos
+16/05/2011 03:18:48 p.m. - Adaptando formato Afip - Homologacion
+16/05/2011 03:18:48 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MTE2MzkzNjkiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1NTY5NzY0IiBleHBfdGltZT0iMTMwNTYxMzAyNCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZlIiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+16/05/2011 03:18:48 p.m. - Sign KfeEw4ebDEMxVx2UZkrtxWSgboEuiXoTEcOapYriLMxtnOetrp6BbsCPiGw1vX4eEB3Ylaikj/axrJ+XAQevPobdCQB874YXjDygzOteRoo2fJFqnVV2ktASDxTbVt8CAKi/5TzDoBJIuaVR9WVutYzbra3udk33T1bj4ADTiKg=
+16/05/2011 03:18:49 p.m. - Último Nro de Comprobante en AFIP (Homo): 109
+16/05/2011 03:18:49 p.m. - Lista de Detalle_IVA creada
+16/05/2011 03:18:49 p.m. - Lista de Detalle_tributos creada
+16/05/2011 03:18:49 p.m. - Adaptacion Homologacion Completa
+16/05/2011 03:18:49 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 03:18:50 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:18:50 p.m. - Actualizando datos del comprobante
+16/05/2011 03:18:50 p.m. - Error del comprobante
+16/05/2011 03:18:50 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+16/05/2011 03:18:58 p.m. - Observaciones: 
+16/05/2011 03:18:58 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto.
+16/05/2011 03:36:47 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:36:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:19 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:28 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:37:28 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:24 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:31 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:38:31 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:48 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:40:53 p.m. - No existen Solicitudes a Enviar
+16/05/2011 03:48:35 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 03:48:49 p.m. - ----------- INICIO -----------
+16/05/2011 03:48:49 p.m. - 1000480
+16/05/2011 03:48:49 p.m. - 473576
+16/05/2011 03:48:49 p.m. - Usuario: turinad
+16/05/2011 03:48:49 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:48:49 p.m. - Insertando comprobantes en FE
+16/05/2011 03:48:50 p.m. - Observaciones: 
+16/05/2011 03:48:50 p.m. - Chequeando resultados de FE
+16/05/2011 03:48:50 p.m. - Obtener Comprobantes
+16/05/2011 03:48:50 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:48:59 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:48:59 p.m. - Solicitando Token
+16/05/2011 03:48:59 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:48:59 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:48:59 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:49:10 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 03:49:11 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.
+16/05/2011 03:51:13 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 03:52:19 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:52:32 p.m. - Referencia a objeto no establecida como instancia de un objeto.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 03:52:36 p.m. - Observaciones: 
+16/05/2011 03:52:36 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 03:53:19 p.m. - ----------- INICIO -----------
+16/05/2011 03:53:19 p.m. - 1000480
+16/05/2011 03:53:19 p.m. - 473576
+16/05/2011 03:53:19 p.m. - Usuario: turinad
+16/05/2011 03:53:19 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:53:19 p.m. - Insertando comprobantes en FE
+16/05/2011 03:53:19 p.m. - Observaciones: 
+16/05/2011 03:53:19 p.m. - Chequeando resultados de FE
+16/05/2011 03:53:19 p.m. - Obtener Comprobantes
+16/05/2011 03:53:19 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:53:19 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:53:19 p.m. - Solicitando Token
+16/05/2011 03:53:19 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:53:19 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:53:19 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:53:20 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 03:53:20 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.
+16/05/2011 03:53:20 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:53:20 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 03:53:45 p.m. - Observaciones: 
+16/05/2011 03:53:45 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 03:53:51 p.m. - ----------- INICIO -----------
+16/05/2011 03:53:51 p.m. - 1000480
+16/05/2011 03:53:51 p.m. - 473576
+16/05/2011 03:53:51 p.m. - Usuario: turinad
+16/05/2011 03:53:51 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:53:51 p.m. - Insertando comprobantes en FE
+16/05/2011 03:53:51 p.m. - Observaciones: 
+16/05/2011 03:53:51 p.m. - Chequeando resultados de FE
+16/05/2011 03:53:51 p.m. - Obtener Comprobantes
+16/05/2011 03:53:51 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:53:51 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:53:51 p.m. - Solicitando Token
+16/05/2011 03:53:51 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:53:51 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:53:51 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:53:52 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 03:53:52 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:53:52 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 03:53:59 p.m. - Observaciones: 
+16/05/2011 03:53:59 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 03:54:04 p.m. - ----------- INICIO -----------
+16/05/2011 03:54:04 p.m. - 1000480
+16/05/2011 03:54:04 p.m. - 473576
+16/05/2011 03:54:04 p.m. - Usuario: turinad
+16/05/2011 03:54:04 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:54:04 p.m. - Insertando comprobantes en FE
+16/05/2011 03:54:05 p.m. - Observaciones: 
+16/05/2011 03:54:05 p.m. - Chequeando resultados de FE
+16/05/2011 03:54:05 p.m. - Obtener Comprobantes
+16/05/2011 03:54:06 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:54:06 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:54:06 p.m. - Solicitando Token
+16/05/2011 03:54:06 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:54:06 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:54:06 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:54:06 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 03:54:06 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:54:06 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 03:54:13 p.m. - Observaciones: 
+16/05/2011 03:54:13 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 03:55:07 p.m. - ----------- INICIO -----------
+16/05/2011 03:55:07 p.m. - 1000480
+16/05/2011 03:55:07 p.m. - 473576
+16/05/2011 03:55:07 p.m. - Usuario: turinad
+16/05/2011 03:55:07 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:55:07 p.m. - Insertando comprobantes en FE
+16/05/2011 03:55:07 p.m. - Observaciones: 
+16/05/2011 03:55:07 p.m. - Chequeando resultados de FE
+16/05/2011 03:55:07 p.m. - Obtener Comprobantes
+16/05/2011 03:55:07 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:55:13 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:55:14 p.m. - Solicitando Token
+16/05/2011 03:55:14 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:55:15 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:55:18 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:55:19 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 03:55:35 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:56:14 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 03:57:05 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.
+16/05/2011 03:57:08 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 03:57:09 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 03:57:36 p.m. - Observaciones: 
+16/05/2011 03:57:38 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 03:58:23 p.m. - ----------- INICIO -----------
+16/05/2011 03:58:23 p.m. - 1000480
+16/05/2011 03:58:23 p.m. - 473576
+16/05/2011 03:58:23 p.m. - Usuario: turinad
+16/05/2011 03:58:23 p.m. - Nombre del equipo: PC0071
+16/05/2011 03:58:23 p.m. - Insertando comprobantes en FE
+16/05/2011 03:58:23 p.m. - Observaciones: 
+16/05/2011 03:58:23 p.m. - Chequeando resultados de FE
+16/05/2011 03:58:23 p.m. - Obtener Comprobantes
+16/05/2011 03:58:23 p.m. - Solicitando CAE a AFIP
+16/05/2011 03:58:27 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 03:58:27 p.m. - Solicitando Token
+16/05/2011 03:58:28 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 03:58:31 p.m. - Adaptando Formatos a AFIP
+16/05/2011 03:58:34 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 03:58:39 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 04:00:18 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.
+16/05/2011 04:00:19 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 04:00:19 p.m. - La conversión del tipo 'DBNull' en el tipo 'String' no es válida.** Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S 
+16/05/2011 04:00:21 p.m. - Observaciones: 
+16/05/2011 04:00:21 p.m. - 1720 Campo Permisos:Obligatorio para Tipo_expo:1, Cmp.Tipo_cbte:19 , Cmp.Permiso_existente:S
+16/05/2011 04:00:30 p.m. - ----------- INICIO -----------
+16/05/2011 04:00:30 p.m. - 1000480
+16/05/2011 04:00:30 p.m. - 473576
+16/05/2011 04:00:30 p.m. - Usuario: turinad
+16/05/2011 04:00:30 p.m. - Nombre del equipo: PC0071
+16/05/2011 04:00:30 p.m. - Insertando comprobantes en FE
+16/05/2011 04:00:30 p.m. - Observaciones: 
+16/05/2011 04:00:30 p.m. - Chequeando resultados de FE
+16/05/2011 04:00:30 p.m. - Obtener Comprobantes
+16/05/2011 04:00:30 p.m. - Solicitando CAE a AFIP
+16/05/2011 04:00:32 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:00:32 p.m. - Solicitando Token
+16/05/2011 04:00:32 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:00:32 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:00:32 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:00:32 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 04:37:32 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 04:37:36 p.m. - ----------- INICIO -----------
+16/05/2011 04:37:36 p.m. - 1000480
+16/05/2011 04:37:36 p.m. - 473576
+16/05/2011 04:37:36 p.m. - Usuario: quidele
+16/05/2011 04:37:36 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:37:36 p.m. - Insertando comprobantes en FE
+16/05/2011 04:37:36 p.m. - El nombre de objeto '#tmp_detalle2' no es válido.
+16/05/2011 04:37:36 p.m. - El nombre de objeto '#tmp_detalle2' no es válido.
+16/05/2011 04:37:36 p.m. - El nombre de objeto '#tmp_detalle2' no es válido.
+16/05/2011 04:38:06 p.m. - ----------- INICIO -----------
+16/05/2011 04:38:06 p.m. - 1000480
+16/05/2011 04:38:06 p.m. - 473576
+16/05/2011 04:38:06 p.m. - Usuario: quidele
+16/05/2011 04:38:06 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:38:06 p.m. - Insertando comprobantes en FE
+16/05/2011 04:38:06 p.m. - Observaciones: 
+16/05/2011 04:38:06 p.m. - Chequeando resultados de FE
+16/05/2011 04:38:06 p.m. - Error: existen items con importe en cero , verifique la factura
+16/05/2011 04:38:19 p.m. - ----------- INICIO -----------
+16/05/2011 04:38:19 p.m. - 1000480
+16/05/2011 04:38:19 p.m. - 473576
+16/05/2011 04:38:19 p.m. - Usuario: quidele
+16/05/2011 04:38:19 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:38:19 p.m. - Insertando comprobantes en FE
+16/05/2011 04:38:19 p.m. - Observaciones: 
+16/05/2011 04:38:19 p.m. - Chequeando resultados de FE
+16/05/2011 04:38:19 p.m. - Error: existen items con importe en cero, verifique la factura
+16/05/2011 04:38:30 p.m. - ----------- INICIO -----------
+16/05/2011 04:38:30 p.m. - 1000480
+16/05/2011 04:38:30 p.m. - 473576
+16/05/2011 04:38:30 p.m. - Usuario: quidele
+16/05/2011 04:38:30 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:38:30 p.m. - Insertando comprobantes en FE
+16/05/2011 04:38:30 p.m. - Observaciones: 
+16/05/2011 04:38:30 p.m. - Chequeando resultados de FE
+16/05/2011 04:38:30 p.m. - Error: existen items con importe en cero, verifique la factura
+16/05/2011 04:38:44 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 04:38:46 p.m. - ----------- INICIO -----------
+16/05/2011 04:38:46 p.m. - 1000480
+16/05/2011 04:38:46 p.m. - 473576
+16/05/2011 04:38:46 p.m. - Usuario: quidele
+16/05/2011 04:38:46 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:38:46 p.m. - Insertando comprobantes en FE
+16/05/2011 04:38:46 p.m. - Observaciones: 
+16/05/2011 04:38:46 p.m. - Chequeando resultados de FE
+16/05/2011 04:38:46 p.m. - Error: existen items con importe en cero, verifique la factura
+16/05/2011 04:40:16 p.m. - ----------- INICIO -----------
+16/05/2011 04:40:16 p.m. - 1000480
+16/05/2011 04:40:16 p.m. - 473576
+16/05/2011 04:40:16 p.m. - Usuario: quidele
+16/05/2011 04:40:16 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:40:16 p.m. - Insertando comprobantes en FE
+16/05/2011 04:40:16 p.m. - Observaciones: 
+16/05/2011 04:40:16 p.m. - Chequeando resultados de FE
+16/05/2011 04:40:16 p.m. - Obtener Comprobantes
+16/05/2011 04:40:16 p.m. - Solicitando CAE a AFIP
+16/05/2011 04:40:37 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:40:37 p.m. - Solicitando Token
+16/05/2011 04:40:37 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:40:37 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:40:37 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:40:37 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 04:41:15 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 04:41:17 p.m. - ----------- INICIO -----------
+16/05/2011 04:41:17 p.m. - 1000480
+16/05/2011 04:41:17 p.m. - 473576
+16/05/2011 04:41:17 p.m. - Usuario: quidele
+16/05/2011 04:41:17 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:41:17 p.m. - Insertando comprobantes en FE
+16/05/2011 04:41:18 p.m. - Observaciones: 
+16/05/2011 04:41:18 p.m. - Chequeando resultados de FE
+16/05/2011 04:41:18 p.m. - Obtener Comprobantes
+16/05/2011 04:41:18 p.m. - Solicitando CAE a AFIP
+16/05/2011 04:41:26 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:41:26 p.m. - Solicitando Token
+16/05/2011 04:41:26 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:41:26 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:41:36 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:41:36 p.m. - Solicitando Token
+16/05/2011 04:41:36 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:42:13 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:42:18 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:45:23 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:48:02 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 04:48:05 p.m. - ----------- INICIO -----------
+16/05/2011 04:48:05 p.m. - 1000480
+16/05/2011 04:48:05 p.m. - 473576
+16/05/2011 04:48:05 p.m. - Usuario: quidele
+16/05/2011 04:48:05 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:48:05 p.m. - Insertando comprobantes en FE
+16/05/2011 04:48:06 p.m. - Observaciones: 
+16/05/2011 04:48:06 p.m. - Chequeando resultados de FE
+16/05/2011 04:48:06 p.m. - Obtener Comprobantes
+16/05/2011 04:48:06 p.m. - Solicitando CAE a AFIP
+16/05/2011 04:48:15 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:48:15 p.m. - Solicitando Token
+16/05/2011 04:48:15 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:48:15 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:48:21 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:52:19 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 04:52:21 p.m. - ----------- INICIO -----------
+16/05/2011 04:52:21 p.m. - 1000480
+16/05/2011 04:52:21 p.m. - 473576
+16/05/2011 04:52:21 p.m. - Usuario: quidele
+16/05/2011 04:52:21 p.m. - Nombre del equipo: PC0157-
+16/05/2011 04:52:21 p.m. - Insertando comprobantes en FE
+16/05/2011 04:52:21 p.m. - Observaciones: 
+16/05/2011 04:52:21 p.m. - Chequeando resultados de FE
+16/05/2011 04:52:21 p.m. - Obtener Comprobantes
+16/05/2011 04:52:21 p.m. - Solicitando CAE a AFIP
+16/05/2011 04:52:23 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 04:52:23 p.m. - Solicitando Token
+16/05/2011 04:52:23 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 04:53:04 p.m. - Generando el Login Ticket Request
+16/05/2011 04:53:04 p.m. - Firmando el Login Ticket Request
+16/05/2011 04:53:04 p.m. - ***Leyendo certificado: 
+16/05/2011 04:53:04 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 04:53:04 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 04:53:04 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 04:53:04 p.m. - ***OK mensaje firmado
+16/05/2011 04:53:08 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 04:53:40 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_16-5-2011.xml con Sign y Token.
+16/05/2011 04:53:46 p.m. - Adaptando Formatos a AFIP
+16/05/2011 04:53:58 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 04:55:53 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:00:22 p.m. - Lista de Items creada
+16/05/2011 05:00:26 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:00:31 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:01:23 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:01:45 p.m. - Actualizando datos del comprobante
+16/05/2011 05:02:35 p.m. - Actualizando base de datos local y Magma
+16/05/2011 05:04:02 p.m. - Commit Realizado con éxito!!!
+16/05/2011 05:04:05 p.m. - Grabando estado de envío
+16/05/2011 05:04:10 p.m. - Comprobante_Asignado
+16/05/2011 05:04:13 p.m. - Obtención de CAE exitosa
+16/05/2011 05:04:56 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:56 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:58 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:04:58 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:46 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:47 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:14:49 p.m. - No existen Solicitudes a Enviar
+16/05/2011 05:29:54 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:35:14 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:38:13 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:38:21 p.m. - ----------- INICIO -----------
+16/05/2011 05:38:21 p.m. - 1000481
+16/05/2011 05:38:21 p.m. - 473578
+16/05/2011 05:38:21 p.m. - Usuario: quidele
+16/05/2011 05:38:21 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:38:21 p.m. - Insertando comprobantes en FE
+16/05/2011 05:38:21 p.m. - Observaciones: 
+16/05/2011 05:38:21 p.m. - Chequeando resultados de FE
+16/05/2011 05:38:21 p.m. - Error:  comprobante sin detalle, verifique el comprobante
+16/05/2011 05:38:33 p.m. - ----------- INICIO -----------
+16/05/2011 05:38:33 p.m. - 1000482
+16/05/2011 05:38:33 p.m. - 473580
+16/05/2011 05:38:33 p.m. - Usuario: quidele
+16/05/2011 05:38:33 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:38:33 p.m. - Insertando comprobantes en FE
+16/05/2011 05:38:33 p.m. - Observaciones: 
+16/05/2011 05:38:33 p.m. - Chequeando resultados de FE
+16/05/2011 05:38:33 p.m. - Error:  comprobante sin detalle, verifique el comprobante
+16/05/2011 05:39:00 p.m. - ----------- INICIO -----------
+16/05/2011 05:39:00 p.m. - 1000481
+16/05/2011 05:39:00 p.m. - 473578
+16/05/2011 05:39:00 p.m. - Usuario: quidele
+16/05/2011 05:39:00 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:39:00 p.m. - Insertando comprobantes en FE
+16/05/2011 05:39:00 p.m. - Observaciones: 
+16/05/2011 05:39:00 p.m. - Chequeando resultados de FE
+16/05/2011 05:39:00 p.m. - Obtener Comprobantes
+16/05/2011 05:39:00 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:39:08 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:39:08 p.m. - Solicitando Token
+16/05/2011 05:39:08 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:39:41 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:39:44 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:39:45 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:39:45 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:39:51 p.m. - Observaciones: 
+16/05/2011 05:41:27 p.m. - ----------- INICIO -----------
+16/05/2011 05:41:27 p.m. - 1000481
+16/05/2011 05:41:27 p.m. - 473578
+16/05/2011 05:41:27 p.m. - Usuario: quidele
+16/05/2011 05:41:27 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:41:27 p.m. - Insertando comprobantes en FE
+16/05/2011 05:41:27 p.m. - Observaciones: 
+16/05/2011 05:41:27 p.m. - Chequeando resultados de FE
+16/05/2011 05:41:27 p.m. - Obtener Comprobantes
+16/05/2011 05:41:27 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:41:32 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:41:32 p.m. - Solicitando Token
+16/05/2011 05:41:32 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:41:46 p.m. - Generando el Login Ticket Request
+16/05/2011 05:41:46 p.m. - Firmando el Login Ticket Request
+16/05/2011 05:41:46 p.m. - ***Leyendo certificado: 
+16/05/2011 05:41:46 p.m. - ***Certificados disponibles en el repositorio:My
+16/05/2011 05:41:46 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+16/05/2011 05:41:46 p.m. - ***Firmando bytes del mensaje...
+16/05/2011 05:41:46 p.m. - ***OK mensaje firmado
+16/05/2011 05:41:47 p.m. - Analizando el Ticket Response recibido del WSAA
+16/05/2011 05:41:47 p.m. - Finalizada correctamente la creación del archivo XML TA_HOMO_EX_16-5-2011.xml con Sign y Token.
+16/05/2011 05:41:47 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:41:49 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:41:52 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:41:54 p.m. - Lista de Items creada
+16/05/2011 05:41:54 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:41:54 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:41:54 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:41:54 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:41:54 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:41:59 p.m. - Observaciones: 
+16/05/2011 05:42:04 p.m. - ----------- INICIO -----------
+16/05/2011 05:42:04 p.m. - 1000481
+16/05/2011 05:42:04 p.m. - 473578
+16/05/2011 05:42:04 p.m. - Usuario: quidele
+16/05/2011 05:42:04 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:42:04 p.m. - Insertando comprobantes en FE
+16/05/2011 05:42:04 p.m. - Observaciones: 
+16/05/2011 05:42:04 p.m. - Chequeando resultados de FE
+16/05/2011 05:42:04 p.m. - Obtener Comprobantes
+16/05/2011 05:42:04 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:42:04 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:42:04 p.m. - Solicitando Token
+16/05/2011 05:42:04 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:42:07 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:42:12 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:42:19 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:42:21 p.m. - Lista de Items creada
+16/05/2011 05:42:21 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:42:21 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:42:30 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:45:40 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:45:40 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:45:42 p.m. - Observaciones: 
+16/05/2011 05:45:50 p.m. - ----------- INICIO -----------
+16/05/2011 05:45:50 p.m. - 1000481
+16/05/2011 05:45:50 p.m. - 473578
+16/05/2011 05:45:50 p.m. - Usuario: quidele
+16/05/2011 05:45:50 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:45:50 p.m. - Insertando comprobantes en FE
+16/05/2011 05:45:50 p.m. - Observaciones: 
+16/05/2011 05:45:50 p.m. - Chequeando resultados de FE
+16/05/2011 05:45:50 p.m. - Obtener Comprobantes
+16/05/2011 05:45:50 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:45:50 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:45:50 p.m. - Solicitando Token
+16/05/2011 05:45:50 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:45:52 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:45:55 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:45:56 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:45:57 p.m. - Lista de Items creada
+16/05/2011 05:45:57 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:45:57 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:45:58 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:45:59 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:45:59 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+16/05/2011 05:46:02 p.m. - Observaciones: 
+16/05/2011 05:46:06 p.m. - ----------- INICIO -----------
+16/05/2011 05:46:06 p.m. - 1000481
+16/05/2011 05:46:06 p.m. - 473578
+16/05/2011 05:46:06 p.m. - Usuario: quidele
+16/05/2011 05:46:06 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:46:06 p.m. - Insertando comprobantes en FE
+16/05/2011 05:46:07 p.m. - Observaciones: 
+16/05/2011 05:46:07 p.m. - Chequeando resultados de FE
+16/05/2011 05:46:07 p.m. - Obtener Comprobantes
+16/05/2011 05:46:07 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:46:07 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:46:07 p.m. - Solicitando Token
+16/05/2011 05:46:07 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:46:17 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:46:18 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:46:19 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:46:20 p.m. - Lista de Items creada
+16/05/2011 05:46:20 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:46:20 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:46:20 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:46:53 p.m. - Observaciones insertadas correctamente en TABLA
+16/05/2011 05:46:53 p.m. - Referencia a objeto no establecida como instancia de un objeto.** Campo Cmp.Importe_total debe ser igual a la suma de los camps Items.Pro_total_item  
+16/05/2011 05:47:13 p.m. - Observaciones: 
+16/05/2011 05:47:13 p.m. - 1610 Campo Cmp.Importe_total debe ser igual a la suma de los camps Items.Pro_total_item
+16/05/2011 05:52:09 p.m. - Error al cerrar el data reader de SQL
+16/05/2011 05:52:13 p.m. - ----------- INICIO -----------
+16/05/2011 05:52:13 p.m. - 1000481
+16/05/2011 05:52:13 p.m. - 473578
+16/05/2011 05:52:13 p.m. - Usuario: quidele
+16/05/2011 05:52:13 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:52:13 p.m. - Insertando comprobantes en FE
+16/05/2011 05:52:13 p.m. - Observaciones: 
+16/05/2011 05:52:13 p.m. - Chequeando resultados de FE
+16/05/2011 05:52:13 p.m. - Obtener Comprobantes
+16/05/2011 05:52:13 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:52:13 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:52:13 p.m. - Solicitando Token
+16/05/2011 05:52:13 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:52:18 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:52:21 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:52:31 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+16/05/2011 05:53:43 p.m. - Lista de Items creada
+16/05/2011 05:54:06 p.m. - Lista de PermisosDestino creada
+16/05/2011 05:54:11 p.m. - Adaptacion Homologacion Completa
+16/05/2011 05:56:58 p.m. - Estableciendo comunicación con AFIP
+16/05/2011 05:58:46 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:58:47 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:58:51 p.m. - Observaciones: 
+16/05/2011 05:58:59 p.m. - ----------- INICIO -----------
+16/05/2011 05:58:59 p.m. - 1000481
+16/05/2011 05:58:59 p.m. - 473578
+16/05/2011 05:58:59 p.m. - Usuario: quidele
+16/05/2011 05:58:59 p.m. - Nombre del equipo: PC0157-
+16/05/2011 05:58:59 p.m. - Insertando comprobantes en FE
+16/05/2011 05:58:59 p.m. - Observaciones: 
+16/05/2011 05:58:59 p.m. - Chequeando resultados de FE
+16/05/2011 05:58:59 p.m. - Obtener Comprobantes
+16/05/2011 05:58:59 p.m. - Solicitando CAE a AFIP
+16/05/2011 05:58:59 p.m. - No existen registros para procesar en v_cmpasociados_EX
+16/05/2011 05:58:59 p.m. - Solicitando Token
+16/05/2011 05:58:59 p.m. - Modo de operacion: 'Homologacion'
+16/05/2011 05:58:59 p.m. - Adaptando Formatos a AFIP
+16/05/2011 05:59:01 p.m. - Adaptando formato Afip - Homologacion - EX
+16/05/2011 05:59:02 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:59:02 p.m. - El servidor remoto devolvió una respuesta inesperada: (407) Unauthorized.
+16/05/2011 05:59:04 p.m. - Observaciones: 

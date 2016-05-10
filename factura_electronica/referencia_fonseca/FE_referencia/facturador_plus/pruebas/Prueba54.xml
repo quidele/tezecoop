@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>  <comprobantes>  
+<comprobante idsolicitud="124061" >   <tipo>19</tipo>   <ptovta>2</ptovta>   <cuitemisor>66666666666</cuitemisor>
+<fechaemision>2010-07-04</fechaemision>   <idioma>2</idioma>   <concepto>1</concepto>   <ape>S</ape>   
+<moneda>002</moneda>   <tipocambio>3.879</tipocambio>   <destinocmp>101</destinocmp>  
+ <tipodocreceptor>80</tipodocreceptor>   <nrodocreceptor>55000002126</nrodocreceptor>
+ <idimpositivoreceptor>55000002126</idimpositivoreceptor>  
+ <receptor>EDSIM LEATHER CO., INC.</receptor> 
+ <domicilioreceptor>131 WEST 35TH ST, 14TH FL. NEW YORK - N.Y. 10001 NEW YORK - N.Y. 10001 USA, U.S.A.                         &#x0D;&#x0D;Ship To EDSIM LEATHER CO. INC. 131 WEST 35TH ST, 14TH FL. NEW YORK - N.Y. 10001     U.S.A.</domicilioreceptor>
+ <importetotal>94320.79</importetotal>   <formaspago>  <formapago>  <codigo>99</codigo> 
+ <descripcion>14 DIAS             </descripcion>   </formapago>  </formaspago> 
+ <incoterms>FOB</incoterms>   <detalleincoterms>FREE ON BOARD BUENOS</detalleincoterms>  
+ <otrosdatoscomerciales>DESTINATION: NEW YORK&#x0D;MV: CAP MORETON&#x0D;Comentario Det&#x0D;Covering shipment from Buenos Aires, Argentina of &#x0D;  17 PACKAGES - MARKS: EL 9825 - 9827 / 9829 - 9831 / 9843</otrosdatoscomerciales> 
+ <detalles>
+ <detalle><cod>20</cod>
+ <desc>S-GRANADA STEEL 14-16 MM SEL 99         &#x0D;  59321.25 Sq.Ft      at U$S      1.595</desc>
+<importe>94320.79</importe></detalle>
+ </detalles><otrosdatosgenerales>Comentario Pie&#x0D;Comentario Det Pie</otrosdatosgenerales> 
+ </comprobante>  
+</comprobantes>  

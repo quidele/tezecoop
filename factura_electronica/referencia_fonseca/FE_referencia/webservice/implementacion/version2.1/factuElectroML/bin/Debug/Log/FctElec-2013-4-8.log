@@ -1,0 +1,44 @@
+08/04/2013 06:18:24 p.m. - Error al cerrar el data reader de SQL
+08/04/2013 06:18:35 p.m. - ----------- INICIO -----------
+08/04/2013 06:18:35 p.m. - Buscando archivo: TA_PROD_ML_8-4-2013.xml
+08/04/2013 06:18:35 p.m. - El archivo buscado no existe o no se encuentra.
+08/04/2013 06:18:40 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/04/2013 06:18:40 p.m. - Generando el Login Ticket Request
+08/04/2013 06:18:40 p.m. - Firmando el Login Ticket Request
+08/04/2013 06:18:40 p.m. - ***Leyendo certificado: 
+08/04/2013 06:18:40 p.m. - ***Certificados disponibles en el repositorio:My
+08/04/2013 06:18:40 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/04/2013 06:18:40 p.m. - ***Firmando bytes del mensaje...
+08/04/2013 06:18:40 p.m. - ***Error al firmar: La clave no existe.
+
+08/04/2013 06:18:40 p.m. - ***Error al firmar: La clave no existe.
+
+08/04/2013 06:18:45 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/04/2013 06:19:54 p.m. - Error al cerrar el data reader de SQL
+08/04/2013 06:24:39 p.m. - Error al cerrar el data reader de SQL
+08/04/2013 06:24:56 p.m. - ----------- INICIO -----------
+08/04/2013 06:25:03 p.m. - Buscando archivo: TA_PROD_ML_8-4-2013.xml
+08/04/2013 06:25:03 p.m. - El archivo buscado no existe o no se encuentra.
+08/04/2013 06:25:20 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/04/2013 06:32:35 p.m. - Error al cerrar el data reader de SQL
+08/04/2013 06:32:48 p.m. - ----------- INICIO -----------
+08/04/2013 06:32:48 p.m. - Buscando archivo: TA_PROD_ML_8-4-2013.xml
+08/04/2013 06:32:48 p.m. - El archivo buscado no existe o no se encuentra.
+08/04/2013 06:32:49 p.m. - ----------- INICIO -----------
+08/04/2013 06:32:49 p.m. - Buscando archivo: TA_PROD_ML_8-4-2013.xml
+08/04/2013 06:32:49 p.m. - El archivo buscado no existe o no se encuentra.
+08/04/2013 06:32:50 p.m. - ----------- INICIO -----------
+08/04/2013 06:32:50 p.m. - Buscando archivo: TA_PROD_ML_8-4-2013.xml
+08/04/2013 06:32:50 p.m. - El archivo buscado no existe o no se encuentra.
+08/04/2013 06:33:03 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/04/2013 06:33:03 p.m. - Generando el Login Ticket Request
+08/04/2013 06:33:03 p.m. - Firmando el Login Ticket Request
+08/04/2013 06:33:03 p.m. - ***Leyendo certificado: 
+08/04/2013 06:33:03 p.m. - ***Certificados disponibles en el repositorio:My
+08/04/2013 06:33:03 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/04/2013 06:33:03 p.m. - ***Firmando bytes del mensaje...
+08/04/2013 06:33:03 p.m. - ***Error al firmar: La clave no existe.
+
+08/04/2013 06:33:03 p.m. - ***Error al firmar: La clave no existe.
+
+08/04/2013 06:33:12 p.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.

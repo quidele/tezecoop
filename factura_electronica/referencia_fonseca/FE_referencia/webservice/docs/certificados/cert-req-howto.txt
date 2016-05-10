@@ -1,0 +1,53 @@
+Básicamente, necesita usar el utilitario OpenSSL.
+Si tiene acceso a un servidor Unix/Linux, seguramente, ya lo tiene instalado.
+Si sólo tiene acceso a equipos Windows, puede bajar openSSL de:
+"http://www.slproweb.com/products/Win32OpenSSL.html".
+
+Los pasos a seguir son los siguientes:
+
+- Debe copiar el archivo afip-openssl.cnf (descargarlo desde http://wswhomo.afip.gov.ar/wsfedocs/afip-openssl.cnf):
+  En Unix/Linux: /etc/pki/tls/
+  En Windows: C:\OpenSSL\bin\
+
+
+- Genere su clave privada (private key) ejecutando desde la línea de comando:
+  En Unix/Linux: openssl genrsa -out privada 1024
+  En Windows: C:\OpenSSL\bin>openssl genrsa -out privada 1024
+
+
+- Genere el CSR (Certificate Signing Request) ejecutando desde la línea de comando:
+  En Unix/Linux: openssl req -new -key privada -out pedido -config /etc/pki/tls/afip-openssl.cnf
+  En Windows: C:\OpenSSL\bin>openssl req -new -key privada -out pedido -config afip-openssl.cnf
+
+  Notas:
+    En Windows cuenta con la alternativa de poder generar su clave privada y CSR con solo ejecutar el archivo genera.bat,
+    que debe descargar desde http://wswhomo.afip.gov.ar/wsfedocs/genera.bat.zip y copiar en C:\OpenSSL\bin\.
+
+    Cuando complete el cuestionario interactivo, el campo serialNumber debe tener el siguiente formato:
+    CUIT xxxxxxxxxxx
+    donde xxxxxxxxxxx es la CUIT sin guiones.
+	
+    Los campos obligatorios son (COMENTARIOS EULISES):
+	countryName       (C)  AR
+	organizationName  (O)  Curtiembres Fonseca S.A.
+	commonName        (CN) Eulises Quidel 
+	serialNumber		   CUIT 30559697857 
+
+  COMENTARIO EULISES: Una vez obtenido el certificado 
+- De acuerdo a la tecnología que elija utilizar para llevar a cabo el desarrollo puede llegar a necesitar el
+  certificado en formato pkcs12 (certificado x509 + clave privada). Por ejemplo, con el cliente en .NET contribuido.
+  Para generarlo debe ejecutar desde la línea de comando:
+	openssl pkcs12 -export -inkey privada -in certificado.crt -out alias.p12 -name "alias"
+	
+  COMENTARIO EULISES: use la clave de la RED euliXXXX
+   ver archivo 
+  
+  En algunos equipos Windows puede llegar a obtener el siguiente mensaje de error:
+  "La contraseña de red especificada no es válida".
+  Este error tiene que ver con el problema de que Windows no entiende que el pkcs#12 armado con  openssl no tiene password.
+  La solución es importar el certificado al repositorio de Windows (Control panel/Internet Options/Contents/Certificates).
+  Luego volver a exportarlo asegurandose de no ponerle password.
+  Tener en cuenta que debe tildar la opción "Marcar esta clave como exportable".
+
+  COMENTARIO EULISES: realizamos la importacion y exportacion en windows el archivo de salida se llamo
+  fonseca.cer  

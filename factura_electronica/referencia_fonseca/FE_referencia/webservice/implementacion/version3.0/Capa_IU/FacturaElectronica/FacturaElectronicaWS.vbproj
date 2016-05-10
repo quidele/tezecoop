@@ -1,0 +1,394 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{18395535-F09B-4333-A00D-1BD15A02622E}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>FacturaElectronicaWS.My.MyApplication</StartupObject>
+    <RootNamespace>FacturaElectronicaWS</RootNamespace>
+    <AssemblyName>FacturaElectronicaWS</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>On</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PlatformTarget>x86</PlatformTarget>
+    <PublishUrl>\\192.1.1.205\mfgpro\FacturaElectronicaWS\Produccion\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>false</MapFileExtensions>
+    <ProductName>FacturaElectronicaWS</ProductName>
+    <PublisherName>Ofic. de Sistemas</PublisherName>
+    <SuiteName>FacturaElectronicaWS</SuiteName>
+    <MinimumRequiredVersion>3.0.0.0</MinimumRequiredVersion>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>FacturacionElectronicaWS</WebPage>
+    <OpenBrowserOnPublish>false</OpenBrowserOnPublish>
+    <ApplicationRevision>9</ApplicationRevision>
+    <ApplicationVersion>3.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>FacturaElectronicaWS.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42025,42026,42029,42030,42031,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>FacturaElectronicaWS.xml</DocumentationFile>
+    <NoWarn>
+    </NoWarn>
+    <WarningsAsErrors>41998,41999,42004,42016,42017,42018,42019,42020,42021,42022,42025,42026,42029,42030,42031,42032,42036,42104,42105,42106,42107,42108,42109,42353,42354,42355</WarningsAsErrors>
+    <RunCodeAnalysis>true</RunCodeAnalysis>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>97F332B8F05366004C5DD8E492E218991D33A121</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>FacturaElectronicaWS_ClaveTemporal.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>Resources\Mediciones_ico_2.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AssemblyOriginatorKeyFile>FacturaElectronicaWS_ClaveTemporal.pfx</AssemblyOriginatorKeyFile>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="frm_config_v2.designer.vb">
+      <DependentUpon>frm_config_v2.vb</DependentUpon>
+    </Compile>
+    <Compile Include="frm_config_v2.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_logViewer.designer.vb">
+      <DependentUpon>Frm_logViewer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_logViewer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\AdmFacturaElectronica.vb" />
+    <Compile Include="Frm_BusquedaCbtes.Designer.vb">
+      <DependentUpon>Frm_BusquedaCbtes.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_BusquedaCbtes.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\frm_config.Designer.vb">
+      <DependentUpon>frm_config.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\frm_config.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\frmDatosCbte.Designer.vb">
+      <DependentUpon>frmDatosCbte.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\frmDatosCbte.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_ObtenerCAE.Designer.vb">
+      <DependentUpon>Frm_ObtenerCAE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Frm_ObtenerCAE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\Frm_obtieneCAE.Designer.vb">
+      <DependentUpon>Frm_obtieneCAE.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\Frm_obtieneCAE.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\Frm_obtieneCAE_EX.Designer.vb">
+      <DependentUpon>Frm_obtieneCAE_EX.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\Frm_obtieneCAE_EX.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\frm_progressbar.Designer.vb">
+      <DependentUpon>frm_progressbar.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\frm_progressbar.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Obsoletos\HiloDC.vb" />
+    <Compile Include="Obsoletos\ModuloDeInicio.vb" />
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Obsoletos\RegionalUtils.vb" />
+    <Compile Include="Obsoletos\worker_class.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Frm_BusquedaCbtes.resx">
+      <DependentUpon>Frm_BusquedaCbtes.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_config_v2.resx">
+      <DependentUpon>frm_config_v2.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_logViewer.resx">
+      <DependentUpon>Frm_logViewer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsoletos\frm_config.resx">
+      <DependentUpon>frm_config.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsoletos\frmDatosCbte.resx">
+      <DependentUpon>frmDatosCbte.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_ObtenerCAE.resx">
+      <DependentUpon>Frm_ObtenerCAE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsoletos\Frm_obtieneCAE.resx">
+      <DependentUpon>Frm_obtieneCAE.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsoletos\Frm_obtieneCAE_EX.resx">
+      <DependentUpon>Frm_obtieneCAE_EX.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Obsoletos\frm_progressbar.resx">
+      <DependentUpon>frm_progressbar.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="FacturaElectronicaWS_ClaveTemporal.pfx" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 %28x86 y x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="My Project\app.manifest" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ConexionesBD.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfiguracionesFE.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
+    </Content>
+    <Content Include="FE_config_conex.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Refresh-icon_4.png" />
+    <None Include="Resources\Ejecutar.ico" />
+    <None Include="Resources\Ejecutar_21.ico" />
+    <None Include="Resources\Ejecutar_2.ico" />
+    <None Include="Resources\87465876_h.png" />
+    <None Include="Resources\87465876.png" />
+    <None Include="Resources\Mediciones_h.png" />
+    <None Include="Resources\Mediciones.png" />
+    <None Include="Resources\treeview_02.gif" />
+    <None Include="Resources\treeview_01.png" />
+    <None Include="Resources\procesos_h.png" />
+    <None Include="Resources\procesos.png" />
+    <None Include="Resources\Next.png" />
+    <None Include="Resources\ICONO-empresa.jpg" />
+    <None Include="Resources\folder_02_oh.png" />
+    <None Include="Resources\folder_02_o.png" />
+    <None Include="Resources\folder_02_l.png" />
+    <None Include="Resources\folder_02_h.png" />
+    <None Include="Resources\folder_02_c.png" />
+    <None Include="Resources\folder_01_o.png" />
+    <None Include="Resources\Exit_021.png" />
+    <None Include="Resources\anadir-mas-verde-icono-6162-128.png" />
+    <None Include="Resources\anadir-mas-verde-icono-6162-32.png" />
+    <None Include="Resources\agregar-editar-icono-6607-96.png" />
+    <None Include="Resources\Mediciones_ico_2.ico" />
+    <None Include="Resources\busqueda_ico.ico" />
+    <None Include="Resources\barra_03_go.jpg" />
+    <None Include="Resources\barra_02_go.jpg" />
+    <None Include="Resources\barra_01_go.jpg" />
+    <None Include="Resources\barra_03_da.jpg" />
+    <None Include="Resources\barra_02_da.jpg" />
+    <None Include="Resources\barra_01_da.jpg" />
+    <None Include="Resources\bbtb_Tr_green.png" />
+    <None Include="Resources\barra_03_g.jpg" />
+    <None Include="Resources\barra_02_g.jpg" />
+    <None Include="Resources\barra_01_g.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PublishFile Include="ConexionesBD.xml">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="ConfiguracionesFE.xml">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+    <PublishFile Include="FE_config_conex.xml">
+      <Visible>False</Visible>
+      <PublishState>Include</PublishState>
+      <IncludeHash>True</IncludeHash>
+      <Group>
+      </Group>
+      <TargetPath>
+      </TargetPath>
+      <FileType>File</FileType>
+    </PublishFile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\Fonseca_libDatos\produccion\version1.1\fonseca_libDatos\fonseca_libDatos.vbproj">
+      <Project>{390f83c9-9ab0-4939-aac0-3703568d47e2}</Project>
+      <Name>fonseca_libDatos</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\Fonseca_libFunciones\Fonseca_libFunciones\Fonseca_libFunciones.vbproj">
+      <Project>{3c591b3c-04cf-41c2-9af0-686fb08787fc}</Project>
+      <Name>Fonseca_libFunciones</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\Fonseca_lib_controles\Fonseca_lib_controles\Fonseca_lib_controles.vbproj">
+      <Project>{f15df023-79d8-44fa-8466-33917d86d616}</Project>
+      <Name>Fonseca_lib_controles</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\..\..\..\..\fonseca_lib\LibreriasDAO\DAOFacturacionElectronica\DAOFacturacionElectronica.vbproj">
+      <Project>{ebb300d1-8875-4fce-89d5-48aca515b517}</Project>
+      <Name>DAOFacturacionElectronica</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\..\Capa_Negocio\FacturacionElectronica\FacturacionElectronica.vbproj">
+      <Project>{91401d27-fe61-478b-82cf-f988db4fdf99}</Project>
+      <Name>FacturacionElectronica</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

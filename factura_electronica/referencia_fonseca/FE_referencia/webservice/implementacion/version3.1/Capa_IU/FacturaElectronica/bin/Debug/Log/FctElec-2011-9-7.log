@@ -1,0 +1,73 @@
+07/09/2011 15:58:23 - Error al cerrar el data reader de SQL
+07/09/2011 15:58:53 - ----------- INICIO -----------
+07/09/2011 15:58:53 - Comprobante N°: 1000189
+07/09/2011 15:58:53 - Id Solicitud: 603517
+07/09/2011 15:58:54 - Cliente: INDUSTRIAS LEAR DE ARGENTINA SRL                                                                    
+07/09/2011 15:58:54 - Usuario: turinad
+07/09/2011 15:58:54 - Nombre del equipo: PC0071
+07/09/2011 15:58:55 - Insertando comprobantes en Base FE
+07/09/2011 15:58:56 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+07/09/2011 15:58:56 - Resultado observación: OK
+07/09/2011 15:58:57 - Observaciones: 
+07/09/2011 15:58:58 - Chequeando resultados de FE
+07/09/2011 15:59:02 - Obtener Comprobantes
+07/09/2011 15:59:06 - Iniciando el proceso de solicitud de CAE
+07/09/2011 15:59:15 - Modo de operacion: Produccion
+07/09/2011 15:59:15 - No existen registros para procesar en comprobantes ASOC
+07/09/2011 15:59:15 - Solicitando Token y Firma
+07/09/2011 15:59:26 - Buscando archivo: TA_PROD_ML_7-9-2011.xml
+07/09/2011 15:59:26 - El archivo buscado no existe o no se encuentra.
+07/09/2011 15:59:32 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+07/09/2011 15:59:41 - Generando el Login Ticket Request
+07/09/2011 15:59:41 - Firmando el Login Ticket Request
+07/09/2011 15:59:41 - ***Leyendo certificado: 
+07/09/2011 15:59:41 - ***Certificados disponibles en el repositorio:My
+07/09/2011 15:59:41 - ubico el certificado y lo devuelvo, salimos de la funcion 
+07/09/2011 15:59:41 - ***Firmando bytes del mensaje...
+07/09/2011 15:59:41 - ***OK mensaje firmado
+07/09/2011 16:05:38 - Error al cerrar el data reader de SQL
+07/09/2011 16:05:54 - ----------- INICIO -----------
+07/09/2011 16:05:54 - Comprobante N°: 1000189
+07/09/2011 16:05:54 - Id Solicitud: 603517
+07/09/2011 16:05:54 - Cliente: INDUSTRIAS LEAR DE ARGENTINA SRL                                                                    
+07/09/2011 16:05:54 - Usuario: turinad
+07/09/2011 16:05:54 - Nombre del equipo: PC0071
+07/09/2011 16:05:54 - Insertando comprobantes en Base FE
+07/09/2011 16:05:54 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+07/09/2011 16:05:54 - Resultado observación: OK
+07/09/2011 16:05:54 - Observaciones: 
+07/09/2011 16:05:54 - Chequeando resultados de FE
+07/09/2011 16:05:54 - Obtener Comprobantes
+07/09/2011 16:05:54 - Iniciando el proceso de solicitud de CAE
+07/09/2011 16:06:03 - Modo de operacion: Produccion
+07/09/2011 16:06:04 - No existen registros para procesar en comprobantes ASOC
+07/09/2011 16:06:04 - Solicitando Token y Firma
+07/09/2011 16:06:12 - Buscando archivo: TA_PROD_ML_7-9-2011.xml
+07/09/2011 16:06:12 - El archivo buscado no existe o no se encuentra.
+07/09/2011 16:06:18 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+07/09/2011 16:06:26 - Generando el Login Ticket Request
+07/09/2011 16:06:26 - Firmando el Login Ticket Request
+07/09/2011 16:06:26 - ***Leyendo certificado: 
+07/09/2011 16:06:26 - ***Certificados disponibles en el repositorio:My
+07/09/2011 16:06:26 - ubico el certificado y lo devuelvo, salimos de la funcion 
+07/09/2011 16:06:26 - ***Firmando bytes del mensaje...
+07/09/2011 16:06:26 - ***OK mensaje firmado
+07/09/2011 16:06:33 - Analizando el Ticket Response recibido del WSAA
+07/09/2011 16:06:48 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_2-8-2011.xml
+07/09/2011 16:06:48 - Finalizada correctamente la creación del archivo XML TA_PROD_ML_7-9-2011.xml con Sign y Token.
+07/09/2011 16:06:54 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMzM0NzA1OTI0IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDIyMzI3IiBleHBfdGltZT0iMTMxNTQ2NTU4NyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+07/09/2011 16:06:55 - Sign YXgSUiDxIiR42p3FFETj3TiPNPJzy+p/zzJEJ6faKNuj7yAjVJFsIfhsVj7EPcZZ/bIvixV8cFWUk3cm9W1yKjFjSlyol/y5VA55/L2sramPaKgNvZvQYc4ChQwcGd/9mDnIovJYx2dUxrnqi9u21fjHiqwZ8KhTFOA5eTVOAdE=
+07/09/2011 16:07:02 - Adaptando formato Afip - Producción
+07/09/2011 16:07:03 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMzM0NzA1OTI0IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDIyMzI3IiBleHBfdGltZT0iMTMxNTQ2NTU4NyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+07/09/2011 16:07:03 - Sign YXgSUiDxIiR42p3FFETj3TiPNPJzy+p/zzJEJ6faKNuj7yAjVJFsIfhsVj7EPcZZ/bIvixV8cFWUk3cm9W1yKjFjSlyol/y5VA55/L2sramPaKgNvZvQYc4ChQwcGd/9mDnIovJYx2dUxrnqi9u21fjHiqwZ8KhTFOA5eTVOAdE=
+07/09/2011 16:07:06 - Último Nro de Comprobante en AFIP: 188
+07/09/2011 16:07:19 - Lista de Detalle_IVA creada
+07/09/2011 16:07:20 - Lista de Detalle_tributo creada
+07/09/2011 16:07:23 - Adaptación Produccion Completa
+07/09/2011 16:07:34 - Estableciendo comunicación con AFIP
+07/09/2011 16:08:03 - Respuesta: R
+07/09/2011 16:09:07 - Observaciones insertadas correctamente en TABLA
+07/09/2011 16:09:23 - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+07/09/2011 16:09:27 - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto. 
+07/09/2011 16:09:32 - Observaciones: 
+07/09/2011 16:09:32 - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado en ImpNeto.

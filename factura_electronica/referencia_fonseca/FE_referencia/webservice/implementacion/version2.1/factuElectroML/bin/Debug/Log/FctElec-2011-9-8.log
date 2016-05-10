@@ -1,0 +1,146 @@
+08/09/2011 09:23:14 - Error al cerrar el data reader de SQL
+08/09/2011 09:23:22 - Error al cerrar el data reader de SQL
+08/09/2011 09:23:34 - ----------- INICIO -----------
+08/09/2011 09:23:37 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:23:37 - El archivo buscado no existe o no se encuentra.
+08/09/2011 09:23:42 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:23:43 - Generando el Login Ticket Request
+08/09/2011 09:23:43 - Firmando el Login Ticket Request
+08/09/2011 09:23:43 - ***Leyendo certificado: 
+08/09/2011 09:23:43 - ***Certificados disponibles en el repositorio:My
+08/09/2011 09:23:43 - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/09/2011 09:23:43 - ***Firmando bytes del mensaje...
+08/09/2011 09:23:43 - ***OK mensaje firmado
+08/09/2011 09:24:29 - No se pudo establecer una relación de confianza para el canal seguro SSL/TLS con la autoridad 'wsaa.afip.gov.ar'.
+08/09/2011 09:24:34 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:24:39 - ----------- INICIO -----------
+08/09/2011 09:25:09 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:25:09 - El archivo buscado no existe o no se encuentra.
+08/09/2011 09:25:14 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:25:14 - Generando el Login Ticket Request
+08/09/2011 09:25:14 - Firmando el Login Ticket Request
+08/09/2011 09:25:14 - ***Leyendo certificado: 
+08/09/2011 09:25:14 - ***Certificados disponibles en el repositorio:My
+08/09/2011 09:25:14 - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/09/2011 09:25:14 - ***Firmando bytes del mensaje...
+08/09/2011 09:25:14 - ***OK mensaje firmado
+08/09/2011 09:25:20 - No se pudo establecer una relación de confianza para el canal seguro SSL/TLS con la autoridad 'wsaa.afip.gov.ar'.
+08/09/2011 09:25:25 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:26:45 - Error al cerrar el data reader de SQL
+08/09/2011 09:26:51 - ----------- INICIO -----------
+08/09/2011 09:26:53 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:26:53 - El archivo buscado no existe o no se encuentra.
+08/09/2011 09:26:59 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:26:59 - Generando el Login Ticket Request
+08/09/2011 09:26:59 - Firmando el Login Ticket Request
+08/09/2011 09:26:59 - ***Leyendo certificado: 
+08/09/2011 09:26:59 - ***Certificados disponibles en el repositorio:My
+08/09/2011 09:26:59 - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/09/2011 09:26:59 - ***Firmando bytes del mensaje...
+08/09/2011 09:26:59 - ***OK mensaje firmado
+08/09/2011 09:30:34 - No se pudo establecer una relación de confianza para el canal seguro SSL/TLS con la autoridad 'wsaa.afip.gov.ar'.
+08/09/2011 09:37:52 - Error al cerrar el data reader de SQL
+08/09/2011 09:38:06 - ----------- INICIO -----------
+08/09/2011 09:38:06 - Comprobante N°: 1000189
+08/09/2011 09:38:06 - Id Solicitud: 603517
+08/09/2011 09:38:06 - Cliente: INDUSTRIAS LEAR DE ARGENTINA SRL                                                                    
+08/09/2011 09:38:06 - Usuario: quidele
+08/09/2011 09:38:06 - Nombre del equipo: PC0157-
+08/09/2011 09:38:06 - Insertando comprobantes en Base FE
+08/09/2011 09:38:06 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+08/09/2011 09:38:06 - Resultado observación: OK
+08/09/2011 09:38:06 - Observaciones: 
+08/09/2011 09:38:06 - Chequeando resultados de FE
+08/09/2011 09:38:06 - Obtener Comprobantes
+08/09/2011 09:38:06 - Iniciando el proceso de solicitud de CAE
+08/09/2011 09:38:12 - Modo de operacion: Produccion
+08/09/2011 09:38:12 - No existen registros para procesar en comprobantes ASOC
+08/09/2011 09:38:12 - Solicitando Token y Firma
+08/09/2011 09:38:14 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:38:14 - El archivo buscado no existe o no se encuentra.
+08/09/2011 09:38:19 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+08/09/2011 09:38:19 - Generando el Login Ticket Request
+08/09/2011 09:38:19 - Firmando el Login Ticket Request
+08/09/2011 09:38:19 - ***Leyendo certificado: 
+08/09/2011 09:38:19 - ***Certificados disponibles en el repositorio:My
+08/09/2011 09:38:19 - ubico el certificado y lo devuelvo, salimos de la funcion 
+08/09/2011 09:38:19 - ***Firmando bytes del mensaje...
+08/09/2011 09:38:19 - ***OK mensaje firmado
+08/09/2011 09:38:40 - Analizando el Ticket Response recibido del WSAA
+08/09/2011 09:38:40 - Eliminando archivo: C:\Eulises\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_2-8-2011.xml
+08/09/2011 09:38:40 - Finalizada correctamente la creación del archivo XML TA_PROD_ML_8-9-2011.xml con Sign y Token.
+08/09/2011 09:38:40 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:38:40 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:39:14 - Adaptando formato Afip - Producción
+08/09/2011 09:39:14 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:39:14 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:39:15 - Último Nro de Comprobante en AFIP: 189
+08/09/2011 09:39:15 - Lista de Detalle_IVA creada
+08/09/2011 09:39:15 - Lista de Detalle_tributo creada
+08/09/2011 09:39:15 - Adaptación Produccion Completa
+08/09/2011 09:39:15 - Estableciendo comunicación con AFIP
+08/09/2011 09:39:17 - Respuesta: R
+08/09/2011 09:39:17 - Comprobante rechazado por error desconocido.
+08/09/2011 09:39:29 - Observaciones: 
+08/09/2011 09:39:44 - ----------- INICIO -----------
+08/09/2011 09:39:44 - Comprobante N°: 1000189
+08/09/2011 09:39:44 - Id Solicitud: 603517
+08/09/2011 09:39:44 - Cliente: INDUSTRIAS LEAR DE ARGENTINA SRL                                                                    
+08/09/2011 09:39:44 - Usuario: quidele
+08/09/2011 09:39:44 - Nombre del equipo: PC0157-
+08/09/2011 09:39:44 - Insertando comprobantes en Base FE
+08/09/2011 09:39:44 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+08/09/2011 09:39:45 - Resultado observación: OK
+08/09/2011 09:39:45 - Observaciones: 
+08/09/2011 09:39:45 - Chequeando resultados de FE
+08/09/2011 09:39:45 - Obtener Comprobantes
+08/09/2011 09:39:45 - Iniciando el proceso de solicitud de CAE
+08/09/2011 09:39:47 - Modo de operacion: Produccion
+08/09/2011 09:39:47 - No existen registros para procesar en comprobantes ASOC
+08/09/2011 09:39:47 - Solicitando Token y Firma
+08/09/2011 09:39:52 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:39:52 - Token y Sign leidos correctamente
+08/09/2011 09:39:52 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:39:52 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:39:58 - Adaptando formato Afip - Producción
+08/09/2011 09:39:58 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:39:58 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:39:58 - Último Nro de Comprobante en AFIP: 189
+08/09/2011 09:39:58 - Lista de Detalle_IVA creada
+08/09/2011 09:39:58 - Lista de Detalle_tributo creada
+08/09/2011 09:39:58 - Adaptación Produccion Completa
+08/09/2011 09:40:00 - Estableciendo comunicación con AFIP
+08/09/2011 09:40:09 - Respuesta: R
+08/09/2011 09:42:01 - Comprobante rechazado por error desconocido.
+08/09/2011 09:42:05 - Observaciones: 
+08/09/2011 09:42:08 - ----------- INICIO -----------
+08/09/2011 09:42:08 - Comprobante N°: 1000189
+08/09/2011 09:42:08 - Id Solicitud: 603517
+08/09/2011 09:42:08 - Cliente: INDUSTRIAS LEAR DE ARGENTINA SRL                                                                    
+08/09/2011 09:42:08 - Usuario: quidele
+08/09/2011 09:42:08 - Nombre del equipo: PC0157-
+08/09/2011 09:42:08 - Insertando comprobantes en Base FE
+08/09/2011 09:42:08 - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+08/09/2011 09:42:08 - Resultado observación: OK
+08/09/2011 09:42:08 - Observaciones: 
+08/09/2011 09:42:08 - Chequeando resultados de FE
+08/09/2011 09:42:08 - Obtener Comprobantes
+08/09/2011 09:42:08 - Iniciando el proceso de solicitud de CAE
+08/09/2011 09:42:10 - Modo de operacion: Produccion
+08/09/2011 09:42:10 - No existen registros para procesar en comprobantes ASOC
+08/09/2011 09:42:10 - Solicitando Token y Firma
+08/09/2011 09:42:12 - Buscando archivo: TA_PROD_ML_8-9-2011.xml
+08/09/2011 09:42:12 - Token y Sign leidos correctamente
+08/09/2011 09:42:12 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:42:12 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:42:13 - Adaptando formato Afip - Producción
+08/09/2011 09:42:13 - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxOTI2MjAwNjk1IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzE1NDg1NDUwIiBleHBfdGltZT0iMTMxNTUyODcxMCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+08/09/2011 09:42:13 - Sign D42Zej9bVipRo74FdPDITmu/pETQdHZpfK8xzyYUQICCtpSlAnothzC5O5Sd2ZnGiFzYem+CzQZFctEDzdWHJW3tNFNLopqC8eNQWAftLqGNLLdoVPzOL6TbuITbGyFnVUwlPzfmQPXuKdfsUNZtlMnKjci+MNhxjyVxKqwhxw4=
+08/09/2011 09:42:14 - Último Nro de Comprobante en AFIP: 189
+08/09/2011 09:42:14 - Lista de Detalle_IVA creada
+08/09/2011 09:42:14 - Lista de Detalle_tributo creada
+08/09/2011 09:42:14 - Adaptación Produccion Completa
+08/09/2011 09:42:21 - Estableciendo comunicación con AFIP
+08/09/2011 09:42:27 - Respuesta: R
+08/09/2011 09:48:05 - 10016 - El número o fecha del comprobante no se corresponde con el próximo a autorizar. Consultar metodo FECompUltimoAutorizado.Return
+08/09/2011 09:48:09 - Observaciones: 

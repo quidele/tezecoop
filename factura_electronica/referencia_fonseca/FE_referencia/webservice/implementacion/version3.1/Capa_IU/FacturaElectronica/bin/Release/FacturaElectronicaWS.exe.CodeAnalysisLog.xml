@@ -1,0 +1,235 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="c:\program files (x86)\microsoft visual studio 11.0\team tools\static analysis tools\fxcop\Xml\CodeAnalysisReport.xsl"?>
+<FxCopReport Version="11.0">
+ <Targets>
+  <Target Name="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\bin\Release\FacturaElectronicaWS.exe">
+   <Modules>
+    <Module Name="facturaelectronicaws.exe">
+     <Namespaces>
+      <Namespace Name="FacturaElectronicaWS">
+       <Types>
+        <Type Name="frm_config_v2" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ActualizarNuevosValores(fonseca_libDatos.Config.Configuraciones,System.String,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="162">'frm_config_v2.ActualizarNuevosValores(Configuraciones, String, String, String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConfigurarControles(System.Collections.Generic.List`1&lt;fonseca_libDatos.Conexion&gt;,fonseca_libDatos.Config.Configuraciones)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="181">'frm_config_v2.ConfigurarControles(List(Of Conexion), Configuraciones)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#GuardarObjetoConfiguracion(fonseca_libDatos.Config.Configuraciones,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="205">'frm_config_v2.GuardarObjetoConfiguracion(Configuraciones, String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerClaveAdministrador()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="229">'frm_config_v2.ObtenerClaveAdministrador()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerValoresConfiguracion(fonseca_libDatos.Config.Configuraciones,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="255">'frm_config_v2.ObtenerValoresConfiguracion(Configuraciones, String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerValoresPosibles(System.Collections.Generic.List`1&lt;fonseca_libDatos.Conexion&gt;,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="283">'frm_config_v2.ObtenerValoresPosibles(List(Of Conexion), String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#RealizarConsultaDePrueba(fonseca_libDatos.Config.Configuraciones,System.Collections.Generic.List`1&lt;fonseca_libDatos.Conexion&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="308">'frm_config_v2.RealizarConsultaDePrueba(Configuraciones, List(Of Conexion))' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ValidarClave(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="334">'frm_config_v2.ValidarClave(String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ValidarConexionSeleccionada(System.Collections.Generic.List`1&lt;fonseca_libDatos.Conexion&gt;,System.String,System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="frm_config_v2.vb" Line="376">'frm_config_v2.ValidarConexionSeleccionada(List(Of Conexion), String, String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="frm_logViewer" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AbrirArchivoLog()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="214">'frm_logViewer.AbrirArchivoLog()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#AmpliarTexto(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="127">'frm_logViewer.AmpliarTexto(String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConfigurarDGV()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="31">'frm_logViewer.ConfigurarDGV()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#LeerLista(System.Collections.Generic.List`1&lt;System.String&gt;)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="199">'frm_logViewer.LeerLista(List(Of String))' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProcesarCadena(System.String[])" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="50">'frm_logViewer.ProcesarCadena(String())' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ProcesarFilas()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_logViewer.vb" Line="76">'frm_logViewer.ProcesarFilas()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="Frm_ObtenerCAE" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#AbrirConfiguraciones_v2()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_ObtenerCAE.vb" Line="72">'Frm_ObtenerCAE.AbrirConfiguraciones_v2()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ActualizarInformacionSistema_v2()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_ObtenerCAE.vb" Line="157">'Frm_ObtenerCAE.ActualizarInformacionSistema_v2()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ConfigurarDgv_cab_observaciones()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_ObtenerCAE.vb" Line="224">'Frm_ObtenerCAE.ConfigurarDgv_cab_observaciones()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerObjetoConfiguracion(System.String)" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_ObtenerCAE.vb" Line="378">'Frm_ObtenerCAE.ObtenerObjetoConfiguracion(String)' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerVersionRealSistema()" Kind="Method" Static="False" Accessibility="Private" ExternallyVisible="False">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica" File="Frm_ObtenerCAE.vb" Line="400">'Frm_ObtenerCAE.ObtenerVersionRealSistema()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="GeneralFunctions" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#ObtenerVersionRealSistema()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\Inicio" File="GeneralFunctions.vb" Line="45">'GeneralFunctions.ObtenerVersionRealSistema()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+          <Member Name="#ObtenerVersionRealSistemaObject()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\Inicio" File="GeneralFunctions.vb" Line="13">'GeneralFunctions.ObtenerVersionRealSistemaObject()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+        <Type Name="StartTasks" Kind="Class" Accessibility="Public" ExternallyVisible="True">
+         <Members>
+          <Member Name="#DoStartUpTasks()" Kind="Method" Static="True" Accessibility="Public" ExternallyVisible="True">
+           <Messages>
+            <Message TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200" Status="Active" Created="2016-02-25 14:19:05Z" FixCategory="NonBreaking">
+             <Issue Certainty="95" Level="Error" Path="C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\Abstracciones" File="StartTasks.vb" Line="21">'StartTasks.DoStartUpTasks()' vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Issue>
+            </Message>
+           </Messages>
+          </Member>
+         </Members>
+        </Type>
+       </Types>
+      </Namespace>
+     </Namespaces>
+    </Module>
+   </Modules>
+  </Target>
+ </Targets>
+ <Rules>
+  <Rule TypeName="RethrowToPreserveStackDetails" Category="Microsoft.Usage" CheckId="CA2200">
+   <Name>Reiniciar para mantener los detalles de la pila</Name>
+   <Description>Utilice la instrucción de reinicio IL para mantener los detalles de la pila original cuando vaya a volver a provocar la excepción detectada.</Description>
+   <Resolution Name="Default">{0} vuelve a producir una excepción detectada y la especifica explícitamente como un argumento. Utilice 'throw' sin un argumento, para mantener la ubicación de la pila donde se provocó inicialmente la excepción.</Resolution>
+   <Owner />
+   <Url>http://msdn.microsoft.com/library/ms182363(VS.100).aspx</Url>
+   <Email>[none]</Email>
+   <MessageLevel Certainty="95">Error</MessageLevel>
+   <File Name="usagerules.dll" Version="11.0.0.0" />
+  </Rule>
+ </Rules>
+ <Localized>
+  <String Key="Category">Categoría</String>
+  <String Key="Certainty">Certeza</String>
+  <String Key="CollapseAll">Contraer todo</String>
+  <String Key="CheckId">Comprobar id.</String>
+  <String Key="Error">Error</String>
+  <String Key="Errors">errores</String>
+  <String Key="ExpandAll">Expandir todo</String>
+  <String Key="Help">Ayuda</String>
+  <String Key="Line">Línea</String>
+  <String Key="Messages">mensajes</String>
+  <String Key="LocationNotStoredInPdb">[Ubicación no almacenada en Pdb]</String>
+  <String Key="Project">Proyecto</String>
+  <String Key="Resolution">Resolución</String>
+  <String Key="Rule">Regla</String>
+  <String Key="RuleFile">Archivo de regla</String>
+  <String Key="RuleDescription">Descripción de la regla</String>
+  <String Key="Source">Origen</String>
+  <String Key="Status">Estado</String>
+  <String Key="Target">Círculos concéntricos</String>
+  <String Key="Warning">Advertencia</String>
+  <String Key="Warnings">advertencias</String>
+  <String Key="ReportTitle">Informe de análisis del código</String>
+ </Localized>
+</FxCopReport>

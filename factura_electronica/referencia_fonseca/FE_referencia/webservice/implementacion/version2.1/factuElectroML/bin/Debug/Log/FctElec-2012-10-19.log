@@ -1,0 +1,71 @@
+19/10/2012 11:36:50 a.m. - Error al cerrar el data reader de SQL
+19/10/2012 11:36:57 a.m. - ----------- INICIO -----------
+19/10/2012 11:36:58 a.m. - Buscando archivo: TA_PROD_ML_19-10-2012.xml
+19/10/2012 11:36:58 a.m. - El archivo buscado no existe o no se encuentra.
+19/10/2012 11:37:03 a.m. - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+19/10/2012 11:37:03 a.m. - Generando el Login Ticket Request
+19/10/2012 11:37:03 a.m. - Firmando el Login Ticket Request
+19/10/2012 11:37:03 a.m. - ***Leyendo certificado: 
+19/10/2012 11:37:03 a.m. - ***Certificados disponibles en el repositorio:My
+19/10/2012 11:37:03 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+19/10/2012 11:37:03 a.m. - ***Firmando bytes del mensaje...
+19/10/2012 11:37:03 a.m. - ***OK mensaje firmado
+19/10/2012 11:37:06 a.m. - Analizando el Ticket Response recibido del WSAA
+19/10/2012 11:37:06 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_10-8-2012.xml
+19/10/2012 11:37:06 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_19-10-2011.xml
+19/10/2012 11:37:06 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_21-10-2011.xml
+19/10/2012 11:37:06 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_31-8-2012.xml
+19/10/2012 11:37:06 a.m. - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.1\factuElectroML\bin\Debug\TA_PROD_ML_8-9-2011.xml
+19/10/2012 11:37:06 a.m. - Finalizada correctamente la creación del archivo XML TA_PROD_ML_19-10-2012.xml con Sign y Token.
+19/10/2012 11:37:31 a.m. - ----------- INICIO -----------
+19/10/2012 11:37:31 a.m. - Comprobante N°: 1000973
+19/10/2012 11:37:31 a.m. - Id Solicitud: 913190
+19/10/2012 11:37:31 a.m. - Cliente: BMW DE ARGENTINA SA                                                                                 
+19/10/2012 11:37:31 a.m. - Usuario: turinad
+19/10/2012 11:37:31 a.m. - Nombre del equipo: PC0071
+19/10/2012 11:37:31 a.m. - Insertando comprobantes en Base FE
+19/10/2012 11:37:31 a.m. - Obteniendo el detalle de la liquidación - 'spu_insertarComprobanteML'
+19/10/2012 11:37:31 a.m. - Resultado observación: OK
+19/10/2012 11:37:31 a.m. - Observaciones: 
+19/10/2012 11:37:31 a.m. - Chequeando resultados de FE
+19/10/2012 11:37:31 a.m. - Obtener Comprobantes
+19/10/2012 11:37:31 a.m. - Iniciando el proceso de solicitud de CAE
+19/10/2012 11:37:32 a.m. - Modo de operacion: Produccion
+19/10/2012 11:37:32 a.m. - No existen registros para procesar en comprobantes ASOC
+19/10/2012 11:37:32 a.m. - Solicitando Token y Firma
+19/10/2012 11:37:32 a.m. - Buscando archivo: TA_PROD_ML_19-10-2012.xml
+19/10/2012 11:37:32 a.m. - Token y Sign leidos correctamente
+19/10/2012 11:37:32 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzOTA5NTcyMDEyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzUwNjU3NTE2IiBleHBfdGltZT0iMTM1MDcwMDc3NiIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+19/10/2012 11:37:32 a.m. - Sign NJArnj2CIvA4Ie7diTw3+uYJChDNxv5SZ7T/02OfSbE7pD3cyEholf+IYoLENkqDgtQO//U7z2ETR57ffZT726G7aoBTpfE9pgWC9e1yUlXZFh2e9FMQ5SSY+f2WmsxD/KZm+XDgz0cT9NamjeeKoZF5Th+BlOE5oLJpLrxDg/U=
+19/10/2012 11:37:32 a.m. - Adaptando formato Afip - Producción
+19/10/2012 11:37:32 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzOTA5NTcyMDEyIiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzUwNjU3NTE2IiBleHBfdGltZT0iMTM1MDcwMDc3NiIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+19/10/2012 11:37:32 a.m. - Sign NJArnj2CIvA4Ie7diTw3+uYJChDNxv5SZ7T/02OfSbE7pD3cyEholf+IYoLENkqDgtQO//U7z2ETR57ffZT726G7aoBTpfE9pgWC9e1yUlXZFh2e9FMQ5SSY+f2WmsxD/KZm+XDgz0cT9NamjeeKoZF5Th+BlOE5oLJpLrxDg/U=
+19/10/2012 11:37:32 a.m. - Último Nro de Comprobante en AFIP: 972
+19/10/2012 11:37:32 a.m. - Lista de Detalle_IVA creada
+19/10/2012 11:37:32 a.m. - Lista de Detalle_tributo creada
+19/10/2012 11:37:32 a.m. - Adaptación Produccion Completa
+19/10/2012 11:37:32 a.m. - Estableciendo comunicación con AFIP
+19/10/2012 11:37:32 a.m. - Respuesta: A
+19/10/2012 11:37:32 a.m. - <--INICIA GRABACION CAE--> 
+19/10/2012 11:37:32 a.m. - ID: 913190
+19/10/2012 11:37:32 a.m. - CAE: 62427687152086
+19/10/2012 11:37:32 a.m. - CAEFchVto: 20121029
+19/10/2012 11:37:32 a.m. - DocNro AFIP: 973
+19/10/2012 11:37:32 a.m. - CbteFch: 19/10/2012 12:00:00 a.m.
+19/10/2012 11:37:32 a.m. - <FINALIZA GRABACION CAE> 
+19/10/2012 11:37:32 a.m. - Comprobante_Aprobado
+19/10/2012 11:37:32 a.m. - Actualizando base de datos local y Magma
+19/10/2012 11:37:32 a.m. - El nombre de objeto 'tmp_salida_cambio_comentarios' no es válido.
+19/10/2012 11:37:32 a.m. - El nombre de objeto 'tmp_salida_cambio_comentarios' no es válido.
+19/10/2012 11:37:33 a.m. - El nombre de objeto 'tmp_salida_cambio_comentarios' no es válido.
+19/10/2012 11:37:33 a.m. - Grabando estado de envío
+19/10/2012 11:37:33 a.m. - No asignado
+19/10/2012 11:37:33 a.m. - El nombre de objeto 'tmp_salida_cambio_comentarios' no es válido.
+19/10/2012 12:22:01 p.m. - Error al cerrar el data reader de SQL
+19/10/2012 12:31:06 p.m. - Error al cerrar el data reader de SQL
+19/10/2012 12:31:10 p.m. - ----------- INICIO -----------
+19/10/2012 12:31:10 p.m. - Buscando archivo: TA_PROD_ML_19-10-2012.xml
+19/10/2012 12:31:10 p.m. - Token y Sign leidos correctamente
+19/10/2012 12:31:19 p.m. - ----------- INICIO -----------
+19/10/2012 12:31:19 p.m. - Buscando archivo: TA_PROD_ML_19-10-2012.xml
+19/10/2012 12:31:19 p.m. - Token y Sign leidos correctamente

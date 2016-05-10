@@ -1,0 +1,527 @@
+﻿Imports System.Threading
+Imports fonseca_libDatos
+Imports DAOFacturacionElectronica
+Imports System.Xml
+Imports System.Text
+Imports System.Security.Cryptography.X509Certificates
+
+Class AccesoAFIP_ML_HOMO
+    Inherits AccesoAFIP
+
+    Public Function ObtenerTicket(ByVal pDnSource As String, ByVal pDnDestination As String, ByVal pIdServicioNegocio As String, _
+                               ByVal pNombreCertificado As String, ByVal pDireccion As String, _
+                               ByVal pMilisegundos As Integer, ByVal pRutaPathXML As String, ByVal pVerboseMode As Boolean) As Boolean
+        ObtenerTicket = False
+        Try
+            Dim objTicketRespuesta As New Ticket
+
+            Dim objGestionXML As New GestionXML()
+
+            'Valida que exista un archivo XML para recuperar la firma.
+            If objGestionXML.ValidarExistenciaXML(pRutaPathXML) Then
+                Me._objetoObtenido = objGestionXML.ObtenerObjetoDesdeXML(pRutaPathXML, objTicketRespuesta.GetType)
+            End If
+
+            If Me._objetoObtenido IsNot Nothing AndAlso TypeOf Me._objetoObtenido Is Ticket Then
+                ObtenerTicket = True
+                Exit Function
+            End If
+
+            'Si el objeto obtenido es nada entonces intentamos obtenerlo desde AFIP
+            'Primero cargamos una pagina web con la direccion para que quede en caché.
+            CargarWeb(pDireccion, pMilisegundos)
+
+            If pVerboseMode Then
+                Log.Logger(tipoLogging.Info, "***DN origen: " + pDnSource)
+                Log.Logger(tipoLogging.Info, "***Servicio a acceder: " + pIdServicioNegocio)
+                Log.Logger(tipoLogging.Info, "***DN destino: " + pDnDestination)
+            End If
+
+            objTicketRespuesta = ObtenerLoginTicketResponse(pDnSource, pIdServicioNegocio, pDnDestination, pNombreCertificado, pVerboseMode)
+
+            Log.Logger(tipoLogging.Info, "Guardando objeto " + pRutaPathXML)
+            If Not objGestionXML.GuardarObjetoXML(objTicketRespuesta, pRutaPathXML) Then
+                Me._error = objGestionXML.Error
+                Exit Function
+            End If
+
+            Log.Logger(tipoLogging.Info, "Token y Firma obtenidos correctamente - WS")
+
+            Me._objetoObtenido = objTicketRespuesta
+
+            ObtenerTicket = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+        End Try
+    End Function
+
+
+    Private Function ObtenerLoginTicketResponse(ByVal pDnSource As String, ByVal pIdServicioNegocio As String, _
+                                              ByRef pDnDestination As String, ByVal pNombreCertificado As String, ByVal pVerboseMode As Boolean) As Ticket
+        Try
+            Dim objLoginTicketRequest As XmlDocument
+            Dim objCmsFirmadoBase64 As String
+            Dim loginTicketResponse As String
+
+            ' PASO 1: Genero el Login Ticket Request
+            Log.Logger(tipoLogging.Info, "Generando el Login Ticket Request")
+
+            objLoginTicketRequest = GenerarLoginTicketRequest(pDnSource, pIdServicioNegocio, pDnDestination)
+
+            ' PASO 2: Firmo el Login Ticket Request
+            Log.Logger(tipoLogging.Info, "Firmando el Login Ticket Request")
+            objCmsFirmadoBase64 = FirmarLoginTicketRequest(pDnSource, pNombreCertificado, objLoginTicketRequest)
+
+            ' PASO 3: Invoco al WSAA para obtener el Login Ticket Response
+            Log.Logger(tipoLogging.Info, "Invocando al WSAA para obtener el Login Ticket Response")
+            loginTicketResponse = ObtenerLoginTicketResponse(objCmsFirmadoBase64)
+
+            ' PASO 4: Analizo el Login Ticket Response recibido del WSAA
+            Log.Logger(tipoLogging.Info, "Analizando el Ticket Response recibido del WSAA")
+            Return LoginTicketResponseToTicket(loginTicketResponse)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+    Private Function ObtenerLoginTicketResponse(pCmsFirmadoBase64 As String) As String
+        Try
+            Dim ObjWSAA As New ar.gov.afip.wsaahomo.LoginCMSClient
+
+
+            ObjWSAA.Endpoint.Binding.SendTimeout = New TimeSpan(0, 1, 60)
+            ObjWSAA.Endpoint.Binding.ReceiveTimeout = New TimeSpan(0, 1, 60)
+            ObjWSAA.Endpoint.Binding.OpenTimeout = New TimeSpan(0, 1, 60)
+
+            Return ObjWSAA.loginCms(pCmsFirmadoBase64)
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    ''' <summary>
+    ''' Adapta el comprobante al formato de AFIP para Producción
+    ''' </summary>
+    ''' <returns>Boolean</returns>
+    Private Function AdaptarFormatoAFIP(ByVal pObjProdFECAECabeceraRequest As ar.gov.afip.wshomofev1.FECAECabRequest, _
+                                        ByVal pObjProdFEDetalleRequest As ar.gov.afip.wshomofev1.FECAEDetRequest, _
+                                        ByVal pObjComprobanteFE As comprobantes_ml_Screen) As Boolean
+        AdaptarFormatoAFIP = False
+        Try
+
+            'System.Diagnostics.Log.EscbribirLinea_Log("Adaptando formato Afip - Producción")
+            Dim existeDetalleIVA As Boolean = False
+            Dim existeDetalleTributo As Boolean = False
+            Dim existeCmpAsociados As Boolean = False
+
+            Dim ArrayOfTributosProd(0) As ar.gov.afip.wshomofev1.Tributo
+            Dim ArrayOfIvaProd(0) As ar.gov.afip.wshomofev1.AlicIva
+            Dim ArrayOfcbtesasocProd(0) As ar.gov.afip.wshomofev1.CbteAsoc
+            Dim ArrayOfFEDetalleRequestProd(0) As ar.gov.afip.wshomofev1.FECAEDetRequest
+            Dim objProdFECAERequest As New ar.gov.afip.wshomofev1.FECAERequest
+
+
+            ' /* modificar en Produccion ver tema indices y creaciobn inicial del objeto en la matriz */
+            Dim i As Integer = 0
+            For Each item As Detalle_tributos In pObjComprobanteFE.DetalleTributos
+                existeDetalleTributo = True
+                ReDim Preserve ArrayOfTributosProd(0 To i)
+                ArrayOfTributosProd(i) = New ar.gov.afip.wshomofev1.Tributo()
+                ArrayOfTributosProd(i).Alic = CDbl(item.alic.ToString)
+                ArrayOfTributosProd(i).BaseImp = CDbl(item.baseImp.ToString)
+                ArrayOfTributosProd(i).Desc = item.descripcion.ToString
+                ArrayOfTributosProd(i).Id = CInt(item.Id.ToString)
+                ArrayOfTributosProd(i).Importe = CDbl(item.importe.ToString)
+                i = i + 1
+            Next
+
+            i = 0
+            For Each item As Detalle_iva In pObjComprobanteFE.DetalleIVA
+                existeDetalleIVA = True
+                ReDim Preserve ArrayOfIvaProd(0 To i)
+                ArrayOfIvaProd(i) = New ar.gov.afip.wshomofev1.AlicIva()
+                ArrayOfIvaProd(i).BaseImp = item.baseImp.Valor
+                ArrayOfIvaProd(i).Id = item.Id.Valor
+                ArrayOfIvaProd(i).Importe = item.importe.Valor
+                i = i + 1
+            Next
+
+            i = 0
+            For Each item As CbtesAsoc In pObjComprobanteFE.CbtesAsociados
+                existeCmpAsociados = True
+                ReDim Preserve ArrayOfcbtesasocProd(0 To i)
+                ArrayOfcbtesasocProd(i) = New ar.gov.afip.wshomofev1.CbteAsoc
+                ArrayOfcbtesasocProd(i).Nro = item.Nro.Valor
+                ArrayOfcbtesasocProd(i).PtoVta = item.PtoVta.Valor
+                ArrayOfcbtesasocProd(i).Tipo = item.Tipo.Valor
+            Next
+
+            If existeDetalleIVA Then
+                pObjProdFEDetalleRequest.Iva = ArrayOfIvaProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Detalle_IVA creada")
+            End If
+            If existeDetalleTributo Then
+                pObjProdFEDetalleRequest.Tributos = ArrayOfTributosProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Detalle_tributo creada")
+            End If
+            If existeCmpAsociados Then
+                pObjProdFEDetalleRequest.CbtesAsoc = ArrayOfcbtesasocProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Comprobantes_Asoc creada")
+            End If
+
+            objProdFECAERequest.FeCabReq = pObjProdFECAECabeceraRequest
+            ArrayOfFEDetalleRequestProd(0) = pObjProdFEDetalleRequest
+            objProdFECAERequest.FeDetReq = ArrayOfFEDetalleRequestProd
+            'System.Diagnostics.Log.EscbribirLinea_Log("Adaptación Produccion Completa")
+
+            _objetoObtenido = objProdFECAERequest
+
+            AdaptarFormatoAFIP = True
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerRespuestaAFIP(ByVal pObjComprobantesFE As comprobantes_ml_Screen, ByVal pObjTicket As Ticket, ByVal pCuitEmpresa As String) As ar.gov.afip.wshomofev1.FECAEResponse
+        Try
+            Dim cbteNro As Integer
+            Dim objProdFEAuthRequest As New ar.gov.afip.wshomofev1.FEAuthRequest
+            Dim objProdWSFE As New ar.gov.afip.wshomofev1.ServiceSoapClient
+            Dim objProdFEUltNroResponse As New ar.gov.afip.wshomofev1.FERecuperaLastCbteResponse
+            Dim objProdFECAEResponse As New ar.gov.afip.wshomofev1.FECAEResponse
+            Dim objProdFECAECabeceraRequest As New ar.gov.afip.wshomofev1.FECAECabRequest
+            Dim objProdFEDetalleRequest As ar.gov.afip.wshomofev1.FECAEDetRequest
+            Dim objProdFECAERequest As New ar.gov.afip.wshomofev1.FECAERequest
+
+            objProdFEAuthRequest.Token = pObjTicket.Token
+            objProdFEAuthRequest.Sign = pObjTicket.Sign
+            objProdFEAuthRequest.Cuit = pCuitEmpresa
+
+            objProdWSFE.Endpoint.Binding.SendTimeout = New TimeSpan(0, 1, 60)
+            objProdWSFE.Endpoint.Binding.ReceiveTimeout = New TimeSpan(0, 1, 60)
+            objProdWSFE.Endpoint.Binding.OpenTimeout = New TimeSpan(0, 1, 60)
+
+
+            'System.Diagnostics.Log.EscbribirLinea_Log("Último Nro de Comprobante en AFIP: " + objProdFEUltNroResponse.CbteNro.ToString)
+            objProdFECAECabeceraRequest.CbteTipo = CInt(pObjComprobantesFE.CbteTipo.ToString)
+            objProdFECAECabeceraRequest.CantReg = 1
+            objProdFECAECabeceraRequest.PtoVta = CInt(pObjComprobantesFE.PtoVta.ToString)
+
+            objProdFEUltNroResponse = objProdWSFE.FECompUltimoAutorizado(objProdFEAuthRequest, CInt(pObjComprobantesFE.PtoVta.ToString), _
+                                                                         CInt(pObjComprobantesFE.CbteTipo.ToString))
+
+            cbteNro = objProdFEUltNroResponse.CbteNro + 1
+
+            objProdFEDetalleRequest = CrearDetalleRequest_desde_ComprobanteFE(pObjComprobantesFE, cbteNro, cbteNro)
+
+            If Not AdaptarFormatoAFIP(objProdFECAECabeceraRequest, objProdFEDetalleRequest, pObjComprobantesFE) Then
+                Throw New Exception(Me._error)
+            End If
+
+            objProdFECAERequest = CType(_objetoObtenido, ar.gov.afip.wshomofev1.FECAERequest)
+
+            objProdFECAEResponse = objProdWSFE.FECAESolicitar(objProdFEAuthRequest, objProdFECAERequest)
+
+            Return objProdFECAEResponse
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function BuscarComprobantesAFIP(ByVal pObjTicket As Ticket, ByVal pCuitEmpresa As String, ByVal pPtoVta As Integer, _
+                                                  ByVal pCbteTipo As Integer, ByVal pCbteNro As Integer) As Boolean
+        BuscarComprobantesAFIP = False
+
+        Try
+
+            Dim objProdWSFE As New ar.gov.afip.wshomofev1.ServiceSoapClient
+            Dim objProdFECompConsultarResponse As New ar.gov.afip.wshomofev1.FECompConsultarResponse()
+            Dim objProdFEAuthRequest As New ar.gov.afip.wshomofev1.FEAuthRequest
+
+            Dim ptoVta As String = pPtoVta
+
+            Dim req As New ar.gov.afip.wshomofev1.FECompConsultaReq
+
+            objProdFEAuthRequest.Token = pObjTicket.Token
+            objProdFEAuthRequest.Sign = pObjTicket.Sign
+            objProdFEAuthRequest.Cuit = pCuitEmpresa
+
+            req.PtoVta = ptoVta
+            req.CbteTipo = pCbteTipo
+            req.CbteNro = pCbteNro
+
+            Dim objProdFECompConsultarRequestBody As New ar.gov.afip.wshomofev1.FECompConsultarRequestBody(objProdFEAuthRequest, req)
+            Dim objProdFECompConsultarRequest As New ar.gov.afip.wshomofev1.FECompConsultarRequest(objProdFECompConsultarRequestBody)
+            objProdFECompConsultarResponse = objProdWSFE.ar_gov_afip_wshomofev1_ServiceSoap_FECompConsultar(objProdFECompConsultarRequest)
+
+            'Analizamos si se obtuvo una respuesta desde el webservice
+            If objProdFECompConsultarResponse.Body.FECompConsultarResult.ResultGet Is Nothing Then
+                Me._error = "No se obtuvieron datos de AFIP."
+                'Analizamos si existe un error y creamos un objeto de observacion.
+                If objProdFECompConsultarResponse.Body.FECompConsultarResult.Errors IsNot Nothing Then
+                    _objetoObtenido = CrearObjetoObservacion(objProdFECompConsultarResponse.Body.FECompConsultarResult.Errors(0))
+                End If
+                Exit Function
+            End If
+
+            _objetoObtenido = CrearObjetoComprobanteFE_Desde_ResultGet(objProdFECompConsultarResponse)
+
+            BuscarComprobantesAFIP = True
+
+        Catch ex As Exception
+            Me._error = ex.Message
+            If ex.InnerException().ToString.Contains("(407)") Then
+                Me._error += vbCrLf + "Intente nuevamente."
+            End If
+        End Try
+    End Function
+
+    Private Function CrearObjetoObservacion(a As ar.gov.afip.wshomofev1.Err) As Observaciones
+        Try
+            Dim objObser As New Observaciones
+
+            objObser.code = Campo.ToCampo(a.Code.ToString, SQLAdapter.getTipoInteger)
+            objObser.msg = Campo.ToCampo(a.Msg.ToString, SQLAdapter.getTipoString)
+
+            Return objObser
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+
+    Private Function CrearObjetoComprobanteFE_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As comprobantes_ml_Screen
+        Try
+            Dim objComprobanteFE As New comprobantes_ml_Screen()
+
+            objComprobanteFE = CrearComprobanteML_Desde_ResultGet(pResult)
+
+            objComprobanteFE.CbtesAsociados = CrearListaCbtesAsoc_Desde_ResultGet(pResult)
+            objComprobanteFE.DetalleTributos = CrearListaDetalle_tributos_Desde_ResultGet(pResult)
+            objComprobanteFE.DetalleIVA = CrearListaDetalles_iva_Desde_ResultGet(pResult)
+            objComprobanteFE.Observaciones = CrearListaObservaciones_Desde_ResultGet(pResult)
+
+            Return objComprobanteFE
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearListaDetalles_iva_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As List(Of Detalle_iva)
+        Try
+
+            Dim objDetalle_iva As New Detalle_iva
+            Dim objListaDetalles As New List(Of Detalle_iva)
+
+            With pResult.Body.FECompConsultarResult.ResultGet
+                If .Iva Is Nothing Then
+                    Return objListaDetalles
+                End If
+
+                For Each elemento As ar.gov.afip.wshomofev1.AlicIva In .Iva
+                    objDetalle_iva = New Detalle_iva
+
+                    objDetalle_iva.baseImp = Campo.ToCampo(elemento.BaseImp, SQLAdapter.getTipoDouble)
+                    objDetalle_iva.importe = Campo.ToCampo(elemento.Importe, SQLAdapter.getTipoDouble)
+                    objDetalle_iva.Id = Campo.ToCampo(elemento.Id, SQLAdapter.getTipoDouble)
+
+                    objListaDetalles.Add(objDetalle_iva)
+                Next
+            End With
+
+            Return objListaDetalles
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearListaDetalle_tributos_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As List(Of Detalle_tributos)
+        Try
+
+            Dim objDetalle_tributos As New Detalle_tributos
+            Dim objListaDetalles As New List(Of Detalle_tributos)
+
+            With pResult.Body.FECompConsultarResult.ResultGet
+                If .Tributos Is Nothing Then
+                    Return objListaDetalles
+                End If
+
+                For Each elemento As ar.gov.afip.wshomofev1.Tributo In .Tributos
+                    objDetalle_tributos = New Detalle_tributos
+
+                    objDetalle_tributos.alic = Campo.ToCampo(elemento.Alic, SQLAdapter.getTipoDouble)
+                    objDetalle_tributos.baseImp = Campo.ToCampo(elemento.BaseImp, SQLAdapter.getTipoDouble)
+                    objDetalle_tributos.importe = Campo.ToCampo(elemento.Importe, SQLAdapter.getTipoDouble)
+                    objDetalle_tributos.Id = Campo.ToCampo(elemento.Id, SQLAdapter.getTipoInteger)
+                    objDetalle_tributos.descripcion = Campo.ToCampo(elemento.Desc, SQLAdapter.getTipoString)
+
+                    objListaDetalles.Add(objDetalle_tributos)
+                Next
+            End With
+
+            Return objListaDetalles
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearListaCbtesAsoc_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As List(Of CbtesAsoc)
+        Try
+
+            Dim objCbtesAsoc As New CbtesAsoc
+            Dim objListaDetalles As New List(Of CbtesAsoc)
+
+            With pResult.Body.FECompConsultarResult.ResultGet
+                If .CbtesAsoc Is Nothing Then
+                    Return objListaDetalles
+                End If
+
+                For Each elemento As ar.gov.afip.wshomofev1.CbteAsoc In .CbtesAsoc
+                    objCbtesAsoc = New CbtesAsoc
+
+                    objCbtesAsoc.Nro = Campo.ToCampo(elemento.Nro, SQLAdapter.getTipoInteger)
+                    objCbtesAsoc.PtoVta = Campo.ToCampo(elemento.PtoVta, SQLAdapter.getTipoInteger)
+                    objCbtesAsoc.Tipo = Campo.ToCampo(elemento.Tipo, SQLAdapter.getTipoInteger)
+
+                    objListaDetalles.Add(objCbtesAsoc)
+                Next
+            End With
+
+            Return objListaDetalles
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearListaObservaciones_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As List(Of Observaciones)
+        Try
+
+            Dim objObservaciones As New Observaciones
+            Dim objListaDetalles As New List(Of Observaciones)
+
+            With pResult.Body.FECompConsultarResult.ResultGet
+                If .Observaciones Is Nothing Then
+                    Return objListaDetalles
+                End If
+
+                For Each elemento As ar.gov.afip.wshomofev1.Obs In .Observaciones
+                    objObservaciones = New Observaciones
+
+                    objObservaciones.code = Campo.ToCampo(elemento.Code, SQLAdapter.getTipoInteger)
+                    objObservaciones.msg = Campo.ToCampo(elemento.Msg, SQLAdapter.getTipoString)
+
+                    objListaDetalles.Add(objObservaciones)
+                Next
+            End With
+
+            Return objListaDetalles
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearComprobanteML_Desde_ResultGet(pResult As ar.gov.afip.wshomofev1.FECompConsultarResponse) As comprobantes_ml_Screen
+        Try
+            Dim objCbteFE As New comprobantes_ml_Screen
+
+            With pResult.Body.FECompConsultarResult.ResultGet
+
+                objCbteFE.CbteDesde = Campo.ToCampo(.CbteDesde, SQLAdapter.getTipoInteger)
+                objCbteFE.CbteHasta = Campo.ToCampo(.CbteHasta, SQLAdapter.getTipoInteger)
+                objCbteFE.CAEFchVto = Campo.ToCampo(.FchVto, SQLAdapter.getTipoString)
+                objCbteFE.CbteFch = Campo.ToCampo(.CbteFch, SQLAdapter.getTipoString)
+                objCbteFE.CbteTipo = Campo.ToCampo(.CbteTipo, SQLAdapter.getTipoInteger)
+                objCbteFE.Concepto = Campo.ToCampo(.Concepto, SQLAdapter.getTipoInteger)
+                objCbteFE.DocNro = Campo.ToCampo(.DocNro, SQLAdapter.getTipoInteger)
+                objCbteFE.nro_doc_afip = Campo.ToCampo(.DocNro, SQLAdapter.getTipoInteger)
+                objCbteFE.DocTipo = Campo.ToCampo(.DocTipo, SQLAdapter.getTipoInteger)
+                objCbteFE.FchServDesde = Campo.ToCampo(.FchServDesde, SQLAdapter.getTipoString)
+                objCbteFE.FchServHasta = Campo.ToCampo(.FchServHasta, SQLAdapter.getTipoString)
+                objCbteFE.FchVtoPago = Campo.ToCampo(.FchVtoPago, SQLAdapter.getTipoString)
+                objCbteFE.ImpIVA = Campo.ToCampo(.ImpIVA, SQLAdapter.getTipoDouble)
+                objCbteFE.ImpNeto = Campo.ToCampo(.ImpNeto, SQLAdapter.getTipoDouble)
+                objCbteFE.ImpOpEx = Campo.ToCampo(.ImpOpEx, SQLAdapter.getTipoDouble)
+                objCbteFE.ImpTotal = Campo.ToCampo(.ImpTotal, SQLAdapter.getTipoDouble)
+                objCbteFE.ImpTotConc = Campo.ToCampo(.ImpTotConc, SQLAdapter.getTipoDouble)
+                objCbteFE.ImpTrib = Campo.ToCampo(.ImpTrib, SQLAdapter.getTipoDouble)
+                objCbteFE.MonCotiz = Campo.ToCampo(.MonCotiz, SQLAdapter.getTipoDouble)
+                objCbteFE.MonId = Campo.ToCampo(.MonId, SQLAdapter.getTipoString)
+                objCbteFE.PtoVta = Campo.ToCampo(.PtoVta, SQLAdapter.getTipoInteger)
+                objCbteFE.CAE = Campo.ToCampo(.CodAutorizacion, SQLAdapter.getTipoString)
+                objCbteFE.Resultado = Campo.ToCampo(.Resultado, SQLAdapter.getTipoString)
+                objCbteFE.EmisionTipo = Campo.ToCampo(.EmisionTipo, SQLAdapter.getTipoString)
+                objCbteFE.FchProceso = Campo.ToCampo(.FchProceso, SQLAdapter.getTipoString)
+            End With
+
+            Return objCbteFE
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Public Function ObtenerUltimoNroCbteAutorizado(ByVal pObjTicket As Ticket, ByVal pCuitEmpresa As String, ByVal pPtoVta As Integer, ByVal pCbteTipo As Integer) As Integer
+        Try
+            Dim objProdWSFE As New ar.gov.afip.wshomofev1.ServiceSoapClient
+            Dim objProdFEAuthRequest As New ar.gov.afip.wshomofev1.FEAuthRequest
+            Dim objProdFEUltNroResponse As New ar.gov.afip.wshomofev1.FERecuperaLastCbteResponse
+            Dim cbteNro As Integer = 0
+
+            objProdFEAuthRequest.Token = pObjTicket.Token
+            objProdFEAuthRequest.Sign = pObjTicket.Sign
+            objProdFEAuthRequest.Cuit = pCuitEmpresa
+
+            objProdFEUltNroResponse = objProdWSFE.FECompUltimoAutorizado(objProdFEAuthRequest, pPtoVta, pCbteTipo)
+
+            cbteNro = objProdFEUltNroResponse.CbteNro
+
+            Return cbteNro
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+    Private Function CrearDetalleRequest_desde_ComprobanteFE(pObjComprobanteFE As comprobantes_ml_Screen, pCbteDesde As Integer, pCbteHasta As Integer) As ar.gov.afip.wshomofev1.FECAEDetRequest
+        Try
+            Dim objDetalleRequest As New ar.gov.afip.wshomofev1.FECAEDetRequest
+
+            With objDetalleRequest
+
+                .Concepto = pObjComprobanteFE.Concepto.Valor  '1 ' Productos 
+                .DocTipo = pObjComprobanteFE.DocTipo.Valor
+                .DocNro = pObjComprobanteFE.DocNro.Valor
+                .CbteDesde = pCbteDesde
+                .CbteHasta = pCbteHasta
+                .ImpTotal = pObjComprobanteFE.ImpTotal.Valor
+                .ImpTotConc = pObjComprobanteFE.ImpTotConc.Valor
+                .ImpNeto = pObjComprobanteFE.ImpNeto.Valor
+                .ImpTrib = pObjComprobanteFE.ImpTrib.Valor
+                .ImpOpEx = pObjComprobanteFE.ImpOpEx.Valor
+                .ImpIVA = pObjComprobanteFE.ImpIVA.Valor
+                .CbteFch = Format(pObjComprobanteFE.CbteFch.Valor, "yyyyMMdd")
+                .MonId = pObjComprobanteFE.MonId.Valor
+                .MonCotiz = pObjComprobanteFE.MonCotiz.Valor
+
+            End With
+
+            Return objDetalleRequest
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+    End Function
+
+End Class

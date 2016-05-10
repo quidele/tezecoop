@@ -1,0 +1,969 @@
+09/05/2011 10:13:02 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:13:08 a.m. - ----------- INICIO -----------
+09/05/2011 10:13:08 a.m. - 470904
+09/05/2011 10:13:08 a.m. - BENITEZ LOGISTICA AMBIENTAL Y ENVASE SA                                                             
+09/05/2011 10:13:08 a.m. - Usuario: quidele
+09/05/2011 10:13:08 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:13:08 a.m. - Insertando comprobantes en FE
+09/05/2011 10:13:09 a.m. - Observaciones: 
+09/05/2011 10:13:09 a.m. - Chequeando resultados de FE
+09/05/2011 10:13:09 a.m. - Obtener Comprobantes
+09/05/2011 10:13:09 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:13:09 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:13:09 a.m. - Solicitando Token
+09/05/2011 10:13:09 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:13:09 a.m. - Generando el Login Ticket Request
+09/05/2011 10:13:09 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:13:09 a.m. - ***Leyendo certificado: 
+09/05/2011 10:13:09 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:13:09 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:13:09 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:13:09 a.m. - ***OK mensaje firmado
+09/05/2011 10:13:13 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:13:13 a.m. - Adaptando Formatos
+09/05/2011 10:13:40 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:13:40 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMTk2ODY1MzkzIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk0NjYxNyIgZXhwX3RpbWU9IjEzMDQ5ODk4NzciIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 10:13:40 a.m. - Sign jJEQbPUYEgm/D/BV1FtC/wUo+X+2henurtY+yGSkUH62qK0GvQv+ov3OtSO8+/hWhhFovs8vd8xJtKyc78oZ2iRcEW4enXLIPuxm6gotxnLGHyGFS7l4OcIbUy5mRr1a90mJJ02fK9vjOvevKnHYSw/NIQN2ePSmQ8vQA1/aZXo=
+09/05/2011 10:13:43 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:13:43 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:13:43 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:13:43 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:13:44 a.m. - Comprobante_Aprobado
+09/05/2011 10:13:44 a.m. - Actualizando base de datos local y Magma
+09/05/2011 10:13:45 a.m. - Commit Realizado con éxito!!!
+09/05/2011 10:13:45 a.m. - Grabando estado de envío
+09/05/2011 10:13:45 a.m. - Comprobante_Asignado
+09/05/2011 10:13:45 a.m. - Obtención de CAE exitosa
+09/05/2011 10:13:45 a.m. - La operación finalizó correctamente
+09/05/2011 10:14:04 a.m. - Observaciones: 
+09/05/2011 10:15:50 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:15:53 a.m. - ----------- INICIO -----------
+09/05/2011 10:15:53 a.m. - 473535
+09/05/2011 10:15:53 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 10:15:53 a.m. - Usuario: quidele
+09/05/2011 10:15:53 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:15:53 a.m. - Insertando comprobantes en FE
+09/05/2011 10:15:53 a.m. - Observaciones: 
+09/05/2011 10:15:53 a.m. - Chequeando resultados de FE
+09/05/2011 10:15:53 a.m. - Obtener Comprobantes
+09/05/2011 10:15:53 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:15:53 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:15:53 a.m. - Solicitando Token
+09/05/2011 10:15:53 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:15:53 a.m. - Generando el Login Ticket Request
+09/05/2011 10:15:53 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:15:53 a.m. - ***Leyendo certificado: 
+09/05/2011 10:15:53 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:15:53 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:15:53 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:15:53 a.m. - ***OK mensaje firmado
+09/05/2011 10:15:55 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:15:55 a.m. - Adaptando Formatos
+09/05/2011 10:15:59 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:15:59 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNTQ3MzEwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk0Njc3OSIgZXhwX3RpbWU9IjEzMDQ5OTAwMzkiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 10:15:59 a.m. - Sign TqyrnT/aSoqARDlBqXZd4BQlCZykQtxRBD8KjKx0uWVP1UissZzYrAuwpiboIC8Jgbx9IbSEOYxYe4UTnRRGzrOqA4HsIgsKF+0Z8aT4bT/PN9R9Ttf0oXFbXtzP6G4xtc/ZJtk7L3vtsTSwnLsepXPZmfbOtgCLqLEfZyScb5g=
+09/05/2011 10:16:01 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:16:01 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:16:01 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:16:01 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:16:01 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 10:17:19 a.m. - Actualizando datos del comprobante
+09/05/2011 10:20:50 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:20:52 a.m. - ----------- INICIO -----------
+09/05/2011 10:20:52 a.m. - 473535
+09/05/2011 10:20:52 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 10:20:52 a.m. - Usuario: quidele
+09/05/2011 10:20:52 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:20:52 a.m. - Insertando comprobantes en FE
+09/05/2011 10:20:52 a.m. - Observaciones: 
+09/05/2011 10:20:52 a.m. - Chequeando resultados de FE
+09/05/2011 10:20:52 a.m. - Obtener Comprobantes
+09/05/2011 10:20:52 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:20:52 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:20:52 a.m. - Solicitando Token
+09/05/2011 10:20:52 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:20:52 a.m. - Generando el Login Ticket Request
+09/05/2011 10:20:52 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:20:52 a.m. - ***Leyendo certificado: 
+09/05/2011 10:20:52 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:20:52 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:20:52 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:20:52 a.m. - ***OK mensaje firmado
+09/05/2011 10:20:53 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:20:53 a.m. - Adaptando Formatos
+09/05/2011 10:20:55 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:20:55 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MTA2NDIxMCIgc3JjPSJDTj13c2FhaG9tbywgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDQ5NDcwNzciIGV4cF90aW1lPSIxMzA0OTkwMzM3IiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZXMgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049ZXVsaXNlcyBxdWlkZWwiIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+09/05/2011 10:20:55 a.m. - Sign Xvdkk7oewHb8wB+np5j9BvKRpHunYzwTWL0baut+T4vsm3iNMJ1WFSwzNDHoWfGGilJ055Bdsapjk0+aTi90vFXdQg/aI7S22vnL72NwkxW38+hHmmzB5jF7orfA6n7pDT6HKZVsfpv4CXQIpbQPXu0r7CZqSlwSBQLFfrxrvoY=
+09/05/2011 10:20:56 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:20:56 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:20:56 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:20:56 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:20:56 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 10:21:06 a.m. - Actualizando datos del comprobante
+09/05/2011 10:26:11 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:26:14 a.m. - ----------- INICIO -----------
+09/05/2011 10:26:14 a.m. - 473535
+09/05/2011 10:26:14 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 10:26:14 a.m. - Usuario: quidele
+09/05/2011 10:26:14 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:26:14 a.m. - Insertando comprobantes en FE
+09/05/2011 10:26:14 a.m. - Observaciones: 
+09/05/2011 10:26:14 a.m. - Chequeando resultados de FE
+09/05/2011 10:26:14 a.m. - Obtener Comprobantes
+09/05/2011 10:26:14 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:26:14 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:26:14 a.m. - Solicitando Token
+09/05/2011 10:26:14 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:26:14 a.m. - Generando el Login Ticket Request
+09/05/2011 10:26:14 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:26:14 a.m. - ***Leyendo certificado: 
+09/05/2011 10:26:14 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:26:14 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:26:14 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:26:14 a.m. - ***OK mensaje firmado
+09/05/2011 10:26:15 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:26:15 a.m. - Adaptando Formatos
+09/05/2011 10:26:18 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:26:18 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxODAzMjQ3MzMzIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk0NzM5OCIgZXhwX3RpbWU9IjEzMDQ5OTA2NTgiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 10:26:18 a.m. - Sign ODs6pLB42TrbGOKi3lzmh7Di6DNhGzsPlF7PAZi3ASClVMz9LwXro07mGrsM8p18S0Fs06DXbwPuCopKsNUVRS6xdYUd7t7xkzMPOpB2uD6kgQphIXdgvWKYWkAKMHyFKVtF0voHGZa4V+MNLgonCfdkPBNa8wjFetILc2P67zs=
+09/05/2011 10:26:18 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:26:18 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:26:18 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:26:20 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:26:26 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 10:26:49 a.m. - Actualizando datos del comprobante
+09/05/2011 10:30:51 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:31:19 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:31:21 a.m. - ----------- INICIO -----------
+09/05/2011 10:31:21 a.m. - 473535
+09/05/2011 10:31:21 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 10:31:21 a.m. - Usuario: quidele
+09/05/2011 10:31:21 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:31:21 a.m. - Insertando comprobantes en FE
+09/05/2011 10:31:21 a.m. - Observaciones: 
+09/05/2011 10:31:21 a.m. - Chequeando resultados de FE
+09/05/2011 10:31:21 a.m. - Obtener Comprobantes
+09/05/2011 10:31:21 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:31:21 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:31:21 a.m. - Solicitando Token
+09/05/2011 10:31:21 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:31:21 a.m. - Generando el Login Ticket Request
+09/05/2011 10:31:21 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:31:21 a.m. - ***Leyendo certificado: 
+09/05/2011 10:31:21 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:31:21 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:31:21 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:31:21 a.m. - ***OK mensaje firmado
+09/05/2011 10:31:23 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:31:23 a.m. - Adaptando Formatos
+09/05/2011 10:31:27 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:31:27 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0NjU1MDcwMjgiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA0OTQ3NzA2IiBleHBfdGltZT0iMTMwNDk5MDk2NiIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZlIiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+09/05/2011 10:31:27 a.m. - Sign FGeOhzIGWvO7QyB8BBRpzSUaugKOsVP5hJ2cyNoq/CgUsAIm7OsM14B0oUcZuQrR5wEAq4QtVK9Lhjew1yEFuB9pgAphYLKmUhQzYjrNf8ja0JLJpnOc3J4wmsDE5zpDawMecvHPLEOBFQKVKxhMtrLijdCR7X7/XqPkH+7RBzw=
+09/05/2011 10:31:27 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:31:27 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:31:27 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:31:27 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:31:28 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 10:31:34 a.m. - Actualizando datos del comprobante
+09/05/2011 10:38:00 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 10:38:02 a.m. - ----------- INICIO -----------
+09/05/2011 10:38:02 a.m. - 473535
+09/05/2011 10:38:02 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 10:38:02 a.m. - Usuario: quidele
+09/05/2011 10:38:02 a.m. - Nombre del equipo: PC0157-
+09/05/2011 10:38:02 a.m. - Insertando comprobantes en FE
+09/05/2011 10:38:02 a.m. - Observaciones: 
+09/05/2011 10:38:02 a.m. - Chequeando resultados de FE
+09/05/2011 10:38:02 a.m. - Obtener Comprobantes
+09/05/2011 10:38:02 a.m. - Solicitando CAE a AFIP
+09/05/2011 10:38:02 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 10:38:02 a.m. - Solicitando Token
+09/05/2011 10:38:02 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 10:38:02 a.m. - Generando el Login Ticket Request
+09/05/2011 10:38:02 a.m. - Firmando el Login Ticket Request
+09/05/2011 10:38:02 a.m. - ***Leyendo certificado: 
+09/05/2011 10:38:02 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 10:38:02 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 10:38:02 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 10:38:02 a.m. - ***OK mensaje firmado
+09/05/2011 10:38:03 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 10:38:03 a.m. - Adaptando Formatos
+09/05/2011 10:38:06 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 10:38:06 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0MTYyNjQ1NDczIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk0ODEwNiIgZXhwX3RpbWU9IjEzMDQ5OTEzNjYiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 10:38:06 a.m. - Sign izhOjLpMzomWngo+jqD8SEbl4EV7LfEG/eFJXr6wk4tU1UdIkHl9OwLInTI4xx+2J/0AG+oJy5jj3Q5an5ZFhA3yLctNFVU5oaUQ3TiQWyBel1KGKV2YxMJ+qQD2o0hhN1m9d7XgETNgS+JTa7YP0Fq77IhgUhohMVm4s8dTWGA=
+09/05/2011 10:38:07 a.m. - Lista de Detalle_IVA creada
+09/05/2011 10:38:07 a.m. - Lista de Detalle_tributos creada
+09/05/2011 10:38:07 a.m. - Adaptacion Homologacion Completa
+09/05/2011 10:38:07 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 10:38:07 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 10:38:19 a.m. - Actualizando datos del comprobante
+09/05/2011 11:00:22 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 11:00:25 a.m. - ----------- INICIO -----------
+09/05/2011 11:00:25 a.m. - 473535
+09/05/2011 11:00:25 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 11:00:25 a.m. - Usuario: quidele
+09/05/2011 11:00:25 a.m. - Nombre del equipo: PC0157-
+09/05/2011 11:00:25 a.m. - Insertando comprobantes en FE
+09/05/2011 11:00:27 a.m. - Observaciones: 
+09/05/2011 11:00:27 a.m. - Chequeando resultados de FE
+09/05/2011 11:00:27 a.m. - Obtener Comprobantes
+09/05/2011 11:00:27 a.m. - Solicitando CAE a AFIP
+09/05/2011 11:00:27 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 11:00:27 a.m. - Solicitando Token
+09/05/2011 11:00:27 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 11:00:27 a.m. - Generando el Login Ticket Request
+09/05/2011 11:00:27 a.m. - Firmando el Login Ticket Request
+09/05/2011 11:00:27 a.m. - ***Leyendo certificado: 
+09/05/2011 11:00:27 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 11:00:27 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 11:00:27 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 11:00:27 a.m. - ***OK mensaje firmado
+09/05/2011 11:00:28 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 11:00:28 a.m. - Adaptando Formatos
+09/05/2011 11:00:32 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 11:00:32 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzMTExNDY4ODc0IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk0OTQ1MCIgZXhwX3RpbWU9IjEzMDQ5OTI3MTAiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 11:00:32 a.m. - Sign jL7EK9BrnQ8weW8TYwh17yPpOdkUGTVlrD0LB/P4jaQqNN/FV20yaGIAlNIEaJPVADHBRMMzNfrtGoIfwCRfxtUDU3eBVEnC0PvXN6GBzX5noVuzHHxlVhaPzpOy+VTsYCIeSMtUDqbQx9KKZUkMpCoLMoFNo4s5K+X3q7tgFc8=
+09/05/2011 11:00:32 a.m. - Lista de Detalle_IVA creada
+09/05/2011 11:00:32 a.m. - Lista de Detalle_tributos creada
+09/05/2011 11:00:32 a.m. - Adaptacion Homologacion Completa
+09/05/2011 11:00:32 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 11:00:32 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 11:00:37 a.m. - Actualizando datos del comprobante
+09/05/2011 11:01:57 a.m. - Error del comprobante
+09/05/2011 11:16:48 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 11:17:00 a.m. - ----------- INICIO -----------
+09/05/2011 11:17:00 a.m. - 473535
+09/05/2011 11:17:00 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 11:17:00 a.m. - Usuario: turinad
+09/05/2011 11:17:00 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:17:00 a.m. - Insertando comprobantes en FE
+09/05/2011 11:17:00 a.m. - Observaciones: 
+09/05/2011 11:17:00 a.m. - Chequeando resultados de FE
+09/05/2011 11:17:00 a.m. - Obtener Comprobantes
+09/05/2011 11:17:00 a.m. - Solicitando CAE a AFIP
+09/05/2011 11:17:00 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 11:17:01 a.m. - Solicitando Token
+09/05/2011 11:17:01 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 11:17:01 a.m. - Generando el Login Ticket Request
+09/05/2011 11:17:01 a.m. - Firmando el Login Ticket Request
+09/05/2011 11:17:01 a.m. - ***Leyendo certificado: 
+09/05/2011 11:17:01 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 11:17:01 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 11:17:01 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 11:17:01 a.m. - ***OK mensaje firmado
+09/05/2011 11:17:05 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 11:17:06 a.m. - Adaptando Formatos
+09/05/2011 11:17:29 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 11:17:35 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMzI2NDEzODAiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA0OTUwNDQ1IiBleHBfdGltZT0iMTMwNDk5MzcwNSIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZlIiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+09/05/2011 11:17:42 a.m. - Sign FQp13mPT7h2pbOUL6FYnOGFYZaXK2den2425YSal6Gl2wX8Z51p1XKAdvRt/q5nDPCUiSVhci16xXekE5Evx1o8G4T8HXGB0gUMMifwIc6rXSA94fNIfnpiHJnTCbQuwipMrr8bcEuRG0uPX8jftZ026v8Zh6hCHh4+60DTomUc=
+09/05/2011 11:18:29 a.m. - Lista de Detalle_IVA creada
+09/05/2011 11:18:31 a.m. - Lista de Detalle_tributos creada
+09/05/2011 11:18:36 a.m. - Adaptacion Homologacion Completa
+09/05/2011 11:18:40 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 11:19:12 a.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 11:20:42 a.m. - Actualizando datos del comprobante
+09/05/2011 11:22:57 a.m. - Error del comprobante
+09/05/2011 11:25:05 a.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto. 
+09/05/2011 11:25:13 a.m. - Observaciones: 
+09/05/2011 11:25:13 a.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto.
+09/05/2011 11:35:20 a.m. - Error al cerrar el data reader de SQL
+09/05/2011 11:35:30 a.m. - ----------- INICIO -----------
+09/05/2011 11:35:30 a.m. - 473541
+09/05/2011 11:35:30 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 11:35:30 a.m. - Usuario: turinad
+09/05/2011 11:35:30 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:35:30 a.m. - Insertando comprobantes en FE
+09/05/2011 11:35:30 a.m. - Observaciones: 
+09/05/2011 11:35:30 a.m. - Chequeando resultados de FE
+09/05/2011 11:35:31 a.m. - El tipo de comprobante no fue encontrado o no esta permitido para fonseca
+09/05/2011 11:35:42 a.m. - ----------- INICIO -----------
+09/05/2011 11:35:42 a.m. - 473542
+09/05/2011 11:35:42 a.m. - SURPIEL SA                                                                                          
+09/05/2011 11:35:42 a.m. - Usuario: turinad
+09/05/2011 11:35:42 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:35:42 a.m. - Insertando comprobantes en FE
+09/05/2011 11:35:42 a.m. - Observaciones: 
+09/05/2011 11:35:42 a.m. - Chequeando resultados de FE
+09/05/2011 11:35:43 a.m. - El tipo de comprobante no fue encontrado o no esta permitido para fonseca
+09/05/2011 11:35:53 a.m. - ----------- INICIO -----------
+09/05/2011 11:35:53 a.m. - 473541
+09/05/2011 11:35:53 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 11:35:53 a.m. - Usuario: turinad
+09/05/2011 11:35:53 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:35:53 a.m. - Insertando comprobantes en FE
+09/05/2011 11:35:53 a.m. - Observaciones: 
+09/05/2011 11:35:53 a.m. - Chequeando resultados de FE
+09/05/2011 11:35:54 a.m. - El tipo de comprobante no fue encontrado o no esta permitido para fonseca
+09/05/2011 11:35:58 a.m. - ----------- INICIO -----------
+09/05/2011 11:35:58 a.m. - 473542
+09/05/2011 11:35:58 a.m. - SURPIEL SA                                                                                          
+09/05/2011 11:35:58 a.m. - Usuario: turinad
+09/05/2011 11:35:58 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:35:58 a.m. - Insertando comprobantes en FE
+09/05/2011 11:35:58 a.m. - Observaciones: 
+09/05/2011 11:35:58 a.m. - Chequeando resultados de FE
+09/05/2011 11:35:58 a.m. - El tipo de comprobante no fue encontrado o no esta permitido para fonseca
+09/05/2011 11:41:03 a.m. - ----------- INICIO -----------
+09/05/2011 11:41:03 a.m. - 473541
+09/05/2011 11:41:03 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 11:41:03 a.m. - Usuario: turinad
+09/05/2011 11:41:03 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:41:03 a.m. - Insertando comprobantes en FE
+09/05/2011 11:41:04 a.m. - Observaciones: 
+09/05/2011 11:41:04 a.m. - Chequeando resultados de FE
+09/05/2011 11:41:04 a.m. - Obtener Comprobantes
+09/05/2011 11:41:04 a.m. - Solicitando CAE a AFIP
+09/05/2011 11:41:04 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 11:41:04 a.m. - Solicitando Token
+09/05/2011 11:41:04 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 11:41:04 a.m. - Generando el Login Ticket Request
+09/05/2011 11:41:04 a.m. - Firmando el Login Ticket Request
+09/05/2011 11:41:04 a.m. - ***Leyendo certificado: 
+09/05/2011 11:41:04 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 11:41:04 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 11:41:04 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 11:41:04 a.m. - ***OK mensaje firmado
+09/05/2011 11:41:12 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 11:41:12 a.m. - Adaptando Formatos
+09/05/2011 11:41:16 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 11:41:16 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI2ODE2MTI4NzkiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA0OTUxODg5IiBleHBfdGltZT0iMTMwNDk5NTE0OSIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZlIiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+09/05/2011 11:41:16 a.m. - Sign Lqvlk4k2GUJcvDcMSCE5C4L9/oQu8EVTfj14/ucDclNGl3Zdd3fTBVu6ifbcxEZeQj60C4t/a70C9gm6jO157ZZKxE2FP816HLKZ+xVM+T9zOD9ML5VJYxAihvR+bIl/2UY0fxBPfYebHw8cGPqDy2v5LzK0ENbDGFs6fYd+Xjg=
+09/05/2011 11:41:19 a.m. - Lista de Detalle_IVA creada
+09/05/2011 11:41:19 a.m. - Lista de Detalle_tributos creada
+09/05/2011 11:41:19 a.m. - Adaptacion Homologacion Completa
+09/05/2011 11:41:19 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 11:41:23 a.m. - Comprobante_Aprobado
+09/05/2011 11:41:26 a.m. - Actualizando base de datos local y Magma
+09/05/2011 11:41:26 a.m. - Commit Realizado con éxito!!!
+09/05/2011 11:41:26 a.m. - Grabando estado de envío
+09/05/2011 11:41:53 a.m. - Comprobante_Asignado
+09/05/2011 11:41:53 a.m. - Obtención de CAE exitosa
+09/05/2011 11:41:53 a.m. - La operación finalizó correctamente
+09/05/2011 11:41:55 a.m. - Observaciones: 
+09/05/2011 11:58:01 a.m. - ----------- INICIO -----------
+09/05/2011 11:58:01 a.m. - 473542
+09/05/2011 11:58:01 a.m. - SURPIEL SA                                                                                          
+09/05/2011 11:58:01 a.m. - Usuario: turinad
+09/05/2011 11:58:01 a.m. - Nombre del equipo: PC0071
+09/05/2011 11:58:01 a.m. - Insertando comprobantes en FE
+09/05/2011 11:58:01 a.m. - Observaciones: 
+09/05/2011 11:58:01 a.m. - Chequeando resultados de FE
+09/05/2011 11:58:01 a.m. - Obtener Comprobantes
+09/05/2011 11:58:01 a.m. - Solicitando CAE a AFIP
+09/05/2011 11:58:01 a.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 11:58:01 a.m. - Solicitando Token
+09/05/2011 11:58:01 a.m. - Modo de operacion: 'Homologacion'
+09/05/2011 11:58:01 a.m. - Generando el Login Ticket Request
+09/05/2011 11:58:01 a.m. - Firmando el Login Ticket Request
+09/05/2011 11:58:01 a.m. - ***Leyendo certificado: 
+09/05/2011 11:58:01 a.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 11:58:01 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 11:58:01 a.m. - ***Firmando bytes del mensaje...
+09/05/2011 11:58:01 a.m. - ***OK mensaje firmado
+09/05/2011 11:58:06 a.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 11:58:06 a.m. - Adaptando Formatos
+09/05/2011 11:58:13 a.m. - Adaptando formato Afip - Homologacion
+09/05/2011 11:58:13 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMDg1OTA1MjkxIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1MjkwMyIgZXhwX3RpbWU9IjEzMDQ5OTYxNjMiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 11:58:13 a.m. - Sign ISEMxzFwvYlXVx/5/ByK13h9nBZPPP+ZaKbec6xecBv0uXJnvL0GlkjoxuoxRVit3wyoDYQB2Ky+6vRlPnu5+ce9B6B6JKJG/X9UQiotMoL70MQJt5lKTSg94rVOsDg2lXqVwWzMckDNWjZPUlj2jzef1B/YbAndOmFSMy9Q9ok=
+09/05/2011 11:58:13 a.m. - Lista de Detalle_IVA creada
+09/05/2011 11:58:13 a.m. - Lista de Detalle_tributos creada
+09/05/2011 11:58:13 a.m. - Adaptacion Homologacion Completa
+09/05/2011 11:58:13 a.m. - Estableciendo comunicación con AFIP
+09/05/2011 11:58:15 a.m. - Comprobante_Aprobado
+09/05/2011 11:58:15 a.m. - Actualizando base de datos local y Magma
+09/05/2011 11:58:15 a.m. - Commit Realizado con éxito!!!
+09/05/2011 11:58:15 a.m. - Grabando estado de envío
+09/05/2011 11:58:15 a.m. - Comprobante_Asignado
+09/05/2011 11:58:15 a.m. - Obtención de CAE exitosa
+09/05/2011 11:58:15 a.m. - La operación finalizó correctamente
+09/05/2011 11:58:18 a.m. - Observaciones: 
+09/05/2011 12:13:37 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 12:13:46 p.m. - ----------- INICIO -----------
+09/05/2011 12:13:46 p.m. - 473544
+09/05/2011 12:13:46 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:13:47 p.m. - Usuario: turinad
+09/05/2011 12:13:47 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:13:47 p.m. - Insertando comprobantes en FE
+09/05/2011 12:13:47 p.m. - Observaciones: 
+09/05/2011 12:13:47 p.m. - Chequeando resultados de FE
+09/05/2011 12:13:47 p.m. - Obtener Comprobantes
+09/05/2011 12:13:47 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:13:47 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:13:47 p.m. - Solicitando Token
+09/05/2011 12:13:47 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:13:47 p.m. - Generando el Login Ticket Request
+09/05/2011 12:13:47 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:13:47 p.m. - ***Leyendo certificado: 
+09/05/2011 12:13:47 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:13:47 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:13:48 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:13:48 p.m. - ***OK mensaje firmado
+09/05/2011 12:13:55 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:13:55 p.m. - Adaptando Formatos
+09/05/2011 12:13:59 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:13:59 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxODk1ODkzMTQ0IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1Mzg1MCIgZXhwX3RpbWU9IjEzMDQ5OTcxMTAiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 12:13:59 p.m. - Sign RZUDHczEdYy1XUtUEBGS1kjcJzqt1BWWeXRUTWAsSUJ3jVKvdkWVL8kVpNPaGNSTpkPlZ/waJnmw60dcls5N2mCPT/+5ExvtA37k7E4QrJH6Fj35dfUBsozmqdAQVq7lhB1b62Z6f77+CVRh1gt6WgeH6SlixIH8t7TuwTGHpgE=
+09/05/2011 12:14:03 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:14:03 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:14:03 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:14:03 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:14:09 p.m. - Comprobante_Aprobado
+09/05/2011 12:14:09 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:14:10 p.m. - Commit Realizado con éxito!!!
+09/05/2011 12:14:10 p.m. - Grabando estado de envío
+09/05/2011 12:14:10 p.m. - Comprobante_Asignado
+09/05/2011 12:14:10 p.m. - Obtención de CAE exitosa
+09/05/2011 12:14:10 p.m. - La operación finalizó correctamente
+09/05/2011 12:14:15 p.m. - Observaciones: 
+09/05/2011 12:21:13 p.m. - ----------- INICIO -----------
+09/05/2011 12:21:13 p.m. - 473546
+09/05/2011 12:21:13 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:21:13 p.m. - Usuario: turinad
+09/05/2011 12:21:13 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:21:13 p.m. - Insertando comprobantes en FE
+09/05/2011 12:21:13 p.m. - Observaciones: 
+09/05/2011 12:21:13 p.m. - Chequeando resultados de FE
+09/05/2011 12:21:13 p.m. - Obtener Comprobantes
+09/05/2011 12:21:13 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:21:13 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:21:13 p.m. - Solicitando Token
+09/05/2011 12:21:13 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:21:13 p.m. - Generando el Login Ticket Request
+09/05/2011 12:21:13 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:21:13 p.m. - ***Leyendo certificado: 
+09/05/2011 12:21:13 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:21:13 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:21:13 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:21:13 p.m. - ***OK mensaje firmado
+09/05/2011 12:21:15 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:21:15 p.m. - Adaptando Formatos
+09/05/2011 12:21:18 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:21:18 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMzcwMjM1NjQyIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1NDI5MCIgZXhwX3RpbWU9IjEzMDQ5OTc1NTAiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 12:21:18 p.m. - Sign tN2Aqh2DUdw7cVwLvuoXu7JD3wxeiQYCJPBvYlKWsMOcFkplR3tkDkicgLJDIIcINLP9uUvYqtaZ0tKiKJ1aVQcHWZToqRTOHItmC+2NEt+YkHFq3E48u6bZ7NRLHON6nXVPiBg8BaU2AFU6QiFXr6X4FbhUFg9lwhnxWg1QDdQ=
+09/05/2011 12:21:19 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:21:19 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:21:19 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:21:19 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:21:20 p.m. - Comprobante_Aprobado
+09/05/2011 12:21:20 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:21:20 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:21:20 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:21:20 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:21:20 p.m. - Grabando estado de envío
+09/05/2011 12:21:20 p.m. - No asignado
+09/05/2011 12:21:20 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:21:28 p.m. - Observaciones: 
+09/05/2011 12:22:13 p.m. - ----------- INICIO -----------
+09/05/2011 12:22:13 p.m. - 473546
+09/05/2011 12:22:13 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:22:13 p.m. - Usuario: turinad
+09/05/2011 12:22:13 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:22:13 p.m. - Insertando comprobantes en FE
+09/05/2011 12:22:13 p.m. - Observaciones: 
+09/05/2011 12:22:14 p.m. - Chequeando resultados de FE
+09/05/2011 12:22:14 p.m. - El estado del comprobante no permite su reprocesamiento. No Asignado
+09/05/2011 12:25:11 p.m. - ----------- INICIO -----------
+09/05/2011 12:25:11 p.m. - 473546
+09/05/2011 12:25:11 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:25:11 p.m. - Usuario: turinad
+09/05/2011 12:25:11 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:25:11 p.m. - Insertando comprobantes en FE
+09/05/2011 12:25:11 p.m. - Observaciones: 
+09/05/2011 12:25:11 p.m. - Chequeando resultados de FE
+09/05/2011 12:25:11 p.m. - El estado del comprobante no permite su reprocesamiento. No Asignado
+09/05/2011 12:39:07 p.m. - ----------- INICIO -----------
+09/05/2011 12:39:07 p.m. - 473546
+09/05/2011 12:39:07 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:39:07 p.m. - Usuario: turinad
+09/05/2011 12:39:07 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:39:07 p.m. - Insertando comprobantes en FE
+09/05/2011 12:39:07 p.m. - Observaciones: 
+09/05/2011 12:39:07 p.m. - Chequeando resultados de FE
+09/05/2011 12:39:07 p.m. - Obtener Comprobantes
+09/05/2011 12:39:07 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:39:07 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:39:07 p.m. - Solicitando Token
+09/05/2011 12:39:07 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:39:07 p.m. - Generando el Login Ticket Request
+09/05/2011 12:39:07 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:39:07 p.m. - ***Leyendo certificado: 
+09/05/2011 12:39:07 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:39:07 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:39:07 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:39:07 p.m. - ***OK mensaje firmado
+09/05/2011 12:39:08 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:39:08 p.m. - Adaptando Formatos
+09/05/2011 12:39:18 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:39:18 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI0NTI5NDE4MSIgc3JjPSJDTj13c2FhaG9tbywgTz1BRklQLCBDPUFSLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMzY5MzQ1MDIzOSIgZ2VuX3RpbWU9IjEzMDQ5NTUzNjIiIGV4cF90aW1lPSIxMzA0OTk4NjIyIiBkc3Q9IkNOPXdzZmUsIE89QUZJUCwgQz1BUiIvPgogICAgPG9wZXJhdGlvbiB2YWx1ZT0iZ3JhbnRlZCIgdHlwZT0ibG9naW4iPgogICAgICAgIDxsb2dpbiB1aWQ9IkM9YXIsIE89Y3VydGllbWJyZXMgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049ZXVsaXNlcyBxdWlkZWwiIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+09/05/2011 12:39:18 p.m. - Sign EaWRUheEVWtpnnihvR1Np1+Yv3RIyjrPoFeGGGGGZOjMdEqusPiJJcVvCxLryeSP6QsoUZY1hs+xmxrkRRYV0BtYcf0U+/Am7Jfs8FTEZ1Pgof9lrZxDl8xTRlkFuqs81WkA1fBanZ5+K8qCLhP7Ni7GJZTGoxA96Tj6jSPIchg=
+09/05/2011 12:39:19 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:39:19 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:39:19 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:39:19 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:39:30 p.m. - Comprobante_Aprobado
+09/05/2011 12:39:35 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:39:38 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:39:38 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:41:37 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:41:40 p.m. - Grabando estado de envío
+09/05/2011 12:41:42 p.m. - No asignado
+09/05/2011 12:41:46 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:41:49 p.m. - Observaciones: 
+09/05/2011 12:42:39 p.m. - ----------- INICIO -----------
+09/05/2011 12:42:39 p.m. - 473546
+09/05/2011 12:42:40 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:42:40 p.m. - Usuario: turinad
+09/05/2011 12:42:40 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:42:40 p.m. - Insertando comprobantes en FE
+09/05/2011 12:42:40 p.m. - Observaciones: 
+09/05/2011 12:42:40 p.m. - Chequeando resultados de FE
+09/05/2011 12:42:40 p.m. - Obtener Comprobantes
+09/05/2011 12:42:40 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:42:40 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:42:40 p.m. - Solicitando Token
+09/05/2011 12:42:40 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:42:40 p.m. - Generando el Login Ticket Request
+09/05/2011 12:42:40 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:42:40 p.m. - ***Leyendo certificado: 
+09/05/2011 12:42:40 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:42:40 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:42:40 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:42:40 p.m. - ***OK mensaje firmado
+09/05/2011 12:42:41 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:42:41 p.m. - Adaptando Formatos
+09/05/2011 12:42:43 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:42:43 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyMDUwNDQwMDU3IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1NTU3NCIgZXhwX3RpbWU9IjEzMDQ5OTg4MzQiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 12:42:43 p.m. - Sign P7b7GiTgoilshyZylsir88P5e4V+4cx03W0E1b8Z/e+x2s1nTP0SQaSal4C08rnSItGnmp8ufAFpTxIRCcCQZ/0k3lKwO5qxitfoUHHFRCiughMjnafVVXYImw9VQcH1qfHpkghVy6qpcfMWvwEHrhiqGobJM3vMrbx2GMtzdCU=
+09/05/2011 12:42:44 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:42:44 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:42:44 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:42:44 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:42:45 p.m. - Comprobante_Aprobado
+09/05/2011 12:42:45 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:42:46 p.m. - Error al convertir una cadena de caracteres en fecha y/u hora.
+09/05/2011 12:42:46 p.m. - Commit Realizado con éxito!!!
+09/05/2011 12:42:46 p.m. - Grabando estado de envío
+09/05/2011 12:42:46 p.m. - Comprobante_Asignado
+09/05/2011 12:42:46 p.m. - Obtención de CAE exitosa
+09/05/2011 12:42:46 p.m. - La operación finalizó correctamente
+09/05/2011 12:42:48 p.m. - Observaciones: 
+09/05/2011 12:53:12 p.m. - ----------- INICIO -----------
+09/05/2011 12:53:12 p.m. - 473549
+09/05/2011 12:53:12 p.m. - CARMOCAL SA                                                                                         
+09/05/2011 12:53:12 p.m. - Usuario: turinad
+09/05/2011 12:53:12 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:53:12 p.m. - Insertando comprobantes en FE
+09/05/2011 12:53:12 p.m. - No se puede insertar el valor NULL en la columna 'ImpIVA', tabla 'FacturaElectronica_Prueba.dbo.comprobantes_ml'. La columna no admite valores NULL. Error de INSERT.
+Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_detalle_tributos_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+Se terminó la instrucción.
+09/05/2011 12:53:12 p.m. - No se puede insertar el valor NULL en la columna 'ImpIVA', tabla 'FacturaElectronica_Prueba.dbo.comprobantes_ml'. La columna no admite valores NULL. Error de INSERT.
+Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_detalle_tributos_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+Se terminó la instrucción.
+09/05/2011 12:53:30 p.m. - ----------- INICIO -----------
+09/05/2011 12:53:30 p.m. - 473548
+09/05/2011 12:53:30 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:53:30 p.m. - Usuario: turinad
+09/05/2011 12:53:30 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:53:31 p.m. - Insertando comprobantes en FE
+09/05/2011 12:53:31 p.m. - Observaciones: 
+09/05/2011 12:53:31 p.m. - Chequeando resultados de FE
+09/05/2011 12:53:31 p.m. - Obtener Comprobantes
+09/05/2011 12:53:31 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:53:31 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:53:31 p.m. - Solicitando Token
+09/05/2011 12:53:31 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:53:31 p.m. - Generando el Login Ticket Request
+09/05/2011 12:53:31 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:53:31 p.m. - ***Leyendo certificado: 
+09/05/2011 12:53:31 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:53:31 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:53:31 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:53:31 p.m. - ***OK mensaje firmado
+09/05/2011 12:53:35 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:53:35 p.m. - Adaptando Formatos
+09/05/2011 12:53:38 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:53:38 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNzMxOTQ4MTg4IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1NjIyOCIgZXhwX3RpbWU9IjEzMDQ5OTk0ODgiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 12:53:38 p.m. - Sign Q3cpiXZWlC25YAhprMLMOSDOtk4zWGzVDvIKD0h3ulGAlbiz47m+p2nMU9KOPu4fn/NQ4FPCug3RnU98SudUsxf6OsLGzkPKTFovJQ1NtlKVwT+YIaaz48m2zXsDWbAvDvxH12wFvpdUnM6OounckdN8eMEQ87tBJmbSUW36XFw=
+09/05/2011 12:53:41 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:53:41 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:53:41 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:53:41 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:53:43 p.m. - Comprobante_Aprobado
+09/05/2011 12:53:43 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:53:43 p.m. - No se puede insertar el valor NULL en la columna 'ImpIVA', tabla 'FacturaElectronica_Prueba.dbo.comprobantes_ml'. La columna no admite valores NULL. Error de INSERT.
+Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_detalle_tributos_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+Se terminó la instrucción.
+09/05/2011 12:53:43 p.m. - Commit Realizado con éxito!!!
+09/05/2011 12:53:43 p.m. - Grabando estado de envío
+09/05/2011 12:53:43 p.m. - Comprobante_Asignado
+09/05/2011 12:53:43 p.m. - Obtención de CAE exitosa
+09/05/2011 12:53:43 p.m. - La operación finalizó correctamente
+09/05/2011 12:53:46 p.m. - Observaciones: 
+09/05/2011 12:56:39 p.m. - ----------- INICIO -----------
+09/05/2011 12:56:39 p.m. - 473549
+09/05/2011 12:56:39 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 12:56:39 p.m. - Usuario: turinad
+09/05/2011 12:56:39 p.m. - Nombre del equipo: PC0071
+09/05/2011 12:56:39 p.m. - Insertando comprobantes en FE
+09/05/2011 12:56:39 p.m. - Observaciones: 
+09/05/2011 12:56:40 p.m. - Chequeando resultados de FE
+09/05/2011 12:56:40 p.m. - Obtener Comprobantes
+09/05/2011 12:56:40 p.m. - Solicitando CAE a AFIP
+09/05/2011 12:56:40 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 12:56:40 p.m. - Solicitando Token
+09/05/2011 12:56:40 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 12:56:40 p.m. - Generando el Login Ticket Request
+09/05/2011 12:56:40 p.m. - Firmando el Login Ticket Request
+09/05/2011 12:56:40 p.m. - ***Leyendo certificado: 
+09/05/2011 12:56:40 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 12:56:40 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 12:56:40 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 12:56:40 p.m. - ***OK mensaje firmado
+09/05/2011 12:56:42 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 12:56:42 p.m. - Adaptando Formatos
+09/05/2011 12:56:44 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 12:56:44 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNjc1NjIwODAwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1NjQxNSIgZXhwX3RpbWU9IjEzMDQ5OTk2NzUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 12:56:44 p.m. - Sign e3CAqqQZ1dzXiUiw8r2IYk6IlCvckjtVoZt0AiWgaNS8XY86f+IlR8i9OyKsH/bHO7CkOYdp7tN3pd9Vz6NOOPs8g6qrqvToGLN6G3Ntx9QmDI2WYipiFDBmrbUYxuySQRaoHfr+T94YCFIq1Cj8HvsGQfnBUCWxIAVP2bJ81V4=
+09/05/2011 12:56:45 p.m. - Lista de Detalle_IVA creada
+09/05/2011 12:56:45 p.m. - Lista de Detalle_tributos creada
+09/05/2011 12:56:45 p.m. - Adaptacion Homologacion Completa
+09/05/2011 12:56:45 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 12:56:48 p.m. - Comprobante_Aprobado
+09/05/2011 12:56:48 p.m. - Actualizando base de datos local y Magma
+09/05/2011 12:56:48 p.m. - No se puede insertar el valor NULL en la columna 'ImpIVA', tabla 'FacturaElectronica_Prueba.dbo.comprobantes_ml'. La columna no admite valores NULL. Error de INSERT.
+Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_detalle_tributos_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+Se terminó la instrucción.
+09/05/2011 12:56:48 p.m. - Commit Realizado con éxito!!!
+09/05/2011 12:56:48 p.m. - Grabando estado de envío
+09/05/2011 12:56:48 p.m. - Comprobante_Asignado
+09/05/2011 12:56:48 p.m. - Obtención de CAE exitosa
+09/05/2011 12:56:48 p.m. - La operación finalizó correctamente
+09/05/2011 12:56:50 p.m. - Observaciones: 
+09/05/2011 01:16:26 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:16:37 p.m. - ----------- INICIO -----------
+09/05/2011 01:16:37 p.m. - 473551
+09/05/2011 01:16:37 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 01:16:37 p.m. - Usuario: turinad
+09/05/2011 01:16:37 p.m. - Nombre del equipo: PC0071
+09/05/2011 01:16:37 p.m. - Insertando comprobantes en FE
+09/05/2011 01:16:37 p.m. - Observaciones: 
+09/05/2011 01:16:37 p.m. - Chequeando resultados de FE
+09/05/2011 01:16:37 p.m. - Obtener Comprobantes
+09/05/2011 01:16:37 p.m. - Solicitando CAE a AFIP
+09/05/2011 01:16:37 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 01:16:37 p.m. - Solicitando Token
+09/05/2011 01:16:37 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 01:16:37 p.m. - Generando el Login Ticket Request
+09/05/2011 01:16:37 p.m. - Firmando el Login Ticket Request
+09/05/2011 01:16:37 p.m. - ***Leyendo certificado: 
+09/05/2011 01:16:37 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 01:16:37 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 01:16:38 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 01:16:38 p.m. - ***OK mensaje firmado
+09/05/2011 01:16:42 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 01:16:42 p.m. - Adaptando Formatos
+09/05/2011 01:16:45 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 01:16:45 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzNzk4MzA3MzI4IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk1NzYyNyIgZXhwX3RpbWU9IjEzMDUwMDA4ODciIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 01:16:45 p.m. - Sign KkHeKPZkolEuhKEayDCYJV5V5ty5cXJ7CTMhKej89vLhvZu/AK3m37IzknyUrLYaMB/uWmhb/Q8z21x+F5pv3eqxmVgyYry9XeYQ3E13uHFT08cNnuRfW4Sy2K21MKiFmYIPV/Oi1COP1pBXfRsoD5cbVDqDY+fIOZwcFxdkmTw=
+09/05/2011 01:16:46 p.m. - Lista de Detalle_IVA creada
+09/05/2011 01:16:46 p.m. - Lista de Detalle_tributos creada
+09/05/2011 01:16:46 p.m. - Adaptacion Homologacion Completa
+09/05/2011 01:16:46 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 01:16:48 p.m. - Comprobante_Aprobado
+09/05/2011 01:16:48 p.m. - Actualizando base de datos local y Magma
+09/05/2011 01:16:48 p.m. - Commit Realizado con éxito!!!
+09/05/2011 01:16:48 p.m. - Grabando estado de envío
+09/05/2011 01:16:48 p.m. - Comprobante_Asignado
+09/05/2011 01:16:48 p.m. - Obtención de CAE exitosa
+09/05/2011 01:16:48 p.m. - La operación finalizó correctamente
+09/05/2011 01:16:50 p.m. - Observaciones: 
+09/05/2011 01:24:18 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:25:53 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:29:21 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:29:22 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:29:22 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:29:30 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:29:30 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:30:13 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:30:16 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:30:41 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:30:45 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:32:22 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:35:09 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:36:08 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:37:55 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:40:09 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:40:14 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:40:41 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:40:41 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:40:51 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:40:51 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:41:19 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:41:20 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:41:22 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:42:10 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 01:42:13 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:42:15 p.m. - No existen Solicitudes a Enviar
+09/05/2011 01:42:39 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 02:40:46 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 02:49:12 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 02:49:20 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 02:57:23 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:17:13 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:20:53 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:21:00 p.m. - ----------- INICIO -----------
+09/05/2011 03:21:00 p.m. - 473535
+09/05/2011 03:21:00 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 03:21:00 p.m. - Usuario: turinad
+09/05/2011 03:21:00 p.m. - Nombre del equipo: PC0071
+09/05/2011 03:21:00 p.m. - Insertando comprobantes en FE
+09/05/2011 03:21:00 p.m. - Observaciones: 
+09/05/2011 03:21:00 p.m. - Chequeando resultados de FE
+09/05/2011 03:21:00 p.m. - Obtener Comprobantes
+09/05/2011 03:21:00 p.m. - Solicitando CAE a AFIP
+09/05/2011 03:21:00 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 03:21:00 p.m. - Solicitando Token
+09/05/2011 03:21:00 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 03:21:00 p.m. - Generando el Login Ticket Request
+09/05/2011 03:21:00 p.m. - Firmando el Login Ticket Request
+09/05/2011 03:21:00 p.m. - ***Leyendo certificado: 
+09/05/2011 03:21:00 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 03:21:01 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 03:21:01 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 03:21:01 p.m. - ***OK mensaje firmado
+09/05/2011 03:21:09 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 03:21:09 p.m. - Adaptando Formatos
+09/05/2011 03:21:09 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 03:21:09 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNDkzODMxNjcyIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk2NTA5NyIgZXhwX3RpbWU9IjEzMDUwMDgzNTciIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 03:21:09 p.m. - Sign QwpBSHqwEBZ3zoi/EY1d+Uy/ftzeNbg/m6Xw0+wYBhwS4dF/vuKB0hbexd9Rih0mLOTFdySStoZiu4X3g+jF1vRN9NAHn6tG2zUdlPs+VhcfWJkl/hBXj5wztDsH8rf0BFhB5plWBhX04ZiWb8iX0ivBnWWCoMy1oNe0c45O3p0=
+09/05/2011 03:21:13 p.m. - Lista de Detalle_IVA creada
+09/05/2011 03:21:13 p.m. - Lista de Detalle_tributos creada
+09/05/2011 03:21:13 p.m. - Adaptacion Homologacion Completa
+09/05/2011 03:21:13 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 03:21:13 p.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 03:21:19 p.m. - Actualizando datos del comprobante
+09/05/2011 03:21:19 p.m. - Error del comprobante
+09/05/2011 03:21:19 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto. 
+09/05/2011 03:21:21 p.m. - Observaciones: 
+09/05/2011 03:21:21 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto.
+09/05/2011 03:34:39 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:37:01 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:37:29 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:37:32 p.m. - ----------- INICIO -----------
+09/05/2011 03:37:32 p.m. - 473553
+09/05/2011 03:37:32 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+09/05/2011 03:37:32 p.m. - Usuario: turinad
+09/05/2011 03:37:32 p.m. - Nombre del equipo: PC0071
+09/05/2011 03:37:32 p.m. - Insertando comprobantes en FE
+09/05/2011 03:37:33 p.m. - Observaciones: 
+09/05/2011 03:37:33 p.m. - Chequeando resultados de FE
+09/05/2011 03:37:33 p.m. - Obtener Comprobantes
+09/05/2011 03:37:33 p.m. - Solicitando CAE a AFIP
+09/05/2011 03:37:33 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 03:37:33 p.m. - Solicitando Token
+09/05/2011 03:37:33 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 03:37:33 p.m. - Generando el Login Ticket Request
+09/05/2011 03:37:33 p.m. - Firmando el Login Ticket Request
+09/05/2011 03:37:33 p.m. - ***Leyendo certificado: 
+09/05/2011 03:37:33 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 03:37:33 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 03:37:33 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 03:37:33 p.m. - ***OK mensaje firmado
+09/05/2011 03:37:37 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 03:37:37 p.m. - Adaptando Formatos
+09/05/2011 03:37:37 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 03:37:37 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzMjY3NzU1ODY2IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk2NjA4NSIgZXhwX3RpbWU9IjEzMDUwMDkzNDUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 03:37:37 p.m. - Sign O6MALFS0y2rBNDJaNi1DFcRdFy3NMMtL3bSZVryl0VBa+tr46YqR7Oz0HFrjz/d2UvYIIKcap4u/LTS2xuCdqFAoYpsF6uD4poAKwiKQgCaJG6tDpMkAUKFAet3lKTmO3jn3j10oeRstjXq0WQgnk2XPHmbKk7nUAwSOlyH++Rw=
+09/05/2011 03:37:38 p.m. - Lista de Detalle_IVA creada
+09/05/2011 03:37:38 p.m. - Lista de Detalle_tributos creada
+09/05/2011 03:37:38 p.m. - Adaptacion Homologacion Completa
+09/05/2011 03:37:38 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 03:37:39 p.m. - Comprobante_Aprobado
+09/05/2011 03:37:39 p.m. - Actualizando base de datos local y Magma
+09/05/2011 03:37:40 p.m. - Commit Realizado con éxito!!!
+09/05/2011 03:37:40 p.m. - Grabando estado de envío
+09/05/2011 03:37:40 p.m. - Comprobante_Asignado
+09/05/2011 03:37:40 p.m. - Obtención de CAE exitosa
+09/05/2011 03:37:40 p.m. - La operación finalizó correctamente
+09/05/2011 03:37:47 p.m. - Observaciones: 
+09/05/2011 03:46:43 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:46:47 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:46:51 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:46:55 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:46:59 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:47:02 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:47:43 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:48:52 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:48:55 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:48:58 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:49:10 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:49:16 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:49:58 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:49:58 p.m. - No existen Solicitudes a Enviar
+09/05/2011 03:50:00 p.m. - No existen Solicitudes a Enviar
+09/05/2011 03:50:03 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:50:05 p.m. - No existen Solicitudes a Enviar
+09/05/2011 03:50:06 p.m. - No existen Solicitudes a Enviar
+09/05/2011 03:50:09 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 03:50:09 p.m. - No existen Solicitudes a Enviar
+09/05/2011 03:50:11 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:03:20 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 04:06:56 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 04:07:03 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:12:37 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 04:12:42 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:13:02 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:13:26 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:13:44 p.m. - No existen Solicitudes a Enviar
+09/05/2011 04:19:07 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 04:20:00 p.m. - ----------- INICIO -----------
+09/05/2011 04:20:01 p.m. - 492629
+09/05/2011 04:20:01 p.m. - TOREDO SA                                                                                           
+09/05/2011 04:20:01 p.m. - Usuario: turinad
+09/05/2011 04:20:02 p.m. - Nombre del equipo: PC0071
+09/05/2011 04:20:05 p.m. - Insertando comprobantes en FE
+09/05/2011 04:20:16 p.m. - Observaciones: 
+09/05/2011 04:20:20 p.m. - Chequeando resultados de FE
+09/05/2011 04:20:27 p.m. - Obtener Comprobantes
+09/05/2011 04:20:35 p.m. - Solicitando CAE a AFIP
+09/05/2011 04:20:47 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 04:20:47 p.m. - Solicitando Token
+09/05/2011 04:20:47 p.m. - Modo de operacion: 'Produccion'
+09/05/2011 04:20:47 p.m. - Generando el Login Ticket Request
+09/05/2011 04:20:47 p.m. - Firmando el Login Ticket Request
+09/05/2011 04:20:47 p.m. - ***Leyendo certificado: 
+09/05/2011 04:20:48 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 04:20:48 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 04:20:48 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 04:20:48 p.m. - ***OK mensaje firmado
+09/05/2011 04:20:53 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 04:20:53 p.m. - no se puede obtener el ticket de acceso
+09/05/2011 04:21:06 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 04:21:06 p.m. - Solicitando Token
+09/05/2011 04:21:10 p.m. - Modo de operacion: 'Produccion'
+09/05/2011 04:21:13 p.m. - Generando el Login Ticket Request
+09/05/2011 04:21:13 p.m. - Firmando el Login Ticket Request
+09/05/2011 04:21:13 p.m. - ***Leyendo certificado: 
+09/05/2011 04:21:13 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 04:21:13 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 04:21:13 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 04:21:13 p.m. - ***OK mensaje firmado
+09/05/2011 04:21:15 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 04:21:53 p.m. - Generando el Login Ticket Request
+09/05/2011 04:22:07 p.m. - Firmando el Login Ticket Request
+09/05/2011 04:22:10 p.m. - ***Leyendo certificado: 
+09/05/2011 04:22:12 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 04:22:12 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 04:22:16 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 04:22:16 p.m. - ***OK mensaje firmado
+09/05/2011 04:22:44 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 04:23:46 p.m. - Adaptando Formatos
+09/05/2011 04:23:49 p.m. - Adaptando formato Afip - Producción
+09/05/2011 04:23:49 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIzMjM0NDcwMjA2IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA0OTY4NzgzIiBleHBfdGltZT0iMTMwNTAxMjA0MyIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+09/05/2011 04:23:49 p.m. - Sign lsoNNAe+XleciYSGlVVCW1k9YgYNpvPRy7jKwKWkOoAkmh6Fe/izkKCcxBe6CXPmT1rk7jlPbkM7th0qI/LHPbHLckuh3ixJ1f91ELFwkn0gX7uodDa363ps9zeHujlzVkEaAjj3un7L/80Ap7qH2U2Z6e0v3/6zIdyo9j4DXxM=
+09/05/2011 04:23:53 p.m. - Lista de Detalle_IVA creada
+09/05/2011 04:23:53 p.m. - Lista de Detalle_tributo creada
+09/05/2011 04:23:53 p.m. - Adaptación Produccion Completa
+09/05/2011 04:23:53 p.m. - Estableciendo comunicación con AFIP
+09/05/2011 04:23:53 p.m. - Observaciones insertadas correctamente en TABLA
+09/05/2011 04:23:53 p.m. - Actualizando datos del comprobante
+09/05/2011 04:37:00 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 05:02:46 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 05:17:41 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 05:17:46 p.m. - ----------- INICIO -----------
+09/05/2011 05:17:46 p.m. - 492629
+09/05/2011 05:17:46 p.m. - TOREDO SA                                                                                           
+09/05/2011 05:17:46 p.m. - Usuario: turinad
+09/05/2011 05:17:46 p.m. - Nombre del equipo: PC0071
+09/05/2011 05:17:46 p.m. - Insertando comprobantes en FE
+09/05/2011 05:17:46 p.m. - Observaciones: 
+09/05/2011 05:17:46 p.m. - Chequeando resultados de FE
+09/05/2011 05:17:46 p.m. - Obtener Comprobantes
+09/05/2011 05:17:46 p.m. - Solicitando CAE a AFIP
+09/05/2011 05:17:46 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 05:17:46 p.m. - Solicitando Token
+09/05/2011 05:17:46 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 05:17:46 p.m. - Generando el Login Ticket Request
+09/05/2011 05:17:46 p.m. - Firmando el Login Ticket Request
+09/05/2011 05:17:46 p.m. - ***Leyendo certificado: 
+09/05/2011 05:17:46 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 05:17:47 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 05:17:47 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 05:17:47 p.m. - ***OK mensaje firmado
+09/05/2011 05:17:55 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 05:30:21 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 05:30:24 p.m. - ----------- INICIO -----------
+09/05/2011 05:30:24 p.m. - 492629
+09/05/2011 05:30:24 p.m. - TOREDO SA                                                                                           
+09/05/2011 05:30:24 p.m. - Usuario: turinad
+09/05/2011 05:30:24 p.m. - Nombre del equipo: PC0071
+09/05/2011 05:30:24 p.m. - Insertando comprobantes en FE
+09/05/2011 05:30:24 p.m. - Observaciones: 
+09/05/2011 05:30:24 p.m. - Chequeando resultados de FE
+09/05/2011 05:30:24 p.m. - Obtener Comprobantes
+09/05/2011 05:30:24 p.m. - Solicitando CAE a AFIP
+09/05/2011 05:30:24 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 05:30:24 p.m. - Solicitando Token
+09/05/2011 05:30:24 p.m. - Modo de operacion: 'Homologacion'
+09/05/2011 05:30:24 p.m. - Generando el Login Ticket Request
+09/05/2011 05:30:24 p.m. - Firmando el Login Ticket Request
+09/05/2011 05:30:24 p.m. - ***Leyendo certificado: 
+09/05/2011 05:30:24 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 05:30:24 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 05:30:24 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 05:30:24 p.m. - ***OK mensaje firmado
+09/05/2011 05:30:28 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 05:30:28 p.m. - Adaptando Formatos
+09/05/2011 05:30:28 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 05:30:28 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyNzA1NTQ2MTE1IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk3Mjg0NiIgZXhwX3RpbWU9IjEzMDUwMTYxMDYiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 05:30:28 p.m. - Sign XMQ1KtKgdG97ch3677qV8FzL8SNqiPAcf8BcKuEx+DHeU1gzuTDNbpym+FyUTtBhqNz6o/m85ts+kQ0kMARv4oxtrcouQbzmpZA6VkMYF9dTachYawepGDvaOBOV06kNc9LfGRt3iVVf1TaVQvXVHuNE8ufpUTrEEEH2GRLHWBc=
+09/05/2011 05:30:29 p.m. - Lista de Detalle_IVA creada
+09/05/2011 05:30:29 p.m. - Lista de Detalle_tributos creada
+09/05/2011 05:30:29 p.m. - Adaptacion Homologacion Completa
+09/05/2011 05:32:35 p.m. - Generando el Login Ticket Request
+09/05/2011 05:33:08 p.m. - Firmando el Login Ticket Request
+09/05/2011 05:33:23 p.m. - ***Leyendo certificado: 
+09/05/2011 05:33:33 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 05:33:33 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 05:33:37 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 05:33:37 p.m. - ***OK mensaje firmado
+09/05/2011 05:34:43 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 05:35:27 p.m. - Adaptando Formatos
+09/05/2011 05:35:49 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 05:35:49 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyOTE5Nzg2Mzg3IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk3MzA4OSIgZXhwX3RpbWU9IjEzMDUwMTYzNDkiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 05:35:49 p.m. - Sign qJnqI1Hy1TipsggdRgNoDFvqgOmaFHgGm6k5AYH+2l5JKO/6a3g5wq9ldch8KrWphxu2ps58mNkvXnWo9E8QSUjZZLoKS0W3DL5R5Ylx45xHoChJiWh13tbG+0C/K5ZC6Saaky4jep1HHHqVsopwMm0e+ZFRP0D53FAU+8/1fEQ=
+09/05/2011 05:35:49 p.m. - Lista de Detalle_IVA creada
+09/05/2011 05:35:49 p.m. - Lista de Detalle_tributos creada
+09/05/2011 05:35:49 p.m. - Adaptacion Homologacion Completa
+09/05/2011 05:37:39 p.m. - Adaptando formato Afip - Homologacion
+09/05/2011 05:37:44 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyOTE5Nzg2Mzg3IiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNDk3MzA4OSIgZXhwX3RpbWU9IjEzMDUwMTYzNDkiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+09/05/2011 05:37:45 p.m. - Sign qJnqI1Hy1TipsggdRgNoDFvqgOmaFHgGm6k5AYH+2l5JKO/6a3g5wq9ldch8KrWphxu2ps58mNkvXnWo9E8QSUjZZLoKS0W3DL5R5Ylx45xHoChJiWh13tbG+0C/K5ZC6Saaky4jep1HHHqVsopwMm0e+ZFRP0D53FAU+8/1fEQ=
+09/05/2011 05:40:45 p.m. - Error al cerrar el data reader de SQL
+09/05/2011 05:40:48 p.m. - ----------- INICIO -----------
+09/05/2011 05:40:49 p.m. - 492629
+09/05/2011 05:40:49 p.m. - TOREDO SA                                                                                           
+09/05/2011 05:40:49 p.m. - Usuario: turinad
+09/05/2011 05:40:49 p.m. - Nombre del equipo: PC0071
+09/05/2011 05:40:49 p.m. - Insertando comprobantes en FE
+09/05/2011 05:40:49 p.m. - Observaciones: 
+09/05/2011 05:40:49 p.m. - Chequeando resultados de FE
+09/05/2011 05:40:49 p.m. - Obtener Comprobantes
+09/05/2011 05:40:49 p.m. - Solicitando CAE a AFIP
+09/05/2011 05:40:49 p.m. - No existen registros para procesar en comprobantes ASOC
+09/05/2011 05:40:49 p.m. - Solicitando Token
+09/05/2011 05:41:16 p.m. - Generando el Login Ticket Request
+09/05/2011 05:41:16 p.m. - Firmando el Login Ticket Request
+09/05/2011 05:41:16 p.m. - ***Leyendo certificado: 
+09/05/2011 05:41:16 p.m. - ***Certificados disponibles en el repositorio:My
+09/05/2011 05:41:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+09/05/2011 05:41:17 p.m. - ***Firmando bytes del mensaje...
+09/05/2011 05:41:17 p.m. - ***OK mensaje firmado
+09/05/2011 05:41:23 p.m. - Analizando el Ticket Response recibido del WSAA
+09/05/2011 05:42:10 p.m. - Adaptando formato Afip - Producción
+09/05/2011 05:42:11 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIxMTc3NTk5NzM3IiBzcmM9IkNOPXdzYWEsIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA0OTczNTAwIiBleHBfdGltZT0iMTMwNTAxNjc2MCIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmUgZm9uc2VjYSBzLmEuLCBTRVJJQUxOVU1CRVI9Q1VJVCAzMDU1OTY5Nzg1NywgQ049cmljYXJkbyBiYWRhbm8iIHNlcnZpY2U9IndzZmUiIHJlZ21ldGhvZD0iMjIiIGVudGl0eT0iMzM2OTM0NTAyMzkiIGF1dGhtZXRob2Q9ImNtcyI+CiAgICAgICAgICAgIDxyZWxhdGlvbnM+CiAgICAgICAgICAgICAgICA8cmVsYXRpb24gcmVsdHlwZT0iNCIga2V5PSIzMDU1OTY5Nzg1NyIvPgogICAgICAgICAgICA8L3JlbGF0aW9ucz4KICAgICAgICA8L2xvZ2luPgogICAgPC9vcGVyYXRpb24+Cjwvc3NvPgoK
+09/05/2011 05:42:11 p.m. - Sign KFHUTjfwevtt4RuzvOWIzRXeyPRBqR0wcVzgTbj2j15xBfODU6wiEkhV+3l7Vc/8nQtyMITzRMLLcuKOUnV9ikg92YAT3sNrGo3AACZF/iTujoFrm0g340Lqw47RrmRlA+yPnkjtxFfWN2g6trMP4uzXtnEbCSFo4diXAuUShp0=
+09/05/2011 06:01:25 p.m. - Error al cerrar el data reader de SQL

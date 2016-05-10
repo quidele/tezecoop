@@ -1,0 +1,28 @@
+19/10/2011 16:50:23 - Error al cerrar el data reader de SQL
+19/10/2011 16:50:33 - ----------- INICIO -----------
+19/10/2011 16:50:36 - Buscando archivo: TA_PROD_ML_19-10-2011.xml
+19/10/2011 16:50:36 - El archivo buscado no existe o no se encuentra.
+19/10/2011 16:50:41 - Dirección https://servicios1.afip.gov.ar/wsfex/service.asmx?WSDL lanzada correctamente.
+19/10/2011 16:50:41 - Generando el Login Ticket Request
+19/10/2011 16:50:41 - Firmando el Login Ticket Request
+19/10/2011 16:50:41 - ***Leyendo certificado: 
+19/10/2011 16:50:41 - ***Certificados disponibles en el repositorio:My
+19/10/2011 16:50:41 - ubico el certificado y lo devuelvo, salimos de la funcion 
+19/10/2011 16:50:41 - ***Firmando bytes del mensaje...
+19/10/2011 16:50:41 - ***OK mensaje firmado
+19/10/2011 16:50:52 - Analizando el Ticket Response recibido del WSAA
+19/10/2011 16:50:52 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_2-8-2011.xml
+19/10/2011 16:50:52 - Eliminando archivo: C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version2.0\factuElectroML\bin\Debug\TA_PROD_ML_3-10-2011.xml
+19/10/2011 16:50:52 - Finalizada correctamente la creación del archivo XML TA_PROD_ML_19-10-2011.xml con Sign y Token.
+19/10/2011 16:51:27 - ----------- INICIO -----------
+19/10/2011 16:51:27 - Buscando archivo: TA_PROD_ML_19-10-2011.xml
+19/10/2011 16:51:27 - Token y Sign leidos correctamente
+19/10/2011 16:52:44 - ----------- INICIO -----------
+19/10/2011 16:52:44 - Buscando archivo: TA_PROD_ML_19-10-2011.xml
+19/10/2011 16:52:44 - Token y Sign leidos correctamente
+19/10/2011 16:52:52 - ----------- INICIO -----------
+19/10/2011 16:52:52 - Buscando archivo: TA_PROD_ML_19-10-2011.xml
+19/10/2011 16:52:52 - Token y Sign leidos correctamente
+19/10/2011 16:53:18 - ----------- INICIO -----------
+19/10/2011 16:53:18 - Buscando archivo: TA_PROD_ML_19-10-2011.xml
+19/10/2011 16:53:18 - Token y Sign leidos correctamente

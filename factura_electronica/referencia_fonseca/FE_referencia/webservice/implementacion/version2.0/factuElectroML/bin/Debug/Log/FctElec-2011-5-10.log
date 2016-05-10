@@ -1,0 +1,191 @@
+10/05/2011 09:14:02 a.m. - Error al cerrar el data reader de SQL
+10/05/2011 11:39:36 a.m. - Error al cerrar el data reader de SQL
+10/05/2011 11:39:54 a.m. - ----------- INICIO -----------
+10/05/2011 11:39:54 a.m. - 473535
+10/05/2011 11:39:54 a.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+10/05/2011 11:39:54 a.m. - Usuario: turinad
+10/05/2011 11:39:54 a.m. - Nombre del equipo: PC0071
+10/05/2011 11:39:54 a.m. - Insertando comprobantes en FE
+10/05/2011 11:39:54 a.m. - Observaciones: 
+10/05/2011 11:39:54 a.m. - Chequeando resultados de FE
+10/05/2011 11:39:54 a.m. - Obtener Comprobantes
+10/05/2011 11:39:54 a.m. - Solicitando CAE a AFIP
+10/05/2011 11:39:54 a.m. - No existen registros para procesar en comprobantes ASOC
+10/05/2011 11:39:54 a.m. - Solicitando Token
+10/05/2011 11:39:57 a.m. - Modo de operacion: 'Homologacion'
+10/05/2011 11:39:57 a.m. - Generando el Login Ticket Request
+10/05/2011 11:39:57 a.m. - Firmando el Login Ticket Request
+10/05/2011 11:39:57 a.m. - ***Leyendo certificado: 
+10/05/2011 11:39:57 a.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 11:39:57 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 11:39:57 a.m. - ***Firmando bytes del mensaje...
+10/05/2011 11:39:58 a.m. - ***OK mensaje firmado
+10/05/2011 11:40:04 a.m. - Analizando el Ticket Response recibido del WSAA
+10/05/2011 11:40:04 a.m. - Adaptando Formatos
+10/05/2011 11:40:14 a.m. - Adaptando formato Afip - Homologacion
+10/05/2011 11:40:14 a.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSIyOTQxNDUwNDcwIiBzcmM9IkNOPXdzYWFob21vLCBPPUFGSVAsIEM9QVIsIFNFUklBTE5VTUJFUj1DVUlUIDMzNjkzNDUwMjM5IiBnZW5fdGltZT0iMTMwNTAzODIxNSIgZXhwX3RpbWU9IjEzMDUwODE0NzUiIGRzdD0iQ049d3NmZSwgTz1BRklQLCBDPUFSIi8+CiAgICA8b3BlcmF0aW9uIHZhbHVlPSJncmFudGVkIiB0eXBlPSJsb2dpbiI+CiAgICAgICAgPGxvZ2luIHVpZD0iQz1hciwgTz1jdXJ0aWVtYnJlcyBmb25zZWNhIHMuYS4sIFNFUklBTE5VTUJFUj1DVUlUIDMwNTU5Njk3ODU3LCBDTj1ldWxpc2VzIHF1aWRlbCIgc2VydmljZT0id3NmZSIgcmVnbWV0aG9kPSIyMiIgZW50aXR5PSIzMzY5MzQ1MDIzOSIgYXV0aG1ldGhvZD0iY21zIj4KICAgICAgICAgICAgPHJlbGF0aW9ucz4KICAgICAgICAgICAgICAgIDxyZWxhdGlvbiByZWx0eXBlPSI0IiBrZXk9IjMwNTU5Njk3ODU3Ii8+CiAgICAgICAgICAgIDwvcmVsYXRpb25zPgogICAgICAgIDwvbG9naW4+CiAgICA8L29wZXJhdGlvbj4KPC9zc28+Cgo=
+10/05/2011 11:40:14 a.m. - Sign PaXVm96nejFRsNjATOQ3ZHQVQ7f7Ab1y2MEvfPGDLNQEiZmtarHYIFC12QKks5n595N90OuMx7qamXkiBCz1ENvD7j1zGTSem/6bJvFaSJ9Iy3hbLIsO8uc//mV9aFzO0heSpE032sM4Tuh6A2zmyP6KD4Vjk2w4NCVQ5BkGXCs=
+10/05/2011 11:40:18 a.m. - Último Nro de Comprobante en AFIP (Homo): 109
+10/05/2011 11:40:18 a.m. - Lista de Detalle_IVA creada
+10/05/2011 11:40:18 a.m. - Lista de Detalle_tributos creada
+10/05/2011 11:40:18 a.m. - Adaptacion Homologacion Completa
+10/05/2011 11:40:21 a.m. - Estableciendo comunicación con AFIP
+10/05/2011 11:40:23 a.m. - Observaciones insertadas correctamente en TABLA
+10/05/2011 11:40:23 a.m. - Actualizando datos del comprobante
+10/05/2011 11:40:23 a.m. - Error del comprobante
+10/05/2011 11:40:23 a.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto. 
+10/05/2011 11:40:27 a.m. - Observaciones: 
+10/05/2011 11:40:27 a.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto.
+10/05/2011 03:15:22 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:15:39 p.m. - ----------- INICIO -----------
+10/05/2011 03:15:39 p.m. - 473538
+10/05/2011 03:15:39 p.m. - 473538
+10/05/2011 03:15:39 p.m. - Usuario: turinad
+10/05/2011 03:15:39 p.m. - Nombre del equipo: PC0071
+10/05/2011 03:15:39 p.m. - Insertando comprobantes en FE
+10/05/2011 03:15:41 p.m. - Observaciones: 
+10/05/2011 03:15:41 p.m. - Chequeando resultados de FE
+10/05/2011 03:15:41 p.m. - Obtener Comprobantes
+10/05/2011 03:15:41 p.m. - Solicitando CAE a AFIP
+10/05/2011 03:15:41 p.m. - No existen registros para procesar en v_cmpasociados_EX
+10/05/2011 03:15:41 p.m. - Sintaxis incorrecta cerca de la palabra clave 'FROM'.
+10/05/2011 03:16:24 p.m. - No existen registros para procesar en v_Items_EX
+10/05/2011 03:16:24 p.m. - Sintaxis incorrecta cerca de la palabra clave 'FROM'.
+10/05/2011 03:17:11 p.m. - Solicitando Token
+10/05/2011 03:17:13 p.m. - Modo de operacion: 'Homologacion'
+10/05/2011 03:17:16 p.m. - Generando el Login Ticket Request
+10/05/2011 03:17:16 p.m. - Firmando el Login Ticket Request
+10/05/2011 03:17:16 p.m. - ***Leyendo certificado: 
+10/05/2011 03:17:16 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 03:17:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 03:17:16 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 03:17:16 p.m. - ***OK mensaje firmado
+10/05/2011 03:17:20 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 03:18:08 p.m. - Generando el Login Ticket Request
+10/05/2011 03:18:08 p.m. - Firmando el Login Ticket Request
+10/05/2011 03:18:08 p.m. - ***Leyendo certificado: 
+10/05/2011 03:18:08 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 03:18:08 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 03:18:08 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 03:18:08 p.m. - ***OK mensaje firmado
+10/05/2011 03:18:08 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 03:18:12 p.m. - Generando el Login Ticket Request
+10/05/2011 03:18:12 p.m. - Firmando el Login Ticket Request
+10/05/2011 03:18:12 p.m. - ***Leyendo certificado: 
+10/05/2011 03:18:12 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 03:18:12 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 03:18:12 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 03:18:12 p.m. - ***OK mensaje firmado
+10/05/2011 03:18:13 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 03:18:16 p.m. - Generando el Login Ticket Request
+10/05/2011 03:18:16 p.m. - Firmando el Login Ticket Request
+10/05/2011 03:18:16 p.m. - ***Leyendo certificado: 
+10/05/2011 03:18:16 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 03:18:16 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 03:18:16 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 03:18:16 p.m. - ***OK mensaje firmado
+10/05/2011 03:18:16 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 03:18:51 p.m. - Generando el Login Ticket Request
+10/05/2011 03:18:51 p.m. - Firmando el Login Ticket Request
+10/05/2011 03:18:51 p.m. - ***Leyendo certificado: 
+10/05/2011 03:18:51 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 03:18:51 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 03:18:51 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 03:18:51 p.m. - ***OK mensaje firmado
+10/05/2011 03:18:52 p.m. - Analizando el Ticket Response recibido del WSAA
+10/05/2011 03:19:01 p.m. - Adaptando Formatos a AFIP
+10/05/2011 03:19:25 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:19:57 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:20:29 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:33:23 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:33:58 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:34:15 p.m. - Adaptando formato Afip - Homologacion - EX
+10/05/2011 03:36:27 p.m. - Lista de PermisosDestino creada
+10/05/2011 03:36:30 p.m. - Adaptacion Homologacion Completa
+10/05/2011 03:36:45 p.m. - Estableciendo comunicación con AFIP
+10/05/2011 03:40:37 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+10/05/2011 03:40:41 p.m. - Actualizando base de datos local y Magma
+10/05/2011 03:40:44 p.m. - Sintaxis incorrecta cerca de la palabra clave 'FROM'.
+10/05/2011 03:40:46 p.m. - Commit Realizado con éxito!!!
+10/05/2011 03:40:47 p.m. - Grabando estado de envío
+10/05/2011 03:40:48 p.m. - Comprobante_Asignado
+10/05/2011 03:40:52 p.m. - Obtención de CAE exitosa
+10/05/2011 03:49:34 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:50:03 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:51:14 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:54:50 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:58:55 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:59:13 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 03:59:32 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:02:36 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:05:41 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:06:24 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:06:43 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:11:12 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:11:57 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:12:25 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:16:28 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:20:49 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:21:19 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:25:18 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:25:44 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:26:03 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:26:22 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:26:35 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:28:55 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:31:42 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:32:26 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:33:16 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:35:29 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 04:39:46 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 05:00:37 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 05:04:44 p.m. - Generando el Login Ticket Request
+10/05/2011 05:04:44 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:04:44 p.m. - ***Leyendo certificado: 
+10/05/2011 05:04:44 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:04:44 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:04:44 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:04:44 p.m. - ***OK mensaje firmado
+10/05/2011 05:04:49 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 05:04:58 p.m. - Generando el Login Ticket Request
+10/05/2011 05:04:58 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:04:58 p.m. - ***Leyendo certificado: 
+10/05/2011 05:04:58 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:04:58 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:04:58 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:04:58 p.m. - ***OK mensaje firmado
+10/05/2011 05:04:58 p.m. - No había ningún extremo escuchando en https://wsaahomo.afip.gov.ar/ws/services/LoginCms que pudiera aceptar el mensaje. La causa suele ser una dirección o una acción SOAP incorrecta. Consulte InnerException, si está presente, para obtener más información.
+10/05/2011 05:05:39 p.m. - Generando el Login Ticket Request
+10/05/2011 05:05:39 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:05:39 p.m. - ***Leyendo certificado: 
+10/05/2011 05:05:40 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:05:40 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:05:40 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:05:40 p.m. - ***OK mensaje firmado
+10/05/2011 05:05:41 p.m. - Analizando el Ticket Response recibido del WSAA
+10/05/2011 05:36:38 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 05:37:04 p.m. - Generando el Login Ticket Request
+10/05/2011 05:37:04 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:37:04 p.m. - ***Leyendo certificado: 
+10/05/2011 05:37:04 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:37:04 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:37:05 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:37:05 p.m. - ***OK mensaje firmado
+10/05/2011 05:37:09 p.m. - Analizando el Ticket Response recibido del WSAA
+10/05/2011 05:43:26 p.m. - Error al cerrar el data reader de SQL
+10/05/2011 05:43:52 p.m. - Generando el Login Ticket Request
+10/05/2011 05:43:52 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:43:52 p.m. - ***Leyendo certificado: 
+10/05/2011 05:43:52 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:43:52 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:43:52 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:43:52 p.m. - ***OK mensaje firmado
+10/05/2011 05:43:56 p.m. - Analizando el Ticket Response recibido del WSAA
+10/05/2011 05:45:03 p.m. - Generando el Login Ticket Request
+10/05/2011 05:45:03 p.m. - Firmando el Login Ticket Request
+10/05/2011 05:45:03 p.m. - ***Leyendo certificado: 
+10/05/2011 05:45:03 p.m. - ***Certificados disponibles en el repositorio:My
+10/05/2011 05:45:03 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+10/05/2011 05:45:03 p.m. - ***Firmando bytes del mensaje...
+10/05/2011 05:45:04 p.m. - ***OK mensaje firmado
+10/05/2011 05:45:05 p.m. - Analizando el Ticket Response recibido del WSAA

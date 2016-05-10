@@ -1,0 +1,19 @@
+﻿<?xml version="1.0"?>
+<doc>
+<assembly>
+<name>
+FACTUPLUS_Recep
+</name>
+</assembly>
+<members>
+<member name="M:WindowsApplication1.RegionalUtils._IntegerToWords(System.Int64)">
+	<summary> 
+ Retorna un string representando el número argNumero en palabras.
+ </summary>
+</member><member name="M:WindowsApplication1.RegionalUtils._EnteroAPalabras(System.Int64)">
+	<summary>
+ Retorna un string representando el número argNumero en palabras.
+ </summary>
+</member>
+</members>
+</doc>

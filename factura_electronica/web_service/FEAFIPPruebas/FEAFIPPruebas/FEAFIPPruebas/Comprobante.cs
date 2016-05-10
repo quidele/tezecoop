@@ -6,7 +6,8 @@ using System.Threading.Tasks;
 
 namespace FEAFIPPruebas
 {
-    public class Comprobante
+    public class Comprobante 
     {
+
     }
 }

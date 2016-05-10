@@ -24,14 +24,14 @@ namespace FEAFIPPruebas
         static int Main(string[] args)
         {
 
-            Ticket unTicket = new TicketHomo(); 
+            Ticket unTicket = new TicketProd(); 
             //TestDummy();
             //GetCertificatesInMyStore();
 
-            unTicket.GetTicket(); 
+            unTicket.GetTicket();
 
 
-            while (Console.ReadKey().KeyChar != '1') { };
+            while (Console.ReadKey().KeyChar != '\r') { };
             return 0;
         }
 

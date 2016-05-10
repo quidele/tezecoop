@@ -43,7 +43,7 @@ namespace FEAFIPPruebas
             this.Token = loginTicket.Token;
 
             // MIGRAR LA BUSQUEDA A LA CLASE COMPROBANTE
-            feAuthRequest.Cuit = Convert.ToInt64(cuit);
+            /*feAuthRequest.Cuit = Convert.ToInt64(cuit);
             feAuthRequest.Sign = loginTicket.Sign;
             feAuthRequest.Token = loginTicket.Token;
 
@@ -52,7 +52,10 @@ namespace FEAFIPPruebas
             FERecuperaLastCbteResponse result = client.FECompUltimoAutorizado(feAuthRequest, 27, 1);
 
             Console.WriteLine(" ULTIMO COMPROBANTE PARA  EL PVTA 27 TIPO TIPO COMPROBANTE 1 - FACTURA ");
-            Console.WriteLine(result.CbteNro);
+            Console.WriteLine(result.CbteNro);*/
+
+            IComprobante unComprobante = new ComprobanteProd(this);
+            unComprobante.ObtenerCompUltimoAutorizado();
 
             /* 
              * 

@@ -1,0 +1,908 @@
+13/05/2011 09:44:13 a.m. - Error al cerrar el data reader de SQL
+13/05/2011 09:44:18 a.m. - ----------- INICIO -----------
+13/05/2011 09:44:18 a.m. - 1000478
+13/05/2011 09:44:18 a.m. - 473538
+13/05/2011 09:44:18 a.m. - Usuario: turinad
+13/05/2011 09:44:18 a.m. - Nombre del equipo: PC0071
+13/05/2011 09:44:18 a.m. - Insertando comprobantes en FE
+13/05/2011 09:44:25 a.m. - Observaciones: 
+13/05/2011 09:44:25 a.m. - Chequeando resultados de FE
+13/05/2011 09:44:25 a.m. - Obtener Comprobantes
+13/05/2011 09:44:25 a.m. - Solicitando CAE a AFIP
+13/05/2011 09:44:31 a.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 09:44:36 a.m. - Solicitando Token
+13/05/2011 09:44:36 a.m. - Modo de operacion: 'Homologacion'
+13/05/2011 09:45:00 a.m. - Generando el Login Ticket Request
+13/05/2011 09:45:00 a.m. - Firmando el Login Ticket Request
+13/05/2011 09:45:00 a.m. - ***Leyendo certificado: 
+13/05/2011 09:45:00 a.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 09:45:00 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 09:45:06 a.m. - ***Firmando bytes del mensaje...
+13/05/2011 09:45:06 a.m. - ***OK mensaje firmado
+13/05/2011 09:45:15 a.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 09:45:15 a.m. - Adaptando Formatos a AFIP
+13/05/2011 09:45:15 a.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 09:45:48 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 09:46:14 a.m. - Lista de Items creada
+13/05/2011 09:46:14 a.m. - Lista de PermisosDestino creada
+13/05/2011 09:46:14 a.m. - Adaptacion Homologacion Completa
+13/05/2011 09:46:14 a.m. - Estableciendo comunicación con AFIP
+13/05/2011 09:46:20 a.m. - Actualizando base de datos local y Magma
+13/05/2011 09:46:20 a.m. - Commit Realizado con éxito!!!
+13/05/2011 09:46:20 a.m. - Grabando estado de envío
+13/05/2011 09:46:20 a.m. - Comprobante_Asignado
+13/05/2011 09:46:20 a.m. - Obtención de CAE exitosa
+13/05/2011 09:54:49 a.m. - Error al cerrar el data reader de SQL
+13/05/2011 09:54:54 a.m. - ----------- INICIO -----------
+13/05/2011 09:54:54 a.m. - 1000478
+13/05/2011 09:54:54 a.m. - 473538
+13/05/2011 09:54:54 a.m. - Usuario: turinad
+13/05/2011 09:54:54 a.m. - Nombre del equipo: PC0071
+13/05/2011 09:54:54 a.m. - Insertando comprobantes en FE
+13/05/2011 09:54:59 a.m. - Observaciones: 
+13/05/2011 09:54:59 a.m. - Chequeando resultados de FE
+13/05/2011 09:54:59 a.m. - Obtener Comprobantes
+13/05/2011 09:54:59 a.m. - Solicitando CAE a AFIP
+13/05/2011 09:55:02 a.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 09:55:07 a.m. - Solicitando Token
+13/05/2011 09:55:07 a.m. - Modo de operacion: 'Homologacion'
+13/05/2011 10:08:44 a.m. - Error al cerrar el data reader de SQL
+13/05/2011 10:08:47 a.m. - ----------- INICIO -----------
+13/05/2011 10:08:47 a.m. - 1000478
+13/05/2011 10:08:47 a.m. - 473538
+13/05/2011 10:08:47 a.m. - Usuario: turinad
+13/05/2011 10:08:47 a.m. - Nombre del equipo: PC0071
+13/05/2011 10:08:47 a.m. - Insertando comprobantes en FE
+13/05/2011 10:08:51 a.m. - Observaciones: 
+13/05/2011 10:08:51 a.m. - Chequeando resultados de FE
+13/05/2011 10:08:51 a.m. - Obtener Comprobantes
+13/05/2011 10:08:51 a.m. - Solicitando CAE a AFIP
+13/05/2011 10:08:52 a.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 10:08:54 a.m. - Solicitando Token
+13/05/2011 10:08:54 a.m. - Modo de operacion: 'Homologacion'
+13/05/2011 10:22:04 a.m. - Error al cerrar el data reader de SQL
+13/05/2011 10:22:07 a.m. - ----------- INICIO -----------
+13/05/2011 10:22:07 a.m. - 1000478
+13/05/2011 10:22:07 a.m. - 473538
+13/05/2011 10:22:07 a.m. - Usuario: turinad
+13/05/2011 10:22:07 a.m. - Nombre del equipo: PC0071
+13/05/2011 10:22:07 a.m. - Insertando comprobantes en FE
+13/05/2011 10:22:07 a.m. - Observaciones: 
+13/05/2011 10:22:07 a.m. - Chequeando resultados de FE
+13/05/2011 10:22:07 a.m. - Obtener Comprobantes
+13/05/2011 10:22:07 a.m. - Solicitando CAE a AFIP
+13/05/2011 10:22:07 a.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 10:22:07 a.m. - Solicitando Token
+13/05/2011 10:22:07 a.m. - Modo de operacion: 'Homologacion'
+13/05/2011 10:22:12 a.m. - Generando el Login Ticket Request
+13/05/2011 10:22:12 a.m. - Firmando el Login Ticket Request
+13/05/2011 10:22:12 a.m. - ***Leyendo certificado: 
+13/05/2011 10:22:12 a.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 10:22:12 a.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 10:22:13 a.m. - ***Firmando bytes del mensaje...
+13/05/2011 10:22:13 a.m. - ***OK mensaje firmado
+13/05/2011 10:22:19 a.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 10:22:19 a.m. - Adaptando Formatos a AFIP
+13/05/2011 10:22:19 a.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 10:22:23 a.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 10:22:23 a.m. - Lista de Items creada
+13/05/2011 10:22:23 a.m. - Lista de PermisosDestino creada
+13/05/2011 10:22:23 a.m. - Adaptacion Homologacion Completa
+13/05/2011 10:22:23 a.m. - Estableciendo comunicación con AFIP
+13/05/2011 11:34:08 a.m. - Error al cerrar el data reader de SQL
+13/05/2011 11:34:28 a.m. - ----------- INICIO -----------
+13/05/2011 11:34:28 a.m. - 1000478
+13/05/2011 11:34:28 a.m. - 473538
+13/05/2011 11:34:29 a.m. - Usuario: turinad
+13/05/2011 11:34:30 a.m. - Nombre del equipo: PC0071
+13/05/2011 11:34:35 a.m. - Insertando comprobantes en FE
+13/05/2011 12:58:55 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 12:59:02 p.m. - ----------- INICIO -----------
+13/05/2011 12:59:02 p.m. - 1000478
+13/05/2011 12:59:02 p.m. - 473538
+13/05/2011 12:59:02 p.m. - Usuario: turinad
+13/05/2011 12:59:02 p.m. - Nombre del equipo: PC0071
+13/05/2011 12:59:02 p.m. - Insertando comprobantes en FE
+13/05/2011 12:59:03 p.m. - Observaciones: 
+13/05/2011 12:59:03 p.m. - Chequeando resultados de FE
+13/05/2011 12:59:03 p.m. - Obtener Comprobantes
+13/05/2011 12:59:03 p.m. - Solicitando CAE a AFIP
+13/05/2011 12:59:03 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 12:59:03 p.m. - Solicitando Token
+13/05/2011 12:59:04 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 12:59:09 p.m. - Generando el Login Ticket Request
+13/05/2011 12:59:09 p.m. - Firmando el Login Ticket Request
+13/05/2011 12:59:09 p.m. - ***Leyendo certificado: 
+13/05/2011 12:59:10 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 12:59:10 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 12:59:11 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 12:59:11 p.m. - ***OK mensaje firmado
+13/05/2011 12:59:18 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 12:59:18 p.m. - Adaptando Formatos a AFIP
+13/05/2011 12:59:18 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 12:59:25 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 12:59:25 p.m. - Lista de Items creada
+13/05/2011 12:59:25 p.m. - Lista de PermisosDestino creada
+13/05/2011 12:59:25 p.m. - Adaptacion Homologacion Completa
+13/05/2011 12:59:25 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 01:37:29 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 02:31:01 p.m. - ----------- INICIO -----------
+13/05/2011 02:31:02 p.m. - 1000478
+13/05/2011 02:31:02 p.m. - 473538
+13/05/2011 02:31:02 p.m. - Usuario: turinad
+13/05/2011 02:31:02 p.m. - Nombre del equipo: PC0071
+13/05/2011 02:31:02 p.m. - Insertando comprobantes en FE
+13/05/2011 02:31:03 p.m. - Observaciones: 
+13/05/2011 02:31:03 p.m. - Chequeando resultados de FE
+13/05/2011 02:31:03 p.m. - Obtener Comprobantes
+13/05/2011 02:31:03 p.m. - Solicitando CAE a AFIP
+13/05/2011 02:31:03 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 02:31:03 p.m. - Solicitando Token
+13/05/2011 02:31:03 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 02:31:11 p.m. - Generando el Login Ticket Request
+13/05/2011 02:31:11 p.m. - Firmando el Login Ticket Request
+13/05/2011 02:31:11 p.m. - ***Leyendo certificado: 
+13/05/2011 02:31:11 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 02:31:11 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 02:31:12 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 02:31:12 p.m. - ***OK mensaje firmado
+13/05/2011 02:31:24 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 02:31:24 p.m. - Adaptando Formatos a AFIP
+13/05/2011 02:31:24 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 02:31:33 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 02:31:33 p.m. - Lista de Items creada
+13/05/2011 02:31:33 p.m. - Lista de PermisosDestino creada
+13/05/2011 02:31:33 p.m. - Adaptacion Homologacion Completa
+13/05/2011 02:31:33 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 02:32:40 p.m. - Comprobante rechazado por error desconocido.
+13/05/2011 02:32:55 p.m. - Actualizando datos del comprobante
+13/05/2011 02:33:06 p.m. - Sintaxis incorrecta cerca de '='.
+13/05/2011 02:36:01 p.m. - El nombre de columna 'fecha_emision' no es válido.
+13/05/2011 03:05:20 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:13:52 p.m. - ----------- INICIO -----------
+13/05/2011 03:13:52 p.m. - 1000478
+13/05/2011 03:13:52 p.m. - 473538
+13/05/2011 03:13:52 p.m. - Usuario: quidele
+13/05/2011 03:13:52 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:13:52 p.m. - Insertando comprobantes en FE
+13/05/2011 03:13:53 p.m. - Observaciones: 
+13/05/2011 03:13:53 p.m. - Chequeando resultados de FE
+13/05/2011 03:13:53 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:14:10 p.m. - ----------- INICIO -----------
+13/05/2011 03:14:10 p.m. - 1000478
+13/05/2011 03:14:10 p.m. - 473538
+13/05/2011 03:14:10 p.m. - Usuario: quidele
+13/05/2011 03:14:10 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:14:10 p.m. - Insertando comprobantes en FE
+13/05/2011 03:14:10 p.m. - Observaciones: 
+13/05/2011 03:14:10 p.m. - Chequeando resultados de FE
+13/05/2011 03:14:10 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:14:14 p.m. - ----------- INICIO -----------
+13/05/2011 03:14:14 p.m. - 1000478
+13/05/2011 03:14:14 p.m. - 473538
+13/05/2011 03:14:14 p.m. - Usuario: quidele
+13/05/2011 03:14:14 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:14:14 p.m. - Insertando comprobantes en FE
+13/05/2011 03:14:14 p.m. - Observaciones: 
+13/05/2011 03:14:14 p.m. - Chequeando resultados de FE
+13/05/2011 03:14:14 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:15:50 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:15:52 p.m. - ----------- INICIO -----------
+13/05/2011 03:15:52 p.m. - 1000478
+13/05/2011 03:15:52 p.m. - 473538
+13/05/2011 03:15:52 p.m. - Usuario: quidele
+13/05/2011 03:15:52 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:15:52 p.m. - Insertando comprobantes en FE
+13/05/2011 03:15:52 p.m. - Observaciones: 
+13/05/2011 03:15:52 p.m. - Chequeando resultados de FE
+13/05/2011 03:15:52 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:16:03 p.m. - ----------- INICIO -----------
+13/05/2011 03:16:03 p.m. - 1000478
+13/05/2011 03:16:03 p.m. - 473538
+13/05/2011 03:16:03 p.m. - Usuario: quidele
+13/05/2011 03:16:03 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:16:03 p.m. - Insertando comprobantes en FE
+13/05/2011 03:16:03 p.m. - Observaciones: 
+13/05/2011 03:16:03 p.m. - Chequeando resultados de FE
+13/05/2011 03:16:03 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:16:27 p.m. - ----------- INICIO -----------
+13/05/2011 03:16:27 p.m. - 1000478
+13/05/2011 03:16:27 p.m. - 473538
+13/05/2011 03:16:27 p.m. - Usuario: quidele
+13/05/2011 03:16:27 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:16:27 p.m. - Insertando comprobantes en FE
+13/05/2011 03:16:27 p.m. - Observaciones: 
+13/05/2011 03:16:27 p.m. - Chequeando resultados de FE
+13/05/2011 03:16:57 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:17:10 p.m. - ----------- INICIO -----------
+13/05/2011 03:17:10 p.m. - 1000478
+13/05/2011 03:17:10 p.m. - 473538
+13/05/2011 03:17:10 p.m. - Usuario: quidele
+13/05/2011 03:17:10 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:17:10 p.m. - Insertando comprobantes en FE
+13/05/2011 03:17:10 p.m. - Observaciones: 
+13/05/2011 03:17:10 p.m. - Chequeando resultados de FE
+13/05/2011 03:17:10 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:17:15 p.m. - ----------- INICIO -----------
+13/05/2011 03:17:15 p.m. - 1000478
+13/05/2011 03:17:15 p.m. - 473538
+13/05/2011 03:17:15 p.m. - Usuario: quidele
+13/05/2011 03:17:15 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:17:15 p.m. - Insertando comprobantes en FE
+13/05/2011 03:17:15 p.m. - Observaciones: 
+13/05/2011 03:17:15 p.m. - Chequeando resultados de FE
+13/05/2011 03:17:15 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:17:28 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:17:30 p.m. - ----------- INICIO -----------
+13/05/2011 03:17:30 p.m. - 1000478
+13/05/2011 03:17:30 p.m. - 473538
+13/05/2011 03:17:30 p.m. - Usuario: quidele
+13/05/2011 03:17:30 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:17:30 p.m. - Insertando comprobantes en FE
+13/05/2011 03:17:30 p.m. - Observaciones: 
+13/05/2011 03:17:30 p.m. - Chequeando resultados de FE
+13/05/2011 03:17:30 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:17:40 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:17:42 p.m. - ----------- INICIO -----------
+13/05/2011 03:17:42 p.m. - 1000478
+13/05/2011 03:17:42 p.m. - 473538
+13/05/2011 03:17:42 p.m. - Usuario: quidele
+13/05/2011 03:17:42 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:17:42 p.m. - Insertando comprobantes en FE
+13/05/2011 03:17:42 p.m. - Observaciones: 
+13/05/2011 03:17:42 p.m. - Chequeando resultados de FE
+13/05/2011 03:17:42 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:18:16 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:18:18 p.m. - ----------- INICIO -----------
+13/05/2011 03:18:18 p.m. - 1000478
+13/05/2011 03:18:18 p.m. - 473538
+13/05/2011 03:18:18 p.m. - Usuario: quidele
+13/05/2011 03:18:18 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:18:18 p.m. - Insertando comprobantes en FE
+13/05/2011 03:18:18 p.m. - Observaciones: 
+13/05/2011 03:18:18 p.m. - Chequeando resultados de FE
+13/05/2011 03:18:18 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:18:40 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:18:42 p.m. - ----------- INICIO -----------
+13/05/2011 03:18:42 p.m. - 1000478
+13/05/2011 03:18:42 p.m. - 473538
+13/05/2011 03:18:42 p.m. - Usuario: quidele
+13/05/2011 03:18:42 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:18:42 p.m. - Insertando comprobantes en FE
+13/05/2011 03:18:42 p.m. - Observaciones: 
+13/05/2011 03:18:42 p.m. - Chequeando resultados de FE
+13/05/2011 03:18:42 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:18:48 p.m. - ----------- INICIO -----------
+13/05/2011 03:18:49 p.m. - 1000478
+13/05/2011 03:18:49 p.m. - 473538
+13/05/2011 03:18:49 p.m. - Usuario: quidele
+13/05/2011 03:18:49 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:18:49 p.m. - Insertando comprobantes en FE
+13/05/2011 03:18:49 p.m. - Observaciones: 
+13/05/2011 03:18:49 p.m. - Chequeando resultados de FE
+13/05/2011 03:18:49 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:19:01 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:19:04 p.m. - ----------- INICIO -----------
+13/05/2011 03:19:04 p.m. - 1000478
+13/05/2011 03:19:04 p.m. - 473538
+13/05/2011 03:19:04 p.m. - Usuario: quidele
+13/05/2011 03:19:04 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:19:04 p.m. - Insertando comprobantes en FE
+13/05/2011 03:19:04 p.m. - Observaciones: 
+13/05/2011 03:19:04 p.m. - Chequeando resultados de FE
+13/05/2011 03:19:32 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:19:53 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:19:55 p.m. - ----------- INICIO -----------
+13/05/2011 03:19:55 p.m. - 1000478
+13/05/2011 03:19:55 p.m. - 473538
+13/05/2011 03:19:55 p.m. - Usuario: quidele
+13/05/2011 03:19:55 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:19:55 p.m. - Insertando comprobantes en FE
+13/05/2011 03:19:55 p.m. - Observaciones: 
+13/05/2011 03:19:55 p.m. - Chequeando resultados de FE
+13/05/2011 03:19:55 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:20:26 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:20:28 p.m. - ----------- INICIO -----------
+13/05/2011 03:20:28 p.m. - 1000478
+13/05/2011 03:20:28 p.m. - 473538
+13/05/2011 03:20:28 p.m. - Usuario: quidele
+13/05/2011 03:20:28 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:20:28 p.m. - Insertando comprobantes en FE
+13/05/2011 03:20:28 p.m. - Observaciones: 
+13/05/2011 03:20:28 p.m. - Chequeando resultados de FE
+13/05/2011 03:20:29 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:21:05 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:21:07 p.m. - ----------- INICIO -----------
+13/05/2011 03:21:07 p.m. - 1000478
+13/05/2011 03:21:07 p.m. - 473538
+13/05/2011 03:21:07 p.m. - Usuario: quidele
+13/05/2011 03:21:07 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:21:07 p.m. - Insertando comprobantes en FE
+13/05/2011 03:21:07 p.m. - Observaciones: 
+13/05/2011 03:21:07 p.m. - Chequeando resultados de FE
+13/05/2011 03:21:07 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:21:22 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:21:24 p.m. - ----------- INICIO -----------
+13/05/2011 03:21:24 p.m. - 1000478
+13/05/2011 03:21:24 p.m. - 473538
+13/05/2011 03:21:24 p.m. - Usuario: quidele
+13/05/2011 03:21:24 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:21:24 p.m. - Insertando comprobantes en FE
+13/05/2011 03:21:24 p.m. - Observaciones: 
+13/05/2011 03:21:24 p.m. - Chequeando resultados de FE
+13/05/2011 03:21:25 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:21:38 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:21:40 p.m. - ----------- INICIO -----------
+13/05/2011 03:21:40 p.m. - 1000478
+13/05/2011 03:21:40 p.m. - 473538
+13/05/2011 03:21:40 p.m. - Usuario: quidele
+13/05/2011 03:21:40 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:21:40 p.m. - Insertando comprobantes en FE
+13/05/2011 03:21:40 p.m. - Observaciones: 
+13/05/2011 03:21:40 p.m. - Chequeando resultados de FE
+13/05/2011 03:21:40 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:22:17 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:22:19 p.m. - ----------- INICIO -----------
+13/05/2011 03:22:19 p.m. - 1000478
+13/05/2011 03:22:19 p.m. - 473538
+13/05/2011 03:22:19 p.m. - Usuario: quidele
+13/05/2011 03:22:19 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:22:19 p.m. - Insertando comprobantes en FE
+13/05/2011 03:22:19 p.m. - Observaciones: 
+13/05/2011 03:22:19 p.m. - Chequeando resultados de FE
+13/05/2011 03:22:19 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:22:33 p.m. - ----------- INICIO -----------
+13/05/2011 03:22:33 p.m. - 1000478
+13/05/2011 03:22:33 p.m. - 473538
+13/05/2011 03:22:33 p.m. - Usuario: quidele
+13/05/2011 03:22:33 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:22:33 p.m. - Insertando comprobantes en FE
+13/05/2011 03:22:33 p.m. - Observaciones: 
+13/05/2011 03:22:33 p.m. - Chequeando resultados de FE
+13/05/2011 03:23:38 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:23:40 p.m. - ----------- INICIO -----------
+13/05/2011 03:23:40 p.m. - 1000478
+13/05/2011 03:23:40 p.m. - 473538
+13/05/2011 03:23:40 p.m. - Usuario: quidele
+13/05/2011 03:23:40 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:23:40 p.m. - Insertando comprobantes en FE
+13/05/2011 03:23:43 p.m. - Observaciones: 
+13/05/2011 03:23:43 p.m. - Chequeando resultados de FE
+13/05/2011 03:24:01 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:25:11 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:25:13 p.m. - ----------- INICIO -----------
+13/05/2011 03:25:13 p.m. - 1000478
+13/05/2011 03:25:13 p.m. - 473538
+13/05/2011 03:25:13 p.m. - Usuario: quidele
+13/05/2011 03:25:13 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:25:16 p.m. - Insertando comprobantes en FE
+13/05/2011 03:25:17 p.m. - Observaciones: 
+13/05/2011 03:25:17 p.m. - Chequeando resultados de FE
+13/05/2011 03:25:18 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:26:41 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:26:43 p.m. - ----------- INICIO -----------
+13/05/2011 03:26:43 p.m. - 1000478
+13/05/2011 03:26:43 p.m. - 473538
+13/05/2011 03:26:43 p.m. - Usuario: quidele
+13/05/2011 03:26:43 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:26:43 p.m. - Insertando comprobantes en FE
+13/05/2011 03:26:43 p.m. - Observaciones: 
+13/05/2011 03:26:43 p.m. - Chequeando resultados de FE
+13/05/2011 03:26:43 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:26:48 p.m. - ----------- INICIO -----------
+13/05/2011 03:26:48 p.m. - 1000478
+13/05/2011 03:26:48 p.m. - 473538
+13/05/2011 03:26:48 p.m. - Usuario: quidele
+13/05/2011 03:26:48 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:26:48 p.m. - Insertando comprobantes en FE
+13/05/2011 03:26:48 p.m. - Observaciones: 
+13/05/2011 03:26:48 p.m. - Chequeando resultados de FE
+13/05/2011 03:26:48 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:32:53 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:32:55 p.m. - ----------- INICIO -----------
+13/05/2011 03:32:55 p.m. - 1000478
+13/05/2011 03:32:55 p.m. - 473538
+13/05/2011 03:32:55 p.m. - Usuario: quidele
+13/05/2011 03:32:55 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:32:55 p.m. - Insertando comprobantes en FE
+13/05/2011 03:32:55 p.m. - Observaciones: 
+13/05/2011 03:32:55 p.m. - Chequeando resultados de FE
+13/05/2011 03:32:55 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:33:09 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:33:11 p.m. - ----------- INICIO -----------
+13/05/2011 03:33:11 p.m. - 1000478
+13/05/2011 03:33:11 p.m. - 473538
+13/05/2011 03:33:11 p.m. - Usuario: quidele
+13/05/2011 03:33:11 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:33:11 p.m. - Insertando comprobantes en FE
+13/05/2011 03:33:11 p.m. - Observaciones: 
+13/05/2011 03:33:11 p.m. - Chequeando resultados de FE
+13/05/2011 03:33:11 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:33:44 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:33:46 p.m. - ----------- INICIO -----------
+13/05/2011 03:33:46 p.m. - 1000478
+13/05/2011 03:33:46 p.m. - 473538
+13/05/2011 03:33:46 p.m. - Usuario: quidele
+13/05/2011 03:33:46 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:33:46 p.m. - Insertando comprobantes en FE
+13/05/2011 03:33:46 p.m. - Observaciones: 
+13/05/2011 03:33:46 p.m. - Chequeando resultados de FE
+13/05/2011 03:33:46 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:39:02 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:39:04 p.m. - ----------- INICIO -----------
+13/05/2011 03:39:04 p.m. - 1000478
+13/05/2011 03:39:04 p.m. - 473538
+13/05/2011 03:39:04 p.m. - Usuario: quidele
+13/05/2011 03:39:04 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:39:04 p.m. - Insertando comprobantes en FE
+13/05/2011 03:39:04 p.m. - Observaciones: 
+13/05/2011 03:39:04 p.m. - Chequeando resultados de FE
+13/05/2011 03:39:04 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:39:08 p.m. - ----------- INICIO -----------
+13/05/2011 03:39:08 p.m. - 1000478
+13/05/2011 03:39:08 p.m. - 473538
+13/05/2011 03:39:08 p.m. - Usuario: quidele
+13/05/2011 03:39:08 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:39:08 p.m. - Insertando comprobantes en FE
+13/05/2011 03:39:08 p.m. - Observaciones: 
+13/05/2011 03:39:08 p.m. - Chequeando resultados de FE
+13/05/2011 03:39:08 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:39:10 p.m. - ----------- INICIO -----------
+13/05/2011 03:39:10 p.m. - 1000478
+13/05/2011 03:39:10 p.m. - 473538
+13/05/2011 03:39:10 p.m. - Usuario: quidele
+13/05/2011 03:39:10 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:39:10 p.m. - Insertando comprobantes en FE
+13/05/2011 03:39:10 p.m. - Observaciones: 
+13/05/2011 03:39:10 p.m. - Chequeando resultados de FE
+13/05/2011 03:39:11 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:39:32 p.m. - ----------- INICIO -----------
+13/05/2011 03:39:32 p.m. - 1000478
+13/05/2011 03:39:32 p.m. - 473538
+13/05/2011 03:39:32 p.m. - Usuario: quidele
+13/05/2011 03:39:32 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:39:32 p.m. - Insertando comprobantes en FE
+13/05/2011 03:39:32 p.m. - Observaciones: 
+13/05/2011 03:39:32 p.m. - Chequeando resultados de FE
+13/05/2011 03:39:32 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:39:35 p.m. - ----------- INICIO -----------
+13/05/2011 03:39:35 p.m. - 1000478
+13/05/2011 03:39:35 p.m. - 473538
+13/05/2011 03:39:35 p.m. - Usuario: quidele
+13/05/2011 03:39:35 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:39:35 p.m. - Insertando comprobantes en FE
+13/05/2011 03:39:35 p.m. - Observaciones: 
+13/05/2011 03:39:35 p.m. - Chequeando resultados de FE
+13/05/2011 03:39:35 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:40:18 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:40:20 p.m. - ----------- INICIO -----------
+13/05/2011 03:40:20 p.m. - 1000478
+13/05/2011 03:40:20 p.m. - 473538
+13/05/2011 03:40:20 p.m. - Usuario: quidele
+13/05/2011 03:40:20 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:40:20 p.m. - Insertando comprobantes en FE
+13/05/2011 03:40:20 p.m. - Observaciones: 
+13/05/2011 03:40:20 p.m. - Chequeando resultados de FE
+13/05/2011 03:40:20 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:40:24 p.m. - ----------- INICIO -----------
+13/05/2011 03:40:24 p.m. - 1000478
+13/05/2011 03:40:24 p.m. - 473538
+13/05/2011 03:40:24 p.m. - Usuario: quidele
+13/05/2011 03:40:24 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:40:24 p.m. - Insertando comprobantes en FE
+13/05/2011 03:40:24 p.m. - Observaciones: 
+13/05/2011 03:40:24 p.m. - Chequeando resultados de FE
+13/05/2011 03:40:24 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:40:27 p.m. - ----------- INICIO -----------
+13/05/2011 03:40:27 p.m. - 1000478
+13/05/2011 03:40:27 p.m. - 473538
+13/05/2011 03:40:27 p.m. - Usuario: quidele
+13/05/2011 03:40:27 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:40:27 p.m. - Insertando comprobantes en FE
+13/05/2011 03:40:27 p.m. - Observaciones: 
+13/05/2011 03:40:27 p.m. - Chequeando resultados de FE
+13/05/2011 03:40:28 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:40:30 p.m. - ----------- INICIO -----------
+13/05/2011 03:40:30 p.m. - 1000478
+13/05/2011 03:40:30 p.m. - 473538
+13/05/2011 03:40:30 p.m. - Usuario: quidele
+13/05/2011 03:40:30 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:40:30 p.m. - Insertando comprobantes en FE
+13/05/2011 03:40:30 p.m. - Observaciones: 
+13/05/2011 03:40:30 p.m. - Chequeando resultados de FE
+13/05/2011 03:40:30 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:07 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:41:09 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:09 p.m. - 1000478
+13/05/2011 03:41:09 p.m. - 473538
+13/05/2011 03:41:09 p.m. - Usuario: quidele
+13/05/2011 03:41:09 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:09 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:09 p.m. - Observaciones: 
+13/05/2011 03:41:09 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:09 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:15 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:15 p.m. - 1000478
+13/05/2011 03:41:15 p.m. - 473538
+13/05/2011 03:41:15 p.m. - Usuario: quidele
+13/05/2011 03:41:15 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:15 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:15 p.m. - Observaciones: 
+13/05/2011 03:41:15 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:15 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:20 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:41:23 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:23 p.m. - 1000478
+13/05/2011 03:41:23 p.m. - 473538
+13/05/2011 03:41:23 p.m. - Usuario: quidele
+13/05/2011 03:41:23 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:23 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:23 p.m. - Observaciones: 
+13/05/2011 03:41:23 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:23 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:27 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:27 p.m. - 1000478
+13/05/2011 03:41:27 p.m. - 473538
+13/05/2011 03:41:27 p.m. - Usuario: quidele
+13/05/2011 03:41:27 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:27 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:27 p.m. - Observaciones: 
+13/05/2011 03:41:27 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:27 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:33 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:33 p.m. - 1000478
+13/05/2011 03:41:33 p.m. - 473538
+13/05/2011 03:41:33 p.m. - Usuario: quidele
+13/05/2011 03:41:33 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:33 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:33 p.m. - Observaciones: 
+13/05/2011 03:41:33 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:33 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:41:41 p.m. - ----------- INICIO -----------
+13/05/2011 03:41:41 p.m. - 1000478
+13/05/2011 03:41:41 p.m. - 473538
+13/05/2011 03:41:41 p.m. - Usuario: quidele
+13/05/2011 03:41:41 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:41:41 p.m. - Insertando comprobantes en FE
+13/05/2011 03:41:41 p.m. - Observaciones: 
+13/05/2011 03:41:41 p.m. - Chequeando resultados de FE
+13/05/2011 03:41:41 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:53:55 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:54:06 p.m. - ----------- INICIO -----------
+13/05/2011 03:54:06 p.m. - 1000478
+13/05/2011 03:54:06 p.m. - 473538
+13/05/2011 03:54:06 p.m. - Usuario: quidele
+13/05/2011 03:54:06 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:54:06 p.m. - Insertando comprobantes en FE
+13/05/2011 03:54:06 p.m. - Observaciones: 
+13/05/2011 03:54:06 p.m. - Chequeando resultados de FE
+13/05/2011 03:54:06 p.m. - ERROR: El boleto no tiene asignado el número definitivo 
+
+13/05/2011 03:56:13 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 03:56:17 p.m. - ----------- INICIO -----------
+13/05/2011 03:56:17 p.m. - 1000479
+13/05/2011 03:56:17 p.m. - 473574
+13/05/2011 03:56:17 p.m. - Usuario: quidele
+13/05/2011 03:56:17 p.m. - Nombre del equipo: PC0157-
+13/05/2011 03:56:17 p.m. - Insertando comprobantes en FE
+13/05/2011 03:56:18 p.m. - Observaciones: 
+13/05/2011 03:56:18 p.m. - Chequeando resultados de FE
+13/05/2011 03:56:18 p.m. - Obtener Comprobantes
+13/05/2011 03:56:19 p.m. - Solicitando CAE a AFIP
+13/05/2011 03:56:19 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 03:56:19 p.m. - Solicitando Token
+13/05/2011 03:56:19 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 03:56:24 p.m. - Generando el Login Ticket Request
+13/05/2011 03:56:24 p.m. - Firmando el Login Ticket Request
+13/05/2011 03:56:24 p.m. - ***Leyendo certificado: 
+13/05/2011 03:56:24 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 03:56:24 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 03:56:24 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 03:56:24 p.m. - ***OK mensaje firmado
+13/05/2011 03:56:28 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 03:56:28 p.m. - Adaptando Formatos a AFIP
+13/05/2011 03:57:01 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 03:57:02 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:01:36 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 04:01:39 p.m. - ----------- INICIO -----------
+13/05/2011 04:01:39 p.m. - 1000478
+13/05/2011 04:01:39 p.m. - 473538
+13/05/2011 04:01:39 p.m. - Usuario: quidele
+13/05/2011 04:01:39 p.m. - Nombre del equipo: PC0157-
+13/05/2011 04:01:39 p.m. - Insertando comprobantes en FE
+13/05/2011 04:01:40 p.m. - Observaciones: 
+13/05/2011 04:01:40 p.m. - Chequeando resultados de FE
+13/05/2011 04:01:40 p.m. - Obtener Comprobantes
+13/05/2011 04:01:40 p.m. - Solicitando CAE a AFIP
+13/05/2011 04:01:40 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 04:01:40 p.m. - Solicitando Token
+13/05/2011 04:01:40 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 04:01:45 p.m. - Generando el Login Ticket Request
+13/05/2011 04:01:45 p.m. - Firmando el Login Ticket Request
+13/05/2011 04:01:45 p.m. - ***Leyendo certificado: 
+13/05/2011 04:01:45 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 04:01:45 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 04:01:45 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 04:01:45 p.m. - ***OK mensaje firmado
+13/05/2011 04:01:46 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 04:01:46 p.m. - Adaptando Formatos a AFIP
+13/05/2011 04:02:05 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 04:02:15 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:02:54 p.m. - Lista de Items creada
+13/05/2011 04:02:55 p.m. - Lista de PermisosDestino creada
+13/05/2011 04:02:56 p.m. - Adaptacion Homologacion Completa
+13/05/2011 04:02:59 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 04:05:32 p.m. - Actualizando datos del comprobante
+13/05/2011 04:05:32 p.m. - Actualizando base de datos local y Magma
+13/05/2011 04:05:34 p.m. - Commit Realizado con éxito!!!
+13/05/2011 04:05:34 p.m. - Grabando estado de envío
+13/05/2011 04:05:34 p.m. - Comprobante_Asignado
+13/05/2011 04:05:34 p.m. - Obtención de CAE exitosa
+13/05/2011 04:05:49 p.m. - ----------- INICIO -----------
+13/05/2011 04:05:49 p.m. - 1000478
+13/05/2011 04:05:49 p.m. - 473538
+13/05/2011 04:05:49 p.m. - Usuario: quidele
+13/05/2011 04:05:49 p.m. - Nombre del equipo: PC0157-
+13/05/2011 04:05:49 p.m. - Insertando comprobantes en FE
+13/05/2011 04:05:49 p.m. - Observaciones: 
+13/05/2011 04:05:49 p.m. - Chequeando resultados de FE
+13/05/2011 04:05:49 p.m. - Obtener Comprobantes
+13/05/2011 04:05:49 p.m. - Solicitando CAE a AFIP
+13/05/2011 04:05:49 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 04:05:49 p.m. - Solicitando Token
+13/05/2011 04:05:49 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 04:05:54 p.m. - Generando el Login Ticket Request
+13/05/2011 04:05:54 p.m. - Firmando el Login Ticket Request
+13/05/2011 04:05:54 p.m. - ***Leyendo certificado: 
+13/05/2011 04:05:54 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 04:05:54 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 04:05:54 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 04:05:54 p.m. - ***OK mensaje firmado
+13/05/2011 04:05:55 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 04:05:55 p.m. - Adaptando Formatos a AFIP
+13/05/2011 04:05:55 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 04:05:56 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:06:19 p.m. - Lista de Items creada
+13/05/2011 04:06:19 p.m. - Lista de PermisosDestino creada
+13/05/2011 04:06:19 p.m. - Adaptacion Homologacion Completa
+13/05/2011 04:06:19 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 04:06:30 p.m. - Actualizando datos del comprobante
+13/05/2011 04:07:28 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 04:09:46 p.m. - ----------- INICIO -----------
+13/05/2011 04:09:46 p.m. - 1000479
+13/05/2011 04:09:46 p.m. - 473574
+13/05/2011 04:09:46 p.m. - Usuario: quidele
+13/05/2011 04:09:46 p.m. - Nombre del equipo: PC0157-
+13/05/2011 04:09:46 p.m. - Insertando comprobantes en FE
+13/05/2011 04:09:46 p.m. - Observaciones: 
+13/05/2011 04:09:46 p.m. - Chequeando resultados de FE
+13/05/2011 04:09:46 p.m. - Obtener Comprobantes
+13/05/2011 04:09:46 p.m. - Solicitando CAE a AFIP
+13/05/2011 04:09:46 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 04:09:46 p.m. - Solicitando Token
+13/05/2011 04:09:46 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 04:09:51 p.m. - Generando el Login Ticket Request
+13/05/2011 04:09:51 p.m. - Firmando el Login Ticket Request
+13/05/2011 04:09:51 p.m. - ***Leyendo certificado: 
+13/05/2011 04:09:51 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 04:09:51 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 04:09:51 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 04:09:51 p.m. - ***OK mensaje firmado
+13/05/2011 04:09:52 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 04:09:52 p.m. - Adaptando Formatos a AFIP
+13/05/2011 04:09:52 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 04:09:53 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:10:18 p.m. - Lista de Items creada
+13/05/2011 04:10:18 p.m. - Lista de PermisosDestino creada
+13/05/2011 04:10:19 p.m. - Adaptacion Homologacion Completa
+13/05/2011 04:10:22 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 04:11:05 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+13/05/2011 04:13:50 p.m. - Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_observaciones_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+13/05/2011 04:13:50 p.m. - Observaciones insertadas correctamente en TABLA
+13/05/2011 04:13:57 p.m. - Referencia a objeto no establecida como instancia de un objeto.** Campo Cmp.Importe_total debe ser igual a la suma de los camps Items.Pro_total_item  
+13/05/2011 04:14:08 p.m. - Observaciones: 
+13/05/2011 04:17:30 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 04:18:32 p.m. - ----------- INICIO -----------
+13/05/2011 04:18:32 p.m. - 1000479
+13/05/2011 04:18:32 p.m. - 473574
+13/05/2011 04:18:32 p.m. - Usuario: quidele
+13/05/2011 04:18:32 p.m. - Nombre del equipo: PC0157-
+13/05/2011 04:18:32 p.m. - Insertando comprobantes en FE
+13/05/2011 04:18:42 p.m. - Observaciones: 
+13/05/2011 04:18:42 p.m. - Chequeando resultados de FE
+13/05/2011 04:18:42 p.m. - Obtener Comprobantes
+13/05/2011 04:18:42 p.m. - Solicitando CAE a AFIP
+13/05/2011 04:18:42 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 04:18:42 p.m. - Solicitando Token
+13/05/2011 04:18:42 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 04:18:47 p.m. - Generando el Login Ticket Request
+13/05/2011 04:18:47 p.m. - Firmando el Login Ticket Request
+13/05/2011 04:18:47 p.m. - ***Leyendo certificado: 
+13/05/2011 04:18:47 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 04:18:47 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 04:18:47 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 04:18:47 p.m. - ***OK mensaje firmado
+13/05/2011 04:18:48 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 04:18:48 p.m. - Adaptando Formatos a AFIP
+13/05/2011 04:18:48 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 04:18:49 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:18:59 p.m. - Lista de Items creada
+13/05/2011 04:18:59 p.m. - Lista de PermisosDestino creada
+13/05/2011 04:18:59 p.m. - Adaptacion Homologacion Completa
+13/05/2011 04:18:59 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 04:19:00 p.m. - Referencia a objeto no establecida como instancia de un objeto.
+13/05/2011 04:19:33 p.m. - Instrucción INSERT en conflicto con la restricción FOREIGN KEY "FK_observaciones_comprobantes_ml". El conflicto ha aparecido en la base de datos "FacturaElectronica_Prueba", tabla "dbo.comprobantes_ml", column 'idsolicitud'.
+Se terminó la instrucción.
+13/05/2011 04:24:11 p.m. - Observaciones insertadas correctamente en TABLA
+13/05/2011 04:24:18 p.m. - Referencia a objeto no establecida como instancia de un objeto.** Campo Cmp.Importe_total debe ser igual a la suma de los camps Items.Pro_total_item  
+13/05/2011 04:24:25 p.m. - Observaciones: 
+13/05/2011 04:24:25 p.m. - 1610 Campo Cmp.Importe_total debe ser igual a la suma de los camps Items.Pro_total_item
+13/05/2011 04:32:55 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 04:32:57 p.m. - ----------- INICIO -----------
+13/05/2011 04:32:57 p.m. - 1000479
+13/05/2011 04:32:57 p.m. - 473574
+13/05/2011 04:32:57 p.m. - Usuario: quidele
+13/05/2011 04:32:57 p.m. - Nombre del equipo: PC0157-
+13/05/2011 04:32:57 p.m. - Insertando comprobantes en FE
+13/05/2011 04:33:04 p.m. - Observaciones: 
+13/05/2011 04:33:04 p.m. - Chequeando resultados de FE
+13/05/2011 04:33:04 p.m. - Obtener Comprobantes
+13/05/2011 04:33:04 p.m. - Solicitando CAE a AFIP
+13/05/2011 04:33:04 p.m. - No existen registros para procesar en v_cmpasociados_EX
+13/05/2011 04:33:04 p.m. - Solicitando Token
+13/05/2011 04:33:04 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 04:33:10 p.m. - Generando el Login Ticket Request
+13/05/2011 04:33:10 p.m. - Firmando el Login Ticket Request
+13/05/2011 04:33:10 p.m. - ***Leyendo certificado: 
+13/05/2011 04:33:10 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 04:33:10 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 04:33:10 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 04:33:10 p.m. - ***OK mensaje firmado
+13/05/2011 04:33:11 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 04:33:11 p.m. - Adaptando Formatos a AFIP
+13/05/2011 04:33:11 p.m. - Adaptando formato Afip - Homologacion - EX
+13/05/2011 04:33:12 p.m. - Último Nro de Comprobante de Exportacion en AFIP (Homo): 0
+13/05/2011 04:33:28 p.m. - Lista de Items creada
+13/05/2011 04:33:28 p.m. - Lista de PermisosDestino creada
+13/05/2011 04:33:28 p.m. - Adaptacion Homologacion Completa
+13/05/2011 04:33:28 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 04:33:55 p.m. - Actualizando datos del comprobante
+13/05/2011 04:36:38 p.m. - Actualizando base de datos local y Magma
+13/05/2011 04:37:27 p.m. - Commit Realizado con éxito!!!
+13/05/2011 04:37:27 p.m. - Grabando estado de envío
+13/05/2011 04:37:27 p.m. - Comprobante_Asignado
+13/05/2011 04:37:27 p.m. - Obtención de CAE exitosa
+13/05/2011 04:42:55 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 04:42:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 04:42:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 04:42:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 04:42:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:10 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:35:11 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:11 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:11 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:11 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:33 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:35:34 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:34 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:34 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:35:34 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:36:38 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:36:38 p.m. - No se encontró el procedimiento almacenado 'spu_obtenerComprobantesaEnviarEX'.
+13/05/2011 05:40:20 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:40:49 p.m. - No se encontró el procedimiento almacenado 'spu_obtenerComprobantesaEnviarEX'.
+13/05/2011 05:41:08 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:43:55 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:43:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:43:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:43:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:43:56 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:57:06 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:57:06 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:57:06 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:57:06 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:57:06 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:11 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:59:12 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:12 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:12 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:12 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:38 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 05:59:39 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:39 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:39 p.m. - No existen Solicitudes a Enviar
+13/05/2011 05:59:39 p.m. - No existen Solicitudes a Enviar
+13/05/2011 06:00:24 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:00:24 p.m. - No existen Solicitudes a Enviar
+13/05/2011 06:00:24 p.m. - No existen Solicitudes a Enviar
+13/05/2011 06:00:24 p.m. - No existen Solicitudes a Enviar
+13/05/2011 06:00:24 p.m. - No existen Solicitudes a Enviar
+13/05/2011 06:01:47 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:01:54 p.m. - ----------- INICIO -----------
+13/05/2011 06:01:54 p.m. - 1000026
+13/05/2011 06:01:54 p.m. - ROUSSELOT ARGENTINA S.A. (EX SKW SA)                                                                
+13/05/2011 06:01:54 p.m. - Usuario: turinad
+13/05/2011 06:01:54 p.m. - Nombre del equipo: PC0071
+13/05/2011 06:01:54 p.m. - Insertando comprobantes en FE
+13/05/2011 06:01:55 p.m. - Observaciones: 
+13/05/2011 06:01:55 p.m. - Chequeando resultados de FE
+13/05/2011 06:01:55 p.m. - Obtener Comprobantes
+13/05/2011 06:01:55 p.m. - Solicitando CAE a AFIP
+13/05/2011 06:01:55 p.m. - No existen registros para procesar en comprobantes ASOC
+13/05/2011 06:01:55 p.m. - Solicitando Token
+13/05/2011 06:01:55 p.m. - Modo de operacion: 'Homologacion'
+13/05/2011 06:02:01 p.m. - Generando el Login Ticket Request
+13/05/2011 06:02:01 p.m. - Firmando el Login Ticket Request
+13/05/2011 06:02:01 p.m. - ***Leyendo certificado: 
+13/05/2011 06:02:01 p.m. - ***Certificados disponibles en el repositorio:My
+13/05/2011 06:02:01 p.m. - ubico el certificado y lo devuelvo, salimos de la funcion 
+13/05/2011 06:02:01 p.m. - ***Firmando bytes del mensaje...
+13/05/2011 06:02:01 p.m. - ***OK mensaje firmado
+13/05/2011 06:02:11 p.m. - Analizando el Ticket Response recibido del WSAA
+13/05/2011 06:02:11 p.m. - Finalizada correctamente la creación del archivo XML TA_Homo_ML_13-5-2011.xml con Sign y Token.
+13/05/2011 06:02:11 p.m. - Adaptando Formatos
+13/05/2011 06:02:11 p.m. - Adaptando formato Afip - Homologacion
+13/05/2011 06:02:11 p.m. - Token PD94bWwgdmVyc2lvbj0iMS4wIiBlbmNvZGluZz0iVVRGLTgiIHN0YW5kYWxvbmU9InllcyI/Pgo8c3NvIHZlcnNpb249IjIuMCI+CiAgICA8aWQgdW5pcXVlX2lkPSI5MzE0MTE4MjIiIHNyYz0iQ049d3NhYWhvbW8sIE89QUZJUCwgQz1BUiwgU0VSSUFMTlVNQkVSPUNVSVQgMzM2OTM0NTAyMzkiIGdlbl90aW1lPSIxMzA1MzIwMzU2IiBleHBfdGltZT0iMTMwNTM2MzYxNiIgZHN0PSJDTj13c2ZlLCBPPUFGSVAsIEM9QVIiLz4KICAgIDxvcGVyYXRpb24gdmFsdWU9ImdyYW50ZWQiIHR5cGU9ImxvZ2luIj4KICAgICAgICA8bG9naW4gdWlkPSJDPWFyLCBPPWN1cnRpZW1icmVzIGZvbnNlY2Egcy5hLiwgU0VSSUFMTlVNQkVSPUNVSVQgMzA1NTk2OTc4NTcsIENOPWV1bGlzZXMgcXVpZGVsIiBzZXJ2aWNlPSJ3c2ZlIiByZWdtZXRob2Q9IjIyIiBlbnRpdHk9IjMzNjkzNDUwMjM5IiBhdXRobWV0aG9kPSJjbXMiPgogICAgICAgICAgICA8cmVsYXRpb25zPgogICAgICAgICAgICAgICAgPHJlbGF0aW9uIHJlbHR5cGU9IjQiIGtleT0iMzA1NTk2OTc4NTciLz4KICAgICAgICAgICAgPC9yZWxhdGlvbnM+CiAgICAgICAgPC9sb2dpbj4KICAgIDwvb3BlcmF0aW9uPgo8L3Nzbz4KCg==
+13/05/2011 06:02:11 p.m. - Sign eXeXW9ze/+n5LSVLJTzN774c4EuBd6B0mXd3T7IQWa9EFCyWxMowCpYLROCHufE5/drlur6+zqT371fjh1xn0rCCgYFiu78uyfTKArUaDdta5bFyms6fLCAG4/APLM4m0i6+jQ2uWmuIp98eurBnhpDa7SHn+nrjZuae4HfRVVE=
+13/05/2011 06:02:17 p.m. - Último Nro de Comprobante en AFIP (Homo): 109
+13/05/2011 06:02:17 p.m. - Lista de Detalle_IVA creada
+13/05/2011 06:02:17 p.m. - Lista de Detalle_tributos creada
+13/05/2011 06:02:17 p.m. - Adaptacion Homologacion Completa
+13/05/2011 06:02:17 p.m. - Estableciendo comunicación con AFIP
+13/05/2011 06:02:30 p.m. - Observaciones insertadas correctamente en TABLA
+13/05/2011 06:02:30 p.m. - Actualizando datos del comprobante
+13/05/2011 06:02:30 p.m. - Error del comprobante
+13/05/2011 06:02:30 p.m. - ** La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto. 
+13/05/2011 06:02:38 p.m. - Observaciones: 
+13/05/2011 06:02:38 p.m. - 10061 La suma de los campos BaseImp en AlicIva debe ser igual al valor ingresado  en ImpNeto.
+13/05/2011 06:13:21 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:14:01 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:17:02 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:17:25 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:17:31 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:19:38 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:21:21 p.m. - Error al cerrar el data reader de SQL
+13/05/2011 06:21:47 p.m. - Error al cerrar el data reader de SQL

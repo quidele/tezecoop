@@ -1,0 +1,1 @@
+openssl pkcs12 -export -inkey privada -in fonseca.crt -out fonseca.p12 -name "fonseca"

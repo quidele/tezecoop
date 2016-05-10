@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Configuraciones xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <ListaPropiedades>
+    <Propiedades>
+      <Propiedad>Ambiente</Propiedad>
+      <Valor>Produccion</Valor>
+    </Propiedades>
+    <Propiedades>
+      <Propiedad>Afip</Propiedad>
+      <Valor>Produccion</Valor>
+    </Propiedades>
+    <Propiedades>
+      <Propiedad>Tipo_de_conexion</Propiedad>
+      <Valor>Remota</Valor>
+    </Propiedades>
+  </ListaPropiedades>
+</Configuraciones>

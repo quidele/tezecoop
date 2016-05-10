@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<comprobantes>
+<comprobante idsolicitud="13409801" > 
+<tipo>21</tipo> 
+<ptovta>2</ptovta> 
+<cuitemisor>66666666666</cuitemisor> 
+<fechaemision>2010-07-06</fechaemision> 
+<idioma>2</idioma> 
+<concepto>1</concepto> 
+<moneda>002</moneda> 
+<tipocambio>3.879</tipocambio> 
+<destinocmp>218</destinocmp> 
+<tipodocreceptor>80</tipodocreceptor> 
+<nrodocreceptor>55000002185</nrodocreceptor> 
+<receptor>EAGLE OTTAWA S.A. DE C.V.</receptor> 
+<domicilioreceptor>AV. CESAREO SANTOS 6551 FRACCIONAMIENTO EL JARUDO CIUDAD JUAREZ, CHI 32650JUAREZ-CHIHUAHU, MEXICO                        </domicilioreceptor> 
+<importetotal>20.00</importetotal> 
+<formaspago>
+<formapago>
+<codigo>99</codigo> 
+<descripcion>CASH                </descripcion> 
+</formapago>
+</formaspago>
+<incoterms>FOB</incoterms> 
+<detalleincoterms>FOB</detalleincoterms> 
+<otrosdatoscomerciales>&#x0D;&#x0D;&#x0D;Covering shipment from Buenos Aires, Argentina of</otrosdatoscomerciales> 
+<detalles><detalle><desc>-</desc><importe>20.00</importe></detalle></detalles><otrosdatosgenerales>&#x0D;
+Say us dollars twenty</otrosdatosgenerales> 
+</comprobante>
+</comprobantes>
