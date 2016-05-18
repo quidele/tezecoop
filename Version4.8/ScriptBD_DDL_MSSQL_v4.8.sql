@@ -13,7 +13,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_o
 
 go
 
----  exec  dbo.spu_obtieneDatosCITIVentas_v4_8 1, 2015
+---  exec  dbo.spu_obtieneDatosCITIVentas_v4_8 2, 2015
 
 create procedure  dbo.spu_obtieneDatosCITIVentas_v4_8(@mes int, @anio int) 
 as
@@ -62,12 +62,13 @@ begin
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
 				+ case  tpIVA when 'RI'  then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then '80' ELSE '99' END)
-							else '99'   END -- As cod_dgi,
+							else (CASE WHEN a.vlTotalGeneral > 999 THEN	'80' ELSE   '99'  END )    END -- As cod_dgi,
 				--, A.nrDoc
 				--, A.vlTotalGeneral, 
-				+  case tpIVA when 'RI'   then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   else REPLICATE('0',20) END -- As nro_dgi,  --- Código del Documento del Comprador
+				+  case tpIVA when 'RI'    then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   
+				    else ((CASE WHEN a.vlTotalGeneral > 999 THEN	dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE    REPLICATE('0',20) END) ) END -- As nro_dgi,  --- Código del Documento del Comprador
 				+ Left (  case tpIVA when 'RI'  then A.dsRazonSocial   
-				else 'Consumidor Final' END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
+				else (CASE WHEN a.vlTotalGeneral > 999 THEN	A.dsRazonSocial   ELSE   'Consumidor Final'   END) END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
 		--vlTotalGeneral,
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral, 15, 2)   --    As imp_total,     --  importe total del operacion
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2) --  As imp_iva,				--  importe total conceptos que no integran el neto gravado		
@@ -82,12 +83,15 @@ begin
 		+ '1'     -- as cant_alicuotas_iva,			--  cantidad alicuotas iva  
 		+ ' '     -- as cant_alicuotas_iva,			--  codigo de operacion
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2)     --  as otros_tributos,			    --  otros tributos
-		+ convert(varchar, A.dtComprobante + 10,112) --  as fecha_venc -- fecha de vencimiento de pago 
+		+ convert(varchar, DATEADD (day, 10,  A.dtComprobante ) ,112) --  as fecha_venc -- fecha de vencimiento de pago 
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
 		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
 		--AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
 		AND tpLetra <>'X' 
+		
+
+		select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
 
 		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
 
