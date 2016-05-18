@@ -1,0 +1,12 @@
+Put ftp2http.inc and ftp2http.php in any 
+directory under your webserver docroot.
+
+Change the following lines
+
+$temp_dir="c:/temp";
+$default_port="21";
+
+in ftp2http.inc at the top to suit your 
+setup. You are ready to go! 
+Access ftp2http.php from your browser 
+and have a http interface to any ftp server.
