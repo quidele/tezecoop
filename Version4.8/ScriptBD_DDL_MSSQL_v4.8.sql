@@ -2,6 +2,66 @@
 use dbSG2000
 go
 
+sp_helptext 'dbo.ufn_ValidarCUIT'
+
+
+select dbo.ufn_ValidarCUIT ('1792463661001')
+
+go
+
+Text
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+create function dbo.ufn_ValidarCUIT (@cuit varchar(13))
+returns  bit
+as
+
+begin
+declare @verificador int
+declare @resultado int = 0
+declare @cuit_nro varchar(11)
+declare @validacion bit
+declare @codes varchar(10) = '6789456789'
+
+	set @cuit_nro = REPLACE(@cuit, '-', '')
+
+	if isnumeric(@cuit_nro) <> 1
+	begin
+		return 0
+	end
+
+	if len(@cuit_nro) <> 11
+	begin
+		set @validacion = 0
+	end
+
+	set @verificador = RIGHT(@cuit_nro, 1)
+
+	declare @x int = 0
+
+	while @x < 10
+	begin
+		declare @digitoValidador int = convert(int, substring(@codes, @x + 1, 1))
+		declare @digito int = convert(int, substring(@cuit_nro, @x + 1, 1))
+		declare @digitoValidacion int = @digitoValidador * @digito
+		set @resultado = @resultado + @digitoValidacion
+		set @x = @x + 1
+	end
+
+	set @resultado = @resultado % 11
+
+	If @resultado = @verificador
+	begin
+		set @validacion = 1
+	end
+	else
+	begin
+		set @validacion = 0
+	End
+
+	return @validacion
+end
+go
 
 -- Mejora de Perfomance ALTER TABLE TB_Comprobantes ALTER COLUMN dtComprobante date
 
@@ -13,7 +73,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_o
 
 go
 
----  exec  dbo.spu_obtieneDatosCITIVentas_v4_8 2, 2015
+---  exec  dbo.spu_obtieneDatosCITIVentas_v4_8 3, 2015
 
 create procedure  dbo.spu_obtieneDatosCITIVentas_v4_8(@mes int, @anio int) 
 as
@@ -89,9 +149,10 @@ begin
 		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
 		--AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
 		AND tpLetra <>'X' 
+		AND A.nrComprobante =  '00004668' and A.nrTalonario = '0006'
 		
 
-		select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
+	    select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
 
 		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
 
