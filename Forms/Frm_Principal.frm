@@ -705,6 +705,9 @@ Dim strnrCaja               As String
         
         objParametros.GrabarValor "Frm_VentaPasajes.nrCaja", objParametros.ObtenerValor("nrCaja")
         
+		' ADD agregado en la version 4.7
+		objParametros.GrabarValor "Frm_VentaPasajes.tpComprobante", "FA"
+		  
         ' Analisis de la version 4.7 <Llamada para facturacion manual>
         Frm_VentaPasajes.Show vbModal
         Exit Sub
