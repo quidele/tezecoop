@@ -1033,7 +1033,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   115998721
+         Format          =   107610113
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3670,7 +3670,7 @@ Dim vlComision    As Single
                         "<-", CSng(ObtenerCampo("vlTotalGeneral").Text) - vlComision
             ObjTablasIO.setearCampoOperadorValor "vlafavorAdmin", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "vlComision", "<-", CStr(vlComision)
-        Case "Cuenta Corriente", "Tarjeta de Débito", "Tarjeta de Crédito"  
+        Case "Cuenta Corriente", "Tarjeta de Débito", "Tarjeta de Crédito"
             ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "flCompensado", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "vlaFavordelLicenciatario", _
@@ -3703,7 +3703,7 @@ Dim vlComision    As Single
         ' para la sincronizacion
         ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", "0"
         
-        ' para el calculo de IVA 
+        ' para el calculo de IVA
         ObjTablasIO.setearCampoOperadorValor "vlIVA", "<-", ObtenerCampo("vlIVA").Text
         ObjTablasIO.setearCampoOperadorValor "vlSubtotal", "<-", ObtenerCampo("vlSubtotal").Text
         
@@ -5687,7 +5687,7 @@ Private Sub cargarCondVentas(pcdCliente As String)
         ObtenerCampo("cdCondVenta").AddItem "Contado"
         ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
         ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
-		ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
         ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
     Case Else
@@ -5757,7 +5757,7 @@ Dim lcdCliente       As String
            Case Else
                 ObtenerCampo("cdCondVenta").Clear
                 ObtenerCampo("cdCondVenta").AddItem "Contado"
-				ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
                 ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
                 ObtenerCampo("cdCondVenta") = "Contado"
@@ -5774,7 +5774,7 @@ Dim lcdCliente       As String
         Case Else
             ObtenerCampo("cdCondVenta").Clear
             ObtenerCampo("cdCondVenta").AddItem "Contado"
-			ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta") = "Contado"

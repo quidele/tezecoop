@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   247857153
+         Format          =   230359041
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,7 +1535,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   247857153
+         Format          =   230359041
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
@@ -2976,7 +2976,10 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     
     Frm_Principal.CrystalReport1.Formulas(8) = "Reimpresion = 'REIMPRESION'"
-
+    
+    ' Agregado en la version  4.9
+    Frm_Principal.CrystalReport1.Formulas(9) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(10) = "tpLetra = '" + ptpLetra + "'"
     
     ' Aparece la venta original
     On Error Resume Next
@@ -3024,6 +3027,10 @@ Dim cdCodBarLic         As String
     Frm_Principal.CrystalReport1.Formulas(7) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
     Frm_Principal.CrystalReport1.Formulas(8) = "Reimpresion = 'REIMPRESION'"
 
+    ' agregado en la version  4.9
+    Frm_Principal.CrystalReport1.Formulas(9) = "tpComprobante = '" + tpComprobante + "'"
+    Frm_Principal.CrystalReport1.Formulas(10) = "tpLetra = '" + ptpLetra + "'"
+    
 
     ' Aparece la venta duplicado
     On Error Resume Next

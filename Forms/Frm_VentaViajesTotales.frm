@@ -3,7 +3,7 @@ Begin VB.Form Frm_VentaViajesTotales
    Appearance      =   0  'Flat
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "         Confirme los valores de Pago"
-   ClientHeight    =   2550
+   ClientHeight    =   3135
    ClientLeft      =   6060
    ClientTop       =   2775
    ClientWidth     =   4635
@@ -13,7 +13,7 @@ Begin VB.Form Frm_VentaViajesTotales
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   2550
+   ScaleHeight     =   3135
    ScaleWidth      =   4635
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -29,7 +29,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   1140
       TabIndex        =   5
-      Top             =   2070
+      Top             =   2640
       Width           =   1050
    End
    Begin VB.CommandButton cmdCancelar 
@@ -38,17 +38,17 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   2460
       TabIndex        =   7
-      Top             =   2070
+      Top             =   2640
       Width           =   1050
    End
    Begin VB.PictureBox pnl 
       Appearance      =   0  'Flat
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
-      Height          =   1815
+      Height          =   2250
       Index           =   2
       Left            =   90
-      ScaleHeight     =   1785
+      ScaleHeight     =   2220
       ScaleWidth      =   4410
       TabIndex        =   6
       Top             =   165
@@ -56,10 +56,33 @@ Begin VB.Form Frm_VentaViajesTotales
       Begin VB.TextBox txtFields 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   4
+         Left            =   2235
+         MaxLength       =   4
+         TabIndex        =   14
+         Tag             =   "vlPagoReales"
+         Top             =   1650
+         Width           =   945
+      End
+      Begin VB.TextBox txtFields 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -84,7 +107,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -110,7 +133,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -118,7 +141,7 @@ Begin VB.Form Frm_VentaViajesTotales
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H000000FF&
-         Height          =   450
+         Height          =   435
          IMEMode         =   3  'DISABLE
          Index           =   2
          Left            =   3270
@@ -136,7 +159,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -162,7 +185,7 @@ Begin VB.Form Frm_VentaViajesTotales
          BackColor       =   &H00E0E0E0&
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   700
             Underline       =   0   'False
@@ -195,6 +218,19 @@ Begin VB.Form Frm_VentaViajesTotales
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
+         Caption         =   "Ultimos 4 Nros de la Tarjeta"
+         ForeColor       =   &H00000000&
+         Height          =   195
+         Index           =   4
+         Left            =   105
+         TabIndex        =   15
+         Top             =   1725
+         Width           =   1950
+      End
+      Begin VB.Label lbl 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
          Caption         =   "Total Reales"
          ForeColor       =   &H00000000&
          Height          =   195
@@ -209,7 +245,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Caption         =   "Cond. de Venta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
