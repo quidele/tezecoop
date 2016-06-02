@@ -3,18 +3,18 @@ Begin VB.Form Frm_VentaViajesTotales
    Appearance      =   0  'Flat
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "         Confirme los valores de Pago"
-   ClientHeight    =   3135
+   ClientHeight    =   4155
    ClientLeft      =   6060
    ClientTop       =   2775
-   ClientWidth     =   4635
+   ClientWidth     =   4830
    ClipControls    =   0   'False
    ControlBox      =   0   'False
    HelpContextID   =   1
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3135
-   ScaleWidth      =   4635
+   ScaleHeight     =   4155
+   ScaleWidth      =   4830
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Timer Timer1 
@@ -29,7 +29,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   1140
       TabIndex        =   5
-      Top             =   2640
+      Top             =   3435
       Width           =   1050
    End
    Begin VB.CommandButton cmdCancelar 
@@ -38,17 +38,17 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   2460
       TabIndex        =   7
-      Top             =   2640
+      Top             =   3435
       Width           =   1050
    End
    Begin VB.PictureBox pnl 
       Appearance      =   0  'Flat
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
-      Height          =   2250
+      Height          =   3060
       Index           =   2
       Left            =   90
-      ScaleHeight     =   2220
+      ScaleHeight     =   3030
       ScaleWidth      =   4410
       TabIndex        =   6
       Top             =   165
@@ -68,11 +68,34 @@ Begin VB.Form Frm_VentaViajesTotales
             Strikethrough   =   0   'False
          EndProperty
          Height          =   285
+         Index           =   5
+         Left            =   525
+         MaxLength       =   4
+         TabIndex        =   17
+         Tag             =   "nrDoc"
+         Top             =   2055
+         Width           =   2640
+      End
+      Begin VB.TextBox txtFields 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
          Index           =   4
          Left            =   2235
          MaxLength       =   4
          TabIndex        =   14
-         Tag             =   "vlPagoReales"
+         Tag             =   "nrTarjeta"
          Top             =   1650
          Width           =   945
       End
@@ -213,6 +236,19 @@ Begin VB.Form Frm_VentaViajesTotales
          TabIndex        =   8
          Top             =   240
          Width           =   330
+      End
+      Begin VB.Label lbl 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "DNI"
+         ForeColor       =   &H00000000&
+         Height          =   195
+         Index           =   5
+         Left            =   150
+         TabIndex        =   16
+         Top             =   2100
+         Width           =   300
       End
       Begin VB.Label lbl 
          Alignment       =   2  'Center
