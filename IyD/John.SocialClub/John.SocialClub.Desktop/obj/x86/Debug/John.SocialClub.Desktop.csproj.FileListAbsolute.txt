@@ -62,3 +62,6 @@ C:\Users\quidele\Documents\personal\tezecoop\IyD\John.SocialClub\John.SocialClub
 C:\Users\quidele\Documents\personal\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.csproj.GenerateResource.Cache
 C:\Users\quidele\Documents\personal\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.exe
 C:\Users\quidele\Documents\personal\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.pdb
+C:\github\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.exe
+C:\github\tezecoop\IyD\John.SocialClub\John.SocialClub.Desktop\obj\x86\Debug\John.SocialClub.Desktop.pdb
