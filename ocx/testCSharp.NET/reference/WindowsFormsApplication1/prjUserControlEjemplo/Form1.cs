@@ -27,5 +27,10 @@ namespace WindowsFormsApplication1
             Button miboton = (Button)sender;
             MessageBox.Show("tocaste un boton, boton " + miboton.Name);
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

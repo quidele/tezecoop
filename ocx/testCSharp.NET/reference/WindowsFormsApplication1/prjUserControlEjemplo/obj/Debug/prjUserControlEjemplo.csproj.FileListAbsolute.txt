@@ -8,6 +8,24 @@ C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplicati
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\prjUserControlEjemplo.csproj.GenerateResource.Cache
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\Recursos Localizables\StringResources.resx
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\EN-US\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\ES-ES\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.UserControl1.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.EN-US.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.ES-ES.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\prjUserControlEjemplo.csproj.GenerateResource.Cache
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\EN-US\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\ES-ES\WindowsFormsApplication1.resources.dll
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\obj\Debug\WindowsFormsApplication1.BotonesForm.resources
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\reference\WindowsFormsApplication1\prjUserControlEjemplo\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs

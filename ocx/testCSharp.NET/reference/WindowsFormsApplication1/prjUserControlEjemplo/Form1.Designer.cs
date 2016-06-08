@@ -28,14 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.botonesForm1 = new WindowsFormsApplication1.BotonesForm();
             this.userControl11 = new WindowsFormsApplication1.UserControl1();
             this.SuspendLayout();
             // 
+            // botonesForm1
+            // 
+            this.botonesForm1.AutoSize = true;
+            this.botonesForm1.Location = new System.Drawing.Point(25, 84);
+            this.botonesForm1.Name = "botonesForm1";
+            this.botonesForm1.Size = new System.Drawing.Size(640, 27);
+            this.botonesForm1.TabIndex = 1;
+            // 
             // userControl11
             // 
-            this.userControl11.Location = new System.Drawing.Point(83, 49);
+            this.userControl11.Location = new System.Drawing.Point(3, -2);
             this.userControl11.Name = "userControl11";
-            this.userControl11.Size = new System.Drawing.Size(472, 161);
+            this.userControl11.Size = new System.Drawing.Size(472, 64);
             this.userControl11.TabIndex = 0;
             this.userControl11.ClickEventDelegateHandler += new WindowsFormsApplication1.UserControl1.ClickDelegateHandler(this.userControl11_ClickEventDelegateHandler);
             this.userControl11.Load += new System.EventHandler(this.userControl11_Load);
@@ -45,16 +54,20 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(703, 264);
+            this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.userControl11);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
         #endregion
 
         private UserControl1 userControl11;
+        private BotonesForm botonesForm1;
     }
 }
 
