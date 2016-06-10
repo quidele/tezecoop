@@ -2,17 +2,12 @@
 use dbSG2000
 go
 
-sp_helptext 'dbo.ufn_ValidarCUIT'
 
-
-select dbo.ufn_ValidarCUIT ('1792463661001')
 
 go
 
-Text
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
-create function dbo.ufn_ValidarCUIT (@cuit varchar(13))
+alter function dbo.ufn_ValidarCUIT (@cuit varchar(13))
 returns  bit
 as
 
