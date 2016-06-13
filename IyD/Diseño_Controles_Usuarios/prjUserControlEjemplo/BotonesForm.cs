@@ -26,11 +26,21 @@ namespace WindowsFormsApplication1
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ES-ES");
             this.toolStripButton1.Text = StringResources.botonBuscarText;
             this.toolStripButton2.Text = StringResources.botonEditarText;
-            this.toolStripButton1.Image = StringResources.botonBuscarImage;
-            this.toolStripButton2.Image = StringResources.botonBuscarImage;
+            this.toolStripButton1.Image = StringResources.btn_form_add;
+            this.toolStripButton2.Image = StringResources.btn_form_edit;
         }
 
         private void toolStripButton6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void toolStripButton5_Click(object sender, EventArgs e)
         {
 
         }

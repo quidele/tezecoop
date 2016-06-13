@@ -7,3 +7,12 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibr
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary_Pruebas.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EntityFramework.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EntityFramework.xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.pdb

@@ -40,16 +40,16 @@ namespace ConsoleApplication1
             Console.ReadKey();
             **/
 
-            /* 
-             * ServiceDestinos service = new ServiceDestinos();
+            ServiceDestinos service = new ServiceDestinos();
             Console.WriteLine(service.Inicializar());
-            Console.ReadKey(); */
-
-            ServiceTarifas miServiceTarifas = new ServiceTarifas();
-
-            miServiceTarifas.cargarTarifas();
-
             Console.ReadKey(); 
+
+            /* 
+             * 
+            ServiceTarifas miServiceTarifas = new ServiceTarifas();
+            miServiceTarifas.cargarTarifas();
+            Console.ReadKey(); 
+             */
 
             /* ServiceExcel miExcel = new ServiceExcel();
             // ServiceExcel.InitializeExcel ();

@@ -127,4 +127,28 @@
   <data name="botonEditarText" xml:space="preserve">
     <value>EDIT</value>
   </data>
+  <data name="btn_form_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_add11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_anu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_anu11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_cancel11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_del11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_edit11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_hrlp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_hrlp11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_ok11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="btn_form_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Imagenes_Varias\botones_form\btn_form_print11.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
 </root>
