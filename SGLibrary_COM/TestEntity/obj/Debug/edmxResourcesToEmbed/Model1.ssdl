@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityType Name="TB_Productos">
+    <Key>
+      <PropertyRef Name="cdProducto" />
+    </Key>
+    <Property Name="cdProducto" Type="int" Nullable="false" />
+    <Property Name="dsProducto" Type="varchar" MaxLength="200" />
+    <Property Name="vlPrecioViaje" Type="float" />
+    <Property Name="vlPrecioPeaje" Type="float" />
+    <Property Name="obsHoras" Type="varchar" MaxLength="50" />
+    <Property Name="vlPorcentaje" Type="int" />
+    <Property Name="tpOperacion" Type="varchar" MaxLength="20" />
+    <Property Name="flMuestra" Type="bit" Nullable="false" />
+    <Property Name="cdOrden" Type="varchar" MaxLength="1" />
+    <Property Name="vlPrecioViajeSinPeaje" Type="float" />
+    <Property Name="vlKilometros" Type="float" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="vlPrecioxKilometro" Type="float" />
+    <Property Name="flMuestraenlaWEB" Type="bit" />
+    <Property Name="flIncluyeComisionRetorno" Type="bit" />
+    <Property Name="tpDestino" Type="varchar" MaxLength="20" />
+    <Property Name="cdComision" Type="int" />
+  </EntityType>
+  <EntityContainer Name="dbSG2000ModelStoreContainer">
+    <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

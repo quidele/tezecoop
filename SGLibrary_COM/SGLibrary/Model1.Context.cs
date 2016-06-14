@@ -23,7 +23,7 @@ namespace SGLibrary
     	private static string ConnectionString()
     	{
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
-    		sqlBuilder.DataSource = "PC0157";
+    		sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
     		sqlBuilder.InitialCatalog = "dbSG2000";
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;

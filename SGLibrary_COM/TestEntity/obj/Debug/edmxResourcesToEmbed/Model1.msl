@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="dbSG2000ModelStoreContainer" CdmEntityContainer="dbSG2000Entities">
+    <EntitySetMapping Name="TB_Productos">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
+        <MappingFragment StoreEntitySet="TB_Productos">
+          <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
+          <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
+          <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
+          <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
+          <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
+          <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
+          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+          <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
+          <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
+          <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
+          <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
+          <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+          <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+          <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
+          <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
+          <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
+          <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
+          <ScalarProperty Name="cdComision" ColumnName="cdComision" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

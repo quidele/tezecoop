@@ -42,7 +42,6 @@ namespace SGLibrary
                 Console.WriteLine(destinos.cdProducto );
                 Console.WriteLine(destinos.dsProducto );
 
-
                 return "inicializando la clase ServiceDestinos PRODUCTO" + destinos.dsProducto + " server HOST " + ODBCManager.getDSNHost();
             }
 
