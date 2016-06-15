@@ -40,12 +40,12 @@ namespace ConsoleApplication1
             Console.ReadKey();
             **/
 
-            /*
-             * *
-            ServiceDestinos service = new ServiceDestinos();
-            Console.WriteLine(service.Inicializar());
-            Console.ReadKey(); 
-             * */
+            /* 
+                  * 
+                 ServiceDestinos service = new ServiceDestinos();
+                 Console.WriteLine(service.Inicializar());
+                 Console.ReadKey(); 
+                   */
 
             /* 
              * 
@@ -66,8 +66,8 @@ namespace ConsoleApplication1
            /* service.
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls*/
 
-
-
+            ServiceConciliacion objConciliacion = new ServiceConciliacion();
+            objConciliacion.execFormulario();
         }
     }
 }

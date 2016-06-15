@@ -41,3 +41,25 @@ C:\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrar
 C:\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\prjUserControlLibrary.csproj.GenerateResource.Cache
 C:\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\EN-US\WindowsFormsApplication1.resources.dll
 C:\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\ES-ES\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\Recursos Localizables\StringResources.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\WindowsFormsApplication1.exe.config
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\WindowsFormsApplication1.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\WindowsFormsApplication1.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\EN-US\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\bin\Debug\ES-ES\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.BotonesForm.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.UserControl1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.EN-US.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.Recursos_Localizables.StringResources.ES-ES.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\prjUserControlLibrary.csproj.GenerateResource.Cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\EN-US\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\ES-ES\WindowsFormsApplication1.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\WindowsFormsApplication1.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\Diseño_Controles_Usuarios\prjUserControlLibrary\obj\Debug\prjUserControlLibrary.csprojResolveAssemblyReference.cache
