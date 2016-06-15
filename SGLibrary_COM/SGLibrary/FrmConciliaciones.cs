@@ -30,6 +30,20 @@ namespace SGLibrary
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
+            switch (miboton.Tag.ToString ()){
+                case "EDIT": {
+                    this.panelcarga.Visible = true;
+                    this.panelbusqueda.Visible  = false;
+                    break;
+                }
+                case "FIND":
+                    {
+                        this.panelcarga.Visible =  false ;
+                        this.panelbusqueda.Visible = true;
+                    }
+                    break;
+            } 
+
         }
     }
 }
