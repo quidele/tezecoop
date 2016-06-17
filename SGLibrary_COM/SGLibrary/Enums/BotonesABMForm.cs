@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace WindowsFormsApplication1.Enums
+namespace ControlesdeUsuario
 {
 
     using System.ComponentModel;

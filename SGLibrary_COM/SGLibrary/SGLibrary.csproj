@@ -128,12 +128,6 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
-    <Compile Include="plantillas_excel.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
-    <Compile Include="plantillas_excel_detalle.cs">
-      <DependentUpon>Model1.tt</DependentUpon>
-    </Compile>
     <Compile Include="PrinterManager.cs" />
     <Compile Include="Recursos Localizables\StringResources.Designer.cs">
       <DependentUpon>StringResources.resx</DependentUpon>
@@ -159,6 +153,9 @@
     <Compile Include="ServiceExcel.cs" />
     <Compile Include="ServicePrinter.cs" />
     <Compile Include="ServiceTarifas.cs" />
+    <Compile Include="TB_Cupones.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Productos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

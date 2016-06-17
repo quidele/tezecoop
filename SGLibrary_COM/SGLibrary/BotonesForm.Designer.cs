@@ -1,4 +1,4 @@
-﻿namespace WindowsFormsApplication1
+﻿namespace ControlesdeUsuario
 {
     partial class BotonesForm
     {
@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(BotonesForm));
             this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton2 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton3 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton4 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton5 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton6 = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton7 = new System.Windows.Forms.ToolStripButton();
+            this.botonFIND = new System.Windows.Forms.ToolStripButton();
+            this.botonEDIT = new System.Windows.Forms.ToolStripButton();
+            this.botonADD = new System.Windows.Forms.ToolStripButton();
+            this.botonDELETE = new System.Windows.Forms.ToolStripButton();
+            this.botonOK = new System.Windows.Forms.ToolStripButton();
+            this.botonCANCEL = new System.Windows.Forms.ToolStripButton();
+            this.botonPRINT = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -44,13 +44,13 @@
             // 
             this.toolStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripButton1,
-            this.toolStripButton2,
-            this.toolStripButton3,
-            this.toolStripButton4,
-            this.toolStripButton5,
-            this.toolStripButton6,
-            this.toolStripButton7});
+            this.botonFIND,
+            this.botonEDIT,
+            this.botonADD,
+            this.botonDELETE,
+            this.botonOK,
+            this.botonCANCEL,
+            this.botonPRINT});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(596, 27);
@@ -58,74 +58,75 @@
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
             // 
-            // toolStripButton1
+            // botonFIND
             // 
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(66, 24);
-            this.toolStripButton1.Tag = "FIND";
-            this.toolStripButton1.Text = "FIND";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            this.botonFIND.Image = ((System.Drawing.Image)(resources.GetObject("botonFIND.Image")));
+            this.botonFIND.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonFIND.Name = "botonFIND";
+            this.botonFIND.Size = new System.Drawing.Size(66, 24);
+            this.botonFIND.Tag = "FIND";
+            this.botonFIND.Text = "FIND";
+            this.botonFIND.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
-            // toolStripButton2
+            // botonEDIT
             // 
-            this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
-            this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(64, 24);
-            this.toolStripButton2.Tag = "EDIT";
-            this.toolStripButton2.Text = "EDIT";
-            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
+            this.botonEDIT.Image = ((System.Drawing.Image)(resources.GetObject("botonEDIT.Image")));
+            this.botonEDIT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonEDIT.Name = "botonEDIT";
+            this.botonEDIT.Size = new System.Drawing.Size(64, 24);
+            this.botonEDIT.Tag = "EDIT";
+            this.botonEDIT.Text = "EDIT";
+            this.botonEDIT.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
-            // toolStripButton3
+            // botonADD
             // 
-            this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
-            this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(65, 24);
-            this.toolStripButton3.Tag = "ADD";
-            this.toolStripButton3.Text = "ADD";
-            this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
+            this.botonADD.Image = ((System.Drawing.Image)(resources.GetObject("botonADD.Image")));
+            this.botonADD.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonADD.Name = "botonADD";
+            this.botonADD.Size = new System.Drawing.Size(65, 24);
+            this.botonADD.Tag = "ADD";
+            this.botonADD.Text = "ADD";
+            this.botonADD.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
-            // toolStripButton4
+            // botonDELETE
             // 
-            this.toolStripButton4.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton4.Image")));
-            this.toolStripButton4.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton4.Name = "toolStripButton4";
-            this.toolStripButton4.Size = new System.Drawing.Size(83, 24);
-            this.toolStripButton4.Tag = "DELETE";
-            this.toolStripButton4.Text = "DELETE";
-            this.toolStripButton4.Click += new System.EventHandler(this.toolStripButton4_Click);
+            this.botonDELETE.Image = ((System.Drawing.Image)(resources.GetObject("botonDELETE.Image")));
+            this.botonDELETE.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonDELETE.Name = "botonDELETE";
+            this.botonDELETE.Size = new System.Drawing.Size(83, 24);
+            this.botonDELETE.Tag = "DELETE";
+            this.botonDELETE.Text = "DELETE";
+            this.botonDELETE.Click += new System.EventHandler(this.toolStripButton4_Click);
             // 
-            // toolStripButton5
+            // botonOK
             // 
-            this.toolStripButton5.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton5.Image")));
-            this.toolStripButton5.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton5.Name = "toolStripButton5";
-            this.toolStripButton5.Size = new System.Drawing.Size(67, 24);
-            this.toolStripButton5.Tag = "SAVE";
-            this.toolStripButton5.Text = "SAVE";
-            this.toolStripButton5.Click += new System.EventHandler(this.toolStripButton5_Click);
+            this.botonOK.Image = ((System.Drawing.Image)(resources.GetObject("botonOK.Image")));
+            this.botonOK.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonOK.Name = "botonOK";
+            this.botonOK.Size = new System.Drawing.Size(53, 24);
+            this.botonOK.Tag = "OK";
+            this.botonOK.Text = "OK";
+            this.botonOK.Click += new System.EventHandler(this.toolStripButton5_Click);
             // 
-            // toolStripButton6
+            // botonCANCEL
             // 
-            this.toolStripButton6.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton6.Image")));
-            this.toolStripButton6.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton6.Name = "toolStripButton6";
-            this.toolStripButton6.Size = new System.Drawing.Size(87, 24);
-            this.toolStripButton6.Tag = "CANCEL";
-            this.toolStripButton6.Text = "CANCEL";
-            this.toolStripButton6.Click += new System.EventHandler(this.toolStripButton6_Click);
+            this.botonCANCEL.Image = ((System.Drawing.Image)(resources.GetObject("botonCANCEL.Image")));
+            this.botonCANCEL.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonCANCEL.Name = "botonCANCEL";
+            this.botonCANCEL.Size = new System.Drawing.Size(87, 24);
+            this.botonCANCEL.Tag = "CANCEL";
+            this.botonCANCEL.Text = "CANCEL";
+            this.botonCANCEL.Click += new System.EventHandler(this.toolStripButton6_Click);
             // 
-            // toolStripButton7
+            // botonPRINT
             // 
-            this.toolStripButton7.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton7.Image")));
-            this.toolStripButton7.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton7.Name = "toolStripButton7";
-            this.toolStripButton7.Size = new System.Drawing.Size(73, 24);
-            this.toolStripButton7.Text = "PRINT";
-            this.toolStripButton7.Click += new System.EventHandler(this.toolStripButton7_Click);
+            this.botonPRINT.Image = ((System.Drawing.Image)(resources.GetObject("botonPRINT.Image")));
+            this.botonPRINT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonPRINT.Name = "botonPRINT";
+            this.botonPRINT.Size = new System.Drawing.Size(73, 24);
+            this.botonPRINT.Tag = "PRINT";
+            this.botonPRINT.Text = "PRINT";
+            this.botonPRINT.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
             // BotonesForm
             // 
@@ -147,12 +148,12 @@
         #endregion
 
         private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
-        private System.Windows.Forms.ToolStripButton toolStripButton2;
-        private System.Windows.Forms.ToolStripButton toolStripButton3;
-        private System.Windows.Forms.ToolStripButton toolStripButton4;
-        private System.Windows.Forms.ToolStripButton toolStripButton5;
-        private System.Windows.Forms.ToolStripButton toolStripButton6;
-        private System.Windows.Forms.ToolStripButton toolStripButton7;
+        private System.Windows.Forms.ToolStripButton botonFIND;
+        private System.Windows.Forms.ToolStripButton botonEDIT;
+        private System.Windows.Forms.ToolStripButton botonADD;
+        private System.Windows.Forms.ToolStripButton botonDELETE;
+        private System.Windows.Forms.ToolStripButton botonOK;
+        private System.Windows.Forms.ToolStripButton botonCANCEL;
+        private System.Windows.Forms.ToolStripButton botonPRINT;
     }
 }

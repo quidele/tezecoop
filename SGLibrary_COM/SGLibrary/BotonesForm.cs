@@ -12,10 +12,14 @@ using System.Globalization;
 using SGLibrary.Recursos_Localizables;
 
 
-namespace WindowsFormsApplication1
+namespace ControlesdeUsuario
 {
     public partial class BotonesForm : UserControl
     {
+
+
+        public ABMBotonesForm MododeEdicion { get; set; }
+
         public BotonesForm()
         {
             InitializeComponent();
@@ -28,15 +32,15 @@ namespace WindowsFormsApplication1
         private void BotonesForm_Load(object sender, EventArgs e)
         {
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ES-ES");
-            this.toolStripButton1.Text = StringResources.botonBuscarText;
-            this.toolStripButton2.Text = StringResources.botonEditarText;
-            this.toolStripButton1.Image = StringResources.Image_btn_form_find;
-            this.toolStripButton2.Image = StringResources.Image_btn_form_edit;
-            this.toolStripButton3.Image = StringResources.Image_btn_form_add;
-            this.toolStripButton4.Image = StringResources.Image_btn_form_del;
-            this.toolStripButton5.Image = StringResources.Image_btn_form_ok;
-            this.toolStripButton6.Image = StringResources.Image_form_cancel;
-            this.toolStripButton7.Image = StringResources.Image_btn_form_print;
+            this.botonFIND.Text = StringResources.botonBuscarText;
+            this.botonEDIT.Text = StringResources.botonEditarText;
+            this.botonFIND.Image = StringResources.Image_btn_form_find;
+            this.botonEDIT.Image = StringResources.Image_btn_form_edit;
+            this.botonADD.Image = StringResources.Image_btn_form_add;
+            this.botonDELETE.Image = StringResources.Image_btn_form_del;
+            this.botonOK.Image = StringResources.Image_btn_form_ok;
+            this.botonCANCEL.Image = StringResources.Image_form_cancel;
+            this.botonPRINT.Image = StringResources.Image_btn_form_print;
         }
 
        
@@ -82,7 +86,76 @@ namespace WindowsFormsApplication1
         {
 
         }
-        
+
+        public void configMododeEdicion(ABMBotonesForm modo)
+        {
+            //this.MododeEdicion = modo;
+            this.MododeEdicion = modo;
+            switch (modo)
+            {
+                case ABMBotonesForm.FIND:
+                    this.botonFIND.Visible = true;
+                    this.botonEDIT.Visible = true;
+                    this.botonFIND.Visible = true;
+                    this.botonADD.Visible = true;
+                    this.botonDELETE.Visible = true;
+                    this.botonOK.Visible = false;
+                    this.botonCANCEL.Visible = false;
+                    this.botonPRINT.Visible = true;
+                    break;
+                case ABMBotonesForm.EDIT:
+                    this.botonFIND.Visible = false;
+                    this.botonEDIT.Visible = false;
+                    this.botonFIND.Visible = false;
+                    this.botonADD.Visible = false;
+                    this.botonDELETE.Visible = false;
+                    this.botonOK.Visible = true;
+                    this.botonCANCEL.Visible = true;
+                    this.botonPRINT.Visible = false;
+                    break;
+                case ABMBotonesForm.ADD:
+                    this.botonFIND.Visible = false;
+                    this.botonEDIT.Visible = false;
+                    this.botonFIND.Visible = false;
+                    this.botonADD.Visible = false;
+                    this.botonDELETE.Visible = false;
+                    this.botonOK.Visible = true;
+                    this.botonCANCEL.Visible = true;
+                    this.botonPRINT.Visible = false;
+                    break;
+                case ABMBotonesForm.DELETE:
+                    this.botonFIND.Visible = true;
+                    this.botonEDIT.Visible = true;
+                    this.botonADD.Visible = true;
+                    this.botonDELETE.Visible = true;
+                    this.botonOK.Visible = false;
+                    this.botonCANCEL.Visible = false;
+                    this.botonPRINT.Visible = true;
+                    break;
+                case ABMBotonesForm.SAVE:
+                    this.botonFIND.Visible = true;
+                    this.botonEDIT.Visible = true;
+                    this.botonADD.Visible = true;
+                    this.botonDELETE.Visible = true;
+                    this.botonOK.Visible = false;
+                    this.botonCANCEL.Visible = false;
+                    this.botonPRINT.Visible = true;
+                    break;
+                case ABMBotonesForm.CANCEL:
+                    this.botonFIND.Visible = true;
+                    this.botonEDIT.Visible = true;
+                    this.botonEDIT.Visible = true;
+                    this.botonADD.Visible = true;
+                    this.botonDELETE.Visible = true;
+                    this.botonOK.Visible = false;
+                    this.botonCANCEL.Visible = false;
+                    this.botonPRINT.Visible = true;
+                    break;
+                default:
+                    break;
+            }
+        }
+
     }
 }
     

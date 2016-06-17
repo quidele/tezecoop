@@ -4,44 +4,67 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="dbSG2000ModelStoreContainer">
-          <EntitySet Name="plantillas_excel" EntityType="dbSG2000Model.Store.plantillas_excel" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="plantillas_excel_detalle" EntityType="dbSG2000Model.Store.plantillas_excel_detalle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_plantillas_excel_detalle_plantillas_excel" Association="dbSG2000Model.Store.FK_plantillas_excel_detalle_plantillas_excel">
-            <End Role="plantillas_excel" EntitySet="plantillas_excel" />
-            <End Role="plantillas_excel_detalle" EntitySet="plantillas_excel_detalle" />
-          </AssociationSet>
-        </EntityContainer>
-        <EntityType Name="plantillas_excel">
+    <Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="TB_Cupones">
           <Key>
-            <PropertyRef Name="idplantilla" />
+            <PropertyRef Name="nrCupon" />
           </Key>
-          <Property Name="idplantilla" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="aplicacion" Type="varchar" MaxLength="50" />
-          <Property Name="nombre" Type="varchar" MaxLength="50" />
-          <Property Name="hoja_xls" Type="varchar" MaxLength="50" />
-          <Property Name="ruta_archivo" Type="varchar" MaxLength="4000" />
-          <Property Name="fila_datos" Type="int" />
-          <Property Name="columas" Type="int" />
-          <Property Name="filas" Type="int" />
-          <Property Name="base_destino" Type="varchar" MaxLength="50" />
-          <Property Name="procedimiento" Type="varchar" MaxLength="100" />
-          <Property Name="carp_archivo_tmp" Type="varchar" MaxLength="4000" />
-          <Property Name="separador" Type="char" MaxLength="10" />
-        </EntityType>
-        <EntityType Name="plantillas_excel_detalle">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
-          <Property Name="idplantilla" Type="int" Nullable="false" />
-          <Property Name="fila" Type="int" Nullable="false" />
-          <Property Name="columna" Type="int" Nullable="false" />
-          <Property Name="tipo_detalle" Type="varchar" MaxLength="20" />
-          <Property Name="nombre" Type="varchar" MaxLength="100" />
-          <Property Name="valor" Type="varchar" MaxLength="100" />
+          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="cdCliente" Type="int" />
+          <Property Name="nrPuesto" Type="smallint" />
+          <Property Name="nrLicencia" Type="int" Nullable="false" />
+          <Property Name="nmLicenciatario" Type="varchar" MaxLength="70" />
+          <Property Name="tpCupon" Type="varchar" MaxLength="20" />
+          <Property Name="vlMontoCupon" Type="float" />
+          <Property Name="vlaFavordelLicenciatario" Type="float" />
+          <Property Name="vlafavorAdmin" Type="float" />
+          <Property Name="vlPagoPesos" Type="float" />
+          <Property Name="vlPagoEuros" Type="float" />
+          <Property Name="vlPagoDolares" Type="float" />
+          <Property Name="vlComision" Type="float" />
+          <Property Name="nrCantidadBultos" Type="smallint" />
+          <Property Name="nrPasajeros" Type="smallint" />
+          <Property Name="dtCupon" Type="datetime" />
+          <Property Name="nrTalonarioCliente" Type="char" MaxLength="4" />
+          <Property Name="nrComprabanteCliente" Type="char" MaxLength="12" />
+          <Property Name="tpComprobanteCliente" Type="varchar" MaxLength="2" />
+          <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
+          <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
+          <Property Name="dtCobradoalCliente" Type="datetime" />
+          <Property Name="nrCajaCliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="dtCajaCliente" Type="datetime" />
+          <Property Name="nrTalonarioProveedor" Type="float" />
+          <Property Name="nrComprabanteProveedor" Type="float" />
+          <Property Name="tpComprobanteProveedor" Type="varchar" MaxLength="2" />
+          <Property Name="tpLetraLetraProveedor" Type="varchar" MaxLength="1" />
+          <Property Name="flCompensado" Type="bit" Nullable="false" />
+          <Property Name="dtCompensado" Type="datetime" />
+          <Property Name="nrCajaLicenciatario" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="dtCajaLicenciatario" Type="datetime" />
+          <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="nrLiquidacionProveedores" Type="smallint" />
+          <Property Name="nrLiquidacionCliente" Type="smallint" />
+          <Property Name="cdCodBar" Type="varchar" MaxLength="20" />
+          <Property Name="flAnulado" Type="bit" Nullable="false" />
+          <Property Name="dtAnulado" Type="datetime" />
+          <Property Name="IdRecibo" Type="int" />
+          <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="dsObservacion" Type="varchar" MaxLength="400" />
+          <Property Name="dsDestino" Type="varchar" MaxLength="100" />
+          <Property Name="dsHoraViaje" Type="char" MaxLength="10" />
+          <Property Name="problema" Type="int" />
+          <Property Name="Mellizo" Type="char" MaxLength="1" />
+          <Property Name="dtActualizacion" Type="datetime" />
+          <Property Name="flEliminar" Type="bit" />
+          <Property Name="flSincronizado" Type="bit" />
+          <Property Name="vlSubtotal" Type="float" />
+          <Property Name="vlIVA" Type="float" />
+          <Property Name="nrCajaCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="dtCajaCtaCte" Type="datetime" />
+          <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
+          <Property Name="vlPagoReales" Type="float" />
+          <Property Name="flNoCompensado" Type="char" MaxLength="1" />
+          <Property Name="dtNoCompensado" Type="date" />
         </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
@@ -66,44 +89,92 @@
           <Property Name="tpDestino" Type="varchar" MaxLength="20" />
           <Property Name="cdComision" Type="int" />
         </EntityType>
-        <Association Name="FK_plantillas_excel_detalle_plantillas_excel">
-          <End Role="plantillas_excel" Type="dbSG2000Model.Store.plantillas_excel" Multiplicity="1" />
-          <End Role="plantillas_excel_detalle" Type="dbSG2000Model.Store.plantillas_excel_detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="plantillas_excel">
-              <PropertyRef Name="idplantilla" />
-            </Principal>
-            <Dependent Role="plantillas_excel_detalle">
-              <PropertyRef Name="idplantilla" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
+        <EntityContainer Name="dbSG2000ModelStoreContainer">
+          <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
-          <EntitySet Name="plantillas_excel" EntityType="dbSG2000Model.plantillas_excel" />
-          <EntitySet Name="plantillas_excel_detalle" EntityType="dbSG2000Model.plantillas_excel_detalle" />
-          <AssociationSet Name="FK_plantillas_excel_detalle_plantillas_excel" Association="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel">
-            <End Role="plantillas_excel" EntitySet="plantillas_excel" />
-            <End Role="plantillas_excel_detalle" EntitySet="plantillas_excel_detalle" />
-          </AssociationSet>
         </EntityContainer>
+        <EntityType Name="TB_Cupones">
+          <Key>
+            <PropertyRef Name="nrCupon" />
+          </Key>
+          <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="cdCliente" Type="Int32" />
+          <Property Name="nrPuesto" Type="Int16" />
+          <Property Name="nrLicencia" Type="Int32" Nullable="false" />
+          <Property Name="nmLicenciatario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="tpCupon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="vlMontoCupon" Type="Double" />
+          <Property Name="vlaFavordelLicenciatario" Type="Double" />
+          <Property Name="vlafavorAdmin" Type="Double" />
+          <Property Name="vlPagoPesos" Type="Double" />
+          <Property Name="vlPagoEuros" Type="Double" />
+          <Property Name="vlPagoDolares" Type="Double" />
+          <Property Name="vlComision" Type="Double" />
+          <Property Name="nrCantidadBultos" Type="Int16" />
+          <Property Name="nrPasajeros" Type="Int16" />
+          <Property Name="dtCupon" Type="DateTime" Precision="3" />
+          <Property Name="nrTalonarioCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="nrComprabanteCliente" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Name="tpComprobanteCliente" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tpLetraCliente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="flCobradoalCliente" Type="Boolean" Nullable="false" />
+          <Property Name="dtCobradoalCliente" Type="DateTime" Precision="3" />
+          <Property Name="nrCajaCliente" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dtCajaCliente" Type="DateTime" Precision="3" />
+          <Property Name="nrTalonarioProveedor" Type="Double" />
+          <Property Name="nrComprabanteProveedor" Type="Double" />
+          <Property Name="tpComprobanteProveedor" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="tpLetraLetraProveedor" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Name="flCompensado" Type="Boolean" Nullable="false" />
+          <Property Name="dtCompensado" Type="DateTime" Precision="3" />
+          <Property Name="nrCajaLicenciatario" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dtCajaLicenciatario" Type="DateTime" Precision="3" />
+          <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrLiquidacionProveedores" Type="Int16" />
+          <Property Name="nrLiquidacionCliente" Type="Int16" />
+          <Property Name="cdCodBar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="flAnulado" Type="Boolean" Nullable="false" />
+          <Property Name="dtAnulado" Type="DateTime" Precision="3" />
+          <Property Name="IdRecibo" Type="Int32" />
+          <Property Name="IdReciboCtaCte" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dsObservacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="dsDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="dsHoraViaje" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="problema" Type="Int32" />
+          <Property Name="Mellizo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="flEliminar" Type="Boolean" />
+          <Property Name="flSincronizado" Type="Boolean" />
+          <Property Name="vlSubtotal" Type="Double" />
+          <Property Name="vlIVA" Type="Double" />
+          <Property Name="nrCajaCtaCte" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dtCajaCtaCte" Type="DateTime" Precision="3" />
+          <Property Name="dsLeyenda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="vlPagoReales" Type="Double" />
+          <Property Name="flNoCompensado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="dtNoCompensado" Type="DateTime" Precision="0" />
+        </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
             <PropertyRef Name="cdProducto" />
           </Key>
           <Property Name="cdProducto" Type="Int32" Nullable="false" />
-          <Property Name="dsProducto" Type="String" MaxLength="200" Unicode="false" FixedLength="false" />
+          <Property Name="dsProducto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="vlPrecioViaje" Type="Double" />
           <Property Name="vlPrecioPeaje" Type="Double" />
-          <Property Name="obsHoras" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+          <Property Name="obsHoras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="vlPorcentaje" Type="Int32" />
-          <Property Name="tpOperacion" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="tpOperacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="flMuestra" Type="Boolean" Nullable="false" />
-          <Property Name="cdOrden" Type="String" MaxLength="1" Unicode="false" FixedLength="false" />
+          <Property Name="cdOrden" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="vlPrecioViajeSinPeaje" Type="Double" />
           <Property Name="vlKilometros" Type="Double" />
           <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
@@ -111,110 +182,98 @@
           <Property Name="vlPrecioxKilometro" Type="Double" />
           <Property Name="flMuestraenlaWEB" Type="Boolean" />
           <Property Name="flIncluyeComisionRetorno" Type="Boolean" />
-          <Property Name="tpDestino" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+          <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="cdComision" Type="Int32" />
         </EntityType>
-        <EntityType Name="plantillas_excel">
-          <Key>
-            <PropertyRef Name="idplantilla" />
-          </Key>
-          <Property Type="Int32" Name="idplantilla" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="String" Name="aplicacion" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombre" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="hoja_xls" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="ruta_archivo" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Type="Int32" Name="fila_datos" />
-          <Property Type="Int32" Name="columas" />
-          <Property Type="Int32" Name="filas" />
-          <Property Type="String" Name="base_destino" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="procedimiento" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="carp_archivo_tmp" MaxLength="4000" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="separador" MaxLength="10" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="plantillas_excel_detalle" Relationship="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel" FromRole="plantillas_excel" ToRole="plantillas_excel_detalle" />
-        </EntityType>
-        <EntityType Name="plantillas_excel_detalle">
-          <Key>
-            <PropertyRef Name="id" />
-          </Key>
-          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Type="Int32" Name="idplantilla" Nullable="false" />
-          <Property Type="Int32" Name="fila" Nullable="false" />
-          <Property Type="Int32" Name="columna" Nullable="false" />
-          <Property Type="String" Name="tipo_detalle" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombre" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="valor" MaxLength="100" FixedLength="false" Unicode="false" />
-          <NavigationProperty Name="plantillas_excel" Relationship="dbSG2000Model.FK_plantillas_excel_detalle_plantillas_excel" FromRole="plantillas_excel_detalle" ToRole="plantillas_excel" />
-        </EntityType>
-        <Association Name="FK_plantillas_excel_detalle_plantillas_excel">
-          <End Type="dbSG2000Model.plantillas_excel" Role="plantillas_excel" Multiplicity="1" />
-          <End Type="dbSG2000Model.plantillas_excel_detalle" Role="plantillas_excel_detalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="plantillas_excel">
-              <PropertyRef Name="idplantilla" />
-            </Principal>
-            <Dependent Role="plantillas_excel_detalle">
-              <PropertyRef Name="idplantilla" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbSG2000ModelStoreContainer" CdmEntityContainer="dbSG2000Entities">
+          <EntitySetMapping Name="TB_Cupones">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
+              <MappingFragment StoreEntitySet="TB_Cupones">
+                <ScalarProperty Name="dtNoCompensado" ColumnName="dtNoCompensado" />
+                <ScalarProperty Name="flNoCompensado" ColumnName="flNoCompensado" />
+                <ScalarProperty Name="vlPagoReales" ColumnName="vlPagoReales" />
+                <ScalarProperty Name="dsLeyenda" ColumnName="dsLeyenda" />
+                <ScalarProperty Name="dtCajaCtaCte" ColumnName="dtCajaCtaCte" />
+                <ScalarProperty Name="nrCajaCtaCte" ColumnName="nrCajaCtaCte" />
+                <ScalarProperty Name="vlIVA" ColumnName="vlIVA" />
+                <ScalarProperty Name="vlSubtotal" ColumnName="vlSubtotal" />
+                <ScalarProperty Name="flSincronizado" ColumnName="flSincronizado" />
+                <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+                <ScalarProperty Name="Mellizo" ColumnName="Mellizo" />
+                <ScalarProperty Name="problema" ColumnName="problema" />
+                <ScalarProperty Name="dsHoraViaje" ColumnName="dsHoraViaje" />
+                <ScalarProperty Name="dsDestino" ColumnName="dsDestino" />
+                <ScalarProperty Name="dsObservacion" ColumnName="dsObservacion" />
+                <ScalarProperty Name="IdReciboCtaCte" ColumnName="IdReciboCtaCte" />
+                <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+                <ScalarProperty Name="dtAnulado" ColumnName="dtAnulado" />
+                <ScalarProperty Name="flAnulado" ColumnName="flAnulado" />
+                <ScalarProperty Name="cdCodBar" ColumnName="cdCodBar" />
+                <ScalarProperty Name="nrLiquidacionCliente" ColumnName="nrLiquidacionCliente" />
+                <ScalarProperty Name="nrLiquidacionProveedores" ColumnName="nrLiquidacionProveedores" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="dtCajaLicenciatario" ColumnName="dtCajaLicenciatario" />
+                <ScalarProperty Name="nrCajaLicenciatario" ColumnName="nrCajaLicenciatario" />
+                <ScalarProperty Name="dtCompensado" ColumnName="dtCompensado" />
+                <ScalarProperty Name="flCompensado" ColumnName="flCompensado" />
+                <ScalarProperty Name="tpLetraLetraProveedor" ColumnName="tpLetraLetraProveedor" />
+                <ScalarProperty Name="tpComprobanteProveedor" ColumnName="tpComprobanteProveedor" />
+                <ScalarProperty Name="nrComprabanteProveedor" ColumnName="nrComprabanteProveedor" />
+                <ScalarProperty Name="nrTalonarioProveedor" ColumnName="nrTalonarioProveedor" />
+                <ScalarProperty Name="dtCajaCliente" ColumnName="dtCajaCliente" />
+                <ScalarProperty Name="nrCajaCliente" ColumnName="nrCajaCliente" />
+                <ScalarProperty Name="dtCobradoalCliente" ColumnName="dtCobradoalCliente" />
+                <ScalarProperty Name="flCobradoalCliente" ColumnName="flCobradoalCliente" />
+                <ScalarProperty Name="tpLetraCliente" ColumnName="tpLetraCliente" />
+                <ScalarProperty Name="tpComprobanteCliente" ColumnName="tpComprobanteCliente" />
+                <ScalarProperty Name="nrComprabanteCliente" ColumnName="nrComprabanteCliente" />
+                <ScalarProperty Name="nrTalonarioCliente" ColumnName="nrTalonarioCliente" />
+                <ScalarProperty Name="dtCupon" ColumnName="dtCupon" />
+                <ScalarProperty Name="nrPasajeros" ColumnName="nrPasajeros" />
+                <ScalarProperty Name="nrCantidadBultos" ColumnName="nrCantidadBultos" />
+                <ScalarProperty Name="vlComision" ColumnName="vlComision" />
+                <ScalarProperty Name="vlPagoDolares" ColumnName="vlPagoDolares" />
+                <ScalarProperty Name="vlPagoEuros" ColumnName="vlPagoEuros" />
+                <ScalarProperty Name="vlPagoPesos" ColumnName="vlPagoPesos" />
+                <ScalarProperty Name="vlafavorAdmin" ColumnName="vlafavorAdmin" />
+                <ScalarProperty Name="vlaFavordelLicenciatario" ColumnName="vlaFavordelLicenciatario" />
+                <ScalarProperty Name="vlMontoCupon" ColumnName="vlMontoCupon" />
+                <ScalarProperty Name="tpCupon" ColumnName="tpCupon" />
+                <ScalarProperty Name="nmLicenciatario" ColumnName="nmLicenciatario" />
+                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+                <ScalarProperty Name="nrPuesto" ColumnName="nrPuesto" />
+                <ScalarProperty Name="cdCliente" ColumnName="cdCliente" />
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TB_Productos">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
               <MappingFragment StoreEntitySet="TB_Productos">
-                <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
-                <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
-                <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
-                <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
-                <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
-                <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
-                <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
-                <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
-                <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
-                <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
-                <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
-                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
-                <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
-                <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
-                <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
-                <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
-                <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
                 <ScalarProperty Name="cdComision" ColumnName="cdComision" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="plantillas_excel">
-            <EntityTypeMapping TypeName="dbSG2000Model.plantillas_excel">
-              <MappingFragment StoreEntitySet="plantillas_excel">
-                <ScalarProperty Name="separador" ColumnName="separador" />
-                <ScalarProperty Name="carp_archivo_tmp" ColumnName="carp_archivo_tmp" />
-                <ScalarProperty Name="procedimiento" ColumnName="procedimiento" />
-                <ScalarProperty Name="base_destino" ColumnName="base_destino" />
-                <ScalarProperty Name="filas" ColumnName="filas" />
-                <ScalarProperty Name="columas" ColumnName="columas" />
-                <ScalarProperty Name="fila_datos" ColumnName="fila_datos" />
-                <ScalarProperty Name="ruta_archivo" ColumnName="ruta_archivo" />
-                <ScalarProperty Name="hoja_xls" ColumnName="hoja_xls" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="aplicacion" ColumnName="aplicacion" />
-                <ScalarProperty Name="idplantilla" ColumnName="idplantilla" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="plantillas_excel_detalle">
-            <EntityTypeMapping TypeName="dbSG2000Model.plantillas_excel_detalle">
-              <MappingFragment StoreEntitySet="plantillas_excel_detalle">
-                <ScalarProperty Name="valor" ColumnName="valor" />
-                <ScalarProperty Name="nombre" ColumnName="nombre" />
-                <ScalarProperty Name="tipo_detalle" ColumnName="tipo_detalle" />
-                <ScalarProperty Name="columna" ColumnName="columna" />
-                <ScalarProperty Name="fila" ColumnName="fila" />
-                <ScalarProperty Name="idplantilla" ColumnName="idplantilla" />
-                <ScalarProperty Name="id" ColumnName="id" />
+                <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
+                <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
+                <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
+                <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
+                <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+                <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
+                <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
+                <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
+                <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
+                <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+                <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
+                <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
+                <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
+                <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
+                <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
+                <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -235,6 +294,7 @@
         <DesignerProperty Name="EnablePluralization" Value="False" />
         <DesignerProperty Name="IncludeForeignKeysInModel" Value="True" />
         <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+        <DesignerProperty Name="UseLegacyProvider" Value="True" />
       </DesignerInfoPropertySet>
     </Options>
     <!-- Diagram content (shape and connector positions) -->

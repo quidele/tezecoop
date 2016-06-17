@@ -52,8 +52,7 @@ namespace SGLibrary
             throw new UnintentionalCodeFirstException();
         }
     
+        public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Productos> TB_Productos { get; set; }
-        public DbSet<plantillas_excel> plantillas_excel { get; set; }
-        public DbSet<plantillas_excel_detalle> plantillas_excel_detalle { get; set; }
     }
 }

@@ -16,6 +16,12 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EntityFramework
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.resx
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
@@ -31,9 +37,3 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ES-E
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Debug\SGLibrary_Pruebas.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EN-US\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
