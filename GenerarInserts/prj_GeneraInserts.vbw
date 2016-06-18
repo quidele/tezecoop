@@ -5,5 +5,5 @@ CArchivo = 0, 0, 0, 0, C
 CDiccionariodeDatos = 108, 108, 725, 551, C
 CConfigRegional = 27, 27, 847, 371, C
 CTablasIO = 135, 135, 752, 578, C
-CMetadata = 54, 54, 751, 497, Z
-CFlexGridUtils = 189, 189, 886, 632, C
+CMetadata = 0, 0, 0, 0, C
+CFlexGridUtils = 0, 0, 0, 0, C

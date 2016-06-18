@@ -4,6 +4,9 @@ using System.Collections;
 using System.Linq;
 using System.Text;
 using System.Runtime.InteropServices;
+using System.Data;
+using System.Data.SqlClient;
+
 
 namespace SGLibrary
 {
@@ -35,15 +38,11 @@ namespace SGLibrary
             using (var context = new dbSG2000Entities())
             {
                 listadeViajesaConciliar = (from c in context.TB_Cupones where c.flCobradoalCliente == false select c);
-                
-                foreach (TB_Cupones p in listadeViajesaConciliar)
-                {
-                    break;
-                }
+
+                return listadeViajesaConciliar.ToList();
+             
             }
 
-
-            return listadeViajesaConciliar;
 
         }
 

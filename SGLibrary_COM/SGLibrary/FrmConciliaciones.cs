@@ -89,6 +89,41 @@ namespace SGLibrary
 
         }
 
+        private void fechahasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void botonesForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelcarga_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
       
     }
 }

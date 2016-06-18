@@ -7,8 +7,8 @@ Begin VB.Form FrmAdmMetadata
    ClientTop       =   345
    ClientWidth     =   7650
    LinkTopic       =   "Form1"
-   ScaleHeight     =   13080
-   ScaleWidth      =   21480
+   ScaleHeight     =   5055
+   ScaleWidth      =   7650
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin VB.CommandButton cmdGenerarDDCamposLogicosdesdeDL 
@@ -110,7 +110,7 @@ Begin VB.Form FrmAdmMetadata
       Left            =   5220
       PasswordChar    =   "*"
       TabIndex        =   7
-      Text            =   "euli3755"
+      Text            =   "sonrisa14"
       Top             =   348
       Width           =   1905
    End
@@ -119,7 +119,7 @@ Begin VB.Form FrmAdmMetadata
       Height          =   345
       Left            =   3300
       TabIndex        =   5
-      Text            =   "sa"
+      Text            =   "USRSG2006"
       Top             =   348
       Width           =   1905
    End
