@@ -25,13 +25,7 @@ namespace SGLibrary
             botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
-            var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-            foreach (TB_Cupones p in listadeViajesaConciliar)
-            {
-                // realizar busqueda
-                Console.WriteLine(p.nrLicencia.ToString() + " - " + p.dsDestino + " MONTO " + p.vlMontoCupon);
-                //break;
-            }
+            
 
         }
             
@@ -53,6 +47,10 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
+                        var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
+                        dataGridView1.DataSource = listadeViajesaConciliar;
+                        dataGridView1.ReadOnly = false ;
+                        dataGridView1.Columns["CONCILIAR"].ReadOnly = false;
                         break;
                     }
                 case "FIND":
@@ -89,40 +87,13 @@ namespace SGLibrary
 
         }
 
-        private void fechahasta_ValueChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void botonesForm1_Load(object sender, EventArgs e)
         {
 
         }
 
-        private void textBox1_TextChanged(object sender, EventArgs e)
-        {
 
-        }
 
-        private void panelcarga_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void textBox2_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label6_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
 
       
     }

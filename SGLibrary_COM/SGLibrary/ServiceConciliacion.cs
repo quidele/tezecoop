@@ -15,7 +15,8 @@ namespace SGLibrary
 
     public class ServiceConciliacion
     {
-        IEnumerable<TB_Cupones> listadeViajesaConciliar; 
+        IEnumerable<TB_Cupones> listadeViajesaConciliar;
+   
 
         public void execFormulario()
         {
@@ -32,18 +33,24 @@ namespace SGLibrary
             }
         }
 
-        public IEnumerable<TB_Cupones> ObtenerViajesaConciliar()
+        public IEnumerable<Object> ObtenerViajesaConciliar()
         {
 
             using (var context = new dbSG2000Entities())
             {
-                listadeViajesaConciliar = (from c in context.TB_Cupones where c.flCobradoalCliente == false select c);
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones 
+                                                where c.flCobradoalCliente == false 
+                                                select new { ID = c.nrCupon,  DOC = c.tpComprobanteCliente, 
+                                                             LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
+                                                             NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon , 
+                                                             CONCILIAR = c.flCobradoalCliente });
 
-                return listadeViajesaConciliar.ToList();
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
              
             }
 
-
+                    
         }
 
     }
