@@ -22,7 +22,6 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmSelecciona
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\WindowsFormsApplication1.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
@@ -60,3 +59,5 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibr
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources

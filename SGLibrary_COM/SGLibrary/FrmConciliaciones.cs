@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using ControlesdeUsuario;
+using System.Reflection;
 
 namespace SGLibrary
 {
@@ -48,9 +49,10 @@ namespace SGLibrary
                         this.panelbusqueda.Visible = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-                        dataGridView1.DataSource = listadeViajesaConciliar;
-                        dataGridView1.ReadOnly = false ;
-                        dataGridView1.Columns["CONCILIAR"].ReadOnly = false;
+                        cargarDataGridView (dataGridView1, listadeViajesaConciliar); 
+                        //dataGridView1.DataSource = listadeViajesaConciliar;
+                        //dataGridView1.ReadOnly = false ;
+                        //dataGridView1.Columns["CONCILIAR"].ReadOnly = false;
                         break;
                     }
                 case "FIND":
@@ -94,7 +96,30 @@ namespace SGLibrary
 
 
 
+        public void cargarDataGridView(DataGridView dgv, IEnumerable<Object> lista )
+        {
+            dgv.Columns.Add ("columna1_name", "columna1_header");
+            dgv.Columns.Add ("columna2_name", "columna2_header");
+            dgv.Columns.Add ("columna3_name", "columna3_header");
+            dgv.Columns.Add ("columna4_name", "columna4_header");
+            dgv.Columns.Add ("columna5_name", "columna5_header");
 
+            foreach (var item in lista)
+            {
+                Type t =item .GetType();
+
+                PropertyInfo[] pi = t.GetProperties(); 
+
+                foreach (PropertyInfo p in pi)
+                {
+                    p.GetValue("");
+                        
+                }
+                dgv.Rows.Add(item.GetType().GetProperty().GetValue(, "Value2", "Value3", "Value4", "Value4");
+            }
+
+
+        }
       
     }
 }
