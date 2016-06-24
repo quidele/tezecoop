@@ -99,7 +99,14 @@ namespace SGLibrary
         public void cargarDataGridView(DataGridView dgv, IEnumerable<Object> lista )
         {
 
-            dgv.Columns.Add("ID", "ID");
+            DataGridViewColumn columna_ID = new DataGridViewColumn();
+            DataGridViewCell cell = new DataGridViewTextBoxCell();
+            columna_ID.CellTemplate = cell;
+            columna_ID.Name = "ID";
+            columna_ID.HeaderText = "ID";
+            columna_ID.ReadOnly = true;
+            dgv.Columns.Add(columna_ID);
+            //dgv.Columns.Add("ID","ID");
             dgv.Columns.Add("DOC", "DOC");
             dgv.Columns.Add("LETRA", "LETRA");
             dgv.Columns.Add("PDV", "PDV");
@@ -117,61 +124,13 @@ namespace SGLibrary
             {
                 var row = dgv.Rows.Add();
                 Type t =item.GetType();
-                PropertyInfo[] pi = t.GetProperties(); 
+                PropertyInfo[] pi = t.GetProperties();
 
                 foreach (PropertyInfo p in pi)
                 {
-                    Console.WriteLine(p.Name + " "  +p.GetValue( item, null ) );
-
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
                     dataGridView1.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
-
-                    /*switch (p.Name)
-                    {
-                        case "ID":
-                            {
-                                dataGridView1.Rows[row].Cells["ID"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "DOC":
-                            {
-                                dataGridView1.Rows[row].Cells["DOC"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "LETRA":
-                            {
-                                dataGridView1.Rows[row].Cells["LETRA"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "PDV":
-                            {
-                                dataGridView1.Rows[row].Cells["PDV"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "NRO":
-                            {
-                                dataGridView1.Rows[row].Cells["NRO"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "FECHA":
-                            {
-                                dataGridView1.Rows[row].Cells["FECHA"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "MONTO":
-                            {
-                                dataGridView1.Rows[row].Cells["MONTO"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                        case "CONCILIAR":
-                            {
-              
-                                dataGridView1.Rows[row].Cells["CONCILIAR"].Value = p.GetValue(item, null);
-                                break;
-                            }
-                    }*/
-                    
                 }
-                //dgv.Rows.Add(item.GetType().GetProperty().GetValue(, "Value2", "Value3", "Value4", "Value4");
             }
 
 

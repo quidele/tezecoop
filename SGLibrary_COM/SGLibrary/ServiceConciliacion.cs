@@ -38,12 +38,13 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
-                var listadeViajesaConciliar1 = (from c in context.TB_Cupones 
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones     
                                                 where c.flCobradoalCliente == false 
+                                            
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,  DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon , 
-                                                             CONCILIAR = c.flCobradoalCliente });
+                                                             CONCILIAR = c.flCobradoalCliente }).Take(5);
 
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
