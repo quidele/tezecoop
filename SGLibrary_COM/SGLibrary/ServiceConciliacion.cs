@@ -40,7 +40,7 @@ namespace SGLibrary
             {
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones 
                                                 where c.flCobradoalCliente == false 
-                                                select new { ID = c.nrCupon,  DOC = c.tpComprobanteCliente, 
+                                                select new { ID = c.nrCupon, FECHA = c.dtCupon,  DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon , 
                                                              CONCILIAR = c.flCobradoalCliente });
