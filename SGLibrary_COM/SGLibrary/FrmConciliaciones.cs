@@ -49,6 +49,15 @@ namespace SGLibrary
                         this.panelbusqueda.Visible = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
+
+
+                        decimal[]  un_array_decimnal = { 9000280770, 9000355605 };
+                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(un_array_decimnal);
+
+                        foreach (var  item  in listaaactualizar)
+                        {
+                            Console.WriteLine(item);
+                        }
                         cargarDataGridView (dataGridView1, listadeViajesaConciliar); 
                         //dataGridView1.DataSource = listadeViajesaConciliar;
                         //dataGridView1.ReadOnly = false ;
@@ -99,20 +108,49 @@ namespace SGLibrary
         public void cargarDataGridView(DataGridView dgv, IEnumerable<Object> lista )
         {
 
-            DataGridViewColumn columna_ID = new DataGridViewColumn();
-            DataGridViewCell cell = new DataGridViewTextBoxCell();
-            columna_ID.CellTemplate = cell;
-            columna_ID.Name = "ID";
-            columna_ID.HeaderText = "ID";
-            columna_ID.ReadOnly = true;
-            dgv.Columns.Add(columna_ID);
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                foreach (PropertyInfo p in pi)
+                {
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+
+                }
+
+                
+                
+                break;
+            }
+
+
+
             //dgv.Columns.Add("ID","ID");
-            dgv.Columns.Add("DOC", "DOC");
-            dgv.Columns.Add("LETRA", "LETRA");
-            dgv.Columns.Add("PDV", "PDV");
-            dgv.Columns.Add("NRO", "NRO");
-            dgv.Columns.Add("FECHA", "FECHA");
-            dgv.Columns.Add("MONTO", "MONTO");
+            //columna = new DataGridViewColumn();
+            //cell = new DataGridViewTextBoxCell();
+            //columna.CellTemplate = cell;
+            //columna.Name = "DOC";
+            //columna.HeaderText = "DOC";
+            //columna.ReadOnly = true;
+            //dgv.Columns.Add(columna);
+
+            //dgv.Columns.Add("LETRA", "LETRA");
+            //dgv.Columns.Add("PDV", "PDV");
+            //dgv.Columns.Add("NRO", "NRO");
+            //dgv.Columns.Add("FECHA", "FECHA");
+            //dgv.Columns.Add("MONTO", "MONTO");
             DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
             doWork.Name = "CONCILIAR";
             doWork.HeaderText = "CONCILIAR";

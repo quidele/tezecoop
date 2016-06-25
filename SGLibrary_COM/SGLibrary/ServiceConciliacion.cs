@@ -43,8 +43,7 @@ namespace SGLibrary
                                             
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,  DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
-                                                             NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon , 
-                                                             CONCILIAR = c.flCobradoalCliente }).Take(5);
+                                                             NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon }).Take(5);
 
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
@@ -53,6 +52,34 @@ namespace SGLibrary
 
                     
         }
+
+
+        public IEnumerable<Object> agregarConciliacion(decimal[] ids_cupones)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where ids_cupones.Contains(c.nrCupon) 
+                                                select new
+                                                {
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon
+                                                }).Take(5);
+
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+
+        }
+
 
     }
 }
