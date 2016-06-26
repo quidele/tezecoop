@@ -11,12 +11,35 @@ using System.Data.SqlClient;
 namespace SGLibrary
 {
 
+    [Guid("C752392B-C620-427d-BF4B-B0498A52611E")]
+    public interface Conciliacion_Interface
+    {
+        [DispId(1)]
+        void execFormulario();
+        [DispId(2)]
+        void UsuarioActivo(string usuario);
+        [DispId(3)]
+        void CajaActiva(string caja);
+   
+        
+    }
+
+      // Events interface para destinos 
+    [Guid("44AE9E66-E02B-40ea-9DF6-93CD2946FFA2"),
+    InterfaceType(ComInterfaceType.InterfaceIsIDispatch)]
+    public interface Conciliacion_Events
+    {
+    }
 
 
-    public class ServiceConciliacion
+    [Guid("85C3351A-CA89-4ddf-8A00-C7F865BF8474"),
+    ClassInterface(ClassInterfaceType.None),
+    ComSourceInterfaces(typeof(Conciliacion_Events))]
+    public class ServiceConciliacion : Conciliacion_Interface
     {
         IEnumerable<TB_Cupones> listadeViajesaConciliar;
-   
+        private String _usuarioActivo;
+        private String _cajactiva;
 
         public void execFormulario()
         {
@@ -59,6 +82,7 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
+               
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where ids_cupones.Contains(c.nrCupon) 
                                                 select new
@@ -72,12 +96,26 @@ namespace SGLibrary
                                                     MONTO = c.vlMontoCupon
                                                 }).Take(5);
 
+                Console.WriteLine(listadeViajesaConciliar1.ToString()); 
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
 
             }
 
 
+        }
+
+
+
+        public void UsuarioActivo(string usuario)
+        {
+            _usuarioActivo = usuario;
+       
+        }
+
+        public void CajaActiva(string caja)
+        {
+            _cajactiva = caja;
         }
 
 
