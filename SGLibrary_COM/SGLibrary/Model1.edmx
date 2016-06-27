@@ -4,12 +4,41 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbSG2000ModelStoreContainer">
+          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.Store.TB_Conciliacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.Store.TB_ConciliacionDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.Store.TB_Cupones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="TB_Conciliacion">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+          </Key>
+          <Property Name="IdConciliacion" Type="int" Nullable="false" />
+          <Property Name="dtConciliacion" Type="date" />
+          <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="nrCajaAdm" Type="numeric" />
+          <Property Name="dtModificacion" Type="datetime" />
+          <Property Name="flestado" Type="char" MaxLength="1" />
+        </EntityType>
+        <EntityType Name="TB_ConciliacionDetalle">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+            <PropertyRef Name="nrCupon" />
+          </Key>
+          <Property Name="IdConciliacion" Type="int" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Nullable="false" />
+        </EntityType>
         <EntityType Name="TB_Cupones">
           <Key>
             <PropertyRef Name="nrCupon" />
           </Key>
-          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Nullable="false" />
           <Property Name="cdCliente" Type="int" />
           <Property Name="nrPuesto" Type="smallint" />
           <Property Name="nrLicencia" Type="int" Nullable="false" />
@@ -31,7 +60,7 @@
           <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
           <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
           <Property Name="dtCobradoalCliente" Type="datetime" />
-          <Property Name="nrCajaCliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaCliente" Type="numeric" />
           <Property Name="dtCajaCliente" Type="datetime" />
           <Property Name="nrTalonarioProveedor" Type="float" />
           <Property Name="nrComprabanteProveedor" Type="float" />
@@ -39,7 +68,7 @@
           <Property Name="tpLetraLetraProveedor" Type="varchar" MaxLength="1" />
           <Property Name="flCompensado" Type="bit" Nullable="false" />
           <Property Name="dtCompensado" Type="datetime" />
-          <Property Name="nrCajaLicenciatario" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaLicenciatario" Type="numeric" />
           <Property Name="dtCajaLicenciatario" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
           <Property Name="nrLiquidacionProveedores" Type="smallint" />
@@ -48,7 +77,7 @@
           <Property Name="flAnulado" Type="bit" Nullable="false" />
           <Property Name="dtAnulado" Type="datetime" />
           <Property Name="IdRecibo" Type="int" />
-          <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IdReciboCtaCte" Type="numeric" />
           <Property Name="dsObservacion" Type="varchar" MaxLength="400" />
           <Property Name="dsDestino" Type="varchar" MaxLength="100" />
           <Property Name="dsHoraViaje" Type="char" MaxLength="10" />
@@ -59,7 +88,7 @@
           <Property Name="flSincronizado" Type="bit" />
           <Property Name="vlSubtotal" Type="float" />
           <Property Name="vlIVA" Type="float" />
-          <Property Name="nrCajaCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaCtaCte" Type="numeric" />
           <Property Name="dtCajaCtaCte" Type="datetime" />
           <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
           <Property Name="vlPagoReales" Type="float" />
@@ -89,10 +118,18 @@
           <Property Name="tpDestino" Type="varchar" MaxLength="20" />
           <Property Name="cdComision" Type="int" />
         </EntityType>
-        <EntityContainer Name="dbSG2000ModelStoreContainer">
-          <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
-        </EntityContainer>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+          <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />
+          <End Role="TB_ConciliacionDetalle" Type="dbSG2000Model.Store.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Conciliacion">
+              <PropertyRef Name="IdConciliacion" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdConciliacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -100,6 +137,12 @@
         <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
+          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
+          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="TB_Cupones">
           <Key>
@@ -185,6 +228,39 @@
           <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="cdComision" Type="Int32" />
         </EntityType>
+        <EntityType Name="TB_Conciliacion">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+          </Key>
+          <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+          <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+          <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+          <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+          <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
+        </EntityType>
+        <EntityType Name="TB_ConciliacionDetalle">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+            <PropertyRef Name="nrCupon" />
+          </Key>
+          <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+          <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+          <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
+        </EntityType>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+          <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
+          <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Conciliacion">
+              <PropertyRef Name="IdConciliacion" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdConciliacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -274,6 +350,26 @@
                 <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
                 <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
                 <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Conciliacion">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+              <MappingFragment StoreEntitySet="TB_Conciliacion">
+                <ScalarProperty Name="flestado" ColumnName="flestado" />
+                <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+                <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ConciliacionDetalle">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+              <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

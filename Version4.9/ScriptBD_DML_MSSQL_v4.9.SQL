@@ -2,12 +2,3 @@
 use dbSG2000
 go 
 
-
-delete from diccionariodedatos where nmTabla = 'TB_ConciliaTarjertas'
-
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_ConciliaTarjertas','dsUsuario','dsUsuario','VARCHAR','20','No','No','No',null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_ConciliaTarjertas','dtConciliacion','dtConciliacion','DATE','10','No','No','No',null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_ConciliaTarjertas','dtinsercion','dtinsercion','DATETIME','16','No','No','No',null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_ConciliaTarjertas','estado_registro','estado_registro','CHAR','1','No','No','No',null,null,null,null,null,null,null,null,null);
-INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_ConciliaTarjertas','id','id','INT','10','No','No','No',null,null,null,null,null,null,null,null,null);
-

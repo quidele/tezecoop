@@ -20,6 +20,8 @@ namespace SGLibrary
         void UsuarioActivo(string usuario);
         [DispId(3)]
         void CajaActiva(string caja);
+        
+   
    
         
     }
@@ -37,7 +39,7 @@ namespace SGLibrary
     ComSourceInterfaces(typeof(Conciliacion_Events))]
     public class ServiceConciliacion : Conciliacion_Interface
     {
-        IEnumerable<TB_Cupones> listadeViajesaConciliar;
+        
         private String _usuarioActivo;
         private String _cajactiva;
 
@@ -77,26 +79,33 @@ namespace SGLibrary
         }
 
 
-        public IEnumerable<Object> agregarConciliacion(decimal[] ids_cupones)
+        public IEnumerable<Object> agregarConciliacion(decimal[] ids_cupones, TB_Conciliacion objConciliacion)
         {
 
             using (var context = new dbSG2000Entities())
             {
-               
+
+
+                context.TB_Conciliacion.Add(objConciliacion);
+
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where ids_cupones.Contains(c.nrCupon) 
-                                                select new
-                                                {
-                                                    ID = c.nrCupon,
-                                                    FECHA = c.dtCupon,
-                                                    DOC = c.tpComprobanteCliente,
-                                                    LETRA = c.tpLetraCliente,
-                                                    PDV = c.nrTalonarioCliente,
-                                                    NRO = c.nrComprabanteCliente,
-                                                    MONTO = c.vlMontoCupon
-                                                }).Take(5);
+                                                select c
+                                                ).Take(5);
 
-                Console.WriteLine(listadeViajesaConciliar1.ToString()); 
+
+                Console.WriteLine(listadeViajesaConciliar1.ToString());
+
+                foreach (var item in listadeViajesaConciliar1.ToList())
+                {
+                    item.flCobradoalCliente = true;
+                    var detalleConciliacion = new TB_ConciliacionDetalle();
+                    detalleConciliacion.TB_Conciliacion = objConciliacion;
+                    detalleConciliacion.nrCupon = item.nrCupon;
+                    context.TB_ConciliacionDetalle.Add(detalleConciliacion); 
+                }
+                context.SaveChanges(); 
+
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
 

@@ -153,6 +153,12 @@
     <Compile Include="ServiceExcel.cs" />
     <Compile Include="ServicePrinter.cs" />
     <Compile Include="ServiceTarifas.cs" />
+    <Compile Include="TB_Conciliacion.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ConciliacionDetalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Cupones.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

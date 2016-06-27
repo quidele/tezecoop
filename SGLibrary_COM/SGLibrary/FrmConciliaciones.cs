@@ -49,15 +49,6 @@ namespace SGLibrary
                         this.panelbusqueda.Visible = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-
-
-                        decimal[]  un_array_decimnal = { 9000280770, 9000355605 };
-                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(un_array_decimnal);
-
-                        foreach (var  item  in listaaactualizar)
-                        {
-                            Console.WriteLine(item);
-                        }
                         cargarDataGridView (dataGridView1, listadeViajesaConciliar); 
                         //dataGridView1.DataSource = listadeViajesaConciliar;
                         //dataGridView1.ReadOnly = false ;
@@ -74,6 +65,13 @@ namespace SGLibrary
                 
                 case "OK":
                     {
+                        decimal[] un_array_decimnal = { 9000280770, 9000355605 };
+                        var una_conciliacion = new TB_Conciliacion();
+                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(un_array_decimnal, una_conciliacion);
+                        foreach (var item in listaaactualizar)
+                        {
+                            Console.WriteLine(item);
+                        }
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
@@ -98,11 +96,7 @@ namespace SGLibrary
 
         }
 
-        private void botonesForm1_Load(object sender, EventArgs e)
-        {
-
-        }
-
+  
 
 
         public void cargarDataGridView(DataGridView dgv, IEnumerable<Object> lista )
@@ -127,15 +121,9 @@ namespace SGLibrary
                     columna.ReadOnly = true;
                     columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
                     dgv.Columns.Add(columna);
-
                 }
-
-                
-                
                 break;
             }
-
-
 
             //dgv.Columns.Add("ID","ID");
             //columna = new DataGridViewColumn();
@@ -163,7 +151,6 @@ namespace SGLibrary
                 var row = dgv.Rows.Add();
                 Type t =item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
-
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
@@ -173,6 +160,12 @@ namespace SGLibrary
 
 
         }
+
+        private void botonesForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
       
     }
 }

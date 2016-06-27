@@ -4,31 +4,12 @@ go
 
 
 
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF_TB_Productos_Historico_fecha_insercion]
-GO
+if exists ( select * from sys.tables where name = 'TB_Productos_Historico' ) 
+begin 
+	drop table [dbo].[TB_Productos_Historico]
+end
 
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF__TB_Produc__flInc__5927012F]
-GO
-
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF__TB_Produc__flMue__5832DCF6]
-GO
-
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF__TB_Produc__flEli__573EB8BD]
-GO
-
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF_TB_ProductosHistorico_flMuestra]
-GO
-
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF_TB_ProductosHistorico_tpOperacion]
-GO
-
-ALTER TABLE [dbo].[TB_Productos_Historico] DROP CONSTRAINT [DF_TB_ProductosHistorico_vlPorcentaje]
-GO
-
-/****** Object:  Table [dbo].[TB_Productos_Historico]    Script Date: 14/04/2016 16:55:11 ******/
-DROP TABLE [dbo].[TB_Productos_Historico]
-GO
-
+go
 /****** Object:  Table [dbo].[TB_Productos_Historico]    Script Date: 14/04/2016 16:55:11 ******/
 SET ANSI_NULLS ON
 GO
@@ -214,3 +195,64 @@ end
 go
 
 
+if exists ( select * from sys.tables where name = 'TB_Conciliacion' ) 
+begin 
+	DROP TABLE [dbo].[TB_Conciliacion]
+end
+
+
+GO
+
+/****** Object:  Table [dbo].[TB_Conciliacion]    Script Date: 27/06/2016 16:47:15 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TB_Conciliacion](
+	[IdConciliacion] [int] NOT NULL,
+	[dtConciliacion] [date] NULL,
+	[dsUsuario] [varchar](20) NULL,
+	[nrCajaAdm] [numeric](18, 0) NULL,
+	[dtModificacion] [datetime] NULL,
+	[flestado] [char](1) NULL,
+ CONSTRAINT [PK_TB_Conciliacion] PRIMARY KEY CLUSTERED 
+(
+	[IdConciliacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+if exists ( select * from sys.tables where name = 'TB_ConciliacionDetalle' ) 
+begin 
+	DROP TABLE [dbo].[TB_ConciliacionDetalle]
+end
+
+GO
+
+/****** Object:  Table [dbo].[TB_ConciliacionDetalle]    Script Date: 27/06/2016 16:47:38 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TB_ConciliacionDetalle](
+	[IdConciliacion] [int] NOT NULL,
+	[nrCupon] [numeric](18, 0) NULL,
+ CONSTRAINT [PK_TB_ConciliacionDetalle] PRIMARY KEY CLUSTERED 
+(
+	[IdConciliacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO

@@ -3,6 +3,12 @@
   <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
     <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
+    <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
+    <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
+    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TB_Cupones">
     <Key>
@@ -88,4 +94,37 @@
     <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="cdComision" Type="Int32" />
   </EntityType>
+  <EntityType Name="TB_Conciliacion">
+    <Key>
+      <PropertyRef Name="IdConciliacion" />
+    </Key>
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
+  </EntityType>
+  <EntityType Name="TB_ConciliacionDetalle">
+    <Key>
+      <PropertyRef Name="IdConciliacion" />
+      <PropertyRef Name="nrCupon" />
+    </Key>
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
+  </EntityType>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Conciliacion">
+        <PropertyRef Name="IdConciliacion" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdConciliacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

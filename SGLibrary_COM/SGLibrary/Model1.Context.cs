@@ -24,7 +24,6 @@ namespace SGLibrary
     	{
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
     		sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
-            //sqlBuilder.DataSource = "PC0157";
     		sqlBuilder.InitialCatalog = "dbSG2000";
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;
@@ -36,8 +35,6 @@ namespace SGLibrary
     		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
     		entityBuilder.Metadata = "res://*/";
     		entityBuilder.Provider = "System.Data.SqlClient";
-
-            
     
     		return entityBuilder.ToString();
     	}
@@ -57,5 +54,7 @@ namespace SGLibrary
     
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Productos> TB_Productos { get; set; }
+        public DbSet<TB_Conciliacion> TB_Conciliacion { get; set; }
+        public DbSet<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
     }
 }
