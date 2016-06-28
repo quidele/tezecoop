@@ -65,9 +65,23 @@ namespace SGLibrary
                 
                 case "OK":
                     {
-                        decimal[] un_array_decimnal = { 9000280770, 9000355605 };
+
+                        List<Decimal> lista = new   List<Decimal> ();
+                        foreach (DataGridViewRow item in dataGridView1.Rows)
+                        {
+                            Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
+                            if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
+                            {
+                                lista.Add( Decimal.Parse ( item.Cells["ID"].EditedFormattedValue.ToString()));
+                            }
+                           //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
+                           //Console.WriteLine ( unControl.TrueValue);
+                        }
+
+                  
                         var una_conciliacion = new TB_Conciliacion();
-                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(un_array_decimnal, una_conciliacion);
+                        una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
+                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
                         foreach (var item in listaaactualizar)
                         {
                             Console.WriteLine(item);
@@ -144,6 +158,7 @@ namespace SGLibrary
             doWork.HeaderText = "CONCILIAR";
             doWork.FalseValue = "0";
             doWork.TrueValue = "1";
+           
             dgv.Columns.Add(doWork);
 
             foreach (object item in lista)

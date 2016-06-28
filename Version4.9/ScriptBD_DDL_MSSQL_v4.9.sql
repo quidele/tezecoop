@@ -77,8 +77,11 @@ GO
 
 GO
 
-/****** Object:  Trigger [delupd_tb_productos]    Script Date: 14/04/2016 16:54:26 ******/
-DROP TRIGGER [dbo].[delupd_tb_productos]
+
+if exists (select * from sys.triggers where name = 'delupd_tb_productos')
+begin
+	DROP TRIGGER [dbo].[delupd_tb_productos]
+end
 GO
 
 /****** Object:  Trigger [dbo].[delupd_tb_productos]    Script Date: 14/04/2016 16:54:26 ******/
@@ -194,6 +197,16 @@ end
 
 go
 
+SET ANSI_PADDING OFF
+GO
+
+
+if exists ( select * from sys.tables where name = 'TB_ConciliacionDetalle' ) 
+begin 
+	DROP TABLE [dbo].[TB_ConciliacionDetalle]
+end
+
+GO
 
 if exists ( select * from sys.tables where name = 'TB_Conciliacion' ) 
 begin 
@@ -213,8 +226,9 @@ GO
 SET ANSI_PADDING ON
 GO
 
+
 CREATE TABLE [dbo].[TB_Conciliacion](
-	[IdConciliacion] [int] NOT NULL,
+	[IdConciliacion] [int] IDENTITY(1,1) NOT NULL,
 	[dtConciliacion] [date] NULL,
 	[dsUsuario] [varchar](20) NULL,
 	[nrCajaAdm] [numeric](18, 0) NULL,
@@ -228,31 +242,25 @@ CREATE TABLE [dbo].[TB_Conciliacion](
 
 GO
 
-SET ANSI_PADDING OFF
-GO
-
-
-if exists ( select * from sys.tables where name = 'TB_ConciliacionDetalle' ) 
-begin 
-	DROP TABLE [dbo].[TB_ConciliacionDetalle]
-end
-
-GO
-
-/****** Object:  Table [dbo].[TB_ConciliacionDetalle]    Script Date: 27/06/2016 16:47:38 ******/
-SET ANSI_NULLS ON
-GO
-
-SET QUOTED_IDENTIFIER ON
-GO
 
 CREATE TABLE [dbo].[TB_ConciliacionDetalle](
 	[IdConciliacion] [int] NOT NULL,
-	[nrCupon] [numeric](18, 0) NULL,
+	[nrCupon] [numeric](18, 0) NOT NULL,
  CONSTRAINT [PK_TB_ConciliacionDetalle] PRIMARY KEY CLUSTERED 
 (
-	[IdConciliacion] ASC
+	[IdConciliacion] ASC,
+	[nrCupon] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
+
+
+ALTER TABLE [dbo].[TB_ConciliacionDetalle]  WITH CHECK ADD  CONSTRAINT [FK_TB_ConciliacionDetalle_TB_Conciliacion] FOREIGN KEY([IdConciliacion])
+REFERENCES [dbo].[TB_Conciliacion] ([IdConciliacion])
 GO
+
+ALTER TABLE [dbo].[TB_ConciliacionDetalle] CHECK CONSTRAINT [FK_TB_ConciliacionDetalle_TB_Conciliacion]
+GO
+
+
+	

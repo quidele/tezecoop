@@ -79,14 +79,18 @@ namespace SGLibrary
         }
 
 
-        public IEnumerable<Object> agregarConciliacion(decimal[] ids_cupones, TB_Conciliacion objConciliacion)
+        public IEnumerable<Object> agregarConciliacion(List<Decimal> ids_cupones, TB_Conciliacion objConciliacion)
         {
 
             using (var context = new dbSG2000Entities())
             {
-
-
-                context.TB_Conciliacion.Add(objConciliacion);
+                this._usuarioActivo = "quidele";
+                this._cajactiva = "1";
+                objConciliacion.dsUsuario = this._usuarioActivo;
+                objConciliacion.nrCajaAdm = Decimal.Parse ( this._cajactiva);
+                objConciliacion.flestado = "A";
+                objConciliacion.dtModificacion = DateTime.Now;
+                
 
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where ids_cupones.Contains(c.nrCupon) 
@@ -95,15 +99,17 @@ namespace SGLibrary
 
 
                 Console.WriteLine(listadeViajesaConciliar1.ToString());
+                TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
 
                 foreach (var item in listadeViajesaConciliar1.ToList())
                 {
                     item.flCobradoalCliente = true;
-                    var detalleConciliacion = new TB_ConciliacionDetalle();
-                    detalleConciliacion.TB_Conciliacion = objConciliacion;
-                    detalleConciliacion.nrCupon = item.nrCupon;
-                    context.TB_ConciliacionDetalle.Add(detalleConciliacion); 
+                    context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion  , nrCupon = item.nrCupon });
+             
                 }
+
+                context.TB_Conciliacion.Add(objConciliacion);
+
                 context.SaveChanges(); 
 
                 return listadeViajesaConciliar1.ToList();

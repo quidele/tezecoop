@@ -98,12 +98,12 @@
     <Key>
       <PropertyRef Name="IdConciliacion" />
     </Key>
-    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
-    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
-    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
-    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
-    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="IdConciliacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="dtConciliacion" Type="DateTime" Precision="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nrCajaAdm" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
+    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
   </EntityType>
   <EntityType Name="TB_ConciliacionDetalle">
@@ -111,8 +111,8 @@
       <PropertyRef Name="IdConciliacion" />
       <PropertyRef Name="nrCupon" />
     </Key>
-    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
-    <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="IdConciliacion" Type="Int32" Nullable="false" />
+    <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
     <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
   </EntityType>
   <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
