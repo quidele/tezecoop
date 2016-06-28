@@ -107,9 +107,7 @@ namespace SGLibrary
                     context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion  , nrCupon = item.nrCupon });
              
                 }
-
                 context.TB_Conciliacion.Add(objConciliacion);
-
                 context.SaveChanges(); 
 
                 return listadeViajesaConciliar1.ToList();
@@ -121,6 +119,161 @@ namespace SGLibrary
         }
 
 
+        public IEnumerable<Object> modificarConciliacion(List<Decimal> ids_cupones, 
+                                                         List<Decimal> ids_cupones_conciliados, 
+                                                         TB_Conciliacion objConciliacion)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+
+
+                var listadetalleConciliacion = (from c in context.TB_ConciliacionDetalle
+                                                where c.IdConciliacion == objConciliacion.IdConciliacion 
+                                                select c
+                                                ).ToList<TB_ConciliacionDetalle>();
+
+                foreach (TB_ConciliacionDetalle item in listadetalleConciliacion)
+                {   // eliminamos los detalle existentes
+                    context.TB_ConciliacionDetalle.Remove(item);
+                }
+
+                this._usuarioActivo = "quidele";
+                this._cajactiva = "1";
+                objConciliacion.dtModificacion = DateTime.Now;
+                objConciliacion.dsUsuario = this._usuarioActivo;
+                objConciliacion.nrCajaAdm = Decimal.Parse(this._cajactiva);
+                objConciliacion.flestado = "A";
+
+                
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where ids_cupones.Contains(c.nrCupon)
+                                                select c
+                                                );
+
+
+                Console.WriteLine(listadeViajesaConciliar1.ToString());
+                TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
+
+                Decimal idCupon_conciliado = 0; 
+
+                foreach (var item in listadeViajesaConciliar1.ToList())
+                {
+                    idCupon_conciliado = 0;
+                    idCupon_conciliado = (from c in ids_cupones_conciliados where item.nrCupon == c select c).First();
+                    
+                    if ( idCupon_conciliado==0 )
+                    {
+                        item.flCobradoalCliente = true;
+                        context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+                    }
+                    else
+                        item.flCobradoalCliente = false;
+
+
+                }
+                context.TB_Conciliacion.Add(objConciliacion);
+                context.SaveChanges();
+
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+
+        }
+
+        public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion 
+                                                select c
+                                                ).Take(50);
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
+        }
+
+
+        public IEnumerable<Object> anularConciliacion(TB_Conciliacion objConciliacion)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+
+
+                var listadetalleConciliacion = (from c in context.TB_ConciliacionDetalle
+                                                where c.IdConciliacion == objConciliacion.IdConciliacion
+                                                select c
+                                                ).ToList<TB_ConciliacionDetalle>();
+
+                foreach (TB_ConciliacionDetalle item in listadetalleConciliacion)
+                {   // eliminamos los detalle existentes
+                    context.TB_ConciliacionDetalle.Remove(item);
+                }
+
+                this._usuarioActivo = "quidele";
+                this._cajactiva = "1";
+                objConciliacion.dtModificacion = DateTime.Now;
+                objConciliacion.dsUsuario = this._usuarioActivo;
+                objConciliacion.nrCajaAdm = Decimal.Parse(this._cajactiva);
+                objConciliacion.flestado = "A";
+
+
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where ids_cupones.Contains(c.nrCupon)
+                                                select c
+                                                );
+
+
+                Console.WriteLine(listadeViajesaConciliar1.ToString());
+                TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
+
+                Decimal idCupon_conciliado = 0;
+
+                foreach (var item in listadeViajesaConciliar1.ToList())
+                {
+                    idCupon_conciliado = 0;
+                    idCupon_conciliado = (from c in ids_cupones_conciliados where item.nrCupon == c select c).First();
+
+                    if (idCupon_conciliado == 0)
+                    {
+                        item.flCobradoalCliente = true;
+                        context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+                    }
+                    else
+                        item.flCobradoalCliente = false;
+
+
+                }
+                context.TB_Conciliacion.Add(objConciliacion);
+                context.SaveChanges();
+
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+
+        }
+
+
+
+        public TB_Conciliacion obtenerConciliacion(Int32 pId)
+        {
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                TB_Conciliacion una_conciliacion = (from c in context.TB_Conciliacion
+                                                where c.IdConciliacion == pId  
+                                                select c
+                                                ).First ();
+                return una_conciliacion;
+            }
+        }
 
         public void UsuarioActivo(string usuario)
         {
