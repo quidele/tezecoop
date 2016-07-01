@@ -26,7 +26,6 @@ namespace SGLibrary
             botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
-            
 
         }
             
@@ -49,7 +48,7 @@ namespace SGLibrary
                         this.panelbusqueda.Visible = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-                        cargarDataGridView (dataGridView1, listadeViajesaConciliar); 
+                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar); 
                         //dataGridView1.DataSource = listadeViajesaConciliar;
                         //dataGridView1.ReadOnly = false ;
                         //dataGridView1.Columns["CONCILIAR"].ReadOnly = false;
@@ -60,6 +59,8 @@ namespace SGLibrary
                         this.panelcarga.Visible =  false ;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        var listadeConciliaciones = serviceConciliaciones.ObtenerViajesaConciliar();
+                        cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones); 
                         break;
                     }
                 
@@ -113,7 +114,7 @@ namespace SGLibrary
   
 
 
-        public void cargarDataGridView(DataGridView dgv, IEnumerable<Object> lista )
+        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista )
         {
 
             //dgv.Rows.Clear();
@@ -173,6 +174,55 @@ namespace SGLibrary
                 }
             }
 
+
+        }
+
+        public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
+        {
+
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                foreach (PropertyInfo p in pi)
+                {
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                }
+                break;
+            }
+
+
+
+            foreach (object item in lista)
+            {
+                var row = dgv.Rows.Add();
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    dataGridView1.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                }
+            }
+
+            // Modificamos los Encabezados de las columnas
+            foreach (DataGridViewColumn item in dgv.Columns)
+            {
+                item.HeaderText = item.HeaderText.Replace("_", " ");
+            }
+                
 
         }
 

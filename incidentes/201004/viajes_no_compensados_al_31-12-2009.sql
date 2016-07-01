@@ -1,6 +1,8 @@
+Use dbSG2000
+go
+
 
 set dateformat dmy 
-
 
 update [dbo].[TB_Comprobantes] 
 set dtComprobante_hora=CONVERT(varchar, TB_Comprobantes.dtComprobante, 103) 
@@ -13,8 +15,6 @@ set dateformat dmy
 declare @fecha_corte datetime
 
 set  @fecha_corte =  '31/12/2009 23:59:59'
-
-
 
 ---- Compensados
 SELECT TB_Cupones.nrLicencia as LICENCIA ,
@@ -47,7 +47,7 @@ set dateformat dmy
 
 declare @fecha_corte datetime
 
-set  @fecha_corte =  '31/12/2009 23:59:59'
+set  @fecha_corte =  '31/12/2015 23:59:59'
 
 -- No Compensados - pendientes
 SELECT    TB_Cupones.nrLicencia as LICENCIA ,

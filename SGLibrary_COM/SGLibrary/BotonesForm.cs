@@ -154,6 +154,8 @@ namespace ControlesdeUsuario
                 default:
                     break;
             }
+
+            this.botonFIND.PerformClick();
         }
 
     }
