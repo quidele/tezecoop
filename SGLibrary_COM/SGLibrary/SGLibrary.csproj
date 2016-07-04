@@ -261,6 +261,7 @@
     <Content Include="Imagenes_Varias\botones_form\btn_form_hrlp.png" />
     <Content Include="Imagenes_Varias\botones_form\btn_form_ok.png" />
     <Content Include="Imagenes_Varias\botones_form\btn_form_print.png" />
+    <Content Include="Imagenes_Varias\botones_form\btn_form_exit.png" />
     <Content Include="Imagenes_Varias\btn_form_add.png" />
     <Content Include="Imagenes_Varias\btn_form_anu.png" />
     <Content Include="Imagenes_Varias\btn_form_cancel.png" />

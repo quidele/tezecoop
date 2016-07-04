@@ -37,6 +37,7 @@
             this.botonOK = new System.Windows.Forms.ToolStripButton();
             this.botonCANCEL = new System.Windows.Forms.ToolStripButton();
             this.botonPRINT = new System.Windows.Forms.ToolStripButton();
+            this.botonEXIT = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -50,7 +51,8 @@
             this.botonDELETE,
             this.botonOK,
             this.botonCANCEL,
-            this.botonPRINT});
+            this.botonPRINT,
+            this.botonEXIT});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(596, 27);
@@ -128,6 +130,16 @@
             this.botonPRINT.Text = "PRINT";
             this.botonPRINT.Click += new System.EventHandler(this.toolStripButton7_Click);
             // 
+            // botonEXIT
+            // 
+            this.botonEXIT.Image = ((System.Drawing.Image)(resources.GetObject("botonEXIT.Image")));
+            this.botonEXIT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonEXIT.Name = "botonEXIT";
+            this.botonEXIT.Size = new System.Drawing.Size(62, 24);
+            this.botonEXIT.Tag = "EXIT";
+            this.botonEXIT.Text = "EXIT";
+            this.botonEXIT.Click += new System.EventHandler(this.botonEXIT_Click);
+            // 
             // BotonesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -155,5 +167,6 @@
         private System.Windows.Forms.ToolStripButton botonOK;
         private System.Windows.Forms.ToolStripButton botonCANCEL;
         private System.Windows.Forms.ToolStripButton botonPRINT;
+        private System.Windows.Forms.ToolStripButton botonEXIT;
     }
 }

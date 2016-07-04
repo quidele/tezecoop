@@ -26,8 +26,8 @@ namespace ControlesdeUsuario
         }
 
         public delegate void ClickDelegateHandler(object sender, EventArgs e);
-        public event ClickDelegateHandler ClickEventDelegateHandler;          
-
+        public event ClickDelegateHandler ClickEventDelegateHandler;
+ 
 
         private void BotonesForm_Load(object sender, EventArgs e)
         {
@@ -41,9 +41,13 @@ namespace ControlesdeUsuario
             this.botonOK.Image = StringResources.Image_btn_form_ok;
             this.botonCANCEL.Image = StringResources.Image_form_cancel;
             this.botonPRINT.Image = StringResources.Image_btn_form_print;
+            this.botonEXIT.Image = StringResources.Image_btn_form_exit;
         }
 
-       
+
+        public void InicializarFindBoton() {
+            this.botonFIND.PerformClick();
+        }
 
         
 
@@ -102,6 +106,7 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = false;
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
+                    this.botonEXIT.Visible = true;
                     break;
                 case ABMBotonesForm.EDIT:
                     this.botonFIND.Visible = false;
@@ -112,6 +117,7 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = true;
                     this.botonCANCEL.Visible = true;
                     this.botonPRINT.Visible = false;
+                    this.botonEXIT.Visible = false;
                     break;
                 case ABMBotonesForm.ADD:
                     this.botonFIND.Visible = false;
@@ -122,6 +128,7 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = true;
                     this.botonCANCEL.Visible = true;
                     this.botonPRINT.Visible = false;
+                    this.botonEXIT.Visible = false;
                     break;
                 case ABMBotonesForm.DELETE:
                     this.botonFIND.Visible = true;
@@ -131,6 +138,7 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = false;
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
+                    this.botonEXIT.Visible = false;
                     break;
                 case ABMBotonesForm.SAVE:
                     this.botonFIND.Visible = true;
@@ -140,6 +148,7 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = false;
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
+                    this.botonEXIT.Visible = true;
                     break;
                 case ABMBotonesForm.CANCEL:
                     this.botonFIND.Visible = true;
@@ -150,12 +159,18 @@ namespace ControlesdeUsuario
                     this.botonOK.Visible = false;
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
+                    this.botonEXIT.Visible = true;
                     break;
                 default:
                     break;
             }
 
-            this.botonFIND.PerformClick();
+            
+        }
+
+        private void botonEXIT_Click(object sender, EventArgs e)
+        {
+            ClickEventDelegateHandler.Invoke(sender, e);
         }
 
     }

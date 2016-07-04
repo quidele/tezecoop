@@ -23,10 +23,12 @@ namespace SGLibrary
 
         private void FrmConciliaciones_Load(object sender, EventArgs e)
         {
-            botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
+            //botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
-
+            this.fechadesde.Value = DateTime.Now.AddDays(-30);
+            this.fechahasta.Value = DateTime.Now.Date;
+            this.botonesForm1.InicializarFindBoton();
         }
             
  
@@ -34,19 +36,19 @@ namespace SGLibrary
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
             ToolStripItem miboton = (ToolStripItem)sender;
-            MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
+            //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
             switch (miboton.Tag.ToString ()){
                 case "EDIT" : {
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
-                    botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+                    //botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                     break;
                 }
                 case "ADD":
                     {
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                         cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar); 
                         //dataGridView1.DataSource = listadeViajesaConciliar;
@@ -58,8 +60,8 @@ namespace SGLibrary
                     {
                         this.panelcarga.Visible =  false ;
                         this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
-                        var listadeConciliaciones = serviceConciliaciones.ObtenerViajesaConciliar();
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value);
                         cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones); 
                         break;
                     }
@@ -89,14 +91,14 @@ namespace SGLibrary
                         }
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
                     }
                 case "CANCEL":
                     {
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
                         break;
                     }
 
@@ -104,7 +106,12 @@ namespace SGLibrary
                     {
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
+                        break;
+                    }
+                case "EXIT":
+                    {
+                        this.Close();
                         break;
                     }
             } 
@@ -170,7 +177,7 @@ namespace SGLibrary
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dataGridView1.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
                 }
             }
 
@@ -213,7 +220,7 @@ namespace SGLibrary
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dataGridView1.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
                 }
             }
 
@@ -230,6 +237,7 @@ namespace SGLibrary
         {
 
         }
+
 
       
     }

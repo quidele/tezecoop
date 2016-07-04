@@ -188,14 +188,16 @@ namespace SGLibrary
             using (var context = new dbSG2000Entities())
             {
                 // Falta agregar filtro de fechas
-                var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion 
+                var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion
+                                                where c.dtConciliacion >= fechadesde
+                                                && c.dtConciliacion <= fechaHasta 
                                                 select new { ID = c.IdConciliacion  , 
                                                        FECHA = c.dtConciliacion , 
                                                        USUARIO = c.dsUsuario , 
                                                        CAJA_ADM =  c.nrCajaAdm  ,
                                                        FECHA_MODIF = c.dtModificacion , 
                                                        ESTADO  = c.flestado  } 
-                                                    ).Take(50);
+                                                    );
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
             }

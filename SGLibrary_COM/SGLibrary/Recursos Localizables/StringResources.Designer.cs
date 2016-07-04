@@ -131,6 +131,16 @@ namespace SGLibrary.Recursos_Localizables {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Image_btn_form_exit {
+            get {
+                object obj = ResourceManager.GetObject("Image_btn_form_exit", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Image_btn_form_find {
             get {
                 object obj = ResourceManager.GetObject("Image_btn_form_find", resourceCulture);
