@@ -262,5 +262,30 @@ GO
 ALTER TABLE [dbo].[TB_ConciliacionDetalle] CHECK CONSTRAINT [FK_TB_ConciliacionDetalle_TB_Conciliacion]
 GO
 
+GO
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='nrTarjeta')
+	ALTER TABLE dbo.TB_Cupones ADD  nrTarjeta varchar(50) NULL;
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='tpDocTarjeta')
+	ALTER TABLE dbo.TB_Cupones ADD  tpDocTarjeta nchar(10) NULL;
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='nrDocTarjeta')
+	ALTER TABLE dbo.TB_Cupones ADD  nrDocTarjeta nchar(25) NULL;
+
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='nrTarjeta')
+	ALTER TABLE dbo.TB_Comprobantes ADD  nrTarjeta varchar(50) NULL;
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='tpDocTarjeta')
+	ALTER TABLE dbo.TB_Comprobantes ADD  tpDocTarjeta nchar(10) NULL;
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='nrDocTarjeta')
+	ALTER TABLE dbo.TB_Comprobantes ADD  nrDocTarjeta nchar(25) NULL;
 
 	
+GO
+
