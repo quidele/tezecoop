@@ -286,6 +286,11 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Com
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='nrDocTarjeta')
 	ALTER TABLE dbo.TB_Comprobantes ADD  nrDocTarjeta nchar(25) NULL;
 
-	
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='vlRecargoTarjeta')
+	ALTER TABLE dbo.TB_Cupones ADD  vlRecargoTarjeta [float] NULL;
+
+
+
 GO
 
