@@ -23,6 +23,14 @@ Public tpOperacion        As String
 Public vlKilometros       As String
 Public tpDestino          As String
 Public cdComision         As String
+Public PORC_RECARGO_TC    As Single
+Public PORC_RECARGO_TD    As Single
+Public vlRecargo_TD       As Single
+Public vlRecargo_TC       As Single
+Public vlPrecio_TD        As Single
+Public vlPrecio_TC        As Single
+
+       
     
 
 Private Type rcProducto
@@ -37,6 +45,10 @@ Private Type rcProducto
     tpDestino          As String
     nrNivel            As Integer
     cdComision         As String
+    vlRecargo_TD       As String
+    vlRecargo_TC       As String
+    vlPrecio_TD        As String
+    vlPrecio_TC        As String
 End Type
 
 
@@ -194,6 +206,7 @@ Dim lmProductosPartidos()     As rcProducto
             elemList.SubItems(5) = lmProductosLocalidades(nI).vlKilometros
             elemList.SubItems(6) = lmProductosLocalidades(nI).vlPrecioViaje
             elemList.SubItems(7) = lmProductosLocalidades(nI).cdComision
+            agregarValoresdeTarjetas elemList, lmProductosLocalidades(nI)
         End If
     Next nI
     
@@ -208,6 +221,7 @@ Dim lmProductosPartidos()     As rcProducto
             elemList.SubItems(5) = lmProductosPartidos(nI).vlKilometros
             elemList.SubItems(6) = lmProductosPartidos(nI).vlPrecioViaje
             elemList.SubItems(7) = lmProductosPartidos(nI).cdComision
+            agregarValoresdeTarjetas elemList, lmProductosPartidos(nI)
         End If
     Next nI
         
@@ -235,6 +249,7 @@ Dim nPos             As Integer
                elemList.SubItems(5) = lmProductos(nI).vlKilometros
                elemList.SubItems(6) = lmProductos(nI).vlPrecioViaje
               elemList.SubItems(7) = lmProductos(nI).cdComision
+                agregarValoresdeTarjetas elemList, lmProductos(nI)
                buscarenlaMatrizdeProductoslike = True
             End If
        End If
@@ -258,10 +273,22 @@ Dim elemList         As ListItem
                 elemList.SubItems(5) = lmProductos(nI).vlKilometros
                 elemList.SubItems(6) = lmProductos(nI).vlPrecioViaje
                 elemList.SubItems(7) = lmProductos(nI).cdComision
+                ' -- Agregado en la version 4.9 valores de tarjeta
+                agregarValoresdeTarjetas elemList, lmProductos(nI)
            End If
     Next nI
     
 End Function
+
+
+Private Sub agregarValoresdeTarjetas(elemList As ListItem, Producto As rcProducto)
+
+    elemList.SubItems(10) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
+    elemList.SubItems(11) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
+    elemList.SubItems(8) = Round(CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100), 0)
+    elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    
+End Sub
 
 
 Public Function esValorMontodelViajeunDestinoPredefinido _
@@ -297,7 +324,10 @@ Dim nI             As Long
                 Me.vlKilometros = lmProductos(nI).vlKilometros
                 Me.tpDestino = lmProductos(nI).tpDestino
                 Me.cdComision = lmProductos(nI).cdComision
-                
+                Me.vlRecargo_TD = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100, 0)
+                Me.vlRecargo_TC = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100, 0)
+                Me.vlPrecio_TD = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100), 0)
+                Me.vlPrecio_TC = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100), 0)
                esValorMontodelViajeunDestinoPredefinido = True
                Exit Function
         End If

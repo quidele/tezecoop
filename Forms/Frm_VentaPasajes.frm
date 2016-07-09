@@ -7,7 +7,7 @@ Begin VB.Form Frm_VentaPasajes
    ClientHeight    =   8190
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   9600
+   ClientWidth     =   11205
    Icon            =   "Frm_VentaPasajes.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,16 +15,44 @@ Begin VB.Form Frm_VentaPasajes
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   8190
-   ScaleWidth      =   9600
+   ScaleWidth      =   11205
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fraVentaPasajes 
       Caption         =   "Datos del Comprobate"
       Height          =   7425
-      Left            =   45
+      Left            =   30
       TabIndex        =   2
-      Top             =   690
-      Width           =   9480
+      Top             =   645
+      Width           =   11115
+      Begin VB.TextBox txtItemFactura 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   300
+         Index           =   10
+         Left            =   9345
+         Locked          =   -1  'True
+         TabIndex        =   97
+         Tag             =   "vlPrecioViaje"
+         Top             =   3720
+         Width           =   1005
+      End
+      Begin VB.TextBox txtItemFactura 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   300
+         Index           =   9
+         Left            =   8325
+         Locked          =   -1  'True
+         TabIndex        =   94
+         Tag             =   "vlPrecioViaje"
+         Top             =   3720
+         Width           =   1005
+      End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -60,15 +88,15 @@ Begin VB.Form Frm_VentaPasajes
          BackColor       =   &H00E0E0E0&
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
-         Height          =   300
+         Height          =   255
          Index           =   8
          Left            =   8640
          Locked          =   -1  'True
          TabIndex        =   90
          Tag             =   "cdComision"
-         Top             =   3735
+         Top             =   1605
          Visible         =   0   'False
-         Width           =   690
+         Width           =   1170
       End
       Begin VB.TextBox txtSaldos 
          Alignment       =   2  'Center
@@ -484,11 +512,11 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdAgregarItemFactura 
          Enabled         =   0   'False
          Height          =   285
-         Left            =   8328
+         Left            =   10530
          Picture         =   "Frm_VentaPasajes.frx":0454
          Style           =   1  'Graphical
          TabIndex        =   21
-         Top             =   3750
+         Top             =   3705
          Width           =   285
       End
       Begin VB.TextBox txtFields 
@@ -853,9 +881,9 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   1590
          Left            =   135
          TabIndex        =   38
-         Top             =   1950
-         Width           =   8685
-         _ExtentX        =   15319
+         Top             =   1920
+         Width           =   10800
+         _ExtentX        =   19050
          _ExtentY        =   2805
          View            =   3
          LabelEdit       =   1
@@ -879,7 +907,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          OLEDropMode     =   1
-         NumItems        =   8
+         NumItems        =   12
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Key             =   "cdProducto"
             Object.Tag             =   "cdProducto"
@@ -926,14 +954,42 @@ Begin VB.Form Frm_VentaPasajes
             Key             =   "vlPrecioViaje"
             Object.Tag             =   "vlPrecioViaje"
             Text            =   "Precio Total"
-            Object.Width           =   1940
+            Object.Width           =   2117
          EndProperty
          BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   7
             Key             =   "cdComision"
             Object.Tag             =   "cdComision"
             Text            =   "Comsion"
-            Object.Width           =   0
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Key             =   "vlPrecioTC"
+            Object.Tag             =   "vlPrecioTC"
+            Text            =   "Precio TC"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Key             =   "vlPrecioTD"
+            Object.Tag             =   "vlPrecioTD"
+            Text            =   "Precio TD"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
+            Key             =   "vlRecargoTC"
+            Object.Tag             =   "vlRecargoTC"
+            Text            =   "vlRecargoTC"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
+            Key             =   "vlRecargoTD"
+            Object.Tag             =   "vlRecargoTD"
+            Text            =   "vlRecargoTD"
+            Object.Width           =   2
          EndProperty
       End
       Begin MSComctlLib.ListView lstItemsFactura 
@@ -941,8 +997,8 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   120
          TabIndex        =   40
          Top             =   4065
-         Width           =   8670
-         _ExtentX        =   15293
+         Width           =   10815
+         _ExtentX        =   19076
          _ExtentY        =   1879
          View            =   3
          LabelEdit       =   1
@@ -967,7 +1023,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          OLEDropMode     =   1
-         NumItems        =   8
+         NumItems        =   12
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Key             =   "cdProducto"
             Object.Tag             =   "cdProducto"
@@ -1014,7 +1070,7 @@ Begin VB.Form Frm_VentaPasajes
             Key             =   "vlPrecioViaje"
             Object.Tag             =   "vlPrecioViaje"
             Text            =   "Precio Total"
-            Object.Width           =   1940
+            Object.Width           =   2117
          EndProperty
          BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   7
@@ -1022,6 +1078,34 @@ Begin VB.Form Frm_VentaPasajes
             Object.Tag             =   "cdComision"
             Text            =   "Codigo de Comision"
             Object.Width           =   0
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Key             =   "vlPrecioTC"
+            Object.Tag             =   "vlPrecioTC"
+            Text            =   "Precio TC"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Key             =   "vlPrecioTD"
+            Object.Tag             =   "vlPrecioTD"
+            Text            =   "Precio TD"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
+            Key             =   "vlRecargoTC"
+            Object.Tag             =   "vlRecargoTC"
+            Text            =   "vlRecargoTC"
+            Object.Width           =   2
+         EndProperty
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
+            Key             =   "vlRecargoTD"
+            Object.Tag             =   "vlRecargoTD"
+            Text            =   "vlRecargoTD"
+            Object.Width           =   2540
          EndProperty
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1033,7 +1117,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   114294785
+         Format          =   112394241
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1050,6 +1134,40 @@ Begin VB.Form Frm_VentaPasajes
          Tag             =   "dtComprobante"
          Top             =   450
          Width           =   1335
+      End
+      Begin VB.Label Label17 
+         Caption         =   "Precio TC"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   225
+         Left            =   9420
+         TabIndex        =   98
+         Top             =   3495
+         Width           =   885
+      End
+      Begin VB.Label Label6 
+         Caption         =   "Precio TC"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   225
+         Left            =   8400
+         TabIndex        =   95
+         Top             =   3510
+         Width           =   885
       End
       Begin VB.Label Label2 
          Caption         =   "Letra"
@@ -1672,10 +1790,10 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   135
+         Left            =   60
          TabIndex        =   43
-         Top             =   6780
-         Width           =   4050
+         Top             =   6750
+         Width           =   1860
       End
       Begin VB.Label Label31 
          Caption         =   "Kms"
@@ -1694,6 +1812,23 @@ Begin VB.Form Frm_VentaPasajes
          Top             =   3516
          Width           =   564
       End
+      Begin VB.Label Label16 
+         Caption         =   "Recargo Tarjeta: $ 0,00"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   330
+         Left            =   2025
+         TabIndex        =   96
+         Top             =   6705
+         Width           =   2190
+      End
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
@@ -1701,8 +1836,8 @@ Begin VB.Form Frm_VentaPasajes
       Left            =   0
       TabIndex        =   1
       Top             =   0
-      Width           =   9600
-      _ExtentX        =   16933
+      Width           =   11205
+      _ExtentX        =   19764
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -1903,6 +2038,10 @@ Dim lerror            As String
 Dim objCliente        As New CCliente
 Dim strMotivo         As String
 Dim flFacturaCtacte   As Boolean
+
+Dim PORC_RECARGO_TD As Single
+Dim PORC_RECARGO_TC As Single
+
 
 
 Private Function limpiarControles()
@@ -3084,6 +3223,12 @@ Dim strValor   As String
 Dim strSQL_Params As String
 
     
+    
+    PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
+    PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
+        
+    objProductos.PORC_RECARGO_TC = PORC_RECARGO_TC
+    objProductos.PORC_RECARGO_TD = PORC_RECARGO_TD
     
         '-- ADD Version  4.7
     
