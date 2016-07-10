@@ -644,7 +644,7 @@ Dim strSQL As String
     
     rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
-    rsCmd.CommandText = "SP_PrepararReimpresiondeComprobante_v4_7"
+    rsCmd.CommandText = "SP_PrepararReimpresiondeComprobante_v4_9"
     rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
     rsCmd.Parameters(1) = rsCmd.CreateParameter("nrTalonario", , adParamInput, , pnrTalonario)
     rsCmd.Parameters(2) = rsCmd.CreateParameter("nrComprobante", , adParamInput, , pnrComprobante)

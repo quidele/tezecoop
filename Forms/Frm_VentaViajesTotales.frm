@@ -70,7 +70,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   1
          ItemData        =   "Frm_VentaViajesTotales.frx":0000
          Left            =   120
-         List            =   "Frm_VentaViajesTotales.frx":0010
+         List            =   "Frm_VentaViajesTotales.frx":0013
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   18
@@ -95,10 +95,10 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   285
          Index           =   5
          Left            =   1920
-         MaxLength       =   4
+         MaxLength       =   20
          TabIndex        =   17
          Tag             =   "nrDocTarjeta"
-         Top             =   2400
+         Top             =   2385
          Width           =   2385
       End
       Begin VB.TextBox txtFields 
@@ -117,7 +117,7 @@ Begin VB.Form Frm_VentaViajesTotales
          EndProperty
          Height          =   285
          Index           =   4
-         Left            =   2235
+         Left            =   2220
          MaxLength       =   4
          TabIndex        =   14
          Tag             =   "nrTarjeta"
@@ -165,9 +165,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_VentaViajesTotales.frx":002A
+         ItemData        =   "Frm_VentaViajesTotales.frx":0033
          Left            =   75
-         List            =   "Frm_VentaViajesTotales.frx":0040
+         List            =   "Frm_VentaViajesTotales.frx":0049
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   4

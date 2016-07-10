@@ -18,6 +18,21 @@ Begin VB.Form Frm_VentaPasajes
    ScaleWidth      =   11205
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox txtItemFactura 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00E0E0E0&
+      CausesValidation=   0   'False
+      DataField       =   "nmNombre"
+      Height          =   255
+      Index           =   12
+      Left            =   9750
+      Locked          =   -1  'True
+      TabIndex        =   100
+      Tag             =   "vlRecargoTD"
+      Top             =   7215
+      Visible         =   0   'False
+      Width           =   1170
+   End
    Begin VB.Frame fraVentaPasajes 
       Caption         =   "Datos del Comprobate"
       Height          =   7425
@@ -30,13 +45,28 @@ Begin VB.Form Frm_VentaPasajes
          BackColor       =   &H00E0E0E0&
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
+         Height          =   255
+         Index           =   11
+         Left            =   9735
+         Locked          =   -1  'True
+         TabIndex        =   99
+         Tag             =   "vlRecargoTC"
+         Top             =   6165
+         Visible         =   0   'False
+         Width           =   1170
+      End
+      Begin VB.TextBox txtItemFactura 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
          Height          =   300
          Index           =   10
-         Left            =   9345
+         Left            =   9330
          Locked          =   -1  'True
          TabIndex        =   97
-         Tag             =   "vlPrecioViaje"
-         Top             =   3720
+         Tag             =   "vlPrecioTD"
+         Top             =   3735
          Width           =   1005
       End
       Begin VB.TextBox txtItemFactura 
@@ -49,7 +79,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   8325
          Locked          =   -1  'True
          TabIndex        =   94
-         Tag             =   "vlPrecioViaje"
+         Tag             =   "vlPrecioTC"
          Top             =   3720
          Width           =   1005
       End
@@ -90,11 +120,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   8
-         Left            =   8640
+         Left            =   9750
          Locked          =   -1  'True
          TabIndex        =   90
          Tag             =   "cdComision"
-         Top             =   1605
+         Top             =   5655
          Visible         =   0   'False
          Width           =   1170
       End
@@ -348,7 +378,7 @@ Begin VB.Form Frm_VentaPasajes
          Style           =   2  'Dropdown List
          TabIndex        =   30
          Tag             =   "cdCondVenta"
-         Top             =   5400
+         Top             =   5370
          Width           =   1725
       End
       Begin VB.TextBox txtFields 
@@ -1105,7 +1135,7 @@ Begin VB.Form Frm_VentaPasajes
             Key             =   "vlRecargoTD"
             Object.Tag             =   "vlRecargoTD"
             Text            =   "vlRecargoTD"
-            Object.Width           =   2540
+            Object.Width           =   2
          EndProperty
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1117,7 +1147,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   112394241
+         Format          =   111017985
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1136,7 +1166,7 @@ Begin VB.Form Frm_VentaPasajes
          Width           =   1335
       End
       Begin VB.Label Label17 
-         Caption         =   "Precio TC"
+         Caption         =   "Precio TD"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -2034,11 +2064,18 @@ Const const_vlTotalViajes = 6
 Const const_vlKilometros = 5
 Const const_cdComision = 7
 
+' constantes de la version 4.9
+Const const_vlPrecioTC = 8
+Const const_vlPrecioTD = 9
+Const const_vlRecargoTC = 10
+Const const_vlRecargoTD = 11
+
+
 Dim lerror            As String
 Dim objCliente        As New CCliente
 Dim strMotivo         As String
 Dim flFacturaCtacte   As Boolean
-
+' variables de la version 4.9
 Dim PORC_RECARGO_TD As Single
 Dim PORC_RECARGO_TC As Single
 
@@ -2244,6 +2281,12 @@ Dim vlTotalGeneral    As Single
     ListItemNuevo.SubItems(const_vlTotalViajes) = CStr(lvlPrecioViaje)
     ListItemNuevo.SubItems(const_cdComision) = ObtenerCampo("cdComision").Text
     
+        ' campos de la version 4.9
+    ListItemNuevo.SubItems(const_vlPrecioTC) = ObtenerCampo("vlPrecioTC").Text
+    ListItemNuevo.SubItems(const_vlPrecioTD) = ObtenerCampo("vlPrecioTD").Text
+    ListItemNuevo.SubItems(const_vlRecargoTC) = ObtenerCampo("vlRecargoTC").Text
+    ListItemNuevo.SubItems(const_vlRecargoTD) = ObtenerCampo("vlRecargoTD").Text
+                
     setearCondicionVentayComision
     Recalculo_operaciones
     
@@ -2258,6 +2301,10 @@ Dim vlTotalGeneral    As Single
     HabilitarCampos "vlPrecioPeaje", False
     HabilitarCampos "vlKilometros", False
     
+    HabilitarCampos "vlPrecioTC", False
+    HabilitarCampos "vlPrecioTD", False
+    
+    
     ObtenerCampo("cdProducto").Text = ""
     ObtenerCampo("dsProducto").Text = ""
     ObtenerCampo("tpOperacion").Text = ""
@@ -2266,6 +2313,12 @@ Dim vlTotalGeneral    As Single
     ObtenerCampo("vlPrecioViaje").Text = ""
     ObtenerCampo("vlKilometros").Text = ""
     ObtenerCampo("cdComision").Text = ""
+    
+    ObtenerCampo("vlPrecioTC").Text = ""
+    ObtenerCampo("vlPrecioTD").Text = ""
+    ObtenerCampo("vlRecargoTC").Text = ""
+    ObtenerCampo("vlRecargoTD").Text = ""
+    
     ObtenerCampo("cdCondVenta").SetFocus
     Me.cmdAgregarItemFactura.Enabled = False
     
@@ -2335,8 +2388,17 @@ Dim resp         As Byte
     If Me.lstItemsFactura.ListItems.Count < 1 Then Exit Sub
     
     For i = 1 To Me.lstItemsFactura.ListItems.Count
-        vlTotalPesos = vlTotalPesos + _
+        Select Case ObtenerCampo("cdCondVenta").Text
+        Case "Tarjeta de Débito"
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTD))
+        Case "Tarjeta de Crédito"
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
+        Case Else
+            vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
+        End Select
     Next
     
     For i = 1 To Me.lstItemsFactura.ListItems.Count
@@ -2938,6 +3000,8 @@ Dim strValor  As String
             HabilitarCampos "vlPagoPesos", True
             HabilitarCampos "vlPagoReales", True
         End Select
+        ' agregado en la version 4.9
+        calcularTotalesFactura
             ' Version 1.4
     Case "tpIVA" ' Alteración de la condición de IVA
         obtener_num_Proxima_Factura
@@ -3392,6 +3456,11 @@ Private Sub lstBusquedaProductos_DblClick()
     ObtenerCampo("tpOperacion").Text = ""
     ObtenerCampo("cdComision").Text = ""
     
+        ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
+    ObtenerCampo("vlPrecioTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTD)
+    ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
+    ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
+    
     Me.cmdAgregarItemFactura.Enabled = False
     
     If Me.lstBusquedaProductos.ListItems.Count < 1 Then Exit Sub
@@ -3724,7 +3793,15 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "vlPorcentaje", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(Const_vlPorcentaje)
         ObjTablasIO.setearCampoOperadorValor "vlPrecioPeaje", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(Const_vlPrecioPeaje)
         ObjTablasIO.setearCampoOperadorValor "vlKilometros", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlKilometros)
+        
         ObjTablasIO.setearCampoOperadorValor "vlPrecioViaje", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlTotalViajes)
+        
+        ' campos de la version 4.9
+        ObjTablasIO.setearCampoOperadorValor "vlPrecioTC", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlPrecioTC)
+        ObjTablasIO.setearCampoOperadorValor "vlPrecioTD", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlPrecioTD)
+        ObjTablasIO.setearCampoOperadorValor "vlRecargoTC", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlRecargoTC)
+        ObjTablasIO.setearCampoOperadorValor "vlRecargoTD", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlRecargoTD)
+        
         ObjTablasIO.setearCampoOperadorValor "dtInsercion", "<-", CStr(Date)
         ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", "0"
         ObjTablasIO.setearCampoOperadorValor "nrCaja", "<-", ObtenerCampo("nrCaja").Text
@@ -5437,7 +5514,14 @@ Dim i    As Integer
     ObtenerCampo("vlKilometros").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlKilometros)
     ObtenerCampo("vlPrecioViaje").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlTotalViajes)
     ObtenerCampo("cdComision").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_cdComision)
+    ' campos de la version 4.9
+    ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
+    ObtenerCampo("vlPrecioTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTD)
+    ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
+    ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
     
+
+
     buscarPresentarProducto
     
     setearCondicionVentayComision
@@ -5628,7 +5712,7 @@ Dim cdCodBarLic         As String
     cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(Trim(ObtenerCampo("nrLicencia").Text), 3)
     cdCodBarLic = objAFIP.StrToI2of5(cdCodBarLic)
     
-    objSPs.nmStoredProcedure = "SP_PrepararReimpresiondeComprobante_v4_7"
+    objSPs.nmStoredProcedure = "SP_PrepararReimpresiondeComprobante_v4_9"
     objSPs.setearCampoValor "@nrTalonario", pnrTalonario
     objSPs.setearCampoValor "@nrComprobante", pnrComprobante
     objSPs.setearCampoValor "@tpComprobante", tpComprobante
@@ -5636,7 +5720,7 @@ Dim cdCodBarLic         As String
     objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
     
     If Not objSPs.ExecSP Then
-        MsgBox " Error al intentar imprimir la factura, Functión: SP_PrepararReimpresiondeComprobante_v4_7", vbCritical, "Atención"
+        MsgBox " Error al intentar imprimir la factura, Functión: SP_PrepararReimpresiondeComprobante_v4_9", vbCritical, "Atención"
         Exit Function
     End If
     

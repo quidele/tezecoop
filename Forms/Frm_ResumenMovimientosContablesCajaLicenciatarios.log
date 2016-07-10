@@ -1,0 +1,10 @@
+Line 33: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
+Line 101: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
+Line 179: Class MSComctlLib.ImageList of control imgResaltado was not a loaded control class.
+Line 237: Class MSComctlLib.ImageList of control imgMovimientosContables was not a loaded control class.
+Line 296: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 365: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
+Line 379: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
+Line 393: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
+Line 431: Class MSComctlLib.ImageList of control ImageList1 was not a loaded control class.
+Line 469: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.

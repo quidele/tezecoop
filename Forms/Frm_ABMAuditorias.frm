@@ -18,13 +18,13 @@ Begin VB.Form Frm_ABMAuditorias
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   660
+      Height          =   600
       Left            =   0
       TabIndex        =   11
       Top             =   0
       Width           =   10035
       _ExtentX        =   17701
-      _ExtentY        =   1164
+      _ExtentY        =   1058
       ButtonWidth     =   2566
       ButtonHeight    =   1111
       Appearance      =   1
@@ -686,7 +686,7 @@ Begin VB.Form Frm_ABMAuditorias
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   110886913
+         Format          =   111083521
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -700,7 +700,7 @@ Begin VB.Form Frm_ABMAuditorias
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   110886913
+         Format          =   111083521
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
