@@ -28,7 +28,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Default         =   -1  'True
       Height          =   375
       Left            =   1020
-      TabIndex        =   5
+      TabIndex        =   8
       Top             =   3435
       Width           =   1050
    End
@@ -37,7 +37,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Caption         =   "Cancelar"
       Height          =   375
       Left            =   2340
-      TabIndex        =   7
+      TabIndex        =   10
       Top             =   3435
       Width           =   1050
    End
@@ -50,7 +50,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Left            =   90
       ScaleHeight     =   3030
       ScaleWidth      =   4410
-      TabIndex        =   6
+      TabIndex        =   9
       Top             =   165
       Width           =   4440
       Begin VB.ComboBox Combox1 
@@ -73,7 +73,7 @@ Begin VB.Form Frm_VentaViajesTotales
          List            =   "Frm_VentaViajesTotales.frx":0013
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   18
+         TabIndex        =   1
          Tag             =   "tpDocTarjeta"
          Top             =   2400
          Width           =   1725
@@ -96,7 +96,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   5
          Left            =   1920
          MaxLength       =   20
-         TabIndex        =   17
+         TabIndex        =   2
          Tag             =   "nrDocTarjeta"
          Top             =   2385
          Width           =   2385
@@ -119,7 +119,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   4
          Left            =   2220
          MaxLength       =   4
-         TabIndex        =   14
+         TabIndex        =   0
          Tag             =   "nrTarjeta"
          Top             =   1650
          Width           =   2025
@@ -144,7 +144,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Left            =   1140
          Locked          =   -1  'True
          MaxLength       =   15
-         TabIndex        =   1
+         TabIndex        =   4
          Tag             =   "vlPagoReales"
          Text            =   "0,00"
          Top             =   360
@@ -170,7 +170,7 @@ Begin VB.Form Frm_VentaViajesTotales
          List            =   "Frm_VentaViajesTotales.frx":0049
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   4
+         TabIndex        =   7
          Tag             =   "cdCondVenta"
          Top             =   1170
          Width           =   4245
@@ -195,7 +195,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Left            =   3270
          Locked          =   -1  'True
          MaxLength       =   15
-         TabIndex        =   3
+         TabIndex        =   6
          Tag             =   "vlPagoPesos"
          Text            =   "0,00"
          Top             =   360
@@ -221,7 +221,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Left            =   2205
          Locked          =   -1  'True
          MaxLength       =   15
-         TabIndex        =   2
+         TabIndex        =   5
          Tag             =   "vlPagoDolares"
          Text            =   "0,00"
          Top             =   360
@@ -247,7 +247,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Left            =   75
          Locked          =   -1  'True
          MaxLength       =   15
-         TabIndex        =   0
+         TabIndex        =   3
          Tag             =   "vlPagoEuros"
          Text            =   "0,00"
          Top             =   360
@@ -258,7 +258,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   330
          Index           =   2
          Left            =   5955
-         TabIndex        =   8
+         TabIndex        =   11
          Top             =   240
          Width           =   330
       End
@@ -284,7 +284,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   5
          Left            =   1800
-         TabIndex        =   16
+         TabIndex        =   18
          Top             =   2160
          Width           =   840
       End
@@ -297,7 +297,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   4
          Left            =   120
-         TabIndex        =   15
+         TabIndex        =   17
          Top             =   1680
          Width           =   1950
       End
@@ -310,7 +310,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   3
          Left            =   1200
-         TabIndex        =   13
+         TabIndex        =   16
          Top             =   135
          Width           =   900
       End
@@ -329,7 +329,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   225
          Index           =   2
          Left            =   105
-         TabIndex        =   12
+         TabIndex        =   15
          Top             =   960
          Width           =   3180
       End
@@ -342,7 +342,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   0
          Left            =   3330
-         TabIndex        =   11
+         TabIndex        =   14
          Top             =   150
          Width           =   900
       End
@@ -355,7 +355,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   1
          Left            =   2235
-         TabIndex        =   10
+         TabIndex        =   13
          Top             =   135
          Width           =   1005
       End
@@ -368,7 +368,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Height          =   195
          Index           =   2
          Left            =   30
-         TabIndex        =   9
+         TabIndex        =   12
          Top             =   120
          Width           =   1050
       End
@@ -703,6 +703,7 @@ Private Sub cmdCancelar_Click()
 
          
     objParametros.GrabarValor "Facturar", "NO"
+    
     Unload Me
     
 End Sub
@@ -745,6 +746,12 @@ Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
 End Sub
 
 Private Sub Form_Load()
+    
+    
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nrTarjeta", ""
+    objParametros.GrabarValor "Frm_VentaViajesTotales.tpDocTarjeta", ""
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nrDocTarjeta", ""
+    
     
     objParametros.GrabarValor "Facturar", "NO"
     If objParametros.ObtenerValor("cdCondVenta") = "Cuenta Corriente" Or _

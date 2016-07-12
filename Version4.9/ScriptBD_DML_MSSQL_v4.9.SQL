@@ -25,6 +25,9 @@ delete diccionariodedatos where nmTabla = 'TB_Cupones'  and  nmCampo in  ('vlRec
 
 INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_Cupones','vlRecargoTarjeta','vlRecargoTarjeta','DOUBLE','6','No','No','No',null,null,null,null,null,null,null,null,null);
 
+delete diccionariodedatos where nmTabla = 'TB_Comprobantes'  and  nmCampo in  ('vlRecargoTarjeta' )
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_Comprobantes','vlRecargoTarjeta','vlRecargoTarjeta','DOUBLE','6','No','No','No',null,null,null,null,null,null,null,null,null);
 
 
 -- PARAMETROS DE PORCENTAJES DEW RECARGO PARA VENTAS CON TARJETA

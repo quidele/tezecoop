@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -18,6 +18,21 @@ Begin VB.Form Frm_VentaPasajes
    ScaleWidth      =   11205
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox txtItemFactura 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00E0E0E0&
+      CausesValidation=   0   'False
+      DataField       =   "nmNombre"
+      Height          =   255
+      Index           =   13
+      Left            =   9750
+      Locked          =   -1  'True
+      TabIndex        =   101
+      Tag             =   "vlRecargoTarjeta"
+      Top             =   7575
+      Visible         =   0   'False
+      Width           =   1170
+   End
    Begin VB.TextBox txtItemFactura 
       Appearance      =   0  'Flat
       BackColor       =   &H00E0E0E0&
@@ -1147,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   111017985
+         Format          =   115933185
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1842,7 +1857,7 @@ Begin VB.Form Frm_VentaPasajes
          Top             =   3516
          Width           =   564
       End
-      Begin VB.Label Label16 
+      Begin VB.Label lblRecargoTarjeta 
          Caption         =   "Recargo Tarjeta: $ 0,00"
          BeginProperty Font 
             Name            =   "Verdana"
@@ -1856,7 +1871,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   330
          Left            =   2025
          TabIndex        =   96
-         Top             =   6705
+         Top             =   6750
          Width           =   2190
       End
    End
@@ -2384,6 +2399,9 @@ Dim vlSubtotal   As Single
 Dim vlIVA        As Single
 Dim vlKilometros As Long
 Dim resp         As Byte
+Dim vlRecargoTarjeta As Single
+
+    vlRecargoTarjeta = 0
 
     If Me.lstItemsFactura.ListItems.Count < 1 Then Exit Sub
     
@@ -2392,12 +2410,15 @@ Dim resp         As Byte
         Case "Tarjeta de Débito"
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTD))
+            vlRecargoTarjeta = 0
         Case "Tarjeta de Crédito"
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
         Case Else
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTD))
         End Select
     Next
     
@@ -2452,10 +2473,12 @@ Dim resp         As Byte
     ObtenerCampo("vlSaldoPesos").Text = "0,00"
     ObtenerCampo("vlSaldoDolares").Text = "0,00"
     ObtenerCampo("vlSaldoReales").Text = "0,00"
+    ObtenerCampo("vlRecargoTarjeta").Text = vlRecargoTarjeta
     
     Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
                         ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
+    Me.lblRecargoTarjeta.Caption = "Recargo Tarjeta: $ " + FormatNumber(vlRecargoTarjeta, 2)
     
 End Sub
 
@@ -3950,6 +3973,12 @@ Dim vlComision    As Single
         strValor = CStr(CDbl(strValor) + 1)
         ObjTablasIO.setearCampoOperadorValor "nrCupon", "<-", strValor
         
+        ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
+        
+        ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
+        
         If ObjTablasIO.Insertar() Then
             objDiccionariodeDatos.GuardarSiguienteValor "TB_Cupones", "nrCupon", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
             GrabarTabladeCupones = True
@@ -4227,6 +4256,13 @@ Dim strSQL       As String
     Else
         ObjTablasIO.setearCampoOperadorValor "flManual", "<-", "M"
     End If
+    
+    ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
+    ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
+    ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
+    
+    ' Datos agregados en la version 4.9
+    
     
     Select Case EstadoABM
     Case modificacion

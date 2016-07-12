@@ -291,6 +291,9 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cup
 	ALTER TABLE dbo.TB_Cupones ADD  vlRecargoTarjeta [float] NULL;
 
 
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='vlRecargoTarjeta')
+	ALTER TABLE dbo.TB_Comprobantes ADD  vlRecargoTarjeta [float] NULL;
+
 
 GO
 
@@ -532,4 +535,6 @@ begin
 	**/
 
 end
+
+
 
