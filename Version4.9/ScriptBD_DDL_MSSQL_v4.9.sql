@@ -537,4 +537,68 @@ begin
 end
 
 
+go
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_Alicuotas_v4_9' )
+	drop procedure  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9
+	
+
+go
+
+
+
+---  exec  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9 3, 2015
+
+create procedure  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9(@mes int, @anio int) 
+as
+begin
+
+
+		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones')
+					DROP TABLE RTMP_auxiliarPermisosRenglones
+		CREATE TABLE RTMP_auxiliarPermisosRenglones (Renglon VARCHAR(400))
+
+		INSERT INTO RTMP_auxiliarPermisosRenglones (Renglon)
+		/* Select  top 10 
+				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_7(tpComprobante , tpLetra ),3) as  cod_citi,  -- Tipo de Comprobante
+				right( replicate('0',5) + A.nrTalonario,5)  as  serie_comp,	-- Punto de Venta 
+				right( replicate('0',20) + A.nrComprobante,20 ) as  nro_comp,   -- NUmero de Comprobante
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral -  ABS(isnull(A.vlIVA,0)) , 15, 2)      As imp_neto_gravado,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 21 , 4, 2)      As alicuota_iva,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2) As impuesto_liquidado				--  importe total conceptos que no integran el neto gravado		
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = 2  and year(A.dtComprobante) = 2015 and ABS(isnull(A.vlIVA,0)) > 0
+		
+		SELECT  dbo.UDF_obtenerFormatoCUITAFIP(30501032545,20)  
+		*/ 
+
+		Select  top 10 
+				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_7(tpComprobante , tpLetra ),3) + -- as  cod_citi,  -- Tipo de Comprobante
+				right( replicate('0',5) +  rtrim(A.nrTalonario),5) + -- as  serie_comp  ,	-- Punto de Venta 
+				right( replicate('0',20) + rtrim(A.nrComprobante),20 ) + -- as  nro_comp,   -- Numero de Comprobante
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral -  ABS(isnull(A.vlIVA,0)) , 15, 2)  + --     As imp_neto_gravado,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 4 , 4, 2)    + --  As alicuota_iva,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2)  -- As impuesto_liquidado				--  importe total conceptos que no integran el neto gravado		
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio and ABS(isnull(A.vlIVA,0)) > 0
+		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
+		--AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
+		/* AND tpLetra <>'X' 
+		AND A.nrComprobante =  '00004668' and A.nrTalonario = '0006' */
+		
+
+	    select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
+
+		declare @nombre_archivo varchar(255)=  'CITIVentas_Alicuotas' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
+
+		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones' , @nombre_archivo = @nombre_archivo
+
+		return 0; 
+
+
+end 
+
+
+
 
