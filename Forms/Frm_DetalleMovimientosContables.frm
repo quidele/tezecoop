@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_DetalleMovimientosContables 
    Caption         =   "Detalle Movimientos Contables"
    ClientHeight    =   7755
@@ -844,7 +844,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String)
 
     Frm_Principal.LimpiarReporte
     
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v4_1.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v4_9.rpt"
     
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     Frm_Principal.CrystalReport1.Destination = crptToWindow

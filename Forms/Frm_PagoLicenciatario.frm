@@ -1,18 +1,18 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
    ClientLeft      =   120
    ClientTop       =   510
-   ClientWidth     =   13185
+   ClientWidth     =   13875
    ClipControls    =   0   'False
    Icon            =   "Frm_PagoLicenciatario.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    Moveable        =   0   'False
    ScaleHeight     =   7995
-   ScaleWidth      =   13185
+   ScaleWidth      =   13875
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -21,8 +21,8 @@ Begin VB.Form frm_PagoLicenciatario
       Left            =   0
       TabIndex        =   8
       Top             =   0
-      Width           =   13185
-      _ExtentX        =   23257
+      Width           =   13875
+      _ExtentX        =   24474
       _ExtentY        =   1164
       ButtonWidth     =   2117
       ButtonHeight    =   1111
@@ -218,13 +218,28 @@ Begin VB.Form frm_PagoLicenciatario
       Left            =   -60
       TabIndex        =   5
       Top             =   555
-      Width           =   13185
+      Width           =   13890
       Begin VB.Frame fra_totales 
          Height          =   1515
-         Left            =   195
+         Left            =   180
          TabIndex        =   52
-         Top             =   5835
-         Width           =   12945
+         Top             =   5850
+         Width           =   13665
+         Begin VB.TextBox txtSaldos 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            DataField       =   "nmNombre"
+            ForeColor       =   &H00000000&
+            Height          =   390
+            Index           =   3
+            Left            =   8130
+            Locked          =   -1  'True
+            TabIndex        =   89
+            Tag             =   "vlAcumTarjeta"
+            Top             =   390
+            Width           =   825
+         End
          Begin VB.TextBox txtSaldos 
             Appearance      =   0  'Flat
             BackColor       =   &H00E0E0E0&
@@ -376,9 +391,9 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   1020
-            Left            =   8175
+            Left            =   8985
             TabIndex        =   55
-            Top             =   285
+            Top             =   270
             Width           =   4650
             Begin VB.TextBox txtIdRecibo 
                Appearance      =   0  'Flat
@@ -596,6 +611,16 @@ Begin VB.Form frm_PagoLicenciatario
             Top             =   390
             Width           =   900
          End
+         Begin VB.Label Label31 
+            Alignment       =   2  'Center
+            Caption         =   "Tarjeta"
+            Height          =   255
+            Left            =   8010
+            TabIndex        =   90
+            Tag             =   "vlAcumTarjeta"
+            Top             =   135
+            Width           =   840
+         End
          Begin VB.Label Label27 
             Alignment       =   2  'Center
             Caption         =   "Saldo R$"
@@ -735,7 +760,7 @@ Begin VB.Form frm_PagoLicenciatario
          Left            =   7470
          TabIndex        =   36
          Top             =   75
-         Width           =   5655
+         Width           =   6375
          Begin VB.Label Label28 
             Caption         =   "R$"
             BeginProperty Font 
@@ -1098,8 +1123,8 @@ Begin VB.Form frm_PagoLicenciatario
          Left            =   180
          TabIndex        =   2
          Top             =   1020
-         Width           =   12945
-         _ExtentX        =   22834
+         Width           =   13665
+         _ExtentX        =   24104
          _ExtentY        =   8493
          View            =   3
          LabelEdit       =   1
@@ -1128,7 +1153,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   21
+         NumItems        =   22
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "nrLicencia"
             Text            =   "Licencia"
@@ -1196,60 +1221,67 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   11
+            Key             =   "vlRecargoTarjeta"
+            Object.Tag             =   "vlRecargoTarjeta"
+            Text            =   "Tarjeta"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   12
             Object.Tag             =   "nrTalonarioCliente"
             Text            =   "Talonario"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   12
+         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   13
             Object.Tag             =   "dtCupon"
             Text            =   "Fecha y Hora del Viaje"
             Object.Width           =   3528
          EndProperty
-         BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   13
+         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   14
             Object.Tag             =   "flCobradoalCliente"
             Text            =   "Cobrado"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   14
+         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   15
             Object.Tag             =   "flCompensado"
             Text            =   "Compensado"
             Object.Width           =   1764
          EndProperty
-         BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   15
+         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   16
             Object.Tag             =   "cdCodBar"
             Text            =   "Cod. de Barras"
             Object.Width           =   2
          EndProperty
-         BeginProperty ColumnHeader(17) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   16
+         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   17
             Object.Tag             =   "nrCupon"
             Text            =   "Nro. Cupon"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(18) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   17
+         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   18
             Object.Tag             =   "cdCliente"
             Text            =   "Cod. Cliente"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   18
+         BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   19
             Object.Tag             =   "dsObservacion"
             Text            =   "Observación"
             Object.Width           =   5292
          EndProperty
-         BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   19
+         BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   20
             Object.Tag             =   "vlIVA"
             Text            =   "IVA"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   20
+         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   21
             Object.Tag             =   "flAnulado"
             Text            =   "flAnulado"
             Object.Width           =   2
@@ -1649,9 +1681,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-Const C_dtCupon = 12
-Const C_vlIVA = 19
-Const C_nrCupon = 16
+
+Const C_TPCUPON = 4
+Const C_dtCupon = 13
+Const C_vlIVA = 20
+Const C_nrCupon = 17
 
 
 Dim EstadoABM  As Byte
@@ -1667,12 +1701,13 @@ Const CONCEPTO_COBRO_IVA_AL_LICENCIATARIO = "1064"
 Const CONCEPTO_PAGO_A_LOS_LICENCIATARIOS_EN_REAL = "2030"
 Const CONCEPTO_COBRO_A_CUENTA_CORRIENTE_990 = "2034"
 
-Const C_TPCUPON = 4
-
 
 Public COBRO_COMISION_CD_RE_OBLIGATORIA As String
 Public CANT_VIAJES_A_COMP As Integer
 Public CTROL_CANT_VIAJES As String
+
+Public RESTRINGE_TARJETAS As String
+
 
 
 Public Sub RefrescarProgressbar(pAvance As Long)
@@ -1754,7 +1789,7 @@ Dim i   As Integer
                     If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                             objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                             objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                              Me.lstBusqueda.ListItems(i).Checked, False) Then
+                              Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
                       Me.lstBusqueda.ListItems(i).Checked = False
                     Else
                        Me.lstBusqueda.ListItems(i).Checked = True
@@ -1768,7 +1803,7 @@ Dim i   As Integer
             If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                      Me.lstBusqueda.ListItems(i).Checked, False) Then
+                      Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
               Me.lstBusqueda.ListItems(i).Checked = False
             Else
                Me.lstBusqueda.ListItems(i).Checked = True
@@ -1781,7 +1816,7 @@ Dim i   As Integer
             If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                    Me.lstBusqueda.ListItems(i).Checked, False) Then
+                    Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
                 Me.lstBusqueda.ListItems(i).Checked = False
             Else
                 If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
@@ -1884,7 +1919,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo)
         End If
         On Error GoTo 0
     Else
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v3_7.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v4_9.rpt"
         Frm_Principal.CrystalReport1.WindowState = crptMaximized
         Frm_Principal.CrystalReport1.Destination = crptToWindow
         Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Recibo - Pago a Licenciatario"
@@ -1973,6 +2008,7 @@ Private Sub Form_Load()
     CANT_VIAJES_A_COMP = objParametros.ObtenerValorBD("CANT_VIAJES_A_COMP")
     CTROL_CANT_VIAJES = objParametros.ObtenerValorBD("CTROL_CANT_VIAJES")
     Me.COBRO_COMISION_CD_RE_OBLIGATORIA = objParametros.ObtenerValorBD("COBRO_COMISION_CD_RE_OBLIGATORIA")
+    Me.RESTRINGE_TARJETAS = objParametros.ObtenerValorBD("RESTRINGE_TARJETAS")
     
 End Sub
 
@@ -2156,7 +2192,7 @@ Dim i  As Integer
    If Not sepuedeCompensar(Item.ListSubItems(C_dtCupon).Text, _
         objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", Item.Index) _
         , objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index), _
-        Not Item.Checked, True) Then
+        Not Item.Checked, True, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", Item.Index)) Then
         Item.Checked = False
    Else
         If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
@@ -2483,6 +2519,7 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "vlPagoDolares", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlPagoReales", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlComision", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "->", ""
          ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "->", ""
@@ -2580,7 +2617,7 @@ Dim Valor       As Single
         If sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                 objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                 objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                False, False) Then
+                False, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
                 
                  If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
                    (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Or _
@@ -2689,7 +2726,7 @@ End Sub
 
 Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
                                  ptpCupon As String, pSeleccionado As Boolean, _
-                                 pavisarError As Boolean) As Boolean
+                                 pavisarError As Boolean, pflCobradoalCliente As String) As Boolean
 
     If flAnulado = "SI" Then
         sepuedeCompensar = False
@@ -2761,8 +2798,18 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
           sepuedeCompensar = True
     End If
     
+    ' agregado en la version 4.9
+    If Me.RESTRINGE_TARJETAS = "S" Then
+        If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Dédito") Then
+            If pflCobradoalCliente = "SI" Then
+                sepuedeCompensar = True
+            Else
+                sepuedeCompensar = False
+            End If
+        End If
+    End If
     
-    
+     
 End Function
 
 
@@ -2803,6 +2850,7 @@ Private Function grabarRecibo(pIdRecibo As String, pCliente As String, pdsRazonS
     ObjTablasIO.setearCampoOperadorValor "vlAcumPesos", "<-", ObtenerCampo("vlAcumPesos").Text
     ObjTablasIO.setearCampoOperadorValor "vlAcumEuros", "<-", ObtenerCampo("vlAcumEuros").Text
     ObjTablasIO.setearCampoOperadorValor "vlAcumComision", "<-", ObtenerCampo("vlAcumComision").Text
+    ObjTablasIO.setearCampoOperadorValor "vlAcumTarjeta", "<-", ObtenerCampo("vlAcumTarjeta").Text
     ObjTablasIO.setearCampoOperadorValor "vlSaldoDolares", "<-", ObtenerCampo("vlSaldoDolares").Text
     ObjTablasIO.setearCampoOperadorValor "dtRecibo", "<-", Now
     
@@ -3254,7 +3302,9 @@ Dim vlSaldoDolares  As Single
 Dim vlSaldoEuros    As Single
 Dim iCantviajes     As Integer
 Dim iCantRetornos   As Integer
-   
+Dim vlAcumTarjeta   As Single
+Dim vlRecargoTarjeta As String
+
     vlAcumPesos = 0
     vlAcumDolares = 0
     vlAcumEuros = 0
@@ -3318,13 +3368,22 @@ Dim iCantRetornos   As Integer
                         vlAcumReales = vlAcumReales - AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
                    End If
                    
-                Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito"
+                Case "Cuenta Corriente"
                    vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
                    vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
                    vlAcumReales = vlAcumReales + AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
-                   
+                Case "Tarjeta de Crédito", "Tarjeta de Débito"
+                   vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
+                   vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
+                   vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
+                   vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                   vlAcumReales = vlAcumReales + AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
+                   ' Agregado en la version 4.9
+                   vlRecargoTarjeta = objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlRecargoTarjeta", i)
+                   vlRecargoTarjeta = IIf(vlRecargoTarjeta = "", "0", vlRecargoTarjeta)
+                   vlAcumTarjeta = vlAcumTarjeta + vlRecargoTarjeta
                 End Select
                 ' Sumamos los importes en IVA
                 vlAcumIVA = vlAcumIVA + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i)
@@ -3346,11 +3405,13 @@ Dim iCantRetornos   As Integer
     
     ObtenerCampo("vlAcumComision").Text = FormatNumber(CStr(vlAcumComision), 2)
     
+    ObtenerCampo("vlAcumTarjeta").Text = FormatNumber(CStr(vlAcumTarjeta), 2)
+    
     ObtenerCampo("vlSaldoDolares").Text = FormatNumber(CStr(vlAcumDolares), 2)
     ObtenerCampo("vlSaldoEuros").Text = FormatNumber(CStr(vlAcumEuros), 2)
     ObtenerCampo("vlSaldoReales").Text = FormatNumber(CStr(vlAcumReales), 2)
     
-    vlSaldoPesos = vlAcumPesos - (vlAcumComision + vlAcumIVA)
+    vlSaldoPesos = vlAcumPesos - (vlAcumComision + vlAcumIVA + vlAcumTarjeta)
     ObtenerCampo("vlSaldoPesos").Text = FormatNumber(CStr(vlSaldoPesos), 2)
     
     
@@ -3492,7 +3553,8 @@ Dim vlSaldoEuros    As Single
 Dim iCantviajes     As Integer
 Dim iCantRetornos   As Integer
 Dim iCantCobrosenDestinos As Integer
-
+Dim vlRecargoTarjeta As String
+Dim vlAcumTarjeta As Single
     ' ---MsgBox " Voy por aca "
     
     vlAcumPesos = 0
@@ -3543,6 +3605,9 @@ Dim iCantCobrosenDestinos As Integer
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
                    vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                   vlRecargoTarjeta = objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlRecargoTarjeta", i)
+                   vlRecargoTarjeta = IIf(vlRecargoTarjeta = "", "0", vlRecargoTarjeta)
+                   vlAcumTarjeta = vlAcumTarjeta
                 End Select
                 ' Sumamos los importes en IVA
                 vlAcumIVA = vlAcumIVA + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i)

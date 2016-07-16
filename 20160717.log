@@ -1,0 +1,426 @@
+17/07/2016 09:13:23 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 09:13:23 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 09:14:55 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 09:14:55 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 09:14:58 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:15:04 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:15:04 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:15:04 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+17/07/2016 09:15:04 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+17/07/2016 09:15:04 | Exec sp_obtenerCajasRechazadas_v2_9 
+17/07/2016 09:15:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+17/07/2016 09:15:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+17/07/2016 09:15:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+17/07/2016 09:15:04 | Exec SP_ValorPromoRetorno
+17/07/2016 09:15:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+17/07/2016 09:15:04 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+17/07/2016 09:15:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+17/07/2016 09:15:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+17/07/2016 09:15:04 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+17/07/2016 09:15:04 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:15:04 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+17/07/2016 09:15:04 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+17/07/2016 09:15:04 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 6049.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 6049 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:15:06 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 6049.00 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 6049.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '17/07/2016 9:15:06' ,TB_Cajas.vlCierrePesos  = 6049 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 6049.00 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:15:06 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+17/07/2016 09:15:06 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+17/07/2016 09:15:06 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+17/07/2016 09:15:06 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+17/07/2016 09:15:06 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+17/07/2016 09:15:06 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+17/07/2016 09:15:06 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+17/07/2016 09:15:06 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+17/07/2016 09:15:06 | Exec sco_validarVencimientosCAI_v4_1
+17/07/2016 09:15:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+17/07/2016 09:15:08 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:15:08 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:15:10 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:15:10 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+17/07/2016 09:15:10 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 09:15:10 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 09:15:10 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 09:15:10 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 09:15:10 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 09:15:17 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 09:15:17 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+17/07/2016 09:15:17 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '124' 
+17/07/2016 09:15:17 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:09:15' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:10:04' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:11:16' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:23:21' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:33:50' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:42:56' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '05/01/2016 10:50:00' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/06/2016 10:55:55' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:33:56' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:50:02' 
+17/07/2016 09:15:17 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 10:57:41' 
+17/07/2016 09:15:33 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:15:34 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:15:35 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:17:35 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 09:17:35 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 09:17:38 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:17:38 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:17:38 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+17/07/2016 09:17:38 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+17/07/2016 09:17:38 | Exec sp_obtenerCajasRechazadas_v2_9 
+17/07/2016 09:17:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+17/07/2016 09:17:38 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+17/07/2016 09:17:38 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+17/07/2016 09:17:38 | Exec SP_ValorPromoRetorno
+17/07/2016 09:17:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+17/07/2016 09:17:38 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+17/07/2016 09:17:38 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+17/07/2016 09:17:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+17/07/2016 09:17:38 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+17/07/2016 09:17:39 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:17:39 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+17/07/2016 09:17:39 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+17/07/2016 09:17:39 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 6049.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 6049 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:17:41 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 6049.00 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 6049.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '17/07/2016 9:17:41' ,TB_Cajas.vlCierrePesos  = 6049 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 6049.00 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:17:41 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+17/07/2016 09:17:41 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+17/07/2016 09:17:41 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+17/07/2016 09:17:41 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+17/07/2016 09:17:41 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+17/07/2016 09:17:41 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+17/07/2016 09:17:41 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+17/07/2016 09:17:41 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+17/07/2016 09:17:41 | Exec sco_validarVencimientosCAI_v4_1
+17/07/2016 09:17:42 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+17/07/2016 09:17:42 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:17:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:17:44 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:17:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+17/07/2016 09:17:44 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 09:17:44 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 09:17:44 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 09:17:44 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 09:17:44 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 09:17:47 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 09:17:47 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+17/07/2016 09:17:47 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '124' 
+17/07/2016 09:17:47 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:09:15' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:10:04' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:11:16' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:23:21' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:33:50' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:42:56' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '05/01/2016 10:50:00' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/06/2016 10:55:55' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:33:56' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:50:02' 
+17/07/2016 09:17:47 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 10:57:41' 
+17/07/2016 09:17:49 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:50:02' 
+17/07/2016 09:20:48 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 07:48:58' 
+17/07/2016 09:20:51 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 10:57:41' 
+17/07/2016 09:22:21 |  SELECT TB_Cupones.nrCupon  FROM TB_Cupones  WHERE TB_Cupones.IdRecibo = 13  
+17/07/2016 09:22:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Recibos'
+17/07/2016 09:22:21 |  INSERT TB_Recibos (IdRecibo ,vlAcumDolares ,vlSaldoPesos ,vlSaldoEuros ,vlAcumPesos ,vlAcumEuros ,vlAcumComision ,vlSaldoDolares ,dtRecibo ,tpRecibo ,nrCaja )  VALUES (13 ,0.00 ,2805.92 ,0.00 ,3300.00 ,0.00 ,72.00 ,0.00 ,'17/07/2016 9:22:21' ,'Detalle de Pago a Licenciatario' ,9000003773 )
+17/07/2016 09:22:21 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+17/07/2016 09:22:21 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto9  = '1000276242'   WHERE DiccionariodeDatos.nmTabla = 'TB_Recibos'  AND  DiccionariodeDatos.nmCampo = 'IdRecibo'  
+17/07/2016 09:22:21 |  UPDATE TB_Cupones SET TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 9:22:21' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 9:22:21' ,TB_Cupones.IdRecibo  = 13 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 61  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 09:22:21 |  UPDATE TB_Cupones SET TB_Cupones.vlPagoPesos  = 434 ,TB_Cupones.vlPagoDolares  = 0 ,TB_Cupones.vlPagoEuros  = 0 ,TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 9:22:21' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 9:22:21' ,TB_Cupones.IdRecibo  = 13 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 55  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 09:22:21 |  UPDATE TB_Cupones SET TB_Cupones.vlPagoPesos  = 434 ,TB_Cupones.vlPagoDolares  = 0 ,TB_Cupones.vlPagoEuros  = 0 ,TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 9:22:21' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 9:22:21' ,TB_Cupones.IdRecibo  = 13 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 57  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 09:22:21 |  select count(*) as cupones_a_compensados from tb_cupones where IdRecibo = 13
+17/07/2016 09:22:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Conceptos'
+17/07/2016 09:22:21 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 1027  
+17/07/2016 09:22:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_MovimientosContables'
+17/07/2016 09:22:21 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (3 ,'Pago a Licenciatario' ,13 ,1027 ,'Cajas' ,'PAGO DE COMPROBANTES' ,'Salida de Dinero' ,2805.92 ,0.00 ,0.00 ,'13' ,null ,9000003773 ,'CAMILAP' ,'17/07/2016 9:22:21' ,'Licencia Nro. 124' ,null ,'Caja de los Licenciatarios' ,null ,null )
+17/07/2016 09:22:21 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 09:22:21 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '124' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:09:15' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '03/10/2015 04:10:04' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:11:16' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:23:21' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:33:50' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:42:56' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '05/01/2016 10:50:00' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/06/2016 10:55:55' 
+17/07/2016 09:22:21 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '10/07/2016 09:33:56' 
+17/07/2016 09:22:21 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 09:23:51 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 09:23:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 09:23:54 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:23:54 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 09:23:54 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+17/07/2016 09:23:54 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+17/07/2016 09:23:54 | Exec sp_obtenerCajasRechazadas_v2_9 
+17/07/2016 09:23:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+17/07/2016 09:23:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+17/07/2016 09:23:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+17/07/2016 09:23:54 | Exec SP_ValorPromoRetorno
+17/07/2016 09:23:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+17/07/2016 09:23:54 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+17/07/2016 09:23:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+17/07/2016 09:23:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+17/07/2016 09:23:54 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+17/07/2016 09:23:57 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:23:57 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+17/07/2016 09:23:57 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+17/07/2016 09:23:57 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 3243.08 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 3243.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:23:58 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 3243.08 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 3243.08 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '17/07/2016 9:23:58' ,TB_Cajas.vlCierrePesos  = 3243.08 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 3243.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:23:58 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+17/07/2016 09:23:58 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+17/07/2016 09:23:58 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+17/07/2016 09:23:58 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+17/07/2016 09:23:58 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+17/07/2016 09:23:58 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+17/07/2016 09:23:58 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+17/07/2016 09:23:58 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+17/07/2016 09:23:58 | Exec sco_validarVencimientosCAI_v4_1
+17/07/2016 09:24:00 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+17/07/2016 09:24:00 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:24:00 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 09:24:03 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 09:24:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+17/07/2016 09:24:03 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 09:24:03 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 09:24:03 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 09:24:03 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 09:24:03 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 09:24:05 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 09:24:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+17/07/2016 09:24:05 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 09:24:05 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 09:24:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 09:24:07 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 10:02:18 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 10:02:18 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 10:02:18 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 10:02:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 10:02:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 10:04:28 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 10:04:28 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 10:04:35 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 10:04:35 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 10:04:35 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+17/07/2016 10:04:35 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+17/07/2016 10:04:35 | Exec sp_obtenerCajasRechazadas_v2_9 
+17/07/2016 10:04:35 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+17/07/2016 10:04:35 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+17/07/2016 10:04:35 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+17/07/2016 10:04:35 | Exec SP_ValorPromoRetorno
+17/07/2016 10:04:35 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+17/07/2016 10:04:35 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+17/07/2016 10:04:35 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+17/07/2016 10:04:35 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+17/07/2016 10:04:35 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+17/07/2016 10:04:36 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 10:04:36 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+17/07/2016 10:04:36 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+17/07/2016 10:04:36 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 3243.08 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 3243.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 10:04:38 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 3243.08 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 3243.08 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '17/07/2016 10:04:38' ,TB_Cajas.vlCierrePesos  = 3243.08 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 3243.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 10:04:38 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+17/07/2016 10:04:38 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+17/07/2016 10:04:38 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+17/07/2016 10:04:38 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+17/07/2016 10:04:38 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+17/07/2016 10:04:38 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+17/07/2016 10:04:38 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+17/07/2016 10:04:38 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+17/07/2016 10:04:38 | Exec sco_validarVencimientosCAI_v4_1
+17/07/2016 10:04:39 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+17/07/2016 10:04:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 10:04:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 10:04:42 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 10:04:42 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+17/07/2016 10:04:42 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 10:04:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 10:04:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 10:04:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 10:04:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 10:04:44 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 10:04:44 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+17/07/2016 10:04:44 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 10:04:44 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 10:04:44 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 10:04:45 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 10:05:31 |  SELECT TB_Cupones.nrCupon  FROM TB_Cupones  WHERE TB_Cupones.IdRecibo = 14  
+17/07/2016 10:05:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Recibos'
+17/07/2016 10:05:31 |  INSERT TB_Recibos (IdRecibo ,vlAcumDolares ,vlSaldoPesos ,vlSaldoEuros ,vlAcumPesos ,vlAcumEuros ,vlAcumComision ,vlSaldoDolares ,dtRecibo ,tpRecibo ,nrCaja )  VALUES (14 ,0.00 ,414.00 ,0.00 ,489.00 ,0.00 ,36.00 ,0.00 ,'17/07/2016 10:05:31' ,'Detalle de Pago a Licenciatario' ,9000003773 )
+17/07/2016 10:05:31 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+17/07/2016 10:05:31 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto9  = '1000276243'   WHERE DiccionariodeDatos.nmTabla = 'TB_Recibos'  AND  DiccionariodeDatos.nmCampo = 'IdRecibo'  
+17/07/2016 10:05:31 |  UPDATE TB_Cupones SET TB_Cupones.vlPagoPesos  = 489 ,TB_Cupones.vlPagoDolares  = 0 ,TB_Cupones.vlPagoEuros  = 0 ,TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 10:05:31' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 10:05:31' ,TB_Cupones.IdRecibo  = 14 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 62  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 10:05:31 |  select count(*) as cupones_a_compensados from tb_cupones where IdRecibo = 14
+17/07/2016 10:05:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Conceptos'
+17/07/2016 10:05:31 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 1027  
+17/07/2016 10:05:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_MovimientosContables'
+17/07/2016 10:05:31 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (4 ,'Pago a Licenciatario' ,14 ,1027 ,'Cajas' ,'PAGO DE COMPROBANTES' ,'Salida de Dinero' ,414.00 ,0.00 ,0.00 ,'14' ,null ,9000003773 ,'CAMILAP' ,'17/07/2016 10:05:31' ,'Licencia Nro. 12' ,null ,'Caja de los Licenciatarios' ,null ,null )
+17/07/2016 10:05:32 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 10:05:32 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 10:05:32 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 10:05:32 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 11:32:52 | Exec  sco_TB_Productos_v4_1 
+17/07/2016 11:32:52 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+17/07/2016 11:33:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 11:33:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 11:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+17/07/2016 11:33:01 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+17/07/2016 11:33:01 | Exec sp_obtenerCajasRechazadas_v2_9 
+17/07/2016 11:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+17/07/2016 11:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+17/07/2016 11:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+17/07/2016 11:33:01 | Exec SP_ValorPromoRetorno
+17/07/2016 11:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+17/07/2016 11:33:01 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+17/07/2016 11:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+17/07/2016 11:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+17/07/2016 11:33:01 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+17/07/2016 11:33:02 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:33:02 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+17/07/2016 11:33:02 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+17/07/2016 11:33:02 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 2829.08 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 2829.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:33:03 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 2829.08 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 2829.08 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '17/07/2016 11:33:03' ,TB_Cajas.vlCierrePesos  = 2829.08 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 2829.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:33:03 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+17/07/2016 11:33:03 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+17/07/2016 11:33:03 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+17/07/2016 11:33:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+17/07/2016 11:33:03 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+17/07/2016 11:33:03 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+17/07/2016 11:33:03 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+17/07/2016 11:33:03 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+17/07/2016 11:33:03 | Exec sco_validarVencimientosCAI_v4_1
+17/07/2016 11:33:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+17/07/2016 11:33:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:33:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:33:09 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:33:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+17/07/2016 11:33:09 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 11:33:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 11:33:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 11:33:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 11:33:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 11:33:12 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 11:33:12 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+17/07/2016 11:33:12 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 11:33:12 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 11:33:12 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 11:33:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:33:19 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Recibos'
+17/07/2016 11:33:27 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 11:33:40 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.flEliminar = 0  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.tpNivelJerarquico = 'Supervisor'  
+17/07/2016 11:33:47 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 11:33:48 | Exec  SP_AnularRecibo_v3_7 @idReciboParam=14 ,  @dsUsuario_param='CAMILAP', @dsUsuario_Supervisor_param='USRPARAM'
+17/07/2016 11:33:50 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 11:34:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:34:09 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:34:09 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 11:34:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 11:34:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 11:34:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 11:34:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 11:34:11 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 11:34:11 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 11:34:11 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 11:34:13 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 11:34:22 |  SELECT TB_Cupones.nrCupon  FROM TB_Cupones  WHERE TB_Cupones.IdRecibo = 15  
+17/07/2016 11:34:41 |  INSERT TB_Recibos (IdRecibo ,vlAcumDolares ,vlSaldoPesos ,vlSaldoEuros ,vlAcumPesos ,vlAcumEuros ,vlAcumComision ,vlAcumTarjeta ,vlSaldoDolares ,dtRecibo ,tpRecibo ,nrCaja )  VALUES (15 ,0.00 ,414.00 ,0.00 ,489.00 ,0.00 ,36.00 ,39.00 ,0.00 ,'17/07/2016 11:34:41' ,'Detalle de Pago a Licenciatario' ,9000003773 )
+17/07/2016 11:34:41 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+17/07/2016 11:34:41 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto9  = '1000276244'   WHERE DiccionariodeDatos.nmTabla = 'TB_Recibos'  AND  DiccionariodeDatos.nmCampo = 'IdRecibo'  
+17/07/2016 11:34:41 |  UPDATE TB_Cupones SET TB_Cupones.vlPagoPesos  = 489 ,TB_Cupones.vlPagoDolares  = 0 ,TB_Cupones.vlPagoEuros  = 0 ,TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 11:34:41' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 11:34:41' ,TB_Cupones.IdRecibo  = 15 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 62  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 11:34:41 |  select count(*) as cupones_a_compensados from tb_cupones where IdRecibo = 15
+17/07/2016 11:34:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Conceptos'
+17/07/2016 11:34:41 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 1027  
+17/07/2016 11:34:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_MovimientosContables'
+17/07/2016 11:34:41 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (4 ,'Pago a Licenciatario' ,15 ,1027 ,'Cajas' ,'PAGO DE COMPROBANTES' ,'Salida de Dinero' ,414.00 ,0.00 ,0.00 ,'15' ,null ,9000003773 ,'CAMILAP' ,'17/07/2016 11:34:41' ,'Licencia Nro. 12' ,null ,'Caja de los Licenciatarios' ,null ,null )
+17/07/2016 11:34:41 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 11:34:41 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 11:34:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 11:34:41 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 11:35:02 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:35:08 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%12%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 11:35:15 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 11:35:21 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.flEliminar = 0  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.tpNivelJerarquico = 'Supervisor'  
+17/07/2016 11:35:27 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+17/07/2016 11:35:28 | Exec  SP_AnularRecibo_v3_7 @idReciboParam=15 ,  @dsUsuario_param='CAMILAP', @dsUsuario_Supervisor_param='USRPARAM'
+17/07/2016 11:35:29 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 11:35:31 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 11:35:34 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+17/07/2016 11:35:34 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 11:35:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'  
+17/07/2016 11:35:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'  
+17/07/2016 11:35:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'  
+17/07/2016 11:35:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'  
+17/07/2016 11:35:37 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 11:35:37 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 11:35:37 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 11:35:41 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '16/07/2016 08:41:23' 
+17/07/2016 11:36:20 |  SELECT TB_Cupones.nrCupon  FROM TB_Cupones  WHERE TB_Cupones.IdRecibo = 16  
+17/07/2016 11:36:20 |  INSERT TB_Recibos (IdRecibo ,vlAcumDolares ,vlSaldoPesos ,vlSaldoEuros ,vlAcumPesos ,vlAcumEuros ,vlAcumComision ,vlAcumTarjeta ,vlSaldoDolares ,dtRecibo ,tpRecibo ,nrCaja )  VALUES (16 ,0.00 ,414.00 ,0.00 ,489.00 ,0.00 ,36.00 ,39.00 ,0.00 ,'17/07/2016 11:36:20' ,'Detalle de Pago a Licenciatario' ,9000003773 )
+17/07/2016 11:36:20 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto9  = '1000276245'   WHERE DiccionariodeDatos.nmTabla = 'TB_Recibos'  AND  DiccionariodeDatos.nmCampo = 'IdRecibo'  
+17/07/2016 11:36:20 |  UPDATE TB_Cupones SET TB_Cupones.vlPagoPesos  = 489 ,TB_Cupones.vlPagoDolares  = 0 ,TB_Cupones.vlPagoEuros  = 0 ,TB_Cupones.flCompensado  = 1 ,TB_Cupones.dtCompensado  = '17/07/2016 11:36:20' ,TB_Cupones.nrCajaLicenciatario  = 9000003773 ,TB_Cupones.dtCajaLicenciatario  = '17/07/2016 11:36:20' ,TB_Cupones.IdRecibo  = 16 ,TB_Cupones.dsUsuario  = 'CAMILAP'   WHERE TB_Cupones.nrCupon = 62  AND  TB_Cupones.IdRecibo IS NULL  
+17/07/2016 11:36:20 |  select count(*) as cupones_a_compensados from tb_cupones where IdRecibo = 16
+17/07/2016 11:36:20 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 1027  
+17/07/2016 11:36:20 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (4 ,'Pago a Licenciatario' ,16 ,1027 ,'Cajas' ,'PAGO DE COMPROBANTES' ,'Salida de Dinero' ,414.00 ,0.00 ,0.00 ,'16' ,null ,9000003773 ,'CAMILAP' ,'17/07/2016 11:36:20' ,'Licencia Nro. 12' ,null ,'Caja de los Licenciatarios' ,null ,null )
+17/07/2016 11:36:20 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 12  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0  
+17/07/2016 11:36:20 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '12' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 12:54:40' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '24/10/2015 04:39:57' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '26/10/2015 02:19:56' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:35:05' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '14/11/2015 05:40:25' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '29/12/2015 08:58:00' 
+17/07/2016 11:36:20 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '04/07/2016 11:08:40' 
+17/07/2016 11:36:20 | Exec  sp_obtiene_falta_compensar_v4_2 
+17/07/2016 12:08:28 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+17/07/2016 12:08:33 |  SELECT TB_Recibos.IdRecibo ,TB_Recibos.vlAcumDolares ,TB_Recibos.vlSaldoPesos ,TB_Recibos.cdCliente ,TB_Recibos.dsRazonSocial ,TB_Recibos.vlSaldoEuros ,TB_Recibos.vlAcumPesos ,TB_Recibos.tpRecibo ,TB_Recibos.vlAcumEuros ,TB_Recibos.vlAcumComision ,TB_Recibos.vlSaldoDolares ,TB_Recibos.dtRecibo ,TB_Recibos.flAnulado ,TB_Recibos.nrCaja ,TB_Recibos.dsUsuario  FROM TB_Recibos  WHERE  IdRecibo Like ('%%%') AND TB_Recibos.dtRecibo >= '17/07/2016 00:00:00'  AND  TB_Recibos.dtRecibo <= '17/07/2016 23:59:59'   Order by TB_Recibos.IdRecibo ASC 
+17/07/2016 12:30:07 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 

@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   91815937
+         Format          =   111673345
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   91815937
+         Format          =   111673345
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -817,7 +817,7 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String, tpRecibo As String)
         On Error GoTo 0
     Case Else
     
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v4_1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_pagolicenciatario_v4_9.rpt"
         Frm_Principal.CrystalReport1.WindowState = crptMaximized
         Frm_Principal.CrystalReport1.Destination = crptToWindow
         Frm_Principal.CrystalReport1.WindowTitle = "Impresión de Recibo - Pago a Licenciatario"

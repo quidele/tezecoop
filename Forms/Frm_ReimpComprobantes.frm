@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ReimpComprobantes 
    Caption         =   "Búsquedas de Comprobantes"
    ClientHeight    =   7680
@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   230359041
+         Format          =   112721921
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,7 +1535,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   230359041
+         Format          =   112721921
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
@@ -2938,7 +2938,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_9.rpt"
         End Select
     End Select
    
