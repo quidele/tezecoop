@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1162,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   115933185
+         Format          =   112721921
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2410,7 +2410,7 @@ Dim vlRecargoTarjeta As Single
         Case "Tarjeta de Débito"
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTD))
-            vlRecargoTarjeta = 0
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTD))
         Case "Tarjeta de Crédito"
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
@@ -2418,7 +2418,7 @@ Dim vlRecargoTarjeta As Single
         Case Else
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
-            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTD))
+            vlRecargoTarjeta = 0
         End Select
     Next
     
@@ -5016,7 +5016,9 @@ Dim tpIVA   As String
                 HabilitarCampos "dsRazonSocial", True
                 HabilitarCampos "nrDoc", True
                 HabilitarCampos "dsEmail", True
+                ' On Error Resume Next
                 ObtenerCampo("dsProductoBuscado").SetFocus
+                ' On Error GoTo 0
             End If
             Exit Sub
          End If
@@ -5164,6 +5166,10 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
         Case "nrComprobante"
             ObtenerCampo("dtComprobante").SetFocus
         Case "cdCliente"
+            ' -- agregado en la version 4.9
+            If Not ObtenerCampo("cdCliente").Text = "" Then
+                buscarcampocliente
+            End If
             ObtenerCampo("dsProductoBuscado").SetFocus
         Case "dsRazonSocial"
             ObtenerCampo("nrDoc").SetFocus
@@ -5256,10 +5262,10 @@ Private Sub txtFields_LostFocus(Index As Integer)
                 buscarlicencia
             End Select
         Case "cdCliente"
-            If Not ObtenerCampo("cdCliente").Text = "" Then
-                buscarcampocliente
-            End If
-            setearCondicionVentayComision
+            ' If Not ObtenerCampo("cdCliente").Text = "" Then
+            '     buscarcampocliente
+            ' End If
+            ' setearCondicionVentayComision
             ' cargarCondVentas ObtenerCampo("cdCliente").Text
         Case "vlTotalGeneral", "vlPagoEuros", "vlPagoDolares", "vlPagoPesos", "vlPagoReales"
             If ObtenerCampo("cdCondVenta").Text <> "Cuenta Corriente" And _
@@ -5640,7 +5646,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_9.rpt"
         End Select
         
     End Select
@@ -5774,7 +5780,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_CuponChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_9.rpt"
         End Select
     Case Else
         Select Case objConfig.tpImpresion
@@ -5783,7 +5789,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_facturachico_imprime_continuo_v4_9.rpt"
         End Select
     End Select
     

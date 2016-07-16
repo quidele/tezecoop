@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_FacturaCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte."
@@ -2753,7 +2753,7 @@ Dim cdCodBarLic         As String
         Case "PREIMPRESO"
             Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
         Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_7.rpt"
+            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_9.rpt"
         End Select
     End Select
     
