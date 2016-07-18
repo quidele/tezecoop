@@ -1,11 +1,26 @@
-Line 19: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
-Line 90: Class MSComctlLib.ImageList of control imgABMProveedoresResaltado was not a loaded control class.
-Line 144: Class MSComctlLib.ImageList of control imgABMProveedores was not a loaded control class.
-Line 283: Class TabDlg.SSTab of control SSTab1 was not a loaded control class.
-Line 571: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 692: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 706: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 1238: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
-Line 1286: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
-Line 1324: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
-Line 1349: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 724: Property Size in Font had an invalid value.
+Line 782: Property Size in Font had an invalid value.
+Line 800: Property Size in Font had an invalid value.
+Line 818: Property Size in Font had an invalid value.
+Line 836: Property Size in Font had an invalid value.
+Line 854: Property Size in Font had an invalid value.
+Line 872: Property Size in Font had an invalid value.
+Line 890: Property Size in Font had an invalid value.
+Line 908: Property Size in Font had an invalid value.
+Line 926: Property Size in Font had an invalid value.
+Line 944: Property Size in Font had an invalid value.
+Line 962: Property Size in Font had an invalid value.
+Line 980: Property Size in Font had an invalid value.
+Line 998: Property Size in Font had an invalid value.
+Line 1016: Property Size in Font had an invalid value.
+Line 1034: Property Size in Font had an invalid value.
+Line 1052: Property Size in Font had an invalid value.
+Line 1070: Property Size in Font had an invalid value.
+Line 1100: Property Size in Font had an invalid value.
+Line 1117: Property Size in Font had an invalid value.
+Line 1135: Property Size in Font had an invalid value.
+Line 1153: Property Size in Font had an invalid value.
+Line 1171: Property Size in Font had an invalid value.
+Line 1189: Property Size in Font had an invalid value.
+Line 1206: Property Size in Font had an invalid value.
+Line 1371: Property Size in Font had an invalid value.

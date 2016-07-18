@@ -69,11 +69,11 @@ Begin VB.Form frm_SalidasAFIP
          Top             =   1995
          Width           =   1050
       End
-      Begin VB.ComboBox cbPuestos 
+      Begin VB.ComboBox cbSoportes 
          Height          =   315
          ItemData        =   "frm_SalidasAFIP.frx":0000
          Left            =   180
-         List            =   "frm_SalidasAFIP.frx":0007
+         List            =   "frm_SalidasAFIP.frx":000A
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   465
@@ -223,6 +223,10 @@ End Sub
 
 
 
+Private Sub cbPuestos_Change()
+
+End Sub
+
 Private Sub Form_Load()
 Dim objControl As New CControl
 Dim rs         As Object
@@ -303,9 +307,21 @@ Dim resp As Byte
         If resp = vbNo Then Exit Sub
         
         MousePointer = vbHourglass
-        If generarArchivo() Then
-            Unload Me
-        End If
+        
+        Select Case Me.cbSoportes.Text
+            Case "CITI Ventas Comprobantes"
+                    If generarArchivo_CITI_Ventas_Comprobantes() Then
+                        MousePointer = vbDefault
+                        Unload Me
+                    End If
+        Case "CITI Ventas Alicuotas"
+                If generarArchivo_CITI_Ventas_Alicuotas() Then
+                    MousePointer = vbDefault
+                    Unload Me
+                End If
+        End Select
+        
+
         MousePointer = vbDefault
         
         
@@ -314,7 +330,7 @@ End Sub
 
 
 
-Private Function generarArchivo() As Boolean
+Private Function generarArchivo_CITI_Ventas_Comprobantes() As Boolean
 Dim Control     As Control
 Dim strtag      As String
 Dim strPrefijo  As String
@@ -324,7 +340,7 @@ Dim nrPuesto    As String
 Dim objControl  As New CControl
 
 
-    generarArchivo = False
+    generarArchivo_CITI_Ventas_Comprobantes = False
 
     
     
@@ -336,12 +352,42 @@ Dim objControl  As New CControl
         MsgBox "ERROR: " + objSPs.Error, vbCritical, "Atención"
         Exit Function
     End If
-    
 
     MsgBox "El proceso se ha generado con éxito, verifique la generación del archivo en la carpeta AFIP.", vbInformation, "Atención"
     
     
-    generarArchivo = True
+    generarArchivo_CITI_Ventas_Comprobantes = True
+    
+    
+    
+End Function
+
+
+Private Function generarArchivo_CITI_Ventas_Alicuotas() As Boolean
+Dim Control     As Control
+Dim strtag      As String
+Dim strPrefijo  As String
+Dim strValor    As Variant
+Dim strCaja     As String
+Dim nrPuesto    As String
+Dim objControl  As New CControl
+
+
+    generarArchivo_CITI_Ventas_Alicuotas = False
+
+    
+    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_v4_8"
+    objSPs.setearCampoValor "@mes", ObtenerCampo("mes")
+    objSPs.setearCampoValor "@anio", ObtenerCampo("anio")
+    
+    If Not objSPs.ExecSP() Then
+        MsgBox "ERROR: " + objSPs.Error, vbCritical, "Atención"
+        Exit Function
+    End If
+
+    MsgBox "El proceso se ha generado con éxito, verifique la generación del archivo en la carpeta AFIP.", vbInformation, "Atención"
+    
+    generarArchivo_CITI_Ventas_Alicuotas = True
     
     
     

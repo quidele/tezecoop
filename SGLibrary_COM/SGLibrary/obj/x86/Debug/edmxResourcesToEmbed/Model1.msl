@@ -1,9 +1,57 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="dbSG2000ModelStoreContainer" CdmEntityContainer="dbSG2000Entities">
+    <EntitySetMapping Name="TB_Productos">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
+        <MappingFragment StoreEntitySet="TB_Productos">
+          <ScalarProperty Name="cdComision" ColumnName="cdComision" />
+          <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
+          <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
+          <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
+          <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
+          <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+          <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+          <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
+          <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
+          <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
+          <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
+          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+          <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
+          <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
+          <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
+          <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
+          <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
+          <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Conciliacion">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+        <MappingFragment StoreEntitySet="TB_Conciliacion">
+          <ScalarProperty Name="flestado" ColumnName="flestado" />
+          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ConciliacionDetalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
     <EntitySetMapping Name="TB_Cupones">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
         <MappingFragment StoreEntitySet="TB_Cupones">
+          <ScalarProperty Name="vlRecargoTarjeta" ColumnName="vlRecargoTarjeta" />
+          <ScalarProperty Name="nrDocTarjeta" ColumnName="nrDocTarjeta" />
+          <ScalarProperty Name="tpDocTarjeta" ColumnName="tpDocTarjeta" />
+          <ScalarProperty Name="nrTarjeta" ColumnName="nrTarjeta" />
           <ScalarProperty Name="dtNoCompensado" ColumnName="dtNoCompensado" />
           <ScalarProperty Name="flNoCompensado" ColumnName="flNoCompensado" />
           <ScalarProperty Name="vlPagoReales" ColumnName="vlPagoReales" />
@@ -60,50 +108,6 @@
           <ScalarProperty Name="nrPuesto" ColumnName="nrPuesto" />
           <ScalarProperty Name="cdCliente" ColumnName="cdCliente" />
           <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TB_Productos">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
-        <MappingFragment StoreEntitySet="TB_Productos">
-          <ScalarProperty Name="cdComision" ColumnName="cdComision" />
-          <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
-          <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
-          <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
-          <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
-          <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
-          <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
-          <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
-          <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
-          <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
-          <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
-          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
-          <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
-          <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
-          <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
-          <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
-          <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
-          <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TB_Conciliacion">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
-        <MappingFragment StoreEntitySet="TB_Conciliacion">
-          <ScalarProperty Name="flestado" ColumnName="flestado" />
-          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
-          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
-          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
-          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TB_ConciliacionDetalle">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
-        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
-          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

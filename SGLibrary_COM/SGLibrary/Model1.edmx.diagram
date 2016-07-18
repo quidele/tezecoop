@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="93">
-        <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.75" PointY="0.75" />
+      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="88">
         <EntityTypeShape EntityType="dbSG2000Model.TB_Productos" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="1.5" PointX="5.375" PointY="1" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="1.5" PointX="7.625" PointY="1.375" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.5" PointY="0.5" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

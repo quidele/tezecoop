@@ -23,7 +23,7 @@ namespace SGLibrary
 
         private void FrmConciliaciones_Load(object sender, EventArgs e)
         {
-            //botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
+            botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
             this.fechadesde.Value = DateTime.Now.AddDays(-30);
@@ -41,28 +41,25 @@ namespace SGLibrary
                 case "EDIT" : {
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
-                    //botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+                    botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                     break;
                 }
                 case "ADD":
                     {
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-                        //botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                         cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar); 
-                        //dataGridView1.DataSource = listadeViajesaConciliar;
-                        //dataGridView1.ReadOnly = false ;
-                        //dataGridView1.Columns["CONCILIAR"].ReadOnly = false;
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
                 case "FIND":
                     {
                         this.panelcarga.Visible =  false ;
                         this.panelbusqueda.Visible = true;
-                        //botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value);
-                        cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones); 
+                        cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         break;
                     }
                 
@@ -91,14 +88,14 @@ namespace SGLibrary
                         }
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        //botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
                     }
                 case "CANCEL":
                     {
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        //botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
                         break;
                     }
 
@@ -106,7 +103,7 @@ namespace SGLibrary
                     {
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-                        //botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
                         break;
                     }
                 case "EXIT":

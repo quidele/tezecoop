@@ -4,15 +4,25 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+    <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityContainer Name="dbSG2000ModelStoreContainer">
+          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.Store.TB_Conciliacion" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.Store.TB_ConciliacionDetalle" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.Store.TB_Cupones" store:Type="Tables" Schema="dbo" />
+          <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+        </EntityContainer>
         <EntityType Name="TB_Conciliacion">
           <Key>
             <PropertyRef Name="IdConciliacion" />
           </Key>
-          <Property Name="IdConciliacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="IdConciliacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
           <Property Name="dtConciliacion" Type="date" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
-          <Property Name="nrCajaAdm" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaAdm" Type="numeric" />
           <Property Name="dtModificacion" Type="datetime" />
           <Property Name="flestado" Type="char" MaxLength="1" />
         </EntityType>
@@ -22,13 +32,13 @@
             <PropertyRef Name="nrCupon" />
           </Key>
           <Property Name="IdConciliacion" Type="int" Nullable="false" />
-          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Nullable="false" />
         </EntityType>
         <EntityType Name="TB_Cupones">
           <Key>
             <PropertyRef Name="nrCupon" />
           </Key>
-          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Nullable="false" />
           <Property Name="cdCliente" Type="int" />
           <Property Name="nrPuesto" Type="smallint" />
           <Property Name="nrLicencia" Type="int" Nullable="false" />
@@ -50,7 +60,7 @@
           <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
           <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
           <Property Name="dtCobradoalCliente" Type="datetime" />
-          <Property Name="nrCajaCliente" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaCliente" Type="numeric" />
           <Property Name="dtCajaCliente" Type="datetime" />
           <Property Name="nrTalonarioProveedor" Type="float" />
           <Property Name="nrComprabanteProveedor" Type="float" />
@@ -58,7 +68,7 @@
           <Property Name="tpLetraLetraProveedor" Type="varchar" MaxLength="1" />
           <Property Name="flCompensado" Type="bit" Nullable="false" />
           <Property Name="dtCompensado" Type="datetime" />
-          <Property Name="nrCajaLicenciatario" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaLicenciatario" Type="numeric" />
           <Property Name="dtCajaLicenciatario" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
           <Property Name="nrLiquidacionProveedores" Type="smallint" />
@@ -67,7 +77,7 @@
           <Property Name="flAnulado" Type="bit" Nullable="false" />
           <Property Name="dtAnulado" Type="datetime" />
           <Property Name="IdRecibo" Type="int" />
-          <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IdReciboCtaCte" Type="numeric" />
           <Property Name="dsObservacion" Type="varchar" MaxLength="400" />
           <Property Name="dsDestino" Type="varchar" MaxLength="100" />
           <Property Name="dsHoraViaje" Type="char" MaxLength="10" />
@@ -78,12 +88,16 @@
           <Property Name="flSincronizado" Type="bit" />
           <Property Name="vlSubtotal" Type="float" />
           <Property Name="vlIVA" Type="float" />
-          <Property Name="nrCajaCtaCte" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="nrCajaCtaCte" Type="numeric" />
           <Property Name="dtCajaCtaCte" Type="datetime" />
           <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
           <Property Name="vlPagoReales" Type="float" />
           <Property Name="flNoCompensado" Type="char" MaxLength="1" />
           <Property Name="dtNoCompensado" Type="date" />
+          <Property Name="nrTarjeta" Type="varchar" MaxLength="50" />
+          <Property Name="tpDocTarjeta" Type="nchar" MaxLength="10" />
+          <Property Name="nrDocTarjeta" Type="nchar" MaxLength="25" />
+          <Property Name="vlRecargoTarjeta" Type="float" />
         </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
@@ -109,8 +123,8 @@
           <Property Name="cdComision" Type="int" />
         </EntityType>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
-          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
-          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />
+          <End Role="TB_ConciliacionDetalle" Type="dbSG2000Model.Store.TB_ConciliacionDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_Conciliacion">
               <PropertyRef Name="IdConciliacion" />
@@ -120,22 +134,11 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="dbSG2000ModelStoreContainer">
-          <EntitySet Name="TB_Conciliacion" EntityType="Self.TB_Conciliacion" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TB_ConciliacionDetalle" EntityType="Self.TB_ConciliacionDetalle" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
-          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
-          </AssociationSet>
-        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
           <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
           <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
@@ -143,68 +146,8 @@
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
+          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
         </EntityContainer>
-        <EntityType Name="TB_Cupones">
-          <Key>
-            <PropertyRef Name="nrCupon" />
-          </Key>
-          <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <Property Name="cdCliente" Type="Int32" />
-          <Property Name="nrPuesto" Type="Int16" />
-          <Property Name="nrLicencia" Type="Int32" Nullable="false" />
-          <Property Name="nmLicenciatario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="tpCupon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="vlMontoCupon" Type="Double" />
-          <Property Name="vlaFavordelLicenciatario" Type="Double" />
-          <Property Name="vlafavorAdmin" Type="Double" />
-          <Property Name="vlPagoPesos" Type="Double" />
-          <Property Name="vlPagoEuros" Type="Double" />
-          <Property Name="vlPagoDolares" Type="Double" />
-          <Property Name="vlComision" Type="Double" />
-          <Property Name="nrCantidadBultos" Type="Int16" />
-          <Property Name="nrPasajeros" Type="Int16" />
-          <Property Name="dtCupon" Type="DateTime" Precision="3" />
-          <Property Name="nrTalonarioCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-          <Property Name="nrComprabanteCliente" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-          <Property Name="tpComprobanteCliente" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="tpLetraCliente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="flCobradoalCliente" Type="Boolean" Nullable="false" />
-          <Property Name="dtCobradoalCliente" Type="DateTime" Precision="3" />
-          <Property Name="nrCajaCliente" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="dtCajaCliente" Type="DateTime" Precision="3" />
-          <Property Name="nrTalonarioProveedor" Type="Double" />
-          <Property Name="nrComprabanteProveedor" Type="Double" />
-          <Property Name="tpComprobanteProveedor" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
-          <Property Name="tpLetraLetraProveedor" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
-          <Property Name="flCompensado" Type="Boolean" Nullable="false" />
-          <Property Name="dtCompensado" Type="DateTime" Precision="3" />
-          <Property Name="nrCajaLicenciatario" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="dtCajaLicenciatario" Type="DateTime" Precision="3" />
-          <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nrLiquidacionProveedores" Type="Int16" />
-          <Property Name="nrLiquidacionCliente" Type="Int16" />
-          <Property Name="cdCodBar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="flAnulado" Type="Boolean" Nullable="false" />
-          <Property Name="dtAnulado" Type="DateTime" Precision="3" />
-          <Property Name="IdRecibo" Type="Int32" />
-          <Property Name="IdReciboCtaCte" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="dsObservacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
-          <Property Name="dsDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
-          <Property Name="dsHoraViaje" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="problema" Type="Int32" />
-          <Property Name="Mellizo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
-          <Property Name="flEliminar" Type="Boolean" />
-          <Property Name="flSincronizado" Type="Boolean" />
-          <Property Name="vlSubtotal" Type="Double" />
-          <Property Name="vlIVA" Type="Double" />
-          <Property Name="nrCajaCtaCte" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="dtCajaCtaCte" Type="DateTime" Precision="3" />
-          <Property Name="dsLeyenda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
-          <Property Name="vlPagoReales" Type="Double" />
-          <Property Name="flNoCompensado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="dtNoCompensado" Type="DateTime" Precision="0" />
-        </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
             <PropertyRef Name="cdProducto" />
@@ -261,15 +204,128 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <EntityType Name="TB_Cupones">
+          <Key>
+            <PropertyRef Name="nrCupon" />
+          </Key>
+          <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int32" Name="cdCliente" />
+          <Property Type="Int16" Name="nrPuesto" />
+          <Property Type="Int32" Name="nrLicencia" Nullable="false" />
+          <Property Type="String" Name="nmLicenciatario" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tpCupon" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="vlMontoCupon" />
+          <Property Type="Double" Name="vlaFavordelLicenciatario" />
+          <Property Type="Double" Name="vlafavorAdmin" />
+          <Property Type="Double" Name="vlPagoPesos" />
+          <Property Type="Double" Name="vlPagoEuros" />
+          <Property Type="Double" Name="vlPagoDolares" />
+          <Property Type="Double" Name="vlComision" />
+          <Property Type="Int16" Name="nrCantidadBultos" />
+          <Property Type="Int16" Name="nrPasajeros" />
+          <Property Type="DateTime" Name="dtCupon" Precision="3" />
+          <Property Type="String" Name="nrTalonarioCliente" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="nrComprabanteCliente" MaxLength="12" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="tpComprobanteCliente" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tpLetraCliente" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="flCobradoalCliente" Nullable="false" />
+          <Property Type="DateTime" Name="dtCobradoalCliente" Precision="3" />
+          <Property Type="Decimal" Name="nrCajaCliente" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="dtCajaCliente" Precision="3" />
+          <Property Type="Double" Name="nrTalonarioProveedor" />
+          <Property Type="Double" Name="nrComprabanteProveedor" />
+          <Property Type="String" Name="tpComprobanteProveedor" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tpLetraLetraProveedor" MaxLength="1" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="flCompensado" Nullable="false" />
+          <Property Type="DateTime" Name="dtCompensado" Precision="3" />
+          <Property Type="Decimal" Name="nrCajaLicenciatario" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="dtCajaLicenciatario" Precision="3" />
+          <Property Type="String" Name="dsUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="Int16" Name="nrLiquidacionProveedores" />
+          <Property Type="Int16" Name="nrLiquidacionCliente" />
+          <Property Type="String" Name="cdCodBar" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Boolean" Name="flAnulado" Nullable="false" />
+          <Property Type="DateTime" Name="dtAnulado" Precision="3" />
+          <Property Type="Int32" Name="IdRecibo" />
+          <Property Type="Decimal" Name="IdReciboCtaCte" Precision="18" Scale="0" />
+          <Property Type="String" Name="dsObservacion" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="dsDestino" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="dsHoraViaje" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="problema" />
+          <Property Type="String" Name="Mellizo" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
+          <Property Type="Boolean" Name="flEliminar" />
+          <Property Type="Boolean" Name="flSincronizado" />
+          <Property Type="Double" Name="vlSubtotal" />
+          <Property Type="Double" Name="vlIVA" />
+          <Property Type="Decimal" Name="nrCajaCtaCte" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="dtCajaCtaCte" Precision="3" />
+          <Property Type="String" Name="dsLeyenda" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Type="Double" Name="vlPagoReales" />
+          <Property Type="String" Name="flNoCompensado" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="DateTime" Name="dtNoCompensado" Precision="0" />
+          <Property Type="String" Name="nrTarjeta" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="tpDocTarjeta" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Type="String" Name="nrDocTarjeta" MaxLength="25" FixedLength="true" Unicode="true" />
+          <Property Type="Double" Name="vlRecargoTarjeta" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="dbSG2000ModelStoreContainer" CdmEntityContainer="dbSG2000Entities">
+          <EntitySetMapping Name="TB_Productos">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
+              <MappingFragment StoreEntitySet="TB_Productos">
+                <ScalarProperty Name="cdComision" ColumnName="cdComision" />
+                <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
+                <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
+                <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
+                <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
+                <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+                <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
+                <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
+                <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
+                <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
+                <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+                <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
+                <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
+                <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
+                <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
+                <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
+                <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Conciliacion">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+              <MappingFragment StoreEntitySet="TB_Conciliacion">
+                <ScalarProperty Name="flestado" ColumnName="flestado" />
+                <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+                <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ConciliacionDetalle">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+              <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TB_Cupones">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
               <MappingFragment StoreEntitySet="TB_Cupones">
+                <ScalarProperty Name="vlRecargoTarjeta" ColumnName="vlRecargoTarjeta" />
+                <ScalarProperty Name="nrDocTarjeta" ColumnName="nrDocTarjeta" />
+                <ScalarProperty Name="tpDocTarjeta" ColumnName="tpDocTarjeta" />
+                <ScalarProperty Name="nrTarjeta" ColumnName="nrTarjeta" />
                 <ScalarProperty Name="dtNoCompensado" ColumnName="dtNoCompensado" />
                 <ScalarProperty Name="flNoCompensado" ColumnName="flNoCompensado" />
                 <ScalarProperty Name="vlPagoReales" ColumnName="vlPagoReales" />
@@ -326,50 +382,6 @@
                 <ScalarProperty Name="nrPuesto" ColumnName="nrPuesto" />
                 <ScalarProperty Name="cdCliente" ColumnName="cdCliente" />
                 <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_Productos">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_Productos">
-              <MappingFragment StoreEntitySet="TB_Productos">
-                <ScalarProperty Name="cdComision" ColumnName="cdComision" />
-                <ScalarProperty Name="tpDestino" ColumnName="tpDestino" />
-                <ScalarProperty Name="flIncluyeComisionRetorno" ColumnName="flIncluyeComisionRetorno" />
-                <ScalarProperty Name="flMuestraenlaWEB" ColumnName="flMuestraenlaWEB" />
-                <ScalarProperty Name="vlPrecioxKilometro" ColumnName="vlPrecioxKilometro" />
-                <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
-                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
-                <ScalarProperty Name="vlKilometros" ColumnName="vlKilometros" />
-                <ScalarProperty Name="vlPrecioViajeSinPeaje" ColumnName="vlPrecioViajeSinPeaje" />
-                <ScalarProperty Name="cdOrden" ColumnName="cdOrden" />
-                <ScalarProperty Name="flMuestra" ColumnName="flMuestra" />
-                <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
-                <ScalarProperty Name="vlPorcentaje" ColumnName="vlPorcentaje" />
-                <ScalarProperty Name="obsHoras" ColumnName="obsHoras" />
-                <ScalarProperty Name="vlPrecioPeaje" ColumnName="vlPrecioPeaje" />
-                <ScalarProperty Name="vlPrecioViaje" ColumnName="vlPrecioViaje" />
-                <ScalarProperty Name="dsProducto" ColumnName="dsProducto" />
-                <ScalarProperty Name="cdProducto" ColumnName="cdProducto" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_Conciliacion">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
-              <MappingFragment StoreEntitySet="TB_Conciliacion">
-                <ScalarProperty Name="flestado" ColumnName="flestado" />
-                <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
-                <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
-                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
-                <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
-                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_ConciliacionDetalle">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
-              <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
-                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

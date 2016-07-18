@@ -1,7 +1,19 @@
-Line 21: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
-Line 103: Class MSComctlLib.ImageList of control imgABMProductosResaltado was not a loaded control class.
-Line 165: Class MSComctlLib.ImageList of control imgABMProductos was not a loaded control class.
-Line 242: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
-Line 290: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
-Line 328: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
-Line 344: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 366: Property Size in Font had an invalid value.
+Line 498: Property Size in Font had an invalid value.
+Line 519: Property Size in Font had an invalid value.
+Line 637: Property Size in Font had an invalid value.
+Line 723: Property Size in Font had an invalid value.
+Line 742: Property Size in Font had an invalid value.
+Line 761: Property Size in Font had an invalid value.
+Line 780: Property Size in Font had an invalid value.
+Line 799: Property Size in Font had an invalid value.
+Line 818: Property Size in Font had an invalid value.
+Line 837: Property Size in Font had an invalid value.
+Line 856: Property Size in Font had an invalid value.
+Line 875: Property Size in Font had an invalid value.
+Line 894: Property Size in Font had an invalid value.
+Line 913: Property Size in Font had an invalid value.
+Line 932: Property Size in Font had an invalid value.
+Line 951: Property Size in Font had an invalid value.
+Line 970: Property Size in Font had an invalid value.
+Line 989: Property Size in Font had an invalid value.

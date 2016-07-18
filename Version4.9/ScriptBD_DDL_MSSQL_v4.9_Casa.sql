@@ -16,7 +16,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='SP_rp
 go
 
 
-exec [dbo].[SP_rpt_PagoLicenciatario_v4_9] @IdRecibo_param =  16
+---exec [dbo].[SP_rpt_PagoLicenciatario_v4_9] @IdRecibo_param =  16
 
 go
 /*************************************************************/

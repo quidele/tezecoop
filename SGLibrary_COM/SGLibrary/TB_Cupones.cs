@@ -70,5 +70,9 @@ namespace SGLibrary
         public Nullable<double> vlPagoReales { get; set; }
         public string flNoCompensado { get; set; }
         public Nullable<System.DateTime> dtNoCompensado { get; set; }
+        public string nrTarjeta { get; set; }
+        public string tpDocTarjeta { get; set; }
+        public string nrDocTarjeta { get; set; }
+        public Nullable<double> vlRecargoTarjeta { get; set; }
     }
 }

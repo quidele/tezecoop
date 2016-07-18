@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -2800,7 +2800,7 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
     
     ' agregado en la version 4.9
     If Me.RESTRINGE_TARJETAS = "S" Then
-        If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Dédito") Then
+        If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Débito") Then
             If pflCobradoalCliente = "SI" Then
                 sepuedeCompensar = True
             Else

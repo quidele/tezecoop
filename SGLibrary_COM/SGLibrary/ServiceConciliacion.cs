@@ -63,11 +63,16 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
-                var listadeViajesaConciliar1 = (from c in context.TB_Cupones     
-                                                where c.flCobradoalCliente == false 
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where (c.flCobradoalCliente == false) && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains(c.tpCupon))
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,  DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
-                                                             NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon }).Take(5);
+                                                             NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
+                                                             TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
+                                                             DOCU_NRO = c.nrDocTarjeta
+                                                            });
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
 
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();

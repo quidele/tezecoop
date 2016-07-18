@@ -107,6 +107,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
+                    
                     break;
                 case ABMBotonesForm.EDIT:
                     this.botonFIND.Visible = false;
@@ -165,6 +166,7 @@ namespace ControlesdeUsuario
                     break;
             }
 
+            this.Refresh();
             
         }
 
