@@ -23,8 +23,8 @@ namespace SGLibrary
     	private static string ConnectionString()
     	{
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
-            sqlBuilder.DataSource = "PC0157";
     		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
+            sqlBuilder.DataSource = "PC0157";
     		sqlBuilder.InitialCatalog = "dbSG2000";
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;
@@ -57,5 +57,6 @@ namespace SGLibrary
         public DbSet<TB_Conciliacion> TB_Conciliacion { get; set; }
         public DbSet<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
+        public DbSet<TB_Usuarios> TB_Usuarios { get; set; }
     }
 }

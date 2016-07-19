@@ -66,7 +66,9 @@ namespace ConsoleApplication1
            /* service.
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls*/
 
-        ServiceConciliacion objConciliacion = new ServiceConciliacion();
+            ServiceConciliacion objConciliacion = new ServiceConciliacion();
+            objConciliacion.UsuarioActivo("camilaq");
+            objConciliacion.CajaActiva("1");
             objConciliacion.execFormulario();
              
         }

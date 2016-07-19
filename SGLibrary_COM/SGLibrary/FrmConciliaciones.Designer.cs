@@ -41,13 +41,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.cbUsuariosConciliaciones = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.fechahasta = new System.Windows.Forms.DateTimePicker();
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.txtnrCajaAdm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -67,6 +69,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelcarga.Controls.Add(this.txtnrCajaAdm);
+            this.panelcarga.Controls.Add(this.label9);
             this.panelcarga.Controls.Add(this.dataGridView1);
             this.panelcarga.Controls.Add(this.txtIdConciliacion);
             this.panelcarga.Controls.Add(this.label8);
@@ -91,7 +95,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(19, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -103,7 +107,7 @@
             this.txtIdConciliacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtIdConciliacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdConciliacion.Location = new System.Drawing.Point(104, 37);
-            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdConciliacion.Name = "txtIdConciliacion";
             this.txtIdConciliacion.ReadOnly = true;
             this.txtIdConciliacion.Size = new System.Drawing.Size(85, 20);
@@ -124,7 +128,7 @@
             this.txtdsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtdsUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdsUsuario.Location = new System.Drawing.Point(240, 35);
-            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtdsUsuario.Name = "txtdsUsuario";
             this.txtdsUsuario.ReadOnly = true;
             this.txtdsUsuario.Size = new System.Drawing.Size(163, 20);
@@ -154,7 +158,7 @@
             // 
             this.dtConciliacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.dtConciliacion.Location = new System.Drawing.Point(104, 62);
-            this.dtConciliacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dtConciliacion.Margin = new System.Windows.Forms.Padding(2);
             this.dtConciliacion.Name = "dtConciliacion";
             this.dtConciliacion.Size = new System.Drawing.Size(85, 20);
             this.dtConciliacion.TabIndex = 6;
@@ -176,7 +180,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelbusqueda.BackColor = System.Drawing.Color.LightBlue;
             this.panelbusqueda.Controls.Add(this.dataGridView2);
-            this.panelbusqueda.Controls.Add(this.comboBox1);
+            this.panelbusqueda.Controls.Add(this.cbUsuariosConciliaciones);
             this.panelbusqueda.Controls.Add(this.label5);
             this.panelbusqueda.Controls.Add(this.label4);
             this.panelbusqueda.Controls.Add(this.label3);
@@ -199,22 +203,23 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.Location = new System.Drawing.Point(13, 93);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(666, 170);
             this.dataGridView2.TabIndex = 13;
             // 
-            // comboBox1
+            // cbUsuariosConciliaciones
             // 
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(91, 51);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 21);
-            this.comboBox1.TabIndex = 6;
+            this.cbUsuariosConciliaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbUsuariosConciliaciones.FormattingEnabled = true;
+            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(91, 51);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
+            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(157, 21);
+            this.cbUsuariosConciliaciones.TabIndex = 6;
             // 
             // label5
             // 
@@ -250,7 +255,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(204, 25);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(101, 20);
             this.fechahasta.TabIndex = 2;
@@ -259,7 +264,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(91, 25);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 1;
@@ -273,6 +278,27 @@
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
+            // 
+            // txtnrCajaAdm
+            // 
+            this.txtnrCajaAdm.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtnrCajaAdm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnrCajaAdm.Location = new System.Drawing.Point(471, 37);
+            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnrCajaAdm.Name = "txtnrCajaAdm";
+            this.txtnrCajaAdm.ReadOnly = true;
+            this.txtnrCajaAdm.Size = new System.Drawing.Size(163, 20);
+            this.txtnrCajaAdm.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(412, 41);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Caja Adm.";
             // 
             // botonesForm1
             // 
@@ -292,9 +318,9 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 384);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.panelcarga);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmConciliaciones";
             this.Text = "Conciliaciones";
             this.Load += new System.EventHandler(this.FrmConciliaciones_Load);
@@ -320,7 +346,7 @@
         private System.Windows.Forms.DateTimePicker fechadesde;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbUsuariosConciliaciones;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtdsUsuario;
         private System.Windows.Forms.Label label6;
@@ -331,5 +357,7 @@
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private ControlesdeUsuario.BotonesForm botonesForm1;
+        private System.Windows.Forms.TextBox txtnrCajaAdm;
+        private System.Windows.Forms.Label label9;
     }
 }

@@ -256,15 +256,59 @@ namespace SGLibrary
             }
         }
 
-        public void UsuarioActivo(string usuario)
+        
+
+        public string Usuario
         {
-            _usuarioActivo = usuario;
-       
+            get
+            {
+                return this._usuarioActivo;
+            }
+            set
+            {
+                this._usuarioActivo = value;
+            }
         }
 
-        public void CajaActiva(string caja)
+
+        public string CajaAdm
         {
-            _cajactiva = caja;
+            get
+            {
+                return this._cajactiva;
+            }
+            set
+            {
+                this._cajactiva = value;
+            }
+        }
+
+
+        public void UsuarioActivo (string value)
+        {
+                this._usuarioActivo = value;
+            
+        }
+
+
+        public void CajaActiva(string value)
+        {
+                this._cajactiva = value;
+            
+        }
+
+
+        public IEnumerable<Object> obtenerUsuariosConciliaciones()
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion
+                                                select new { USUARIO = c.dsUsuario } ).Distinct(); 
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
         }
 
 

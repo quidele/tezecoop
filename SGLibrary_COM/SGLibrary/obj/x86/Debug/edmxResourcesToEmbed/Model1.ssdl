@@ -5,6 +5,7 @@
     <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.Store.TB_ConciliacionDetalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.Store.TB_Cupones" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.Store.TB_Usuarios" store:Type="Tables" Schema="dbo" />
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
       <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
@@ -116,6 +117,27 @@
     <Property Name="flIncluyeComisionRetorno" Type="bit" />
     <Property Name="tpDestino" Type="varchar" MaxLength="20" />
     <Property Name="cdComision" Type="int" />
+  </EntityType>
+  <EntityType Name="TB_Usuarios">
+    <Key>
+      <PropertyRef Name="dsUsuario" />
+    </Key>
+    <Property Name="dsUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+    <Property Name="tpAcceso" Type="varchar" MaxLength="50" />
+    <Property Name="nmNombre" Type="varchar" MaxLength="30" />
+    <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+    <Property Name="dsPassword" Type="varchar" MaxLength="8" />
+    <Property Name="dsDomicilio" Type="varchar" MaxLength="30" />
+    <Property Name="nmLocalidad" Type="varchar" MaxLength="30" />
+    <Property Name="cdPostal" Type="varchar" MaxLength="10" />
+    <Property Name="nrTelefono" Type="varchar" MaxLength="30" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="60" />
+    <Property Name="dsPassword_OLD" Type="varchar" MaxLength="8" />
+    <Property Name="nrCUIL" Type="float" />
+    <Property Name="flBloqueado" Type="bit" />
+    <Property Name="tpNivelJerarquico" Type="varchar" MaxLength="50" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
   </EntityType>
   <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
     <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />

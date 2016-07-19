@@ -9,6 +9,7 @@
       <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
     </AssociationSet>
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
+    <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.TB_Usuarios" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -130,5 +131,26 @@
     <Property Type="String" Name="tpDocTarjeta" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Type="String" Name="nrDocTarjeta" MaxLength="25" FixedLength="true" Unicode="true" />
     <Property Type="Double" Name="vlRecargoTarjeta" />
+  </EntityType>
+  <EntityType Name="TB_Usuarios">
+    <Key>
+      <PropertyRef Name="dsUsuario" />
+    </Key>
+    <Property Type="String" Name="dsUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpAcceso" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmNombre" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmApellido" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsPassword" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsDomicilio" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmLocalidad" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cdPostal" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nrTelefono" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsEmail" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsPassword_OLD" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="nrCUIL" />
+    <Property Type="Boolean" Name="flBloqueado" />
+    <Property Type="String" Name="tpNivelJerarquico" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="flEliminar" />
   </EntityType>
 </Schema>

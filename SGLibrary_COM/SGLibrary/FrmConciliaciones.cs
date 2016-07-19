@@ -16,6 +16,7 @@ namespace SGLibrary
 
 
         public ServiceConciliacion serviceConciliaciones { get; set; }
+
         public FrmConciliaciones()
         {
             InitializeComponent();
@@ -23,10 +24,12 @@ namespace SGLibrary
 
         private void FrmConciliaciones_Load(object sender, EventArgs e)
         {
+
+            
             botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
-            this.fechadesde.Value = DateTime.Now.AddDays(-30);
+            this.fechadesde.Value = DateTime.Now.AddDays(-30).Date;
             this.fechahasta.Value = DateTime.Now.Date;
             this.botonesForm1.InicializarFindBoton();
         }
@@ -46,6 +49,8 @@ namespace SGLibrary
                 }
                 case "ADD":
                     {
+                        this.txtdsUsuario.Text = serviceConciliaciones.Usuario ;
+                        this.txtnrCajaAdm.Text = serviceConciliaciones.CajaAdm;
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
@@ -58,6 +63,8 @@ namespace SGLibrary
                         this.panelcarga.Visible =  false ;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
+                        cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
                         var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value);
                         cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         break;
@@ -78,6 +85,12 @@ namespace SGLibrary
                            //Console.WriteLine ( unControl.TrueValue);
                         }
 
+                        if (lista.Count() == 0)
+                        {
+                            MessageBox.Show("Debe seleccionar algún comprobante");
+                            dataGridView1.Focus(); 
+                            return;
+                        }
                   
                         var una_conciliacion = new TB_Conciliacion();
                         una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
@@ -236,6 +249,21 @@ namespace SGLibrary
         }
 
 
-      
+        public void cargarCombo(ComboBox cb, IEnumerable<Object> lista)
+        {
+
+            foreach (object item in lista)
+            {                
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    cb.Items.Add ( p.GetValue(item, null));
+                }
+            }
+
+        }
+
     }
 }
