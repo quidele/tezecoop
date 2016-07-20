@@ -45,6 +45,13 @@ namespace SGLibrary
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
                     botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+
+                    foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                    {
+                        TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
+                        cargarDataGridViewCupones(dataGridView1, una_conciliacion.TB_ConciliacionDetalle); 
+                    }
+                    
                     break;
                 }
                 case "ADD":
@@ -65,7 +72,7 @@ namespace SGLibrary
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
                         cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
-                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value);
+                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value , this.cbUsuariosConciliaciones.Text );
                         cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         break;
                     }
@@ -165,12 +172,12 @@ namespace SGLibrary
             //columna.HeaderText = "DOC";
             //columna.ReadOnly = true;
             //dgv.Columns.Add(columna);
-
             //dgv.Columns.Add("LETRA", "LETRA");
             //dgv.Columns.Add("PDV", "PDV");
             //dgv.Columns.Add("NRO", "NRO");
             //dgv.Columns.Add("FECHA", "FECHA");
             //dgv.Columns.Add("MONTO", "MONTO");
+
             DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
             doWork.Name = "CONCILIAR";
             doWork.HeaderText = "CONCILIAR";
@@ -252,6 +259,9 @@ namespace SGLibrary
         public void cargarCombo(ComboBox cb, IEnumerable<Object> lista)
         {
 
+
+            cb.Items.Clear();
+
             foreach (object item in lista)
             {                
                 Type t = item.GetType();
@@ -262,6 +272,11 @@ namespace SGLibrary
                     cb.Items.Add ( p.GetValue(item, null));
                 }
             }
+
+        }
+
+        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
 
         }
 

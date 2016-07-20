@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.txtnrCajaAdm = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtIdConciliacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -48,8 +50,6 @@
             this.fechahasta = new System.Windows.Forms.DateTimePicker();
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.txtnrCajaAdm = new System.Windows.Forms.TextBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
@@ -83,6 +83,27 @@
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(700, 314);
             this.panelcarga.TabIndex = 2;
+            // 
+            // txtnrCajaAdm
+            // 
+            this.txtnrCajaAdm.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtnrCajaAdm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtnrCajaAdm.Location = new System.Drawing.Point(471, 37);
+            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnrCajaAdm.Name = "txtnrCajaAdm";
+            this.txtnrCajaAdm.ReadOnly = true;
+            this.txtnrCajaAdm.Size = new System.Drawing.Size(163, 20);
+            this.txtnrCajaAdm.TabIndex = 14;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(412, 41);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.TabIndex = 13;
+            this.label9.Text = "Caja Adm.";
             // 
             // dataGridView1
             // 
@@ -209,6 +230,7 @@
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dataGridView2.Size = new System.Drawing.Size(666, 170);
             this.dataGridView2.TabIndex = 13;
+            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
             // 
             // cbUsuariosConciliaciones
             // 
@@ -278,27 +300,6 @@
             this.label1.Size = new System.Drawing.Size(95, 13);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
-            // 
-            // txtnrCajaAdm
-            // 
-            this.txtnrCajaAdm.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtnrCajaAdm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnrCajaAdm.Location = new System.Drawing.Point(471, 37);
-            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2);
-            this.txtnrCajaAdm.Name = "txtnrCajaAdm";
-            this.txtnrCajaAdm.ReadOnly = true;
-            this.txtnrCajaAdm.Size = new System.Drawing.Size(163, 20);
-            this.txtnrCajaAdm.TabIndex = 14;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(412, 41);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
-            this.label9.TabIndex = 13;
-            this.label9.Text = "Caja Adm.";
             // 
             // botonesForm1
             // 

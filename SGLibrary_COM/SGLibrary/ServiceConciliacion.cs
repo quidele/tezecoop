@@ -99,8 +99,7 @@ namespace SGLibrary
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where ids_cupones.Contains(c.nrCupon) 
                                                 select c
-                                                ).Take(5);
-
+                                                );
 
                 Console.WriteLine(listadeViajesaConciliar1.ToString());
                 TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
@@ -187,7 +186,7 @@ namespace SGLibrary
 
         }
 
-        public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta)
+        public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta , String usuario )
         {
 
             using (var context = new dbSG2000Entities())
@@ -195,7 +194,8 @@ namespace SGLibrary
                 // Falta agregar filtro de fechas
                 var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion
                                                 where c.dtConciliacion >= fechadesde
-                                                && c.dtConciliacion <= fechaHasta 
+                                                && c.dtConciliacion <= fechaHasta
+                                                && (c.dsUsuario == usuario || usuario.Trim().Length ==0 )
                                                 select new { ID = c.IdConciliacion  , 
                                                        FECHA = c.dtConciliacion , 
                                                        USUARIO = c.dsUsuario , 
@@ -243,13 +243,16 @@ namespace SGLibrary
 
 
 
-        public TB_Conciliacion obtenerConciliacion(Int32 pId)
+        public TB_Conciliacion obtenerConciliacion(String pId)
         {
+
+            Int32 id = Int32.Parse(pId)  ;
+
             using (var context = new dbSG2000Entities())
             {
                 // Falta agregar filtro de fechas
                 TB_Conciliacion una_conciliacion = (from c in context.TB_Conciliacion
-                                                where c.IdConciliacion == pId  
+                                                    where c.IdConciliacion == id 
                                                 select c
                                                 ).First ();
                 return una_conciliacion;
@@ -312,5 +315,47 @@ namespace SGLibrary
         }
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="una_conciliacion"></param>
+        /// <returns></returns>
+        public IEnumerable<Object> ObtenerDetalleConciliacion(TB_Conciliacion una_conciliacion)
+        {
+            List<Decimal> ids_cupones = new  List<Decimal>();
+
+            //una_conciliacion.TB_ConciliacionDetalle 
+
+            foreach (var item in una_conciliacion.TB_ConciliacionDetalle )
+	        {
+                ids_cupones.Add(item.nrCupon); 
+	        }
+
+            using (var context = new dbSG2000Entities())
+            {
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where ids_cupones.Contains(c.nrCupon) 
+                                                select new
+                                                {
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon,
+                                                    TARJETA = c.nrTarjeta,
+                                                    DOCU = c.tpDocTarjeta,
+                                                    DOCU_NRO = c.nrDocTarjeta
+                                                });
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
+
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+        }
     }
 }
