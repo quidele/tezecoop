@@ -65,7 +65,9 @@ namespace SGLibrary
             {
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where (c.flCobradoalCliente == false) && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains(c.tpCupon))
-                                                select new { ID = c.nrCupon, FECHA = c.dtCupon,  DOC = c.tpComprobanteCliente, 
+                                                select new { ID = c.nrCupon, FECHA = c.dtCupon,
+                                                             LICENCIA = c.nrLicencia,
+                                                             DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
                                                              TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
@@ -320,25 +322,31 @@ namespace SGLibrary
         /// </summary>
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
-        public IEnumerable<Object> ObtenerDetalleConciliacion(TB_Conciliacion una_conciliacion)
+        public IEnumerable<Object> ObtenerDetalleConciliacion(long  pId)
         {
             List<Decimal> ids_cupones = new  List<Decimal>();
 
             //una_conciliacion.TB_ConciliacionDetalle 
-
-            foreach (var item in una_conciliacion.TB_ConciliacionDetalle )
-	        {
-                ids_cupones.Add(item.nrCupon); 
-	        }
-
             using (var context = new dbSG2000Entities())
             {
+
+                // Falta agregar filtro de fechas
+                var una_conciliacionDetalle = (from c in context.TB_ConciliacionDetalle
+                                               where c.IdConciliacion == pId
+                                               select c);
+
+                foreach (var item in una_conciliacionDetalle)
+                {
+                    ids_cupones.Add(item.nrCupon);
+                }
+
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
-                                                where ids_cupones.Contains(c.nrCupon) 
+                                                where ids_cupones.Contains(c.nrCupon)  
                                                 select new
                                                 {
                                                     ID = c.nrCupon,
                                                     FECHA = c.dtCupon,
+                                                    LICENCIA = c.nrLicencia,
                                                     DOC = c.tpComprobanteCliente,
                                                     LETRA = c.tpLetraCliente,
                                                     PDV = c.nrTalonarioCliente,
@@ -347,6 +355,7 @@ namespace SGLibrary
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,
                                                     DOCU_NRO = c.nrDocTarjeta
+                                                    
                                                 });
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 

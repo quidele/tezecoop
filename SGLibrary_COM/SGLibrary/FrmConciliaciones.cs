@@ -14,6 +14,7 @@ namespace SGLibrary
     public partial class FrmConciliaciones : Form
     {
 
+        Boolean modoEdicion=false;
 
         public ServiceConciliacion serviceConciliaciones { get; set; }
 
@@ -40,6 +41,9 @@ namespace SGLibrary
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
+
+            modoEdicion = false;
+
             switch (miboton.Tag.ToString ()){
                 case "EDIT" : {
                     this.panelcarga.Visible = true;
@@ -49,8 +53,9 @@ namespace SGLibrary
                     foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                     {
                         TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
-                        cargarDataGridViewCupones(dataGridView1, una_conciliacion.TB_ConciliacionDetalle); 
+                        cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), modoEdicion);
                     }
+                    modoEdicion = true;
                     
                     break;
                 }
@@ -61,7 +66,7 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar); 
+                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion); 
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -75,37 +80,17 @@ namespace SGLibrary
                         var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value , this.cbUsuariosConciliaciones.Text );
                         cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         break;
+                        
                     }
                 
                 case "OK":
                     {
 
-                        List<Decimal> lista = new   List<Decimal> ();
-                        foreach (DataGridViewRow item in dataGridView1.Rows)
-                        {
-                            Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
-                            if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
-                            {
-                                lista.Add( Decimal.Parse ( item.Cells["ID"].EditedFormattedValue.ToString()));
-                            }
-                           //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
-                           //Console.WriteLine ( unControl.TrueValue);
-                        }
+                        if  (!modoEdicion)
+                            if (!altadeconciliacion())    break;
+                            else
+                            if (!ediciondeconciliacion()) break;
 
-                        if (lista.Count() == 0)
-                        {
-                            MessageBox.Show("Debe seleccionar algún comprobante");
-                            dataGridView1.Focus(); 
-                            return;
-                        }
-                  
-                        var una_conciliacion = new TB_Conciliacion();
-                        una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
-                        var listaaactualizar = serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
-                        foreach (var item in listaaactualizar)
-                        {
-                            Console.WriteLine(item);
-                        }
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
@@ -121,9 +106,17 @@ namespace SGLibrary
 
                 case "DELETE":
                     {
+                        foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                        {
+                            TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
+                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo);
+                             if(dialogResult == DialogResult.No ) break; 
+                            // COMLETAR ELIMINACION
+                        }
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
+                        
                         break;
                     }
                 case "EXIT":
@@ -135,10 +128,77 @@ namespace SGLibrary
 
         }
 
-  
 
 
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista )
+        public Boolean  altadeconciliacion()
+        {
+
+            List<Decimal> lista = new List<Decimal>();
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
+                if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
+                {
+                    lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                }
+                //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
+                //Console.WriteLine ( unControl.TrueValue);
+            }
+
+            if (lista.Count() == 0)
+            {
+                MessageBox.Show("Debe seleccionar algún comprobante");
+                dataGridView1.Focus();
+                return false;
+            }
+
+            var una_conciliacion = new TB_Conciliacion();
+            una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
+            var listaaactualizar = serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
+            foreach (var item in listaaactualizar)
+            {
+                Console.WriteLine(item);
+            }
+            
+            return true;
+        }
+
+
+        public Boolean ediciondeconciliacion()
+        {
+            List<Decimal> listaCupones = new List<Decimal>();
+            List<Decimal> listaCuponesConciliados = new List<Decimal>();
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
+                if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
+                {
+                    listaCuponesConciliados.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                }
+                //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
+                //Console.WriteLine ( unControl.TrueValue);
+                listaCupones.Add (Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+            }
+
+            if (listaCuponesConciliados.Count() == 0)
+            {
+                MessageBox.Show("Debe seleccionar algún comprobante");
+                dataGridView1.Focus();
+                return false;
+            }
+
+            var una_conciliacion = new TB_Conciliacion();
+            una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
+            var listaaactualizar = serviceConciliaciones.modificarConciliacion(listaCuponesConciliados, listaCupones, una_conciliacion);
+            foreach (var item in listaaactualizar)
+            {
+                Console.WriteLine(item);
+            }
+
+            return true;
+        }
+
+        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , Boolean p_modoEdicion  )
         {
 
             //dgv.Rows.Clear();
@@ -177,13 +237,15 @@ namespace SGLibrary
             //dgv.Columns.Add("NRO", "NRO");
             //dgv.Columns.Add("FECHA", "FECHA");
             //dgv.Columns.Add("MONTO", "MONTO");
+            
+            
 
             DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
             doWork.Name = "CONCILIAR";
             doWork.HeaderText = "CONCILIAR";
             doWork.FalseValue = "0";
             doWork.TrueValue = "1";
-           
+
             dgv.Columns.Add(doWork);
 
             foreach (object item in lista)
@@ -196,6 +258,12 @@ namespace SGLibrary
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
                     dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
                 }
+
+                if (p_modoEdicion) 
+                {
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = modoEdicion; 
+                }
+
             }
 
 
