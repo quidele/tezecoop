@@ -14,7 +14,6 @@ namespace SGLibrary
     public partial class FrmConciliaciones : Form
     {
 
-        Boolean modoEdicion=false;
 
         public ServiceConciliacion serviceConciliaciones { get; set; }
 
@@ -34,44 +33,77 @@ namespace SGLibrary
             this.fechahasta.Value = DateTime.Now.Date;
             this.botonesForm1.InicializarFindBoton();
         }
-            
- 
+
+
+
+        public void deshabilitarycolorearCompensados()
+        {
+            foreach (DataGridViewRow item in dataGridView1.Rows)
+            {
+                Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
+                if ( item.Cells["COMPENSADO"].EditedFormattedValue.ToString() == "SI")
+                {
+                    item.ReadOnly = true;
+                    item.DefaultCellStyle.BackColor = Color.Red;
+                }
+                
+                if (this.txtflEstado.Text  =="E")
+                {
+                    item.ReadOnly = true;
+                    item.DefaultCellStyle.BackColor = Color.Gray;
+                }
+            }
+
+
+        }
 
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
 
-            modoEdicion = false;
+
 
             switch (miboton.Tag.ToString ()){
                 case "EDIT" : {
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
-                    botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
-
+                    
+              
                     foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                     {
+                        this.modoEdicion.Text = "SI";
                         TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
-                        cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), modoEdicion);
+                        this.txtIdConciliacion.Text = una_conciliacion.IdConciliacion.ToString();
+                        this.txtdsUsuario.Text = una_conciliacion.dsUsuario;
+                        this.txtnrCajaAdm.Text = una_conciliacion.nrCajaAdm.ToString();
+                        this.txtflEstado.Text = una_conciliacion.flestado;
+                        if (una_conciliacion.flestado =="E")
+                            botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
+                        else
+                            botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+
+                        cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
                     }
-                    modoEdicion = true;
-                    
+
+                    deshabilitarycolorearCompensados();
                     break;
                 }
                 case "ADD":
                     {
+                        this.modoEdicion.Text = "NO";
                         this.txtdsUsuario.Text = serviceConciliaciones.Usuario ;
                         this.txtnrCajaAdm.Text = serviceConciliaciones.CajaAdm;
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion); 
+                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
                 case "FIND":
                     {
+                        this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible =  false ;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
@@ -86,18 +118,26 @@ namespace SGLibrary
                 case "OK":
                     {
 
-                        if  (!modoEdicion)
-                            if (!altadeconciliacion())    break;
-                            else
+                        if (this.modoEdicion.Text  =="NO") 
+                        {
+                            if (!altadeconciliacion()) break;
+                        }
+                        else
+                        {
                             if (!ediciondeconciliacion()) break;
+                        }
 
-                        this.panelcarga.Visible = false;
-                        this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+
+                        this.modoEdicion.Text = "NO";
+                        var btnFind = new ToolStripButton();
+                        btnFind.Tag = "FIND";
+                        MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
                 case "CANCEL":
                     {
+                        this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
@@ -106,16 +146,25 @@ namespace SGLibrary
 
                 case "DELETE":
                     {
+                        this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
                             TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
-                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo);
+                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                              if(dialogResult == DialogResult.No ) break; 
                             // COMLETAR ELIMINACION
+                             serviceConciliaciones.anularConciliacion(una_conciliacion);
+                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        
                         }
-                        this.panelcarga.Visible = false;
-                        this.panelbusqueda.Visible = true;
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
+
+                        var btnFind = new ToolStripButton();
+                        btnFind.Tag = "FIND";
+                        botonesForm1_ClickEventDelegateHandler(btnFind, null);
+
+                        //this.panelcarga.Visible = false;
+                        //this.panelbusqueda.Visible = true;
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.DELETE);
                         
                         break;
                     }
@@ -127,7 +176,6 @@ namespace SGLibrary
             } 
 
         }
-
 
 
         public Boolean  altadeconciliacion()
@@ -147,19 +195,14 @@ namespace SGLibrary
 
             if (lista.Count() == 0)
             {
-                MessageBox.Show("Debe seleccionar algún comprobante");
+                MessageBox.Show("Debe seleccionar algún comprobante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.Focus();
                 return false;
             }
 
             var una_conciliacion = new TB_Conciliacion();
-            una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
-            var listaaactualizar = serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
-            foreach (var item in listaaactualizar)
-            {
-                Console.WriteLine(item);
-            }
-            
+            una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
+            serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
             return true;
         }
 
@@ -171,7 +214,7 @@ namespace SGLibrary
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
                 Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
-                if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
+                if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True" && item.Cells["COMPENSADO"].EditedFormattedValue.ToString() == "NO")
                 {
                     listaCuponesConciliados.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
                 }
@@ -188,17 +231,13 @@ namespace SGLibrary
             }
 
             var una_conciliacion = new TB_Conciliacion();
-            una_conciliacion.dtConciliacion = this.dtConciliacion.Value;
-            var listaaactualizar = serviceConciliaciones.modificarConciliacion(listaCuponesConciliados, listaCupones, una_conciliacion);
-            foreach (var item in listaaactualizar)
-            {
-                Console.WriteLine(item);
-            }
-
+            una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
+            una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
+            serviceConciliaciones.modificarConciliacion(listaCupones , listaCuponesConciliados, una_conciliacion);
             return true;
         }
 
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , Boolean p_modoEdicion  )
+        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , String p_modoEdicion  )
         {
 
             //dgv.Rows.Clear();
@@ -259,9 +298,9 @@ namespace SGLibrary
                     dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
                 }
 
-                if (p_modoEdicion) 
+                if (p_modoEdicion=="SI") 
                 {
-                    dgv.Rows[row].Cells["CONCILIAR"].Value = modoEdicion; 
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true; 
                 }
 
             }
@@ -345,8 +384,24 @@ namespace SGLibrary
 
         private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-
+    
         }
+
+
+        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var btnFind = new ToolStripButton();
+            btnFind.Tag = "EDIT";
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+        }
+
+        private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var btnFind = new ToolStripButton();
+            btnFind.Tag = "EDIT";
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+        }
+
 
     }
 }

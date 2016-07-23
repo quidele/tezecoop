@@ -50,7 +50,10 @@ namespace ControlesdeUsuario
         /// ABMBotonesForm - CANCEL
         /// </summary>
         [Description("CANCEL")]
-        CANCEL
+        CANCEL,
+
+        [Description("VIEW")]
+        VIEW
     }
 
     

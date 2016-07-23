@@ -162,6 +162,17 @@ namespace ControlesdeUsuario
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
                     break;
+                case ABMBotonesForm.VIEW:
+                    this.botonFIND.Visible = false;
+                    this.botonEDIT.Visible = false;
+                    this.botonFIND.Visible = false;
+                    this.botonADD.Visible = false;
+                    this.botonDELETE.Visible = false;
+                    this.botonOK.Visible = false;
+                    this.botonCANCEL.Visible = true;
+                    this.botonPRINT.Visible = false;
+                    this.botonEXIT.Visible = false;
+                    break;
                 default:
                     break;
             }

@@ -603,3 +603,75 @@ go
 
 
 
+if exists (SELECT * FROM sys.triggers where name ='upd_control_conciliacion' )
+	drop trigger  dbo.upd_control_conciliacion
+	
+
+
+/****** Object:  Trigger [dbo].[upd_control_conciliacion]    Script Date: 23/07/2016 7:32:05  ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Eulises Quidel>
+-- Create date: <23/07/2016>
+-- Description:	<Eulises Quidel>
+-- =============================================
+create TRIGGER [dbo].[upd_control_conciliacion]
+   ON  [dbo].[TB_Cupones]
+   AFTER UPDATE
+AS 
+BEGIN
+
+
+
+	select x.flCobradoalCliente as flCobradoalCliente_del ,  x.flCompensado flCompensado_del ,
+	       y.flCobradoalCliente as flCobradoalCliente_ins ,  y.flCompensado flCompensado_ins 
+		   from deleted x inner join inserted y
+			on x.nrCupon = y.nrCupon
+			where  x.flCobradoalCliente  <> y.flCobradoalCliente or
+			  x.flCompensado <>  y.flCompensado  and y.tpCupon in ( 'Tarjeta de Crédito', 'Tarjeta de Débito' )
+	
+	if @@ROWCOUNT = 0  return
+	
+	select y.nrCupon as 'CUPON', y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' , y.vlMontoCupon as 'MONTO', 
+	'no se puede conciliar el viaje ya que fue compensado' as 'ERROR'	
+	     into #tmp_validacion_conciliacion
+		from deleted x inner join inserted y
+		on x.nrCupon = y.nrCupon
+		where  (x.flCobradoalCliente=0 AND  y.flCobradoalCliente = 1)  -- SI FUE CONCILIADO Conciliado
+			and y.flCompensado = 1  -- si es flags ERROR
+
+		declare @error_validacion_xml as xml
+		declare @error_validacion as varchar(max)
+
+	if @@ROWCOUNT > 0  
+	begin
+
+		--set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION for xml)
+		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
+		raiserror (@error_validacion , 16,1)
+		return;
+	end
+
+
+	
+	select y.nrCupon as 'CUPON', y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' , y.vlMontoCupon as 'MONTO', 
+	'no se puede compensar el viaje no fue conciliado' as 'ERROR'	
+	     into #tmp_validacion_compensado
+		from deleted x inner join inserted y
+		on x.nrCupon = y.nrCupon
+		where  (y.flCobradoalCliente = 0)  -- SI FUE CONCILIADO Conciliado
+			and y.flCompensado =0 and y.flCompensado = 1  -- si es flags ERROR
+
+	if @@ROWCOUNT > 0  
+	begin
+		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION for as xml)
+		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
+		raiserror (@error_validacion , 16,1)
+		return;
+	end
+
+
+END
