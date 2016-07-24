@@ -624,19 +624,27 @@ create TRIGGER [dbo].[upd_control_conciliacion]
 AS 
 BEGIN
 
+	SET NOCOUNT ON
 
+	/* select flCompensado , flCobradoalCliente, * from deleted 
+	select flCompensado , flCobradoalCliente, * from inserted */
 
 	select x.flCobradoalCliente as flCobradoalCliente_del ,  x.flCompensado flCompensado_del ,
-	       y.flCobradoalCliente as flCobradoalCliente_ins ,  y.flCompensado flCompensado_ins 
+	       y.flCobradoalCliente as flCobradoalCliente_ins ,  y.flCompensado flCompensado_ins
+		   	   into #tmp_tarjetas_credito 
 		   from deleted x inner join inserted y
 			on x.nrCupon = y.nrCupon
-			where  x.flCobradoalCliente  <> y.flCobradoalCliente or
-			  x.flCompensado <>  y.flCompensado  and y.tpCupon in ( 'Tarjeta de Crédito', 'Tarjeta de Débito' )
+			where  (x.flCobradoalCliente  <> y.flCobradoalCliente or
+			  x.flCompensado <>  y.flCompensado)  and y.tpCupon in ( 'Tarjeta de Crédito', 'Tarjeta de Débito' )
 	
-	if @@ROWCOUNT = 0  return
+	if @@ROWCOUNT = 0  
+	begin
+		--print ' @@ROWCOUNT = 0  '
+		return ;
+	end 
 	
-	select y.nrCupon as 'CUPON', y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' , y.vlMontoCupon as 'MONTO', 
-	'no se puede conciliar el viaje ya que fue compensado' as 'ERROR'	
+	select y.tpComprobanteCliente  as DOC,  y.nrTalonarioCliente as PDV ,  y.nrComprabanteCliente as NRO,  y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' ,  convert(decimal(8,2),y.vlMontoCupon) as 'MONTO', 
+	'no se puede conciliar el viaje ya que fue compensado' as 'ERROR'	, y.nrCupon as 'CUPON'
 	     into #tmp_validacion_conciliacion
 		from deleted x inner join inserted y
 		on x.nrCupon = y.nrCupon
@@ -649,29 +657,53 @@ BEGIN
 	if @@ROWCOUNT > 0  
 	begin
 
-		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION FOR XML AUTO)
+		set @error_validacion_xml = (select  DOC, PDV ,NRO ,LIC , DESTINO , MONTO,  ERROR , CUPON	 from  #tmp_validacion_conciliacion CONCILIACION FOR XML AUTO)
 		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
 		raiserror (@error_validacion , 16,1)
+		 ROLLBACK;
 		return;
 	end
 
 
 	
-	select y.nrCupon as 'CUPON', y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' , y.vlMontoCupon as 'MONTO', 
-	'no se puede compensar el viaje no fue conciliado' as 'ERROR'	
+	select   y.tpComprobanteCliente  as DOC,  y.nrTalonarioCliente as PDV ,  y.nrComprabanteCliente as NRO, y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' , convert(decimal(8,2),y.vlMontoCupon) as 'MONTO', 
+	'no se puede compensar el viaje porque no fue conciliado' as 'ERROR', y.nrCupon as 'CUPON'
 	     into #tmp_validacion_compensado
 		from deleted x inner join inserted y
 		on x.nrCupon = y.nrCupon
-		where  (y.flCobradoalCliente = 0)  -- SI FUE CONCILIADO Conciliado
-			and y.flCompensado =0 and y.flCompensado = 1  -- si es flags ERROR
+		where  (y.flCobradoalCliente = 0)  -- NO FUE CONCILIADO
+			and x.flCompensado = 0 and y.flCompensado = 1  -- si es flags ERROR
 
 	if @@ROWCOUNT > 0  
 	begin
-		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION FOR XML AUTO)
+		set @error_validacion_xml = (select  DOC, PDV ,NRO ,LIC , DESTINO , MONTO,  ERROR , CUPON	 from  #tmp_validacion_compensado ERROR_COMPENSACION FOR XML AUTO)
 		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
 		raiserror (@error_validacion , 16,1)
+		ROLLBACK;
 		return;
 	end
 
+
+		select y.tpComprobanteCliente  as DOC,  y.nrTalonarioCliente as PDV ,  y.nrComprabanteCliente as NRO,  y.nrLicencia as 'LIC' , y.dsDestino as 'DESTINO' ,  convert(decimal(8,2),y.vlMontoCupon) as 'MONTO', 
+	'no se puede desconciliar el viaje ya que fue compensado' as 'ERROR'	, y.nrCupon as 'CUPON'
+	     into #tmp_validacion_desconciliacion
+		from deleted x inner join inserted y
+		on x.nrCupon = y.nrCupon
+		where  (x.flCobradoalCliente=1 AND  y.flCobradoalCliente = 0)  -- SI FUE CONCILIADO Conciliado
+			and y.flCompensado = 1  -- si es flags ERROR
+
+
+
+	if @@ROWCOUNT > 0  
+	begin
+
+		set @error_validacion_xml = (select  DOC, PDV ,NRO ,LIC , DESTINO , MONTO,  ERROR , CUPON	 from  #tmp_validacion_desconciliacion DESCONCILIACION FOR XML AUTO)
+		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
+		raiserror (@error_validacion , 16,1)
+		 ROLLBACK;
+		return;
+	end
+
+	print 'final'
 
 END
