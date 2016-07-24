@@ -792,7 +792,9 @@ End Function
 ' Volver una transacion
 Public Sub RollBackTrans()
 
+    On Error Resume Next
     lobjConn.RollBackTrans
+    On Error GoTo 0
     bExisteUnaTransaccion = False
     
 End Sub
@@ -824,14 +826,19 @@ Public Function ExecuteSQL(pstrSQL As String, Optional pOpciones As Long = -1) A
     ReabrirlaConexion
     
     On Error Resume Next
-    
+    lerror = ""
     Set lrs = lobjConn.Execute(pstrSQL, lrecordAffected, pOpciones)
 
+     
     If Err Then
+    Dim i As Integer
+    
+        For i = 0 To lobjConn.Errors.Count - 1
+            lerror = lerror + vbCrLf + Replace(lobjConn.Errors(i), "[Microsoft][SQL Server Native Client 11.0][SQL Server]", "")
+        Next i
         objLog.Grabar_Log pstrSQL
         Screen.MousePointer = vbDefault
-        lerror = Err.Description
-        objLog.Grabar_Log Err.Description
+        objLog.Grabar_Log lerror
         ExecuteSQL = False
     Else
         ExecuteSQL = True

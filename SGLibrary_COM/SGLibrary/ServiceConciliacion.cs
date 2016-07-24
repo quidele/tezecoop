@@ -7,6 +7,7 @@ using System.Runtime.InteropServices;
 using System.Data;
 using System.Data.SqlClient;
 using System.Transactions;
+using System.Data.Entity.Infrastructure;
 
 namespace SGLibrary
 {
@@ -42,6 +43,7 @@ namespace SGLibrary
         
         private String _usuarioActivo;
         private String _cajactiva;
+        private List<String> _listado_Errores;
 
         public void execFormulario()
         {
@@ -133,60 +135,78 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
-
-                 using (TransactionScope transaction = new TransactionScope())
+                try
                 {
-
-                 // obtenemos el objeto de la BD 
-                 objConciliacion = (from c in context.TB_Conciliacion
-                                         where c.IdConciliacion == objConciliacion.IdConciliacion
-                                         select c).First<TB_Conciliacion>();
-
-                var listadetalleConciliacion = (from c in context.TB_ConciliacionDetalle
-                                                where c.IdConciliacion == objConciliacion.IdConciliacion 
-                                                select c
-                                                ).ToList<TB_ConciliacionDetalle>();
-
-                foreach (TB_ConciliacionDetalle item in listadetalleConciliacion)
-                {   // eliminamos los detalle existentes
-                    context.TB_ConciliacionDetalle.Remove(item);
-                }
-
-                objConciliacion.dtModificacion = DateTime.Now;
-                objConciliacion.dsUsuario = this._usuarioActivo;
-                objConciliacion.nrCajaAdm = Decimal.Parse(this._cajactiva);
-                objConciliacion.flestado = "A";
-
-                
-                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
-                                                where ids_cupones.Contains(c.nrCupon)
-                                                select c
-                                                );
-
-
-                Console.WriteLine(listadeViajesaConciliar1.ToString());
-
-                Decimal idCupon_conciliado = 0; 
-
-                foreach (var item in listadeViajesaConciliar1.ToList())
-                {
-                    idCupon_conciliado = 0;
-                    idCupon_conciliado = (from c in ids_cupones_conciliados where item.nrCupon == c select c).FirstOrDefault();
-                    
-                    if ( idCupon_conciliado!=0 )
+                    using (TransactionScope transaction = new TransactionScope())
                     {
-                        item.flCobradoalCliente = true;
-                        context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+
+                        // obtenemos el objeto de la BD 
+                        objConciliacion = (from c in context.TB_Conciliacion
+                                           where c.IdConciliacion == objConciliacion.IdConciliacion
+                                           select c).First<TB_Conciliacion>();
+
+                        var listadetalleConciliacion = (from c in context.TB_ConciliacionDetalle
+                                                        where c.IdConciliacion == objConciliacion.IdConciliacion
+                                                        select c
+                                                        ).ToList<TB_ConciliacionDetalle>();
+
+                        foreach (TB_ConciliacionDetalle item in listadetalleConciliacion)
+                        {   // eliminamos los detalle existentes
+                            context.TB_ConciliacionDetalle.Remove(item);
+                        }
+
+                        objConciliacion.dtModificacion = DateTime.Now;
+                        objConciliacion.dsUsuario = this._usuarioActivo;
+                        objConciliacion.nrCajaAdm = Decimal.Parse(this._cajactiva);
+                        objConciliacion.flestado = "A";
+
+
+                        var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                        where ids_cupones.Contains(c.nrCupon)
+                                                        select c
+                                                        );
+
+
+                        Console.WriteLine(listadeViajesaConciliar1.ToString());
+
+                        Decimal idCupon_conciliado = 0;
+
+                        foreach (var item in listadeViajesaConciliar1.ToList())
+                        {
+                            idCupon_conciliado = 0;
+                            idCupon_conciliado = (from c in ids_cupones_conciliados where item.nrCupon == c select c).FirstOrDefault();
+
+                            if (idCupon_conciliado != 0)
+                            {
+                                item.flCobradoalCliente = true;
+                                context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+                            }
+                            else
+                                item.flCobradoalCliente = false;
+
+
+                        }
+                        context.SaveChanges();
+                        transaction.Complete();
+                     
+                        return;
                     }
-                    else
-                        item.flCobradoalCliente = false;
-
 
                 }
-                context.SaveChanges();
-                transaction.Complete();
-                return ;
+                catch (DbUpdateException next)
+                {
+                    DbUpdateException se = null;
+                    _listado_Errores = new List<String>();
+                    while (next.InnerException != null)
+                    {
+                        _listado_Errores.Add( next.Message);
+                        se = next.InnerException as DbUpdateException;
+                        next = se;
+                    }
+
+          
                 }
+            
             }
 
 
@@ -303,6 +323,16 @@ namespace SGLibrary
             {
                 this._cajactiva = value;
             }
+        }
+
+        public String ListaErrores()
+        {
+            String lista_errores="";
+            foreach (var item in this._listado_Errores)
+            {
+                lista_errores = lista_errores +"\n"+ item;
+            }
+            return lista_errores;
         }
 
 

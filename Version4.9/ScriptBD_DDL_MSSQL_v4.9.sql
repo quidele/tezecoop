@@ -649,7 +649,7 @@ BEGIN
 	if @@ROWCOUNT > 0  
 	begin
 
-		--set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION for xml)
+		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION FOR XML AUTO)
 		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
 		raiserror (@error_validacion , 16,1)
 		return;
@@ -667,7 +667,7 @@ BEGIN
 
 	if @@ROWCOUNT > 0  
 	begin
-		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION for as xml)
+		set @error_validacion_xml = (select  CUPON,LIC , DESTINO , MONTO,  ERROR	 from  #tmp_validacion_conciliacion CONCILIACION FOR XML AUTO)
 		set @error_validacion = convert(varchar(max),@error_validacion_xml) 
 		raiserror (@error_validacion , 16,1)
 		return;

@@ -233,7 +233,13 @@ namespace SGLibrary
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
+            try {
             serviceConciliaciones.modificarConciliacion(listaCupones , listaCuponesConciliados, una_conciliacion);
+            } catch (Exception ex ){
+
+                MessageBox.Show(ex.Message + serviceConciliaciones.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
