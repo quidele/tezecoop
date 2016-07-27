@@ -22,8 +22,12 @@ namespace SGLibrary
     
     	private static string ConnectionString()
     	{
+
+            ConfigBD objConfig = new ConfigBD();
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
-    		sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
+            // obtenemos el datasource desde el archivo  ConfigBD.Xml
+            sqlBuilder.DataSource = objConfig.DataSource;
+    		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
     		sqlBuilder.InitialCatalog = "dbSG2000";
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;

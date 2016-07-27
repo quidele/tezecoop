@@ -34,6 +34,14 @@ namespace ControlesdeUsuario
             Thread.CurrentThread.CurrentUICulture = new CultureInfo("ES-ES");
             this.botonFIND.Text = StringResources.botonBuscarText;
             this.botonEDIT.Text = StringResources.botonEditarText;
+
+            this.botonADD.Text = StringResources.botonADDText;
+            this.botonDELETE.Text = StringResources.botonDELETEText;
+            this.botonOK.Text = StringResources.botonOKText;
+            this.botonCANCEL.Text = StringResources.botonCANCELText;
+            this.botonPRINT.Text = StringResources.botonPRINTText;
+            this.botonEXIT.Text = StringResources.botonEXITText;
+
             this.botonFIND.Image = StringResources.Image_btn_form_find;
             this.botonEDIT.Image = StringResources.Image_btn_form_edit;
             this.botonADD.Image = StringResources.Image_btn_form_add;

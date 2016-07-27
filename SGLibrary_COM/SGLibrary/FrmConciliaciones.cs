@@ -25,7 +25,7 @@ namespace SGLibrary
         private void FrmConciliaciones_Load(object sender, EventArgs e)
         {
 
-            
+            cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
             botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
@@ -103,14 +103,14 @@ namespace SGLibrary
                     }
                 case "FIND":
                     {
+        
+                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
+                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value , this.cbUsuariosConciliaciones.Text   );
+                        cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         this.modoEdicion.Text = "NO";
-                        this.panelcarga.Visible =  false ;
+                        this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
-                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
-                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value , this.cbUsuariosConciliaciones.Text );
-                        cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         break;
                         
                     }
@@ -127,7 +127,7 @@ namespace SGLibrary
                             if (!ediciondeconciliacion()) break;
                         }
 
-
+                        cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
                         this.modoEdicion.Text = "NO";
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
@@ -406,6 +406,11 @@ namespace SGLibrary
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
             botonesForm1_ClickEventDelegateHandler(btnFind, null);
+        }
+
+        private void cbUsuariosConciliaciones_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            MessageBox.Show(cbUsuariosConciliaciones.Text);
         }
 
 
