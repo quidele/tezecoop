@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
    ClientLeft      =   225
-   ClientTop       =   855
+   ClientTop       =   870
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -932,7 +932,7 @@ Dim objServiceConciliacion As Object
 
 
 
-    On Error Resume Next
+    ' On Error Resume Next
             
     ' v4.9
     objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion"
@@ -943,10 +943,10 @@ Dim objServiceConciliacion As Object
     objServiceConciliacion.CajaActiva 1
     objServiceConciliacion.execFormulario
             
-    If Err Then
-        MsgBox Err.Description, vbCritical, "Atención"
-    End If
-    On Error GoTo 0
+'    If Err Then
+'        MsgBox Err.Description, vbCritical, "Atención"
+'    End If
+'    On Error GoTo 0
 
 End Sub
 

@@ -80,3 +80,33 @@ delete diccionariodedatos where nmTabla = 'TB_Recibos'  and  nmCampo in  ('vlAcu
 
 INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('TB_Recibos','vlAcumTarjeta','vlAcumTarjeta','DOUBLE','6','No','No','No',null,null,null,null,null,null,null,null,null);
 
+
+
+select * from TB_OpcionesMenues
+
+
+declare @IdOpcionMenu int
+
+
+delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu in ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'mnConciliaciones')
+ 
+delete from TB_OpcionesMenues where nmOpcionMenu = 'mnConciliaciones'
+
+
+select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+
+INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Conciliaciones','mnConciliaciones','Empleado',214,0,1,0);
+
+exec SP_GenerarNuevasOpcionesdeMenues
+
+delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu in ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'optConciliarViajes')
+ 
+delete from TB_OpcionesMenues where nmOpcionMenu = 'optConciliarViajes'
+
+
+select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+
+INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Conciliar Viajes','optConciliarViajes','Empleado',215,1,1,0);
+
+exec SP_GenerarNuevasOpcionesdeMenues
+

@@ -167,7 +167,7 @@
     <value>DELETE</value>
   </data>
   <data name="botonEXITText" xml:space="preserve">
-    <value>botonEXIT</value>
+    <value>EXIT</value>
   </data>
   <data name="botonOKText" xml:space="preserve">
     <value>OK</value>
