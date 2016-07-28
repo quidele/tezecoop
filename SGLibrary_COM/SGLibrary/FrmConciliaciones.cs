@@ -410,7 +410,7 @@ namespace SGLibrary
 
         private void cbUsuariosConciliaciones_SelectedIndexChanged(object sender, EventArgs e)
         {
-            MessageBox.Show(cbUsuariosConciliaciones.Text);
+            //MessageBox.Show(cbUsuariosConciliaciones.Text);
         }
 
 
