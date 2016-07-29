@@ -28,7 +28,7 @@ namespace SGLibrary
             // obtenemos el datasource desde el archivo  ConfigBD.Xml
             sqlBuilder.DataSource = objConfig.DataSource;
     		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
-    		sqlBuilder.InitialCatalog = "dbSG2000";
+            sqlBuilder.InitialCatalog = objConfig._initialCatalog ;
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;
     		sqlBuilder.UserID ="USRSG2006";

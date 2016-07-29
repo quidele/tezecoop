@@ -9,7 +9,8 @@ namespace SGLibrary
     public class ConfigBD
     {
 
-        public String _dataSource; 
+        public String _dataSource;
+        public String _initialCatalog; 
 
         public String DataSource
         {
@@ -18,9 +19,17 @@ namespace SGLibrary
             }
         }
 
+        public String InitialCatalog
+        {
+            get
+            {
+                return _initialCatalog;
+            }
+        }
  
         public ConfigBD()
         {
+            String _nombreelemento="";
             XmlTextReader reader = new XmlTextReader("ConfigBD.xml");
 					        
             while (reader.Read()) 
@@ -29,11 +38,19 @@ namespace SGLibrary
             {
             case XmlNodeType.Element: // The node is an element.
                 Console.Write("<" + reader.Name);
-            Console.WriteLine(">");
+                _nombreelemento = reader.Name;
+                Console.WriteLine(">");
                 break;
             case XmlNodeType.Text: //Display the text in each element.
                 Console.WriteLine (reader.Value);
-                this._dataSource = reader.Value;
+                switch (_nombreelemento){
+                    case "DataSource":  
+                        this._dataSource =reader.Value;  
+                        break;
+                    case   "InitialCatalog": 
+                        this._initialCatalog  = reader.Value;
+                        break;
+                }
                 break;
             case XmlNodeType. EndElement: //Display the end of the element.
                 Console.Write("</" + reader.Name);

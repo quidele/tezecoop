@@ -14,33 +14,6 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dl
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll.config
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EntityFramework.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EntityFramework.xml
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmSeleccionarImpresora.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.resx
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
@@ -63,3 +36,27 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibr
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll.config
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmSeleccionarImpresora.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
