@@ -998,7 +998,7 @@ Begin VB.Form Frm_VentaPasajes
             SubItemIndex    =   6
             Key             =   "vlPrecioViaje"
             Object.Tag             =   "vlPrecioViaje"
-            Text            =   "Precio Total"
+            Text            =   "Efectivo"
             Object.Width           =   2117
          EndProperty
          BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -1162,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   112721921
+         Format          =   109445121
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1601,16 +1601,16 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   390
-         Left            =   150
+         Left            =   135
          TabIndex        =   60
-         Top             =   6345
-         Width           =   4050
+         Top             =   6360
+         Width           =   4275
       End
       Begin VB.Label Label24 
          Alignment       =   1  'Right Justify
          Caption         =   "A Cobrar"
          Height          =   255
-         Left            =   4200
+         Left            =   4185
          TabIndex        =   59
          Top             =   6060
          Width           =   915
@@ -1721,7 +1721,7 @@ Begin VB.Form Frm_VentaPasajes
          Width           =   3000
       End
       Begin VB.Label Label23 
-         Caption         =   "Precio Total"
+         Caption         =   "Efectivo"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -1838,7 +1838,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   60
          TabIndex        =   43
          Top             =   6750
-         Width           =   1860
+         Width           =   1620
       End
       Begin VB.Label Label31 
          Caption         =   "Kms"
@@ -1858,7 +1858,7 @@ Begin VB.Form Frm_VentaPasajes
          Width           =   564
       End
       Begin VB.Label lblRecargoTarjeta 
-         Caption         =   "Recargo Tarjeta: $ 0,00"
+         Caption         =   "Descuento Efectivo: $ 0,00"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -1869,10 +1869,10 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   330
-         Left            =   2025
+         Left            =   1890
          TabIndex        =   96
-         Top             =   6750
-         Width           =   2190
+         Top             =   6735
+         Width           =   2715
       End
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -2400,8 +2400,10 @@ Dim vlIVA        As Single
 Dim vlKilometros As Long
 Dim resp         As Byte
 Dim vlRecargoTarjeta As Single
+Dim vlDescuentoEfectivo As Single
 
     vlRecargoTarjeta = 0
+    vlDescuentoEfectivo = 0
 
     If Me.lstItemsFactura.ListItems.Count < 1 Then Exit Sub
     
@@ -2423,13 +2425,38 @@ Dim vlRecargoTarjeta As Single
     Next
     
     For i = 1 To Me.lstItemsFactura.ListItems.Count
+        vlDescuentoEfectivo = CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
+    Next
+    
+    
+    
+    
+     For i = 1 To Me.lstItemsFactura.ListItems.Count
+        Select Case ObtenerCampo("cdCondVenta").Text
+        Case "Tarjeta de Débito"
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTD))
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTD))
+        Case "Tarjeta de Crédito"
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
+        Case Else
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
+            vlRecargoTarjeta = 0
+        End Select
+    Next
+    
+    
+    For i = 1 To Me.lstItemsFactura.ListItems.Count
             If Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlKilometros) <> "" Then
                 vlKilometros = vlKilometros + _
                 CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlKilometros))
             End If
     Next
         
-
+    
     vlIVA = 0
     vlSubtotal = vlTotalPesos
     
@@ -2478,7 +2505,7 @@ Dim vlRecargoTarjeta As Single
     Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
                         ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
-    Me.lblRecargoTarjeta.Caption = "Recargo Tarjeta: $ " + FormatNumber(vlRecargoTarjeta, 2)
+    Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlRecargoTarjeta, 2)
     
 End Sub
 
