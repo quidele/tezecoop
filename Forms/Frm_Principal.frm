@@ -930,23 +930,29 @@ End Sub
 Private Sub optConciliarViajes_Click()
 Dim objServiceConciliacion As Object
 
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+    
 
-
-    ' On Error Resume Next
+    On Error Resume Next
             
     ' v4.9
     objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion"
     Set objServiceConciliacion = CreateObject("SGLibrary.ServiceConciliacion")
     objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion OK "
 
-    objServiceConciliacion.UsuarioActivo "camilaq"
-    objServiceConciliacion.CajaActiva 1
+    If Err Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objServiceConciliacion.UsuarioActivo objUsuario.dsUsuario
+    objServiceConciliacion.CajaActiva objCajas.ObtenerCajadeADMAbierta
     objServiceConciliacion.execFormulario
             
-'    If Err Then
-'        MsgBox Err.Description, vbCritical, "Atención"
-'    End If
-'    On Error GoTo 0
+
 
 End Sub
 

@@ -1162,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   109445121
+         Format          =   122159105
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2505,7 +2505,13 @@ Dim vlDescuentoEfectivo As Single
     Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
                         ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
-    Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlRecargoTarjeta, 2)
+    If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
+      Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
+    Else
+      Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
+    End If
+    
+
     
 End Sub
 
