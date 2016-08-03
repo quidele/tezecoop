@@ -37,7 +37,8 @@ namespace SGLibrary
         
         public ServicePrinter()
         {
-            Trace.Listeners.Add(new TextWriterTraceListener("MyTextFile.log"));
+            
+            Trace.Listeners.Add(new TextWriterTraceListener("Log_.log"));
             Trace.AutoFlush = true; 
             Trace.TraceInformation("inicializando el logger");
             printer_manager = new PrinterManager(); 

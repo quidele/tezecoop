@@ -47,7 +47,7 @@ namespace SGLibrary
                : base(nameOrConnectionString: ConnectionString())
         {
     	// EULISES
-    
+            
     
         }
     

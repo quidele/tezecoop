@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using SGLibrary;
 using System.Management;
 using System.Windows;
+using System.Diagnostics;
 
 
 namespace ConsoleApplication1
@@ -67,14 +68,16 @@ namespace ConsoleApplication1
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls
             */
 
-
+            Trace.TraceInformation("Logger EULISES 1sdsd ");
 
              ServiceConciliacion objConciliacion = new ServiceConciliacion();
             objConciliacion.UsuarioActivo("camilaq");
             objConciliacion.CajaActiva("1");
             objConciliacion.execFormulario();
 
-                         
+
+            Trace.TraceInformation("Logger EULISES FFINdsdsd ");
+              
              
         }
     }

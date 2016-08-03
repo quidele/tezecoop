@@ -8,6 +8,7 @@ using System.Data;
 using System.Data.SqlClient;
 using System.Transactions;
 using System.Data.Entity.Infrastructure;
+using System.Diagnostics; 
 
 namespace SGLibrary
 {
@@ -38,7 +39,7 @@ namespace SGLibrary
     [Guid("85C3351A-CA89-4ddf-8A00-C7F865BF8474"),
     ClassInterface(ClassInterfaceType.None),
     ComSourceInterfaces(typeof(Conciliacion_Events))]
-    public class ServiceConciliacion : Conciliacion_Interface
+    public class ServiceConciliacion : ServiceModel, Conciliacion_Interface
     {
         
         private String _usuarioActivo;
@@ -56,6 +57,7 @@ namespace SGLibrary
             }
             catch (Exception ex)
             {
+                Trace.TraceError(ex.Message);
                 System.Windows.Forms.MessageBox.Show(ex.Message, "ERROR ");
             }
         }
@@ -77,7 +79,7 @@ namespace SGLibrary
                                                             });
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
-
+                Trace.TraceInformation(  listadeViajesaConciliar1.ToString());
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
              
@@ -92,6 +94,7 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
+                
                 using (TransactionScope transaction = new TransactionScope())
                 {
 
@@ -107,6 +110,7 @@ namespace SGLibrary
                                                 );
 
                 Console.WriteLine(listadeViajesaConciliar1.ToString());
+                Trace.TraceInformation(listadeViajesaConciliar1.ToString());
                 TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
 
                 foreach (var item in listadeViajesaConciliar1.ToList())
