@@ -110,3 +110,7 @@ INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJer
 
 exec SP_GenerarNuevasOpcionesdeMenues
 
+
+delete from  diccionariodedatos where nmTabla = 'rpt_cierredecaja_v4_9' 
+
+INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('rpt_cierredecaja_v4_9','@nrCaja_param','@nrCaja_param','INTEGER',null,'No','No','No',null,null,null,null,null,null,'0','0',null);
