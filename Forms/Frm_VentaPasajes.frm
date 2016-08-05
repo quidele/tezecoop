@@ -1162,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   122159105
+         Format          =   109576193
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2426,26 +2426,6 @@ Dim vlDescuentoEfectivo As Single
     
     For i = 1 To Me.lstItemsFactura.ListItems.Count
         vlDescuentoEfectivo = CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
-    Next
-    
-    
-    
-    
-     For i = 1 To Me.lstItemsFactura.ListItems.Count
-        Select Case ObtenerCampo("cdCondVenta").Text
-        Case "Tarjeta de Débito"
-            vlTotalPesos = vlTotalPesos + _
-            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTD))
-            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTD))
-        Case "Tarjeta de Crédito"
-            vlTotalPesos = vlTotalPesos + _
-            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
-            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
-        Case Else
-            vlTotalPesos = vlTotalPesos + _
-            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
-            vlRecargoTarjeta = 0
-        End Select
     Next
     
     
