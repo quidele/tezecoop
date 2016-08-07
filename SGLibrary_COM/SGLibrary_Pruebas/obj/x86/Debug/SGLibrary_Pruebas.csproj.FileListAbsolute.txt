@@ -37,3 +37,5 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ConfigBD_FON.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Debug\ConfigBD_CASA.Xml

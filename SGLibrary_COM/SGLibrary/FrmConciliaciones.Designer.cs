@@ -85,20 +85,21 @@
             this.panelcarga.Controls.Add(this.label7);
             this.panelcarga.Controls.Add(this.cbdtConciliacion);
             this.panelcarga.Controls.Add(this.label2);
-            this.panelcarga.Location = new System.Drawing.Point(25, 44);
+            this.panelcarga.Location = new System.Drawing.Point(33, 54);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelcarga.Name = "panelcarga";
-            this.panelcarga.Size = new System.Drawing.Size(700, 314);
+            this.panelcarga.Size = new System.Drawing.Size(933, 386);
             this.panelcarga.TabIndex = 2;
             // 
             // modoEdicion
             // 
             this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.modoEdicion.Location = new System.Drawing.Point(443, 65);
-            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
+            this.modoEdicion.Location = new System.Drawing.Point(591, 80);
+            this.modoEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
-            this.modoEdicion.Size = new System.Drawing.Size(163, 20);
+            this.modoEdicion.Size = new System.Drawing.Size(217, 22);
             this.modoEdicion.TabIndex = 17;
             this.modoEdicion.Visible = false;
             // 
@@ -106,20 +107,19 @@
             // 
             this.txtflEstado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtflEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtflEstado.Location = new System.Drawing.Point(256, 62);
-            this.txtflEstado.Margin = new System.Windows.Forms.Padding(2);
+            this.txtflEstado.Location = new System.Drawing.Point(341, 76);
+            this.txtflEstado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtflEstado.Name = "txtflEstado";
             this.txtflEstado.ReadOnly = true;
-            this.txtflEstado.Size = new System.Drawing.Size(163, 20);
+            this.txtflEstado.Size = new System.Drawing.Size(217, 22);
             this.txtflEstado.TabIndex = 16;
             // 
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Location = new System.Drawing.Point(196, 65);
-            this.label10.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label10.Location = new System.Drawing.Point(261, 80);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(40, 13);
+            this.label10.Size = new System.Drawing.Size(52, 17);
             this.label10.TabIndex = 15;
             this.label10.Text = "Estado";
             // 
@@ -127,20 +127,19 @@
             // 
             this.txtnrCajaAdm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtnrCajaAdm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtnrCajaAdm.Location = new System.Drawing.Point(471, 37);
-            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2);
+            this.txtnrCajaAdm.Location = new System.Drawing.Point(628, 46);
+            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtnrCajaAdm.Name = "txtnrCajaAdm";
             this.txtnrCajaAdm.ReadOnly = true;
-            this.txtnrCajaAdm.Size = new System.Drawing.Size(163, 20);
+            this.txtnrCajaAdm.Size = new System.Drawing.Size(217, 22);
             this.txtnrCajaAdm.TabIndex = 14;
             // 
             // label9
             // 
             this.label9.AutoSize = true;
-            this.label9.Location = new System.Drawing.Point(412, 41);
-            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Location = new System.Drawing.Point(549, 50);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(55, 13);
+            this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Caja Adm.";
             // 
@@ -154,32 +153,31 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(19, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(25, 114);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(662, 196);
+            this.dataGridView1.Size = new System.Drawing.Size(883, 241);
             this.dataGridView1.TabIndex = 12;
             // 
             // txtIdConciliacion
             // 
             this.txtIdConciliacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtIdConciliacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdConciliacion.Location = new System.Drawing.Point(104, 37);
-            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtIdConciliacion.Location = new System.Drawing.Point(139, 46);
+            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdConciliacion.Name = "txtIdConciliacion";
             this.txtIdConciliacion.ReadOnly = true;
-            this.txtIdConciliacion.Size = new System.Drawing.Size(85, 20);
+            this.txtIdConciliacion.Size = new System.Drawing.Size(113, 22);
             this.txtIdConciliacion.TabIndex = 11;
             // 
             // label8
             // 
             this.label8.AutoSize = true;
-            this.label8.Location = new System.Drawing.Point(31, 39);
-            this.label8.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label8.Location = new System.Drawing.Point(41, 48);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(44, 13);
+            this.label8.Size = new System.Drawing.Size(58, 17);
             this.label8.TabIndex = 10;
             this.label8.Text = "Número";
             // 
@@ -187,49 +185,46 @@
             // 
             this.txtdsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtdsUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtdsUsuario.Location = new System.Drawing.Point(240, 35);
-            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtdsUsuario.Location = new System.Drawing.Point(320, 43);
+            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtdsUsuario.Name = "txtdsUsuario";
             this.txtdsUsuario.ReadOnly = true;
-            this.txtdsUsuario.Size = new System.Drawing.Size(163, 20);
+            this.txtdsUsuario.Size = new System.Drawing.Size(217, 22);
             this.txtdsUsuario.TabIndex = 9;
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(193, 39);
-            this.label6.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label6.Location = new System.Drawing.Point(257, 48);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(43, 13);
+            this.label6.Size = new System.Drawing.Size(57, 17);
             this.label6.TabIndex = 8;
             this.label6.Text = "Usuario";
             // 
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(31, 66);
-            this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label7.Location = new System.Drawing.Point(41, 81);
             this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(37, 13);
+            this.label7.Size = new System.Drawing.Size(47, 17);
             this.label7.TabIndex = 7;
             this.label7.Text = "Fecha";
             // 
             // cbdtConciliacion
             // 
             this.cbdtConciliacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cbdtConciliacion.Location = new System.Drawing.Point(104, 62);
-            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(2);
+            this.cbdtConciliacion.Location = new System.Drawing.Point(139, 76);
+            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbdtConciliacion.Name = "cbdtConciliacion";
-            this.cbdtConciliacion.Size = new System.Drawing.Size(85, 20);
+            this.cbdtConciliacion.Size = new System.Drawing.Size(112, 22);
             this.cbdtConciliacion.TabIndex = 6;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(7, 9);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(94, 13);
+            this.label2.Size = new System.Drawing.Size(125, 17);
             this.label2.TabIndex = 0;
             this.label2.Text = "carga de los datos";
             // 
@@ -247,9 +242,10 @@
             this.panelbusqueda.Controls.Add(this.fechadesde);
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
-            this.panelbusqueda.Location = new System.Drawing.Point(12, 44);
+            this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelbusqueda.Name = "panelbusqueda";
-            this.panelbusqueda.Size = new System.Drawing.Size(736, 328);
+            this.panelbusqueda.Size = new System.Drawing.Size(981, 404);
             this.panelbusqueda.TabIndex = 0;
             // 
             // cbUsuariosConciliaciones
@@ -257,68 +253,64 @@
             this.cbUsuariosConciliaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
-            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(91, 51);
-            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(121, 63);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
-            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(157, 21);
+            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(208, 24);
             this.cbUsuariosConciliaciones.TabIndex = 6;
             this.cbUsuariosConciliaciones.SelectedIndexChanged += new System.EventHandler(this.cbUsuariosConciliaciones_SelectedIndexChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(20, 53);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(27, 65);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Usuario";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(185, 29);
-            this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label4.Location = new System.Drawing.Point(247, 36);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(17, 13);
+            this.label4.Size = new System.Drawing.Size(21, 17);
             this.label4.TabIndex = 4;
             this.label4.Text = "A:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(17, 29);
-            this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label3.Location = new System.Drawing.Point(23, 36);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(71, 13);
+            this.label3.Size = new System.Drawing.Size(92, 17);
             this.label3.TabIndex = 3;
             this.label3.Text = "Fecha Desde";
             // 
             // fechahasta
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechahasta.Location = new System.Drawing.Point(204, 25);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
+            this.fechahasta.Location = new System.Drawing.Point(272, 31);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechahasta.Name = "fechahasta";
-            this.fechahasta.Size = new System.Drawing.Size(101, 20);
+            this.fechahasta.Size = new System.Drawing.Size(133, 22);
             this.fechahasta.TabIndex = 2;
             // 
             // fechadesde
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechadesde.Location = new System.Drawing.Point(91, 25);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
+            this.fechadesde.Location = new System.Drawing.Point(121, 31);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechadesde.Name = "fechadesde";
-            this.fechadesde.Size = new System.Drawing.Size(85, 20);
+            this.fechadesde.Size = new System.Drawing.Size(112, 22);
             this.fechadesde.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 9);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 11);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(126, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
             // 
@@ -332,12 +324,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 93);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(17, 114);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(708, 220);
+            this.dataGridView2.Size = new System.Drawing.Size(944, 271);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
@@ -345,26 +337,28 @@
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
-            this.botonesForm1.Location = new System.Drawing.Point(0, 4);
-            this.botonesForm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
+            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
             this.botonesForm1.Name = "botonesForm1";
-            this.botonesForm1.Size = new System.Drawing.Size(613, 29);
+            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
             // FrmConciliaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(760, 384);
+            this.ClientSize = new System.Drawing.Size(1013, 473);
             this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConciliaciones";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conciliaciones";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmConciliaciones_Load);
             this.panelcarga.ResumeLayout(false);
             this.panelcarga.PerformLayout();

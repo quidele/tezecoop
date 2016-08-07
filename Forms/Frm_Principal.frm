@@ -943,7 +943,7 @@ Dim objServiceConciliacion As Object
     Set objServiceConciliacion = CreateObject("SGLibrary.ServiceConciliacion")
     objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion OK "
 
-    If Err Then
+    If Err <> 5 Then
         MsgBox Err.Description, vbCritical, "Atención"
     End If
     On Error GoTo 0

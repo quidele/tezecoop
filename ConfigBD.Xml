@@ -3,5 +3,6 @@
 <ConfigBD>
   <ConnectionString DbContext="dbSG2000Entities">
     <DataSource>PC0157</DataSource>
+	<InitialCatalog>dbSG2000</InitialCatalog>
   </ConnectionString>
 </ConfigBD>

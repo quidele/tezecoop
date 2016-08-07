@@ -236,6 +236,12 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ConfigBD_FON.Xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="ConfigBD_CASA.Xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
     <Content Include="ConfigBD.Xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>

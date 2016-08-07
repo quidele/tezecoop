@@ -43,3 +43,5 @@ C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml

@@ -31,16 +31,13 @@ namespace SGLibrary
     [Guid("AFA9A171-2A10-4953-B62D-90FE4D022FFA"),
     ClassInterface(ClassInterfaceType.None),
     ComSourceInterfaces(typeof(Printer_Events))]
-    public class ServicePrinter : Printer_Interface
+    public class ServicePrinter : ServiceModel, Printer_Interface
     {
         PrinterManager printer_manager; 
         
         public ServicePrinter()
         {
-            
-            Trace.Listeners.Add(new TextWriterTraceListener("Log_.log"));
-            Trace.AutoFlush = true; 
-            Trace.TraceInformation("inicializando el logger");
+            Trace.TraceInformation("inicializando el logger desde service printer");
             printer_manager = new PrinterManager(); 
         }
 
