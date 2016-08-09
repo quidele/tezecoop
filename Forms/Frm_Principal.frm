@@ -949,7 +949,7 @@ Dim objServiceConciliacion As Object
     On Error GoTo 0
 
     objServiceConciliacion.UsuarioActivo objUsuario.dsUsuario
-    objServiceConciliacion.CajaActiva objCajas.ObtenerCajadeADMAbierta
+    objServiceConciliacion.CajaActiva objCajas.nrCaja
     objServiceConciliacion.execFormulario
             
 

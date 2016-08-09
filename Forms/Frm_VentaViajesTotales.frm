@@ -640,14 +640,17 @@ Private Function validarEntradadedatos() As Boolean
                         ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
        If ObtenerCampo("nrTarjeta").Text = "" Then
             MsgBox "Debe completar el número de la tajeta", vbInformation + vbDefaultButton1
+            ObtenerCampo("nrTarjeta").SetFocus
             Exit Function
        End If
        If ObtenerCampo("tpDocTarjeta").Text = "" Then
             MsgBox "Debe completar el tipo de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
+            ObtenerCampo("tpDocTarjeta").SetFocus
             Exit Function
        End If
              If ObtenerCampo("nrDocTarjeta").Text = "" Then
             MsgBox "Debe completar el número de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
+            ObtenerCampo("nrDocTarjeta").SetFocus
             Exit Function
        End If
     End If

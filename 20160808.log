@@ -650,3 +650,5 @@
 08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
 08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
 08/08/2016 22:43:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:57:34 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:57:34 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
