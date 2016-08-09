@@ -36,7 +36,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Cancel          =   -1  'True
       Caption         =   "Cancelar"
       Height          =   375
-      Left            =   2340
+      Left            =   2325
       TabIndex        =   10
       Top             =   3435
       Width           =   1050
@@ -75,7 +75,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Tag             =   "tpDocTarjeta"
-         Top             =   2400
+         Top             =   2385
          Width           =   1725
       End
       Begin VB.TextBox txtFields 
@@ -121,7 +121,7 @@ Begin VB.Form Frm_VentaViajesTotales
          MaxLength       =   4
          TabIndex        =   0
          Tag             =   "nrTarjeta"
-         Top             =   1650
+         Top             =   1680
          Width           =   2025
       End
       Begin VB.TextBox txtFields 
@@ -740,7 +740,17 @@ End Sub
 Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
 
     If KeyAscii = vbKeyReturn Then
-        cmdAceptar_Click
+        Select Case Combox1(Index).Tag
+        Case "cdCondVenta"
+            If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
+                objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+                ObtenerCampo("nrTarjeta").SetFocus
+             Else
+                 cmdAceptar_Click
+             End If
+        Case "tpDocTarjeta"
+                ObtenerCampo("nrDocTarjeta").SetFocus
+        End Select
     End If
 
 End Sub
@@ -771,6 +781,13 @@ Private Sub Form_Load()
     ObtenerCampo("vlPagoPesos").Text = FormatNumber(AdaptarValorNumerico(objParametros.ObtenerValor("vlPagoPesos")), 2)
     ObtenerCampo("cdCondVenta").Text = objParametros.ObtenerValor("cdCondVenta")
     
+    
+    If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
+       objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+        Me.cmdAceptar.Default = False
+    End If
+       
+       
 
 End Sub
 
@@ -787,11 +804,7 @@ End Sub
 Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
 
 
-    If Not KeyAscii = vbKeyReturn Then
-            KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Comprobantes", _
-                                Me.txtFields(Index), KeyAscii)
-    Else
-                
+    If KeyAscii = vbKeyReturn Or KeyAscii = vbKeyTab Then
         Select Case txtFields(Index).Tag
         Case "vlPagoEuros"
             ObtenerCampo("vlPagoReales").SetFocus
@@ -801,7 +814,15 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
             ObtenerCampo("vlPagoPesos").SetFocus
         Case "vlPagoPesos"
             Me.Combox1(0).SetFocus
+        Case "nrTarjeta"
+             ObtenerCampo("tpDocTarjeta").SetFocus
+        Case "nrDocTarjeta"
+                cmdAceptar_Click
         End Select
+
+    Else
+            KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Comprobantes", _
+                                Me.txtFields(Index), KeyAscii)
     End If
     
 End Sub

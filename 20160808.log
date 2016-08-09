@@ -1,0 +1,652 @@
+08/08/2016 22:14:01 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:14:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:14:05 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:14:05 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:14:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:14:05 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+08/08/2016 22:14:05 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:14:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:14:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:14:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:14:05 | Exec SP_ValorPromoRetorno
+08/08/2016 22:14:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:14:05 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:14:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:14:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:14:05 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:14:07 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+08/08/2016 22:14:07 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+08/08/2016 22:14:07 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+08/08/2016 22:14:07 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 155.08 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 155.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+08/08/2016 22:14:12 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+08/08/2016 22:14:12 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+08/08/2016 22:14:12 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:14:12 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:14:12 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+08/08/2016 22:14:13 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+08/08/2016 22:14:13 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+08/08/2016 22:14:13 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+08/08/2016 22:14:13 | Exec sco_validarVencimientosCAI_v4_1
+08/08/2016 22:14:14 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:14:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+08/08/2016 22:14:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+08/08/2016 22:14:30 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:14:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:14:33 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:14:33 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:14:33 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:14:33 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+08/08/2016 22:14:33 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:14:33 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:14:33 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:14:33 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:14:33 | Exec SP_ValorPromoRetorno
+08/08/2016 22:14:33 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:14:33 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:14:33 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:14:33 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:14:33 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:14:34 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  
+08/08/2016 22:14:34 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+08/08/2016 22:14:34 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+08/08/2016 22:14:34 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 155.08 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 155.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+08/08/2016 22:14:36 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = 155.08 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 155.08 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '08/08/2016 10:14:36' ,TB_Cajas.vlCierrePesos  = 155.08 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 155.08 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+08/08/2016 22:14:36 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+08/08/2016 22:14:36 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm 
+08/08/2016 22:14:36 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:14:36 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:14:36 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+08/08/2016 22:14:36 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+08/08/2016 22:14:36 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+08/08/2016 22:14:36 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+08/08/2016 22:14:36 | Exec sco_validarVencimientosCAI_v4_1
+08/08/2016 22:14:37 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:14:37 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+08/08/2016 22:14:37 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+08/08/2016 22:14:40 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+08/08/2016 22:14:40 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+08/08/2016 22:14:40 | Inicializando Servicio SGLibrary.ServiceConciliacion
+08/08/2016 22:14:40 | Inicializando Servicio SGLibrary.ServiceConciliacion OK 
+08/08/2016 22:14:40 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+08/08/2016 22:16:26 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:16:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:16:47 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:16:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:16:49 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:16:53 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:16:53 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:16:53 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:16:53 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+08/08/2016 22:16:54 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:16:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:16:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:16:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:16:54 | Exec SP_ValorPromoRetorno
+08/08/2016 22:16:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:16:54 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:16:54 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:16:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:16:54 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:16:56 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:16:56 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:16:56 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:16:58 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:16:58 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:16:58 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+08/08/2016 22:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:16:58 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:16:58 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+08/08/2016 22:17:01 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+08/08/2016 22:17:01 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:17:01 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:01 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:01 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:01 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:17:01 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:02 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:17:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+08/08/2016 22:17:03 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:17:08 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:17:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:17:10 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:17:15 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:20:29 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:20:29 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:20:32 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:20:32 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:20:37 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:20:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:20:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:20:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ba%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:20:42 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+08/08/2016 22:20:43 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:20:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:20:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:20:46 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:20:46 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+08/08/2016 22:20:47 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:20:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:20:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:20:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:20:47 | Exec SP_ValorPromoRetorno
+08/08/2016 22:20:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:20:47 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:20:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:20:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:20:47 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:20:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:20:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:20:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:20:51 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:20:51 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:20:51 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:20:51 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:20:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+08/08/2016 22:20:51 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:20:51 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:20:51 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:20:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+08/08/2016 22:20:54 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+08/08/2016 22:20:54 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:54 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:55 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:20:55 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:55 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:20:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+08/08/2016 22:20:57 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:20:59 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:22:43 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:22:43 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:22:43 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:22:43 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:22:43 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:22:47 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5'
+08/08/2016 22:22:48 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633563' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:22:48 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:22:48 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633563' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,489.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,123 ,null ,null ,'FA' ,0.00 ,0.00 ,'SUFFIA DIEGO ALEJANDRO' ,'08/08/2016' ,null ,489.00 ,0.00 ,'Tarjeta de Débito' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633563123' ,'08/08/2016 10:22:48' ,'08/08/2016 10:22:48' ,'22:22' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,'1234' ,'DNI' ,'123212' )
+08/08/2016 22:22:48 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+08/08/2016 22:22:48 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633563'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:22:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_ComprobantesDetalle'
+08/08/2016 22:22:48 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633563' ,'FA' ,'B' ,1 ,90001 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'Viaje' ,0 ,0 ,null ,450 ,'489' ,'489' ,'39' ,'39' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:22:48 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:22:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+08/08/2016 22:22:48 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:22:48 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633563' ,'FA' ,'B' ,1 ,1 ,123 ,'SUFFIA DIEGO ALEJANDRO' ,489.00 ,0.00 ,0.00 ,0.00 ,0.00 ,null ,'Tarjeta de Débito' ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'22:22' ,null ,0 ,0 ,453 ,0 ,36 ,'08/08/2016 10:22:48' ,1000010108 ,'08/08/2016 10:22:48' ,'BFAZZALARI' ,null ,0 ,0.00 ,489.00 ,'000600633563123' ,71 ,'1234' ,'DNI' ,'123212' ,39 )
+08/08/2016 22:22:48 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '71'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:22:48 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_actualizar_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:22:48 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633563 
+08/08/2016 22:22:48 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_PrepararReimpresiondeComprobante_v4_9'
+08/08/2016 22:22:48 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633563' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:22:58 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_eliminarTablasImpresion_v4_7'
+08/08/2016 22:22:58 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:22:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:22:58 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:22:58 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:22:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:22:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:22:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:02 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:02 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:02 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'KM_IVA'  
+08/08/2016 22:23:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:03 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'KM_IVA'  
+08/08/2016 22:23:04 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:04 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:04 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 1200 
+08/08/2016 22:23:04 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'KM_IVA'  
+08/08/2016 22:23:05 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:05 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:05 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,1200' 
+08/08/2016 22:23:09 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:09 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 1200 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:12 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:14 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 12  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:23:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:23:16 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:16 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:16 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:16 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:23:16 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:23:20 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633564' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:23:20 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:23:20 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633564' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,450.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,12 ,null ,null ,'FA' ,0.00 ,450.00 ,'ABEGAO CARLOS' ,'08/08/2016' ,null ,450.00 ,0.00 ,'Contado' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633564012' ,'08/08/2016 10:23:20' ,'08/08/2016 10:23:20' ,'22:23' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,null ,null ,null )
+08/08/2016 22:23:20 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633564'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:23:20 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633564' ,'FA' ,'B' ,1 ,90001 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'Viaje' ,0 ,0 ,null ,450 ,'489' ,'489' ,'39' ,'39' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:23:20 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:20 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:23:20 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,dtCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633564' ,'FA' ,'B' ,1 ,1 ,12 ,'ABEGAO CARLOS' ,450.00 ,450.00 ,0.00 ,0.00 ,0.00 ,null ,'Contado' ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'22:23' ,null ,1 ,'08/08/2016 10:23:20' ,0 ,414 ,0 ,36 ,'08/08/2016 10:23:20' ,1000010108 ,'08/08/2016 10:23:20' ,'BFAZZALARI' ,null ,0 ,0.00 ,450.00 ,'000600633564012' ,72 ,null ,null ,null ,0 )
+08/08/2016 22:23:20 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '72'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:23:20 |  SELECT TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlSaldoFinalReales  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:23:20 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalPesos  = 1450 ,TB_Cajas.vlSaldoFinalDolares  = 100 ,TB_Cajas.vlSaldoFinalReales  = 0 ,TB_Cajas.vlSaldoFinalEuros  = 50   WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:23:20 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633564 
+08/08/2016 22:23:20 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633564' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:23:27 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:23:27 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:23:27 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:23:27 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:27 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:27 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:23:31 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:32 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:23:35 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:23:35 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:35 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:23:36 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:23:37 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:34:42 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:34:43 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:34:45 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:34:45 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:34:50 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:34:50 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:34:54 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:34:58 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:34:58 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:34:58 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:34:58 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+08/08/2016 22:34:59 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:34:59 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:34:59 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:34:59 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:34:59 | Exec SP_ValorPromoRetorno
+08/08/2016 22:34:59 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:34:59 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:34:59 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:34:59 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:34:59 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:35:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:35:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:35:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:35:02 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:35:02 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:35:02 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:35:02 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:35:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+08/08/2016 22:35:02 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:35:02 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:35:02 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:35:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+08/08/2016 22:35:08 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+08/08/2016 22:35:08 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:35:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:08 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:35:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:08 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:35:08 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:09 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:09 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:12 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:35:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:12 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:35:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+08/08/2016 22:35:14 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:35:15 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:36:26 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:36:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:36:28 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:36:29 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:36:34 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:36:34 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:36:35 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:36:38 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:36:38 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:36:38 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:36:38 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+08/08/2016 22:36:39 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:36:39 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:36:39 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:36:39 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:36:39 | Exec SP_ValorPromoRetorno
+08/08/2016 22:36:39 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:36:39 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:36:39 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:36:39 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:36:39 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:36:40 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:36:40 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:36:40 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:36:42 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:36:42 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:36:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:36:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:36:42 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+08/08/2016 22:36:42 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:36:42 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:36:42 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:36:42 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+08/08/2016 22:36:45 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+08/08/2016 22:36:45 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:49 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:36:49 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:49 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:36:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+08/08/2016 22:36:51 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 12  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:36:52 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:39:18 | Exec  sco_TB_Productos_v4_1 
+08/08/2016 22:39:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+08/08/2016 22:39:21 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('b%') AND TB_Usuarios.flEliminar = 0
+08/08/2016 22:39:26 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:39:26 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+08/08/2016 22:39:26 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+08/08/2016 22:39:26 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+08/08/2016 22:39:27 | Exec sp_obtenerCajasRechazadas_v2_9 
+08/08/2016 22:39:27 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+08/08/2016 22:39:27 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+08/08/2016 22:39:27 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+08/08/2016 22:39:27 | Exec SP_ValorPromoRetorno
+08/08/2016 22:39:27 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+08/08/2016 22:39:27 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+08/08/2016 22:39:27 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+08/08/2016 22:39:27 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+08/08/2016 22:39:27 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+08/08/2016 22:39:29 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+08/08/2016 22:39:29 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:39:29 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:39:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+08/08/2016 22:39:32 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:39:34 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+08/08/2016 22:39:34 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:39:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:39:34 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:39:34 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:39:34 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:34 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:34 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+08/08/2016 22:39:36 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_Supera_KM_IVA_segunMonto_2_0'
+08/08/2016 22:39:36 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:36 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:36 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:36 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:37 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:37 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:37 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:37 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:37 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:37 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:40 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+08/08/2016 22:39:40 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 124  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:39:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:39:42 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:42 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:39:42 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5'
+08/08/2016 22:39:45 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633565' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:39:45 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:45 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633565' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,450.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,124 ,null ,null ,'FA' ,0.00 ,450.00 ,'GILIBERTI PASCUAL' ,'08/08/2016' ,null ,450.00 ,0.00 ,'Contado' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633565124' ,'08/08/2016 10:39:45' ,'08/08/2016 10:39:45' ,'22:39' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,null ,null ,null )
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+08/08/2016 22:39:45 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633565'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_ComprobantesDetalle'
+08/08/2016 22:39:45 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633565' ,'FA' ,'B' ,1 ,90001 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'Viaje' ,0 ,0 ,null ,450 ,'489' ,'489' ,'39' ,'39' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:39:45 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+08/08/2016 22:39:45 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:39:45 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,dtCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633565' ,'FA' ,'B' ,1 ,1 ,124 ,'GILIBERTI PASCUAL' ,450.00 ,450.00 ,0.00 ,0.00 ,0.00 ,null ,'Contado' ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'22:39' ,null ,1 ,'08/08/2016 10:39:45' ,0 ,414 ,0 ,36 ,'08/08/2016 10:39:45' ,1000010108 ,'08/08/2016 10:39:45' ,'BFAZZALARI' ,null ,0 ,0.00 ,450.00 ,'000600633565124' ,73 ,null ,null ,null ,0 )
+08/08/2016 22:39:45 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '73'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:39:45 |  SELECT TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlSaldoFinalReales  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:39:45 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalPesos  = 1900 ,TB_Cajas.vlSaldoFinalDolares  = 100 ,TB_Cajas.vlSaldoFinalReales  = 0 ,TB_Cajas.vlSaldoFinalEuros  = 50   WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_actualizar_puntosdeventa_facturacion_v4_7'
+08/08/2016 22:39:45 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633565 
+08/08/2016 22:39:45 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_PrepararReimpresiondeComprobante_v4_9'
+08/08/2016 22:39:45 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633565' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:39:55 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_eliminarTablasImpresion_v4_7'
+08/08/2016 22:39:55 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:39:55 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:55 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:39:55 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:55 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:55 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:39:58 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:58 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:58 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:59 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 450 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 450 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:59 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:39:59 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:00 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:40:00 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:00 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:02 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:02 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:02 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:02 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:03 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:03 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 233  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:04 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 12  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:05 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:40:15 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 489 
+08/08/2016 22:40:15 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:15 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:15 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:40:15 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:40:17 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633566' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:40:17 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:17 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633566' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,489.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,12 ,null ,null ,'FA' ,0.00 ,0.00 ,'ABEGAO CARLOS' ,'08/08/2016' ,null ,489.00 ,0.00 ,'Tarjeta de Crédito' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633566012' ,'08/08/2016 10:40:17' ,'08/08/2016 10:40:17' ,'22:40' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,'1232' ,'DNI' ,'1233' )
+08/08/2016 22:40:17 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633566'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:40:17 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633566' ,'FA' ,'B' ,1 ,90001 ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'Viaje' ,0 ,0 ,null ,450 ,'489' ,'489' ,'39' ,'39' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:40:17 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 489 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,450' 
+08/08/2016 22:40:17 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:40:17 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633566' ,'FA' ,'B' ,1 ,1 ,12 ,'ABEGAO CARLOS' ,489.00 ,0.00 ,0.00 ,0.00 ,0.00 ,null ,'Tarjeta de Crédito' ,'CENTRO - CAPITAL FEDERAL CON PEAJES  (1 DESTINO) ' ,'22:40' ,null ,0 ,0 ,453 ,0 ,36 ,'08/08/2016 10:40:17' ,1000010108 ,'08/08/2016 10:40:17' ,'BFAZZALARI' ,null ,0 ,0.00 ,489.00 ,'000600633566012' ,74 ,'1232' ,'DNI' ,'1233' ,39 )
+08/08/2016 22:40:17 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '74'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:40:17 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633566 
+08/08/2016 22:40:17 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633566' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:40:24 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:40:24 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:24 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:24 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:24 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:24 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:24 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:30 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 1  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:31 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:34 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 540 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 540 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 540 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:34 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:36 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 12  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:40:38 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:40:39 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 0 ,@vlMonto_param = 540 
+08/08/2016 22:40:39 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:39 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:39 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:40:39 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:40:41 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633567' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:40:41 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:41 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633567' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,540.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,12 ,null ,null ,'FA' ,0.00 ,540.00 ,'ABEGAO CARLOS' ,'08/08/2016' ,null ,540.00 ,0.00 ,'Contado' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633567012' ,'08/08/2016 10:40:41' ,'08/08/2016 10:40:41' ,'22:40' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'LOMAS DE SAN ISIDRO CON PEAJES  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,null ,null ,null )
+08/08/2016 22:40:41 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633567'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:40:41 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633567' ,'FA' ,'B' ,1 ,90163 ,'LOMAS DE SAN ISIDRO CON PEAJES  (1 DESTINO) ' ,'Viaje' ,null ,0 ,0 ,540 ,'587' ,'586' ,'47' ,'46' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:40:41 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 540 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,540' 
+08/08/2016 22:40:41 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:40:41 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,dtCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633567' ,'FA' ,'B' ,1 ,1 ,12 ,'ABEGAO CARLOS' ,540.00 ,540.00 ,0.00 ,0.00 ,0.00 ,null ,'Contado' ,'LOMAS DE SAN ISIDRO CON PEAJES  (1 DESTINO) ' ,'22:40' ,null ,1 ,'08/08/2016 10:40:41' ,0 ,504 ,0 ,36 ,'08/08/2016 10:40:41' ,1000010108 ,'08/08/2016 10:40:41' ,'BFAZZALARI' ,null ,0 ,0.00 ,540.00 ,'000600633567012' ,75 ,null ,null ,null ,0 )
+08/08/2016 22:40:41 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '75'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:40:41 |  SELECT TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlSaldoFinalReales  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:40:41 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalPesos  = 2440 ,TB_Cajas.vlSaldoFinalDolares  = 100 ,TB_Cajas.vlSaldoFinalReales  = 0 ,TB_Cajas.vlSaldoFinalEuros  = 50   WHERE TB_Cajas.nrCaja = 1000010108  
+08/08/2016 22:40:41 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633567 
+08/08/2016 22:40:41 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633567' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:40:44 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:40:44 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:44 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:44 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:44 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:44 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:46 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+08/08/2016 22:40:53 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 1000010108 
+08/08/2016 22:40:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+08/08/2016 22:40:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:53 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:53 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:53 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:40:53 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_obtenerAlicuotaIVA'
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_CalcularIVA'
+08/08/2016 22:41:03 | Exec SP_CalcularIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 ,@precio_menos_iva_param = 1 
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_CalcularSubtotalIVA'
+08/08/2016 22:41:03 | Exec SP_CalcularSubtotalIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec SP_CalcularIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 ,@precio_menos_iva_param = 1 
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec SP_CalcularSubtotalIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2287 
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec SP_CalcularIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 ,@precio_menos_iva_param = 1 
+08/08/2016 22:41:03 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:03 | Exec SP_CalcularSubtotalIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2287 ,@vlAlicuota_param = 21 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:03 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2287 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:06 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2486 
+08/08/2016 22:41:06 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2486 
+08/08/2016 22:41:06 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:06 | Exec SP_CalcularIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2486 ,@vlAlicuota_param = 21 ,@precio_menos_iva_param = 1 
+08/08/2016 22:41:06 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:41:06 | Exec SP_CalcularSubtotalIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2486 ,@vlAlicuota_param = 21 
+08/08/2016 22:41:06 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2486 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:06 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2486 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:41:08 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 123  AND  TB_Proveedores.flEliminar = 0  
+08/08/2016 22:41:09 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CALCULA_IVA_LIC_990'  
+08/08/2016 22:42:40 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2486 
+08/08/2016 22:42:40 | Exec SP_Supera_KM_IVA_segunMonto_2_0 @tpCategoriaIVA_param = 'CF' ,@vlKilometros_param = 189 ,@vlMonto_param = 2486 
+08/08/2016 22:42:40 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:42:40 | Exec SP_CalcularIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2486 ,@vlAlicuota_param = 21 ,@precio_menos_iva_param = 1 
+08/08/2016 22:42:40 | Exec SP_obtenerAlicuotaIVA @tpCategoriaIVA_param = 'CF' 
+08/08/2016 22:42:40 | Exec SP_CalcularSubtotalIVA @tpCategoriaIVA_param = 'CF' ,@vlMonto_param = 2486 ,@vlAlicuota_param = 21 
+08/08/2016 22:42:40 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2486 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:42:40 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2486 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:42:40 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'MONTO_EXIGE_CUIT_CUIL'  
+08/08/2016 22:42:40 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010108  AND  TB_Cajas.flEstado = 0  
+08/08/2016 22:42:42 | Exec sp_eliminarFisicamenteunComprobanteEliminadoLogicamente_v2_5 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633568' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' 
+08/08/2016 22:42:42 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:42:42 |  INSERT TB_Comprobantes (nrComprobante ,nrTalonario ,vlPagoReales ,nrDoc ,tpLetra ,cdCliente ,dsRazonSocial ,vlTotalGeneral ,dsLeyenda ,vlPagoEuros ,nmEmpleado ,nrPuesto ,nrCaja ,nrLicencia ,nrBultos ,nrPasajeros ,tpComprobante ,vlPagoDolares ,vlPagoPesos ,nmLicenciatario ,dtComprobante ,dsEmail ,vlSubtotal ,vlIVA ,cdCondVenta ,tpComision ,tpIVA ,dsOpcional3 ,cdCodBar ,dtCaja ,dtInsercion ,dsOpcional1 ,nrCAI ,dtVencimiento ,vlDiaDolar ,vlDiaEuro ,vlDiaReal ,dsOpcional2 ,dsUsuario ,flSincronizado ,flManual ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta )  VALUES ('00633568' ,'0006' ,0.00 ,null ,'B' ,1 ,'Consumidor Final' ,2486.00 ,null ,0.00 ,'BARBARA FAZZALARI' ,1 ,1000010108 ,123 ,null ,null ,'FA' ,0.00 ,0.00 ,'SUFFIA DIEGO ALEJANDRO' ,'08/08/2016' ,null ,2054.55 ,431.45 ,'Tarjeta de Crédito' ,'A Clientes' ,'CF' ,'307082499190100063506310668186314012017' ,'000600633568123' ,'08/08/2016 10:42:42' ,'08/08/2016 10:42:42' ,'22:42' ,'35063106681863' ,'14/01/2017' ,9.1 ,10 ,3.21 ,'CEIBAS - ENTRE RIOS  (1 DESTINO) ' ,'BFAZZALARI' ,0 ,'N' ,'1234' ,'CUIL' ,'2334' )
+08/08/2016 22:42:42 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '633568'   WHERE DiccionariodeDatos.nmTabla = 'TB_Comprobantes'  AND  DiccionariodeDatos.nmCampo = 'nrComprobante'  
+08/08/2016 22:42:42 |  INSERT TB_ComprobantesDetalle (nrTalonario ,nrComprobante ,tpComprobante ,tpLetra ,nrItem ,cdProducto ,dsProducto ,tpOperacion ,vlPorcentaje ,vlPrecioPeaje ,vlKilometros ,vlPrecioViaje ,vlPrecioTC ,vlPrecioTD ,vlRecargoTC ,vlRecargoTD ,dtInsercion ,flSincronizado ,nrCaja ,nrPuesto )  VALUES ('0006' ,'00633568' ,'FA' ,'B' ,1 ,90323 ,'CEIBAS - ENTRE RIOS  (1 DESTINO) ' ,'Viaje' ,null ,0 ,189 ,2287 ,'2486' ,'2484' ,'199' ,'197' ,'08/08/2016' ,0 ,1000010108 ,1 )
+08/08/2016 22:42:42 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 2486 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = '''Viaje'',null,2287' 
+08/08/2016 22:42:42 | Exec SP_ObtenerMaxnrCupon_v2_7 
+08/08/2016 22:42:42 |  INSERT TB_Cupones (nrTalonarioCliente ,nrComprabanteCliente ,tpComprobanteCliente ,tpLetraCliente ,cdCliente ,nrPuesto ,nrLicencia ,nmLicenciatario ,vlMontoCupon ,vlPagoPesos ,vlPagoDolares ,vlPagoEuros ,vlPagoReales ,nrCantidadBultos ,tpCupon ,dsDestino ,dsHoraViaje ,dsLeyenda ,flCobradoalCliente ,flCompensado ,vlaFavordelLicenciatario ,vlafavorAdmin ,vlComision ,dtCajaCliente ,nrCajaCliente ,dtCupon ,dsUsuario ,nrPasajeros ,flSincronizado ,vlIVA ,vlSubtotal ,cdCodBar ,nrCupon ,nrTarjeta ,tpDocTarjeta ,nrDocTarjeta ,vlRecargoTarjeta )  VALUES ('0006' ,'00633568' ,'FA' ,'B' ,1 ,1 ,123 ,'SUFFIA DIEGO ALEJANDRO' ,2486.00 ,0.00 ,0.00 ,0.00 ,0.00 ,null ,'Tarjeta de Crédito' ,'CEIBAS - ENTRE RIOS  (1 DESTINO) ' ,'22:42' ,null ,0 ,0 ,2450 ,0 ,36 ,'08/08/2016 10:42:42' ,1000010108 ,'08/08/2016 10:42:42' ,'BFAZZALARI' ,null ,0 ,431.45 ,2054.55 ,'000600633568123' ,76 ,'1234' ,'CUIL' ,'2334' ,199 )
+08/08/2016 22:42:42 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto1  = '76'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cupones'  AND  DiccionariodeDatos.nmCampo = 'nrCupon'  
+08/08/2016 22:42:42 | Exec spu_actualizar_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' ,@nrComprobante = 633568 
+08/08/2016 22:42:42 | Exec SP_PrepararReimpresiondeComprobante_v4_9 @nrTalonario = '0006' ,@nrComprobante = '00633568' ,@tpComprobante = 'FA' ,@tpLetra = 'B' ,@dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:42:57 | Exec SP_eliminarTablasImpresion_v4_7 @dsUsuario = 'BFAZZALARI' 
+08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:42:57 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:42:57 | Exec spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'FA' 
+08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:42:57 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+08/08/2016 22:43:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
