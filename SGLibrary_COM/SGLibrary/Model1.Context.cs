@@ -22,24 +22,23 @@ namespace SGLibrary
     
     	private static string ConnectionString()
     	{
-
-            ConfigBD objConfig = new ConfigBD();
+    
+    
+    		ConfigBD objConfig = new ConfigBD();
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
-            // obtenemos el datasource desde el archivo  ConfigBD.Xml
-            sqlBuilder.DataSource = objConfig.DataSource;
+    		// obtenemos el datasource desde el archivo  ConfigBD.Xml
+    		sqlBuilder.DataSource = objConfig.DataSource;
     		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
-            sqlBuilder.InitialCatalog = objConfig._initialCatalog ;
+    		sqlBuilder.InitialCatalog = objConfig._initialCatalog ;
     		sqlBuilder.PersistSecurityInfo = true;
     		sqlBuilder.IntegratedSecurity = false;
     		sqlBuilder.UserID ="USRSG2006";
-            sqlBuilder.Password  ="sonrisa14";
+    				sqlBuilder.Password  ="sonrisa14";
     		sqlBuilder.MultipleActiveResultSets = true;
-    
     		EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
     		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
     		entityBuilder.Metadata = "res://*/";
     		entityBuilder.Provider = "System.Data.SqlClient";
-    
     		return entityBuilder.ToString();
     	}
     
@@ -47,7 +46,7 @@ namespace SGLibrary
                : base(nameOrConnectionString: ConnectionString())
         {
     	// EULISES
-            
+    
     
         }
     
@@ -61,5 +60,7 @@ namespace SGLibrary
         public DbSet<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Usuarios> TB_Usuarios { get; set; }
+        public DbSet<TB_MovimientosContables> TB_MovimientosContables { get; set; }
+        public DbSet<TB_Conceptos> TB_Conceptos { get; set; }
     }
 }

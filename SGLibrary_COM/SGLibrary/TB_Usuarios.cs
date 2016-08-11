@@ -14,6 +14,11 @@ namespace SGLibrary
     
     public partial class TB_Usuarios
     {
+        public TB_Usuarios()
+        {
+            this.TB_MovimientosContables = new HashSet<TB_MovimientosContables>();
+        }
+    
         public string dsUsuario { get; set; }
         public string tpAcceso { get; set; }
         public string nmNombre { get; set; }
@@ -30,5 +35,7 @@ namespace SGLibrary
         public string tpNivelJerarquico { get; set; }
         public Nullable<System.DateTime> dtActualizacion { get; set; }
         public Nullable<bool> flEliminar { get; set; }
+    
+        public virtual ICollection<TB_MovimientosContables> TB_MovimientosContables { get; set; }
     }
 }

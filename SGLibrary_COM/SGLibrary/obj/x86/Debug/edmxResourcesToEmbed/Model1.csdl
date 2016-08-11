@@ -10,6 +10,12 @@
     </AssociationSet>
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
     <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.TB_Usuarios" />
+    <EntitySet Name="TB_MovimientosContables" EntityType="dbSG2000Model.TB_MovimientosContables" />
+    <AssociationSet Name="FK_TB_MovimientosContables_TB_Usuarios" Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios">
+      <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+      <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
+    </AssociationSet>
+    <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.TB_Conceptos" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -152,5 +158,69 @@
     <Property Type="String" Name="tpNivelJerarquico" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
     <Property Type="Boolean" Name="flEliminar" />
+    <NavigationProperty Name="TB_MovimientosContables" Relationship="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_MovimientosContables" />
+  </EntityType>
+  <EntityType Name="TB_MovimientosContables">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Type="Decimal" Name="IdMovimiento" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="dsMovimiento" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="IdRecibo" Precision="18" Scale="0" />
+    <Property Type="String" Name="IdProveedor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsProveedor" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="cdConcepto" />
+    <Property Type="String" Name="tpConcepto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsConcepto" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpOperacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="vlPesos" />
+    <Property Type="Double" Name="vlDolares" />
+    <Property Type="Double" Name="vlEuros" />
+    <Property Type="String" Name="nrRecibo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nrFactura" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCaja" Precision="18" Scale="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtMovimiento" Precision="3" />
+    <Property Type="String" Name="dsObservacion" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nrAnio" />
+    <Property Type="String" Name="dsUsuario_Supervisor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaPuesto" Precision="18" Scale="0" />
+    <Property Type="String" Name="tpCajaImputacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsUsuarioCajaPuesto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpMovimiento" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" FromRole="TB_MovimientosContables" ToRole="TB_Usuarios" />
+  </EntityType>
+  <Association Name="FK_TB_MovimientosContables_TB_Usuarios">
+    <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_MovimientosContables" Role="TB_MovimientosContables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Usuarios">
+        <PropertyRef Name="dsUsuario" />
+      </Principal>
+      <Dependent Role="TB_MovimientosContables">
+        <PropertyRef Name="dsUsuario_Supervisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TB_Conceptos">
+    <Key>
+      <PropertyRef Name="cdConcepto" />
+    </Key>
+    <Property Type="Int32" Name="cdConcepto" Nullable="false" />
+    <Property Type="String" Name="tpConcepto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsConcepto" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="vlConcepto" />
+    <Property Type="String" Name="tpOperacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="flEliminar" />
+    <Property Type="String" Name="tpCajaImputacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpCreadoPor" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="flSumaenCajaAdm" />
+    <Property Type="Boolean" Name="flSumaenCajaCooperativa" />
+    <Property Type="Boolean" Name="flSumaenCajaLicenciatarios" />
+    <Property Type="Boolean" Name="flOcultadoenCajaAdm" />
+    <Property Type="Boolean" Name="flOcultadoCajaLicenciatario" />
+    <Property Type="Boolean" Name="flOcultadoCajaCooperativa" />
+    <Property Type="Boolean" Name="flOcultadoenRegistracion" />
   </EntityType>
 </Schema>

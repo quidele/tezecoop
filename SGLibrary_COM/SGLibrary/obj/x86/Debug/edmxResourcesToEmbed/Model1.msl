@@ -133,5 +133,57 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="TB_MovimientosContables">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContables">
+        <MappingFragment StoreEntitySet="TB_MovimientosContables">
+          <ScalarProperty Name="tpMovimiento" ColumnName="tpMovimiento" />
+          <ScalarProperty Name="dsUsuarioCajaPuesto" ColumnName="dsUsuarioCajaPuesto" />
+          <ScalarProperty Name="tpCajaImputacion" ColumnName="tpCajaImputacion" />
+          <ScalarProperty Name="nrCajaPuesto" ColumnName="nrCajaPuesto" />
+          <ScalarProperty Name="dsUsuario_Supervisor" ColumnName="dsUsuario_Supervisor" />
+          <ScalarProperty Name="nrAnio" ColumnName="nrAnio" />
+          <ScalarProperty Name="dsObservacion" ColumnName="dsObservacion" />
+          <ScalarProperty Name="dtMovimiento" ColumnName="dtMovimiento" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="nrCaja" ColumnName="nrCaja" />
+          <ScalarProperty Name="nrFactura" ColumnName="nrFactura" />
+          <ScalarProperty Name="nrRecibo" ColumnName="nrRecibo" />
+          <ScalarProperty Name="vlEuros" ColumnName="vlEuros" />
+          <ScalarProperty Name="vlDolares" ColumnName="vlDolares" />
+          <ScalarProperty Name="vlPesos" ColumnName="vlPesos" />
+          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+          <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
+          <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
+          <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+          <ScalarProperty Name="dsProveedor" ColumnName="dsProveedor" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+          <ScalarProperty Name="dsMovimiento" ColumnName="dsMovimiento" />
+          <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Conceptos">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conceptos">
+        <MappingFragment StoreEntitySet="TB_Conceptos">
+          <ScalarProperty Name="flOcultadoenRegistracion" ColumnName="flOcultadoenRegistracion" />
+          <ScalarProperty Name="flOcultadoCajaCooperativa" ColumnName="flOcultadoCajaCooperativa" />
+          <ScalarProperty Name="flOcultadoCajaLicenciatario" ColumnName="flOcultadoCajaLicenciatario" />
+          <ScalarProperty Name="flOcultadoenCajaAdm" ColumnName="flOcultadoenCajaAdm" />
+          <ScalarProperty Name="flSumaenCajaLicenciatarios" ColumnName="flSumaenCajaLicenciatarios" />
+          <ScalarProperty Name="flSumaenCajaCooperativa" ColumnName="flSumaenCajaCooperativa" />
+          <ScalarProperty Name="flSumaenCajaAdm" ColumnName="flSumaenCajaAdm" />
+          <ScalarProperty Name="tpCreadoPor" ColumnName="tpCreadoPor" />
+          <ScalarProperty Name="tpCajaImputacion" ColumnName="tpCajaImputacion" />
+          <ScalarProperty Name="flEliminar" ColumnName="flEliminar" />
+          <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+          <ScalarProperty Name="vlConcepto" ColumnName="vlConcepto" />
+          <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
+          <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
+          <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

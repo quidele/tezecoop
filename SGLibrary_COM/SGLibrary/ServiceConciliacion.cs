@@ -41,7 +41,12 @@ namespace SGLibrary
     ComSourceInterfaces(typeof(Conciliacion_Events))]
     public class ServiceConciliacion : ServiceModel, Conciliacion_Interface
     {
-        
+
+        const int Viajes_con_Tarjeta_a_Bancos = 2035;
+        const int Conciliacion_de_Viajes = 2036;
+        const int Anula_Viajes_con_Tarjeta_a_Bancos = 2037;
+        const int Anula_conciliacion_de_Viajes = 2038;
+
         private String _usuarioActivo;
         private String _cajactiva;
         private List<String> _listado_Errores;
@@ -112,14 +117,24 @@ namespace SGLibrary
                 Console.WriteLine(listadeViajesaConciliar1.ToString());
                 Trace.TraceInformation(listadeViajesaConciliar1.ToString());
                 TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
+                
+                double TotalConciliacion=0.0; 
 
                 foreach (var item in listadeViajesaConciliar1.ToList())
                 {
                     item.flCobradoalCliente = true;
                     context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion  , nrCupon = item.nrCupon });
-             
+                    TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value ;
                 }
                 context.TB_Conciliacion.Add(objConciliacion);
+
+                context.SaveChanges();
+
+
+                
+                GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+                
+
                 context.SaveChanges();
                 transaction.Complete();
                 return;
@@ -143,6 +158,9 @@ namespace SGLibrary
                 {
                     using (TransactionScope transaction = new TransactionScope())
                     {
+
+                        double TotalConciliacion = 0.0; 
+                        double TotalConciliacionAnulado = 0.0;
 
                         // obtenemos el objeto de la BD 
                         objConciliacion = (from c in context.TB_Conciliacion
@@ -184,12 +202,22 @@ namespace SGLibrary
                             {
                                 item.flCobradoalCliente = true;
                                 context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+                                TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value ; 
                             }
                             else
+                            {
                                 item.flCobradoalCliente = false;
+                                TotalConciliacionAnulado = TotalConciliacionAnulado + item.vlMontoCupon.Value; 
+                            }
 
 
                         }
+
+                        context.SaveChanges();
+
+                        GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+                        GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+
                         context.SaveChanges();
                         transaction.Complete();
                      
@@ -250,6 +278,8 @@ namespace SGLibrary
                 using (TransactionScope transaction = new TransactionScope())
                 {
 
+                double TotalConciliacionAnulado = 0.0;
+
                 var objConciliacionBD = (from c in context.TB_Conciliacion
                                          where c.IdConciliacion == objConciliacion.IdConciliacion
                                          select c ).First <TB_Conciliacion>();
@@ -263,7 +293,7 @@ namespace SGLibrary
                     // liberamos al cupon
                     TB_Cupones objCupon = (from c in context.TB_Cupones where item.nrCupon == c.nrCupon select c).First();
                     objCupon.flCobradoalCliente = false;
-                    
+                    TotalConciliacionAnulado = TotalConciliacionAnulado + objCupon.vlMontoCupon.Value; 
                 }
                 // Eliminamos el detalle de la conciliacion
                 //context.Database.ExecuteSqlCommand("DELETE FROM TB_ConciliacionDetalle where IdConciliacion= {0}", objConciliacionBD.IdConciliacion);
@@ -273,6 +303,10 @@ namespace SGLibrary
                 objConciliacionBD.nrCajaAdm = Decimal.Parse(this._cajactiva);
                 objConciliacionBD.flestado = "E";  // Conciliacion Eliminada
                 context.SaveChanges();
+
+
+                GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+
                 transaction.Complete();
                 }
 
@@ -415,7 +449,74 @@ namespace SGLibrary
                 //return listadeViajesaConciliar.ToList();
 
             }
-
         }
+
+
+        /// <summary>
+        /// grabar movimientos contables para reflejar la salida del dinero
+        /// </summary>
+        /// <param name="una_conciliacion"></param>
+        /// <returns></returns>
+        public void GrabarAsientoContable(Double pvlPesos , Decimal pnrCaja , String pdsUsuario, TB_Conciliacion pConciliacion, 
+                                                    dbSG2000Entities pdbSG2000Entities, int cdConceptoOrigen , int cdConceptoDestino )
+        {
+               //  Setear conceptos y caja
+               //  Obtener la entidad Usuario
+            TB_MovimientosContables unMCConceptoOrigen= new TB_MovimientosContables();
+            TB_MovimientosContables unMCConceptoDestino = new TB_MovimientosContables();
+
+
+            TB_Conceptos cdConceptoConceptoOrigen = (from c in pdbSG2000Entities.TB_Conceptos where c.cdConcepto == cdConceptoOrigen select c).First();
+
+            var query = from p in pdbSG2000Entities.TB_MovimientosContables
+                        select p.IdMovimiento ;
+
+            unMCConceptoOrigen.IdMovimiento = query.Max();
+            unMCConceptoOrigen.cdConcepto = cdConceptoConceptoOrigen.cdConcepto;
+            unMCConceptoOrigen.dsMovimiento = "Conciliación Nro:  " + pConciliacion.IdConciliacion.ToString();
+            unMCConceptoOrigen.dsUsuario = pdsUsuario;
+            unMCConceptoOrigen.nrCaja = pnrCaja;
+            unMCConceptoOrigen.vlPesos = pvlPesos;
+            unMCConceptoOrigen.vlDolares  = 0.0;
+            unMCConceptoOrigen.vlEuros = 0.0;
+            unMCConceptoOrigen.dtMovimiento = DateTime.Now;   // Asignamos la fecha de la conciliacion
+            unMCConceptoOrigen.nrAnio = DateTime.Now.Year;
+            unMCConceptoOrigen.nrRecibo = pConciliacion.IdConciliacion.ToString();
+            unMCConceptoOrigen.tpCajaImputacion = cdConceptoConceptoOrigen.tpCajaImputacion  ;  // Completar desde el concepto
+            unMCConceptoOrigen.dsConcepto = cdConceptoConceptoOrigen.dsConcepto ;  // Completar desde el concepto
+            unMCConceptoOrigen.tpOperacion = cdConceptoConceptoOrigen.tpOperacion ;  // Completar desde el concepto
+            //unMCConceptoOrigen.tpMovimiento = "";
+            unMCConceptoOrigen.tpConcepto = cdConceptoConceptoOrigen.tpOperacion ;  // Completar desde el concepto
+            TB_Conceptos cdConceptoConceptoDestino = (from c in pdbSG2000Entities.TB_Conceptos where c.cdConcepto == cdConceptoDestino select c).First(); ;
+
+            pdbSG2000Entities.SaveChanges();
+
+            unMCConceptoDestino.IdMovimiento = query.Max() + 1;
+            unMCConceptoDestino.cdConcepto = cdConceptoConceptoDestino.cdConcepto;
+            unMCConceptoDestino.dsMovimiento = "Conciliación Nro:  " + pConciliacion.IdConciliacion.ToString();
+            unMCConceptoDestino.dsUsuario = pdsUsuario;
+            unMCConceptoDestino.nrCaja = pnrCaja; 
+            unMCConceptoDestino.vlPesos = pvlPesos;
+            unMCConceptoDestino.vlDolares = 0.0;
+            unMCConceptoDestino.vlEuros = 0.0;
+            unMCConceptoDestino.dtMovimiento = DateTime.Now;   // Asignamos la fecha de la conciliacion
+            unMCConceptoDestino.nrAnio = DateTime.Now.Year;
+            unMCConceptoDestino.nrRecibo = pConciliacion.IdConciliacion.ToString();
+            unMCConceptoDestino.tpCajaImputacion = cdConceptoConceptoDestino.tpCajaImputacion;  // Completar desde el concepto
+            unMCConceptoDestino.dsConcepto = cdConceptoConceptoDestino.dsConcepto;  // Completar desde el concepto
+            unMCConceptoDestino.tpOperacion = cdConceptoConceptoDestino.tpOperacion;  // Completar desde el concepto
+            //unMCConceptoOrigen.tpMovimiento = "";
+            unMCConceptoDestino.tpConcepto = cdConceptoConceptoOrigen.tpOperacion;  // Completar desde el concepto
+
+            pdbSG2000Entities.TB_MovimientosContables.Add(unMCConceptoOrigen);
+            pdbSG2000Entities.TB_MovimientosContables.Add(unMCConceptoDestino);
+            pdbSG2000Entities.SaveChanges(); 
+
+            return;   
+         }
+
+
+        
     }
 }
+
