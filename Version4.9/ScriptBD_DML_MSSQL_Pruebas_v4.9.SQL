@@ -114,3 +114,66 @@ exec SP_GenerarNuevasOpcionesdeMenues
 delete from  diccionariodedatos where nmTabla = 'rpt_cierredecaja_v4_9' 
 
 INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('rpt_cierredecaja_v4_9','@nrCaja_param','@nrCaja_param','INTEGER',null,'No','No','No',null,null,null,null,null,null,'0','0',null);
+
+ 
+
+ --- select * from tb_conceptos   where dsConcepto like '%pago%'
+ 
+
+delete from TB_Conceptos  where cdConcepto = 2035
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES (2035,'Cajas','Viajes con Tarjeta a Bancos',0,'Salida de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,1,0,1);
+
+
+delete from TB_Conceptos  where cdConcepto = 2036
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES 
+(2036,'Cajas','Conciliacion de Viajes',0, 'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,1,0,1);
+
+
+
+delete from TB_Conceptos  where cdConcepto = 2037
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES (2037,'Cajas','Anula Viajes con Tarjeta a Bancos',0,'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,1,0,1);
+
+
+delete from TB_Conceptos  where cdConcepto = 2038
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES 
+(2038,'Cajas','Anula conciliacion de Viajes',0, 'Salida de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,1,0,1);
+
+
+select * from TB_MovimientosContables where dtMovimiento > getdate() - 1
+

@@ -173,3 +173,7 @@ flOcultadoCajaLicenciatario,
 flOcultadoCajaCooperativa,
 flOcultadoenRegistracion)  VALUES 
 (2038,'Cajas','Anula conciliacion de Viajes',0, 'Salida de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,1,0,1);
+
+
+select * from TB_MovimientosContables where dtMovimiento > getdate() - 1
+
