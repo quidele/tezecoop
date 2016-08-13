@@ -904,7 +904,7 @@ Begin VB.Form Frm_VentaPasajes
          Locked          =   -1  'True
          TabIndex        =   4
          Tag             =   "vlPrecioViaje"
-         Top             =   3720
+         Top             =   3735
          Width           =   1188
       End
       Begin VB.ComboBox Combox1 
@@ -1162,7 +1162,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   109576193
+         Format          =   109051905
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2297,10 +2297,18 @@ Dim vlTotalGeneral    As Single
     ListItemNuevo.SubItems(const_cdComision) = ObtenerCampo("cdComision").Text
     
         ' campos de la version 4.9
-    ListItemNuevo.SubItems(const_vlPrecioTC) = ObtenerCampo("vlPrecioTC").Text
-    ListItemNuevo.SubItems(const_vlPrecioTD) = ObtenerCampo("vlPrecioTD").Text
-    ListItemNuevo.SubItems(const_vlRecargoTC) = ObtenerCampo("vlRecargoTC").Text
-    ListItemNuevo.SubItems(const_vlRecargoTD) = ObtenerCampo("vlRecargoTD").Text
+    Dim PORC_RECARGO_TC    As Single
+    Dim PORC_RECARGO_TD    As Single
+        
+        
+    PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
+    PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
+        
+        
+    ListItemNuevo.SubItems(const_vlPrecioTC) = Round(CSng(lvlPrecioViaje) + (lvlPrecioViaje * PORC_RECARGO_TC / 100), 0)
+    ListItemNuevo.SubItems(const_vlPrecioTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
                 
     setearCondicionVentayComision
     Recalculo_operaciones
@@ -5575,7 +5583,6 @@ Dim i    As Integer
     ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
     ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
     
-
 
     buscarPresentarProducto
     

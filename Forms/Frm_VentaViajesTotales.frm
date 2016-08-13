@@ -70,7 +70,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   1
          ItemData        =   "Frm_VentaViajesTotales.frx":0000
          Left            =   120
-         List            =   "Frm_VentaViajesTotales.frx":0013
+         List            =   "Frm_VentaViajesTotales.frx":0016
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -165,9 +165,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_VentaViajesTotales.frx":0033
+         ItemData        =   "Frm_VentaViajesTotales.frx":003C
          Left            =   75
-         List            =   "Frm_VentaViajesTotales.frx":0049
+         List            =   "Frm_VentaViajesTotales.frx":0052
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   7
