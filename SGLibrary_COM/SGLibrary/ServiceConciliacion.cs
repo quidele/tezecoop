@@ -73,7 +73,9 @@ namespace SGLibrary
             using (var context = new dbSG2000Entities())
             {
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
-                                                where (c.flCobradoalCliente == false) && (c.flCompensado == false) && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains(c.tpCupon))
+                                                where (c.flCobradoalCliente == false) && (c.flCompensado == false)
+                                                && (c.flAnulado == false)
+                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains                            (c.tpCupon))
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,
                                                              LICENCIA = c.nrLicencia,
                                                              DOC = c.tpComprobanteCliente, 
@@ -81,7 +83,7 @@ namespace SGLibrary
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
                                                              TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
                                                              DOCU_NRO = c.nrDocTarjeta
-                                                            });
+                                                }).OrderBy(c =>  c.FECHA );
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
                 Trace.TraceInformation(  listadeViajesaConciliar1.ToString());
@@ -132,7 +134,7 @@ namespace SGLibrary
 
 
                 
-                GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+               GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
                 
 
                 context.SaveChanges();
@@ -215,8 +217,8 @@ namespace SGLibrary
 
                         context.SaveChanges();
 
-                        GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
-                        GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+                       // GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+                       // GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                         context.SaveChanges();
                         transaction.Complete();
@@ -305,7 +307,7 @@ namespace SGLibrary
                 context.SaveChanges();
 
 
-                GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+                //  GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                 transaction.Complete();
                 }

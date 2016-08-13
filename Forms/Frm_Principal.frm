@@ -948,8 +948,13 @@ Dim objServiceConciliacion As Object
     End If
     On Error GoTo 0
 
-    objServiceConciliacion.UsuarioActivo objUsuario.dsUsuario
-    objServiceConciliacion.CajaActiva objCajas.nrCaja
+objLog.Grabar_Log "Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objServiceConciliacion.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
+    objServiceConciliacion.CajaActiva CStr(objCajas.nrCaja)
+
+objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
     objServiceConciliacion.execFormulario
             
 
