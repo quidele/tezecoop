@@ -18,7 +18,7 @@ namespace SGLibrary
             if (!exists)
                 System.IO.Directory.CreateDirectory(subPath);
 
-            Trace.Listeners.Add(new TextWriterTraceListener("Logs\\LOG_" + DateTime.Now.AddDays(-30).ToString().Replace("/", "").Replace(":", "") + ".log"));
+            Trace.Listeners.Add(new TextWriterTraceListener("Logs\\LOG_" + DateTime.Now.ToString().Replace("/", "").Replace(":", "") + ".log"));
             Trace.AutoFlush = true;
             Trace.TraceInformation("inicializando el logger");
 

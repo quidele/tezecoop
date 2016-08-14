@@ -14,6 +14,7 @@ namespace SGLibrary
     using System.Data.Entity.Infrastructure;
     using System.Data.SqlClient;
     using System.Data.EntityClient;
+    using System.Diagnostics; 
     
     
     public partial class dbSG2000Entities : DbContext
@@ -37,7 +38,14 @@ namespace SGLibrary
     		sqlBuilder.MultipleActiveResultSets = true;
     		EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
     		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
-    		entityBuilder.Metadata = "res://*/";
+        	//entityBuilder.Metadata = "res://*/";
+    
+            //res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl
+    
+            entityBuilder.Metadata =
+            string.Format("res://{0}/Model1.csdl|res://{0}/Model1.ssdl|res://{0}/Model1.msl",
+                                typeof(dbSG2000Entities).Assembly.FullName);
+    
     		entityBuilder.Provider = "System.Data.SqlClient";
     		return entityBuilder.ToString();
     	}

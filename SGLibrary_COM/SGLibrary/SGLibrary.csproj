@@ -251,6 +251,7 @@
     </Content>
     <Content Include="ConfigBD.Xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="Imagenes_Varias\1142302020y34zx8.jpg" />
     <Content Include="Imagenes_Varias\600px-Warning_icon.svg_.png" />
