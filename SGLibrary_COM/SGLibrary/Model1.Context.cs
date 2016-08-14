@@ -46,7 +46,12 @@ namespace SGLibrary
             string.Format("res://{0}/Model1.csdl|res://{0}/Model1.ssdl|res://{0}/Model1.msl",
                                 typeof(dbSG2000Entities).Assembly.FullName);
     
+    
+    
     		entityBuilder.Provider = "System.Data.SqlClient";
+    
+    		Trace.TraceInformation(entityBuilder.ToString());
+    
     		return entityBuilder.ToString();
     	}
     
