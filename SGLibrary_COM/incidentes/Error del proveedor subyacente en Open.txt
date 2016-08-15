@@ -1,0 +1,191 @@
+Consulte el final de este mensaje para obtener más detalles sobre cómo invocar a la depuración 
+Just-In-Time (JIT) en lugar de a este cuadro de diálogo.
+
+************** Texto de la excepción **************
+System.Data.EntityException: Error del proveedor subyacente en Open. ---> System.Data.SqlClient.SqlException: Valor de tiempo de espera caducado. El periodo de tiempo de espera se agotó al intentar consumir la confirmación del protocolo de enlace previo al inicio de sesión. El motivo podría ser que se produjo un error en el protocolo de enlace o que el servidor no pudo responder a tiempo.  El tiempo invertido al intentar conectarse a este servidor fue: [Previo al inicio de sesión] inicialización=13482; protocolo de enlace=14500;  ---> System.ComponentModel.Win32Exception: Tiempo de espera de la operación de espera agotado
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.SqlClient.SqlInternalConnectionTds..ctor(DbConnectionPoolIdentity identity, SqlConnectionString connectionOptions, SqlCredential credential, Object providerInfo, String newPassword, SecureString newSecurePassword, Boolean redirectedUserInstance, SqlConnectionString userConnectionOptions, SessionData reconnectSessionData, DbConnectionPool pool, String accessToken, Boolean applyTransientFaultHandling)
+   en System.Data.SqlClient.SqlConnectionFactory.CreateConnection(DbConnectionOptions options, DbConnectionPoolKey poolKey, Object poolGroupProviderInfo, DbConnectionPool pool, DbConnection owningConnection, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionFactory.CreatePooledConnection(DbConnectionPool pool, DbConnection owningObject, DbConnectionOptions options, DbConnectionPoolKey poolKey, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionPool.CreateObject(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.UserCreateRequest(DbConnection owningObject, DbConnectionOptions userOptions, DbConnectionInternal oldConnection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, UInt32 waitForMultipleObjectsTimeout, Boolean allowCreate, Boolean onlyOneCheckConnection, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionPool.TryGetConnection(DbConnection owningObject, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionFactory.TryGetConnection(DbConnection owningConnection, TaskCompletionSource`1 retry, DbConnectionOptions userOptions, DbConnectionInternal oldConnection, DbConnectionInternal& connection)
+   en System.Data.ProviderBase.DbConnectionInternal.TryOpenConnectionInternal(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.ProviderBase.DbConnectionClosed.TryOpenConnection(DbConnection outerConnection, DbConnectionFactory connectionFactory, TaskCompletionSource`1 retry, DbConnectionOptions userOptions)
+   en System.Data.SqlClient.SqlConnection.TryOpenInner(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.TryOpen(TaskCompletionSource`1 retry)
+   en System.Data.SqlClient.SqlConnection.Open()
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   --- Fin del seguimiento de la pila de la excepción interna ---
+   en System.Data.EntityClient.EntityConnection.OpenStoreConnectionIf(Boolean openCondition, DbConnection storeConnectionToOpen, DbConnection originalConnection, String exceptionCode, String attemptedOperation, Boolean& closeStoreConnectionOnFailure)
+   en System.Data.EntityClient.EntityConnection.Open()
+   en System.Data.Objects.ObjectContext.EnsureConnection()
+   en System.Data.Objects.ObjectQuery`1.GetResults(Nullable`1 forMergeOption)
+   en System.Data.Objects.ObjectQuery`1.System.Collections.Generic.IEnumerable<T>.GetEnumerator()
+   en System.Data.Entity.Internal.Linq.InternalQuery`1.GetEnumerator()
+   en System.Data.Entity.Infrastructure.DbQuery`1.System.Collections.Generic.IEnumerable<TResult>.GetEnumerator()
+   en System.Collections.Generic.List`1..ctor(IEnumerable`1 collection)
+   en System.Linq.Enumerable.ToList[TSource](IEnumerable`1 source)
+   en SGLibrary.ServiceConciliacion.obtenerUsuariosConciliaciones()
+   en SGLibrary.FrmConciliaciones.FrmConciliaciones_Load(Object sender, EventArgs e)
+   en System.Windows.Forms.Form.OnLoad(EventArgs e)
+   en System.Windows.Forms.Form.OnCreateControl()
+   en System.Windows.Forms.Control.CreateControl(Boolean fIgnoreVisible)
+   en System.Windows.Forms.Control.CreateControl()
+   en System.Windows.Forms.Control.WmShowWindow(Message& m)
+   en System.Windows.Forms.Control.WndProc(Message& m)
+   en System.Windows.Forms.ScrollableControl.WndProc(Message& m)
+   en System.Windows.Forms.Form.WmShowWindow(Message& m)
+   en System.Windows.Forms.Form.WndProc(Message& m)
+   en System.Windows.Forms.Control.ControlNativeWindow.OnMessage(Message& m)
+   en System.Windows.Forms.Control.ControlNativeWindow.WndProc(Message& m)
+   en System.Windows.Forms.NativeWindow.Callback(IntPtr hWnd, Int32 msg, IntPtr wparam, IntPtr lparam)
+
+
+************** Ensamblados cargados **************
+mscorlib
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1080.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/Windows/Microsoft.NET/Framework/v4.0.30319/mscorlib.dll
+----------------------------------------
+ConsoleApplication1
+    Versión del ensamblado: 1.0.0.0
+    Versión Win32: 1.0.0.0
+    Código base: file://sqlserver/Gestion_PRUEBAS/GestiondeViajesADM_Pruebas/app_net/ConsoleApplication1.exe
+----------------------------------------
+System
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1081.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System/v4.0_4.0.0.0__b77a5c561934e089/System.dll
+----------------------------------------
+SGLibrary
+    Versión del ensamblado: 1.2.1.2
+    Versión Win32: 1.2.1.2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/SGLibrary/v4.0_1.2.1.2__734d408f64d37e8f/SGLibrary.dll
+----------------------------------------
+System.Configuration
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1038.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Configuration/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Configuration.dll
+----------------------------------------
+System.Core
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Core/v4.0_4.0.0.0__b77a5c561934e089/System.Core.dll
+----------------------------------------
+System.Xml
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1064.2 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Xml/v4.0_4.0.0.0__b77a5c561934e089/System.Xml.dll
+----------------------------------------
+System.Windows.Forms
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1038.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms/v4.0_4.0.0.0__b77a5c561934e089/System.Windows.Forms.dll
+----------------------------------------
+System.Drawing
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1078.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Drawing/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Drawing.dll
+----------------------------------------
+System.Windows.Forms.resources
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Windows.Forms.resources/v4.0_4.0.0.0_es_b77a5c561934e089/System.Windows.Forms.resources.dll
+----------------------------------------
+SGLibrary.resources
+    Versión del ensamblado: 1.2.1.2
+    Versión Win32: 1.2.1.2
+    Código base: file://sqlserver/Gestion_PRUEBAS/GestiondeViajesADM_Pruebas/app_net/es-ES/SGLibrary.resources.DLL
+----------------------------------------
+EntityFramework
+    Versión del ensamblado: 4.4.0.0
+    Versión Win32: 4.4.20627.0
+    Código base: file://sqlserver/Gestion_PRUEBAS/GestiondeViajesADM_Pruebas/app_net/EntityFramework.DLL
+----------------------------------------
+System.Data
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1082.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/System.Data/v4.0_4.0.0.0__b77a5c561934e089/System.Data.dll
+----------------------------------------
+System.Data.Entity
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Data.Entity/v4.0_4.0.0.0__b77a5c561934e089/System.Data.Entity.dll
+----------------------------------------
+Anonymously Hosted DynamicMethods Assembly
+    Versión del ensamblado: 0.0.0.0
+    Versión Win32: 4.6.1080.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/mscorlib/v4.0_4.0.0.0__b77a5c561934e089/mscorlib.dll
+----------------------------------------
+System.Numerics
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Numerics/v4.0_4.0.0.0__b77a5c561934e089/System.Numerics.dll
+----------------------------------------
+System.Data.OracleClient
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1038.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/System.Data.OracleClient/v4.0_4.0.0.0__b77a5c561934e089/System.Data.OracleClient.dll
+----------------------------------------
+System.Transactions
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1080.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/System.Transactions/v4.0_4.0.0.0__b77a5c561934e089/System.Transactions.dll
+----------------------------------------
+System.Web
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1073.0 built by: NETFXREL3STAGE
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/System.Web/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.Web.dll
+----------------------------------------
+System.Xml.Linq
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Xml.Linq/v4.0_4.0.0.0__b77a5c561934e089/System.Xml.Linq.dll
+----------------------------------------
+System.xml.resources
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Xml.resources/v4.0_4.0.0.0_es_b77a5c561934e089/System.Xml.resources.dll
+----------------------------------------
+System.EnterpriseServices
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1038.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_32/System.EnterpriseServices/v4.0_4.0.0.0__b03f5f7f11d50a3a/System.EnterpriseServices.dll
+----------------------------------------
+System.Data.resources
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1038.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Data.resources/v4.0_4.0.0.0_es_b77a5c561934e089/System.Data.resources.dll
+----------------------------------------
+mscorlib.resources
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/mscorlib.resources/v4.0_4.0.0.0_es_b77a5c561934e089/mscorlib.resources.dll
+----------------------------------------
+System.Data.Entity.resources
+    Versión del ensamblado: 4.0.0.0
+    Versión Win32: 4.6.1055.0 built by: NETFXREL2
+    Código base: file:///C:/WINDOWS/Microsoft.Net/assembly/GAC_MSIL/System.Data.Entity.resources/v4.0_4.0.0.0_es_b77a5c561934e089/System.Data.Entity.resources.dll
+----------------------------------------
+
+************** Depuración JIT **************
+Para habilitar la depuración Just In Time (JIT), el archivo de configuración de esta
+aplicación o equipo (machine.config) debe tener el
+valor jitDebugging establecido en la sección system.windows.forms.
+La aplicación también se debe compilar con la depuración
+habilitada
+
+Por ejemplo:
+
+<configuration>
+    <system.windows.forms jitDebugging="true" />
+</configuration>
+
+Cuando esté habilitada la depuración JIT, cualquier excepción no controlada
+se enviará al depurador JIT registrado en el equipo
+en lugar de controlarlo mediante el cuadro de diálogo.
+
+
