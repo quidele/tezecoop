@@ -1,0 +1,4 @@
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=True;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True"
+ConsoleApplication1.vshost.exe Error: 0 : Palabra clave no admitida: 'provider'.
+ConsoleApplication1.vshost.exe Information: 0 : Logger EULISES FFINdsdsd 

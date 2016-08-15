@@ -72,20 +72,20 @@ using System.Linq;
 		sqlBuilder.DataSource = objConfig.DataSource;
 		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
 		sqlBuilder.InitialCatalog = objConfig._initialCatalog ;
-		sqlBuilder.PersistSecurityInfo = true;
+		sqlBuilder.PersistSecurityInfo = false;
 		sqlBuilder.IntegratedSecurity = false;
 		sqlBuilder.UserID ="USRSG2006";
 				sqlBuilder.Password  ="sonrisa14";
 		sqlBuilder.MultipleActiveResultSets = true;
 		EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
 		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
-    	//entityBuilder.Metadata = "res://*/";
+    	entityBuilder.Metadata = "res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl";
 
         //res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl
 
-        entityBuilder.Metadata =
+        /* entityBuilder.Metadata =
         string.Format("res://{0}/Model1.csdl|res://{0}/Model1.ssdl|res://{0}/Model1.msl",
-                            typeof(dbSG2000Entities).Assembly.FullName);
+                            typeof(dbSG2000Entities).Assembly.FullName); */
 
 
 

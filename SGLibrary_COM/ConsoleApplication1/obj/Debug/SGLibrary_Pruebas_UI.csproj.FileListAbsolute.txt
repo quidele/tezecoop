@@ -11,23 +11,6 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\Consol
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Euli\github\tezecoop\ocx\testCSharp.NET\SGLibrary\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD.Xml
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.resx
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
@@ -43,8 +26,6 @@ C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml
 C:\github\limpiar\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
@@ -67,3 +48,22 @@ C:\github\tezecoop_git\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop_git\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop_git\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop_git\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
