@@ -1,0 +1,11 @@
+---------------------------
+Inicio de sesión en Microsoft SQL Server
+---------------------------
+Error en la conexión:
+SQLState: '08001'
+Error de SQL Server: 0
+[Microsoft][SQL Server Native Client 10.0]No se puede completar el proceso de inicio de sesión debido a un retraso en la apertura de la conexión del servidor
+
+---------------------------
+Aceptar   
+---------------------------
