@@ -9,3 +9,46 @@ Error de SQL Server: 0
 ---------------------------
 Aceptar   
 ---------------------------
+
+
+http://stackoverflow.com/questions/12788972/set-database-timeout-in-entity-framework
+
+
+
+en el connection string 
+;Connection Timeout=60;
+
+http://support.esri.com/technical-article/000012132
+
+
+Error: Failed to connect to database: Unable to complete login process due to delay in opening server connection. No extended error.
+
+Error Message
+
+When attempting to connect to a SQL Server geodatabase, the following error message is received:
+
+“Error: Failed to connect to database: Unable to complete login process due to delay in opening server connection. No extended error.”
+Cause
+
+The firewall on the server may be blocking the connection.
+
+Solution or Workaround
+
+Add the SQL Server default ports 1433 and 1434 as exceptions in Windows Firewall. 
+
+Refer to the following Microsoft TechNet Library topic: 
+Configure the Windows Firewall to Allow SQL Server Access
+
+
+Related Information
+
+ArcGIS Help: A quick tour of setting up a geodatabase in SQL Server
+ArcGIS Help: Setting up a connection to SQL Server
+Created: 5/5/2016
+Last Modified: 5/5/2016
+Article ID: 000012132
+Software: ArcGIS for Server 10.1, 10.2, 10.2.1, 10.2.2 ArcSDE 10.1, 10.2, 10.2.1, 10.2.2
+
+
+Programación de Windows Firewall 
+creamos la Entity 1434
