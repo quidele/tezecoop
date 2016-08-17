@@ -71,7 +71,7 @@ namespace ConsoleApplication1
             Trace.TraceInformation("Logger EULISES 1sdsd ");
 
              ServiceConciliacion objConciliacion = new ServiceConciliacion();
-            objConciliacion.UsuarioActivo("camilaq");
+            objConciliacion.UsuarioActivo("camilap");
             objConciliacion.CajaActiva("1");
             objConciliacion.execFormulario();
 

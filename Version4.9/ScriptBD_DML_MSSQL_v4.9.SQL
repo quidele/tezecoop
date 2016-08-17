@@ -177,3 +177,5 @@ flOcultadoenRegistracion)  VALUES
 
 select * from TB_MovimientosContables where dtMovimiento > getdate() - 1
 
+
+-- delete from TB_MovimientosContables where dtMovimiento > getdate() - 1

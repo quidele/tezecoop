@@ -217,8 +217,11 @@ namespace SGLibrary
 
                         context.SaveChanges();
 
-                       // GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
-                       // GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+                        GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+                        
+
+                        
+                        GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                         context.SaveChanges();
                         transaction.Complete();
@@ -307,7 +310,7 @@ namespace SGLibrary
                 context.SaveChanges();
 
 
-                //  GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+                 GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                 transaction.Complete();
                 }
@@ -473,7 +476,7 @@ namespace SGLibrary
             var query = from p in pdbSG2000Entities.TB_MovimientosContables
                         select p.IdMovimiento ;
 
-            unMCConceptoOrigen.IdMovimiento = query.Max();
+            unMCConceptoOrigen.IdMovimiento = query.Max()+1;
             unMCConceptoOrigen.cdConcepto = cdConceptoConceptoOrigen.cdConcepto;
             unMCConceptoOrigen.dsMovimiento = "Conciliación Nro:  " + pConciliacion.IdConciliacion.ToString();
             unMCConceptoOrigen.dsUsuario = pdsUsuario;
@@ -493,7 +496,7 @@ namespace SGLibrary
 
             pdbSG2000Entities.SaveChanges();
 
-            unMCConceptoDestino.IdMovimiento = query.Max() + 1;
+            unMCConceptoDestino.IdMovimiento = query.Max() + 2;
             unMCConceptoDestino.cdConcepto = cdConceptoConceptoDestino.cdConcepto;
             unMCConceptoDestino.dsMovimiento = "Conciliación Nro:  " + pConciliacion.IdConciliacion.ToString();
             unMCConceptoDestino.dsUsuario = pdsUsuario;
