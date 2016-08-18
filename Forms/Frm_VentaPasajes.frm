@@ -24,27 +24,12 @@ Begin VB.Form Frm_VentaPasajes
       CausesValidation=   0   'False
       DataField       =   "nmNombre"
       Height          =   255
-      Index           =   13
-      Left            =   9750
-      Locked          =   -1  'True
-      TabIndex        =   101
-      Tag             =   "vlRecargoTarjeta"
-      Top             =   7575
-      Visible         =   0   'False
-      Width           =   1170
-   End
-   Begin VB.TextBox txtItemFactura 
-      Appearance      =   0  'Flat
-      BackColor       =   &H00E0E0E0&
-      CausesValidation=   0   'False
-      DataField       =   "nmNombre"
-      Height          =   255
       Index           =   12
-      Left            =   9750
+      Left            =   9570
       Locked          =   -1  'True
       TabIndex        =   100
       Tag             =   "vlRecargoTD"
-      Top             =   7215
+      Top             =   6795
       Visible         =   0   'False
       Width           =   1170
    End
@@ -55,6 +40,35 @@ Begin VB.Form Frm_VentaPasajes
       TabIndex        =   2
       Top             =   645
       Width           =   11115
+      Begin VB.TextBox txtnrCupon 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   255
+         Left            =   9660
+         Locked          =   -1  'True
+         TabIndex        =   102
+         Tag             =   "nrCupon"
+         Top             =   6930
+         Visible         =   0   'False
+         Width           =   1170
+      End
+      Begin VB.TextBox txtItemFactura 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         CausesValidation=   0   'False
+         DataField       =   "nmNombre"
+         Height          =   255
+         Index           =   13
+         Left            =   9570
+         Locked          =   -1  'True
+         TabIndex        =   101
+         Tag             =   "vlRecargoTarjeta"
+         Top             =   6525
+         Visible         =   0   'False
+         Width           =   1170
+      End
       Begin VB.TextBox txtItemFactura 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -62,11 +76,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   11
-         Left            =   9735
+         Left            =   9555
          Locked          =   -1  'True
          TabIndex        =   99
          Tag             =   "vlRecargoTC"
-         Top             =   6165
+         Top             =   5805
          Visible         =   0   'False
          Width           =   1170
       End
@@ -135,11 +149,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   8
-         Left            =   9750
+         Left            =   9510
          Locked          =   -1  'True
          TabIndex        =   90
          Tag             =   "cdComision"
-         Top             =   5655
+         Top             =   5385
          Visible         =   0   'False
          Width           =   1170
       End
@@ -423,7 +437,7 @@ Begin VB.Form Frm_VentaPasajes
          TabIndex        =   28
          TabStop         =   0   'False
          Tag             =   "nrComprobante"
-         Top             =   450
+         Top             =   435
          Width           =   1350
       End
       Begin VB.TextBox txtFields 
@@ -725,7 +739,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdFacturar 
          Caption         =   "&Facturar"
          Height          =   375
-         Left            =   5160
+         Left            =   5145
          TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
          Top             =   6945
@@ -1162,7 +1176,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   109051905
+         Format          =   109641729
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2636,7 +2650,13 @@ Dim objLicenciatario  As New CLicenciatario
                 ObtenerCampo("vlPagoReales").Text = "0,00"
     End If
     
+   ' Facturacion tarjetas
+   objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Imprimir"
+   objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Confirme los valores de Pago"
+        
+        
     Frm_VentaViajesTotales.Show 1
+    
     
     If objParametros.ObtenerValor("Facturar") = "NO" Then
         Me.cmdFacturar.Enabled = True
@@ -2683,6 +2703,7 @@ Dim objLicenciatario  As New CLicenciatario
 
     lerror = ""
         
+    
     If Not FacturarBD() Then
         If InStr(1, lerror, "Duplicate Entry", vbTextCompare) > 0 Then
                 ' actualizar nrPuesto
@@ -2698,6 +2719,46 @@ Dim objLicenciatario  As New CLicenciatario
             Exit Sub
          End If
     End If
+    
+    ' LOGICA PARA GRABAR DATOS DE TARJETAS
+    If ObtenerCampo("cdCondVenta") = "Tarjeta de Débito" Or _
+       ObtenerCampo("cdCondVenta") = "Tarjeta de Crédito" Then
+        objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Aceptar"
+        objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Ingrese los datos de la TARJETA"
+        
+        Frm_VentaViajesTotales.Show 1
+        
+        ObjTablasIO.nmTabla = "TB_Comprobantes"
+             
+        ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "nrCuponPosnet", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrCuponPosnet")
+        ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
+           
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante")
+      
+        If Not ObjTablasIO.Actualizar() Then
+            MsgBox "Los datos de la tarjeta no fueron cargados al comprobante, recolectelos en forma manual.", vbInformation, "Atención"
+        End If
+        
+        
+        ObjTablasIO.nmTabla = "TB_Cupones"
+        ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
+        ObjTablasIO.setearCampoOperadorValor "nrCuponPosnet", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrCuponPosnet")
+        ObjTablasIO.setearCampoOperadorValor "nrCupon", "=", txtnrCupon.Text
+      
+        If Not ObjTablasIO.Actualizar() Then
+            MsgBox "Los datos de la tarjeta no fueron cargados a la cuenta corriente de licenciatario, recolectelos en forma manual.", vbInformation, "Atención"
+        End If
+ 
+    End If
+    
     
     limpiarControles
     
@@ -3992,6 +4053,8 @@ Dim vlComision    As Single
         objDiccionariodeDatos.GuardarValorCampo "TB_Cupones", "nrCupon", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"), strValor
         
         strValor = CStr(CDbl(strValor) + 1)
+        
+        txtnrCupon.Text = strValor
         ObjTablasIO.setearCampoOperadorValor "nrCupon", "<-", strValor
         
         ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
@@ -5978,7 +6041,7 @@ Private Sub cargarCondVentas(pcdCliente As String)
         ObtenerCampo("cdCondVenta").AddItem "Contado"
         ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
         ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
-                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
         ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
     Case Else

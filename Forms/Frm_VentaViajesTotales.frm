@@ -3,7 +3,7 @@ Begin VB.Form Frm_VentaViajesTotales
    Appearance      =   0  'Flat
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "         Confirme los valores de Pago"
-   ClientHeight    =   4125
+   ClientHeight    =   4455
    ClientLeft      =   6060
    ClientTop       =   2775
    ClientWidth     =   4680
@@ -13,7 +13,7 @@ Begin VB.Form Frm_VentaViajesTotales
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4125
+   ScaleHeight     =   4455
    ScaleWidth      =   4680
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -27,32 +27,55 @@ Begin VB.Form Frm_VentaViajesTotales
       Caption         =   "&Aceptar"
       Default         =   -1  'True
       Height          =   375
-      Left            =   1020
+      Left            =   1050
       TabIndex        =   8
-      Top             =   3435
+      Top             =   3735
       Width           =   1050
    End
    Begin VB.CommandButton cmdCancelar 
       Cancel          =   -1  'True
       Caption         =   "Cancelar"
       Height          =   375
-      Left            =   2325
+      Left            =   2340
       TabIndex        =   10
-      Top             =   3435
+      Top             =   3735
       Width           =   1050
    End
    Begin VB.PictureBox pnl 
       Appearance      =   0  'Flat
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
-      Height          =   3060
+      Height          =   3405
       Index           =   2
       Left            =   90
-      ScaleHeight     =   3030
+      ScaleHeight     =   3375
       ScaleWidth      =   4410
       TabIndex        =   9
-      Top             =   165
+      Top             =   135
       Width           =   4440
+      Begin VB.TextBox txtFields 
+         Alignment       =   2  'Center
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   285
+         Index           =   6
+         Left            =   1920
+         MaxLength       =   20
+         TabIndex        =   20
+         Tag             =   "nrCuponPosnet"
+         Top             =   2835
+         Width           =   2385
+      End
       Begin VB.ComboBox Combox1 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -266,6 +289,19 @@ Begin VB.Form Frm_VentaViajesTotales
          Alignment       =   2  'Center
          AutoSize        =   -1  'True
          BackStyle       =   0  'Transparent
+         Caption         =   "Nro. Cupón POSNET"
+         ForeColor       =   &H00000000&
+         Height          =   195
+         Index           =   7
+         Left            =   315
+         TabIndex        =   21
+         Top             =   2925
+         Width           =   1530
+      End
+      Begin VB.Label lbl 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
          Caption         =   "Tipo Doc."
          ForeColor       =   &H00000000&
          Height          =   195
@@ -283,7 +319,7 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H00000000&
          Height          =   195
          Index           =   5
-         Left            =   1800
+         Left            =   1920
          TabIndex        =   18
          Top             =   2160
          Width           =   840
@@ -636,23 +672,25 @@ End Function
 
 Private Function validarEntradadedatos() As Boolean
     
-    If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or _
-                        ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
-       If ObtenerCampo("nrTarjeta").Text = "" Then
-            MsgBox "Debe completar el número de la tajeta", vbInformation + vbDefaultButton1
-            ObtenerCampo("nrTarjeta").SetFocus
-            Exit Function
-       End If
-       If ObtenerCampo("tpDocTarjeta").Text = "" Then
-            MsgBox "Debe completar el tipo de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
-            ObtenerCampo("tpDocTarjeta").SetFocus
-            Exit Function
-       End If
-             If ObtenerCampo("nrDocTarjeta").Text = "" Then
-            MsgBox "Debe completar el número de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
-            ObtenerCampo("nrDocTarjeta").SetFocus
-            Exit Function
-       End If
+    If Me.cmdAceptar.Caption = "Aceptar" Then
+        If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or _
+                            ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
+           If ObtenerCampo("nrTarjeta").Text = "" Then
+                MsgBox "Debe completar el número de la tajeta", vbInformation + vbDefaultButton1
+                ObtenerCampo("nrTarjeta").SetFocus
+                Exit Function
+           End If
+           If ObtenerCampo("tpDocTarjeta").Text = "" Then
+                MsgBox "Debe completar el tipo de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
+                ObtenerCampo("tpDocTarjeta").SetFocus
+                Exit Function
+           End If
+                 If ObtenerCampo("nrDocTarjeta").Text = "" Then
+                MsgBox "Debe completar el número de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
+                ObtenerCampo("nrDocTarjeta").SetFocus
+                Exit Function
+           End If
+        End If
     End If
                         
     validarEntradadedatos = True
@@ -681,7 +719,7 @@ Private Sub cmdAceptar_Click()
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrTarjeta", ObtenerCampo("nrTarjeta").Text
     objParametros.GrabarValor "Frm_VentaViajesTotales.tpDocTarjeta", ObtenerCampo("tpDocTarjeta").Text
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrDocTarjeta", ObtenerCampo("nrDocTarjeta").Text
-
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nrCuponPosnet", ObtenerCampo("nrCuponPosnet").Text
        
     
     Unload Me
@@ -727,15 +765,27 @@ Private Sub Combox1_Click(Index As Integer)
         HabilitarCampos "vlPagoReales", False
     End If
     
+    
+    
+    
     If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
                         objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
-        HabilitarCampos "nrTarjeta", True
-        HabilitarCampos "tpDocTarjeta", True
-        HabilitarCampos "nrDocTarjeta", True
+        If Me.cmdAceptar.Caption = "Aceptar" Then
+            HabilitarCampos "nrTarjeta", True
+            HabilitarCampos "tpDocTarjeta", True
+            HabilitarCampos "nrDocTarjeta", True
+            HabilitarCampos "nrCuponPosnet", True
+        Else
+            HabilitarCampos "nrTarjeta", False
+            HabilitarCampos "tpDocTarjeta", False
+            HabilitarCampos "nrDocTarjeta", False
+            HabilitarCampos "nrCuponPosnet", False
+        End If
     Else
         HabilitarCampos "nrTarjeta", False
         HabilitarCampos "tpDocTarjeta", False
         HabilitarCampos "nrDocTarjeta", False
+        HabilitarCampos "nrCuponPosnet", False
     End If
        
 End Sub
@@ -764,7 +814,10 @@ Private Sub Form_Load()
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrTarjeta", ""
     objParametros.GrabarValor "Frm_VentaViajesTotales.tpDocTarjeta", ""
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrDocTarjeta", ""
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nrCuponPosnet", ""
     
+    Me.cmdAceptar.Caption = objParametros.ObtenerValor("Frm_VentaViajesTotales.cmdAceptar.caption")
+    Me.Caption = objParametros.ObtenerValor("Frm_VentaViajesTotales.caption")
     
     objParametros.GrabarValor "Facturar", "NO"
     If objParametros.ObtenerValor("cdCondVenta") = "Cuenta Corriente" Or _
@@ -820,9 +873,10 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
         Case "nrTarjeta"
              ObtenerCampo("tpDocTarjeta").SetFocus
         Case "nrDocTarjeta"
-                cmdAceptar_Click
+            ObtenerCampo("nrCuponPosnet").SetFocus
+        Case "nrCuponPosnet"
+            cmdAceptar_Click
         End Select
-
     Else
             KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Comprobantes", _
                                 Me.txtFields(Index), KeyAscii)

@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ElimModifAnularComprobantes 
    Caption         =   "Corregir o Eliminar un Comprobante mal Cargado"
    ClientHeight    =   7740
@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   248774657
+         Format          =   109641729
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   248774657
+         Format          =   109641729
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3873,6 +3873,8 @@ Private Sub cargarCondVentas(pcdCliente As String)
         ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
         ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
+        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
     Case Else
         ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
