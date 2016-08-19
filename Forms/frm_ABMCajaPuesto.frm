@@ -711,6 +711,10 @@ End Function
 
 Private Sub Form_Activate()
 
+
+        
+
+
         Select Case objParametros.ObtenerValor("frm_ABMCajaPuesto.modo")
         Case "administracion.moficacion"
             If Not objCajas.obtenerCaja(objParametros.ObtenerValor("frm_ABMCajaPuesto.nrcaja")) Then

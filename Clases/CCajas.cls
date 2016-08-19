@@ -1111,4 +1111,24 @@ End Function
  End Function
 
 
+ ' agegado en la version 4.9.1
+ Public Function hayViajesenTarjetaconDatosIncompletos(pnrCajaAdmActual As String) As Boolean
+
+    hayViajesenTarjetaconDatosIncompletos = False
+    
+    objSPs.nmStoredProcedure = "spu_hayViajesenTarjetaconDatosIncompletos_v4_9_1"
+    objSPs.setearCampoValor "@nrCajaAdmActual", pnrCajaAdmActual
+    
+    If Not objSPs.ExecSP() Then
+        lerror = "Error al ejecutar el procedure spu_hayViajesenTarjetaconDatosIncompletos_v4_9_1, decripción: " + objSPs.Error
+        Exit Function
+    End If
+    
+    If objSPs.rs_resultados("resultado") = "SI" Then
+        lerror = objSPs.rs_resultados("descripcion")
+        hayViajesenTarjetaconDatosIncompletos = True
+    End If
+        
+    
+ End Function
  

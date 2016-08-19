@@ -16,3 +16,7 @@ INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamani
 
 
 
+delete diccionariodedatos where nmTabla = 'spu_hayViajesenTarjetaconDatosIncompletos_v4_9_1'  
+
+INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_hayViajesenTarjetaconDatosIncompletos_v4_9_1','@nrCajaAdmActual','@nrCajaAdmActual','DECIMAL','20',null,null,null,null,null,null,null,null,null,null,null,null);
+

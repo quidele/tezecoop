@@ -792,7 +792,18 @@ End Sub
 
 Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
 
+
+
+
     If KeyAscii = vbKeyReturn Then
+    
+        If Me.cmdAceptar.Caption = "Imprimir" Then
+            cmdAceptar_Click
+            Exit Sub
+        End If
+        
+    
+    
         Select Case Combox1(Index).Tag
         Case "cdCondVenta"
             If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
@@ -806,6 +817,15 @@ Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
         End Select
     End If
 
+End Sub
+
+Private Sub Form_Activate()
+
+
+    If Me.cmdAceptar.Caption = "Imprimir" Then
+        Me.cmdAceptar.SetFocus
+    End If
+    
 End Sub
 
 Private Sub Form_Load()
@@ -845,6 +865,7 @@ Private Sub Form_Load()
        
        
 
+    
 End Sub
 
 Private Sub txtFields_GotFocus(Index As Integer)
