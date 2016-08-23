@@ -85,6 +85,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ArchivoTarjetas\ArchivoTarjeta.cs" />
+    <Compile Include="ArchivoTarjetas\ArchivoTarjetaVisa.cs" />
+    <Compile Include="ArchivoTarjetas\IArchivoTarjeta.cs" />
     <Compile Include="BotonesForm.cs">
       <SubType>UserControl</SubType>
     </Compile>
