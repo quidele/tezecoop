@@ -5,7 +5,7 @@ Option Explicit
 Public Sub imprimirCierreCajaPuesto(porpantalla As Boolean)
 
     Frm_Principal.LimpiarReporte
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_cierredecaja_imprimev3_7.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_cierredecaja_imprimev4_9.rpt"
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     
     objSPs.nmStoredProcedure = "rpt_cierredecaja_v3_7"

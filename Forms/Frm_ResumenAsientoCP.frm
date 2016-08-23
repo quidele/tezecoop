@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ResumenAsientoCP 
    Caption         =   "Caja Puesto -> Caja Adm."
    ClientHeight    =   8070
@@ -315,7 +315,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -353,7 +353,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -374,7 +374,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -395,7 +395,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             BackColor       =   &H00E0E0E0&
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   700
                Underline       =   0   'False
@@ -646,7 +646,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Reales"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -665,7 +665,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -684,7 +684,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Fondo Fijo próxima Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -702,7 +702,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Saldo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -721,7 +721,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -740,7 +740,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "U$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -759,7 +759,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Pesos"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -778,7 +778,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Inicial"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -797,7 +797,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Motivo en Diferencia de Cierre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -816,7 +816,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Diferencia"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -835,7 +835,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Final Sup."
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -854,7 +854,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Cierre"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -873,7 +873,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Final Real"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -892,7 +892,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Totales Pesificados"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -958,7 +958,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1136,7 +1136,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Appearance      =   0
             BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1193,7 +1193,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Valor Real"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1212,7 +1212,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Registración Asiento"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1231,7 +1231,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Ultima Modif."
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1250,7 +1250,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Usuario"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1269,7 +1269,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Valor Euros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1288,7 +1288,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Valor Dolar u$s"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1307,7 +1307,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Nro. de Caja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1326,7 +1326,7 @@ Begin VB.Form Frm_ResumenAsientoCP
             Caption         =   "Nro. de Puesto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1539,7 +1539,7 @@ Begin VB.Form Frm_ResumenAsientoCP
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1602,7 +1602,7 @@ Begin VB.Form Frm_ResumenAsientoCP
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   217055233
+         Format          =   121700353
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1616,14 +1616,14 @@ Begin VB.Form Frm_ResumenAsientoCP
          _ExtentX        =   3149
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   217055233
+         Format          =   121700353
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
          Caption         =   "Hasta"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1641,7 +1641,7 @@ Begin VB.Form Frm_ResumenAsientoCP
          Caption         =   "Fecha Desde"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1767,7 +1767,7 @@ Private Sub imprimirCajaTotales(porpantalla As Boolean)
 
     Frm_Principal.LimpiarReporte
     
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\" & "rpt_cierredecaja_imprimev3_7.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\" & "rpt_cierredecaja_imprimev4_9.rpt"
     
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     
