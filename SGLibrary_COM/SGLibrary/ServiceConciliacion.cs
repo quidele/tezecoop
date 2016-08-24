@@ -368,7 +368,7 @@ namespace SGLibrary
             }
         }
 
-        public String ListaErrores()
+        public override String ListaErrores()
         {
             String lista_errores="";
             foreach (var item in this._listado_Errores)

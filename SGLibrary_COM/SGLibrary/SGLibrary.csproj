@@ -101,6 +101,12 @@
     <Compile Include="EXCELNuke\Workbook.cs" />
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
+    <Compile Include="FrmABMBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMBase.Designer.cs">
+      <DependentUpon>FrmABMBase.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCargaTarifas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -215,6 +221,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMBase.resx">
+      <DependentUpon>FrmABMBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCargaTarifas.resx">
       <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
