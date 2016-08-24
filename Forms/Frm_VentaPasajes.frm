@@ -1176,7 +1176,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   109641729
+         Format          =   122159105
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2322,7 +2322,7 @@ Dim vlTotalGeneral    As Single
     ListItemNuevo.SubItems(const_vlPrecioTC) = Round(CSng(lvlPrecioViaje) + (lvlPrecioViaje * PORC_RECARGO_TC / 100), 0)
     ListItemNuevo.SubItems(const_vlPrecioTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
     ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
-    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
                 
     setearCondicionVentayComision
     Recalculo_operaciones
