@@ -205,7 +205,7 @@ go
 
 
 
-sp_helptext '#tmp_ResumenCajaADM_SinPesificar'
+-- sp_helptext 'sp_versionreporte_v3_2'
 
 
 
