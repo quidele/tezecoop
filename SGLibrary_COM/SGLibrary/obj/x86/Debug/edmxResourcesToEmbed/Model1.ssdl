@@ -1,6 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
   <EntityContainer Name="dbSG2000ModelStoreContainer">
+    <EntitySet Name="TB_ArchivoTarjeta" EntityType="dbSG2000Model.Store.TB_ArchivoTarjeta" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="dbSG2000Model.Store.TB_ArchivoTarjetaDetalle" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.Store.TB_Conceptos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.Store.TB_Conciliacion" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.Store.TB_ConciliacionDetalle" store:Type="Tables" Schema="dbo" />
@@ -8,6 +10,10 @@
     <EntitySet Name="TB_MovimientosContables" EntityType="dbSG2000Model.Store.TB_MovimientosContables" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.Store.TB_Usuarios" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="dbSG2000Model.Store.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+    </AssociationSet>
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
       <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
@@ -17,6 +23,31 @@
       <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
     </AssociationSet>
   </EntityContainer>
+  <EntityType Name="TB_ArchivoTarjeta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="formato" Type="char" MaxLength="15" />
+    <Property Name="nombrearchivo" Type="nchar" MaxLength="10" />
+    <Property Name="dtproceso" Type="datetime" />
+    <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
+  </EntityType>
+  <EntityType Name="TB_ArchivoTarjetaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="bigint" Nullable="false" StoreGeneratedPattern="Identity" />
+    <Property Name="idarchivo" Type="int" />
+    <Property Name="fechaPresentacion" Type="date" />
+    <Property Name="importe" Type="decimal" Scale="3" />
+    <Property Name="fechaPago" Type="date" />
+    <Property Name="tarjeta" Type="char" MaxLength="4" />
+    <Property Name="comprobante" Type="char" MaxLength="10" />
+    <Property Name="moneda" Type="char" MaxLength="3" />
+    <Property Name="contenido" Type="varchar" MaxLength="300" />
+    <Property Name="dtInsercion" Type="datetime" />
+  </EntityType>
   <EntityType Name="TB_Conceptos">
     <Key>
       <PropertyRef Name="cdConcepto" />
@@ -121,6 +152,7 @@
     <Property Name="tpDocTarjeta" Type="nchar" MaxLength="10" />
     <Property Name="nrDocTarjeta" Type="nchar" MaxLength="25" />
     <Property Name="vlRecargoTarjeta" Type="float" />
+    <Property Name="nrCuponPosnet" Type="nchar" MaxLength="25" />
   </EntityType>
   <EntityType Name="TB_MovimientosContables">
     <Key>
@@ -195,6 +227,18 @@
     <Property Name="dtActualizacion" Type="datetime" />
     <Property Name="flEliminar" Type="bit" />
   </EntityType>
+  <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+    <End Role="TB_ArchivoTarjeta" Type="dbSG2000Model.Store.TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Role="TB_ArchivoTarjetaDetalle" Type="dbSG2000Model.Store.TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
     <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />
     <End Role="TB_ConciliacionDetalle" Type="dbSG2000Model.Store.TB_ConciliacionDetalle" Multiplicity="*" />

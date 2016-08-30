@@ -16,6 +16,12 @@
       <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
     </AssociationSet>
     <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.TB_Conceptos" />
+    <EntitySet Name="TB_ArchivoTarjeta" EntityType="dbSG2000Model.TB_ArchivoTarjeta" />
+    <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" />
+    <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -137,6 +143,7 @@
     <Property Type="String" Name="tpDocTarjeta" MaxLength="10" FixedLength="true" Unicode="true" />
     <Property Type="String" Name="nrDocTarjeta" MaxLength="25" FixedLength="true" Unicode="true" />
     <Property Type="Double" Name="vlRecargoTarjeta" />
+    <Property Type="String" Name="nrCuponPosnet" MaxLength="25" FixedLength="true" Unicode="true" />
   </EntityType>
   <EntityType Name="TB_Usuarios">
     <Key>
@@ -223,4 +230,43 @@
     <Property Type="Boolean" Name="flOcultadoCajaCooperativa" />
     <Property Type="Boolean" Name="flOcultadoenRegistracion" />
   </EntityType>
+  <EntityType Name="TB_ArchivoTarjeta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="nombrearchivo" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Type="DateTime" Name="dtproceso" Precision="3" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
+  </EntityType>
+  <EntityType Name="TB_ArchivoTarjetaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="idarchivo" />
+    <Property Type="DateTime" Name="fechaPresentacion" Precision="0" />
+    <Property Type="Decimal" Name="importe" Precision="18" Scale="3" />
+    <Property Type="DateTime" Name="fechaPago" Precision="0" />
+    <Property Type="String" Name="tarjeta" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="comprobante" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="moneda" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="contenido" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtInsercion" Precision="3" />
+    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ArchivoTarjeta" />
+  </EntityType>
+  <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -10,134 +10,76 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cup
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='nrCuponPosnet')
 	ALTER TABLE dbo.TB_Comprobantes ADD  nrCuponPosnet nchar(25) NULL;
 
-
-
-
-
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='SP_PrepararReimpresiondeComprobante_v4_9' )
-	drop procedure  dbo.SP_PrepararReimpresiondeComprobante_v4_9
-go
-
-
-create procedure   dbo.SP_PrepararReimpresiondeComprobante_v4_9 (@nrCajaAdmActual decimal(12,0))
-as
-begin	
-
-	select  tpComprobante , tpLetra ,  nrTalonario , nrComprobante  from tb_comprobantes  where nrCaja =  @nrCajaAdmActual and
-	cdCondVenta like 'Tarjeta%' 
-	and (isnull(nrDocTarjeta,'')='' or isnull(tpDocTarjeta,'') ='' or isnull(nrCuponPosnet,'')='' or  isnull(nrTarjeta,'') ='')
-
-	if @
-	select 'SI' as resultado
-
-	select 'SI' as resultado
-
-
-end
-
-
-go
-
-
-go
-
-
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-/*************************************************************/
-/* creado en la version 4.9									 */
-/* Falta terminar este store							     */
-alter PROCEDURE [dbo].[SP_rpt_PagoLicenciatario_v4_9] @IdRecibo_param numeric
-AS
-begin
-
-declare @flAnulado int
-
-set dateformat dmy
-
-	select @flAnulado=0
-
-	select * into  #tmp_recibos
-	from   TB_Recibos
-	where  IdRecibo = @IdRecibo_param
-
-
-        select  @flAnulado=flAnulado  from #tmp_recibos  where  IdRecibo = @IdRecibo_param
-
-	if @flAnulado=0
-		select  b.dsDestino,
-	            b.nrLicencia,
-	            b.nmLicenciatario,
-	            b.vlPagoPesos,
-	            b.vlPagoEuros,
-	            b.vlPagoDolares,
-	            isnull(b.vlPagoReales,0) as vlPagoReales,
-		        b.vlComision,
-	            Convert(varchar,b.dtCupon,103) as dtCupon,
-		        b.dsHoraViaje,
-	            b.vlComision + isnull(b.vlIVA,0) + isnull(b.vlRecargoTarjeta,0) as vlRetencion,
-	            b.vlIVA,
-	            b.nrTalonarioCliente,
-	            b.nrComprabanteCliente,
-	            a.IdRecibo,
-	            a.vlAcumDolares,
-	            a.vlSaldoPesos,
-	            a.vlSaldoEuros,
-	            a.vlAcumPesos,
-	            a.vlAcumEuros,
-	            a.vlAcumComision,
-	            a.vlSaldoDolares,
-	            Convert(varchar,a.dtRecibo,103) +' '+
-	            Convert(varchar,a.dtRecibo,108) as  dtRecibo,
-		        a.flAnulado,
-				b.tpCupon,
-				b.vlRecargoTarjeta
-		from #tmp_recibos a, TB_Cupones b
-		WHERE
-		       a.IdRecibo = @IdRecibo_param and
-		       b.IdRecibo = a.IdRecibo
-
-	else
-		select  
-	            b.dsDestino,
-	            b.nrLicencia,
-	            b.nmLicenciatario,
-	            b.vlPagoPesos,
-	            b.vlPagoEuros,
-	            b.vlPagoDolares,
-	            isnull(b.vlPagoReales,0) as vlPagoReales,
-	            b.vlComision,
-	            b.nrTalonarioCliente,
-	            b.nrComprabanteCliente,
-	            b.vlComision +isnull(b.vlIVA,0)  + isnull(b.vlRecargoTarjeta,0)   as vlRetencion,
-	            b.vlIVA,
-	            Convert(varchar,b.dtCupon,103) as dtCupon,
-		       b.dsHoraViaje,
-	            c.IdRecibo,
-	            c.vlAcumDolares,
-	            c.vlSaldoPesos,
-	            c.vlSaldoEuros,
-	            c.vlAcumPesos,
-	            c.vlAcumEuros,
-	            c.vlAcumComision,
-	            c.vlSaldoDolares,
-	            Convert(varchar,c.dtRecibo,103)+' '+
-	            Convert(varchar,c.dtRecibo,108) as  dtRecibo,
-				c.flAnulado,
-				b.tpCupon,
-				b.vlRecargoTarjeta
-		from  #tmp_recibos c, TB_RecibosDetalle b
-		WHERE
-		    c.IdRecibo = @IdRecibo_param and
-		    b.IdRecibo = c.IdRecibo 
-
-
-	
-end
-
 go
 
 
 
+/****** Object:  Table [dbo].[TB_ArchivoTarjeta]    Script Date: 30/08/2016 17:57:17 ******/
+DROP TABLE [dbo].[TB_ArchivoTarjeta]
+GO
+
+/****** Object:  Table [dbo].[TB_ArchivoTarjeta]    Script Date: 30/08/2016 17:57:17 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TB_ArchivoTarjeta](
+	[id] [int] IDENTITY(1,1) NOT NULL,
+	[formato] [char](15) NULL,
+	[nombrearchivo] [nchar](10) NULL,
+	[dtproceso] [datetime] NULL,
+	[dsUsuario] [varchar](20) NULL,
+ CONSTRAINT [PK_TB_ArchivoTarjeta] PRIMARY KEY CLUSTERED 
+(
+	[id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+/****** Object:  Table [dbo].[TB_ArchivoTarjetaDetalle]    Script Date: 30/08/2016 17:57:37 ******/
+DROP TABLE [dbo].[TB_ArchivoTarjetaDetalle]
+GO
+
+/****** Object:  Table [dbo].[TB_ArchivoTarjetaDetalle]    Script Date: 30/08/2016 17:57:37 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TB_ArchivoTarjetaDetalle](
+	[Id] [bigint] IDENTITY(1,1) NOT NULL,
+	[idarchivo] [int] NULL,
+	[fechaPresentacion] [date] NULL,
+	[importe] [decimal](18, 3) NULL,
+	[fechaPago] [date] NULL,
+	[tarjeta] [char](4) NULL,
+	[comprobante] [char](10) NULL,
+	[moneda] [char](3) NULL,
+	[contenido] [varchar](300) NULL,
+	[dtInsercion] [datetime] NULL,
+ CONSTRAINT [PK_TB_ArchivoTarjetaDetalle] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
 
 	
 

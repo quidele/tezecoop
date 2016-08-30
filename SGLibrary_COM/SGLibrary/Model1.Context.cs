@@ -77,5 +77,7 @@ namespace SGLibrary
         public DbSet<TB_Usuarios> TB_Usuarios { get; set; }
         public DbSet<TB_MovimientosContables> TB_MovimientosContables { get; set; }
         public DbSet<TB_Conceptos> TB_Conceptos { get; set; }
+        public DbSet<TB_ArchivoTarjeta> TB_ArchivoTarjeta { get; set; }
+        public DbSet<TB_ArchivoTarjetaDetalle> TB_ArchivoTarjetaDetalle { get; set; }
     }
 }
