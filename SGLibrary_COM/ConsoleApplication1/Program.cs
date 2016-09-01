@@ -7,6 +7,7 @@ using SGLibrary;
 using System.Management;
 using System.Windows;
 using System.Diagnostics;
+using SGLibrary.ArchivoTarjetas; 
 
 
 namespace ConsoleApplication1
@@ -68,17 +69,20 @@ namespace ConsoleApplication1
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls
             */
 
-            Trace.TraceInformation("Logger EULISES 1sdsd ");
+            /* Trace.TraceInformation("Logger EULISES 1sdsd ");
 
-             ServiceConciliacion objConciliacion = new ServiceConciliacion();
+            ServiceConciliacion objConciliacion = new ServiceConciliacion();
             objConciliacion.UsuarioActivo("camilap");
             objConciliacion.CajaActiva("1");
             objConciliacion.execFormulario();
 
-
             Trace.TraceInformation("Logger EULISES FFINdsdsd ");
-              
-             
+            */
+
+            ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
+            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
+            miArchivo.ProcesarArchivo();
+            
         }
     }
 }
