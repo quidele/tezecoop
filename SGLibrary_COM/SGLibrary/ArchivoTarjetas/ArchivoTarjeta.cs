@@ -11,12 +11,20 @@ namespace SGLibrary.ArchivoTarjetas
         List<string> _contenido;
 
         TB_ArchivoTarjeta _archivoTarjeta;
+        String _nombreArchivo;
 
-        public TB_ArchivoTarjeta MyProperty
+        public TB_ArchivoTarjeta miArchivoTarjeta
         {
             get { return (TB_ArchivoTarjeta)_archivoTarjeta; }
             set { _archivoTarjeta = value; }
         }
+
+
+        public String NombreArchivo
+        {
+            get { return (String) _nombreArchivo ; }
+        }
+
 
         public List<string> Contenido
         {
@@ -32,6 +40,8 @@ namespace SGLibrary.ArchivoTarjetas
 	    {
             // abrimos el archivo
             var reader = new StreamReader(File.OpenRead(pNombreArchivo));
+            _nombreArchivo = Path.GetFileName(pNombreArchivo);
+
             _contenido = new List<string>(); 
             while (!reader.EndOfStream)
             {
@@ -41,7 +51,7 @@ namespace SGLibrary.ArchivoTarjetas
             
 	    }
 
-        public virtual  void procesarArchivo()
+        public virtual void procesarArchivo(String pdsUsuario)
         {
             throw new System.InvalidOperationException("El cliente debe implementar este metodo clase ArchivoTarjeta");
         }

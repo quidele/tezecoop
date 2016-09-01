@@ -7,6 +7,6 @@ namespace SGLibrary.ArchivoTarjetas
 {
     public interface IArchivoTarjeta
     {
-        void cargarArchivo();         
+        void cargarArchivo(String pdsUsuario);         
     }
 }
