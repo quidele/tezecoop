@@ -79,15 +79,23 @@ namespace ConsoleApplication1
             Trace.TraceInformation("Logger EULISES FFINdsdsd ");
             */
 
-            ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
+            //ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             // archivo visa fonseca
             //miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
             
             //C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo
-            miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
+            //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
+            ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
+            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
             miArchivo.ProcesarArchivo();
-            
+            Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
+
+            miArchivo = new ArchivoTarjetaMaster();
+            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\archivo_Mastercard.txt");
+            miArchivo.ProcesarArchivo();
+            Console.WriteLine(miArchivo.miArchivoTarjeta.formato +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 
         }
     }
 }
+

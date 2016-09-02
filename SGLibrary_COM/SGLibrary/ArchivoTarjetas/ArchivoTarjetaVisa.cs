@@ -37,17 +37,18 @@ namespace SGLibrary.ArchivoTarjetas
                             case 7: break; // Plan
                             case 8: break; // Cuota
                             case 9: unTB_ArchivoTarjetaDetalle.moneda = columnas[i].Replace("pesos", "PES").Trim(); break;  // Moneda
-                            case 10: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture ); break;  // Importe
+                            case 10: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".",""), CultureInfo.InvariantCulture ) / 100 ; break;  // Importe
                             default:
                                 break;
                         }
                     }
+                    unTB_ArchivoTarjetaDetalle.contenido = item;
                    this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
                 }
               
             }
 
-            throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
+            //throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
         }
 
     }

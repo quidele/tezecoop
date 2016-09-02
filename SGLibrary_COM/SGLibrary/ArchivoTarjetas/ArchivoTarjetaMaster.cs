@@ -10,7 +10,7 @@ namespace SGLibrary.ArchivoTarjetas
 {
     public class ArchivoTarjetaMaster : ArchivoTarjeta 
     {
-        const int Cantidad_Columas = 11;
+        const int Cantidad_Columas = 12;
 
         public  override void ProcesarArchivo()
         {
@@ -30,27 +30,28 @@ namespace SGLibrary.ArchivoTarjetas
                     {
                         switch (i)
                         {
-                            case 0: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]); break; // Comercio
-                            case 1: break; // Fecha Presentaci�n
-                            case 2: unTB_ArchivoTarjetaDetalle.fechaPago = DateTime.Parse(columnas[i]); break; // Tipo Movimiento
-                            case 3: break; // Tarjeta (4 �lt. Dig.)
+                            case 0: break; // Comercio
+                            case 1: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]); break; // Fecha Presentaci�n
+                            case 2: break; // Tipo Movimiento
+                            case 3: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Replace('X', ' ').Trim(); break; // Tarjeta (4 �lt. Dig.)
                             case 4: unTB_ArchivoTarjetaDetalle.comprobante = columnas[i]; break; // Nro. Cup�n
-                            case 5: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Replace('X', ' ').Trim(); break;  // Marca
-                            case 6: break; // Moneda
-                            case 7: break; // Imp. Bruto
+                            case 5: break;  // Marca
+                            case 6: unTB_ArchivoTarjetaDetalle.moneda = columnas[i].Replace("$", "PES").Trim();  break; // Moneda
+                            case 7: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture);  break; // Imp. Bruto
                             case 8: break; // Dto. Arancel
-                            case 9: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture); break;  // Fecha Pago
+                            case 9: unTB_ArchivoTarjetaDetalle.fechaPago = DateTime.Parse(columnas[i]);  break;  // Fecha Pago
                             case 10: break;  // Fecha Pago
                             default:
                                 break;
                         }
                     }
+                    unTB_ArchivoTarjetaDetalle.contenido = item;
                    this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
                 }
               
             }
 
-            throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
+            //throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
         }
 
     }
