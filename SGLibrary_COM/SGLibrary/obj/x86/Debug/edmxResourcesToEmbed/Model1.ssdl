@@ -263,4 +263,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idArchivo" Type="int" Mode="In" />
+  </Function>
 </Schema>

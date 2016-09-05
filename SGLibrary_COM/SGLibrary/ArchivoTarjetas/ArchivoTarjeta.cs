@@ -56,7 +56,7 @@ namespace SGLibrary.ArchivoTarjetas
             Trace.TraceInformation("procesa metodo: AbrirArchivo ,  new TB_ArchivoTarjeta " );
 
             this._archivoTarjeta = new TB_ArchivoTarjeta();
-            _archivoTarjeta.dsUsuario = // El usuario debera completar este dato desde afuera
+            _archivoTarjeta.dsUsuario = "SETEAR"; // El usuario debera completar este dato desde afuera
             _archivoTarjeta.formato = "VISA";
             _archivoTarjeta.dtproceso = DateTime.Now;
             _archivoTarjeta.nombrearchivo = this.NombreArchivo;

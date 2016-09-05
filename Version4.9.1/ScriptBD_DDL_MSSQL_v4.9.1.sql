@@ -81,6 +81,15 @@ GO
 SET ANSI_PADDING OFF
 GO
 
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_conciliarAutomaticamente' )
+	drop procedure  dbo.spu_conciliarAutomaticamente
+
+go
 	
 
-
+create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
+as
+begin 
+	select 'OK' as resultado , '' descripcion_error 
+end

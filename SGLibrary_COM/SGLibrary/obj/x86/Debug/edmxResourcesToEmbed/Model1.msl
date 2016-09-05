@@ -213,5 +213,13 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

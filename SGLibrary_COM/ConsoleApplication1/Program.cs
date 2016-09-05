@@ -87,13 +87,18 @@ namespace ConsoleApplication1
             //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
             ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
-            miArchivo.ProcesarArchivo();
+
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 
-            miArchivo = new ArchivoTarjetaMaster();
-            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\archivo_Mastercard.txt");
-            miArchivo.ProcesarArchivo();
-            Console.WriteLine(miArchivo.miArchivoTarjeta.formato +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
+            ServiceConciliacionAutomatica un_ServiceConciliacionAutomatica = new ServiceConciliacionAutomatica();
+            un_ServiceConciliacionAutomatica.procesarArchivo(miArchivo); 
+            un_ServiceConciliacionAutomatica.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
+
+            
+            //miArchivo = new ArchivoTarjetaMaster();
+            //miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\archivo_Mastercard.txt");
+            //miArchivo.ProcesarArchivo();
+            //Console.WriteLine(miArchivo.miArchivoTarjeta.formato +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 
         }
     }

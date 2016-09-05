@@ -268,6 +268,9 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idArchivo" Type="int" Mode="In" />
+        </Function>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -291,9 +294,12 @@
           <EntitySet Name="TB_ArchivoTarjeta" EntityType="dbSG2000Model.TB_ArchivoTarjeta" />
           <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" />
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
-            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End EntitySet="TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" />
+            <End EntitySet="TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" />
           </AssociationSet>
+          <FunctionImport Name="spu_conciliarAutomaticamente" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_Result)">
+            <Parameter Name="idArchivo" Mode="In" Type="Int32" />
+          </FunctionImport>
         </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -530,8 +536,8 @@
           <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ArchivoTarjeta" />
         </EntityType>
         <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
-          <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
-          <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+          <End Type="dbSG2000Model.TB_ArchivoTarjeta" Multiplicity="0..1" Role="TB_ArchivoTarjeta" />
+          <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Multiplicity="*" Role="TB_ArchivoTarjetaDetalle" />
           <ReferentialConstraint>
             <Principal Role="TB_ArchivoTarjeta">
               <PropertyRef Name="id" />
@@ -541,6 +547,10 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="spu_conciliarAutomaticamente_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="1" />
+        </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -759,6 +769,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

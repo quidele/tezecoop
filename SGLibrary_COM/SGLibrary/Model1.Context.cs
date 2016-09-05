@@ -16,6 +16,9 @@ namespace SGLibrary
     using System.Data.EntityClient;
     using System.Diagnostics; 
     
+    using System.Data.Objects;
+    using System.Data.Objects.DataClasses;
+    using System.Linq;
     
     public partial class dbSG2000Entities : DbContext
     {
@@ -79,5 +82,14 @@ namespace SGLibrary
         public DbSet<TB_Conceptos> TB_Conceptos { get; set; }
         public DbSet<TB_ArchivoTarjeta> TB_ArchivoTarjeta { get; set; }
         public DbSet<TB_ArchivoTarjetaDetalle> TB_ArchivoTarjetaDetalle { get; set; }
+    
+        public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
+        {
+            var idArchivoParameter = idArchivo.HasValue ?
+                new ObjectParameter("idArchivo", idArchivo) :
+                new ObjectParameter("idArchivo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_conciliarAutomaticamente_Result>("spu_conciliarAutomaticamente", idArchivoParameter);
+        }
     }
 }
