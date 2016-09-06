@@ -200,6 +200,7 @@
     <EntitySetMapping Name="TB_ArchivoTarjetaDetalle">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjetaDetalle">
         <MappingFragment StoreEntitySet="TB_ArchivoTarjetaDetalle">
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
           <ScalarProperty Name="dtInsercion" ColumnName="dtInsercion" />
           <ScalarProperty Name="contenido" ColumnName="contenido" />
           <ScalarProperty Name="moneda" ColumnName="moneda" />

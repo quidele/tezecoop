@@ -12,6 +12,7 @@ namespace SGLibrary.ArchivoTarjetas
         List<string> _contenido;
 
         TB_ArchivoTarjeta _archivoTarjeta;
+        //List<TB_ArchivoTarjetaDetalle> _listaArchivoTarjetaDetalle;
         String _nombreArchivo;
 
         public TB_ArchivoTarjeta miArchivoTarjeta
@@ -20,6 +21,11 @@ namespace SGLibrary.ArchivoTarjetas
             set { _archivoTarjeta = value; }
         }
 
+        //public List<TB_ArchivoTarjetaDetalle> ListaArchivoTarjetaDetalle
+        //{
+        //    get { return (List<TB_ArchivoTarjetaDetalle>)_listaArchivoTarjetaDetalle; }
+        //    set { _listaArchivoTarjetaDetalle = value; }
+        //}
 
         public String NombreArchivo
         {
@@ -61,6 +67,7 @@ namespace SGLibrary.ArchivoTarjetas
             _archivoTarjeta.dtproceso = DateTime.Now;
             _archivoTarjeta.nombrearchivo = this.NombreArchivo;
 
+            //this._listaArchivoTarjetaDetalle = new List<TB_ArchivoTarjetaDetalle>();
             
 	    }
 

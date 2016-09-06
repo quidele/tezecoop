@@ -46,7 +46,7 @@ namespace SGLibrary.ArchivoTarjetas
                         }
                     }
                     unTB_ArchivoTarjetaDetalle.contenido = item;
-                   this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
+                    this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
                 }
               
             }

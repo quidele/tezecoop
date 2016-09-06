@@ -24,6 +24,7 @@ namespace SGLibrary
         public string moneda { get; set; }
         public string contenido { get; set; }
         public Nullable<System.DateTime> dtInsercion { get; set; }
+        public Nullable<decimal> nrCupon { get; set; }
     
         public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
     }

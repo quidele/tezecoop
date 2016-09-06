@@ -86,7 +86,7 @@ namespace ConsoleApplication1
             //C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo
             //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
             ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
-            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
+            miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
 
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 

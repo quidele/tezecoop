@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="124">
+      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="35">
         <EntityTypeShape EntityType="dbSG2000Model.TB_Productos" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="1.5" PointX="4.875" PointY="1" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="1.5" PointX="7.125" PointY="1" />
@@ -14,8 +14,8 @@
         <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="1.5" PointX="7.75" PointY="4.375" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conceptos" Width="2.125" PointX="3.625" PointY="8.625" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="1.5" PointX="6.75" PointY="11" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="11.375" PointY="10.25" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="1.5" PointX="10.375" PointY="1.625" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="12.625" PointY="1" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" />
       </Diagram>
     </edmx:Diagrams>
