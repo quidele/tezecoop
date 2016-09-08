@@ -36,12 +36,7 @@ namespace SGLibrary
             {
                 using (TransactionScope transaction = new TransactionScope())
                 {
-                    TB_ArchivoTarjeta una_TB_ArchivoTarjeta = new TB_ArchivoTarjeta(); 
-                    una_TB_ArchivoTarjeta.dsUsuario  = miArchivo.miArchivoTarjeta.dsUsuario ;
-                    una_TB_ArchivoTarjeta.formato = "VISA";
-                    //una_TB_ArchivoTarjeta.dtproceso =  miArchivo.miArchivoTarjeta.dtproceso ; 
-                    una_TB_ArchivoTarjeta.nombrearchivo =  miArchivo.miArchivoTarjeta.nombrearchivo ;
-
+                   
                     var item = context.TB_ArchivoTarjeta.Add(miArchivo.miArchivoTarjeta);
                     context.SaveChanges();
                     transaction.Complete(); 
@@ -78,7 +73,7 @@ namespace SGLibrary
                 try
                 {
                 // La logica de la conciliación queda suscripta en el SP
-                 spu_conciliarAutomaticamente_Result resul = context.spu_conciliarAutomaticamente(2).First();
+                    spu_conciliarAutomaticamente_Result resul = context.spu_conciliarAutomaticamente(unTB_ArchivoTarjeta.id).First();
                 // verificar el resultado que devuelve el STORE
                  Console.WriteLine(resul.resultado + " " + resul.descripcion_error);
                 }

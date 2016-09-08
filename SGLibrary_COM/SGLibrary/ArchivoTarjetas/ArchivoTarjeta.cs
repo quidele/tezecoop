@@ -12,7 +12,6 @@ namespace SGLibrary.ArchivoTarjetas
         List<string> _contenido;
 
         TB_ArchivoTarjeta _archivoTarjeta;
-        //List<TB_ArchivoTarjetaDetalle> _listaArchivoTarjetaDetalle;
         String _nombreArchivo;
 
         public TB_ArchivoTarjeta miArchivoTarjeta
@@ -21,11 +20,6 @@ namespace SGLibrary.ArchivoTarjetas
             set { _archivoTarjeta = value; }
         }
 
-        //public List<TB_ArchivoTarjetaDetalle> ListaArchivoTarjetaDetalle
-        //{
-        //    get { return (List<TB_ArchivoTarjetaDetalle>)_listaArchivoTarjetaDetalle; }
-        //    set { _listaArchivoTarjetaDetalle = value; }
-        //}
 
         public String NombreArchivo
         {
@@ -43,7 +37,7 @@ namespace SGLibrary.ArchivoTarjetas
             
 	    }
 
-        public void AbrirArchivo(string pNombreArchivo)
+        public void AbrirArchivo(string pNombreArchivo, string  pUsuario)
 	    {
 
             Trace.TraceInformation("inicia metodo: AbrirArchivo , parametro 1 " + pNombreArchivo );
@@ -62,7 +56,7 @@ namespace SGLibrary.ArchivoTarjetas
             Trace.TraceInformation("procesa metodo: AbrirArchivo ,  new TB_ArchivoTarjeta " );
 
             this._archivoTarjeta = new TB_ArchivoTarjeta();
-            _archivoTarjeta.dsUsuario = "SETEAR"; // El usuario debera completar este dato desde afuera
+            _archivoTarjeta.dsUsuario = pUsuario; // El usuario debera completar este dato desde afuera
             _archivoTarjeta.formato = "VISA";
             _archivoTarjeta.dtproceso = DateTime.Now;
             _archivoTarjeta.nombrearchivo = this.NombreArchivo;

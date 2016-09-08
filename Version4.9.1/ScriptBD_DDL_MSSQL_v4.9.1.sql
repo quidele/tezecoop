@@ -75,6 +75,7 @@ CREATE TABLE [dbo].[TB_ArchivoTarjetaDetalle](
 	[contenido] [varchar](300) NULL,
 	[dtInsercion] [datetime] NULL,
 	[nrCupon] [decimal](18, 0) NULL,
+	[nrNivelConciliacion] [smallint] NULL,
  CONSTRAINT [PK_TB_ArchivoTarjetaDetalle] PRIMARY KEY CLUSTERED 
 (
 	[Id] ASC
@@ -109,6 +110,86 @@ go
 create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
 as
 begin 
-	
+
 	select 'OK' as resultado , 'en el store debemos desarrollar toda la logica de la conciliacion' descripcion_error 
+	return; 
+	-- SP_HELP 'TB_ArchivoTarjetaDetalle'
+
+	drop table #tmpArchivoaConciliar
+	drop table #tmpViajesesaConciliar
+	drop table #tmpViajesConciliados 
+	 
+	SELECT Id, idarchivo, fechaPresentacion, importe, fechaPago, 
+		    tarjeta, comprobante, moneda, contenido, dtInsercion, 
+			nrCupon into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = 1 -- @idArchivo
+
+	select top 10 * from #tmpArchivoaConciliar
+
+	select c.nrCupon, c.dtCupon, c.nrLicencia, c.tpComprobanteCliente, 
+		   c.tpLetraCliente , c.nrTalonarioCliente , c.nrComprabanteCliente,  c.vlMontoCupon ,
+		   c.nrTarjeta, c.tpDocTarjeta,  c.nrDocTarjeta  , nrCuponPosnet 
+		    into #tmpViajesesaConciliar
+			from  TB_Cupones c
+					where (c.flCobradoalCliente = 0 ) and  (c.flCompensado = 0)
+                           and   (c.flAnulado = 0)
+                           and   (tpCupon in  ('Tarjeta de Crédito', 'Tarjeta de Débito')) 
+    
+	select * from #tmpViajesesaConciliar
+
+	-- nrNivelConciliacion 1 - mas representativo                                   
+	-- drop table  #tmpViajesConciliados           
+	select  x.Id , y.nrCupon , 1 as nrNivelConciliacion   into #tmpViajesConciliados 
+	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
+					on x.comprobante = y.nrCuponPosnet  and x.tarjeta = y.nrTarjeta
+							and x.importe = y.vlMontoCupon
+								
+
+	select * from #tmpViajesConciliados
+
+	-- nrNivelConciliacion 2 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on (x.comprobante = y.nrCuponPosnet  and x.tarjeta = y.nrTarjeta )
+							-- and x.importe = y.vlMontoCupon
+							where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
+	select * from #tmpViajesConciliados
+
+	-- nrNivelConciliacion 2 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.comprobante = y.nrCuponPosnet  and x.importe = y.vlMontoCupon
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
+	select * from #tmpViajesConciliados
+
+	-- nrNivelConciliacion 2 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+	select * from #tmpViajesConciliados
+
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta = y.nrTarjeta  and convert(date , x.fechaPresentacion  )  = convert( date ,  y.dtCupon )
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
+	select * from #tmpViajesConciliados
+
+	return; 
+
+	update x set  x.nrCupon = y.nrCupon , x.nrNivelConciliacion = y.nrNivelConciliacion   from TB_ArchivoTarjetaDetalle   x  inner join #tmpViajesConciliados  y
+					on x.Id = y.Id 
+
+	select 'OK' as resultado , 'en el store debemos desarrollar toda la logica de la conciliacion' descripcion_error 
+
 end
+
+GO
+
+
