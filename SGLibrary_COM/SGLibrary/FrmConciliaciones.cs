@@ -8,6 +8,7 @@ using System.Text;
 using System.Windows.Forms;
 using ControlesdeUsuario;
 using System.Reflection;
+using SGLibrary.ArchivoTarjetas;
 
 namespace SGLibrary
 {
@@ -16,6 +17,7 @@ namespace SGLibrary
 
 
         public ServiceConciliacion serviceConciliaciones { get; set; }
+        public ServiceConciliacionAutomatica serviceConciliacionesAutomaticas { get; set; }
 
         public FrmConciliaciones()
         {
@@ -96,8 +98,9 @@ namespace SGLibrary
                         this.txtnrCajaAdm.Text = serviceConciliaciones.CajaAdm;
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-                        var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
-                        cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
+                        this.btnSelecccionarArchivoTarjeta.Enabled = false;
+                        //var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
+                        //cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -236,7 +239,6 @@ namespace SGLibrary
             try {
             serviceConciliaciones.modificarConciliacion(listaCupones , listaCuponesConciliados, una_conciliacion);
             } catch (Exception ex ){
-
                 MessageBox.Show(ex.Message + serviceConciliaciones.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
@@ -388,10 +390,6 @@ namespace SGLibrary
 
         }
 
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-    
-        }
 
 
         private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -413,6 +411,66 @@ namespace SGLibrary
             //MessageBox.Show(cbUsuariosConciliaciones.Text);
         }
 
+        private void btnSelecccionarArchivoTarjeta_Click(object sender, EventArgs e)
+        {
+            this.btnSelecccionarArchivoTarjeta.Enabled = false;
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                /* MessageBox.Show ( openFileDialog1.FileName); */
+                nombreArchivo = openFileDialog1.FileName;
+                txtNombreArchivoTarjeta.Text = openFileDialog1.FileName;
+                procesarArchivo(openFileDialog1.FileName);
+            }
+            this.btnSelecccionarArchivoTarjeta.Enabled = true;
 
+        }
+
+
+        public string nombreArchivo { get; set; }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            switch (comboBox1.Text )
+            {
+                case "Manual":
+                    this.txtNombreArchivoTarjeta.Text = "";
+                    this.btnSelecccionarArchivoTarjeta.Enabled = false;
+                    var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
+                    cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
+                    break;
+                default:
+                    this.dataGridView1.Rows.Clear();
+                    this.txtNombreArchivoTarjeta.Text = "";
+                    this.btnSelecccionarArchivoTarjeta.Enabled = true;
+                    break;
+            }
+        }
+
+
+        private void procesarArchivo(String pNombreArchivo )
+        {
+            ArchivoTarjeta miArchivo;
+            switch (comboBox1.Text)
+            {
+                case "Visa":
+                    miArchivo = new ArchivoTarjetaVisa();
+                    break;
+                default :
+                     miArchivo = new ArchivoTarjetaMaster();
+                    break;
+
+            }
+            // realizar apertura del archivo lectura del contenido en forma generica
+            miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
+            Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
+            this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo); 
+            this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
+
+            var listadeViajesaConciliar = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+            cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text); 
+
+            // obtener los viajes conciliados automaticamente mas  
+
+        }
     }
 }

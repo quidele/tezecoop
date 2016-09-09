@@ -58,6 +58,7 @@ namespace SGLibrary
 
                 var f = new FrmConciliaciones();
                 f.serviceConciliaciones = this;
+                f.serviceConciliacionesAutomaticas = new ServiceConciliacionAutomatica();
                 f.ShowDialog();
             }
             catch (Exception ex)

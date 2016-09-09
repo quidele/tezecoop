@@ -8,6 +8,7 @@ using System.Transactions;
 using SGLibrary.ArchivoTarjetas;
 using System.Data.Entity.Validation;
 using System.Data;
+using System.Diagnostics;
 
 namespace SGLibrary
 {
@@ -86,7 +87,44 @@ namespace SGLibrary
             }
           
 
-            
+        } // FIN DE
+
+
+        public IEnumerable<Object> ObtenerViajesConciliadosAutomaticamente(Decimal  pIdArchivo)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                 join x in context.TB_ArchivoTarjetaDetalle
+                                                    on c.nrCupon  equals x.nrCupon // Join entre las dos tablas
+                                                where (c.flCobradoalCliente == false) && (c.flCompensado == false)
+                                                && (c.flAnulado == false)
+                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains(c.tpCupon))
+                                                && (x.idarchivo == pIdArchivo) // filtramos por un archivo
+                                                select new
+                                                {
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    LICENCIA = c.nrLicencia,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon,
+                                                    MONTO_CLI = x.importe,
+                                                    TARJETA = c.nrTarjeta,
+                                                    TARJETA_CLI  = x.tarjeta,
+                                                    CUPON = c.nrCuponPosnet,
+                                                    CUPON_CLI = x.comprobante
+                                                }).OrderBy(c => c.FECHA);
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
+                Trace.TraceInformation(listadeViajesaConciliar1.ToString());
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
 
 
         }

@@ -69,7 +69,7 @@ namespace ConsoleApplication1
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls
             */
 
-            /* Trace.TraceInformation("Logger EULISES 1sdsd ");
+             Trace.TraceInformation("Logger EULISES 1sdsd ");
 
             ServiceConciliacion objConciliacion = new ServiceConciliacion();
             objConciliacion.UsuarioActivo("camilap");
@@ -77,7 +77,7 @@ namespace ConsoleApplication1
             objConciliacion.execFormulario();
 
             Trace.TraceInformation("Logger EULISES FFINdsdsd ");
-            */
+            
 
             //ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             // archivo visa fonseca
@@ -85,16 +85,18 @@ namespace ConsoleApplication1
             
             //C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo
             //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv");
-            ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
+            //ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv", "quidele");
 
-            miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv", "quidele");
-            
-            Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
+            //miArchivo.AbrirArchivo("C:\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv", "quidele");
 
-            ServiceConciliacionAutomatica un_ServiceConciliacionAutomatica = new ServiceConciliacionAutomatica();
-            un_ServiceConciliacionAutomatica.procesarArchivo(miArchivo); 
-            un_ServiceConciliacionAutomatica.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
+            //miArchivo.AbrirArchivo("C:\\Users\\Euli\\github\\tezecoop\\SGLibrary_COM\\archivo_ejemplo\\ejemplo_archivo_VISA2.csv", "quidele");
+
+            //Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
+
+            //ServiceConciliacionAutomatica un_ServiceConciliacionAutomatica = new ServiceConciliacionAutomatica();
+            //un_ServiceConciliacionAutomatica.procesarArchivo(miArchivo); 
+            //un_ServiceConciliacionAutomatica.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
 
             
             //miArchivo = new ArchivoTarjetaMaster();
