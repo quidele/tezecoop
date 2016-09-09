@@ -105,7 +105,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_c
 
 go
 		
---exec dbo.spu_conciliarAutomaticamente 2 
+--exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=15 
 
 create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
 as
@@ -122,9 +122,9 @@ begin
 
 	SELECT Id, idarchivo, fechaPresentacion, importe, fechaPago, 
 		    tarjeta, comprobante, moneda, contenido, dtInsercion, 
-			nrCupon into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = 1 -- @idArchivo
+			nrCupon into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = @idArchivo
 
-	select top 10 * from #tmpArchivoaConciliar
+	-- select top 10 * from #tmpArchivoaConciliar
 
 	select c.nrCupon, c.dtCupon, c.nrLicencia, c.tpComprobanteCliente, 
 		   c.tpLetraCliente , c.nrTalonarioCliente , c.nrComprabanteCliente,  c.vlMontoCupon ,
