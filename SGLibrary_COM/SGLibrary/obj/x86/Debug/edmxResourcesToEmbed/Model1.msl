@@ -25,26 +25,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_Conciliacion">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
-        <MappingFragment StoreEntitySet="TB_Conciliacion">
-          <ScalarProperty Name="flestado" ColumnName="flestado" />
-          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
-          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
-          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
-          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TB_ConciliacionDetalle">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
-        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
-          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Cupones">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
         <MappingFragment StoreEntitySet="TB_Cupones">
@@ -186,9 +166,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="TB_ArchivoTarjeta">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjeta">
         <MappingFragment StoreEntitySet="TB_ArchivoTarjeta">
+          <ScalarProperty Name="nombreArchivoCompleto" ColumnName="nombreArchivoCompleto" />
           <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
           <ScalarProperty Name="dtproceso" ColumnName="dtproceso" />
           <ScalarProperty Name="nombrearchivo" ColumnName="nombrearchivo" />
@@ -200,6 +189,7 @@
     <EntitySetMapping Name="TB_ArchivoTarjetaDetalle">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjetaDetalle">
         <MappingFragment StoreEntitySet="TB_ArchivoTarjetaDetalle">
+          <ScalarProperty Name="nrNivelConciliacion" ColumnName="nrNivelConciliacion" />
           <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
           <ScalarProperty Name="dtInsercion" ColumnName="dtInsercion" />
           <ScalarProperty Name="contenido" ColumnName="contenido" />
@@ -214,13 +204,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
-          <ScalarProperty Name="resultado" ColumnName="resultado" />
-          <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
+    <EntitySetMapping Name="TB_Conciliacion">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+        <MappingFragment StoreEntitySet="TB_Conciliacion">
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+          <ScalarProperty Name="flestado" ColumnName="flestado" />
+          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ConciliacionDetalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

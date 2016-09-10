@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.cbtipoConciliacion = new System.Windows.Forms.ComboBox();
+            this.btnSelecccionarArchivoTarjeta = new System.Windows.Forms.Button();
+            this.txtNombreArchivoTarjeta = new System.Windows.Forms.TextBox();
             this.modoEdicion = new System.Windows.Forms.TextBox();
             this.txtflEstado = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,11 +56,9 @@
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.btnSelecccionarArchivoTarjeta = new System.Windows.Forms.Button();
-            this.txtNombreArchivoTarjeta = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.txtIdArchivo = new System.Windows.Forms.TextBox();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -76,7 +77,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelcarga.Controls.Add(this.comboBox1);
+            this.panelcarga.Controls.Add(this.txtIdArchivo);
+            this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.btnSelecccionarArchivoTarjeta);
             this.panelcarga.Controls.Add(this.txtNombreArchivoTarjeta);
             this.panelcarga.Controls.Add(this.modoEdicion);
@@ -93,10 +95,51 @@
             this.panelcarga.Controls.Add(this.cbdtConciliacion);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(944, 386);
             this.panelcarga.TabIndex = 2;
+            // 
+            // cbtipoConciliacion
+            // 
+            this.cbtipoConciliacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbtipoConciliacion.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbtipoConciliacion.FormattingEnabled = true;
+            this.cbtipoConciliacion.Items.AddRange(new object[] {
+            "Visa",
+            "Master",
+            "Manual"});
+            this.cbtipoConciliacion.Location = new System.Drawing.Point(195, 80);
+            this.cbtipoConciliacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbtipoConciliacion.Name = "cbtipoConciliacion";
+            this.cbtipoConciliacion.Size = new System.Drawing.Size(128, 24);
+            this.cbtipoConciliacion.TabIndex = 21;
+            this.cbtipoConciliacion.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // btnSelecccionarArchivoTarjeta
+            // 
+            this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(884, 80);
+            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
+            this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
+            this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
+            this.btnSelecccionarArchivoTarjeta.Text = "...";
+            this.btnSelecccionarArchivoTarjeta.UseVisualStyleBackColor = true;
+            this.btnSelecccionarArchivoTarjeta.Click += new System.EventHandler(this.btnSelecccionarArchivoTarjeta_Click);
+            // 
+            // txtNombreArchivoTarjeta
+            // 
+            this.txtNombreArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(330, 81);
+            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
+            this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
+            this.txtNombreArchivoTarjeta.ReadOnly = true;
+            this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(552, 22);
+            this.txtNombreArchivoTarjeta.TabIndex = 19;
             // 
             // modoEdicion
             // 
@@ -250,7 +293,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(981, 404);
             this.panelbusqueda.TabIndex = 0;
@@ -341,47 +384,6 @@
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
             // 
-            // btnSelecccionarArchivoTarjeta
-            // 
-            this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(884, 80);
-            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
-            this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
-            this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
-            this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
-            this.btnSelecccionarArchivoTarjeta.Text = "...";
-            this.btnSelecccionarArchivoTarjeta.UseVisualStyleBackColor = true;
-            this.btnSelecccionarArchivoTarjeta.Click += new System.EventHandler(this.btnSelecccionarArchivoTarjeta_Click);
-            // 
-            // txtNombreArchivoTarjeta
-            // 
-            this.txtNombreArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(330, 81);
-            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
-            this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
-            this.txtNombreArchivoTarjeta.ReadOnly = true;
-            this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(552, 22);
-            this.txtNombreArchivoTarjeta.TabIndex = 19;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.comboBox1.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Visa",
-            "Master",
-            "Manual"});
-            this.comboBox1.Location = new System.Drawing.Point(195, 80);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(128, 24);
-            this.comboBox1.TabIndex = 21;
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // openFileDialog1
             // 
             this.openFileDialog1.FileName = "openFileDialog1";
@@ -397,6 +399,18 @@
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
+            // 
+            // txtIdArchivo
+            // 
+            this.txtIdArchivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIdArchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdArchivo.Location = new System.Drawing.Point(793, 11);
+            this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdArchivo.Name = "txtIdArchivo";
+            this.txtIdArchivo.ReadOnly = true;
+            this.txtIdArchivo.Size = new System.Drawing.Size(31, 22);
+            this.txtIdArchivo.TabIndex = 22;
+            this.txtIdArchivo.Visible = false;
             // 
             // FrmConciliaciones
             // 
@@ -450,9 +464,10 @@
         private System.Windows.Forms.TextBox txtflEstado;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.TextBox modoEdicion;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox cbtipoConciliacion;
         private System.Windows.Forms.Button btnSelecccionarArchivoTarjeta;
         private System.Windows.Forms.TextBox txtNombreArchivoTarjeta;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.TextBox txtIdArchivo;
     }
 }

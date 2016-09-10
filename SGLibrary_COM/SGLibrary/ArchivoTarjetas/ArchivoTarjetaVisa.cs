@@ -48,6 +48,8 @@ namespace SGLibrary.ArchivoTarjetas
               
             }
 
+            this.miArchivoTarjeta.formato = "Visa";
+
             //throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
         }
 

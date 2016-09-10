@@ -63,11 +63,9 @@ namespace SGLibrary
        }
 
 
-
         // Conciliar 
         public void ConcilialiarAutomaticaticamente(TB_ArchivoTarjeta unTB_ArchivoTarjeta)
         {
-
 
             using (var context = new dbSG2000Entities())
             {
@@ -116,7 +114,8 @@ namespace SGLibrary
                                                     TARJETA = c.nrTarjeta,
                                                     TARJETA_CLI  = x.tarjeta,
                                                     CUPON = c.nrCuponPosnet,
-                                                    CUPON_CLI = x.comprobante
+                                                    CUPON_CLI = x.comprobante,
+                                                    NIVEL = x.nrNivelConciliacion
                                                 }).OrderBy(c => c.FECHA);
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 

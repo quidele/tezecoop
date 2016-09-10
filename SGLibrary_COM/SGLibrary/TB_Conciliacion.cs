@@ -25,6 +25,7 @@ namespace SGLibrary
         public Nullable<decimal> nrCajaAdm { get; set; }
         public Nullable<System.DateTime> dtModificacion { get; set; }
         public string flestado { get; set; }
+        public Nullable<int> idArchivo { get; set; }
     
         public virtual ICollection<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
     }

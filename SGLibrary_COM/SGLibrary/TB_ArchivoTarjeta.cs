@@ -24,6 +24,7 @@ namespace SGLibrary
         public string nombrearchivo { get; set; }
         public Nullable<System.DateTime> dtproceso { get; set; }
         public string dsUsuario { get; set; }
+        public string nombreArchivoCompleto { get; set; }
     
         public virtual ICollection<TB_ArchivoTarjetaDetalle> TB_ArchivoTarjetaDetalle { get; set; }
     }

@@ -10,6 +10,9 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Com
 
 
 
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Conciliacion' and COLUMN_NAME='idArchivo')
+	ALTER TABLE dbo.TB_Conciliacion ADD  idArchivo int NULL;
+
 
 go
 
@@ -42,6 +45,7 @@ CREATE TABLE [dbo].[TB_ArchivoTarjeta](
 	[nombrearchivo] [varchar](50) NULL,
 	[dtproceso] [datetime] NULL,
 	[dsUsuario] [varchar](20) NULL,
+	nombreArchivoCompleto [varchar](500),
  CONSTRAINT [PK_TB_ArchivoTarjeta] PRIMARY KEY CLUSTERED 
 (
 	[id] ASC

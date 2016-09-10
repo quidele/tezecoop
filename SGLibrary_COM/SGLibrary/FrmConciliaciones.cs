@@ -56,18 +56,19 @@ namespace SGLibrary
                 }
             }
 
-
         }
 
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
             ToolStripItem miboton = (ToolStripItem)sender;
+            this.panelcarga.Enabled = true;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
 
 
 
             switch (miboton.Tag.ToString ()){
                 case "EDIT" : {
+                    
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
                     
@@ -80,8 +81,10 @@ namespace SGLibrary
                         this.txtdsUsuario.Text = una_conciliacion.dsUsuario;
                         this.txtnrCajaAdm.Text = una_conciliacion.nrCajaAdm.ToString();
                         this.txtflEstado.Text = una_conciliacion.flestado;
-                        if (una_conciliacion.flestado =="E")
+                        if (una_conciliacion.flestado =="E"){
                             botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
+                            this.panelcarga.Enabled = false;
+                        }
                         else
                             botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
 
@@ -99,6 +102,7 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         this.btnSelecccionarArchivoTarjeta.Enabled = false;
+                        dataGridView1.Columns.Clear();
                         //var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                         //cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
@@ -205,6 +209,7 @@ namespace SGLibrary
 
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
+            una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text);
             serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
             return true;
         }
@@ -311,8 +316,80 @@ namespace SGLibrary
                     dgv.Rows[row].Cells["CONCILIAR"].Value = true; 
                 }
 
+
             }
 
+
+        }
+
+
+        public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
+        {
+
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                foreach (PropertyInfo p in pi)
+                {
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                }
+                break;
+            }
+
+
+
+            DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+            doWork.Name = "CONCILIAR";
+            doWork.HeaderText = "CONCILIAR";
+            doWork.FalseValue = "0";
+            doWork.TrueValue = "1";
+
+            dgv.Columns.Add(doWork);
+
+            foreach (object item in lista)
+            {
+                var row = dgv.Rows.Add();
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                }
+
+                if (p_modoEdicion == "SI")
+                {
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                }
+
+                switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
+                {
+                    case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
+                               dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                        break;
+                    case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
+                    case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
+                    case "4": dgv.Rows[row].DefaultCellStyle.BackColor = Color.OrangeRed; break;
+                    default:
+                 break;
+	            }
+
+            }
+            
+           
 
         }
 
@@ -430,7 +507,7 @@ namespace SGLibrary
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-            switch (comboBox1.Text )
+            switch (cbtipoConciliacion.Text )
             {
                 case "Manual":
                     this.txtNombreArchivoTarjeta.Text = "";
@@ -442,6 +519,7 @@ namespace SGLibrary
                     this.dataGridView1.Rows.Clear();
                     this.txtNombreArchivoTarjeta.Text = "";
                     this.btnSelecccionarArchivoTarjeta.Enabled = true;
+                    this.btnSelecccionarArchivoTarjeta.PerformClick();
                     break;
             }
         }
@@ -450,7 +528,7 @@ namespace SGLibrary
         private void procesarArchivo(String pNombreArchivo )
         {
             ArchivoTarjeta miArchivo;
-            switch (comboBox1.Text)
+            switch (cbtipoConciliacion.Text)
             {
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
@@ -467,8 +545,9 @@ namespace SGLibrary
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
 
             var listadeViajesaConciliar = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
-            cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text); 
+            cargarDataGridViewConciliacionAutomatica (dataGridView1, listadeViajesaConciliar, modoEdicion.Text);
 
+            this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();
             // obtener los viajes conciliados automaticamente mas  
 
         }

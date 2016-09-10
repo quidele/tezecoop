@@ -4,19 +4,19 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2008/10/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="35">
+      <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="77">
         <EntityTypeShape EntityType="dbSG2000Model.TB_Productos" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="1.5" PointX="4.875" PointY="1" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="1.5" PointX="7.125" PointY="1" />
-        <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Usuarios" Width="1.5" PointX="4.75" PointY="3.875" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="1.5" PointX="7.75" PointY="4.375" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conceptos" Width="2.125" PointX="3.625" PointY="8.625" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="1.5" PointX="10.375" PointY="1.625" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="12.625" PointY="1" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="1.5" PointX="10.375" PointY="5.625" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="12.625" PointY="5" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="1.5" PointX="10.375" PointY="1" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="1.5" PointX="12.625" PointY="1.375" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" />
+        <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

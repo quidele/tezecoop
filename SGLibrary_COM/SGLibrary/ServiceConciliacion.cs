@@ -335,7 +335,7 @@ namespace SGLibrary
                                                     where c.IdConciliacion == id 
                                                 select c)
                                                  .First ();
-                // Should Load the Orders
+                // Should Load the Details
                 una_conciliacion.TB_ConciliacionDetalle.ToList();
                  
                 return una_conciliacion;

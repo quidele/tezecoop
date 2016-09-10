@@ -10,6 +10,10 @@ namespace SGLibrary.ArchivoTarjetas
 {
     public class ArchivoTarjetaMaster : ArchivoTarjeta 
     {
+
+
+
+
         const int Cantidad_Columas = 12;
 
         public  override void ProcesarArchivo()
@@ -18,6 +22,7 @@ namespace SGLibrary.ArchivoTarjetas
 
             foreach (var item in this.Contenido)
             {
+
 
                 if  (item.IndexOf(',') > 0)   separador = ',';
                 if  (item.IndexOf(';') > 0)   separador = ';';
@@ -47,8 +52,10 @@ namespace SGLibrary.ArchivoTarjetas
                     }
                     unTB_ArchivoTarjetaDetalle.contenido = item;
                     this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
+                    
                 }
-              
+
+                this.miArchivoTarjeta.formato = "Master";
             }
 
             //throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
