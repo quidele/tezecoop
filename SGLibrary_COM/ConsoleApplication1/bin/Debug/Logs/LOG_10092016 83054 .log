@@ -1,0 +1,156 @@
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : inicia metodo: AbrirArchivo , parametro 1 C:\Users\Euli\github\tezecoop\SGLibrary_COM\archivo_ejemplo\ejemplo_archivo_VISA2.csv
+ConsoleApplication1.vshost.exe Information: 0 : procesa metodo: AbrirArchivo , OpenRead parametro 1 C:\Users\Euli\github\tezecoop\SGLibrary_COM\archivo_ejemplo\ejemplo_archivo_VISA2.csv
+ConsoleApplication1.vshost.exe Information: 0 : procesa metodo: AbrirArchivo ,  new TB_ArchivoTarjeta 
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SELECT 
+[Project1].[nrLicencia] AS [nrLicencia], 
+[Project1].[nrCupon] AS [nrCupon], 
+[Project1].[dtCupon] AS [dtCupon], 
+[Project1].[tpComprobanteCliente] AS [tpComprobanteCliente], 
+[Project1].[tpLetraCliente] AS [tpLetraCliente], 
+[Project1].[nrTalonarioCliente] AS [nrTalonarioCliente], 
+[Project1].[nrComprabanteCliente] AS [nrComprabanteCliente], 
+[Project1].[vlMontoCupon] AS [vlMontoCupon], 
+[Project1].[importe] AS [importe], 
+[Project1].[nrTarjeta] AS [nrTarjeta], 
+[Project1].[tarjeta] AS [tarjeta], 
+[Project1].[nrCuponPosnet] AS [nrCuponPosnet], 
+[Project1].[comprobante] AS [comprobante], 
+[Project1].[nrNivelConciliacion] AS [nrNivelConciliacion]
+FROM ( SELECT 
+	[Extent1].[nrCupon] AS [nrCupon], 
+	[Extent1].[nrLicencia] AS [nrLicencia], 
+	[Extent1].[vlMontoCupon] AS [vlMontoCupon], 
+	[Extent1].[dtCupon] AS [dtCupon], 
+	[Extent1].[nrTalonarioCliente] AS [nrTalonarioCliente], 
+	[Extent1].[nrComprabanteCliente] AS [nrComprabanteCliente], 
+	[Extent1].[tpComprobanteCliente] AS [tpComprobanteCliente], 
+	[Extent1].[tpLetraCliente] AS [tpLetraCliente], 
+	[Extent1].[nrTarjeta] AS [nrTarjeta], 
+	[Extent1].[nrCuponPosnet] AS [nrCuponPosnet], 
+	[Extent2].[importe] AS [importe], 
+	[Extent2].[tarjeta] AS [tarjeta], 
+	[Extent2].[comprobante] AS [comprobante], 
+	[Extent2].[nrNivelConciliacion] AS [nrNivelConciliacion]
+	FROM  [dbo].[TB_Cupones] AS [Extent1]
+	INNER JOIN [dbo].[TB_ArchivoTarjetaDetalle] AS [Extent2] ON [Extent1].[nrCupon] = [Extent2].[nrCupon]
+	WHERE (0 = [Extent1].[flCobradoalCliente]) AND (0 = [Extent1].[flCompensado]) AND (0 = [Extent1].[flAnulado]) AND ([Extent1].[tpCupon] IN ('Tarjeta de Crédito','Tarjeta de Débito')) AND ( CAST( [Extent2].[idarchivo] AS decimal(19,0)) = @p__linq__0)
+)  AS [Project1]
+ORDER BY [Project1].[dtCupon] ASC
+ConsoleApplication1.vshost.exe Information: 0 : inicia metodo: AbrirArchivo , parametro 1 C:\Users\Euli\github\tezecoop\SGLibrary_COM\archivo_ejemplo\ejemplo_archivo_VISA2.csv
+ConsoleApplication1.vshost.exe Information: 0 : procesa metodo: AbrirArchivo , OpenRead parametro 1 C:\Users\Euli\github\tezecoop\SGLibrary_COM\archivo_ejemplo\ejemplo_archivo_VISA2.csv
+ConsoleApplication1.vshost.exe Information: 0 : procesa metodo: AbrirArchivo ,  new TB_ArchivoTarjeta 
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SELECT 
+[Project1].[nrLicencia] AS [nrLicencia], 
+[Project1].[nrCupon] AS [nrCupon], 
+[Project1].[dtCupon] AS [dtCupon], 
+[Project1].[tpComprobanteCliente] AS [tpComprobanteCliente], 
+[Project1].[tpLetraCliente] AS [tpLetraCliente], 
+[Project1].[nrTalonarioCliente] AS [nrTalonarioCliente], 
+[Project1].[nrComprabanteCliente] AS [nrComprabanteCliente], 
+[Project1].[vlMontoCupon] AS [vlMontoCupon], 
+[Project1].[importe] AS [importe], 
+[Project1].[nrTarjeta] AS [nrTarjeta], 
+[Project1].[tarjeta] AS [tarjeta], 
+[Project1].[nrCuponPosnet] AS [nrCuponPosnet], 
+[Project1].[comprobante] AS [comprobante], 
+[Project1].[nrNivelConciliacion] AS [nrNivelConciliacion]
+FROM ( SELECT 
+	[Extent1].[nrCupon] AS [nrCupon], 
+	[Extent1].[nrLicencia] AS [nrLicencia], 
+	[Extent1].[vlMontoCupon] AS [vlMontoCupon], 
+	[Extent1].[dtCupon] AS [dtCupon], 
+	[Extent1].[nrTalonarioCliente] AS [nrTalonarioCliente], 
+	[Extent1].[nrComprabanteCliente] AS [nrComprabanteCliente], 
+	[Extent1].[tpComprobanteCliente] AS [tpComprobanteCliente], 
+	[Extent1].[tpLetraCliente] AS [tpLetraCliente], 
+	[Extent1].[nrTarjeta] AS [nrTarjeta], 
+	[Extent1].[nrCuponPosnet] AS [nrCuponPosnet], 
+	[Extent2].[importe] AS [importe], 
+	[Extent2].[tarjeta] AS [tarjeta], 
+	[Extent2].[comprobante] AS [comprobante], 
+	[Extent2].[nrNivelConciliacion] AS [nrNivelConciliacion]
+	FROM  [dbo].[TB_Cupones] AS [Extent1]
+	INNER JOIN [dbo].[TB_ArchivoTarjetaDetalle] AS [Extent2] ON [Extent1].[nrCupon] = [Extent2].[nrCupon]
+	WHERE (0 = [Extent1].[flCobradoalCliente]) AND (0 = [Extent1].[flCompensado]) AND (0 = [Extent1].[flAnulado]) AND ([Extent1].[tpCupon] IN ('Tarjeta de Crédito','Tarjeta de Débito')) AND ( CAST( [Extent2].[idarchivo] AS decimal(19,0)) = @p__linq__0)
+)  AS [Project1]
+ORDER BY [Project1].[dtCupon] ASC
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SELECT 
+[Extent1].[nrCupon] AS [nrCupon], 
+[Extent1].[cdCliente] AS [cdCliente], 
+[Extent1].[nrPuesto] AS [nrPuesto], 
+[Extent1].[nrLicencia] AS [nrLicencia], 
+[Extent1].[nmLicenciatario] AS [nmLicenciatario], 
+[Extent1].[tpCupon] AS [tpCupon], 
+[Extent1].[vlMontoCupon] AS [vlMontoCupon], 
+[Extent1].[vlaFavordelLicenciatario] AS [vlaFavordelLicenciatario], 
+[Extent1].[vlafavorAdmin] AS [vlafavorAdmin], 
+[Extent1].[vlPagoPesos] AS [vlPagoPesos], 
+[Extent1].[vlPagoEuros] AS [vlPagoEuros], 
+[Extent1].[vlPagoDolares] AS [vlPagoDolares], 
+[Extent1].[vlComision] AS [vlComision], 
+[Extent1].[nrCantidadBultos] AS [nrCantidadBultos], 
+[Extent1].[nrPasajeros] AS [nrPasajeros], 
+[Extent1].[dtCupon] AS [dtCupon], 
+[Extent1].[nrTalonarioCliente] AS [nrTalonarioCliente], 
+[Extent1].[nrComprabanteCliente] AS [nrComprabanteCliente], 
+[Extent1].[tpComprobanteCliente] AS [tpComprobanteCliente], 
+[Extent1].[tpLetraCliente] AS [tpLetraCliente], 
+[Extent1].[flCobradoalCliente] AS [flCobradoalCliente], 
+[Extent1].[dtCobradoalCliente] AS [dtCobradoalCliente], 
+[Extent1].[nrCajaCliente] AS [nrCajaCliente], 
+[Extent1].[dtCajaCliente] AS [dtCajaCliente], 
+[Extent1].[nrTalonarioProveedor] AS [nrTalonarioProveedor], 
+[Extent1].[nrComprabanteProveedor] AS [nrComprabanteProveedor], 
+[Extent1].[tpComprobanteProveedor] AS [tpComprobanteProveedor], 
+[Extent1].[tpLetraLetraProveedor] AS [tpLetraLetraProveedor], 
+[Extent1].[flCompensado] AS [flCompensado], 
+[Extent1].[dtCompensado] AS [dtCompensado], 
+[Extent1].[nrCajaLicenciatario] AS [nrCajaLicenciatario], 
+[Extent1].[dtCajaLicenciatario] AS [dtCajaLicenciatario], 
+[Extent1].[dsUsuario] AS [dsUsuario], 
+[Extent1].[nrLiquidacionProveedores] AS [nrLiquidacionProveedores], 
+[Extent1].[nrLiquidacionCliente] AS [nrLiquidacionCliente], 
+[Extent1].[cdCodBar] AS [cdCodBar], 
+[Extent1].[flAnulado] AS [flAnulado], 
+[Extent1].[dtAnulado] AS [dtAnulado], 
+[Extent1].[IdRecibo] AS [IdRecibo], 
+[Extent1].[IdReciboCtaCte] AS [IdReciboCtaCte], 
+[Extent1].[dsObservacion] AS [dsObservacion], 
+[Extent1].[dsDestino] AS [dsDestino], 
+[Extent1].[dsHoraViaje] AS [dsHoraViaje], 
+[Extent1].[problema] AS [problema], 
+[Extent1].[Mellizo] AS [Mellizo], 
+[Extent1].[dtActualizacion] AS [dtActualizacion], 
+[Extent1].[flEliminar] AS [flEliminar], 
+[Extent1].[flSincronizado] AS [flSincronizado], 
+[Extent1].[vlSubtotal] AS [vlSubtotal], 
+[Extent1].[vlIVA] AS [vlIVA], 
+[Extent1].[nrCajaCtaCte] AS [nrCajaCtaCte], 
+[Extent1].[dtCajaCtaCte] AS [dtCajaCtaCte], 
+[Extent1].[dsLeyenda] AS [dsLeyenda], 
+[Extent1].[vlPagoReales] AS [vlPagoReales], 
+[Extent1].[flNoCompensado] AS [flNoCompensado], 
+[Extent1].[dtNoCompensado] AS [dtNoCompensado], 
+[Extent1].[nrTarjeta] AS [nrTarjeta], 
+[Extent1].[tpDocTarjeta] AS [tpDocTarjeta], 
+[Extent1].[nrDocTarjeta] AS [nrDocTarjeta], 
+[Extent1].[vlRecargoTarjeta] AS [vlRecargoTarjeta], 
+[Extent1].[nrCuponPosnet] AS [nrCuponPosnet]
+FROM [dbo].[TB_Cupones] AS [Extent1]
+WHERE [Extent1].[nrCupon] IN (cast(68 as decimal(18)),cast(70 as decimal(18)),cast(90 as decimal(18)))
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : Logger EULISES FFINdsdsd 

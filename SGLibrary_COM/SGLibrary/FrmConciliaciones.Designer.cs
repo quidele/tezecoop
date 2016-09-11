@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.txtIdArchivo = new System.Windows.Forms.TextBox();
             this.cbtipoConciliacion = new System.Windows.Forms.ComboBox();
             this.btnSelecccionarArchivoTarjeta = new System.Windows.Forms.Button();
             this.txtNombreArchivoTarjeta = new System.Windows.Forms.TextBox();
@@ -58,7 +59,6 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.txtIdArchivo = new System.Windows.Forms.TextBox();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -99,6 +99,17 @@
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(944, 386);
             this.panelcarga.TabIndex = 2;
+            // 
+            // txtIdArchivo
+            // 
+            this.txtIdArchivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIdArchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdArchivo.Location = new System.Drawing.Point(793, 11);
+            this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdArchivo.Name = "txtIdArchivo";
+            this.txtIdArchivo.ReadOnly = true;
+            this.txtIdArchivo.Size = new System.Drawing.Size(31, 22);
+            this.txtIdArchivo.TabIndex = 22;
             // 
             // cbtipoConciliacion
             // 
@@ -151,7 +162,6 @@
             this.modoEdicion.ReadOnly = true;
             this.modoEdicion.Size = new System.Drawing.Size(31, 22);
             this.modoEdicion.TabIndex = 17;
-            this.modoEdicion.Visible = false;
             // 
             // txtflEstado
             // 
@@ -399,18 +409,6 @@
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
-            // 
-            // txtIdArchivo
-            // 
-            this.txtIdArchivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtIdArchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdArchivo.Location = new System.Drawing.Point(793, 11);
-            this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdArchivo.Name = "txtIdArchivo";
-            this.txtIdArchivo.ReadOnly = true;
-            this.txtIdArchivo.Size = new System.Drawing.Size(31, 22);
-            this.txtIdArchivo.TabIndex = 22;
-            this.txtIdArchivo.Visible = false;
             // 
             // FrmConciliaciones
             // 

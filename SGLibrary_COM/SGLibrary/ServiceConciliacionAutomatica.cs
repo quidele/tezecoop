@@ -129,5 +129,20 @@ namespace SGLibrary
         }
 
 
+        public TB_ArchivoTarjeta obtenerArchivo(String pId)
+        {
+
+            Int32 id = Int32.Parse(pId);
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                TB_ArchivoTarjeta una_TB_ArchivoTarjeta = (from c in context.TB_ArchivoTarjeta
+                                                    where c.id == id
+                                                    select c)
+                                                 .First();
+                return una_TB_ArchivoTarjeta;
+            }
+        }
     }
 }

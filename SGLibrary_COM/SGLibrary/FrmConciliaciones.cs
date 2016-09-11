@@ -62,6 +62,8 @@ namespace SGLibrary
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             this.panelcarga.Enabled = true;
+            this.cbtipoConciliacion.Enabled = true;
+            this.btnSelecccionarArchivoTarjeta.Enabled = true;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
 
 
@@ -81,12 +83,16 @@ namespace SGLibrary
                         this.txtdsUsuario.Text = una_conciliacion.dsUsuario;
                         this.txtnrCajaAdm.Text = una_conciliacion.nrCajaAdm.ToString();
                         this.txtflEstado.Text = una_conciliacion.flestado;
+                        this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo
                         if (una_conciliacion.flestado =="E"){
                             botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
                             this.panelcarga.Enabled = false;
                         }
-                        else
+                        else {
+                            this.cbtipoConciliacion.Enabled = false;
+                            this.btnSelecccionarArchivoTarjeta.Enabled = false;
                             botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+                        }
 
                         cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
                     }
@@ -209,7 +215,9 @@ namespace SGLibrary
 
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
-            una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text);
+            if (this.cbtipoConciliacion.Text !="Manual") {
+                una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text); // Asignamos el idArchivo de la conciliacion automatica
+            }
             serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
             return true;
         }
