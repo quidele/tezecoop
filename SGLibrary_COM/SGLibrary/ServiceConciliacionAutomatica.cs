@@ -110,11 +110,11 @@ namespace SGLibrary
                                                     PDV = c.nrTalonarioCliente,
                                                     NRO = c.nrComprabanteCliente,
                                                     MONTO = c.vlMontoCupon,
-                                                    MONTO_CLI = x.importe,
+                                                    MONTO_ARCHI = x.importe,
                                                     TARJETA = c.nrTarjeta,
-                                                    TARJETA_CLI  = x.tarjeta,
+                                                    TARJETA_ARCHI = x.tarjeta,
                                                     CUPON = c.nrCuponPosnet,
-                                                    CUPON_CLI = x.comprobante,
+                                                    CUPON_ARCHI = x.comprobante,
                                                     NIVEL = x.nrNivelConciliacion
                                                 }).OrderBy(c => c.FECHA);
 

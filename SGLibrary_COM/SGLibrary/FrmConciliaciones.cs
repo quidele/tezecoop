@@ -111,6 +111,7 @@ namespace SGLibrary
                         dataGridView1.Columns.Clear();
                         //var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                         //cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
+                        this.btnSelecccionarArchivoTarjeta.Enabled = false;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -524,6 +525,7 @@ namespace SGLibrary
                     cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
                     break;
                 default:
+                    this.cbtipoConciliacion.Enabled = true;
                     this.dataGridView1.Rows.Clear();
                     this.txtNombreArchivoTarjeta.Text = "";
                     this.btnSelecccionarArchivoTarjeta.Enabled = true;

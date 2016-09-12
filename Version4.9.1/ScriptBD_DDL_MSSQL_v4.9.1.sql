@@ -14,6 +14,10 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Con
 	ALTER TABLE dbo.TB_Conciliacion ADD  idArchivo int NULL;
 
 
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_ConciliacionDetalle' and COLUMN_NAME='IdArchivoTarjetaDetalle')
+	ALTER TABLE dbo.TB_ConciliacionDetalle ADD  IdArchivoTarjetaDetalle bigint NULL;
+
+	
 go
 
 
@@ -97,10 +101,6 @@ GO
 
 ALTER TABLE [dbo].[TB_ArchivoTarjetaDetalle] CHECK CONSTRAINT [FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta]
 GO
-
-
-
-
 
 
 
