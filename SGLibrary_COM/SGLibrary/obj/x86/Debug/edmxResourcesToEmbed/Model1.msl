@@ -220,6 +220,7 @@
     <EntitySetMapping Name="TB_ConciliacionDetalle">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
         <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+          <ScalarProperty Name="IdArchivoTarjetaDetalle" ColumnName="IdArchivoTarjetaDetalle" />
           <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
           <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
         </MappingFragment>

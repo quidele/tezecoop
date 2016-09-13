@@ -16,7 +16,9 @@ namespace SGLibrary
     {
         public int IdConciliacion { get; set; }
         public decimal nrCupon { get; set; }
+        public Nullable<long> IdArchivoTarjetaDetalle { get; set; }
     
+        public virtual TB_ArchivoTarjetaDetalle TB_ArchivoTarjetaDetalle { get; set; }
         public virtual TB_Conciliacion TB_Conciliacion { get; set; }
     }
 }

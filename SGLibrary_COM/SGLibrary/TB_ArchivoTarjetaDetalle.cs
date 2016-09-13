@@ -14,6 +14,11 @@ namespace SGLibrary
     
     public partial class TB_ArchivoTarjetaDetalle
     {
+        public TB_ArchivoTarjetaDetalle()
+        {
+            this.TB_ConciliacionDetalle = new HashSet<TB_ConciliacionDetalle>();
+        }
+    
         public long Id { get; set; }
         public Nullable<int> idarchivo { get; set; }
         public Nullable<System.DateTime> fechaPresentacion { get; set; }
@@ -28,5 +33,6 @@ namespace SGLibrary
         public Nullable<short> nrNivelConciliacion { get; set; }
     
         public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
+        public virtual ICollection<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
     }
 }

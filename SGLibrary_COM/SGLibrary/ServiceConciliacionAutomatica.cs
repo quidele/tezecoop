@@ -115,7 +115,8 @@ namespace SGLibrary
                                                     TARJETA_ARCHI = x.tarjeta,
                                                     CUPON = c.nrCuponPosnet,
                                                     CUPON_ARCHI = x.comprobante,
-                                                    NIVEL = x.nrNivelConciliacion
+                                                    NIVEL = x.nrNivelConciliacion,
+                                                    IdArchivoTarjetaDetalle = x.Id 
                                                 }).OrderBy(c => c.FECHA);
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
@@ -144,5 +145,61 @@ namespace SGLibrary
                 return una_TB_ArchivoTarjeta;
             }
         }
+
+
+
+        public void agregarConciliacion(List<TB_ConciliacionDetalle> ids_cupones, TB_Conciliacion objConciliacion)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+
+                    objConciliacion.dsUsuario = this.Usuario ;
+                    objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm );
+                    objConciliacion.flestado = "A";
+                    objConciliacion.dtModificacion = DateTime.Now;
+
+
+                    var listadeViajesaConciliar1 = (from c in context.TB_Cupones join 
+                                                         d in ids_cupones  on c.nrCupon equals d.nrCupon 
+                                                    select c
+                                                    );
+
+                    Console.WriteLine(listadeViajesaConciliar1.ToString());
+                    Trace.TraceInformation(listadeViajesaConciliar1.ToString());
+                    TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
+
+                    double TotalConciliacion = 0.0;
+
+                    foreach (var item in listadeViajesaConciliar1.ToList())
+                    {
+                        item.flCobradoalCliente = true;
+                        // ESTARIA FALTANDO asignar EL ID del archivo detalle
+                        context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
+                        TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value;
+                    }
+                    context.TB_Conciliacion.Add(objConciliacion);
+
+                    context.SaveChanges();
+
+
+
+                    GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
+
+
+                    context.SaveChanges();
+                    transaction.Complete();
+                    return;
+                    //return listadeViajesaConciliar.ToList();
+
+                }
+            }
+
+
+        }
+
     }
 }

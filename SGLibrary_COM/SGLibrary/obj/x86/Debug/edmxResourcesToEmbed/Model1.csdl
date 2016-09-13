@@ -21,6 +21,14 @@
       <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
       <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
     </AssociationSet>
+    <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+    </AssociationSet>
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
       <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
@@ -208,43 +216,46 @@
     <Key>
       <PropertyRef Name="id" />
     </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="formato" Type="String" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Name="nombrearchivo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Name="dtproceso" Type="DateTime" Precision="3" />
-    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="nombreArchivoCompleto" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtproceso" Precision="3" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
+    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
   </EntityType>
   <EntityType Name="TB_ArchivoTarjetaDetalle">
     <Key>
       <PropertyRef Name="Id" />
     </Key>
-    <Property Name="Id" Type="Int64" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="idarchivo" Type="Int32" />
-    <Property Name="fechaPresentacion" Type="DateTime" Precision="0" />
-    <Property Name="importe" Type="Decimal" Precision="18" Scale="3" />
-    <Property Name="fechaPago" Type="DateTime" Precision="0" />
-    <Property Name="tarjeta" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-    <Property Name="comprobante" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="moneda" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="contenido" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
-    <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="nrNivelConciliacion" Type="Int16" />
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="idarchivo" />
+    <Property Type="DateTime" Name="fechaPresentacion" Precision="0" />
+    <Property Type="Decimal" Name="importe" Precision="18" Scale="3" />
+    <Property Type="DateTime" Name="fechaPago" Precision="0" />
+    <Property Type="String" Name="tarjeta" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="comprobante" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="moneda" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="contenido" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtInsercion" Precision="3" />
+    <Property Type="Decimal" Name="nrCupon" Precision="18" Scale="0" />
+    <Property Type="Int16" Name="nrNivelConciliacion" />
     <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ArchivoTarjeta" />
+    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ConciliacionDetalle" />
   </EntityType>
   <EntityType Name="TB_Conciliacion">
     <Key>
       <PropertyRef Name="IdConciliacion" />
     </Key>
-    <Property Name="IdConciliacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="dtConciliacion" Type="DateTime" Precision="0" />
-    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="nrCajaAdm" Type="Decimal" Precision="18" Scale="0" />
-    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
-    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="idArchivo" Type="Int32" />
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="idArchivo" />
+    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_Conciliacion" ToRole="TB_ArchivoTarjeta" />
     <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
   </EntityType>
   <EntityType Name="TB_ConciliacionDetalle">
@@ -252,8 +263,10 @@
       <PropertyRef Name="IdConciliacion" />
       <PropertyRef Name="nrCupon" />
     </Key>
-    <Property Name="IdConciliacion" Type="Int32" Nullable="false" />
-    <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int64" Name="IdArchivoTarjetaDetalle" />
+    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ConciliacionDetalle" ToRole="TB_ArchivoTarjetaDetalle" />
     <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
   </EntityType>
   <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
@@ -265,6 +278,30 @@
       </Principal>
       <Dependent Role="TB_ArchivoTarjetaDetalle">
         <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_Conciliacion">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdArchivoTarjetaDetalle" />
       </Dependent>
     </ReferentialConstraint>
   </Association>

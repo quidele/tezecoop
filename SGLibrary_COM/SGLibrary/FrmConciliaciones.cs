@@ -196,12 +196,22 @@ namespace SGLibrary
         {
 
             List<Decimal> lista = new List<Decimal>();
+            List<TB_ConciliacionDetalle> listaAutomatica = new List<TB_ConciliacionDetalle>();
+
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
                 Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
                 if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
                 {
                     lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                    if (this.cbtipoConciliacion.Text != "Manual") 
+                    {
+                        TB_ConciliacionDetalle una_TB_ConciliacionDetalle = new TB_ConciliacionDetalle();
+                        una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
+                        una_TB_ConciliacionDetalle.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
+                        listaAutomatica.Add (una_TB_ConciliacionDetalle);
+                    }
+
                 }
                 //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
                 //Console.WriteLine ( unControl.TrueValue);
@@ -216,10 +226,16 @@ namespace SGLibrary
 
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
-            if (this.cbtipoConciliacion.Text !="Manual") {
+            if (this.cbtipoConciliacion.Text != "Manual")
+            {
+                // si estamos en una conciliacion automatica
                 una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text); // Asignamos el idArchivo de la conciliacion automatica
+                serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
             }
-            serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
+            else // Conciliacion manual
+            {
+                serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
+            }
             return true;
         }
 

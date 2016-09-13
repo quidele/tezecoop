@@ -17,6 +17,7 @@ namespace SGLibrary
         public TB_ArchivoTarjeta()
         {
             this.TB_ArchivoTarjetaDetalle = new HashSet<TB_ArchivoTarjetaDetalle>();
+            this.TB_Conciliacion = new HashSet<TB_Conciliacion>();
         }
     
         public int id { get; set; }
@@ -27,5 +28,6 @@ namespace SGLibrary
         public string nombreArchivoCompleto { get; set; }
     
         public virtual ICollection<TB_ArchivoTarjetaDetalle> TB_ArchivoTarjetaDetalle { get; set; }
+        public virtual ICollection<TB_Conciliacion> TB_Conciliacion { get; set; }
     }
 }

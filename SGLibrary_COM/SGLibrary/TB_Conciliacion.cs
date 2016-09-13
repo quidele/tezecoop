@@ -27,6 +27,7 @@ namespace SGLibrary
         public string flestado { get; set; }
         public Nullable<int> idArchivo { get; set; }
     
+        public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
         public virtual ICollection<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
     }
 }
