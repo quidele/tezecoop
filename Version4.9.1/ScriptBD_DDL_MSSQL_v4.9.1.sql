@@ -17,7 +17,11 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Con
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_ConciliacionDetalle' and COLUMN_NAME='IdArchivoTarjetaDetalle')
 	ALTER TABLE dbo.TB_ConciliacionDetalle ADD  IdArchivoTarjetaDetalle bigint NULL;
 
-	
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_ConciliacionDetalle' and COLUMN_NAME='fechaPago')
+	ALTER TABLE dbo.TB_ConciliacionDetalle ADD  fechaPago date NULL;
+
+
+		
 go
 
 

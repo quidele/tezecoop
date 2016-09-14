@@ -59,6 +59,7 @@
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.txtFormato = new System.Windows.Forms.TextBox();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -78,7 +79,6 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelcarga.Controls.Add(this.txtIdArchivo);
-            this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.btnSelecccionarArchivoTarjeta);
             this.panelcarga.Controls.Add(this.txtNombreArchivoTarjeta);
             this.panelcarga.Controls.Add(this.modoEdicion);
@@ -94,6 +94,8 @@
             this.panelcarga.Controls.Add(this.label7);
             this.panelcarga.Controls.Add(this.cbdtConciliacion);
             this.panelcarga.Controls.Add(this.label2);
+            this.panelcarga.Controls.Add(this.cbtipoConciliacion);
+            this.panelcarga.Controls.Add(this.txtFormato);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
             this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
@@ -125,6 +127,7 @@
             this.cbtipoConciliacion.Name = "cbtipoConciliacion";
             this.cbtipoConciliacion.Size = new System.Drawing.Size(128, 24);
             this.cbtipoConciliacion.TabIndex = 21;
+            this.cbtipoConciliacion.Visible = false;
             this.cbtipoConciliacion.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // btnSelecccionarArchivoTarjeta
@@ -410,6 +413,17 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
+            // txtFormato
+            // 
+            this.txtFormato.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtFormato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtFormato.Location = new System.Drawing.Point(195, 81);
+            this.txtFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtFormato.Name = "txtFormato";
+            this.txtFormato.ReadOnly = true;
+            this.txtFormato.Size = new System.Drawing.Size(128, 22);
+            this.txtFormato.TabIndex = 23;
+            // 
             // FrmConciliaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -467,5 +481,6 @@
         private System.Windows.Forms.TextBox txtNombreArchivoTarjeta;
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.TextBox txtIdArchivo;
+        private System.Windows.Forms.TextBox txtFormato;
     }
 }

@@ -148,7 +148,7 @@ namespace SGLibrary
 
 
 
-        public void agregarConciliacion(List<TB_ConciliacionDetalle> ids_cupones, TB_Conciliacion objConciliacion)
+        public void agregarConciliacion(List<TB_ConciliacionDetalle> ids_cuponesaconciliar, TB_Conciliacion objConciliacion)
         {
 
             using (var context = new dbSG2000Entities())
@@ -162,33 +162,23 @@ namespace SGLibrary
                     objConciliacion.flestado = "A";
                     objConciliacion.dtModificacion = DateTime.Now;
 
-
-                    var listadeViajesaConciliar1 = (from c in context.TB_Cupones join 
-                                                         d in ids_cupones  on c.nrCupon equals d.nrCupon 
-                                                    select c
-                                                    );
-
-                    Console.WriteLine(listadeViajesaConciliar1.ToString());
-                    Trace.TraceInformation(listadeViajesaConciliar1.ToString());
-                    TB_ConciliacionDetalle detalleConciliacion = new TB_ConciliacionDetalle();
-
                     double TotalConciliacion = 0.0;
 
-                    foreach (var item in listadeViajesaConciliar1.ToList())
+                    foreach (var detalleConciliacion in ids_cuponesaconciliar)
                     {
-                        item.flCobradoalCliente = true;
-                        // ESTARIA FALTANDO asignar EL ID del archivo detalle
-                        context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
-                        TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value;
-                    }
-                    context.TB_Conciliacion.Add(objConciliacion);
+                        TB_Cupones un_Cupon = (from c in context.TB_Cupones
+                                               where c.nrCupon == detalleConciliacion.nrCupon
+                                               select c).First();
 
+                        un_Cupon.flCobradoalCliente = true;
+                        TotalConciliacion = TotalConciliacion + un_Cupon.vlMontoCupon.Value;
+                        context.TB_ConciliacionDetalle.Add(detalleConciliacion);
+                    }
+
+                    context.TB_Conciliacion.Add(objConciliacion);
                     context.SaveChanges();
 
-
-
-                    GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
-
+                    this.GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this.CajaAdm), this.Usuario, objConciliacion, context ,Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
 
                     context.SaveChanges();
                     transaction.Complete();

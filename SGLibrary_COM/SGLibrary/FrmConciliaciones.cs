@@ -62,7 +62,9 @@ namespace SGLibrary
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             this.panelcarga.Enabled = true;
+            this.cbtipoConciliacion.Visible = true;
             this.cbtipoConciliacion.Enabled = true;
+            this.txtFormato.Visible = false;
             this.btnSelecccionarArchivoTarjeta.Enabled = true;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
 
@@ -84,6 +86,15 @@ namespace SGLibrary
                         this.txtnrCajaAdm.Text = una_conciliacion.nrCajaAdm.ToString();
                         this.txtflEstado.Text = una_conciliacion.flestado;
                         this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo
+
+                        if (una_conciliacion.idArchivo.ToString()!=""){
+                            this.cbtipoConciliacion.Visible = false;
+                            this.txtFormato.Visible = true;
+                            this.txtFormato.Text = una_conciliacion.TB_ArchivoTarjeta.formato.Trim();
+                            this.txtNombreArchivoTarjeta.Text = una_conciliacion.TB_ArchivoTarjeta.nombreArchivoCompleto;
+                        }
+
+                      
                         if (una_conciliacion.flestado =="E"){
                             botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
                             this.panelcarga.Enabled = false;
@@ -203,7 +214,7 @@ namespace SGLibrary
                 Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
                 if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
                 {
-                    lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                   
                     if (this.cbtipoConciliacion.Text != "Manual") 
                     {
                         TB_ConciliacionDetalle una_TB_ConciliacionDetalle = new TB_ConciliacionDetalle();
@@ -211,13 +222,17 @@ namespace SGLibrary
                         una_TB_ConciliacionDetalle.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
                         listaAutomatica.Add (una_TB_ConciliacionDetalle);
                     }
+                    else
+                    {
+                        lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                    }
 
                 }
                 //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
                 //Console.WriteLine ( unControl.TrueValue);
             }
 
-            if (lista.Count() == 0)
+            if ((lista.Count() == 0) && (listaAutomatica.Count() == 0))
             {
                 MessageBox.Show("Debe seleccionar algún comprobante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.Focus();
