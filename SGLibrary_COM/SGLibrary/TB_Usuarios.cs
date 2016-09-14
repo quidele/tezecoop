@@ -17,6 +17,7 @@ namespace SGLibrary
         public TB_Usuarios()
         {
             this.TB_MovimientosContables = new HashSet<TB_MovimientosContables>();
+            this.TB_MovimientosContablesPosdatados = new HashSet<TB_MovimientosContablesPosdatados>();
         }
     
         public string dsUsuario { get; set; }
@@ -37,5 +38,6 @@ namespace SGLibrary
         public Nullable<bool> flEliminar { get; set; }
     
         public virtual ICollection<TB_MovimientosContables> TB_MovimientosContables { get; set; }
+        public virtual ICollection<TB_MovimientosContablesPosdatados> TB_MovimientosContablesPosdatados { get; set; }
     }
 }

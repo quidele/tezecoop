@@ -8,18 +8,21 @@
         <EntityTypeShape EntityType="dbSG2000Model.TB_Productos" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Usuarios" Width="1.5" PointX="4.75" PointY="3.875" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="1.5" PointX="7.75" PointY="4.375" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="1.5" PointX="7.5" PointY="1.875" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conceptos" Width="2.125" PointX="3.625" PointY="8.625" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="2" PointX="10.375" PointY="2.625" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="2" PointX="10.75" PointY="6.5" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="2" PointX="14" PointY="3.375" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="2.125" PointX="14.75" PointY="7.25" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjeta" Width="1.5" PointX="10.25" PointY="0.625" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="10.25" PointY="3.625" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_Conciliacion" Width="1.5" PointX="13.5" PointY="0.5" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ConciliacionDetalle" Width="1.5" PointX="13.875" PointY="4.125" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
-      </Diagram>
+        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContablesPosdatados" Width="1.5" PointX="7.5" PointY="8" />
+        <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" ManuallyRouted="false" >
+        </AssociationConnector>
+        </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

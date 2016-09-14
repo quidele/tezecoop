@@ -203,3 +203,72 @@ end
 GO
 
 
+
+ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+GO
+
+ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]
+GO
+
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+DROP TABLE [dbo].[TB_MovimientosContablesPosdatados]
+GO
+
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
+	[IdMovimiento] [numeric](18, 0) NOT NULL,
+	[dsMovimiento] [varchar](100) NULL,
+	[IdRecibo] [numeric](18, 0) NULL,
+	[IdProveedor] [varchar](50) NULL,
+	[dsProveedor] [varchar](60) NULL,
+	[cdConcepto] [int] NULL,
+	[tpConcepto] [varchar](50) NULL,
+	[dsConcepto] [varchar](100) NULL,
+	[tpOperacion] [varchar](50) NULL,
+	[vlPesos] [float] NULL,
+	[vlDolares] [float] NULL,
+	[vlEuros] [float] NULL,
+	[nrRecibo] [varchar](50) NULL,
+	[nrFactura] [varchar](50) NULL,
+	[nrCaja] [numeric](18, 0) NULL,
+	[dsUsuario] [varchar](50) NULL,
+	[dtMovimiento] [datetime] NULL,
+	[dsObservacion] [varchar](255) NULL,
+	[nrAnio] [int] NULL,
+	[dsUsuario_Supervisor] [varchar](50) NULL,
+	[nrCajaPuesto] [numeric](18, 0) NULL,
+	[tpCajaImputacion] [varchar](50) NULL,
+	[dsUsuarioCajaPuesto] [varchar](50) NULL,
+	[tpMovimiento] [varchar](20) NULL,
+	[flProcesado] [bit] NULL,
+ CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
+(
+	[IdMovimiento] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] ADD  CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]  DEFAULT ((0)) FOR [flProcesado]
+GO
+
+ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados]  WITH CHECK ADD  CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios] FOREIGN KEY([dsUsuario_Supervisor])
+REFERENCES [dbo].[TB_Usuarios] ([dsUsuario])
+GO
+
+ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] CHECK CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+GO
+
+

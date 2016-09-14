@@ -194,6 +194,9 @@
     <Compile Include="TB_MovimientosContables.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_MovimientosContablesPosdatados.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Productos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

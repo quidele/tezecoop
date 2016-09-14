@@ -82,6 +82,7 @@ namespace SGLibrary
         public DbSet<TB_ArchivoTarjetaDetalle> TB_ArchivoTarjetaDetalle { get; set; }
         public DbSet<TB_Conciliacion> TB_Conciliacion { get; set; }
         public DbSet<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
+        public DbSet<TB_MovimientosContablesPosdatados> TB_MovimientosContablesPosdatados { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

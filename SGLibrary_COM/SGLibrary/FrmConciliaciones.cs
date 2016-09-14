@@ -119,6 +119,7 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         this.btnSelecccionarArchivoTarjeta.Enabled = false;
+                        this.txtNombreArchivoTarjeta.Text = "";
                         dataGridView1.Columns.Clear();
                         //var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                         //cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
