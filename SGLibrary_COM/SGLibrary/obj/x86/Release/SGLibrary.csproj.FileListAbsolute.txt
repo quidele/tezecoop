@@ -35,3 +35,4 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\EN-US\SGLi
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmABMBase.resources
