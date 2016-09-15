@@ -108,12 +108,19 @@ GO
 
 
 
+
+--	select  convert(float,nrCuponposnet),  isnumeric(nrCuponposnet) , nrCuponposnet,  * from tmpViajesesaConciliar
+--	where nrCuponposnet like '%.%'
+
+
+go
+
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_conciliarAutomaticamente' )
 	drop procedure  dbo.spu_conciliarAutomaticamente
 
 go
 		
---exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=15 
+--exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=2
 
 create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
 as
@@ -130,13 +137,14 @@ begin
 
 	SELECT Id, idarchivo, fechaPresentacion, importe, fechaPago, 
 		    tarjeta, comprobante, moneda, contenido, dtInsercion, 
-			nrCupon into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = @idArchivo
+			nrCupon, convert(int,0) as comprobante_numerico into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = @idArchivo
 
+	update #tmpArchivoaConciliar set comprobante_numerico = convert(int,comprobante) where ISNUMERIC(comprobante) = 1
 	-- select top 10 * from #tmpArchivoaConciliar
 
 	select c.nrCupon, c.dtCupon, c.nrLicencia, c.tpComprobanteCliente, 
 		   c.tpLetraCliente , c.nrTalonarioCliente , c.nrComprabanteCliente,  c.vlMontoCupon ,
-		   c.nrTarjeta, c.tpDocTarjeta,  c.nrDocTarjeta  , nrCuponPosnet 
+		   c.nrTarjeta, c.tpDocTarjeta,  c.nrDocTarjeta  , nrCuponPosnet , convert(int,0)  nrCuponPosnet_numerico
 		    into #tmpViajesesaConciliar
 			from  TB_Cupones c
 					where (c.flCobradoalCliente = 0 ) and  (c.flCompensado = 0)
@@ -145,6 +153,9 @@ begin
 						   -- falta agregar que no haya sido conciliado anteriormente 
     
 	--select * from #tmpViajesesaConciliar
+	
+	update #tmpViajesesaConciliar  set nrCuponPosnet_numerico = convert(int,nrCuponPosnet) where ISNUMERIC(replace(nrCuponPosnet,'.','')) = 1
+	--select * from #tmpViajesesaConciliar
 
 	-- nrNivelConciliacion 1 - mas representativo                                   
 	-- drop table  #tmpViajesConciliados           
@@ -152,7 +163,12 @@ begin
 	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
 					on x.comprobante = y.nrCuponPosnet  and x.tarjeta = y.nrTarjeta
 							and x.importe = y.vlMontoCupon
-								
+	
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 1 as nrNivelConciliacion  
+	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
+					on x.comprobante_numerico = y.nrCuponPosnet_numerico  and x.tarjeta = y.nrTarjeta
+							and x.importe = y.vlMontoCupon						
 
 	--select * from #tmpViajesConciliados
 
@@ -174,6 +190,13 @@ begin
 						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 
 	--select * from #tmpViajesConciliados
+
+		insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
 
 	-- nrNivelConciliacion 2 
 	insert into  #tmpViajesConciliados 
