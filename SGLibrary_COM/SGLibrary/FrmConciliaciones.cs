@@ -27,6 +27,13 @@ namespace SGLibrary
         private void FrmConciliaciones_Load(object sender, EventArgs e)
         {
 
+            using (var context = new dbSG2000Entities())
+            {
+                this.statusbar_bd.Text = context.Database.Connection.Database ;
+                this.statusbar_usuario.Text = "usuario: " + serviceConciliaciones.Usuario;
+                this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm; 
+            }
+
             cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
             botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
@@ -400,8 +407,15 @@ namespace SGLibrary
 
             dgv.Columns.Add(doWork);
 
+            var i=0;
+
             foreach (object item in lista)
             {
+                this.progressBar1.BringToFront();
+                dgv.Refresh();
+                System.Threading.Thread.Sleep(10);
+        
+                this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
@@ -587,10 +601,19 @@ namespace SGLibrary
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
 
             var listadeViajesaConciliar = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+            this.progressBar1.Minimum = 0;
+            this.progressBar1.Maximum = listadeViajesaConciliar.Count();
+            this.progressBar1.Visible = true;
             cargarDataGridViewConciliacionAutomatica (dataGridView1, listadeViajesaConciliar, modoEdicion.Text);
+            this.progressBar1.Visible = false;
 
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();
             // obtener los viajes conciliados automaticamente mas  
+
+        }
+
+        private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
 
         }
     }
