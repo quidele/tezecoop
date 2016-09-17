@@ -116,7 +116,8 @@ namespace SGLibrary
                                                     CUPON = c.nrCuponPosnet,
                                                     CUPON_ARCHI = x.comprobante,
                                                     NIVEL = x.nrNivelConciliacion,
-                                                    IdArchivoTarjetaDetalle = x.Id 
+                                                    IdArchivoTarjetaDetalle = x.Id,
+                                                    FECHA_PAGO =  x.fechaPago.Value 
                                                 }).OrderBy(c => c.FECHA);
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
@@ -150,6 +151,7 @@ namespace SGLibrary
 
         public void agregarConciliacion(List<TB_ConciliacionDetalle> ids_cuponesaconciliar, TB_Conciliacion objConciliacion)
         {
+            ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 
             using (var context = new dbSG2000Entities())
             {
@@ -161,8 +163,9 @@ namespace SGLibrary
                     objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm );
                     objConciliacion.flestado = "A";
                     objConciliacion.dtModificacion = DateTime.Now;
-
                     double TotalConciliacion = 0.0;
+                    context.TB_Conciliacion.Add(objConciliacion);
+                    context.SaveChanges();
 
                     foreach (var detalleConciliacion in ids_cuponesaconciliar)
                     {
@@ -170,15 +173,17 @@ namespace SGLibrary
                                                where c.nrCupon == detalleConciliacion.nrCupon
                                                select c).First();
 
+                        un_Cupon.dtCobradoalCliente = detalleConciliacion.fechaPago; // muy importante para habilitar el pago al licenciatario
                         un_Cupon.flCobradoalCliente = true;
                         TotalConciliacion = TotalConciliacion + un_Cupon.vlMontoCupon.Value;
                         context.TB_ConciliacionDetalle.Add(detalleConciliacion);
+                        context.SaveChanges();
+                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + un_Cupon.nrCuponPosnet.Trim () + "/ Tarjeta: " + un_Cupon.nrTarjeta.Trim() ;
+
+                        unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoCupon.Value, objConciliacion.nrCajaAdm.Value,
+                            objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon);
+
                     }
-
-                    context.TB_Conciliacion.Add(objConciliacion);
-                    context.SaveChanges();
-
-                    this.GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this.CajaAdm), this.Usuario, objConciliacion, context ,Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
 
                     context.SaveChanges();
                     transaction.Complete();
@@ -190,6 +195,9 @@ namespace SGLibrary
 
 
         }
+        //// fin agregar conciliacion
+
+
 
     }
 }

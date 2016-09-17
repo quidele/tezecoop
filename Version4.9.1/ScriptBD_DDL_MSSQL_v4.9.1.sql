@@ -226,18 +226,19 @@ end
 GO
 
 
-
-ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
+	ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+GO
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
+	ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]
 GO
 
-ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]
-GO
-
-/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 17/09/2016 8:35:41  ******/
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
 DROP TABLE [dbo].[TB_MovimientosContablesPosdatados]
 GO
 
-/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 17/09/2016 8:35:41  ******/
 SET ANSI_NULLS ON
 GO
 
@@ -272,6 +273,9 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[tpCajaImputacion] [varchar](50) NULL,
 	[dsUsuarioCajaPuesto] [varchar](50) NULL,
 	[tpMovimiento] [varchar](20) NULL,
+	[dtFechaPosdata] [date] NOT NULL,
+	[nrCupon] [decimal](18, 0) NULL,
+	[IdConciliacion] [int] NULL,
 	[flProcesado] [bit] NULL,
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
@@ -293,5 +297,3 @@ GO
 
 ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] CHECK CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
 GO
-
-

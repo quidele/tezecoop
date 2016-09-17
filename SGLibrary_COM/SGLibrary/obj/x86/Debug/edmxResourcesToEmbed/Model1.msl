@@ -231,6 +231,9 @@
       <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContablesPosdatados">
         <MappingFragment StoreEntitySet="TB_MovimientosContablesPosdatados">
           <ScalarProperty Name="flProcesado" ColumnName="flProcesado" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+          <ScalarProperty Name="dtFechaPosdata" ColumnName="dtFechaPosdata" />
           <ScalarProperty Name="tpMovimiento" ColumnName="tpMovimiento" />
           <ScalarProperty Name="dsUsuarioCajaPuesto" ColumnName="dsUsuarioCajaPuesto" />
           <ScalarProperty Name="tpCajaImputacion" ColumnName="tpCajaImputacion" />

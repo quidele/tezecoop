@@ -38,6 +38,9 @@ namespace SGLibrary
         public string tpCajaImputacion { get; set; }
         public string dsUsuarioCajaPuesto { get; set; }
         public string tpMovimiento { get; set; }
+        public System.DateTime dtFechaPosdata { get; set; }
+        public Nullable<decimal> nrCupon { get; set; }
+        public Nullable<int> IdConciliacion { get; set; }
         public Nullable<bool> flProcesado { get; set; }
     
         public virtual TB_Usuarios TB_Usuarios { get; set; }

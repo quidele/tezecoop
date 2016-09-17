@@ -29,7 +29,8 @@ namespace SGLibrary
 
             using (var context = new dbSG2000Entities())
             {
-                this.statusbar_bd.Text = context.Database.Connection.Database ;
+                this.statusbar_bd.Text = "Base de datos: " + context.Database.Connection.Database ;
+                this.statusbar_servidor.Text = "Base de datos: " + context.Database.Connection.DataSource;
                 this.statusbar_usuario.Text = "usuario: " + serviceConciliaciones.Usuario;
                 this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm; 
             }
@@ -228,6 +229,7 @@ namespace SGLibrary
                         TB_ConciliacionDetalle una_TB_ConciliacionDetalle = new TB_ConciliacionDetalle();
                         una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
                         una_TB_ConciliacionDetalle.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
+                        una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_PAGO"].EditedFormattedValue.ToString());
                         listaAutomatica.Add (una_TB_ConciliacionDetalle);
                     }
                     else
@@ -392,6 +394,11 @@ namespace SGLibrary
                     columna.HeaderText = p.Name;
                     columna.ReadOnly = true;
                     columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    switch (    columna.Name )
+                    {
+                        case "NIVEL": columna.Visible = false; break;
+                        case "IdArchivoTarjetaDetalle": columna.Visible = false; break;
+                    }
                     dgv.Columns.Add(columna);
                 }
                 break;
@@ -442,6 +449,8 @@ namespace SGLibrary
                  break;
 	            }
 
+                dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
+       
             }
             
            

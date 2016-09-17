@@ -19,9 +19,8 @@
         <AssociationConnector Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContablesPosdatados" Width="1.5" PointX="7.5" PointY="8" />
-        <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" ManuallyRouted="false" >
-        </AssociationConnector>
+        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContablesPosdatados" Width="1.5" PointX="7" PointY="8.875" />
+        <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
