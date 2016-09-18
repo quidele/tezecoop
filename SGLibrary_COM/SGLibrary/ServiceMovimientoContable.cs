@@ -31,9 +31,12 @@ namespace SGLibrary
                 TB_Conceptos cdConceptoConceptoOrigen = (from c in pdbSG2000Entities.TB_Conceptos where c.cdConcepto == cdConceptoOrigen select c).First();
 
                 var max = (from p in pdbSG2000Entities.TB_MovimientosContablesPosdatados
-                           select p.IdMovimiento).FirstOrDefault();
+                           select p).OrderByDescending( p => p.IdMovimiento).FirstOrDefault();
 
-                unMCConceptoOrigen.IdMovimiento = max + 1;
+                if (max == null) 
+                    max = new TB_MovimientosContablesPosdatados();
+
+                unMCConceptoOrigen.IdMovimiento = max.IdMovimiento + 1;
                 unMCConceptoOrigen.cdConcepto = cdConceptoConceptoOrigen.cdConcepto;
                 unMCConceptoOrigen.dsMovimiento = "Conciliación Nro:  " + pIdConciliacion;
                 unMCConceptoOrigen.dsUsuario = pdsUsuario;
@@ -60,7 +63,7 @@ namespace SGLibrary
 
                 pdbSG2000Entities.SaveChanges();
 
-                unMCConceptoDestino.IdMovimiento = max + 2;
+                unMCConceptoDestino.IdMovimiento = max.IdMovimiento + 2;
                 unMCConceptoDestino.cdConcepto = cdConceptoConceptoDestino.cdConcepto;
                 unMCConceptoDestino.dsMovimiento = "Conciliación Nro:  " + pIdConciliacion;
                 unMCConceptoDestino.dsUsuario = pdsUsuario;

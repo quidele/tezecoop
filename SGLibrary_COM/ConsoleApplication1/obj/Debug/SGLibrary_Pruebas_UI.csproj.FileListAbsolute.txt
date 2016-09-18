@@ -48,6 +48,10 @@ C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD.Xml
@@ -58,12 +62,8 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\Recurs
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe.config
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConsoleApplication1.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EntityFramework.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

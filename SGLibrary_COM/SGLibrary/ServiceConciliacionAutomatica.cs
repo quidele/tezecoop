@@ -9,6 +9,7 @@ using SGLibrary.ArchivoTarjetas;
 using System.Data.Entity.Validation;
 using System.Data;
 using System.Diagnostics;
+using SGLibrary.Extensiones;
 
 namespace SGLibrary
 {
@@ -176,9 +177,10 @@ namespace SGLibrary
                         un_Cupon.dtCobradoalCliente = detalleConciliacion.fechaPago; // muy importante para habilitar el pago al licenciatario
                         un_Cupon.flCobradoalCliente = true;
                         TotalConciliacion = TotalConciliacion + un_Cupon.vlMontoCupon.Value;
+                        detalleConciliacion.IdConciliacion = objConciliacion.IdConciliacion;
                         context.TB_ConciliacionDetalle.Add(detalleConciliacion);
                         context.SaveChanges();
-                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + un_Cupon.nrCuponPosnet.Trim () + "/ Tarjeta: " + un_Cupon.nrTarjeta.Trim() ;
+                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + ExtensionString.EmptyIfNull( un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim() ;
 
                         unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoCupon.Value, objConciliacion.nrCajaAdm.Value,
                             objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon);

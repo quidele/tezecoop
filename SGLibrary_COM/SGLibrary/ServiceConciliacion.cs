@@ -65,7 +65,9 @@ namespace SGLibrary
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 Trace.TraceError(ex.Message);
+                
                 System.Windows.Forms.MessageBox.Show(ex.Message, "ERROR ");
             }
         }

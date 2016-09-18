@@ -102,6 +102,7 @@
     <Compile Include="EXCELNuke\Workbook.cs" />
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
+    <Compile Include="Extensiones\Extensiones.cs" />
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
