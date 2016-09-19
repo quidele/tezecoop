@@ -95,11 +95,15 @@ namespace SGLibrary
                         this.txtflEstado.Text = una_conciliacion.flestado;
                         this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo
 
-                        if (una_conciliacion.idArchivo.ToString()!=""){
+                        if (una_conciliacion.idArchivo.ToString() != "")
+                        {
                             this.cbtipoConciliacion.Visible = false;
                             this.txtFormato.Visible = true;
                             this.txtFormato.Text = una_conciliacion.TB_ArchivoTarjeta.formato.Trim();
                             this.txtNombreArchivoTarjeta.Text = una_conciliacion.TB_ArchivoTarjeta.nombreArchivoCompleto;
+                        }
+                        else {
+                            this.txtFormato.Text = "Manual";
                         }
 
                       
@@ -277,6 +281,7 @@ namespace SGLibrary
         {
             List<Decimal> listaCupones = new List<Decimal>();
             List<Decimal> listaCuponesConciliados = new List<Decimal>();
+
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
                 Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
@@ -300,7 +305,11 @@ namespace SGLibrary
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
             try {
-            serviceConciliaciones.modificarConciliacion(listaCupones , listaCuponesConciliados, una_conciliacion);
+                if (this.txtFormato.Text == "Manual")
+                    serviceConciliaciones.modificarConciliacion(listaCupones, listaCuponesConciliados, una_conciliacion);
+                else
+                    serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCupones, listaCuponesConciliados, una_conciliacion);
+
             } catch (Exception ex ){
                 MessageBox.Show(ex.Message + serviceConciliaciones.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

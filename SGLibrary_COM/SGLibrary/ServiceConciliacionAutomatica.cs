@@ -257,5 +257,10 @@ namespace SGLibrary
         }
 
 
+
+        internal void modificarConciliacionAutomatica(List<decimal> listaCupones, List<decimal> listaCuponesConciliados, TB_Conciliacion una_conciliacion)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
