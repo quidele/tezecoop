@@ -252,6 +252,7 @@ namespace SGLibrary
 
         }
 
+
         public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta , String usuario )
         {
 
@@ -277,9 +278,6 @@ namespace SGLibrary
 
         public void anularConciliacion(TB_Conciliacion objConciliacion)
         {
-
-
-         
             using (var context = new dbSG2000Entities())
             {
 

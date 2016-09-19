@@ -58,6 +58,7 @@ namespace SGLibrary
                 unMCConceptoOrigen.flProcesado = false;
                 unMCConceptoOrigen.dtFechaPosdata = pdtFechaPosdata;
                 unMCConceptoOrigen.nrCupon = pnrCupon;
+                unMCConceptoOrigen.IdConciliacion = int.Parse ( pIdConciliacion) ;
 
                 TB_Conceptos cdConceptoConceptoDestino = (from c in pdbSG2000Entities.TB_Conceptos where c.cdConcepto == cdConceptoDestino select c).First(); ;
 
@@ -85,6 +86,8 @@ namespace SGLibrary
                 unMCConceptoDestino.flProcesado = false;
                 unMCConceptoDestino.dtFechaPosdata = pdtFechaPosdata;
                 unMCConceptoDestino.nrCupon = pnrCupon;
+                unMCConceptoOrigen.IdConciliacion = int.Parse(pIdConciliacion);
+
 
                 pdbSG2000Entities.TB_MovimientosContablesPosdatados.Add(unMCConceptoOrigen);
                 pdbSG2000Entities.TB_MovimientosContablesPosdatados.Add(unMCConceptoDestino);

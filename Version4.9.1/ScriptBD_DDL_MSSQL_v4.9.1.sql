@@ -297,3 +297,19 @@ GO
 
 ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] CHECK CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
 GO
+
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='dtFechaPosdata')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  dtFechaPosdata date NULL;
+
+go
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='nrCupon')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  nrCupon decimal(18, 0) NULL;
+
+go
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='IdConciliacion')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  IdConciliacion int  NULL
+

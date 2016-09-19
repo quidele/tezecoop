@@ -200,6 +200,62 @@ namespace SGLibrary
         //// fin agregar conciliacion
 
 
+        /// <summary>
+        /// 
+        /// </summary>
+        /// <param name="una_conciliacion"></param>
+        /// <returns></returns>
+        public  IEnumerable<Object>  ObtenerDetalleConciliacionAutomatica(long pId)
+        {
+            List<Decimal> ids_cupones = new List<Decimal>();
+
+            //una_conciliacion.TB_ConciliacionDetalle 
+            using (var context = new dbSG2000Entities())
+            {
+
+                // Falta agregar filtro de fechas
+                var una_conciliacionDetalle = (from c in context.TB_ConciliacionDetalle
+                                               where c.IdConciliacion == pId
+                                               select c);
+
+                foreach (var item in una_conciliacionDetalle)
+                {
+                    ids_cupones.Add(item.nrCupon);
+                }
+
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones 
+                                                    join x in una_conciliacionDetalle on c.nrCupon equals x.nrCupon
+                                                    join y in context.TB_ArchivoTarjetaDetalle on x.IdArchivoTarjetaDetalle equals y.Id
+                                                where ids_cupones.Contains(c.nrCupon)
+                                                select new
+                                                {
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    LICENCIA = c.nrLicencia,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon,
+                                                    MONTO_ARCHI = y.importe,
+                                                    TARJETA = c.nrTarjeta,
+                                                    TARJETA_ARCHI = y.tarjeta,
+                                                    CUPON = c.nrCuponPosnet,
+                                                    CUPON_ARCHI = y.comprobante,
+                                                    NIVEL = y.nrNivelConciliacion,
+                                                    IdArchivoTarjetaDetalle = y.Id,
+                                                    FECHA_PAGO =  x.fechaPago.Value,
+                                                    COMPENSADO = c.flCompensado == true ? "SI" : "NO"
+                                                });
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
+
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+        }
+
 
     }
 }

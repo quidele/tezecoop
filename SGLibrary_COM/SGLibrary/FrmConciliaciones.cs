@@ -113,7 +113,15 @@ namespace SGLibrary
                             botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         }
 
-                        cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                        if (una_conciliacion.idArchivo.ToString() != "")
+                        {
+                            cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                        }
+                        else
+                        {
+                            cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                        }
+
                     }
 
                     deshabilitarycolorearCompensados();
@@ -325,22 +333,6 @@ namespace SGLibrary
                 }
                 break;
             }
-
-            //dgv.Columns.Add("ID","ID");
-            //columna = new DataGridViewColumn();
-            //cell = new DataGridViewTextBoxCell();
-            //columna.CellTemplate = cell;
-            //columna.Name = "DOC";
-            //columna.HeaderText = "DOC";
-            //columna.ReadOnly = true;
-            //dgv.Columns.Add(columna);
-            //dgv.Columns.Add("LETRA", "LETRA");
-            //dgv.Columns.Add("PDV", "PDV");
-            //dgv.Columns.Add("NRO", "NRO");
-            //dgv.Columns.Add("FECHA", "FECHA");
-            //dgv.Columns.Add("MONTO", "MONTO");
-            
-            
 
             DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
             doWork.Name = "CONCILIAR";
