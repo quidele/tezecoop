@@ -199,7 +199,12 @@ namespace SGLibrary
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                              if(dialogResult == DialogResult.No ) break; 
                             // COMLETAR ELIMINACION
-                             serviceConciliaciones.anularConciliacion(una_conciliacion);
+                             if (this.txtFormato.Text == "Manual")
+                                 serviceConciliaciones.anularConciliacion(una_conciliacion);
+                             else
+                                 serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion);
+
+                             
                              MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                         }
@@ -281,6 +286,7 @@ namespace SGLibrary
         {
             List<Decimal> listaCupones = new List<Decimal>();
             List<Decimal> listaCuponesConciliados = new List<Decimal>();
+            List<Decimal> listaCuponesDesconciliados = new List<Decimal>();
 
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
@@ -288,6 +294,11 @@ namespace SGLibrary
                 if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True" && item.Cells["COMPENSADO"].EditedFormattedValue.ToString() == "NO")
                 {
                     listaCuponesConciliados.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                }
+
+                if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "False" && item.Cells["COMPENSADO"].EditedFormattedValue.ToString() == "NO")
+                {
+                    listaCuponesDesconciliados.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
                 }
                 //DataGridViewCheckBoxColumn unControl = (DataGridViewCheckBoxColumn) item.Cells["CONCILIAR"].;
                 //Console.WriteLine ( unControl.TrueValue);
@@ -306,9 +317,9 @@ namespace SGLibrary
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
             try {
                 if (this.txtFormato.Text == "Manual")
-                    serviceConciliaciones.modificarConciliacion(listaCupones, listaCuponesConciliados, una_conciliacion);
+                    serviceConciliaciones.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
                 else
-                    serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCupones, listaCuponesConciliados, una_conciliacion);
+                    serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
 
             } catch (Exception ex ){
                 MessageBox.Show(ex.Message + serviceConciliaciones.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);

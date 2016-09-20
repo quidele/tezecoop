@@ -86,7 +86,7 @@ namespace SGLibrary
                 unMCConceptoDestino.flProcesado = false;
                 unMCConceptoDestino.dtFechaPosdata = pdtFechaPosdata;
                 unMCConceptoDestino.nrCupon = pnrCupon;
-                unMCConceptoOrigen.IdConciliacion = int.Parse(pIdConciliacion);
+                unMCConceptoDestino.IdConciliacion = int.Parse(pIdConciliacion);
 
 
                 pdbSG2000Entities.TB_MovimientosContablesPosdatados.Add(unMCConceptoOrigen);
@@ -97,9 +97,6 @@ namespace SGLibrary
             catch (Exception e)
             {
                 Console.WriteLine(e);
-
-                   
-
                 //foreach (var eve in e.EntityValidationErrors)
                 //{
                 //    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",

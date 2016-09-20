@@ -262,7 +262,7 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[vlDolares] [float] NULL,
 	[vlEuros] [float] NULL,
 	[nrRecibo] [varchar](50) NULL,
-	[nrFactura] [varchar](50) NULL,
+	[nrFactura] [varchar](80) NULL,
 	[nrCaja] [numeric](18, 0) NULL,
 	[dsUsuario] [varchar](50) NULL,
 	[dtMovimiento] [datetime] NULL,
@@ -312,4 +312,7 @@ go
 
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='IdConciliacion')
 	ALTER TABLE dbo.TB_MovimientosContables ADD  IdConciliacion int  NULL
+
+
+
 

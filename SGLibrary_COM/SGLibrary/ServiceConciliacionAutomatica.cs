@@ -150,7 +150,7 @@ namespace SGLibrary
 
 
 
-        public void agregarConciliacion(List<TB_ConciliacionDetalle> ids_cuponesaconciliar, TB_Conciliacion objConciliacion)
+        public void agregarConciliacion(List<TB_ConciliacionDetalle> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
         {
             ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 
@@ -164,11 +164,11 @@ namespace SGLibrary
                     objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm );
                     objConciliacion.flestado = "A";
                     objConciliacion.dtModificacion = DateTime.Now;
-                    double TotalConciliacion = 0.0;
+
                     context.TB_Conciliacion.Add(objConciliacion);
                     context.SaveChanges();
 
-                    foreach (var detalleConciliacion in ids_cuponesaconciliar)
+                    foreach (var detalleConciliacion in plistaDetalleConciliacion)
                     {
                         TB_Cupones un_Cupon = (from c in context.TB_Cupones
                                                where c.nrCupon == detalleConciliacion.nrCupon
@@ -176,7 +176,6 @@ namespace SGLibrary
 
                         un_Cupon.dtCobradoalCliente = detalleConciliacion.fechaPago; // muy importante para habilitar el pago al licenciatario
                         un_Cupon.flCobradoalCliente = true;
-                        TotalConciliacion = TotalConciliacion + un_Cupon.vlMontoCupon.Value;
                         detalleConciliacion.IdConciliacion = objConciliacion.IdConciliacion;
                         context.TB_ConciliacionDetalle.Add(detalleConciliacion);
                         context.SaveChanges();
@@ -258,9 +257,135 @@ namespace SGLibrary
 
 
 
-        internal void modificarConciliacionAutomatica(List<decimal> listaCupones, List<decimal> listaCuponesConciliados, TB_Conciliacion una_conciliacion)
+        public void modificarConciliacionAutomatica(List<decimal> listaCuponesDesconciliados, 
+                                                      List<decimal> listaCuponesConciliados,
+                                                      TB_Conciliacion objConciliacion)
         {
-            throw new NotImplementedException();
+
+            ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
+
+                     //una_conciliacion.TB_ConciliacionDetalle 
+            using (var context = new dbSG2000Entities())
+            {
+
+                // detalle conciliacion desconciliadas
+                var listaDetalleDesconciliados = (from c in context.TB_ConciliacionDetalle
+                                                  where listaCuponesDesconciliados.Contains(c.nrCupon) &&
+                                                                c.IdConciliacion == objConciliacion.IdConciliacion
+                                                  select c).ToList(); ;
+                
+
+                // cupones conciliacion desconciliadas
+                var listaTB_CuponesDesconciliados = (from c in context.TB_Cupones   where listaCuponesDesconciliados.Contains (c.nrCupon) select c.flCobradoalCliente   ).ToList();;
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+
+                    objConciliacion = (from c in context.TB_Conciliacion
+                                       where c.IdConciliacion == objConciliacion.IdConciliacion
+                                       select c).First<TB_Conciliacion>();
+
+                    objConciliacion.dsUsuario = this.Usuario;
+                    objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm);
+                    objConciliacion.flestado = "A";
+                    objConciliacion.dtModificacion = DateTime.Now;
+
+                    context.SaveChanges();
+
+                    foreach (var detalleConciliacion in listaDetalleDesconciliados)
+                    {
+                        TB_Cupones un_Cupon = (from c in context.TB_Cupones
+                                               where c.nrCupon == detalleConciliacion.nrCupon
+                                               select c).First();
+
+                        un_Cupon.dtCobradoalCliente = null;     // limpiamos la fecha de cobrado
+                        un_Cupon.flCobradoalCliente = false ;   // desconciliamos el cupon lo liberamos de la conciliacion
+                        
+                        context.SaveChanges();
+
+                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" + un_Cupon.tpLetraCliente + "-" + un_Cupon.nrTalonarioCliente + "-" + un_Cupon.nrComprabanteCliente.Trim() + "/ Cupon: " + ExtensionString.EmptyIfNull(un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim();
+
+                        // GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, 
+                        // objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+
+                        unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoCupon.Value, objConciliacion.nrCajaAdm.Value,
+                            objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon);
+
+                        context.TB_ConciliacionDetalle.Remove (detalleConciliacion);
+                    }
+
+                    context.SaveChanges();
+                    transaction.Complete();
+                    return;
+                    //return listadeViajesaConciliar.ToList();
+
+                }
+
+                // desafectar el cupon flCobradoalCliente = false
+                // desafectar el cupon dtCobradoalCliente = null
+                // grabar la tabla de Movimientos en forma de anulacion 
+                  
+            
+            }
+            
         }
+
+
+        public void anularConciliacionAutomatica(TB_Conciliacion objConciliacion)
+        {
+            ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
+
+            using (var context = new dbSG2000Entities())
+            {
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+
+                    double TotalConciliacionAnulado = 0.0;
+
+                    var objConciliacionBD = (from c in context.TB_Conciliacion
+                                             where c.IdConciliacion == objConciliacion.IdConciliacion
+                                             select c).First<TB_Conciliacion>();
+
+                    objConciliacionBD.TB_ConciliacionDetalle.ToList();
+
+                    // Eliminamos el detalle de la conciliacion
+                    foreach (TB_ConciliacionDetalle item in objConciliacionBD.TB_ConciliacionDetalle)
+                    {   // eliminamos los detalle existentes
+
+                        // liberamos al cupon
+                        TB_Cupones objCupon = (from c in context.TB_Cupones where item.nrCupon == c.nrCupon select c).First();
+                        objCupon.flCobradoalCliente = false;
+                        TotalConciliacionAnulado = TotalConciliacionAnulado + objCupon.vlMontoCupon.Value;
+
+                        var nrFactura = objCupon.tpComprobanteCliente + "-" + objCupon.tpLetraCliente + "-" +
+                                        objCupon.nrTalonarioCliente + "-" + objCupon.nrComprabanteCliente.Trim() + "/ Cupon: " +
+                                        ExtensionString.EmptyIfNull(objCupon.nrCuponPosnet).Trim() + "/ Tarjeta: "
+                                        + ExtensionString.EmptyIfNull(objCupon.nrTarjeta).Trim();
+
+                        unSMC.GrabarAsientoContablePosdatados(objCupon.vlMontoCupon.Value, objConciliacion.nrCajaAdm.Value,
+                                objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context,
+                                Anula_Viajes_con_Tarjeta_a_Bancos, Anula_Viajes_con_Tarjeta_a_Bancos, objCupon.nrLicencia.ToString(), 
+                                nrFactura, item.fechaPago.Value, objCupon.nrCupon);
+
+                    }
+                    // Eliminamos el detalle de la conciliacion
+                    //context.Database.ExecuteSqlCommand("DELETE FROM TB_ConciliacionDetalle where IdConciliacion= {0}", objConciliacionBD.IdConciliacion);
+
+                    objConciliacionBD.dtModificacion = DateTime.Now;
+                    objConciliacion.dsUsuario = this.Usuario;
+                    objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm);
+                    objConciliacionBD.flestado = "E";  // Conciliacion Eliminada
+                    context.SaveChanges();
+
+                    transaction.Complete();
+                }
+
+            }
+
+
+        }
+
+
     }
 }
