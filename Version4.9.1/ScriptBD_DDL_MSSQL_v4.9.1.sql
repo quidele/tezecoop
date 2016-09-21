@@ -262,7 +262,7 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[vlDolares] [float] NULL,
 	[vlEuros] [float] NULL,
 	[nrRecibo] [varchar](50) NULL,
-	[nrFactura] [varchar](80) NULL,
+	[nrFactura] [varchar](50) NULL,
 	[nrCaja] [numeric](18, 0) NULL,
 	[dsUsuario] [varchar](50) NULL,
 	[dtMovimiento] [datetime] NULL,
@@ -277,12 +277,12 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[nrCupon] [decimal](18, 0) NULL,
 	[IdConciliacion] [int] NULL,
 	[flProcesado] [bit] NULL,
+	[dtProcesado] [datetime] NULL,
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
 	[IdMovimiento] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
 
 SET ANSI_PADDING OFF
@@ -313,6 +313,119 @@ go
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='IdConciliacion')
 	ALTER TABLE dbo.TB_MovimientosContables ADD  IdConciliacion int  NULL
 
+go
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_procesarMovimientosPosdatados' )
+	drop procedure  dbo.spu_procesarMovimientosPosdatados
+
+go
+
+create procedure spu_procesarMovimientosPosdatados
+as
+begin
+
+
+begin tran 
+
+	select	[IdMovimiento]
+			,[dsMovimiento]
+			,[IdRecibo]
+			,[IdProveedor]
+			,[dsProveedor]
+			,[cdConcepto]
+			,[tpConcepto]
+			,[dsConcepto]
+			,[tpOperacion]
+			,[vlPesos]
+			,[vlDolares]
+			,[vlEuros]
+			,[nrRecibo]
+			,[nrFactura]
+			,[nrCaja]
+			,[dsUsuario]
+			,[dtMovimiento]
+			,[dsObservacion]
+			,[nrAnio]
+			,[dsUsuario_Supervisor]
+			,[nrCajaPuesto]
+			,[tpCajaImputacion]
+			,[dsUsuarioCajaPuesto]
+			,[tpMovimiento]
+			,[dtFechaPosdata]
+			,[nrCupon]
+			,[IdConciliacion]
+			into #tmp_TB_MovimientosContablesPosdatados
+	from TB_MovimientosContablesPosdatados
+			 where flProcesado = 0  and [dtFechaPosdata]<= getdate()  -- se gewnera el movimeiento
+
+
+	INSERT INTO [dbo].[TB_MovimientosContables]
+           ([IdMovimiento]
+           ,[dsMovimiento]
+           ,[IdRecibo]
+           ,[IdProveedor]
+           ,[dsProveedor]
+           ,[cdConcepto]
+           ,[tpConcepto]
+           ,[dsConcepto]
+           ,[tpOperacion]
+           ,[vlPesos]
+           ,[vlDolares]
+           ,[vlEuros]
+           ,[nrRecibo]
+           ,[nrFactura]
+           ,[nrCaja]
+           ,[dsUsuario]
+           ,[dtMovimiento]
+           ,[dsObservacion]
+           ,[nrAnio]
+           ,[dsUsuario_Supervisor]
+           ,[nrCajaPuesto]
+           ,[tpCajaImputacion]
+           ,[dsUsuarioCajaPuesto]
+           ,[tpMovimiento]
+           ,[dtFechaPosdata]
+           ,[nrCupon]
+           ,[IdConciliacion])
+	select [IdMovimiento]
+           ,[dsMovimiento]
+           ,[IdRecibo]
+           ,[IdProveedor]
+           ,[dsProveedor]
+           ,[cdConcepto]
+           ,[tpConcepto]
+           ,[dsConcepto]
+           ,[tpOperacion]
+           ,[vlPesos]
+           ,[vlDolares]
+           ,[vlEuros]
+           ,[nrRecibo]
+           ,[nrFactura]
+           ,[nrCaja]
+           ,[dsUsuario]
+           , getdate() as [dtMovimiento]
+           ,[dsObservacion]
+           ,[nrAnio]
+           ,[dsUsuario_Supervisor]
+           ,[nrCajaPuesto]
+           ,[tpCajaImputacion]
+           ,[dsUsuarioCajaPuesto]
+           ,[tpMovimiento]
+           ,[dtFechaPosdata]
+           ,[nrCupon]
+           ,[IdConciliacion]
+	from #tmp_TB_MovimientosContablesPosdatados
+
+
+	update x set x.flProcesado = 1 ,  dtProcesado = getdate() 
+		from  TB_MovimientosContablesPosdatados x inner join #tmp_TB_MovimientosContablesPosdatados y 
+								on x.IdMovimiento = y.IdMovimiento 
+
+commit tran 
+
+end
+
+GO
 
 
 

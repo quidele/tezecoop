@@ -198,13 +198,11 @@ namespace SGLibrary
                             TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                              if(dialogResult == DialogResult.No ) break; 
-                            // COMLETAR ELIMINACION
-                             if (this.txtFormato.Text == "Manual")
-                                 serviceConciliaciones.anularConciliacion(una_conciliacion);
+                               // COMLETAR ELIMINACION
+                              if (una_conciliacion.idArchivo.ToString() == "") 
+                                 serviceConciliaciones.anularConciliacion(una_conciliacion); // conciliacion manual
                              else
-                                 serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion);
-
-                             
+                                 serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion); // conciliacion automatica 
                              MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         
                         }
@@ -452,7 +450,8 @@ namespace SGLibrary
                 switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
                 {
                     case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
-                               dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                              dgv.Rows[row].DefaultCellStyle.ForeColor = Color.White;
+                              dgv.Rows[row].Cells["CONCILIAR"].Value = true;
                         break;
                     case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
                     case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
@@ -573,6 +572,7 @@ namespace SGLibrary
                 nombreArchivo = openFileDialog1.FileName;
                 txtNombreArchivoTarjeta.Text = openFileDialog1.FileName;
                 procesarArchivo(openFileDialog1.FileName);
+                this.dataGridView1.Focus(); // hacemos foco en la grilla para evitar errores re seleccion de archivo
             }
             this.btnSelecccionarArchivoTarjeta.Enabled = true;
 
