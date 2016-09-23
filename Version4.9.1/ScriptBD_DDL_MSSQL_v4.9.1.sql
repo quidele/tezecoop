@@ -428,4 +428,9 @@ end
 GO
 
 
+sp_helptext 'SP_sepuedecompensar_2_0'
 
+
+
+ana
+stock_quimicos

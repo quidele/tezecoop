@@ -1796,7 +1796,9 @@ Dim i   As Integer
                     If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                             objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                             objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                              Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
+                              Me.lstBusqueda.ListItems(i).Checked, False, _
+                              objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i), _
+                              objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
                       Me.lstBusqueda.ListItems(i).Checked = False
                     Else
                        Me.lstBusqueda.ListItems(i).Checked = True
@@ -1810,7 +1812,9 @@ Dim i   As Integer
             If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                      Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
+                      Me.lstBusqueda.ListItems(i).Checked, False, _
+                      objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i), _
+                       objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
               Me.lstBusqueda.ListItems(i).Checked = False
             Else
                Me.lstBusqueda.ListItems(i).Checked = True
@@ -1823,7 +1827,8 @@ Dim i   As Integer
             If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                     objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                    Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
+                    Me.lstBusqueda.ListItems(i).Checked, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i), _
+                       objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
                 Me.lstBusqueda.ListItems(i).Checked = False
             Else
                 If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
@@ -2098,7 +2103,7 @@ Private Sub Form_Resize()
 
 End Sub
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControlsPagoLicenciatario Me, Me.fraBusqCajas, Me.lstBusqueda, 50, 50, fra_totales
 
@@ -2199,7 +2204,8 @@ Dim i  As Integer
    If Not sepuedeCompensar(Item.ListSubItems(C_dtCupon).Text, _
         objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", Item.Index) _
         , objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index), _
-        Not Item.Checked, True, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", Item.Index)) Then
+        Not Item.Checked, True, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", Item.Index), _
+                       objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", Item.Index)) Then
         Item.Checked = False
    Else
         If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
@@ -2624,7 +2630,8 @@ Dim Valor       As Single
         If sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", i), _
                 objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", i), _
                 objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i), _
-                False, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i)) Then
+                False, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i), _
+                       objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
                 
                         
                  If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
@@ -2737,10 +2744,11 @@ Dim Valor       As Single
 End Sub
 
 
-
+'/*********************************************************************************/
+'/* version 23/09 se puede compensar                                              */
 Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
                                  ptpCupon As String, pSeleccionado As Boolean, _
-                                 pavisarError As Boolean, pflCobradoalCliente As String) As Boolean
+                                 pavisarError As Boolean, pflCobradoalCliente As String, pdtCobradoCliente As Date) As Boolean
 
     If flAnulado = "SI" Then
         sepuedeCompensar = False
@@ -2820,7 +2828,11 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
             MsgBox "Aquí tambien se debe Analizar la dtflCobradoalCliente ", vbCritical
             
             If pflCobradoalCliente = "SI" Then
-                sepuedeCompensar = True
+                If pdtCobradoCliente <= CDate(Now()) Then
+                    sepuedeCompensar = True
+                Else
+                    sepuedeCompensar = False
+                End If
             Else
                 sepuedeCompensar = False
             End If
