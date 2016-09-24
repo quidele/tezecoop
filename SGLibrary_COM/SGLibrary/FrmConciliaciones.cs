@@ -386,6 +386,8 @@ namespace SGLibrary
         public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
         {
 
+
+
             //dgv.Rows.Clear();
             dgv.Columns.Clear();
 
@@ -431,6 +433,7 @@ namespace SGLibrary
                 this.progressBar1.BringToFront();
                 dgv.Refresh();
                 System.Threading.Thread.Sleep(10);
+                Application.DoEvents();
         
                 this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
@@ -463,8 +466,6 @@ namespace SGLibrary
                 dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
        
             }
-            
-           
 
         }
 
@@ -571,7 +572,10 @@ namespace SGLibrary
                 /* MessageBox.Show ( openFileDialog1.FileName); */
                 nombreArchivo = openFileDialog1.FileName;
                 txtNombreArchivoTarjeta.Text = openFileDialog1.FileName;
+                Cursor.Current = Cursors.WaitCursor;
+                Application.DoEvents();
                 procesarArchivo(openFileDialog1.FileName);
+                Cursor.Current = Cursors.Default;
                 this.dataGridView1.Focus(); // hacemos foco en la grilla para evitar errores re seleccion de archivo
             }
             this.btnSelecccionarArchivoTarjeta.Enabled = true;
