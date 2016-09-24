@@ -548,7 +548,7 @@ go
 
 
 
----  exec  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9 3, 2015
+---  exec  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9 2, 2015
 
 create procedure  dbo.spu_obtieneDatosCITIVentas_Alicuotas_v4_9(@mes int, @anio int) 
 as
@@ -578,7 +578,7 @@ begin
 				right( replicate('0',5) +  rtrim(A.nrTalonario),5) + -- as  serie_comp  ,	-- Punto de Venta 
 				right( replicate('0',20) + rtrim(A.nrComprobante),20 ) + -- as  nro_comp,   -- Numero de Comprobante
 		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( vlTotalGeneral -  ABS(isnull(A.vlIVA,0)) , 15, 2)  + --     As imp_neto_gravado,     --  importe total del operacion
-		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 4 , 4, 2)    + --  As alicuota_iva,     --  importe total del operacion
+		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( 4 , 4, 0)    + --  As alicuota_iva,     --  importe total del operacion
 		dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (ABS(isnull(A.vlIVA,0)),15,2)  -- As impuesto_liquidado				--  importe total conceptos que no integran el neto gravado		
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio and ABS(isnull(A.vlIVA,0)) > 0

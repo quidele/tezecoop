@@ -4,24 +4,35 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-    <Schema Namespace="dbSG2000Model.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
-        <EntityContainer Name="dbSG2000ModelStoreContainer">
-          <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.Store.TB_Conceptos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.Store.TB_Conciliacion" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.Store.TB_ConciliacionDetalle" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.Store.TB_Cupones" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_MovimientosContables" EntityType="dbSG2000Model.Store.TB_MovimientosContables" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.Store.TB_Productos" store:Type="Tables" Schema="dbo" />
-          <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.Store.TB_Usuarios" store:Type="Tables" Schema="dbo" />
-          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TB_MovimientosContables_TB_Usuarios" Association="dbSG2000Model.Store.FK_TB_MovimientosContables_TB_Usuarios">
-            <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
-            <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
-          </AssociationSet>
-        </EntityContainer>
+    <Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+        <EntityType Name="TB_ArchivoTarjeta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="formato" Type="char" MaxLength="15" />
+          <Property Name="nombrearchivo" Type="varchar" MaxLength="50" />
+          <Property Name="dtproceso" Type="datetime" />
+          <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
+          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="400" />
+        </EntityType>
+        <EntityType Name="TB_ArchivoTarjetaDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="bigint" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="idarchivo" Type="int" />
+          <Property Name="fechaPresentacion" Type="date" />
+          <Property Name="importe" Type="decimal" Precision="18" Scale="3" />
+          <Property Name="fechaPago" Type="date" />
+          <Property Name="tarjeta" Type="char" MaxLength="4" />
+          <Property Name="comprobante" Type="char" MaxLength="10" />
+          <Property Name="moneda" Type="char" MaxLength="3" />
+          <Property Name="contenido" Type="varchar" MaxLength="300" />
+          <Property Name="dtInsercion" Type="datetime" />
+          <Property Name="nrCupon" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="nrNivelConciliacion" Type="smallint" />
+        </EntityType>
         <EntityType Name="TB_Conceptos">
           <Key>
             <PropertyRef Name="cdConcepto" />
@@ -47,12 +58,13 @@
           <Key>
             <PropertyRef Name="IdConciliacion" />
           </Key>
-          <Property Name="IdConciliacion" Type="int" Nullable="false" StoreGeneratedPattern="Identity" />
+          <Property Name="IdConciliacion" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="dtConciliacion" Type="date" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
-          <Property Name="nrCajaAdm" Type="numeric" />
+          <Property Name="nrCajaAdm" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dtModificacion" Type="datetime" />
           <Property Name="flestado" Type="char" MaxLength="1" />
+          <Property Name="idArchivo" Type="int" />
         </EntityType>
         <EntityType Name="TB_ConciliacionDetalle">
           <Key>
@@ -60,13 +72,15 @@
             <PropertyRef Name="nrCupon" />
           </Key>
           <Property Name="IdConciliacion" Type="int" Nullable="false" />
-          <Property Name="nrCupon" Type="numeric" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="IdArchivoTarjetaDetalle" Type="bigint" />
+          <Property Name="fechaPago" Type="date" />
         </EntityType>
         <EntityType Name="TB_Cupones">
           <Key>
             <PropertyRef Name="nrCupon" />
           </Key>
-          <Property Name="nrCupon" Type="numeric" Nullable="false" />
+          <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="cdCliente" Type="int" />
           <Property Name="nrPuesto" Type="smallint" />
           <Property Name="nrLicencia" Type="int" Nullable="false" />
@@ -88,7 +102,7 @@
           <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
           <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
           <Property Name="dtCobradoalCliente" Type="datetime" />
-          <Property Name="nrCajaCliente" Type="numeric" />
+          <Property Name="nrCajaCliente" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dtCajaCliente" Type="datetime" />
           <Property Name="nrTalonarioProveedor" Type="float" />
           <Property Name="nrComprabanteProveedor" Type="float" />
@@ -96,7 +110,7 @@
           <Property Name="tpLetraLetraProveedor" Type="varchar" MaxLength="1" />
           <Property Name="flCompensado" Type="bit" Nullable="false" />
           <Property Name="dtCompensado" Type="datetime" />
-          <Property Name="nrCajaLicenciatario" Type="numeric" />
+          <Property Name="nrCajaLicenciatario" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dtCajaLicenciatario" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
           <Property Name="nrLiquidacionProveedores" Type="smallint" />
@@ -105,7 +119,7 @@
           <Property Name="flAnulado" Type="bit" Nullable="false" />
           <Property Name="dtAnulado" Type="datetime" />
           <Property Name="IdRecibo" Type="int" />
-          <Property Name="IdReciboCtaCte" Type="numeric" />
+          <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dsObservacion" Type="varchar" MaxLength="400" />
           <Property Name="dsDestino" Type="varchar" MaxLength="100" />
           <Property Name="dsHoraViaje" Type="char" MaxLength="10" />
@@ -116,7 +130,7 @@
           <Property Name="flSincronizado" Type="bit" />
           <Property Name="vlSubtotal" Type="float" />
           <Property Name="vlIVA" Type="float" />
-          <Property Name="nrCajaCtaCte" Type="numeric" />
+          <Property Name="nrCajaCtaCte" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dtCajaCtaCte" Type="datetime" />
           <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
           <Property Name="vlPagoReales" Type="float" />
@@ -126,14 +140,15 @@
           <Property Name="tpDocTarjeta" Type="nchar" MaxLength="10" />
           <Property Name="nrDocTarjeta" Type="nchar" MaxLength="25" />
           <Property Name="vlRecargoTarjeta" Type="float" />
+          <Property Name="nrCuponPosnet" Type="nchar" MaxLength="25" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
             <PropertyRef Name="IdMovimiento" />
           </Key>
-          <Property Name="IdMovimiento" Type="numeric" Nullable="false" />
+          <Property Name="IdMovimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
           <Property Name="dsMovimiento" Type="varchar" MaxLength="100" />
-          <Property Name="IdRecibo" Type="numeric" />
+          <Property Name="IdRecibo" Type="numeric" Precision="18" Scale="0" />
           <Property Name="IdProveedor" Type="varchar" MaxLength="50" />
           <Property Name="dsProveedor" Type="varchar" MaxLength="60" />
           <Property Name="cdConcepto" Type="int" />
@@ -145,16 +160,49 @@
           <Property Name="vlEuros" Type="float" />
           <Property Name="nrRecibo" Type="varchar" MaxLength="50" />
           <Property Name="nrFactura" Type="varchar" MaxLength="50" />
-          <Property Name="nrCaja" Type="numeric" />
+          <Property Name="nrCaja" Type="numeric" Precision="18" Scale="0" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
           <Property Name="dtMovimiento" Type="datetime" />
           <Property Name="dsObservacion" Type="varchar" MaxLength="255" />
           <Property Name="nrAnio" Type="int" />
           <Property Name="dsUsuario_Supervisor" Type="varchar" MaxLength="50" />
-          <Property Name="nrCajaPuesto" Type="numeric" />
+          <Property Name="nrCajaPuesto" Type="numeric" Precision="18" Scale="0" />
           <Property Name="tpCajaImputacion" Type="varchar" MaxLength="50" />
           <Property Name="dsUsuarioCajaPuesto" Type="varchar" MaxLength="50" />
           <Property Name="tpMovimiento" Type="varchar" MaxLength="20" />
+        </EntityType>
+        <EntityType Name="TB_MovimientosContablesPosdatados">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="dsMovimiento" Type="varchar" MaxLength="100" />
+          <Property Name="IdRecibo" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="IdProveedor" Type="varchar" MaxLength="50" />
+          <Property Name="dsProveedor" Type="varchar" MaxLength="60" />
+          <Property Name="cdConcepto" Type="int" />
+          <Property Name="tpConcepto" Type="varchar" MaxLength="50" />
+          <Property Name="dsConcepto" Type="varchar" MaxLength="100" />
+          <Property Name="tpOperacion" Type="varchar" MaxLength="50" />
+          <Property Name="vlPesos" Type="float" />
+          <Property Name="vlDolares" Type="float" />
+          <Property Name="vlEuros" Type="float" />
+          <Property Name="nrRecibo" Type="varchar" MaxLength="50" />
+          <Property Name="nrFactura" Type="varchar" MaxLength="50" />
+          <Property Name="nrCaja" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
+          <Property Name="dtMovimiento" Type="datetime" />
+          <Property Name="dsObservacion" Type="varchar" MaxLength="255" />
+          <Property Name="nrAnio" Type="int" />
+          <Property Name="dsUsuario_Supervisor" Type="varchar" MaxLength="50" />
+          <Property Name="nrCajaPuesto" Type="numeric" Precision="18" Scale="0" />
+          <Property Name="tpCajaImputacion" Type="varchar" MaxLength="50" />
+          <Property Name="dsUsuarioCajaPuesto" Type="varchar" MaxLength="50" />
+          <Property Name="tpMovimiento" Type="varchar" MaxLength="20" />
+          <Property Name="dtFechaPosdata" Type="date" Nullable="false" />
+          <Property Name="nrCupon" Type="decimal" Precision="18" Scale="0" />
+          <Property Name="IdConciliacion" Type="int" />
+          <Property Name="flProcesado" Type="bit" />
         </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
@@ -183,7 +231,7 @@
           <Key>
             <PropertyRef Name="dsUsuario" />
           </Key>
-          <Property Name="dsUsuario" Type="varchar" Nullable="false" MaxLength="50" />
+          <Property Name="dsUsuario" Type="varchar" MaxLength="50" Nullable="false" />
           <Property Name="tpAcceso" Type="varchar" MaxLength="50" />
           <Property Name="nmNombre" Type="varchar" MaxLength="30" />
           <Property Name="nmApellido" Type="varchar" MaxLength="50" />
@@ -200,9 +248,45 @@
           <Property Name="dtActualizacion" Type="datetime" />
           <Property Name="flEliminar" Type="bit" />
         </EntityType>
+        <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="idarchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
-          <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />
-          <End Role="TB_ConciliacionDetalle" Type="dbSG2000Model.Store.TB_ConciliacionDetalle" Multiplicity="*" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_Conciliacion">
               <PropertyRef Name="IdConciliacion" />
@@ -213,8 +297,8 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="FK_TB_MovimientosContables_TB_Usuarios">
-          <End Role="TB_Usuarios" Type="dbSG2000Model.Store.TB_Usuarios" Multiplicity="0..1" />
-          <End Role="TB_MovimientosContables" Type="dbSG2000Model.Store.TB_MovimientosContables" Multiplicity="*" />
+          <End Role="TB_Usuarios" Type="Self.TB_Usuarios" Multiplicity="0..1" />
+          <End Role="TB_MovimientosContables" Type="Self.TB_MovimientosContables" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="TB_Usuarios">
               <PropertyRef Name="dsUsuario" />
@@ -224,18 +308,63 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+          <End Role="TB_Usuarios" Type="Self.TB_Usuarios" Multiplicity="0..1" />
+          <End Role="TB_MovimientosContablesPosdatados" Type="Self.TB_MovimientosContablesPosdatados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuarios">
+              <PropertyRef Name="dsUsuario" />
+            </Principal>
+            <Dependent Role="TB_MovimientosContablesPosdatados">
+              <PropertyRef Name="dsUsuario_Supervisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="idArchivo" Type="int" Mode="In" />
+        </Function>
+        <EntityContainer Name="dbSG2000ModelStoreContainer">
+          <EntitySet Name="TB_ArchivoTarjeta" EntityType="Self.TB_ArchivoTarjeta" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="Self.TB_ArchivoTarjetaDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Conceptos" EntityType="Self.TB_Conceptos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Conciliacion" EntityType="Self.TB_Conciliacion" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_ConciliacionDetalle" EntityType="Self.TB_ConciliacionDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_MovimientosContables" EntityType="Self.TB_MovimientosContables" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_MovimientosContablesPosdatados" EntityType="Self.TB_MovimientosContablesPosdatados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Usuarios" EntityType="Self.TB_Usuarios" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_MovimientosContables_TB_Usuarios" Association="Self.FK_TB_MovimientosContables_TB_Usuarios">
+            <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+            <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios" Association="Self.FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+            <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+            <End Role="TB_MovimientosContablesPosdatados" EntitySet="TB_MovimientosContablesPosdatados" />
+          </AssociationSet>
+        </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
         <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
-          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
-          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
-          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
-          </AssociationSet>
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.TB_Usuarios" />
           <EntitySet Name="TB_MovimientosContables" EntityType="dbSG2000Model.TB_MovimientosContables" />
@@ -244,7 +373,35 @@
             <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
           </AssociationSet>
           <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.TB_Conceptos" />
-        </EntityContainer>
+          <FunctionImport Name="spu_conciliarAutomaticamente" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_Result)">
+          <Parameter Name="idArchivo" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <EntitySet Name="TB_ArchivoTarjeta" EntityType="dbSG2000Model.TB_ArchivoTarjeta" />
+          <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" />
+          <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
+          <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
+          <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
+          <EntitySet Name="TB_MovimientosContablesPosdatados" EntityType="dbSG2000Model.TB_MovimientosContablesPosdatados" />
+          <AssociationSet Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios" Association="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+            <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+            <End Role="TB_MovimientosContablesPosdatados" EntitySet="TB_MovimientosContablesPosdatados" />
+          </AssociationSet>
+          </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
             <PropertyRef Name="cdProducto" />
@@ -268,39 +425,6 @@
           <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="cdComision" Type="Int32" />
         </EntityType>
-        <EntityType Name="TB_Conciliacion">
-          <Key>
-            <PropertyRef Name="IdConciliacion" />
-          </Key>
-          <Property Name="IdConciliacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="dtConciliacion" Type="DateTime" Precision="0" />
-          <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Name="nrCajaAdm" Type="Decimal" Precision="18" Scale="0" />
-          <Property Name="dtModificacion" Type="DateTime" Precision="3" />
-          <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
-        </EntityType>
-        <EntityType Name="TB_ConciliacionDetalle">
-          <Key>
-            <PropertyRef Name="IdConciliacion" />
-            <PropertyRef Name="nrCupon" />
-          </Key>
-          <Property Name="IdConciliacion" Type="Int32" Nullable="false" />
-          <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
-          <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
-        </EntityType>
-        <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
-          <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
-          <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_Conciliacion">
-              <PropertyRef Name="IdConciliacion" />
-            </Principal>
-            <Dependent Role="TB_ConciliacionDetalle">
-              <PropertyRef Name="IdConciliacion" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="TB_Cupones">
           <Key>
             <PropertyRef Name="nrCupon" />
@@ -365,6 +489,7 @@
           <Property Type="String" Name="tpDocTarjeta" MaxLength="10" FixedLength="true" Unicode="true" />
           <Property Type="String" Name="nrDocTarjeta" MaxLength="25" FixedLength="true" Unicode="true" />
           <Property Type="Double" Name="vlRecargoTarjeta" />
+          <Property Type="String" Name="nrCuponPosnet" MaxLength="25" FixedLength="true" Unicode="true" />
         </EntityType>
         <EntityType Name="TB_Usuarios">
           <Key>
@@ -387,6 +512,7 @@
           <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
           <Property Type="Boolean" Name="flEliminar" />
           <NavigationProperty Name="TB_MovimientosContables" Relationship="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_MovimientosContables" />
+          <NavigationProperty Name="TB_MovimientosContablesPosdatados" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_MovimientosContablesPosdatados" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
@@ -451,7 +577,163 @@
           <Property Type="Boolean" Name="flOcultadoCajaCooperativa" />
           <Property Type="Boolean" Name="flOcultadoenRegistracion" />
         </EntityType>
-      </Schema>
+        <ComplexType Name="spu_conciliarAutomaticamente_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="4" />
+        </ComplexType>
+        <EntityType Name="TB_ArchivoTarjeta">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dtproceso" Precision="3" />
+          <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
+          <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
+          <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
+        </EntityType>
+        <EntityType Name="TB_ArchivoTarjetaDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="Int32" Name="idarchivo" />
+          <Property Type="DateTime" Name="fechaPresentacion" Precision="0" />
+          <Property Type="Decimal" Name="importe" Precision="18" Scale="3" />
+          <Property Type="DateTime" Name="fechaPago" Precision="0" />
+          <Property Type="String" Name="tarjeta" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="comprobante" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="moneda" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Type="String" Name="contenido" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Type="DateTime" Name="dtInsercion" Precision="3" />
+          <Property Type="Decimal" Name="nrCupon" Precision="18" Scale="0" />
+          <Property Type="Int16" Name="nrNivelConciliacion" />
+          <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ArchivoTarjeta" />
+          <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ConciliacionDetalle" />
+        </EntityType>
+        <EntityType Name="TB_Conciliacion">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+          </Key>
+          <Property Type="Int32" Name="IdConciliacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+          <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+          <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+          <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Type="Int32" Name="idArchivo" />
+          <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_Conciliacion" ToRole="TB_ArchivoTarjeta" />
+          <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
+        </EntityType>
+        <EntityType Name="TB_ConciliacionDetalle">
+          <Key>
+            <PropertyRef Name="IdConciliacion" />
+            <PropertyRef Name="nrCupon" />
+          </Key>
+          <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+          <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+          <Property Type="Int64" Name="IdArchivoTarjetaDetalle" />
+          <Property Type="DateTime" Name="fechaPago" Precision="0" />
+          <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ConciliacionDetalle" ToRole="TB_ArchivoTarjetaDetalle" />
+          <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
+        </EntityType>
+        <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+          <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="idarchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+          <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
+          <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Conciliacion">
+              <PropertyRef Name="IdConciliacion" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdConciliacion" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityType Name="TB_MovimientosContablesPosdatados">
+          <Key>
+            <PropertyRef Name="IdMovimiento" />
+          </Key>
+          <Property Name="IdMovimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="dsMovimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="IdRecibo" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IdProveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dsProveedor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+          <Property Name="cdConcepto" Type="Int32" />
+          <Property Name="tpConcepto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dsConcepto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="tpOperacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="vlPesos" Type="Double" />
+          <Property Name="vlDolares" Type="Double" />
+          <Property Name="vlEuros" Type="Double" />
+          <Property Name="nrRecibo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrFactura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrCaja" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dtMovimiento" Type="DateTime" Precision="3" />
+          <Property Name="dsObservacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="nrAnio" Type="Int32" />
+          <Property Name="dsUsuario_Supervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrCajaPuesto" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="tpCajaImputacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="dsUsuarioCajaPuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tpMovimiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="dtFechaPosdata" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
+          <Property Name="IdConciliacion" Type="Int32" />
+          <Property Name="flProcesado" Type="Boolean" />
+          <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_MovimientosContablesPosdatados" ToRole="TB_Usuarios" />
+        </EntityType>
+        <Association Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+          <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
+          <End Type="dbSG2000Model.TB_MovimientosContablesPosdatados" Role="TB_MovimientosContablesPosdatados" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_Usuarios">
+              <PropertyRef Name="dsUsuario" />
+            </Principal>
+            <Dependent Role="TB_MovimientosContablesPosdatados">
+              <PropertyRef Name="dsUsuario_Supervisor" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
@@ -481,29 +763,10 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_Conciliacion">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
-              <MappingFragment StoreEntitySet="TB_Conciliacion">
-                <ScalarProperty Name="flestado" ColumnName="flestado" />
-                <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
-                <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
-                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
-                <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
-                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="TB_ConciliacionDetalle">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
-              <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
-                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_Cupones">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
               <MappingFragment StoreEntitySet="TB_Cupones">
+                <ScalarProperty Name="nrCuponPosnet" ColumnName="nrCuponPosnet" />
                 <ScalarProperty Name="vlRecargoTarjeta" ColumnName="vlRecargoTarjeta" />
                 <ScalarProperty Name="nrDocTarjeta" ColumnName="nrDocTarjeta" />
                 <ScalarProperty Name="tpDocTarjeta" ColumnName="tpDocTarjeta" />
@@ -638,6 +901,101 @@
                 <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
                 <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
                 <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TB_ArchivoTarjeta">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjeta">
+              <MappingFragment StoreEntitySet="TB_ArchivoTarjeta">
+                <ScalarProperty Name="nombreArchivoCompleto" ColumnName="nombreArchivoCompleto" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="dtproceso" ColumnName="dtproceso" />
+                <ScalarProperty Name="nombrearchivo" ColumnName="nombrearchivo" />
+                <ScalarProperty Name="formato" ColumnName="formato" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ArchivoTarjetaDetalle">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjetaDetalle">
+              <MappingFragment StoreEntitySet="TB_ArchivoTarjetaDetalle">
+                <ScalarProperty Name="nrNivelConciliacion" ColumnName="nrNivelConciliacion" />
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+                <ScalarProperty Name="dtInsercion" ColumnName="dtInsercion" />
+                <ScalarProperty Name="contenido" ColumnName="contenido" />
+                <ScalarProperty Name="moneda" ColumnName="moneda" />
+                <ScalarProperty Name="comprobante" ColumnName="comprobante" />
+                <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fechaPresentacion" ColumnName="fechaPresentacion" />
+                <ScalarProperty Name="idarchivo" ColumnName="idarchivo" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_Conciliacion">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+              <MappingFragment StoreEntitySet="TB_Conciliacion">
+                <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+                <ScalarProperty Name="flestado" ColumnName="flestado" />
+                <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+                <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ConciliacionDetalle">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+              <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+                <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+                <ScalarProperty Name="IdArchivoTarjetaDetalle" ColumnName="IdArchivoTarjetaDetalle" />
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_MovimientosContablesPosdatados">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContablesPosdatados">
+              <MappingFragment StoreEntitySet="TB_MovimientosContablesPosdatados">
+                <ScalarProperty Name="flProcesado" ColumnName="flProcesado" />
+                <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+                <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+                <ScalarProperty Name="dtFechaPosdata" ColumnName="dtFechaPosdata" />
+                <ScalarProperty Name="tpMovimiento" ColumnName="tpMovimiento" />
+                <ScalarProperty Name="dsUsuarioCajaPuesto" ColumnName="dsUsuarioCajaPuesto" />
+                <ScalarProperty Name="tpCajaImputacion" ColumnName="tpCajaImputacion" />
+                <ScalarProperty Name="nrCajaPuesto" ColumnName="nrCajaPuesto" />
+                <ScalarProperty Name="dsUsuario_Supervisor" ColumnName="dsUsuario_Supervisor" />
+                <ScalarProperty Name="nrAnio" ColumnName="nrAnio" />
+                <ScalarProperty Name="dsObservacion" ColumnName="dsObservacion" />
+                <ScalarProperty Name="dtMovimiento" ColumnName="dtMovimiento" />
+                <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+                <ScalarProperty Name="nrCaja" ColumnName="nrCaja" />
+                <ScalarProperty Name="nrFactura" ColumnName="nrFactura" />
+                <ScalarProperty Name="nrRecibo" ColumnName="nrRecibo" />
+                <ScalarProperty Name="vlEuros" ColumnName="vlEuros" />
+                <ScalarProperty Name="vlDolares" ColumnName="vlDolares" />
+                <ScalarProperty Name="vlPesos" ColumnName="vlPesos" />
+                <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+                <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
+                <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
+                <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+                <ScalarProperty Name="dsProveedor" ColumnName="dsProveedor" />
+                <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+                <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+                <ScalarProperty Name="dsMovimiento" ColumnName="dsMovimiento" />
+                <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

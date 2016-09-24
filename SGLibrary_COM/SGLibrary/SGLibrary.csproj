@@ -86,6 +86,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ArchivoTarjetas\ArchivoTarjeta.cs" />
+    <Compile Include="ArchivoTarjetas\ArchivoTarjetaMaster.cs" />
     <Compile Include="ArchivoTarjetas\ArchivoTarjetaVisa.cs" />
     <Compile Include="ArchivoTarjetas\IArchivoTarjeta.cs" />
     <Compile Include="BotonesForm.cs">
@@ -101,6 +102,7 @@
     <Compile Include="EXCELNuke\Workbook.cs" />
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
+    <Compile Include="Extensiones\Extensiones.cs" />
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -154,6 +156,7 @@
       <DesignTime>True</DesignTime>
     </Compile>
     <Compile Include="ServiceConciliacion.cs" />
+    <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceDestinos.cs" />
     <Compile Include="DBCOM_Class.cs" />
     <Compile Include="Form1.cs">
@@ -168,6 +171,15 @@
     <Compile Include="ServiceMovimientoContable.cs" />
     <Compile Include="ServicePrinter.cs" />
     <Compile Include="ServiceTarifas.cs" />
+    <Compile Include="spu_conciliarAutomaticamente_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ArchivoTarjeta.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ArchivoTarjetaDetalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Conceptos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -181,6 +193,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_MovimientosContables.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_MovimientosContablesPosdatados.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_Productos.cs">

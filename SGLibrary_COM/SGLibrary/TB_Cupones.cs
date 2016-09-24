@@ -74,5 +74,6 @@ namespace SGLibrary
         public string tpDocTarjeta { get; set; }
         public string nrDocTarjeta { get; set; }
         public Nullable<double> vlRecargoTarjeta { get; set; }
+        public string nrCuponPosnet { get; set; }
     }
 }

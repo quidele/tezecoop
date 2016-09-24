@@ -73,7 +73,7 @@ Begin VB.Form frm_SalidasAFIP
          Height          =   315
          ItemData        =   "frm_SalidasAFIP.frx":0000
          Left            =   180
-         List            =   "frm_SalidasAFIP.frx":0007
+         List            =   "frm_SalidasAFIP.frx":000A
          Style           =   2  'Dropdown List
          TabIndex        =   1
          Top             =   465
@@ -309,19 +309,16 @@ Dim resp As Byte
         MousePointer = vbHourglass
         
         Select Case Me.cbSoportes.Text
-        Case "Archivos CITI"
-                MousePointer = vbDefault
-                If Not generarArchivo_CITI_Ventas_Comprobantes() Then
+            Case "CITI Ventas Comprobantes"
+                    If generarArchivo_CITI_Ventas_Comprobantes() Then
+                        MousePointer = vbDefault
+                        Unload Me
+                    End If
+        Case "CITI Ventas Alicuotas"
+                If generarArchivo_CITI_Ventas_Alicuotas() Then
                     MousePointer = vbDefault
-                    Exit Sub
+                    Unload Me
                 End If
-                If Not generarArchivo_CITI_Ventas_Alicuotas() Then
-                    MousePointer = vbDefault
-                    Exit Sub
-                End If
-                MousePointer = vbDefault
-                MsgBox "El proceso se ha generado con éxito, verifique la generación de los archivos en la carpeta AFIP.", vbInformation, "Atención"
-                Exit Sub
         End Select
         
 
@@ -356,6 +353,7 @@ Dim objControl  As New CControl
         Exit Function
     End If
 
+    MsgBox "El proceso se ha generado con éxito, verifique la generación del archivo en la carpeta AFIP.", vbInformation, "Atención"
     
     
     generarArchivo_CITI_Ventas_Comprobantes = True
@@ -378,7 +376,7 @@ Dim objControl  As New CControl
     generarArchivo_CITI_Ventas_Alicuotas = False
 
     
-    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_Alicuotas_v4_9"
+    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_v4_8"
     objSPs.setearCampoValor "@mes", ObtenerCampo("mes")
     objSPs.setearCampoValor "@anio", ObtenerCampo("anio")
     
@@ -387,6 +385,7 @@ Dim objControl  As New CControl
         Exit Function
     End If
 
+    MsgBox "El proceso se ha generado con éxito, verifique la generación del archivo en la carpeta AFIP.", vbInformation, "Atención"
     
     generarArchivo_CITI_Ventas_Alicuotas = True
     

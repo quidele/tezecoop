@@ -42,10 +42,10 @@ namespace SGLibrary
     public class ServiceConciliacion : ServiceModel, Conciliacion_Interface
     {
 
-        const int Viajes_con_Tarjeta_a_Bancos = 2035;
-        const int Conciliacion_de_Viajes = 2036;
-        const int Anula_Viajes_con_Tarjeta_a_Bancos = 2037;
-        const int Anula_conciliacion_de_Viajes = 2038;
+        public const int Viajes_con_Tarjeta_a_Bancos = 2035;
+        public const int Conciliacion_de_Viajes = 2036;
+        public const int Anula_Viajes_con_Tarjeta_a_Bancos = 2037;
+        public const int Anula_conciliacion_de_Viajes = 2038;
 
         private String _usuarioActivo;
         private String _cajactiva;
@@ -58,11 +58,16 @@ namespace SGLibrary
 
                 var f = new FrmConciliaciones();
                 f.serviceConciliaciones = this;
+                f.serviceConciliacionesAutomaticas = new ServiceConciliacionAutomatica();
+                f.serviceConciliacionesAutomaticas.CajaActiva(this._cajactiva);
+                f.serviceConciliacionesAutomaticas.UsuarioActivo(this._usuarioActivo);
                 f.ShowDialog();
             }
             catch (Exception ex)
             {
+                Console.WriteLine(ex);
                 Trace.TraceError(ex.Message);
+                
                 System.Windows.Forms.MessageBox.Show(ex.Message, "ERROR ");
             }
         }
@@ -131,8 +136,6 @@ namespace SGLibrary
                 context.TB_Conciliacion.Add(objConciliacion);
 
                 context.SaveChanges();
-
-
                 
                GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
                 
@@ -146,7 +149,7 @@ namespace SGLibrary
             }
 
 
-        }
+         }
 
 
         public void modificarConciliacion(List<Decimal> ids_cupones, 
@@ -249,6 +252,7 @@ namespace SGLibrary
 
         }
 
+
         public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta , String usuario )
         {
 
@@ -274,9 +278,6 @@ namespace SGLibrary
 
         public void anularConciliacion(TB_Conciliacion objConciliacion)
         {
-
-
-         
             using (var context = new dbSG2000Entities())
             {
 
@@ -334,9 +335,9 @@ namespace SGLibrary
                                                     where c.IdConciliacion == id 
                                                 select c)
                                                  .First ();
-                // Should Load the Orders
+                // Should Load the Details
                 una_conciliacion.TB_ConciliacionDetalle.ToList();
-                 
+                una_conciliacion.TB_ArchivoTarjeta.ToString();
                 return una_conciliacion;
             }
         }

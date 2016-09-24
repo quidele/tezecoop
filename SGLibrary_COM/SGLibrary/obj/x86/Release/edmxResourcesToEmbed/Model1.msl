@@ -25,29 +25,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_Conciliacion">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
-        <MappingFragment StoreEntitySet="TB_Conciliacion">
-          <ScalarProperty Name="flestado" ColumnName="flestado" />
-          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
-          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
-          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
-          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="TB_ConciliacionDetalle">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
-        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
-          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Cupones">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
         <MappingFragment StoreEntitySet="TB_Cupones">
+          <ScalarProperty Name="nrCuponPosnet" ColumnName="nrCuponPosnet" />
           <ScalarProperty Name="vlRecargoTarjeta" ColumnName="vlRecargoTarjeta" />
           <ScalarProperty Name="nrDocTarjeta" ColumnName="nrDocTarjeta" />
           <ScalarProperty Name="tpDocTarjeta" ColumnName="tpDocTarjeta" />
@@ -182,6 +163,98 @@
           <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
           <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
           <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <EntitySetMapping Name="TB_ArchivoTarjeta">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjeta">
+        <MappingFragment StoreEntitySet="TB_ArchivoTarjeta">
+          <ScalarProperty Name="nombreArchivoCompleto" ColumnName="nombreArchivoCompleto" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="dtproceso" ColumnName="dtproceso" />
+          <ScalarProperty Name="nombrearchivo" ColumnName="nombrearchivo" />
+          <ScalarProperty Name="formato" ColumnName="formato" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ArchivoTarjetaDetalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ArchivoTarjetaDetalle">
+        <MappingFragment StoreEntitySet="TB_ArchivoTarjetaDetalle">
+          <ScalarProperty Name="nrNivelConciliacion" ColumnName="nrNivelConciliacion" />
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+          <ScalarProperty Name="dtInsercion" ColumnName="dtInsercion" />
+          <ScalarProperty Name="contenido" ColumnName="contenido" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="comprobante" ColumnName="comprobante" />
+          <ScalarProperty Name="tarjeta" ColumnName="tarjeta" />
+          <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fechaPresentacion" ColumnName="fechaPresentacion" />
+          <ScalarProperty Name="idarchivo" ColumnName="idarchivo" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_Conciliacion">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_Conciliacion">
+        <MappingFragment StoreEntitySet="TB_Conciliacion">
+          <ScalarProperty Name="idArchivo" ColumnName="idArchivo" />
+          <ScalarProperty Name="flestado" ColumnName="flestado" />
+          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+          <ScalarProperty Name="nrCajaAdm" ColumnName="nrCajaAdm" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="dtConciliacion" ColumnName="dtConciliacion" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ConciliacionDetalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ConciliacionDetalle">
+        <MappingFragment StoreEntitySet="TB_ConciliacionDetalle">
+          <ScalarProperty Name="fechaPago" ColumnName="fechaPago" />
+          <ScalarProperty Name="IdArchivoTarjetaDetalle" ColumnName="IdArchivoTarjetaDetalle" />
+          <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
+          <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_MovimientosContablesPosdatados">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContablesPosdatados">
+        <MappingFragment StoreEntitySet="TB_MovimientosContablesPosdatados">
+          <ScalarProperty Name="flProcesado" ColumnName="flProcesado" />
+          <ScalarProperty Name="tpMovimiento" ColumnName="tpMovimiento" />
+          <ScalarProperty Name="dsUsuarioCajaPuesto" ColumnName="dsUsuarioCajaPuesto" />
+          <ScalarProperty Name="tpCajaImputacion" ColumnName="tpCajaImputacion" />
+          <ScalarProperty Name="nrCajaPuesto" ColumnName="nrCajaPuesto" />
+          <ScalarProperty Name="dsUsuario_Supervisor" ColumnName="dsUsuario_Supervisor" />
+          <ScalarProperty Name="nrAnio" ColumnName="nrAnio" />
+          <ScalarProperty Name="dsObservacion" ColumnName="dsObservacion" />
+          <ScalarProperty Name="dtMovimiento" ColumnName="dtMovimiento" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="nrCaja" ColumnName="nrCaja" />
+          <ScalarProperty Name="nrFactura" ColumnName="nrFactura" />
+          <ScalarProperty Name="nrRecibo" ColumnName="nrRecibo" />
+          <ScalarProperty Name="vlEuros" ColumnName="vlEuros" />
+          <ScalarProperty Name="vlDolares" ColumnName="vlDolares" />
+          <ScalarProperty Name="vlPesos" ColumnName="vlPesos" />
+          <ScalarProperty Name="tpOperacion" ColumnName="tpOperacion" />
+          <ScalarProperty Name="dsConcepto" ColumnName="dsConcepto" />
+          <ScalarProperty Name="tpConcepto" ColumnName="tpConcepto" />
+          <ScalarProperty Name="cdConcepto" ColumnName="cdConcepto" />
+          <ScalarProperty Name="dsProveedor" ColumnName="dsProveedor" />
+          <ScalarProperty Name="IdProveedor" ColumnName="IdProveedor" />
+          <ScalarProperty Name="IdRecibo" ColumnName="IdRecibo" />
+          <ScalarProperty Name="dsMovimiento" ColumnName="dsMovimiento" />
+          <ScalarProperty Name="IdMovimiento" ColumnName="IdMovimiento" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

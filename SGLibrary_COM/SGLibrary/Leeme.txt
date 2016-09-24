@@ -1,0 +1,7 @@
+
+
+	1.- Cambiar el Focu del combo de tipo de conciliacion, despues de la seleccion del archivo
+	    por parte del usuario a la grilla, 
+	    esto es para evitar que el usuario no modifique sin querer la selección
+
+	2.- Mejorar el proceso de conciliación pasando monto, cupon, tarjeta todo a numero
