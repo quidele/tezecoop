@@ -108,12 +108,19 @@ GO
 
 
 
+
+--	select  convert(float,nrCuponposnet),  isnumeric(nrCuponposnet) , nrCuponposnet,  * from tmpViajesesaConciliar
+--	where nrCuponposnet like '%.%'
+
+
+go
+
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_conciliarAutomaticamente' )
 	drop procedure  dbo.spu_conciliarAutomaticamente
 
 go
 		
---exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=15 
+--exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=2
 
 create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
 as
@@ -130,13 +137,23 @@ begin
 
 	SELECT Id, idarchivo, fechaPresentacion, importe, fechaPago, 
 		    tarjeta, comprobante, moneda, contenido, dtInsercion, 
-			nrCupon into #tmpArchivoaConciliar  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = @idArchivo
+			nrCupon, convert(int,0) as comprobante_numerico, 
+			convert(int,0) as tarjeta_numerico,
+			convert(float,0) as importe_numerico
+			into #tmpArchivoaConciliar
+			  FROM TB_ArchivoTarjetaDetalle WHERE idarchivo = @idArchivo
+
+	update #tmpArchivoaConciliar set comprobante_numerico = convert(int,comprobante) where ISNUMERIC(comprobante) = 1
+	update #tmpArchivoaConciliar set tarjeta_numerico = convert(int,comprobante) where ISNUMERIC(tarjeta_numerico) = 1
+	update #tmpArchivoaConciliar set importe_numerico = convert(float,comprobante) where ISNUMERIC(importe_numerico) = 1
 
 	-- select top 10 * from #tmpArchivoaConciliar
 
 	select c.nrCupon, c.dtCupon, c.nrLicencia, c.tpComprobanteCliente, 
 		   c.tpLetraCliente , c.nrTalonarioCliente , c.nrComprabanteCliente,  c.vlMontoCupon ,
-		   c.nrTarjeta, c.tpDocTarjeta,  c.nrDocTarjeta  , nrCuponPosnet 
+		   c.nrTarjeta, c.tpDocTarjeta,  c.nrDocTarjeta  , nrCuponPosnet , convert(int,0)  nrCuponPosnet_numerico,
+		   convert(int,0) as nrTarjeta_numerico,
+		   convert(float,0) as vlMontoCupon_numerico
 		    into #tmpViajesesaConciliar
 			from  TB_Cupones c
 					where (c.flCobradoalCliente = 0 ) and  (c.flCompensado = 0)
@@ -145,6 +162,12 @@ begin
 						   -- falta agregar que no haya sido conciliado anteriormente 
     
 	--select * from #tmpViajesesaConciliar
+	
+	update #tmpViajesesaConciliar  set nrCuponPosnet_numerico = convert(int,nrCuponPosnet) where ISNUMERIC(replace(nrCuponPosnet,'.','')) = 1
+	update #tmpViajesesaConciliar  set nrTarjeta_numerico = convert(int,nrTarjeta_numerico) where ISNUMERIC(replace(nrTarjeta_numerico,'.','')) = 1
+	update #tmpViajesesaConciliar  set vlMontoCupon_numerico = convert(float,vlMontoCupon_numerico) where ISNUMERIC(replace(vlMontoCupon_numerico,'.','')) = 1
+	
+	--select * from #tmpViajesesaConciliar
 
 	-- nrNivelConciliacion 1 - mas representativo                                   
 	-- drop table  #tmpViajesConciliados           
@@ -152,7 +175,18 @@ begin
 	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
 					on x.comprobante = y.nrCuponPosnet  and x.tarjeta = y.nrTarjeta
 							and x.importe = y.vlMontoCupon
-								
+	
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 1 as nrNivelConciliacion  
+	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
+					on x.comprobante_numerico = y.nrCuponPosnet_numerico  and x.tarjeta = y.nrTarjeta
+							and x.importe = y.vlMontoCupon						
+
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 1 as nrNivelConciliacion  
+	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
+					on x.comprobante_numerico = y.nrCuponPosnet_numerico  and x.tarjeta_numerico = y.nrTarjeta_numerico
+							and x.importe_numerico = y.vlMontoCupon_numerico	
 
 	--select * from #tmpViajesConciliados
 
@@ -175,6 +209,18 @@ begin
 
 	--select * from #tmpViajesConciliados
 
+		insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta = y.nrTarjeta  and convert(date , x.fechaPresentacion  )  = convert( date ,  y.dtCupon )
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
 	-- nrNivelConciliacion 2 
 	insert into  #tmpViajesConciliados 
 	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
@@ -183,11 +229,7 @@ begin
 						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 	--select * from #tmpViajesConciliados
 
-	insert into  #tmpViajesConciliados 
-	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
-	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
-					on x.tarjeta = y.nrTarjeta  and convert(date , x.fechaPresentacion  )  = convert( date ,  y.dtCupon )
-						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
 
 	--select * from #tmpViajesConciliados
 
@@ -203,18 +245,19 @@ end
 GO
 
 
-
-ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
+	ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
+GO
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
+	ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]
 GO
 
-ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] DROP CONSTRAINT [DF_TB_MovimientosContablesPosdatados_flProcesado]
-GO
-
-/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 17/09/2016 8:35:41  ******/
+if  exists (SELECT * FROM sys.tables where name ='TB_MovimientosContablesPosdatados' )
 DROP TABLE [dbo].[TB_MovimientosContablesPosdatados]
 GO
 
-/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 14/09/2016 17:42:46 ******/
+/****** Object:  Table [dbo].[TB_MovimientosContablesPosdatados]    Script Date: 17/09/2016 8:35:41  ******/
 SET ANSI_NULLS ON
 GO
 
@@ -249,13 +292,16 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[tpCajaImputacion] [varchar](50) NULL,
 	[dsUsuarioCajaPuesto] [varchar](50) NULL,
 	[tpMovimiento] [varchar](20) NULL,
+	[dtFechaPosdata] [date] NOT NULL,
+	[nrCupon] [decimal](18, 0) NULL,
+	[IdConciliacion] [int] NULL,
 	[flProcesado] [bit] NULL,
+	[dtProcesado] [datetime] NULL,
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
 	[IdMovimiento] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON, FILLFACTOR = 90) ON [PRIMARY]
 ) ON [PRIMARY]
-
 GO
 
 SET ANSI_PADDING OFF
@@ -270,5 +316,135 @@ GO
 
 ALTER TABLE [dbo].[TB_MovimientosContablesPosdatados] CHECK CONSTRAINT [FK_TB_MovimientosContablesPosdatados_TB_Usuarios]
 GO
+
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='dtFechaPosdata')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  dtFechaPosdata date NULL;
+
+go
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='nrCupon')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  nrCupon decimal(18, 0) NULL;
+
+go
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='IdConciliacion')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  IdConciliacion int  NULL
+
+go
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_procesarMovimientosPosdatados' )
+	drop procedure  dbo.spu_procesarMovimientosPosdatados
+
+go
+
+create procedure spu_procesarMovimientosPosdatados
+as
+begin
+
+
+begin tran 
+
+	select	[IdMovimiento]
+			,[dsMovimiento]
+			,[IdRecibo]
+			,[IdProveedor]
+			,[dsProveedor]
+			,[cdConcepto]
+			,[tpConcepto]
+			,[dsConcepto]
+			,[tpOperacion]
+			,[vlPesos]
+			,[vlDolares]
+			,[vlEuros]
+			,[nrRecibo]
+			,[nrFactura]
+			,[nrCaja]
+			,[dsUsuario]
+			,[dtMovimiento]
+			,[dsObservacion]
+			,[nrAnio]
+			,[dsUsuario_Supervisor]
+			,[nrCajaPuesto]
+			,[tpCajaImputacion]
+			,[dsUsuarioCajaPuesto]
+			,[tpMovimiento]
+			,[dtFechaPosdata]
+			,[nrCupon]
+			,[IdConciliacion]
+			into #tmp_TB_MovimientosContablesPosdatados
+	from TB_MovimientosContablesPosdatados
+			 where flProcesado = 0  and [dtFechaPosdata]<= getdate()  -- se gewnera el movimeiento
+
+
+	INSERT INTO [dbo].[TB_MovimientosContables]
+           ([IdMovimiento]
+           ,[dsMovimiento]
+           ,[IdRecibo]
+           ,[IdProveedor]
+           ,[dsProveedor]
+           ,[cdConcepto]
+           ,[tpConcepto]
+           ,[dsConcepto]
+           ,[tpOperacion]
+           ,[vlPesos]
+           ,[vlDolares]
+           ,[vlEuros]
+           ,[nrRecibo]
+           ,[nrFactura]
+           ,[nrCaja]
+           ,[dsUsuario]
+           ,[dtMovimiento]
+           ,[dsObservacion]
+           ,[nrAnio]
+           ,[dsUsuario_Supervisor]
+           ,[nrCajaPuesto]
+           ,[tpCajaImputacion]
+           ,[dsUsuarioCajaPuesto]
+           ,[tpMovimiento]
+           ,[dtFechaPosdata]
+           ,[nrCupon]
+           ,[IdConciliacion])
+	select [IdMovimiento]
+           ,[dsMovimiento]
+           ,[IdRecibo]
+           ,[IdProveedor]
+           ,[dsProveedor]
+           ,[cdConcepto]
+           ,[tpConcepto]
+           ,[dsConcepto]
+           ,[tpOperacion]
+           ,[vlPesos]
+           ,[vlDolares]
+           ,[vlEuros]
+           ,[nrRecibo]
+           ,[nrFactura]
+           ,[nrCaja]
+           ,[dsUsuario]
+           , getdate() as [dtMovimiento]
+           ,[dsObservacion]
+           ,[nrAnio]
+           ,[dsUsuario_Supervisor]
+           ,[nrCajaPuesto]
+           ,[tpCajaImputacion]
+           ,[dsUsuarioCajaPuesto]
+           ,[tpMovimiento]
+           ,[dtFechaPosdata]
+           ,[nrCupon]
+           ,[IdConciliacion]
+	from #tmp_TB_MovimientosContablesPosdatados
+
+
+	update x set x.flProcesado = 1 ,  dtProcesado = getdate() 
+		from  TB_MovimientosContablesPosdatados x inner join #tmp_TB_MovimientosContablesPosdatados y 
+								on x.IdMovimiento = y.IdMovimiento 
+
+commit tran 
+
+end
+
+GO
+
 
 
