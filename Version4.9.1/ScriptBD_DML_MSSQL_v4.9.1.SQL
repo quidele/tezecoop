@@ -20,3 +20,19 @@ delete diccionariodedatos where nmTabla = 'spu_hayViajesenTarjetaconDatosIncompl
 
 INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_hayViajesenTarjetaconDatosIncompletos_v4_9_1','@nrCajaAdmActual','@nrCajaAdmActual','DECIMAL','20',null,null,null,null,null,null,null,null,null,null,null,null);
 
+
+
+
+--- CORRECCION DE LA dtCobradoalCliente para que el programa no arroje ERROR
+SELECT nrLicencia,  flCobradoalCliente , dtCobradoalCliente, *
+  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0   AND  TB_Cupones.flCompensado = 0  
+  AND  TB_Cupones.flAnulado = 0  and dtCobradoalCliente is null   and flCobradoalCliente = 1 
+  and tpCupon like 'Tarjeta%'
+
+
+
+
+update  c set  c.dtCobradoalCliente  = convert (date ,  getdate() ) 
+  FROM TB_Cupones  c WHERE c.flEliminar = 0  AND  c.flCompensado = 0  
+  AND  c.flAnulado = 0  and c.dtCobradoalCliente is null   and c.flCobradoalCliente = 1
+    and tpCupon like 'Tarjeta%'
