@@ -64,8 +64,10 @@
             this.statusbar_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_nrocaja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_bd = new System.Windows.Forms.ToolStripStatusLabel();
-            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
+            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.label11 = new System.Windows.Forms.Label();
+            this.label12 = new System.Windows.Forms.Label();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -85,6 +87,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelcarga.Controls.Add(this.label12);
+            this.panelcarga.Controls.Add(this.label11);
             this.panelcarga.Controls.Add(this.progressBar1);
             this.panelcarga.Controls.Add(this.txtIdArchivo);
             this.panelcarga.Controls.Add(this.btnSelecccionarArchivoTarjeta);
@@ -105,15 +109,15 @@
             this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.txtFormato);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
-            this.panelcarga.Size = new System.Drawing.Size(944, 386);
+            this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
             // 
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(255, 181);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(421, 28);
             this.progressBar1.TabIndex = 4;
@@ -123,7 +127,7 @@
             // 
             this.txtIdArchivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtIdArchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdArchivo.Location = new System.Drawing.Point(793, 11);
+            this.txtIdArchivo.Location = new System.Drawing.Point(964, 44);
             this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtIdArchivo.Name = "txtIdArchivo";
             this.txtIdArchivo.ReadOnly = true;
@@ -133,8 +137,8 @@
             // btnSelecccionarArchivoTarjeta
             // 
             this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(884, 80);
-            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(1243, 80);
+            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
             this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
             this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
@@ -149,17 +153,17 @@
             this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(331, 81);
-            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
             this.txtNombreArchivoTarjeta.ReadOnly = true;
-            this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(551, 22);
+            this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(910, 22);
             this.txtNombreArchivoTarjeta.TabIndex = 19;
             // 
             // modoEdicion
             // 
             this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.modoEdicion.Location = new System.Drawing.Point(839, 11);
+            this.modoEdicion.Location = new System.Drawing.Point(1077, 44);
             this.modoEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
@@ -221,7 +225,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(893, 241);
+            this.dataGridView1.Size = new System.Drawing.Size(1252, 241);
             this.dataGridView1.TabIndex = 12;
             // 
             // txtIdConciliacion
@@ -334,9 +338,9 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
-            this.panelbusqueda.Size = new System.Drawing.Size(981, 404);
+            this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
             // 
             // cbUsuariosConciliaciones
@@ -420,7 +424,7 @@
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(944, 271);
+            this.dataGridView2.Size = new System.Drawing.Size(1303, 271);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
@@ -440,7 +444,7 @@
             this.status_bar_usuario.Location = new System.Drawing.Point(0, 448);
             this.status_bar_usuario.Name = "status_bar_usuario";
             this.status_bar_usuario.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
-            this.status_bar_usuario.Size = new System.Drawing.Size(1013, 25);
+            this.status_bar_usuario.Size = new System.Drawing.Size(1372, 25);
             this.status_bar_usuario.TabIndex = 4;
             this.status_bar_usuario.Text = "statusStrip1";
             this.status_bar_usuario.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked);
@@ -465,6 +469,12 @@
             this.statusbar_bd.Size = new System.Drawing.Size(93, 20);
             this.statusbar_bd.Text = "statusbar_bd";
             // 
+            // statusbar_servidor
+            // 
+            this.statusbar_servidor.Name = "statusbar_servidor";
+            this.statusbar_servidor.Size = new System.Drawing.Size(128, 20);
+            this.statusbar_servidor.Text = "statusbar_servidor";
+            // 
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
@@ -477,17 +487,29 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // statusbar_servidor
+            // label11
             // 
-            this.statusbar_servidor.Name = "statusbar_servidor";
-            this.statusbar_servidor.Size = new System.Drawing.Size(128, 20);
-            this.statusbar_servidor.Text = "statusbar_servidor";
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(888, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 17);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Id Archivo";
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1001, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 17);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Edición";
             // 
             // FrmConciliaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1013, 473);
+            this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelcarga);
@@ -550,5 +572,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbar_bd;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_nrocaja;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_servidor;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.Label label11;
     }
 }

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -1290,7 +1290,7 @@ Begin VB.Form frm_PagoLicenciatario
             SubItemIndex    =   22
             Key             =   "dtCobradoalCliente"
             Object.Tag             =   "dtCobradoalCliente"
-            Text            =   "dtCobradoalCliente"
+            Text            =   "Fecha Cobro"
             Object.Width           =   2540
          EndProperty
       End
@@ -2538,6 +2538,7 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "->", ""
          ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "=", "0", " AND "
@@ -2661,11 +2662,6 @@ Dim Valor       As Single
                 ActualizarCantidadViajes
             Next j
             
-            MsgBox "Analizar Para en tarjeta", vbCritical, "Atención"
-            ' DEBEMOS ANALIZAR LA FECHA PAGO
-            ' SI ES CUPON EN TARJETA , debemos valida la fecha dtCobradoAlCliente
-            
-            
         Else
             ' grisamos el registro
             For j = 1 To Me.lstBusqueda.ListItems(i).ListSubItems.Count
@@ -2748,7 +2744,7 @@ End Sub
 '/* version 23/09 se puede compensar                                              */
 Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
                                  ptpCupon As String, pSeleccionado As Boolean, _
-                                 pavisarError As Boolean, pflCobradoalCliente As String, pdtCobradoCliente As Date) As Boolean
+                                 pavisarError As Boolean, pflCobradoalCliente As String, pdtCobradoCliente As String) As Boolean
 
     If flAnulado = "SI" Then
         sepuedeCompensar = False
@@ -2825,10 +2821,10 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
         If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Débito") Then
             
             ' Aqui tambien se debe Analizar la dtflCobradoalCliente
-            MsgBox "Aquí tambien se debe Analizar la dtflCobradoalCliente ", vbCritical
+            ' MsgBox "Aquí tambien se debe Analizar la Fecha de Cobro del viaje en tarjeta ", vbCritical
             
             If pflCobradoalCliente = "SI" Then
-                If pdtCobradoCliente <= CDate(Now()) Then
+                If CDate(pdtCobradoCliente) <= CDate(Now()) Then
                     sepuedeCompensar = True
                 Else
                     sepuedeCompensar = False

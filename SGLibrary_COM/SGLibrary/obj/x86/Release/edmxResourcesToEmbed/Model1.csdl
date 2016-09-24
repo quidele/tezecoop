@@ -227,7 +227,7 @@
     <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="dtproceso" Precision="3" />
     <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
     <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
   </EntityType>
@@ -328,31 +328,34 @@
     <Key>
       <PropertyRef Name="IdMovimiento" />
     </Key>
-    <Property Type="Decimal" Name="IdMovimiento" Nullable="false" Precision="18" Scale="0" />
-    <Property Type="String" Name="dsMovimiento" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="Decimal" Name="IdRecibo" Precision="18" Scale="0" />
-    <Property Type="String" Name="IdProveedor" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="dsProveedor" MaxLength="60" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="cdConcepto" />
-    <Property Type="String" Name="tpConcepto" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="dsConcepto" MaxLength="100" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="tpOperacion" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Double" Name="vlPesos" />
-    <Property Type="Double" Name="vlDolares" />
-    <Property Type="Double" Name="vlEuros" />
-    <Property Type="String" Name="nrRecibo" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nrFactura" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Decimal" Name="nrCaja" Precision="18" Scale="0" />
-    <Property Type="String" Name="dsUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="dtMovimiento" Precision="3" />
-    <Property Type="String" Name="dsObservacion" MaxLength="255" FixedLength="false" Unicode="false" />
-    <Property Type="Int32" Name="nrAnio" />
-    <Property Type="String" Name="dsUsuario_Supervisor" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="Decimal" Name="nrCajaPuesto" Precision="18" Scale="0" />
-    <Property Type="String" Name="tpCajaImputacion" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="dsUsuarioCajaPuesto" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="tpMovimiento" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="Boolean" Name="flProcesado" />
+    <Property Name="IdMovimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="dsMovimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdRecibo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdProveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsProveedor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cdConcepto" Type="Int32" />
+    <Property Name="tpConcepto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsConcepto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tpOperacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vlPesos" Type="Double" />
+    <Property Name="vlDolares" Type="Double" />
+    <Property Name="vlEuros" Type="Double" />
+    <Property Name="nrRecibo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrFactura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCaja" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtMovimiento" Type="DateTime" Precision="3" />
+    <Property Name="dsObservacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nrAnio" Type="Int32" />
+    <Property Name="dsUsuario_Supervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCajaPuesto" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="tpCajaImputacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsUsuarioCajaPuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpMovimiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtFechaPosdata" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdConciliacion" Type="Int32" />
+    <Property Name="flProcesado" Type="Boolean" />
     <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_MovimientosContablesPosdatados" ToRole="TB_Usuarios" />
   </EntityType>
   <Association Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
