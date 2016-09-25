@@ -262,14 +262,17 @@ namespace SGLibrary
                 var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion
                                                 where c.dtConciliacion >= fechadesde
                                                 && c.dtConciliacion <= fechaHasta
-                                                && (c.dsUsuario == usuario || usuario.Trim().Length ==0 )
-                                                select new { ID = c.IdConciliacion  , 
-                                                       FECHA = c.dtConciliacion , 
-                                                       USUARIO = c.dsUsuario , 
-                                                       CAJA_ADM =  c.nrCajaAdm  ,
-                                                       FECHA_MODIF = c.dtModificacion , 
-                                                       ESTADO  = c.flestado  } 
-                                                    );
+                                                && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
+                                                orderby c.IdConciliacion descending
+                                                select new
+                                                {
+                                                    ID = c.IdConciliacion,
+                                                    FECHA = c.dtConciliacion,
+                                                    USUARIO = c.dsUsuario,
+                                                    CAJA_ADM = c.nrCajaAdm,
+                                                    FECHA_MODIF = c.dtModificacion,
+                                                    ESTADO = c.flestado
+                                                });
                 return listadeViajesaConciliar1.ToList();
                 //return listadeViajesaConciliar.ToList();
             }

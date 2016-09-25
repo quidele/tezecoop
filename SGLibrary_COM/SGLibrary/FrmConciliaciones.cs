@@ -63,7 +63,6 @@ namespace SGLibrary
                     item.DefaultCellStyle.BackColor = Color.Gray;
                 }
             }
-
         }
 
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
@@ -452,6 +451,11 @@ namespace SGLibrary
 
                 switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
                 {
+                    case "-1": dgv.Rows[row].Cells["CONCILIAR"].Value = false;
+                               dgv.Rows[row].ReadOnly = true;
+                               dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
+                               dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
+                               break;
                     case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
                               dgv.Rows[row].DefaultCellStyle.ForeColor = Color.White;
                               dgv.Rows[row].Cells["CONCILIAR"].Value = true;
@@ -459,7 +463,11 @@ namespace SGLibrary
                     case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
                     case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
                     case "4": dgv.Rows[row].DefaultCellStyle.BackColor = Color.OrangeRed; break;
-                    default:
+                    default: 
+                              dgv.Rows[row].Cells["CONCILIAR"].Value = false;
+                              dgv.Rows[row].ReadOnly = true;
+                              dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
+                              dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
                  break;
 	            }
 
@@ -625,11 +633,17 @@ namespace SGLibrary
             this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo); 
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
 
-            var listadeViajesaConciliar = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+
+            var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+
+            var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+
+           var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
+
             this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar.Count();
+            this.progressBar1.Maximum = listadeViajesaConciliar3.Count();
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica (dataGridView1, listadeViajesaConciliar, modoEdicion.Text);
+            cargarDataGridViewConciliacionAutomatica (dataGridView1, listadeViajesaConciliar3, modoEdicion.Text);
             this.progressBar1.Visible = false;
 
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();

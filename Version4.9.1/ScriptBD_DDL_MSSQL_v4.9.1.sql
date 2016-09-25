@@ -181,12 +181,14 @@ begin
 	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
 					on x.comprobante_numerico = y.nrCuponPosnet_numerico  and x.tarjeta = y.nrTarjeta
 							and x.importe = y.vlMontoCupon						
+	where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 
 	insert into  #tmpViajesConciliados 
 	select  x.Id , y.nrCupon , 1 as nrNivelConciliacion  
 	from #tmpArchivoaConciliar	 x inner join #tmpViajesesaConciliar y
 					on x.comprobante_numerico = y.nrCuponPosnet_numerico  and x.tarjeta_numerico = y.nrTarjeta_numerico
 							and x.importe_numerico = y.vlMontoCupon_numerico	
+	where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 
 	--select * from #tmpViajesConciliados
 
@@ -209,28 +211,54 @@ begin
 
 	--select * from #tmpViajesConciliados
 
-		insert into  #tmpViajesConciliados 
-	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
-	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
-					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
-						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
-
 	insert into  #tmpViajesConciliados 
 	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
 	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
-					on x.tarjeta = y.nrTarjeta  and convert(date , x.fechaPresentacion  )  = convert( date ,  y.dtCupon )
+					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
 						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
 
 	-- nrNivelConciliacion 2 
 	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 2 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta_numerico = y.nrTarjeta_numerico 
+					 and x.importe_numerico = y.vlMontoCupon_numerico
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+	--select * from #tmpViajesConciliados
+
+
+-- nrNivelConciliacion 3
+	insert into  #tmpViajesConciliados 
 	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
 	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
-					on x.tarjeta = y.nrTarjeta  and x.importe = y.vlMontoCupon
+					on x.tarjeta = y.nrTarjeta
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+	--select * from #tmpViajesConciliados
+
+-- nrNivelConciliacion 3 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.tarjeta_numerico = y.nrTarjeta_numerico 
 						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 	--select * from #tmpViajesConciliados
 
 
 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.comprobante = y.nrCuponPosnet
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
+
+
+	-- nrNivelConciliacion 2 
+	insert into  #tmpViajesConciliados 
+	select  x.Id , y.nrCupon , 3 as nrNivelConciliacion   
+	from #tmpArchivoaConciliar x inner join #tmpViajesesaConciliar y
+					on x.comprobante_numerico = y.nrCuponPosnet_numerico
+						where  y.nrCupon not in (select nrCupon from #tmpViajesConciliados)
 	--select * from #tmpViajesConciliados
 
 	--return; 

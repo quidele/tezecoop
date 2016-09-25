@@ -131,7 +131,42 @@ namespace SGLibrary
 
         }
 
+        public IEnumerable<Object> ObtenerViajesNoConciliadosAutomaticamente(Decimal pIdArchivo)
+        {
 
+            using (var context = new dbSG2000Entities())
+            {
+                var listadeViajesaConciliar1 = (from x in context.TB_ArchivoTarjetaDetalle
+                                                where (x.idarchivo == pIdArchivo) // filtramos por un archivo
+                                                select new
+                                                {
+                                                    ID = 0,
+                                                    FECHA = "",
+                                                    LICENCIA = "",
+                                                    DOC = "",
+                                                    LETRA = "",
+                                                    PDV = "",
+                                                    NRO = "",
+                                                    MONTO = "",
+                                                    MONTO_ARCHI = x.importe,
+                                                    TARJETA = "",
+                                                    TARJETA_ARCHI = x.tarjeta,
+                                                    CUPON = "",
+                                                    CUPON_ARCHI = x.comprobante,
+                                                    NIVEL = x.nrNivelConciliacion,
+                                                    IdArchivoTarjetaDetalle = x.Id,
+                                                    FECHA_PAGO = x.fechaPago.Value
+                                                });
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
+                Trace.TraceInformation(listadeViajesaConciliar1.ToString());
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+
+        }
         public TB_ArchivoTarjeta obtenerArchivo(String pId)
         {
 
