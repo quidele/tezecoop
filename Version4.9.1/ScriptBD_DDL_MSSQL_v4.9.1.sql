@@ -266,6 +266,9 @@ begin
 	update x set  x.nrCupon = y.nrCupon , x.nrNivelConciliacion = y.nrNivelConciliacion   from TB_ArchivoTarjetaDetalle   x  inner join #tmpViajesConciliados  y
 					on x.Id = y.Id 
 
+	update x set  x.nrNivelConciliacion = -1  from TB_ArchivoTarjetaDetalle   x 
+	where x.nrNivelConciliacion is null
+	 
 	select 'OK' as resultado , 'en el store debemos desarrollar toda la logica de la conciliacion' descripcion_error 
 
 end
