@@ -118,7 +118,7 @@ namespace SGLibrary
 
                         if (una_conciliacion.idArchivo.ToString() != "")
                         {
-                            cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                            cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text,true);
                         }
                         else
                         {
@@ -382,48 +382,50 @@ namespace SGLibrary
         }
 
 
-        public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
+        public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion, bool crea_encabezados)
         {
 
 
-
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
-
-            foreach (var item in lista)
+            if (crea_encabezados)
             {
+                //dgv.Rows.Clear();
+                dgv.Columns.Clear();
 
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-
-                foreach (PropertyInfo p in pi)
+                foreach (var item in lista)
                 {
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    switch (    columna.Name )
+
+                    Type t = item.GetType();
+                    PropertyInfo[] pi = t.GetProperties();
+
+                    foreach (PropertyInfo p in pi)
                     {
-                        case "NIVEL": columna.Visible = false; break;
-                        case "IdArchivoTarjetaDetalle": columna.Visible = false; break;
+                        DataGridViewColumn columna = new DataGridViewColumn();
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        columna.CellTemplate = cell;
+                        columna.Name = p.Name;
+                        columna.HeaderText = p.Name;
+                        columna.ReadOnly = true;
+                        columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        switch (    columna.Name )
+                        {
+                            case "NIVEL": columna.Visible = false; break;
+                            case "IdArchivoTarjetaDetalle": columna.Visible = false; break;
+                        }
+                        dgv.Columns.Add(columna);
                     }
-                    dgv.Columns.Add(columna);
+                    break;
                 }
-                break;
-            }
 
 
 
-            DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
-            doWork.Name = "CONCILIAR";
-            doWork.HeaderText = "CONCILIAR";
-            doWork.FalseValue = "0";
-            doWork.TrueValue = "1";
+                DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+                doWork.Name = "CONCILIAR";
+                doWork.HeaderText = "CONCILIAR";
+                doWork.FalseValue = "0";
+                doWork.TrueValue = "1";
+                dgv.Columns.Add(doWork);
 
-            dgv.Columns.Add(doWork);
+            } //crea_encabezados
 
             var i=0;
 
@@ -431,7 +433,7 @@ namespace SGLibrary
             {
                 this.progressBar1.BringToFront();
                 dgv.Refresh();
-                System.Threading.Thread.Sleep(10);
+                //System.Threading.Thread.Sleep(10);
                 Application.DoEvents();
         
                 this.progressBar1.Increment(i++);
@@ -638,12 +640,14 @@ namespace SGLibrary
 
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
 
-           var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
+            //var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar3.Count();
+            this.progressBar1.Maximum = listadeViajesaConciliar1.Count() + listadeViajesaConciliar2.Count();
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica (dataGridView1, listadeViajesaConciliar3, modoEdicion.Text);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
+
             this.progressBar1.Visible = false;
 
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();

@@ -138,6 +138,7 @@ namespace SGLibrary
             {
                 var listadeViajesaConciliar1 = (from x in context.TB_ArchivoTarjetaDetalle
                                                 where (x.idarchivo == pIdArchivo) // filtramos por un archivo
+                                                && (x.nrCupon == null)
                                                 select new
                                                 {
                                                     ID = 0,
