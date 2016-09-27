@@ -263,7 +263,7 @@ namespace SGLibrary
                                                 where c.dtConciliacion >= fechadesde
                                                 && c.dtConciliacion <= fechaHasta
                                                 && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
-                                                orderby c.IdConciliacion descending
+                                                orderby c.IdConciliacion descending  // ordenamos desde mas reciente a mas vieja
                                                 select new
                                                 {
                                                     ID = c.IdConciliacion,
