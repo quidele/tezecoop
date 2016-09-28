@@ -664,10 +664,10 @@ namespace SGLibrary
             var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar3.Count();
+            this.progressBar1.Maximum = listadeViajesaConciliar1.Count() + listadeViajesaConciliar2.Count();
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true);
-            //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
 
             this.progressBar1.Visible = false;
 
