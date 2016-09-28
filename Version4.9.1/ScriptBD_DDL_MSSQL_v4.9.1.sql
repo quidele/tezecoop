@@ -119,7 +119,7 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_c
 	drop procedure  dbo.spu_conciliarAutomaticamente
 
 go
-		
+			
 --exec [dbo].[spu_conciliarAutomaticamente] @idArchivo=2
 
 create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
@@ -269,6 +269,7 @@ begin
 	update x set  x.nrNivelConciliacion = -1  from TB_ArchivoTarjetaDetalle   x 
 	where x.nrNivelConciliacion is null
 	 
+	
 	select 'OK' as resultado , 'en el store debemos desarrollar toda la logica de la conciliacion' descripcion_error 
 
 end
