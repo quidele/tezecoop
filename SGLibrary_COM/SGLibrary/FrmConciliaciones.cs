@@ -395,6 +395,8 @@ namespace SGLibrary
             try
             {
                 Trace.TraceInformation(dgv.ToString());
+                Trace.TraceInformation(lista.ToString());
+                
        
             if (crea_encabezados)
             {
