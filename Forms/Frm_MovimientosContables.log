@@ -1,47 +1,8 @@
-Line 248: Property Size in Font had an invalid value.
-Line 273: Property Size in Font had an invalid value.
-Line 337: Property Size in Font had an invalid value.
-Line 372: Property Size in Font had an invalid value.
-Line 396: Property Size in Font had an invalid value.
-Line 419: Property Size in Font had an invalid value.
-Line 478: Property Size in Font had an invalid value.
-Line 500: Property Size in Font had an invalid value.
-Line 519: Property Size in Font had an invalid value.
-Line 539: Property Size in Font had an invalid value.
-Line 558: Property Size in Font had an invalid value.
-Line 577: Property Size in Font had an invalid value.
-Line 596: Property Size in Font had an invalid value.
-Line 615: Property Size in Font had an invalid value.
-Line 634: Property Size in Font had an invalid value.
-Line 654: Property Size in Font had an invalid value.
-Line 673: Property Size in Font had an invalid value.
-Line 692: Property Size in Font had an invalid value.
-Line 710: Property Size in Font had an invalid value.
-Line 729: Property Size in Font had an invalid value.
-Line 789: Property Size in Font had an invalid value.
-Line 836: Property Size in Font had an invalid value.
-Line 931: Property Size in Font had an invalid value.
-Line 950: Property Size in Font had an invalid value.
-Line 969: Property Size in Font had an invalid value.
-Line 988: Property Size in Font had an invalid value.
-Line 1008: Property Size in Font had an invalid value.
-Line 1132: Property Size in Font had an invalid value.
-Line 1157: Property Size in Font had an invalid value.
-Line 1182: Property Size in Font had an invalid value.
-Line 1207: Property Size in Font had an invalid value.
-Line 1232: Property Size in Font had an invalid value.
-Line 1257: Property Size in Font had an invalid value.
-Line 1282: Property Size in Font had an invalid value.
-Line 1307: Property Size in Font had an invalid value.
-Line 1332: Property Size in Font had an invalid value.
-Line 1357: Property Size in Font had an invalid value.
-Line 1382: Property Size in Font had an invalid value.
-Line 1407: Property Size in Font had an invalid value.
-Line 1472: Property Size in Font had an invalid value.
-Line 1592: Property Size in Font had an invalid value.
-Line 1610: Property Size in Font had an invalid value.
-Line 1628: Property Size in Font had an invalid value.
-Line 1646: Property Size in Font had an invalid value.
-Line 1663: Property Size in Font had an invalid value.
-Line 1680: Property Size in Font had an invalid value.
-Line 1698: Property Size in Font had an invalid value.
+Line 21: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
+Line 92: Class MSComctlLib.ImageList of control imgMovimientosContablesResaltado was not a loaded control class.
+Line 146: Class MSComctlLib.ImageList of control imgMovimientosContables was not a loaded control class.
+Line 766: Class MSComctlLib.ListView of control lstBusquedaConceptos was not a loaded control class.
+Line 1031: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
+Line 1085: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
+Line 1433: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
+Line 1449: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.

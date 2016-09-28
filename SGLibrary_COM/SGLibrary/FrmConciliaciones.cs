@@ -32,7 +32,10 @@ namespace SGLibrary
                 this.statusbar_bd.Text = "Base de datos: " + context.Database.Connection.Database ;
                 this.statusbar_servidor.Text = "Base de datos: " + context.Database.Connection.DataSource;
                 this.statusbar_usuario.Text = "usuario: " + serviceConciliaciones.Usuario;
-                this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm; 
+                this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm;
+                this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
+                //this.statusbar_version.Text = Application.
+ 
             }
 
             cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
@@ -230,7 +233,7 @@ namespace SGLibrary
         {
 
             List<Decimal> lista = new List<Decimal>();
-            List<TB_ConciliacionDetalle> listaAutomatica = new List<TB_ConciliacionDetalle>();
+            List<TB_ConciliacionDetalleEx> listaAutomatica = new List<TB_ConciliacionDetalleEx>();
 
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
@@ -240,10 +243,11 @@ namespace SGLibrary
                    
                     if (this.cbtipoConciliacion.Text != "Manual") 
                     {
-                        TB_ConciliacionDetalle una_TB_ConciliacionDetalle = new TB_ConciliacionDetalle();
+                        TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle = new TB_ConciliacionDetalleEx();
                         una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
                         una_TB_ConciliacionDetalle.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
                         una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_PAGO"].EditedFormattedValue.ToString());
+                        una_TB_ConciliacionDetalle.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
                         listaAutomatica.Add (una_TB_ConciliacionDetalle);
                     }
                     else
@@ -640,13 +644,13 @@ namespace SGLibrary
 
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
 
-            //var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
+            var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar1.Count() + listadeViajesaConciliar2.Count();
+            this.progressBar1.Maximum = listadeViajesaConciliar3.Count();
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true);
+            //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
 
             this.progressBar1.Visible = false;
 
@@ -656,6 +660,11 @@ namespace SGLibrary
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void statusbar_servidor_Click(object sender, EventArgs e)
         {
 
         }

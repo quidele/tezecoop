@@ -1,6 +1,6 @@
-Line 880: Class MSComctlLib.ListView of control lstBusquedaProductos was not a loaded control class.
-Line 995: Class MSComctlLib.ListView of control lstItemsFactura was not a loaded control class.
-Line 1111: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 1833: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
-Line 1905: Class MSComctlLib.ImageList of control imgVentaPasajesResaltado was not a loaded control class.
-Line 1959: Class MSComctlLib.ImageList of control imgVentaPasajes was not a loaded control class.
+Line 939: Class MSComctlLib.ListView of control lstBusquedaProductos was not a loaded control class.
+Line 1054: Class MSComctlLib.ListView of control lstItemsFactura was not a loaded control class.
+Line 1170: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
+Line 1892: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
+Line 1964: Class MSComctlLib.ImageList of control imgVentaPasajesResaltado was not a loaded control class.
+Line 2018: Class MSComctlLib.ImageList of control imgVentaPasajes was not a loaded control class.

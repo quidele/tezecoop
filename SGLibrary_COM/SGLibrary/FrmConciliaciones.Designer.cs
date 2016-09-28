@@ -31,6 +31,8 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.label12 = new System.Windows.Forms.Label();
+            this.label11 = new System.Windows.Forms.Label();
             this.progressBar1 = new System.Windows.Forms.ProgressBar();
             this.txtIdArchivo = new System.Windows.Forms.TextBox();
             this.btnSelecccionarArchivoTarjeta = new System.Windows.Forms.Button();
@@ -66,8 +68,7 @@
             this.statusbar_bd = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.label11 = new System.Windows.Forms.Label();
-            this.label12 = new System.Windows.Forms.Label();
+            this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -113,6 +114,24 @@
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(1001, 50);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(54, 17);
+            this.label12.TabIndex = 25;
+            this.label12.Text = "Edición";
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(888, 50);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(70, 17);
+            this.label11.TabIndex = 24;
+            this.label11.Text = "Id Archivo";
             // 
             // progressBar1
             // 
@@ -440,7 +459,8 @@
             this.statusbar_usuario,
             this.statusbar_nrocaja,
             this.statusbar_bd,
-            this.statusbar_servidor});
+            this.statusbar_servidor,
+            this.statusbar_version});
             this.status_bar_usuario.Location = new System.Drawing.Point(0, 448);
             this.status_bar_usuario.Name = "status_bar_usuario";
             this.status_bar_usuario.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
@@ -474,6 +494,7 @@
             this.statusbar_servidor.Name = "statusbar_servidor";
             this.statusbar_servidor.Size = new System.Drawing.Size(128, 20);
             this.statusbar_servidor.Text = "statusbar_servidor";
+            this.statusbar_servidor.Click += new System.EventHandler(this.statusbar_servidor_Click);
             // 
             // botonesForm1
             // 
@@ -487,23 +508,11 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // label11
+            // statusbar_version
             // 
-            this.label11.AutoSize = true;
-            this.label11.Location = new System.Drawing.Point(888, 50);
-            this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(70, 17);
-            this.label11.TabIndex = 24;
-            this.label11.Text = "Id Archivo";
-            // 
-            // label12
-            // 
-            this.label12.AutoSize = true;
-            this.label12.Location = new System.Drawing.Point(1001, 50);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(54, 17);
-            this.label12.TabIndex = 25;
-            this.label12.Text = "Edición";
+            this.statusbar_version.Name = "statusbar_version";
+            this.statusbar_version.Size = new System.Drawing.Size(57, 20);
+            this.statusbar_version.Text = "Versión";
             // 
             // FrmConciliaciones
             // 
@@ -574,5 +583,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbar_servidor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ToolStripStatusLabel statusbar_version;
     }
 }

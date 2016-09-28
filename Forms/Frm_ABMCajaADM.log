@@ -1,20 +1,9 @@
-Line 591: Property Size in Font had an invalid value.
-Line 611: Property Size in Font had an invalid value.
-Line 631: Property Size in Font had an invalid value.
-Line 650: Property Size in Font had an invalid value.
-Line 669: Property Size in Font had an invalid value.
-Line 688: Property Size in Font had an invalid value.
-Line 707: Property Size in Font had an invalid value.
-Line 726: Property Size in Font had an invalid value.
-Line 745: Property Size in Font had an invalid value.
-Line 764: Property Size in Font had an invalid value.
-Line 783: Property Size in Font had an invalid value.
-Line 802: Property Size in Font had an invalid value.
-Line 821: Property Size in Font had an invalid value.
-Line 840: Property Size in Font had an invalid value.
-Line 859: Property Size in Font had an invalid value.
-Line 878: Property Size in Font had an invalid value.
-Line 897: Property Size in Font had an invalid value.
-Line 1064: Property Size in Font had an invalid value.
-Line 1148: Property Size in Font had an invalid value.
-Line 1166: Property Size in Font had an invalid value.
+Line 21: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
+Line 120: Class MSComctlLib.ImageList of control imgABMCajasResaltado was not a loaded control class.
+Line 188: Class MSComctlLib.ImageList of control imgABMCajas was not a loaded control class.
+Line 931: Class MSComctlLib.ProgressBar of control ProgressBar was not a loaded control class.
+Line 979: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
+Line 1017: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
+Line 1042: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 1116: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
+Line 1130: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.

@@ -328,6 +328,7 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[IdConciliacion] [int] NULL,
 	[flProcesado] [bit] NULL,
 	[dtProcesado] [datetime] NULL,
+	[IdMovimiento_Procesado] [numeric](18, 0) NOT NULL,
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
 	[IdMovimiento] ASC
@@ -370,16 +371,20 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_p
 
 go
 
-create procedure spu_procesarMovimientosPosdatados
+create procedure spu_procesarMovimientosPosdatados (@nrCaja decimal , 
+                                                    @dsUsuario [varchar](50))
+
 as
 begin
-
-
 begin tran 
+declare @max_id decimal(18,0)
 
+	select @max_id = max(IdMovimiento)  + 1 from TB_MovimientosContables
+
+	-- generamos movimiento para tarjeta de crédito
 	select	[IdMovimiento]
 			,[dsMovimiento]
-			,[IdRecibo]
+			,x.[IdRecibo]
 			,[IdProveedor]
 			,[dsProveedor]
 			,[cdConcepto]
@@ -392,9 +397,9 @@ begin tran
 			,[nrRecibo]
 			,[nrFactura]
 			,[nrCaja]
-			,[dsUsuario]
+			,x.[dsUsuario]
 			,[dtMovimiento]
-			,[dsObservacion]
+			,x.[dsObservacion]
 			,[nrAnio]
 			,[dsUsuario_Supervisor]
 			,[nrCajaPuesto]
@@ -402,12 +407,13 @@ begin tran
 			,[dsUsuarioCajaPuesto]
 			,[tpMovimiento]
 			,[dtFechaPosdata]
-			,[nrCupon]
+			,x.[nrCupon]
 			,[IdConciliacion]
 			into #tmp_TB_MovimientosContablesPosdatados
-	from TB_MovimientosContablesPosdatados
+	from TB_MovimientosContablesPosdatados x  inner join TB_Cupones y
+							on x.nrCupon = y.nrCupon
 			 where flProcesado = 0  and [dtFechaPosdata]<= getdate()  -- se gewnera el movimeiento
-
+	group by y.tpCupon --// Agrupamos por tarjeta de Credito y Debito
 
 	INSERT INTO [dbo].[TB_MovimientosContables]
            ([IdMovimiento]

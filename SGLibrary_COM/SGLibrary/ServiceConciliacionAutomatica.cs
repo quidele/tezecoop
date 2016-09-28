@@ -186,7 +186,7 @@ namespace SGLibrary
 
 
 
-        public void agregarConciliacion(List<TB_ConciliacionDetalle> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
+        public void agregarConciliacion(List<TB_ConciliacionDetalleEx> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
         {
             ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 
@@ -210,10 +210,21 @@ namespace SGLibrary
                                                where c.nrCupon == detalleConciliacion.nrCupon
                                                select c).First();
 
+                        if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= 20)
+                        {
+                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(30);
+                        }
+                        else
+                        {
+                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(5);
+                        }
+                        detalleConciliacion.fechaPago = detalleConciliacion.FechaPagoLicenciatario; 
+                         
+
                         un_Cupon.dtCobradoalCliente = detalleConciliacion.fechaPago; // muy importante para habilitar el pago al licenciatario
                         un_Cupon.flCobradoalCliente = true;
                         detalleConciliacion.IdConciliacion = objConciliacion.IdConciliacion;
-                        context.TB_ConciliacionDetalle.Add(detalleConciliacion);
+                        context.TB_ConciliacionDetalle.Add(detalleConciliacion.ToTB_ConciliacionDetalle());
                         context.SaveChanges();
                         var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + ExtensionString.EmptyIfNull( un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim() ;
 
