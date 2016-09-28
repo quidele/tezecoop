@@ -450,6 +450,8 @@ namespace SGLibrary
         
                 this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
+
+                dgv.Rows[row].HeaderCell.Value = i.ToString();
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
@@ -657,17 +659,17 @@ namespace SGLibrary
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
 
 
-            var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
+            //var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
 
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
 
-            var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
+            //var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar1.Count() + listadeViajesaConciliar2.Count();
+            this.progressBar1.Maximum = listadeViajesaConciliar2.Count();  // listadeViajesaConciliar1.Count() 
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
+            //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, true);
 
             this.progressBar1.Visible = false;
 
