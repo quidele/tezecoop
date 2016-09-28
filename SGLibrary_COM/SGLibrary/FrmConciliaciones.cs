@@ -9,6 +9,7 @@ using System.Windows.Forms;
 using ControlesdeUsuario;
 using System.Reflection;
 using SGLibrary.ArchivoTarjetas;
+using System.Diagnostics;
 
 namespace SGLibrary
 {
@@ -389,7 +390,12 @@ namespace SGLibrary
         public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion, bool crea_encabezados)
         {
 
+       
 
+            try
+            {
+                Trace.TraceInformation(dgv.ToString());
+       
             if (crea_encabezados)
             {
                 //dgv.Rows.Clear();
@@ -480,7 +486,16 @@ namespace SGLibrary
                 dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
        
             }
-
+            }
+            catch (Exception ex)
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                Trace.TraceError("Error Linea " + frame.GetFileLineNumber().ToString() + " columna " +  frame.GetFileColumnNumber().ToString());
+                Trace.TraceError(ex.ToString());
+                throw; 
+            }
+           
         }
 
         public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
