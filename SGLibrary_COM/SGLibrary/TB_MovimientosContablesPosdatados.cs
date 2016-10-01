@@ -42,6 +42,8 @@ namespace SGLibrary
         public Nullable<decimal> nrCupon { get; set; }
         public Nullable<int> IdConciliacion { get; set; }
         public Nullable<bool> flProcesado { get; set; }
+        public Nullable<System.DateTime> dtProcesado { get; set; }
+        public decimal IdMovimiento_Procesado { get; set; }
     
         public virtual TB_Usuarios TB_Usuarios { get; set; }
     }

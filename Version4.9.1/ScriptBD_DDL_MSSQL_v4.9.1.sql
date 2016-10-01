@@ -25,16 +25,19 @@ if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Con
 go
 
 
-
-ALTER TABLE [dbo].[TB_ArchivoTarjetaDetalle] DROP CONSTRAINT [FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta]
+if  exists (SELECT * FROM sys.tables where name ='[dbo].[TB_ArchivoTarjetaDetalle]' )
+	ALTER TABLE [dbo].[TB_ArchivoTarjetaDetalle] DROP CONSTRAINT [FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta]
 GO
 
+
+GO
 /****** Object:  Table [dbo].[TB_ArchivoTarjetaDetalle]    Script Date: 05/09/2016 10:05:33  ******/
-DROP TABLE [dbo].[TB_ArchivoTarjetaDetalle]
+	DROP TABLE [dbo].[TB_ArchivoTarjetaDetalle]
 GO
 
 /****** Object:  Table [dbo].[TB_ArchivoTarjeta]    Script Date: 05/09/2016 10:05:33  ******/
-DROP TABLE [dbo].[TB_ArchivoTarjeta]
+
+	DROP TABLE [dbo].[TB_ArchivoTarjeta]
 GO
 
 /****** Object:  Table [dbo].[TB_ArchivoTarjeta]    Script Date: 05/09/2016 10:05:33  ******/
@@ -444,35 +447,35 @@ declare @max_id decimal(18,0)
            ,[dtFechaPosdata]
            ,[nrCupon]
            ,[IdConciliacion])
-	select [IdMovimiento]
+	select @max_id  +  ROW_NUMBER ( )    as [IdMovimiento]
            ,[dsMovimiento]
-           ,[IdRecibo]
-           ,[IdProveedor]
-           ,[dsProveedor]
+           ,null as [IdRecibo]
+           ,null as [IdProveedor]
+           ,null as [dsProveedor]
            ,[cdConcepto]
            ,[tpConcepto]
            ,[dsConcepto]
            ,[tpOperacion]
-           ,[vlPesos]
-           ,[vlDolares]
-           ,[vlEuros]
-           ,[nrRecibo]
-           ,[nrFactura]
-           ,[nrCaja]
-           ,[dsUsuario]
+           ,sum([vlPesos]) as vlPesos
+           ,0 as [vlDolares]
+           ,0 as [vlEuros]
+           ,0 as [nrRecibo]
+           ,0 as [nrFactura]
+           ,@nrCaja [nrCaja]
+           ,@dsUsuario [dsUsuario]
            , getdate() as [dtMovimiento]
-           ,[dsObservacion]
-           ,[nrAnio]
+           ,null   as [dsObservacion]
+           ,year(getdate()) as [nrAnio]
            ,[dsUsuario_Supervisor]
-           ,[nrCajaPuesto]
+           ,null as [nrCajaPuesto]
            ,[tpCajaImputacion]
            ,[dsUsuarioCajaPuesto]
            ,[tpMovimiento]
            ,[dtFechaPosdata]
-           ,[nrCupon]
-           ,[IdConciliacion]
+           ,null as [nrCupon]
+           ,null as [IdConciliacion]
 	from #tmp_TB_MovimientosContablesPosdatados
-
+	group by  [dsMovimiento], tpConcepto, [cdConcepto], [dsConcepto] , tpCajaImputacion , tpOperacion, [dtFechaPosdata]
 
 	update x set x.flProcesado = 1 ,  dtProcesado = getdate() 
 		from  TB_MovimientosContablesPosdatados x inner join #tmp_TB_MovimientosContablesPosdatados y 
@@ -484,5 +487,7 @@ end
 
 GO
 
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='dtFechaAcreditacion')	ALTER TABLE dbo.TB_Cupones ADD  dtFechaAcreditacion date NULL;if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='vlMontoAcreditacion')	ALTER TABLE dbo.TB_Cupones ADD  vlMontoAcreditacion float NULL;
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='IdConciliacion')	ALTER TABLE dbo.TB_Cupones ADD  IdConciliacion int NULL;
 
 

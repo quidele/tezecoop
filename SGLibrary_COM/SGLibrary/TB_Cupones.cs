@@ -75,5 +75,8 @@ namespace SGLibrary
         public string nrDocTarjeta { get; set; }
         public Nullable<double> vlRecargoTarjeta { get; set; }
         public string nrCuponPosnet { get; set; }
+        public Nullable<System.DateTime> dtFechaAcreditacion { get; set; }
+        public Nullable<double> vlMontoAcreditacion { get; set; }
+        public Nullable<int> IdConciliacion { get; set; }
     }
 }

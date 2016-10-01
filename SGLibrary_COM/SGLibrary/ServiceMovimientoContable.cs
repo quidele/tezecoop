@@ -17,7 +17,7 @@ namespace SGLibrary
         public void GrabarAsientoContablePosdatados(Double pvlPesos, decimal pnrCaja, String pdsUsuario, String  pIdConciliacion,
                                                     dbSG2000Entities pdbSG2000Entities, int cdConceptoOrigen, int cdConceptoDestino,
                                                     string pnrLicencia, string pnrFactura, DateTime pdtFechaPosdata, 
-                                                    Decimal pnrCupon )
+                                                    Decimal pnrCupon , String pdsMovimiento  )
         {
 
             try
@@ -38,7 +38,7 @@ namespace SGLibrary
 
                 unMCConceptoOrigen.IdMovimiento = max.IdMovimiento + 1;
                 unMCConceptoOrigen.cdConcepto = cdConceptoConceptoOrigen.cdConcepto;
-                unMCConceptoOrigen.dsMovimiento = "Conciliación Nro:  " + pIdConciliacion;
+                unMCConceptoOrigen.dsMovimiento = pdsMovimiento.ToUpper().Trim() + " Fecha: " + pdtFechaPosdata.Date.ToShortDateString() ;
                 unMCConceptoOrigen.dsUsuario = pdsUsuario;
                 unMCConceptoOrigen.nrCaja = pnrCaja;
                 unMCConceptoOrigen.vlPesos = pvlPesos;
@@ -66,7 +66,7 @@ namespace SGLibrary
 
                 unMCConceptoDestino.IdMovimiento = max.IdMovimiento + 2;
                 unMCConceptoDestino.cdConcepto = cdConceptoConceptoDestino.cdConcepto;
-                unMCConceptoDestino.dsMovimiento = "Conciliación Nro:  " + pIdConciliacion;
+                unMCConceptoDestino.dsMovimiento = pdsMovimiento.ToUpper().Trim() + " Fecha: " + pdtFechaPosdata.Date.ToShortDateString();
                 unMCConceptoDestino.dsUsuario = pdsUsuario;
                 unMCConceptoDestino.nrCaja = pnrCaja;
                 unMCConceptoDestino.vlPesos = pvlPesos;
