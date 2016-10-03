@@ -41,6 +41,7 @@ namespace SGLibrary
         public Nullable<System.DateTime> dtFechaPosdata { get; set; }
         public Nullable<decimal> nrCupon { get; set; }
         public Nullable<int> IdConciliacion { get; set; }
+        public Nullable<int> nro_trans { get; set; }
     
         public virtual TB_Usuarios TB_Usuarios { get; set; }
     }

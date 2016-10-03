@@ -86,7 +86,7 @@ namespace SGLibrary
             }
           
 
-        } // FIN DE
+        } // FIN DE ConcilialiarAutomaticaticamente
 
 
         public IEnumerable<Object> ObtenerViajesConciliadosAutomaticamente(Decimal  pIdArchivo)
@@ -249,8 +249,17 @@ namespace SGLibrary
                     }
 
                     context.SaveChanges();
+
+
+                    // Procesamos el Movimientos posdatados
+                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+
+
                     transaction.Complete();
+     
+
                     return;
+
                     //return listadeViajesaConciliar.ToList();
 
                 }
@@ -385,7 +394,13 @@ namespace SGLibrary
                     }
 
                     context.SaveChanges();
+
+                    // Procesamos el Movimientos posdatados
+                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+
                     transaction.Complete();
+
+
                     return;
                     //return listadeViajesaConciliar.ToList();
 
@@ -444,7 +459,7 @@ namespace SGLibrary
 
                         unSMC.GrabarAsientoContablePosdatados(vlMontoAcreditacion, objConciliacion.nrCajaAdm.Value,
                                 objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context,
-                                Anula_Viajes_con_Tarjeta_a_Bancos, Anula_Viajes_con_Tarjeta_a_Bancos, objCupon.nrLicencia.ToString(),
+                                Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes, objCupon.nrLicencia.ToString(),
                                 nrFactura, item.fechaPago.Value, objCupon.nrCupon, un_TB_ArchivoTarjeta.formato);
 
                     }
@@ -457,7 +472,13 @@ namespace SGLibrary
                     objConciliacionBD.flestado = "E";  // Conciliacion Eliminada
                     context.SaveChanges();
 
+
+                    // Procesamos el Movimientos posdatados
+                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+
+
                     transaction.Complete();
+
                 }
 
             }

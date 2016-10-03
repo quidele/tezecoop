@@ -176,6 +176,7 @@
           <Property Name="dtFechaPosdata" Type="date" />
           <Property Name="nrCupon" Type="decimal" Precision="18" Scale="0" />
           <Property Name="IdConciliacion" Type="int" />
+          <Property Name="nro_trans" Type="int" />
         </EntityType>
         <EntityType Name="TB_MovimientosContablesPosdatados">
           <Key>
@@ -211,6 +212,7 @@
           <Property Name="flProcesado" Type="bit" />
           <Property Name="dtProcesado" Type="datetime" />
           <Property Name="IdMovimiento_Procesado" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+          <Property Name="nro_trans" Type="int" />
         </EntityType>
         <EntityType Name="TB_Productos">
           <Key>
@@ -331,6 +333,10 @@
         <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idArchivo" Type="int" Mode="In" />
         </Function>
+        <Function Name="spu_procesarMovimientosPosdatados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="nrCaja" Type="decimal" Mode="In" />
+          <Parameter Name="dsUsuario" Type="varchar" Mode="In" />
+        </Function>
         <EntityContainer Name="dbSG2000ModelStoreContainer">
           <EntitySet Name="TB_ArchivoTarjeta" EntityType="Self.TB_ArchivoTarjeta" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="Self.TB_ArchivoTarjetaDetalle" Schema="dbo" store:Type="Tables" />
@@ -409,6 +415,10 @@
             <End Role="TB_MovimientosContablesPosdatados" EntitySet="TB_MovimientosContablesPosdatados" />
           </AssociationSet>
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
+          <FunctionImport Name="spu_procesarMovimientosPosdatados" ReturnType="Collection(dbSG2000Model.spu_procesarMovimientosPosdatados_Result)">
+            <Parameter Name="nrCaja" Mode="In" Type="Decimal" />
+            <Parameter Name="dsUsuario" Mode="In" Type="String" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -488,6 +498,7 @@
           <Property Name="dtFechaPosdata" Type="DateTime" Precision="0" />
           <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
           <Property Name="IdConciliacion" Type="Int32" />
+          <Property Name="nro_trans" Type="Int32" />
         </EntityType>
         <Association Name="FK_TB_MovimientosContables_TB_Usuarios">
           <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
@@ -667,6 +678,7 @@
           <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_MovimientosContablesPosdatados" ToRole="TB_Usuarios" />
           <Property Name="dtProcesado" Type="DateTime" Precision="3" />
           <Property Name="IdMovimiento_Procesado" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+          <Property Name="nro_trans" Type="Int32" />
         </EntityType>
         <Association Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
           <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
@@ -749,6 +761,10 @@
           <Property Name="vlMontoAcreditacion" Type="Double" />
           <Property Name="IdConciliacion" Type="Int32" />
         </EntityType>
+        <ComplexType Name="spu_procesarMovimientosPosdatados_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="1" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -804,6 +820,7 @@
           <EntitySetMapping Name="TB_MovimientosContables">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContables">
               <MappingFragment StoreEntitySet="TB_MovimientosContables">
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
                 <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
                 <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
                 <ScalarProperty Name="dtFechaPosdata" ColumnName="dtFechaPosdata" />
@@ -920,6 +937,7 @@
           <EntitySetMapping Name="TB_MovimientosContablesPosdatados">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_MovimientosContablesPosdatados">
               <MappingFragment StoreEntitySet="TB_MovimientosContablesPosdatados">
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
                 <ScalarProperty Name="IdMovimiento_Procesado" ColumnName="IdMovimiento_Procesado" />
                 <ScalarProperty Name="dtProcesado" ColumnName="dtProcesado" />
                 <ScalarProperty Name="flProcesado" ColumnName="flProcesado" />
@@ -1023,6 +1041,14 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_procesarMovimientosPosdatados" FunctionName="dbSG2000Model.Store.spu_procesarMovimientosPosdatados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_procesarMovimientosPosdatados_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="descripcion_error" ColumnName="descripcion_error" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

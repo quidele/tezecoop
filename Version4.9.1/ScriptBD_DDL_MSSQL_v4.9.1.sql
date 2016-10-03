@@ -333,6 +333,8 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[flProcesado] [bit] NULL,
 	[dtProcesado] [datetime] NULL,
 	[IdMovimiento_Procesado] [numeric](18, 0) NOT NULL,
+	[Error_Procesado] [varchar](400) NOT NULL,
+	[nro_trans] int null
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
 	[IdMovimiento] ASC
@@ -375,20 +377,27 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_p
 
 go
 
+
+-- exec spu_procesarMovimientosPosdatados @nrCaja = -1 , @dsUsuario = 'quidele'
 create procedure spu_procesarMovimientosPosdatados (@nrCaja decimal , 
                                                     @dsUsuario [varchar](50))
 
 as
 begin
 begin tran 
+
 declare @max_id decimal(18,0)
+declare @max_nro_trans int
 
 	select @max_id = max(IdMovimiento)  + 1 from TB_MovimientosContables
+
+	
+	select @max_nro_trans = isnull(max(nro_trans),0)  + 1 from TB_MovimientosContables
 
 	-- generamos movimiento para tarjeta de crédito
 	select	[IdMovimiento]
 			,[dsMovimiento]
-			,x.[IdRecibo]
+			,[IdRecibo]
 			,[IdProveedor]
 			,[dsProveedor]
 			,[cdConcepto]
@@ -401,9 +410,9 @@ declare @max_id decimal(18,0)
 			,[nrRecibo]
 			,[nrFactura]
 			,[nrCaja]
-			,x.[dsUsuario]
+			,[dsUsuario]
 			,[dtMovimiento]
-			,x.[dsObservacion]
+			,[dsObservacion]
 			,[nrAnio]
 			,[dsUsuario_Supervisor]
 			,[nrCajaPuesto]
@@ -412,12 +421,47 @@ declare @max_id decimal(18,0)
 			,[tpMovimiento]
 			,[dtFechaPosdata]
 			,x.[nrCupon]
-			,[IdConciliacion]
+			,x.[IdConciliacion]
 			into #tmp_TB_MovimientosContablesPosdatados
-	from TB_MovimientosContablesPosdatados x  inner join TB_Cupones y
-							on x.nrCupon = y.nrCupon
+	from TB_MovimientosContablesPosdatados x /* inner join TB_Cupones y
+							on x.nrCupon = y.nrCupon */
 			 where flProcesado = 0  and [dtFechaPosdata]<= getdate()  -- se gewnera el movimeiento
-	group by y.tpCupon --// Agrupamos por tarjeta de Credito y Debito
+	-- group by y.tpCupon --// Agrupamos por tarjeta de Credito y Debito
+
+	
+	select @max_id   + ROW_NUMBER() OVER ( ORDER BY [dsMovimiento]  DESC)   as [IdMovimiento]
+           ,[dsMovimiento]
+           ,null as [IdRecibo]
+           ,null as [IdProveedor]
+           ,null as [dsProveedor]
+           ,[cdConcepto]
+           ,[tpConcepto]
+           ,[dsConcepto]
+           ,[tpOperacion]
+           ,sum([vlPesos]) as vlPesos
+           ,0 as [vlDolares]
+           ,0 as [vlEuros]
+           ,0 as [nrRecibo]
+           ,0 as [nrFactura]
+           ,@nrCaja [nrCaja]
+           ,@dsUsuario [dsUsuario]
+           , getdate() as [dtMovimiento]
+           ,null   as [dsObservacion]
+           ,year(getdate()) as [nrAnio]
+           ,null [dsUsuario_Supervisor]
+           ,null as [nrCajaPuesto]
+           ,[tpCajaImputacion]
+           ,null [dsUsuarioCajaPuesto]
+           ,null as [tpMovimiento]
+           ,[dtFechaPosdata]
+           ,null as [nrCupon]
+           ,null as [IdConciliacion]
+		   into #tmp_TB_MovimientosContablesPosdatadosAgrupados
+	from #tmp_TB_MovimientosContablesPosdatados
+	group by  [dsMovimiento], tpConcepto, [cdConcepto], [dsConcepto] , tpCajaImputacion , tpOperacion, [dtFechaPosdata]
+
+	-- select * from #tmp_TB_MovimientosContablesPosdatadosAgrupados
+	-- return;
 
 	INSERT INTO [dbo].[TB_MovimientosContables]
            ([IdMovimiento]
@@ -446,48 +490,114 @@ declare @max_id decimal(18,0)
            ,[tpMovimiento]
            ,[dtFechaPosdata]
            ,[nrCupon]
-           ,[IdConciliacion])
-	select @max_id  +  ROW_NUMBER ( )    as [IdMovimiento]
+           ,[IdConciliacion]
+		   , nro_trans) 
+	select  [IdMovimiento]
+		
            ,[dsMovimiento]
-           ,null as [IdRecibo]
-           ,null as [IdProveedor]
-           ,null as [dsProveedor]
+           ,[IdRecibo]
+           ,[IdProveedor]
+           ,[dsProveedor]
            ,[cdConcepto]
            ,[tpConcepto]
            ,[dsConcepto]
            ,[tpOperacion]
-           ,sum([vlPesos]) as vlPesos
-           ,0 as [vlDolares]
-           ,0 as [vlEuros]
-           ,0 as [nrRecibo]
-           ,0 as [nrFactura]
-           ,@nrCaja [nrCaja]
-           ,@dsUsuario [dsUsuario]
-           , getdate() as [dtMovimiento]
-           ,null   as [dsObservacion]
-           ,year(getdate()) as [nrAnio]
+           ,[vlPesos]
+           ,[vlDolares]
+           ,[vlEuros]
+           ,[nrRecibo]
+           ,[nrFactura]
+           ,[nrCaja]
+           ,[dsUsuario]
+           ,[dtMovimiento]
+           ,[dsObservacion]
+           ,[nrAnio]
            ,[dsUsuario_Supervisor]
-           ,null as [nrCajaPuesto]
+           ,[nrCajaPuesto]
            ,[tpCajaImputacion]
            ,[dsUsuarioCajaPuesto]
            ,[tpMovimiento]
            ,[dtFechaPosdata]
-           ,null as [nrCupon]
-           ,null as [IdConciliacion]
-	from #tmp_TB_MovimientosContablesPosdatados
-	group by  [dsMovimiento], tpConcepto, [cdConcepto], [dsConcepto] , tpCajaImputacion , tpOperacion, [dtFechaPosdata]
+           ,[nrCupon]
+           ,[IdConciliacion]
+		   ,@max_nro_trans
+	from #tmp_TB_MovimientosContablesPosdatadosAgrupados
 
-	update x set x.flProcesado = 1 ,  dtProcesado = getdate() 
-		from  TB_MovimientosContablesPosdatados x inner join #tmp_TB_MovimientosContablesPosdatados y 
+
+	if @@ERROR <> 0 
+	begin
+		rollback tran
+		select 'ERROR' as resultado , ERROR_MESSAGE() descripcion_error 
+		return;
+	end
+
+	
+
+	if (select sum ( (case tpOperacion when 'Entrada de Dinero' then 1 else -1 END) * vlPesos)   from TB_MovimientosContables 
+	where  nro_trans =  @max_nro_trans )<>0
+	begin
+		rollback tran
+		select 'ERROR' as resultado , 'La operacion no esta balanceada' descripcion_error 
+		return;
+	end
+
+	-- return;
+	--update x set x.flProcesado = 1 ,  dtProcesado = getdate() 
+
+
+	/* select x.IdMovimiento_Procesado , z.IdMovimiento from  TB_MovimientosContablesPosdatados x 
+				inner join #tmp_TB_MovimientosContablesPosdatados y 
 								on x.IdMovimiento = y.IdMovimiento 
+								inner join #tmp_TB_MovimientosContablesPosdatadosAgrupados z
+								on  y.[dsMovimiento] = z.[dsMovimiento] 
+								  and  y.tpConcepto =  z.tpConcepto								 
+								  and y.[cdConcepto] = z.[cdConcepto] 
+								  and y.[dsConcepto] =  z.[dsConcepto]  
+								  and y.tpCajaImputacion =  y.tpCajaImputacion 
+								  and y.tpOperacion =   z.tpOperacion
+								  and  y.dtFechaPosdata =   z.dtFechaPosdata
 
-commit tran 
+	*/
+
+	update x set x.flProcesado = 1 ,  x.dtProcesado = getdate() ,  x.IdMovimiento_Procesado = z.IdMovimiento,
+	             x.nro_trans = @max_nro_trans
+	 from  TB_MovimientosContablesPosdatados x 
+				inner join #tmp_TB_MovimientosContablesPosdatados y 
+								on x.IdMovimiento = y.IdMovimiento 
+								inner join #tmp_TB_MovimientosContablesPosdatadosAgrupados z
+								on  y.[dsMovimiento] = z.[dsMovimiento] 
+								  and  y.tpConcepto =  z.tpConcepto								 
+								  and y.[cdConcepto] = z.[cdConcepto] 
+								  and y.[dsConcepto] =  z.[dsConcepto]  
+								  and y.tpCajaImputacion =  y.tpCajaImputacion 
+								  and y.tpOperacion =   z.tpOperacion
+								  and  y.dtFechaPosdata =   z.dtFechaPosdata
+	
+	select 'OK' as resultado , '' descripcion_error
+										  
+	commit tran 
+
+
 
 end
 
 GO
 
-if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='dtFechaAcreditacion')	ALTER TABLE dbo.TB_Cupones ADD  dtFechaAcreditacion date NULL;if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='vlMontoAcreditacion')	ALTER TABLE dbo.TB_Cupones ADD  vlMontoAcreditacion float NULL;
-if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='IdConciliacion')	ALTER TABLE dbo.TB_Cupones ADD  IdConciliacion int NULL;
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='dtFechaAcreditacion')
+	ALTER TABLE dbo.TB_Cupones ADD  dtFechaAcreditacion date NULL;
 
+go
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='vlMontoAcreditacion')
+	ALTER TABLE dbo.TB_Cupones ADD  vlMontoAcreditacion float NULL;
+
+go
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='IdConciliacion')
+	ALTER TABLE dbo.TB_Cupones ADD  IdConciliacion int NULL;
+
+
+go
+
+
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_MovimientosContables' and COLUMN_NAME='nro_trans')
+	ALTER TABLE dbo.TB_MovimientosContables ADD  nro_trans int NULL;
 

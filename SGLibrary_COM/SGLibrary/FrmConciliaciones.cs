@@ -429,7 +429,9 @@ namespace SGLibrary
                 }
 
 
+             
 
+               
                 DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
                 doWork.Name = "CONCILIAR";
                 doWork.HeaderText = "CONCILIAR";
@@ -452,6 +454,8 @@ namespace SGLibrary
                 var row = dgv.Rows.Add();
 
                 dgv.Rows[row].HeaderCell.Value = i.ToString();
+  
+
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
@@ -490,6 +494,9 @@ namespace SGLibrary
                 dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
        
             }
+
+
+            dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
             }
             catch (Exception ex)
             {

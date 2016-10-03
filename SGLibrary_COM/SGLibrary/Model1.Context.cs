@@ -92,5 +92,18 @@ namespace SGLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_conciliarAutomaticamente_Result>("spu_conciliarAutomaticamente", idArchivoParameter);
         }
+    
+        public virtual ObjectResult<spu_procesarMovimientosPosdatados_Result> spu_procesarMovimientosPosdatados(Nullable<decimal> nrCaja, string dsUsuario)
+        {
+            var nrCajaParameter = nrCaja.HasValue ?
+                new ObjectParameter("nrCaja", nrCaja) :
+                new ObjectParameter("nrCaja", typeof(decimal));
+    
+            var dsUsuarioParameter = dsUsuario != null ?
+                new ObjectParameter("dsUsuario", dsUsuario) :
+                new ObjectParameter("dsUsuario", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_procesarMovimientosPosdatados_Result>("spu_procesarMovimientosPosdatados", nrCajaParameter, dsUsuarioParameter);
+        }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.Entity.Validation;
+using System.Data.Objects;
 using System.Linq;
 using System.Text;
 
@@ -79,7 +81,7 @@ namespace SGLibrary
                 unMCConceptoDestino.dsConcepto = cdConceptoConceptoDestino.dsConcepto;  // Completar desde el concepto
                 unMCConceptoDestino.tpOperacion = cdConceptoConceptoDestino.tpOperacion;  // Completar desde el concepto
                 //unMCConceptoOrigen.tpMovimiento = "";
-                unMCConceptoDestino.tpConcepto = cdConceptoConceptoOrigen.tpOperacion;  // Completar desde el concepto
+                unMCConceptoDestino.tpConcepto = cdConceptoConceptoDestino.tpOperacion;  // Completar desde el concepto
 
                 unMCConceptoDestino.dsProveedor = "Licencia Nro. " + pnrLicencia;
                 unMCConceptoDestino.nrFactura = pnrFactura;
@@ -111,5 +113,31 @@ namespace SGLibrary
             }
             return;
         }
+
+
+        // Conciliar 
+        public void procesarMovimientosPosdatados(decimal pnrCaja , string pdsUsuario)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                try
+                {
+                    // La logica de la conciliación queda suscripta en el SP
+                    spu_procesarMovimientosPosdatados_Result resul = context.spu_procesarMovimientosPosdatados(pnrCaja, pdsUsuario).First();
+                    // verificar el resultado que devuelve el STORE
+                    Console.WriteLine(resul.resultado + " " + resul.descripcion_error);
+                }
+                catch (EntityCommandCompilationException e)
+                {
+                    Console.WriteLine(e.Message);
+                    throw;
+                }
+
+            }
+
+
+        } // FIN DE ConcilialiarAutomaticaticamente
+    
     }
 }
