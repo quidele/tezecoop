@@ -32,7 +32,7 @@ SELECT nrLicencia,  flCobradoalCliente , dtCobradoalCliente, *
 
 
 
-update  c set  c.dtCobradoalCliente  = convert (date ,  getdate() ) 
+update  c set  c.dtCobradoalCliente  = '20161001'
   FROM TB_Cupones  c WHERE c.flEliminar = 0  AND  c.flCompensado = 0  
   AND  c.flAnulado = 0  and c.dtCobradoalCliente is null   and c.flCobradoalCliente = 1
     and tpCupon like 'Tarjeta%'

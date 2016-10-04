@@ -137,7 +137,8 @@
     <Property Name="vlRecargoTarjeta" Type="float" />
     <Property Name="nrCuponPosnet" Type="nchar" MaxLength="25" />
     <Property Name="dtFechaAcreditacion" Type="date" />
-    <Property Name="vlMontocreditacion" Type="float" />
+    <Property Name="vlMontoAcreditacion" Type="float" />
+    <Property Name="IdConciliacion" Type="int" />
   </EntityType>
   <EntityType Name="TB_MovimientosContables">
     <Key>
@@ -170,6 +171,7 @@
     <Property Name="dtFechaPosdata" Type="date" />
     <Property Name="nrCupon" Type="decimal" Precision="18" Scale="0" />
     <Property Name="IdConciliacion" Type="int" />
+    <Property Name="nro_trans" Type="int" />
   </EntityType>
   <EntityType Name="TB_MovimientosContablesPosdatados">
     <Key>
@@ -205,6 +207,7 @@
     <Property Name="flProcesado" Type="bit" />
     <Property Name="dtProcesado" Type="datetime" />
     <Property Name="IdMovimiento_Procesado" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="nro_trans" Type="int" />
   </EntityType>
   <EntityType Name="TB_Productos">
     <Key>
@@ -324,6 +327,10 @@
   </Association>
   <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idArchivo" Type="int" Mode="In" />
+  </Function>
+  <Function Name="spu_procesarMovimientosPosdatados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="nrCaja" Type="decimal" Mode="In" />
+    <Parameter Name="dsUsuario" Type="varchar" Mode="In" />
   </Function>
   <EntityContainer Name="dbSG2000ModelStoreContainer">
     <EntitySet Name="TB_ArchivoTarjeta" EntityType="Self.TB_ArchivoTarjeta" Schema="dbo" store:Type="Tables" />
