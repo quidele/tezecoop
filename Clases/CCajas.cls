@@ -132,11 +132,14 @@ End Property
         vlSaldoFinalRealEuros = AdaptarValorNumerico(lObjTablasIO.rs_resultados("vlSaldoFinalRealEuros").value)
         vlSaldoFinalRealDolares = AdaptarValorNumerico(lObjTablasIO.rs_resultados("vlSaldoFinalRealDolares").value)
         ' vlSaldoFinalRealReales = AdaptarValorNumerico(lObjTablasIO.rs_resultados("vlSaldoFinalRealReales").value)
+        ObtenerUltimaCajaAdmCerrada = True
     Else
+        ObtenerUltimaCajaAdmCerrada = False
         nrCaja = 0
         vlSaldoFinalRealPesos = 0
         vlSaldoFinalRealEuros = 0
         vlSaldoFinalRealDolares = 0
+        
     End If
     
     vlSaldoFinalRealReales = 0
@@ -651,7 +654,7 @@ Public Function obtenerCaja(pnrCaja As String) As Boolean
     Me.vlDineroEuros = objbasededatos.rs_resultados_valor("vlDineroEuros")
     Me.vlDineroReales = objbasededatos.rs_resultados_valor("vlDineroReales")
     Me.dsObservacionCC = objbasededatos.rs_resultados_valor("dsObservacionCC")
-        
+    Me.dsUsuario = objbasededatos.rs_resultados_valor("dsUsuario")
     obtenerCaja = True
     
 
