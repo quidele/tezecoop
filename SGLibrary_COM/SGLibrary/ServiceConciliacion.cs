@@ -23,9 +23,6 @@ namespace SGLibrary
         [DispId(3)]
         void CajaActiva(string caja);
         
-   
-   
-        
     }
 
       // Events interface para destinos 
@@ -130,6 +127,7 @@ namespace SGLibrary
                 foreach (var item in listadeViajesaConciliar1.ToList())
                 {
                     item.flCobradoalCliente = true;
+                    item.dtCobradoalCliente = DateTime.Today;
                     context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion  , nrCupon = item.nrCupon });
                     TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value ;
                 }
@@ -206,12 +204,15 @@ namespace SGLibrary
                             if (idCupon_conciliado != 0)
                             {
                                 item.flCobradoalCliente = true;
+                                item.dtCobradoalCliente = DateTime.Today;
                                 context.TB_ConciliacionDetalle.Add(new TB_ConciliacionDetalle { TB_Conciliacion = objConciliacion, nrCupon = item.nrCupon });
                                 TotalConciliacion = TotalConciliacion + item.vlMontoCupon.Value ; 
                             }
                             else
                             {
+                                
                                 item.flCobradoalCliente = false;
+                                item.dtCobradoalCliente = null;
                                 TotalConciliacionAnulado = TotalConciliacionAnulado + item.vlMontoCupon.Value; 
                             }
 
@@ -302,6 +303,7 @@ namespace SGLibrary
                     // liberamos al cupon
                     TB_Cupones objCupon = (from c in context.TB_Cupones where item.nrCupon == c.nrCupon select c).First();
                     objCupon.flCobradoalCliente = false;
+                    objCupon.dtCobradoalCliente = null;
                     TotalConciliacionAnulado = TotalConciliacionAnulado + objCupon.vlMontoCupon.Value; 
                 }
                 // Eliminamos el detalle de la conciliacion
