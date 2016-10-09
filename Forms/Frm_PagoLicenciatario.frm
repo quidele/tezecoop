@@ -2746,6 +2746,11 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
                                  ptpCupon As String, pSeleccionado As Boolean, _
                                  pavisarError As Boolean, pflCobradoalCliente As String, pdtCobradoCliente As String) As Boolean
 
+    
+    If Trim(pdtCobradoCliente) = "" Then
+        pdtCobradoCliente = CDate(Now())
+    End If
+    
     If flAnulado = "SI" Then
         sepuedeCompensar = False
         Exit Function
