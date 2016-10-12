@@ -198,6 +198,11 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
+
+                            if (row.Cells["ESTADO"].Value.ToString()=="E")
+                            {
+                                continue;
+                            }
                             TB_Conciliacion una_conciliacion = serviceConciliaciones.obtenerConciliacion(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la conciliación " + una_conciliacion.IdConciliacion.ToString(), "Atención", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
                              if(dialogResult == DialogResult.No ) break; 
@@ -319,7 +324,7 @@ namespace SGLibrary
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
             try {
                 if (this.txtFormato.Text == "Manual")
-                    serviceConciliaciones.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
+                    serviceConciliaciones.modificarConciliacion(listaCupones, listaCuponesConciliados, una_conciliacion);
                 else
                     serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
 

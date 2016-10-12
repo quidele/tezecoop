@@ -63,6 +63,7 @@ namespace SGLibrary
             catch (Exception ex)
             {
                 Console.WriteLine(ex);
+                
                 Trace.TraceError(ex.Message);
                 
                 System.Windows.Forms.MessageBox.Show(ex.Message, "ERROR ");
@@ -342,7 +343,11 @@ namespace SGLibrary
                                                  .First ();
                 // Should Load the Details
                 una_conciliacion.TB_ConciliacionDetalle.ToList();
-                una_conciliacion.TB_ArchivoTarjeta.ToString();
+                if (una_conciliacion.idArchivo!= null)
+                {
+                    una_conciliacion.TB_ArchivoTarjeta.ToString();
+                }
+      
                 return una_conciliacion;
             }
         }
