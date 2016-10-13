@@ -1,0 +1,6 @@
+ El Importe Total de la Operación debe ser igual al Importe Neto Gravado + Impuesto Liquidado + los demás importes del cpte. VENTAS: 006 Nº:00006-00000000000000603887
+
+
+
+
+Importe Total de la Operación = Importe Neto Gravado + Impuesto Liquidado + los demás importes del cpte. 
