@@ -2829,7 +2829,11 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
             ' MsgBox "Aquí tambien se debe Analizar la Fecha de Cobro del viaje en tarjeta ", vbCritical
             
             If pflCobradoalCliente = "SI" Then
-                If CDate(pdtCobradoCliente) <= CDate(Now()) Then
+                Dim fecha_del_dia As Date
+                pdtCobradoCliente = Left(pdtCobradoCliente, 10)
+                fecha_del_dia = CDate(Left(Now(), 10))
+            
+                If CDate(pdtCobradoCliente) <= fecha_del_dia Then
                     sepuedeCompensar = True
                 Else
                     sepuedeCompensar = False
