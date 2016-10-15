@@ -12,6 +12,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\EN-US\SGLibrar
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\EntityFramework.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.Form1.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.FrmABMBase.resources
