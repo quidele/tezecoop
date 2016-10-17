@@ -388,12 +388,14 @@ namespace SGLibrary
 
             dgv.Columns.Add(doWork);
 
-            CalendarColumn doWork1 = new CalendarColumn();
-            doWork1.Name = "FECHA_ACREDITACION";
-            doWork1.HeaderText = "FECHA DE ACREDITACION";
-            doWork1.DefaultCellStyle.Format = "d";
+            if (p_modoEdicion !="SI") {
+                CalendarColumn doWork1 = new CalendarColumn();
+                doWork1.Name = "FECHA_ACREDITACION";
+                doWork1.HeaderText = "FECHA DE ACREDITACION";
+                doWork1.DefaultCellStyle.Format = "d";
+                dgv.Columns.Add(doWork1);
+            }
 
-            dgv.Columns.Add(doWork1);
 
             foreach (object item in lista)
             {

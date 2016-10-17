@@ -150,8 +150,8 @@ namespace SGLibrary
 
          }
 
-
-        public void modificarConciliacion(List<Decimal> ids_cupones, 
+        // se anade virtual ya que puede ser sobreescrito , palabra clacve override
+        public virtual void modificarConciliacion(List<Decimal> ids_cupones, 
                                                          List<Decimal> ids_cupones_conciliados, 
                                                          TB_Conciliacion objConciliacion)
         {
@@ -423,7 +423,7 @@ namespace SGLibrary
         /// </summary>
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
-        public IEnumerable<Object> ObtenerDetalleConciliacion(long  pId)
+        public virtual IEnumerable<Object> ObtenerDetalleConciliacion(long pId)
         {
             List<Decimal> ids_cupones = new  List<Decimal>();
 
