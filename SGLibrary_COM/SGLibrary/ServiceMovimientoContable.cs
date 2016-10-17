@@ -53,7 +53,7 @@ namespace SGLibrary
                 unMCConceptoOrigen.dsConcepto = cdConceptoConceptoOrigen.dsConcepto;  // Completar desde el concepto
                 unMCConceptoOrigen.tpOperacion = cdConceptoConceptoOrigen.tpOperacion;  // Completar desde el concepto
                 //unMCConceptoOrigen.tpMovimiento = "";
-                unMCConceptoOrigen.tpConcepto = cdConceptoConceptoOrigen.tpOperacion;  // Completar desde el concepto
+                unMCConceptoOrigen.tpConcepto = cdConceptoConceptoOrigen.tpConcepto;  // Completar desde el concepto
 
                 unMCConceptoOrigen.dsProveedor = "Licencia Nro. " + pnrLicencia;
                 unMCConceptoOrigen.nrFactura = pnrFactura;
@@ -81,7 +81,7 @@ namespace SGLibrary
                 unMCConceptoDestino.dsConcepto = cdConceptoConceptoDestino.dsConcepto;  // Completar desde el concepto
                 unMCConceptoDestino.tpOperacion = cdConceptoConceptoDestino.tpOperacion;  // Completar desde el concepto
                 //unMCConceptoOrigen.tpMovimiento = "";
-                unMCConceptoDestino.tpConcepto = cdConceptoConceptoDestino.tpOperacion;  // Completar desde el concepto
+                unMCConceptoDestino.tpConcepto = cdConceptoConceptoDestino.tpConcepto;  // Completar desde el concepto
 
                 unMCConceptoDestino.dsProveedor = "Licencia Nro. " + pnrLicencia;
                 unMCConceptoDestino.nrFactura = pnrFactura;

@@ -10,6 +10,7 @@ using ControlesdeUsuario;
 using System.Reflection;
 using SGLibrary.ArchivoTarjetas;
 using System.Diagnostics;
+using SGLibrary.Extensiones;
 
 namespace SGLibrary
 {
@@ -258,7 +259,19 @@ namespace SGLibrary
                     }
                     else
                     {
-                        lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+
+                        if (item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString() == "")
+                        {
+                            MessageBox.Show("Debe completar la fecha de acreditación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            dataGridView1.Focus();
+                            return false;
+                        }
+                        TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle = new TB_ConciliacionDetalleEx();
+                        una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
+                        una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString());
+                        una_TB_ConciliacionDetalle.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
+                        listaAutomatica.Add(una_TB_ConciliacionDetalle);
+                        //lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
                     }
 
                 }
@@ -283,7 +296,13 @@ namespace SGLibrary
             }
             else // Conciliacion manual
             {
-                serviceConciliaciones.agregarConciliacion(lista, una_conciliacion);
+                ServiceConciliacionManual un_ServiceConciliacionManual  = new ServiceConciliacionManual();
+
+            
+                un_ServiceConciliacionManual.CajaActiva(serviceConciliaciones.CajaAdm);
+                un_ServiceConciliacionManual.UsuarioActivo(serviceConciliaciones.Usuario);
+                un_ServiceConciliacionManual.agregarConciliacion(listaAutomatica, una_conciliacion);
+                //serviceConciliaciones.agregarConciliacion(listaAutomatica, una_conciliacion);
             }
             return true;
         }
@@ -368,6 +387,13 @@ namespace SGLibrary
             doWork.TrueValue = "1";
 
             dgv.Columns.Add(doWork);
+
+            CalendarColumn doWork1 = new CalendarColumn();
+            doWork1.Name = "FECHA_ACREDITACION";
+            doWork1.HeaderText = "FECHA DE ACREDITACION";
+            doWork1.DefaultCellStyle.Format = "d";
+
+            dgv.Columns.Add(doWork1);
 
             foreach (object item in lista)
             {

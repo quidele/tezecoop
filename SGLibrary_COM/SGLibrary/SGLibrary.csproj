@@ -103,6 +103,9 @@
     <Compile Include="EXCELNuke\Workbook.cs" />
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
+    <Compile Include="Extensiones\CalendarColumn.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="Extensiones\Extensiones.cs" />
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
@@ -158,6 +161,7 @@
     </Compile>
     <Compile Include="ServiceConciliacion.cs" />
     <Compile Include="ServiceConciliacionAutomatica.cs" />
+    <Compile Include="ServiceConciliacionManual.cs" />
     <Compile Include="ServiceDestinos.cs" />
     <Compile Include="DBCOM_Class.cs" />
     <Compile Include="Form1.cs">
@@ -507,6 +511,9 @@
     <None Include="Imagenes_Varias\botones_form\btn_form_add2.png" />
     <None Include="Imagenes_Varias\botones_form\btn_form_add11.png" />
     <None Include="Imagenes_Varias\botones_form\btn_form_add1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="NewFolder1\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

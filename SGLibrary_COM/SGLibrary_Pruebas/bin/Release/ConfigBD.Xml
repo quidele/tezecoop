@@ -1,0 +1,8 @@
+<?xml version='1.0'?>
+<!-- This file represents a fragment of a book store inventory database -->
+<ConfigBD>
+  <ConnectionString DbContext="dbSG2000Entities">
+    <DataSource>MSI\SQLEXPRESS</DataSource>
+    <InitialCatalog>dbSG2000</InitialCatalog>
+  </ConnectionString>
+</ConfigBD>

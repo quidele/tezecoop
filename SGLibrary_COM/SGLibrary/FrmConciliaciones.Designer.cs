@@ -67,8 +67,8 @@
             this.statusbar_nrocaja = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_bd = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
-            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
+            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -496,6 +496,12 @@
             this.statusbar_servidor.Text = "statusbar_servidor";
             this.statusbar_servidor.Click += new System.EventHandler(this.statusbar_servidor_Click);
             // 
+            // statusbar_version
+            // 
+            this.statusbar_version.Name = "statusbar_version";
+            this.statusbar_version.Size = new System.Drawing.Size(57, 20);
+            this.statusbar_version.Text = "Versión";
+            // 
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
@@ -507,12 +513,6 @@
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
-            // 
-            // statusbar_version
-            // 
-            this.statusbar_version.Name = "statusbar_version";
-            this.statusbar_version.Size = new System.Drawing.Size(57, 20);
-            this.statusbar_version.Text = "Versión";
             // 
             // FrmConciliaciones
             // 
