@@ -2,6 +2,11 @@
 use dbSG2000
 go
 
+
+ALTER TABLE dbo.TB_ConciliacionDetalle DROP CONSTRAINT FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle
+
+ALTER TABLE dbo.TB_Conciliacion DROP CONSTRAINT FK_TB_Conciliacion_TB_ArchivoTarjeta
+
 if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Cupones' and COLUMN_NAME='nrCuponPosnet')
 	ALTER TABLE dbo.TB_Cupones ADD  nrCuponPosnet nchar(25) NULL;
 
@@ -332,8 +337,8 @@ CREATE TABLE [dbo].[TB_MovimientosContablesPosdatados](
 	[IdConciliacion] [int] NULL,
 	[flProcesado] [bit] NULL,
 	[dtProcesado] [datetime] NULL,
-	[IdMovimiento_Procesado] [numeric](18, 0) NOT NULL,
-	[Error_Procesado] [varchar](400) NOT NULL,
+	[IdMovimiento_Procesado] [numeric](18, 0)  NULL,
+	[Error_Procesado] [varchar](400)  NULL,
 	[nro_trans] int null
  CONSTRAINT [PK_TB_MovimientosContablesPosdatados] PRIMARY KEY NONCLUSTERED 
 (
