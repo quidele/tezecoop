@@ -411,7 +411,9 @@ namespace SGLibrary
 
                 if (p_modoEdicion=="SI") 
                 {
-                    dgv.Rows[row].Cells["CONCILIAR"].Value = true; 
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                    dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+       
                 }
 
 
