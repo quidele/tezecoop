@@ -115,8 +115,8 @@ namespace SGLibrary
                 }
 
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones   join  x in  context.TB_ConciliacionDetalle 
-                                                                   on c.nrCupon equals x.nrCupon                      
-                                                where ids_cupones.Contains(c.nrCupon)
+                                                                   on c.nrCupon equals x.nrCupon
+                                                where  ( ids_cupones.Contains(c.nrCupon) && x.IdConciliacion == pId )
                                                 select new
                                                 {
                                                     ID = c.nrCupon,

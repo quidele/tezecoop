@@ -127,7 +127,8 @@ namespace SGLibrary
                         }
                         else
                         {
-                            cargarDataGridViewCupones(dataGridView1, serviceConciliaciones.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                            ServiceConciliacionManual un_ServiceConciliacionManual = new ServiceConciliacionManual();
+                            cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
                         }
 
                     }
