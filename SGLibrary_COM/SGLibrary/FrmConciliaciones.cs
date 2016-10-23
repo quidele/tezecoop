@@ -20,6 +20,8 @@ namespace SGLibrary
 
         public ServiceConciliacion serviceConciliaciones { get; set; }
         public ServiceConciliacionAutomatica serviceConciliacionesAutomaticas { get; set; }
+        public ServiceConciliacionManual un_ServiceConciliacionManual { get; set; }
+        
 
         public FrmConciliaciones()
         {
@@ -127,7 +129,7 @@ namespace SGLibrary
                         }
                         else
                         {
-                            ServiceConciliacionManual un_ServiceConciliacionManual = new ServiceConciliacionManual();
+                            
                             cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
                         }
 
@@ -210,7 +212,8 @@ namespace SGLibrary
                              if(dialogResult == DialogResult.No ) break; 
                                // COMLETAR ELIMINACION
                               if (una_conciliacion.idArchivo.ToString() == "") 
-                                 serviceConciliaciones.anularConciliacion(una_conciliacion); // conciliacion manual
+                                 this.un_ServiceConciliacionManual.anularConciliacion (una_conciliacion);
+                                 //serviceConciliaciones.anularConciliacion(una_conciliacion); // conciliacion manual
                              else
                                  serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion); // conciliacion automatica 
                              MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -297,11 +300,9 @@ namespace SGLibrary
             }
             else // Conciliacion manual
             {
-                ServiceConciliacionManual un_ServiceConciliacionManual  = new ServiceConciliacionManual();
+                
 
             
-                un_ServiceConciliacionManual.CajaActiva(serviceConciliaciones.CajaAdm);
-                un_ServiceConciliacionManual.UsuarioActivo(serviceConciliaciones.Usuario);
                 un_ServiceConciliacionManual.agregarConciliacion(listaAutomatica, una_conciliacion);
                 //serviceConciliaciones.agregarConciliacion(listaAutomatica, una_conciliacion);
             }
@@ -344,7 +345,7 @@ namespace SGLibrary
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
             try {
                 if (this.txtFormato.Text == "Manual")
-                    serviceConciliaciones.modificarConciliacion(listaCupones, listaCuponesConciliados, una_conciliacion);
+                    this.un_ServiceConciliacionManual.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
                 else
                     serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
 
@@ -413,7 +414,6 @@ namespace SGLibrary
                 {
                     dgv.Rows[row].Cells["CONCILIAR"].Value = true;
                     dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
-       
                 }
 
 

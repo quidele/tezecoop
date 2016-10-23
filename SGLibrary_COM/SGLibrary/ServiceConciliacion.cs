@@ -58,6 +58,9 @@ namespace SGLibrary
                 f.serviceConciliacionesAutomaticas = new ServiceConciliacionAutomatica();
                 f.serviceConciliacionesAutomaticas.CajaActiva(this._cajactiva);
                 f.serviceConciliacionesAutomaticas.UsuarioActivo(this._usuarioActivo);
+                f.un_ServiceConciliacionManual = new ServiceConciliacionManual();
+                f.un_ServiceConciliacionManual.CajaActiva(this.CajaAdm);
+                f.un_ServiceConciliacionManual.UsuarioActivo(this.Usuario);
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -281,7 +284,7 @@ namespace SGLibrary
         }
 
 
-        public void anularConciliacion(TB_Conciliacion objConciliacion)
+        public virtual void anularConciliacion(TB_Conciliacion objConciliacion)
         {
             using (var context = new dbSG2000Entities())
             {
