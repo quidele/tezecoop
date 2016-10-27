@@ -36,3 +36,18 @@ update  c set  c.dtCobradoalCliente  = '20161001'
   FROM TB_Cupones  c WHERE c.flEliminar = 0  AND  c.flCompensado = 0  
   AND  c.flAnulado = 0  and c.dtCobradoalCliente is null   and c.flCobradoalCliente = 1
     and tpCupon like 'Tarjeta%'
+
+
+
+
+delete from diccionariodedatos  where  nmTabla =  'spu_obtieneDatosCITIVentas_v4_9'
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtieneDatosCITIVentas_v4_9','@mes','@mes','int','2',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtieneDatosCITIVentas_v4_9','@anio','@anio','int','4',null,null,null,null,null,null,null,null,null,null,null,null);
+
+delete from diccionariodedatos  where  nmTabla =  'spu_obtieneDatosCITIVentas_Alicuotas_v4_9'
+
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtieneDatosCITIVentas_Alicuotas_v4_9','@mes','@mes','int','2',null,null,null,null,null,null,null,null,null,null,null,null);
+INSERT INTO  diccionariodedatos  (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('spu_obtieneDatosCITIVentas_Alicuotas_v4_9','@anio','@anio','int','4',null,null,null,null,null,null,null,null,null,null,null,null);
+
+
