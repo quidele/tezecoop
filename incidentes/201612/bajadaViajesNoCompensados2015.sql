@@ -1,35 +1,40 @@
-  use dbSG2000
-  go
-  
-  
-  set dateformat dmy 
 
-  select  a.nrLicencia, a.nmLicenciatario,
-          a.tpCupon, a.nrTalonarioCliente, a.nrComprabanteCliente, a.vlMontoCupon,  convert(varchar,a.dtCupon,103) as fecha, a.dsObservacion  from tb_cupones a
-  where   a.flCompensado = 0  and a.flAnulado = 0 and   nrLicencia not in (999,900) and  
-		  a.dtCupon >= '01/01/2009 00:00:00.000'  and 
-		  a.dtCupon <= '01/01/2015 23:59:59.000'  and 
-		  fleliminar =0
-	
-  use dbSG2000_Pruebas 
+use dbSG2000
   go
-    
-  set dateformat dmy 
-  		   
-  begin tran
+   
+     		   
+ begin tran
+
+  set dateformat dmy 		
+
+  Exec  sp_obtiene_falta_compensar_v4_2
+		
+  select  a.nrLicencia, a.nmLicenciatario,		
+          a.tpCupon, a.nrTalonarioCliente, a.nrComprabanteCliente, a.vlMontoCupon,  convert(varchar,a.dtCupon,103) as fecha, a.dsObservacion  from tb_cupones a		
+  where   a.flCompensado = 0  and a.flAnulado = 0 and   nrLicencia not in (999,900) and  		
+		  a.dtCupon >= '01/01/2009 00:00:00.000'  and 
+		  a.dtCupon <= '01/01/2016 00:00:00.000'  and 
+		  fleliminar =0  
+
+
   		  
   update a
   set     flAnulado = 1	,	
   		  flNoCompensado = 1,
-		  dtNoCompensado = GETDATE()    
+		  dtNoCompensado = GETDATE(),
+		  dsObservacion = 'Compensado por Sistema'  
   from tb_cupones a
-  where   a.flCompensado = 0  and a.flAnulado = 0 and   nrLicencia not in (999,900) and  
+  where   a.flCompensado = 0  and a.flAnulado = 0 and   nrLicencia not in (999,900) and  		
 		  a.dtCupon >= '01/01/2009 00:00:00.000'  and 
-		  a.dtCupon <= '20/06/2011 23:59:59.000'  and 
-		  fleliminar = 0
+		  a.dtCupon <= '01/01/2016 00:00:00.000'  and 
+		  fleliminar = 0  
 
- rollback tran
  
- commit tran
- 
-		  
+
+Exec  sp_obtiene_falta_compensar_v4_2
+
+
+
+-- rollback tran
+
+commit tran 
