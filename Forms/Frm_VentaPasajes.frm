@@ -1176,7 +1176,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   250150913
+         Format          =   166789121
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2096,8 +2096,10 @@ Const const_cdComision = 7
 ' constantes de la version 4.9
 Const const_vlPrecioTC = 8
 Const const_vlPrecioTD = 9
+Const const_vlPrecioTP = 12   ' /*  OJO ESTA CONSTANTE  */
 Const const_vlRecargoTC = 10
 Const const_vlRecargoTD = 11
+Const const_vlRecargoTP = 13   ' /*  OJO ESTA CONSTANTE  */
 
 
 Dim lerror            As String
@@ -2107,6 +2109,9 @@ Dim flFacturaCtacte   As Boolean
 ' variables de la version 4.9
 Dim PORC_RECARGO_TD As Single
 Dim PORC_RECARGO_TC As Single
+Dim PORC_RECARGO_TP As Single
+
+
 
 
 
@@ -2313,16 +2318,20 @@ Dim vlTotalGeneral    As Single
         ' campos de la version 4.9
     Dim PORC_RECARGO_TC    As Single
     Dim PORC_RECARGO_TD    As Single
+    Dim PORC_RECARGO_TP    As Single
         
         
     PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
     PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
+    PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
         
         
     ListItemNuevo.SubItems(const_vlPrecioTC) = Round(CSng(lvlPrecioViaje) + (lvlPrecioViaje * PORC_RECARGO_TC / 100), 0)
     ListItemNuevo.SubItems(const_vlPrecioTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    ListItemNuevo.SubItems(const_vlPrecioTP) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
     ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
     ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTP) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
                 
     setearCondicionVentayComision
     Recalculo_operaciones
@@ -2439,6 +2448,10 @@ Dim vlDescuentoEfectivo As Single
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
             vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
+        Case "Todo Pago"
+            vlTotalPesos = vlTotalPesos + _
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
+            vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTP))
         Case Else
             vlTotalPesos = vlTotalPesos + _
             CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlTotalViajes))
@@ -2507,7 +2520,8 @@ Dim vlDescuentoEfectivo As Single
     Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
                         ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
-    If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
+    If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Or _
+       ObtenerCampo("cdCondVenta").Text = "Todo Pago" Then
       Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
     Else
       Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
@@ -2635,7 +2649,8 @@ Dim objLicenciatario  As New CLicenciatario
        ObtenerCampo("cdCondVenta").Text <> "Cobro en Destino" And _
        ObtenerCampo("cdCondVenta").Text <> "Retorno" And _
        ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
-       ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" Then
+       ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" And _
+       ObtenerCampo("cdCondVenta").Text <> "Todo Pago" Then
         calculaPagodelCliente
     End If
     
@@ -2643,7 +2658,8 @@ Dim objLicenciatario  As New CLicenciatario
            ObtenerCampo("cdCondVenta").Text = "Cobro en Destino" Or _
            ObtenerCampo("cdCondVenta").Text = "Retorno" Or _
            ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Or _
-           ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Then
+           ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or _
+           ObtenerCampo("cdCondVenta").Text <> "Todo Pago" Then
                 ObtenerCampo("vlPagoEuros").Text = "0,00"
                 ObtenerCampo("vlPagoDolares").Text = "0,00"
                 ObtenerCampo("vlPagoPesos").Text = "0,00"
@@ -2722,7 +2738,8 @@ Dim objLicenciatario  As New CLicenciatario
     
     ' LOGICA PARA GRABAR DATOS DE TARJETAS
     If ObtenerCampo("cdCondVenta") = "Tarjeta de Débito" Or _
-       ObtenerCampo("cdCondVenta") = "Tarjeta de Crédito" Then
+       ObtenerCampo("cdCondVenta") = "Tarjeta de Crédito" Or _
+       ObtenerCampo("cdCondVenta") = "Todo Pago" Then
         objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Aceptar"
         objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Ingrese los datos de la TARJETA"
         
@@ -3071,7 +3088,7 @@ Dim strValor  As String
             HabilitarCampos "vlPagoPesos", False
             HabilitarCampos "vlPagoReales", False
             ObtenerCampo("vlPagoReales").Text = "0,00"
-       Case "Tarjeta de Débito", "Tarjeta de Crédito"
+       Case "Tarjeta de Débito", "Tarjeta de Crédito", "Todo Pago"
             ObtenerCampo("vlPagoEuros").Text = "0,00"
             ObtenerCampo("vlPagoDolares").Text = "0,00"
             ObtenerCampo("vlPagoPesos").Text = "0,00"
@@ -3240,7 +3257,7 @@ Dim strValor  As String
 '            End Select
     Case "cdCondVenta"
        Select Case ObtenerCampo("cdCondVenta").Text
-       Case "Retorno", "Tarjeta de Débito", "Tarjeta de Crédito"
+       Case "Retorno", "Tarjeta de Débito", "Tarjeta de Crédito", "Todo Pago"
             ObtenerCampo("vlPagoEuros").Text = "0,00"
             ObtenerCampo("vlPagoDolares").Text = "0,00"
             ObtenerCampo("vlPagoPesos").Text = "0,00"
@@ -3395,9 +3412,11 @@ Dim strSQL_Params As String
     
     PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
     PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
+    PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
         
     objProductos.PORC_RECARGO_TC = PORC_RECARGO_TC
     objProductos.PORC_RECARGO_TD = PORC_RECARGO_TD
+    objProductos.PORC_RECARGO_TP = PORC_RECARGO_TP
     
         '-- ADD Version  4.7
     
@@ -3561,10 +3580,10 @@ Private Sub lstBusquedaProductos_DblClick()
     ObtenerCampo("tpOperacion").Text = ""
     ObtenerCampo("cdComision").Text = ""
     
-        ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
+    ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
     ObtenerCampo("vlPrecioTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTD)
     ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
-    ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
+    ObtenerCampo("vlRecargoTP").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTP)
     
     Me.cmdAgregarItemFactura.Enabled = False
     
@@ -3783,7 +3802,8 @@ Private Function validarEntradadedatos() As Boolean
        ObtenerCampo("cdCondVenta").Text <> "Cobro en Destino" And _
        ObtenerCampo("cdCondVenta").Text <> "Retorno" And _
        ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" And _
-       ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" Then
+       ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
+       ObtenerCampo("cdCondVenta") = "Todo Pago" Then
         If ObtenerValoresNumericos("vlPagoEuros") + ObtenerValoresNumericos("vlPagoDolares") + ObtenerValoresNumericos("vlPagoPesos") + ObtenerValoresNumericos("vlPagoReales") <= 0 Then
             MsgBox "Debe ingresar los valores de pago.", vbCritical + vbDefaultButton1, "Atención"
             AvisarError "vlPagoPesos", True
@@ -3997,7 +4017,7 @@ Dim vlComision    As Single
                         "<-", CSng(ObtenerCampo("vlTotalGeneral").Text) - vlComision
             ObjTablasIO.setearCampoOperadorValor "vlafavorAdmin", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "vlComision", "<-", CStr(vlComision)
-        Case "Cuenta Corriente", "Tarjeta de Débito", "Tarjeta de Crédito"
+        Case "Cuenta Corriente", "Tarjeta de Débito", "Tarjeta de Crédito", "Todo Pago"
             ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "flCompensado", "<-", "0"
             ObjTablasIO.setearCampoOperadorValor "vlaFavordelLicenciatario", _
@@ -5356,6 +5376,7 @@ Private Sub txtFields_LostFocus(Index As Integer)
                 ObtenerCampo("cdCondVenta").Text <> "Cobro en Destino" And _
                 ObtenerCampo("cdCondVenta").Text <> "Retorno" And _
                 ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" And _
+                ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
                 ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" Then
                 CalcularSaldos Me.txtFields(Index).Tag
             End If
@@ -5644,7 +5665,7 @@ Dim i    As Integer
     ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
     ObtenerCampo("vlPrecioTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTD)
     ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
-    ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
+    ObtenerCampo("vlRecargoTP").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTP)
     
 
     buscarPresentarProducto
@@ -6044,6 +6065,7 @@ Private Sub cargarCondVentas(pcdCliente As String)
         ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
         ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
+        ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
     Case Else
         ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
         ObtenerCampo("cdCondVenta").AddItem "Retorno"
@@ -6086,6 +6108,7 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "Retorno"
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
@@ -6105,14 +6128,16 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "A Clientes"
                 ObtenerCampo("tpComision").Text = "A Clientes"
            Case Else
                 ObtenerCampo("cdCondVenta").Clear
                 ObtenerCampo("cdCondVenta").AddItem "Contado"
-                                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
                 ObtenerCampo("cdCondVenta") = "Contado"
                 ObtenerCampo("tpComision").Clear
@@ -6128,10 +6153,11 @@ Dim lcdCliente       As String
         Case Else
             ObtenerCampo("cdCondVenta").Clear
             ObtenerCampo("cdCondVenta").AddItem "Contado"
-                        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+            ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta") = "Contado"
+            ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
         End Select
         ObtenerCampo("tpComision").Clear
         ObtenerCampo("tpComision").AddItem "A Clientes"

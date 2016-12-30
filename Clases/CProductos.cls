@@ -25,10 +25,13 @@ Public tpDestino          As String
 Public cdComision         As String
 Public PORC_RECARGO_TC    As Single
 Public PORC_RECARGO_TD    As Single
+Public PORC_RECARGO_TP    As Single
 Public vlRecargo_TD       As Single
 Public vlRecargo_TC       As Single
+Public vlRecargo_TP       As Single
 Public vlPrecio_TD        As Single
 Public vlPrecio_TC        As Single
+Public vlPrecio_TP        As Single
 
        
     
@@ -47,8 +50,10 @@ Private Type rcProducto
     cdComision         As String
     vlRecargo_TD       As String
     vlRecargo_TC       As String
+    vlRecargo_TP       As String
     vlPrecio_TD        As String
     vlPrecio_TC        As String
+    vlPrecio_TP        As String
 End Type
 
 
@@ -285,8 +290,10 @@ Private Sub agregarValoresdeTarjetas(elemList As ListItem, Producto As rcProduct
 
     elemList.SubItems(10) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
     elemList.SubItems(11) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
+    elemList.SubItems(12) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
     elemList.SubItems(8) = Round(CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100), 0)
     elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
     
 End Sub
 
@@ -326,8 +333,10 @@ Dim nI             As Long
                 Me.cdComision = lmProductos(nI).cdComision
                 Me.vlRecargo_TD = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100, 0)
                 Me.vlRecargo_TC = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100, 0)
+                Me.vlRecargo_TP = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100, 0)
                 Me.vlPrecio_TD = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100), 0)
                 Me.vlPrecio_TC = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100), 0)
+                Me.vlPrecio_TP = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100), 0)
                esValorMontodelViajeunDestinoPredefinido = True
                Exit Function
         End If

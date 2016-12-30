@@ -2,12 +2,8 @@
 use dbSG2000
 go
 
-
-
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='rpt_cierredecaja_v4_9' )
 	drop procedure  dbo.rpt_cierredecaja_v4_9
-
-go
 
 go
 
@@ -22,7 +18,7 @@ go
  /*******************************************************************/  
 /* Modificado en la version 3.7        */  
 CREATE procedure rpt_cierredecaja_v4_9  
-@nrCaja_param  numeric  
+	@nrCaja_param  numeric  
 as  
 begin 
  
@@ -56,7 +52,8 @@ begin
 
 	-- variables de la version 4.9 
 	declare @Cantidad_Tarjeta_de_Debito  float  	  
-	declare @Cantidad_Tarjeta_de_Credito float  	
+	declare @Cantidad_Tarjeta_de_Credito float  
+	declare @Cantidad_Todo_Pago		     float
 	    
 	 SET @Cantidad_Viajes           = 0  
 	 SET @Cantidad_Facturas         = 0  
@@ -141,6 +138,7 @@ begin
 	   isnull(vlFondoFijoReales,0) as vlFondoFijoReales  ,
 	  @Cantidad_Tarjeta_de_Debito  as Cantidad_Tarjeta_de_Debito,   	  
 	  @Cantidad_Tarjeta_de_Credito as Cantidad_Tarjeta_de_Credito
+	  @Cantidad_Todo_Pago as Cantidad_Todo_Pago
  	 into #Resumen_Caja_Puesto  
 	 from         TB_Cajas a, TB_usuarios b, TB_Puestos c  
 	 where   (a.nrCaja = @nrCaja_param) and   
@@ -185,6 +183,12 @@ begin
 	 from   TB_Comprobantes   
 	 where  flAnulado=0 and nrCaja=@nrCaja_param and  
 			cdCondVenta='Tarjeta de Crédito'  
+			
+
+	 select @Cantidad_Todo_Pago =count(*)   
+	 from   TB_Comprobantes   
+	 where  flAnulado=0 and nrCaja=@nrCaja_param and  
+			cdCondVenta='Todo Pago'  			
 
 
 	 select @Cantidad_Anuladas=count(*)   
@@ -287,6 +291,7 @@ begin
 		   vlRealesPesificados =isnull( @vlRealesPesificados,0),		
 		   Cantidad_Tarjeta_de_Debito = @Cantidad_Tarjeta_de_Debito,
 		   Cantidad_Tarjeta_de_Credito = @Cantidad_Tarjeta_de_Credito
+		   Cantidad_Todo_Pago = @Cantidad_Todo_Pago
 	 where nrcaja = @nrCaja_param  
 
 	 

@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -774,7 +774,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   2355
+            Left            =   3285
             TabIndex        =   51
             Top             =   285
             Width           =   270
@@ -795,10 +795,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   2655
+            Left            =   3600
             TabIndex        =   50
-            Top             =   240
-            Width           =   870
+            Top             =   225
+            Width           =   1050
          End
          Begin VB.Label Label13 
             Caption         =   "Fecha"
@@ -855,10 +855,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   3780
+            Left            =   4965
             TabIndex        =   42
             Top             =   240
-            Width           =   840
+            Width           =   1305
          End
          Begin VB.Label lbl_falta_comp_dolares 
             Alignment       =   2  'Center
@@ -876,10 +876,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   1470
+            Left            =   2295
             TabIndex        =   41
-            Top             =   255
-            Width           =   840
+            Top             =   225
+            Width           =   945
          End
          Begin VB.Label lbl_falta_comp_pesos 
             Alignment       =   2  'Center
@@ -900,7 +900,7 @@ Begin VB.Form frm_PagoLicenciatario
             Left            =   165
             TabIndex        =   40
             Top             =   255
-            Width           =   900
+            Width           =   1650
          End
          Begin VB.Label Label18 
             Caption         =   "€"
@@ -915,9 +915,9 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   3585
+            Left            =   4740
             TabIndex        =   39
-            Top             =   285
+            Top             =   270
             Width           =   240
          End
          Begin VB.Label Label19 
@@ -933,7 +933,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   1095
+            Left            =   1860
             TabIndex        =   38
             Top             =   300
             Width           =   345

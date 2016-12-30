@@ -8,7 +8,7 @@ Begin VB.Form frm_ResumenLicenciatario
    ClientHeight    =   7335
    ClientLeft      =   60
    ClientTop       =   450
-   ClientWidth     =   12000
+   ClientWidth     =   16215
    ClipControls    =   0   'False
    DrawStyle       =   5  'Transparent
    Icon            =   "Frm_ResumenLicenciatario.frx":0000
@@ -17,7 +17,7 @@ Begin VB.Form frm_ResumenLicenciatario
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   7335
-   ScaleWidth      =   12000
+   ScaleWidth      =   16215
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form frm_ResumenLicenciatario
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   12000
-      _ExtentX        =   21167
+      Width           =   16215
+      _ExtentX        =   28601
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   114819073
+            Format          =   166854657
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   114819073
+            Format          =   166854657
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -594,11 +594,11 @@ Begin VB.Form frm_ResumenLicenciatario
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H000000C0&
-         Height          =   630
+         Height          =   750
          Left            =   5190
          TabIndex        =   38
-         Top             =   1065
-         Width           =   8445
+         Top             =   1035
+         Width           =   10710
          Begin VB.Label Label28 
             Caption         =   "R$"
             BeginProperty Font 
@@ -612,9 +612,9 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   2355
+            Left            =   3780
             TabIndex        =   55
-            Top             =   300
+            Top             =   405
             Width           =   270
          End
          Begin VB.Label lbl_falta_comp_reales 
@@ -633,10 +633,10 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   2640
+            Left            =   4065
             TabIndex        =   54
-            Top             =   225
-            Width           =   780
+            Top             =   360
+            Width           =   1005
          End
          Begin VB.Label lbl_falta_comp_dtcupon_hora_corte 
             Alignment       =   2  'Center
@@ -654,9 +654,9 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   4950
+            Left            =   7155
             TabIndex        =   51
-            Top             =   240
+            Top             =   360
             Width           =   3255
          End
          Begin VB.Label Label13 
@@ -672,9 +672,9 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   4320
+            Left            =   6525
             TabIndex        =   50
-            Top             =   270
+            Top             =   405
             Width           =   615
          End
          Begin VB.Label lbl_falta_comp_euros 
@@ -693,10 +693,10 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   3585
+            Left            =   5325
             TabIndex        =   44
-            Top             =   225
-            Width           =   705
+            Top             =   360
+            Width           =   1155
          End
          Begin VB.Label lbl_falta_comp_dolares 
             Alignment       =   2  'Center
@@ -714,10 +714,10 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   1500
+            Left            =   2445
             TabIndex        =   43
-            Top             =   240
-            Width           =   840
+            Top             =   360
+            Width           =   1305
          End
          Begin VB.Label lbl_falta_comp_pesos 
             Alignment       =   2  'Center
@@ -737,8 +737,8 @@ Begin VB.Form frm_ResumenLicenciatario
             Height          =   315
             Left            =   180
             TabIndex        =   42
-            Top             =   225
-            Width           =   900
+            Top             =   345
+            Width           =   1860
          End
          Begin VB.Label Label18 
             Caption         =   "€"
@@ -753,10 +753,10 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   3435
+            Left            =   5175
             TabIndex        =   41
-            Top             =   285
-            Width           =   270
+            Top             =   405
+            Width           =   435
          End
          Begin VB.Label Label4 
             Caption         =   "u$s"
@@ -771,9 +771,9 @@ Begin VB.Form frm_ResumenLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   1125
+            Left            =   2070
             TabIndex        =   40
-            Top             =   285
+            Top             =   405
             Width           =   345
          End
          Begin VB.Label Label20 
@@ -791,7 +791,7 @@ Begin VB.Form frm_ResumenLicenciatario
             Height          =   255
             Left            =   30
             TabIndex        =   39
-            Top             =   285
+            Top             =   405
             Width           =   165
          End
       End
