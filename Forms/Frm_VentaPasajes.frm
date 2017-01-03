@@ -2450,7 +2450,7 @@ Dim vlDescuentoEfectivo As Single
             vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTC))
         Case "Todo Pago"
             vlTotalPesos = vlTotalPesos + _
-            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlPrecioTC))
+            CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTP))
             vlRecargoTarjeta = vlRecargoTarjeta + CSng(Me.lstItemsFactura.ListItems.Item(i).SubItems(const_vlRecargoTP))
         Case Else
             vlTotalPesos = vlTotalPesos + _

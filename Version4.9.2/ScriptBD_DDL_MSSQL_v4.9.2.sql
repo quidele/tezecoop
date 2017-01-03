@@ -137,7 +137,7 @@ begin
 	   isnull(vlCierreReales,0) as vlCierreReales  ,
 	   isnull(vlFondoFijoReales,0) as vlFondoFijoReales  ,
 	  @Cantidad_Tarjeta_de_Debito  as Cantidad_Tarjeta_de_Debito,   	  
-	  @Cantidad_Tarjeta_de_Credito as Cantidad_Tarjeta_de_Credito
+	  @Cantidad_Tarjeta_de_Credito as Cantidad_Tarjeta_de_Credito,
 	  @Cantidad_Todo_Pago as Cantidad_Todo_Pago
  	 into #Resumen_Caja_Puesto  
 	 from         TB_Cajas a, TB_usuarios b, TB_Puestos c  
@@ -290,7 +290,7 @@ begin
 		   vlPesosMenosRealesPesificados = isnull(@vlPesosMenosRealesPesificados,0),
 		   vlRealesPesificados =isnull( @vlRealesPesificados,0),		
 		   Cantidad_Tarjeta_de_Debito = @Cantidad_Tarjeta_de_Debito,
-		   Cantidad_Tarjeta_de_Credito = @Cantidad_Tarjeta_de_Credito
+		   Cantidad_Tarjeta_de_Credito = @Cantidad_Tarjeta_de_Credito,
 		   Cantidad_Todo_Pago = @Cantidad_Todo_Pago
 	 where nrcaja = @nrCaja_param  
 

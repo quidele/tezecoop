@@ -2823,7 +2823,7 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
     
     ' agregado en la version 4.9
     If Me.RESTRINGE_TARJETAS = "S" Then
-        If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Débito") Then
+        If (ptpCupon = "Tarjeta de Crédito" Or ptpCupon = "Tarjeta de Débito"  or   ptpCupon = "Todo Pago"  ) Then
             
             ' Aqui tambien se debe Analizar la dtflCobradoalCliente
             ' MsgBox "Aquí tambien se debe Analizar la Fecha de Cobro del viaje en tarjeta ", vbCritical
@@ -3132,7 +3132,7 @@ Dim cdCliente               As String
                 ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "<-", "1"
                 ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "<-", CStr(Now())
                 ObjTablasIO.setearCampoOperadorValor "dtCompensado", "<-", CStr(Now())
-            Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito"
+            Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito" , "Todo Pago" 
                 ObjTablasIO.setearCampoOperadorValor "vlPagoPesos", "<-", objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                 ObjTablasIO.setearCampoOperadorValor "vlPagoDolares", "<-", "0"
                 ObjTablasIO.setearCampoOperadorValor "vlPagoEuros", "<-", "0"
@@ -3409,7 +3409,7 @@ Dim vlRecargoTarjeta As String
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
                    vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
                    vlAcumReales = vlAcumReales + AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
-                Case "Tarjeta de Crédito", "Tarjeta de Débito"
+                Case "Tarjeta de Crédito", "Tarjeta de Débito", "Todo Pago" 
                    vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
@@ -3635,7 +3635,7 @@ Dim vlAcumTarjeta As Single
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)
                    vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
-                Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito"
+                Case "Cuenta Corriente", "Tarjeta de Crédito", "Tarjeta de Débito", "Todo Pago" 
                    vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
                    vlAcumEuros = vlAcumEuros + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoEuros", i)

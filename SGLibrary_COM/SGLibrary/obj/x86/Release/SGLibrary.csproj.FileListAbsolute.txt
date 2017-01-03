@@ -63,4 +63,3 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\EN-US\SGLibrary.resou
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.csprojResolveAssemblyReference.cache

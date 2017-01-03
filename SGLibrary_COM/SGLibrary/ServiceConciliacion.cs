@@ -81,7 +81,7 @@ namespace SGLibrary
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where (c.flCobradoalCliente == false) && (c.flCompensado == false)
                                                 && (c.flAnulado == false)
-                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains                            (c.tpCupon))
+                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" , "Todo Pago"  }.Contains(c.tpCupon))
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,
                                                              LICENCIA = c.nrLicencia,
                                                              DOC = c.tpComprobanteCliente, 

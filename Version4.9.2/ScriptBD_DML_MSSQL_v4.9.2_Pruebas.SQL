@@ -1,4 +1,4 @@
--- Cambios de DML version 4.9
+-- Cambios de DML version 4.9.2
 use dbSG2000_Pruebas
 go 
 
@@ -9,5 +9,10 @@ INSERT INTO TB_Parametros (dsParametro,vlParametro,tpParametro,nrTamanio,dtActua
 
 
 
+delete from  diccionariodedatos where nmTabla = 'rpt_cierredecaja_v4_9_2' 
+
+INSERT INTO DiccionariodeDatos (nmTabla,nmCampo,nmCampoExterno,tpTipo,nrTamanio,flClave,flClaveForanea,flBusqueda,nrOrdenBusqueda,vlPuesto1,vlPuesto2,vlPuesto3,vlPuesto9,Actualizar,vlPuesto4,vlPuesto5,vlPuesto)  VALUES ('rpt_cierredecaja_v4_9_2','@nrCaja_param','@nrCaja_param','INTEGER',null,'No','No','No',null,null,null,null,null,null,'0','0',null);
+
+ 
 
 
