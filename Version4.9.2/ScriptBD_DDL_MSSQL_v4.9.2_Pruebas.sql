@@ -1,5 +1,5 @@
 -- Cambios de DDL version 4.9
-use dbSG2000
+use dbSG2000_Pruebas
 go
 
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='rpt_cierredecaja_v4_9_2' )
