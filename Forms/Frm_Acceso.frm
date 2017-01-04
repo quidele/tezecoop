@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_Acceso 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Acceso - Version 2.0"
@@ -293,7 +293,7 @@ End Sub
 Private Sub Form_Load()
 
 
-    Me.Caption = "Acceso - Versión " + CStr(App.Major) + "." + CStr(App.Minor)
+    Me.Caption = "Acceso - Versión " + CStr(App.Major) + "." + CStr(App.Minor) + "." + CStr(App.Revision)
     
     On Error Resume Next
     Me.txtUsuario.Text = objConfig.dsUsuario

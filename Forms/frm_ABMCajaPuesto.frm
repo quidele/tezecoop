@@ -1287,13 +1287,13 @@ End Sub
 Private Sub imprimirCaja(porpantalla As Boolean)
 
     Frm_Principal.LimpiarReporte
-    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_cierredecaja_imprimev4_9.rpt"
+    Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes + "\" + "rpt_cierredecaja_imprimev4_9_2.rpt"
     Frm_Principal.CrystalReport1.WindowState = crptMaximized
     
-    objSPs.nmStoredProcedure = "rpt_cierredecaja_v4_9"
+    objSPs.nmStoredProcedure = "rpt_cierredecaja_v4_9_2"
     objSPs.setearCampoValor "@nrCaja_param", objParametros.ObtenerValor("frm_ABMCajaPuesto.nrCaja")
     If Not objSPs.ExecSP() Then
-        MsgBox "Error: " + objSPs.Error + ", función:rpt_cierredecaja_v4_9", vbCritical, "Atención"
+        MsgBox "Error: " + objSPs.Error + ", función:rpt_cierredecaja_v4_9_2", vbCritical, "Atención"
         Exit Sub
     End If
     

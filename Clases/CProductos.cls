@@ -288,12 +288,14 @@ End Function
 
 Private Sub agregarValoresdeTarjetas(elemList As ListItem, Producto As rcProducto)
 
+    
+
     elemList.SubItems(10) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
     elemList.SubItems(11) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
-    elemList.SubItems(12) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
+    elemList.SubItems(13) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
     elemList.SubItems(8) = Round(CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100), 0)
     elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
-    elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
+    elemList.SubItems(12) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
     
 End Sub
 

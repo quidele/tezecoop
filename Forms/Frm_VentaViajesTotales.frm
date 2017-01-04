@@ -190,7 +190,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   0
          ItemData        =   "Frm_VentaViajesTotales.frx":003C
          Left            =   75
-         List            =   "Frm_VentaViajesTotales.frx":0052
+         List            =   "Frm_VentaViajesTotales.frx":0055
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   7
