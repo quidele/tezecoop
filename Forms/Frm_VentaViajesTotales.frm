@@ -674,7 +674,8 @@ Private Function validarEntradadedatos() As Boolean
     
     If Me.cmdAceptar.Caption = "Aceptar" Then
         If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or _
-                            ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Then
+                            ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Or _
+                            ObtenerCampo("cdCondVenta").Text = "Todo Pago" Then
            If ObtenerCampo("nrTarjeta").Text = "" Then
                 MsgBox "Debe completar el número de la tajeta", vbInformation + vbDefaultButton1
                 ObtenerCampo("nrTarjeta").SetFocus
@@ -685,12 +686,22 @@ Private Function validarEntradadedatos() As Boolean
                 ObtenerCampo("tpDocTarjeta").SetFocus
                 Exit Function
            End If
-                 If ObtenerCampo("nrDocTarjeta").Text = "" Then
+           If ObtenerCampo("nrDocTarjeta").Text = "" Then
                 MsgBox "Debe completar el número de documento del titular de la tarjeta", vbInformation + vbDefaultButton1
                 ObtenerCampo("nrDocTarjeta").SetFocus
                 Exit Function
            End If
+           
+            If ObtenerCampo("nrCuponPosnet").Text = "" Then
+                MsgBox "Debe completar el número cupón emitido por el posnet u número de operación todo pago", vbInformation + vbDefaultButton1
+                ObtenerCampo("nrCuponPosnet").SetFocus
+                Exit Function
+           End If
+           
+           
         End If
+        
+     
     End If
                         
     validarEntradadedatos = True
@@ -755,7 +766,8 @@ Private Sub Combox1_Click(Index As Integer)
      objParametros.ObtenerValor("cdCondVenta") = "Cobro en Destino" Or _
      objParametros.ObtenerValor("cdCondVenta") = "Retorno" Or _
      objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
-     objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+     objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+        objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
         ObtenerCampo("vlPagoEuros").Text = "0,00"
         ObtenerCampo("vlPagoDolares").Text = "0,00"
         ObtenerCampo("vlPagoPesos").Text = "0,00"
@@ -769,7 +781,8 @@ Private Sub Combox1_Click(Index As Integer)
     
     
     If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
-                        objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+                        objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+                             objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
         If Me.cmdAceptar.Caption = "Aceptar" Then
             HabilitarCampos "nrTarjeta", True
             HabilitarCampos "tpDocTarjeta", True
@@ -807,7 +820,8 @@ Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
         Select Case Combox1(Index).Tag
         Case "cdCondVenta"
             If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
-                objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+                objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+                    objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
                 ObtenerCampo("nrTarjeta").SetFocus
              Else
                  cmdAceptar_Click
@@ -844,7 +858,8 @@ Private Sub Form_Load()
        objParametros.ObtenerValor("cdCondVenta") = "Cobro en Destino" Or _
        objParametros.ObtenerValor("cdCondVenta") = "Retorno" Or _
        objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
-       objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+       objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+           objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
         HabilitarCampos "vlPagoEuros", False
         HabilitarCampos "vlPagoDolares", False
         HabilitarCampos "vlPagoPesos", False
@@ -859,7 +874,8 @@ Private Sub Form_Load()
     
     
     If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
-       objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Then
+       objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+       objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
         Me.cmdAceptar.Default = False
     End If
        

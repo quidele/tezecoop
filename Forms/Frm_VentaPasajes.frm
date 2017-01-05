@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   106102785
+         Format          =   283574273
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3880,7 +3880,7 @@ Private Function validarEntradadedatos() As Boolean
        ObtenerCampo("cdCondVenta").Text <> "Retorno" And _
        ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" And _
        ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
-       ObtenerCampo("cdCondVenta") = "Todo Pago" Then
+       ObtenerCampo("cdCondVenta") <> "Todo Pago" Then
         If ObtenerValoresNumericos("vlPagoEuros") + ObtenerValoresNumericos("vlPagoDolares") + ObtenerValoresNumericos("vlPagoPesos") + ObtenerValoresNumericos("vlPagoReales") <= 0 Then
             MsgBox "Debe ingresar los valores de pago.", vbCritical + vbDefaultButton1, "Atención"
             AvisarError "vlPagoPesos", True
@@ -5454,7 +5454,8 @@ Private Sub txtFields_LostFocus(Index As Integer)
                 ObtenerCampo("cdCondVenta").Text <> "Retorno" And _
                 ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Débito" And _
                 ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
-                ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" Then
+                ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" And _
+                ObtenerCampo("cdCondVenta").Text <> "Todo Pago" Then
                 CalcularSaldos Me.txtFields(Index).Tag
             End If
         Case "nrComprobante"

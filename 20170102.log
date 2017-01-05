@@ -1,0 +1,21 @@
+02/01/2017 21:38:39 | Exec  sco_TB_Productos_v4_1 
+02/01/2017 21:38:39 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+02/01/2017 21:38:42 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+02/01/2017 21:38:42 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'BFAZZALARI'  AND  TB_Usuarios.flEliminar = 0  
+02/01/2017 21:38:42 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+02/01/2017 21:38:42 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'BFAZZALARI' 
+02/01/2017 21:38:44 | Exec sp_obtenerCajasRechazadas_v2_9 
+02/01/2017 21:38:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+02/01/2017 21:38:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+02/01/2017 21:38:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+02/01/2017 21:38:44 | Exec SP_ValorPromoRetorno
+02/01/2017 21:38:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+02/01/2017 21:38:44 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+02/01/2017 21:38:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+02/01/2017 21:38:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+02/01/2017 21:38:44 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'BFAZZALARI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+02/01/2017 21:38:45 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+02/01/2017 21:38:45 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+02/01/2017 21:38:45 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+02/01/2017 22:20:08 | Exec  sco_TB_Productos_v4_1 
+02/01/2017 22:20:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
