@@ -21,6 +21,7 @@ namespace SGLibrary
         public ServiceConciliacion serviceConciliaciones { get; set; }
         public ServiceConciliacionAutomatica serviceConciliacionesAutomaticas { get; set; }
         public ServiceConciliacionManual un_ServiceConciliacionManual { get; set; }
+        public ServiceConciliacionTodoPago un_ServiceConciliacionTodoPago { get; set; }
         
 
         public FrmConciliaciones()
@@ -101,16 +102,18 @@ namespace SGLibrary
                         this.txtflEstado.Text = una_conciliacion.flestado;
                         this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo
 
+                        this.txtFormato.Text = una_conciliacion.formato; 
+
                         if (una_conciliacion.idArchivo.ToString() != "")
                         {
                             this.cbtipoConciliacion.Visible = false;
                             this.txtFormato.Visible = true;
-                            this.txtFormato.Text = una_conciliacion.TB_ArchivoTarjeta.formato.Trim();
+                            // this.txtFormato.Text = una_conciliacion.TB_ArchivoTarjeta.formato.Trim(); comentado en la version 4.9.2
                             this.txtNombreArchivoTarjeta.Text = una_conciliacion.TB_ArchivoTarjeta.nombreArchivoCompleto;
                         }
-                        else {
+                        /* else {
                             this.txtFormato.Text = "Manual";
-                        }
+                        }*/
 
                       
                         if (una_conciliacion.flestado =="E"){
@@ -251,31 +254,44 @@ namespace SGLibrary
                 Console.WriteLine(item.Cells["CONCILIAR"].EditedFormattedValue);
                 if (item.Cells["CONCILIAR"].EditedFormattedValue.ToString() == "True")
                 {
-                   
-                    if (this.cbtipoConciliacion.Text != "Manual") 
-                    {
-                        TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle = new TB_ConciliacionDetalleEx();
-                        una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
-                        una_TB_ConciliacionDetalle.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
-                        una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_PAGO"].EditedFormattedValue.ToString());
-                        una_TB_ConciliacionDetalle.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
-                        listaAutomatica.Add (una_TB_ConciliacionDetalle);
-                    }
-                    else
-                    {
 
-                        if (item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString() == "")
-                        {
-                            MessageBox.Show("Debe completar la fecha de acreditación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            dataGridView1.Focus();
-                            return false;
-                        }
-                        TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle = new TB_ConciliacionDetalleEx();
-                        una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
-                        una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString());
-                        una_TB_ConciliacionDetalle.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
-                        listaAutomatica.Add(una_TB_ConciliacionDetalle);
-                        //lista.Add(Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString()));
+                    switch (this.cbtipoConciliacion.Text)
+                    {
+                        case "Todo Pago":
+                            if (item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString() == "")
+                            {
+                                MessageBox.Show("Debe completar la fecha de acreditación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dataGridView1.Focus();
+                                return false;
+                            }
+                            TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle = new TB_ConciliacionDetalleEx();
+                            una_TB_ConciliacionDetalle.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle.fechaPago = DateTime.Parse(item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
+                            listaAutomatica.Add(una_TB_ConciliacionDetalle);
+                            break;
+                        case "Manual" : 
+                            if (item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString() == "")
+                            {
+                                MessageBox.Show("Debe completar la fecha de acreditación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                dataGridView1.Focus();
+                                return false;
+                            }
+                            TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle1 = new TB_ConciliacionDetalleEx();
+                            una_TB_ConciliacionDetalle1.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle1.fechaPago = DateTime.Parse(item.Cells["FECHA_ACREDITACION"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle1.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
+                            listaAutomatica.Add(una_TB_ConciliacionDetalle1);
+                            break;
+                        default:
+                            TB_ConciliacionDetalleEx una_TB_ConciliacionDetalle2 = new TB_ConciliacionDetalleEx();
+                            una_TB_ConciliacionDetalle2.nrCupon = Decimal.Parse(item.Cells["ID"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle2.IdArchivoTarjetaDetalle = long.Parse(item.Cells["IdArchivoTarjetaDetalle"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle2.fechaPago = DateTime.Parse(item.Cells["FECHA_PAGO"].EditedFormattedValue.ToString());
+                            una_TB_ConciliacionDetalle2.dtCupon = DateTime.Parse(item.Cells["FECHA"].EditedFormattedValue.ToString());
+                            listaAutomatica.Add(una_TB_ConciliacionDetalle2);
+                            break;
+                            
                     }
 
                 }
@@ -292,20 +308,29 @@ namespace SGLibrary
 
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
-            if (this.cbtipoConciliacion.Text != "Manual")
-            {
-                // si estamos en una conciliacion automatica
-                una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text); // Asignamos el idArchivo de la conciliacion automatica
-                serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
-            }
-            else // Conciliacion manual
-            {
-                
 
-            
-                un_ServiceConciliacionManual.agregarConciliacion(listaAutomatica, una_conciliacion);
-                //serviceConciliaciones.agregarConciliacion(listaAutomatica, una_conciliacion);
-            }
+
+             switch (this.cbtipoConciliacion.Text)
+                    {
+                        case "Todo Pago":
+                            una_conciliacion.formato = this.cbtipoConciliacion.Text;
+                            un_ServiceConciliacionTodoPago.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            //serviceConciliaciones.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            break;
+                        case "Manual" : 
+                            una_conciliacion.formato = this.cbtipoConciliacion.Text;
+                            un_ServiceConciliacionManual.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            //serviceConciliaciones.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            break;
+                        default:
+                             // si estamos en una conciliacion automatica
+                            una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text); // Asignamos el idArchivo de la conciliacion automatica
+                            una_conciliacion.formato = this.cbtipoConciliacion.Text;
+                            serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            break;
+                            
+                    }
+
             return true;
         }
 
@@ -343,12 +368,22 @@ namespace SGLibrary
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
-            try {
-                if (this.txtFormato.Text == "Manual")
-                    this.un_ServiceConciliacionManual.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
-                else
-                    serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
 
+
+            try {
+                 switch (this.txtFormato.Text)
+                    {
+                        case "Todo Pago":
+                         this.un_ServiceConciliacionTodoPago.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
+                            break;
+                        case "Manual" : 
+                            this.un_ServiceConciliacionManual.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
+                            break;
+                        default:
+                            serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
+                            break;
+                            
+                    }
             } catch (Exception ex ){
                 MessageBox.Show(ex.Message + serviceConciliaciones.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -670,6 +705,12 @@ namespace SGLibrary
                     this.btnSelecccionarArchivoTarjeta.Enabled = false;
                     var listadeViajesaConciliar = serviceConciliaciones.ObtenerViajesaConciliar();
                     cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliar, modoEdicion.Text ); 
+                    break;
+                case "Todo Pago":
+                    this.txtNombreArchivoTarjeta.Text = "";
+                    this.btnSelecccionarArchivoTarjeta.Enabled = false;
+                    var listadeViajesaConciliarTodoPago = this.un_ServiceConciliacionTodoPago.ObtenerViajesaConciliar();
+                    cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
                 default:
                     this.cbtipoConciliacion.Enabled = true;

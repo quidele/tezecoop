@@ -61,6 +61,9 @@ namespace SGLibrary
                 f.un_ServiceConciliacionManual = new ServiceConciliacionManual();
                 f.un_ServiceConciliacionManual.CajaActiva(this.CajaAdm);
                 f.un_ServiceConciliacionManual.UsuarioActivo(this.Usuario);
+                f.un_ServiceConciliacionTodoPago  = new ServiceConciliacionTodoPago();
+                f.un_ServiceConciliacionTodoPago.CajaActiva(this.CajaAdm);
+                f.un_ServiceConciliacionTodoPago.UsuarioActivo(this.Usuario);
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -73,7 +76,7 @@ namespace SGLibrary
             }
         }
 
-        public IEnumerable<Object> ObtenerViajesaConciliar()
+        public virtual IEnumerable<Object> ObtenerViajesaConciliar()
         {
 
             using (var context = new dbSG2000Entities())
@@ -81,7 +84,7 @@ namespace SGLibrary
                 var listadeViajesaConciliar1 = (from c in context.TB_Cupones
                                                 where (c.flCobradoalCliente == false) && (c.flCompensado == false)
                                                 && (c.flAnulado == false)
-                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" , "Todo Pago"  }.Contains(c.tpCupon))
+                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito"   }.Contains(c.tpCupon))
                                                 select new { ID = c.nrCupon, FECHA = c.dtCupon,
                                                              LICENCIA = c.nrLicencia,
                                                              DOC = c.tpComprobanteCliente, 
@@ -226,9 +229,7 @@ namespace SGLibrary
                         context.SaveChanges();
 
                         GrabarAsientoContable(TotalConciliacion, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos);
-                        
 
-                        
                         GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                         context.SaveChanges();
@@ -318,9 +319,7 @@ namespace SGLibrary
                 objConciliacionBD.nrCajaAdm = Decimal.Parse(this._cajactiva);
                 objConciliacionBD.flestado = "E";  // Conciliacion Eliminada
                 context.SaveChanges();
-
-
-                 GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
+                GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                 transaction.Complete();
                 }

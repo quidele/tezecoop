@@ -43,8 +43,9 @@ namespace SGLibrary
         public Nullable<int> IdConciliacion { get; set; }
         public Nullable<bool> flProcesado { get; set; }
         public Nullable<System.DateTime> dtProcesado { get; set; }
-        public decimal IdMovimiento_Procesado { get; set; }
+        public Nullable<decimal> IdMovimiento_Procesado { get; set; }
         public Nullable<int> nro_trans { get; set; }
+        public string Error_Procesado { get; set; }
     
         public virtual TB_Usuarios TB_Usuarios { get; set; }
     }

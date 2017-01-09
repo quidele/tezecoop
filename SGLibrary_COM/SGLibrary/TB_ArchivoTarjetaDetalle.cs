@@ -32,7 +32,7 @@ namespace SGLibrary
         public Nullable<decimal> nrCupon { get; set; }
         public Nullable<short> nrNivelConciliacion { get; set; }
     
-        public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
         public virtual ICollection<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
+        public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
     }
 }

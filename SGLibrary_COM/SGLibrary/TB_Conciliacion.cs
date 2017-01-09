@@ -26,6 +26,7 @@ namespace SGLibrary
         public Nullable<System.DateTime> dtModificacion { get; set; }
         public string flestado { get; set; }
         public Nullable<int> idArchivo { get; set; }
+        public string formato { get; set; }
     
         public virtual TB_ArchivoTarjeta TB_ArchivoTarjeta { get; set; }
         public virtual ICollection<TB_ConciliacionDetalle> TB_ConciliacionDetalle { get; set; }
