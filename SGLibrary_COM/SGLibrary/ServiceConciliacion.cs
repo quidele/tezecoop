@@ -274,6 +274,7 @@ namespace SGLibrary
                                                 {
                                                     ID = c.IdConciliacion,
                                                     FECHA = c.dtConciliacion,
+                                                    TIPO = c.formato,
                                                     USUARIO = c.dsUsuario,
                                                     CAJA_ADM = c.nrCajaAdm,
                                                     FECHA_MODIF = c.dtModificacion,

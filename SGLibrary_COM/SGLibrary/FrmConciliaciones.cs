@@ -77,9 +77,9 @@ namespace SGLibrary
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             this.panelcarga.Enabled = true;
-            this.cbtipoConciliacion.Visible = true;
-            this.cbtipoConciliacion.Enabled = true;
-            this.txtFormato.Visible = false;
+            this.cbtipoConciliacion.Visible = false;
+            this.cbtipoConciliacion.Enabled = false;
+            this.txtFormato.Visible = true;
             this.btnSelecccionarArchivoTarjeta.Enabled = true;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
 
@@ -100,20 +100,20 @@ namespace SGLibrary
                         this.txtdsUsuario.Text = una_conciliacion.dsUsuario;
                         this.txtnrCajaAdm.Text = una_conciliacion.nrCajaAdm.ToString();
                         this.txtflEstado.Text = una_conciliacion.flestado;
-                        this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo
-
-                        this.txtFormato.Text = una_conciliacion.formato; 
+                        this.txtIdArchivo.Text = una_conciliacion.idArchivo.ToString(); // recuperamos el idArchivo 
 
                         if (una_conciliacion.idArchivo.ToString() != "")
-                        {
-                            this.cbtipoConciliacion.Visible = false;
-                            this.txtFormato.Visible = true;
+                       {
+                            //this.cbtipoConciliacion.Visible = false;
+                            //this.txtFormato.Visible = true;
                             // this.txtFormato.Text = una_conciliacion.TB_ArchivoTarjeta.formato.Trim(); comentado en la version 4.9.2
                             this.txtNombreArchivoTarjeta.Text = una_conciliacion.TB_ArchivoTarjeta.nombreArchivoCompleto;
                         }
                         /* else {
                             this.txtFormato.Text = "Manual";
                         }*/
+
+                        this.txtFormato.Text = una_conciliacion.formato.Trim(); 
 
                       
                         if (una_conciliacion.flestado =="E"){
