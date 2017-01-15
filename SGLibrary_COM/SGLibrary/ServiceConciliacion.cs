@@ -285,6 +285,34 @@ namespace SGLibrary
             }
         }
 
+        // agregado en la version 4.9.2 , agregamos el parametro tipo
+        public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde, DateTime fechaHasta, String usuario, String tipo)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listadeViajesaConciliar1 = (from c in context.TB_Conciliacion
+                                                where c.dtConciliacion >= fechadesde
+                                                && c.dtConciliacion <= fechaHasta
+                                                && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
+                                                 && (c.formato == tipo || tipo.Trim().Length == 0)
+                                                orderby c.IdConciliacion descending  // ordenamos desde mas reciente a mas vieja
+                                                select new
+                                                {
+                                                    ID = c.IdConciliacion,
+                                                    FECHA = c.dtConciliacion,
+                                                    TIPO = c.formato,
+                                                    USUARIO = c.dsUsuario,
+                                                    CAJA_ADM = c.nrCajaAdm,
+                                                    FECHA_MODIF = c.dtModificacion,
+                                                    ESTADO = c.flestado
+                                                });
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
+        }
+
 
         public virtual void anularConciliacion(TB_Conciliacion objConciliacion)
         {

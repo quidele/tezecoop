@@ -144,6 +144,9 @@ namespace SGLibrary
                 case "ADD":
                     {
                         this.modoEdicion.Text = "NO";
+
+                        this.cbtipoConciliacion.Visible = true;
+                        this.cbtipoConciliacion.Enabled = true;
                         this.txtdsUsuario.Text = serviceConciliaciones.Usuario ;
                         this.txtnrCajaAdm.Text = serviceConciliaciones.CajaAdm;
                         this.panelcarga.Visible = true;
@@ -161,7 +164,7 @@ namespace SGLibrary
                     {
         
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value , this.cbUsuariosConciliaciones.Text   );
+                        var listadeConciliaciones = serviceConciliaciones.obtenerConciliaciones(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text, this.cbFormato.Text);
                         cargarDataGridViewConciliaciones(dataGridView2, listadeConciliaciones);
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = false;
@@ -769,6 +772,16 @@ namespace SGLibrary
         }
 
         private void statusbar_servidor_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label13_Click(object sender, EventArgs e)
         {
 
         }

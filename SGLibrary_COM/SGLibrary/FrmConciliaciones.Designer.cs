@@ -69,6 +69,8 @@
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.cbFormato = new System.Windows.Forms.ComboBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -110,7 +112,7 @@
             this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.txtFormato);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
@@ -136,7 +138,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(255, 181);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(421, 28);
             this.progressBar1.TabIndex = 4;
@@ -157,7 +159,7 @@
             // 
             this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(1243, 80);
-            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
             this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
             this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
@@ -172,7 +174,7 @@
             this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(331, 81);
-            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
             this.txtNombreArchivoTarjeta.ReadOnly = true;
             this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(910, 22);
@@ -329,7 +331,6 @@
             this.cbtipoConciliacion.Name = "cbtipoConciliacion";
             this.cbtipoConciliacion.Size = new System.Drawing.Size(128, 24);
             this.cbtipoConciliacion.TabIndex = 21;
-            this.cbtipoConciliacion.Visible = false;
             this.cbtipoConciliacion.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
             // 
             // txtFormato
@@ -349,6 +350,8 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelbusqueda.BackColor = System.Drawing.Color.LightBlue;
+            this.panelbusqueda.Controls.Add(this.label13);
+            this.panelbusqueda.Controls.Add(this.cbFormato);
             this.panelbusqueda.Controls.Add(this.cbUsuariosConciliaciones);
             this.panelbusqueda.Controls.Add(this.label5);
             this.panelbusqueda.Controls.Add(this.label4);
@@ -358,7 +361,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
@@ -368,7 +371,7 @@
             this.cbUsuariosConciliaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
-            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(121, 63);
+            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(121, 61);
             this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
             this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(208, 24);
@@ -378,11 +381,12 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(27, 65);
+            this.label5.Location = new System.Drawing.Point(27, 68);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Usuario";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
             // 
             // label4
             // 
@@ -439,12 +443,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(17, 114);
+            this.dataGridView2.Location = new System.Drawing.Point(17, 101);
             this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(1303, 271);
+            this.dataGridView2.Size = new System.Drawing.Size(1303, 284);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
@@ -508,11 +512,38 @@
             this.botonesForm1.AutoSize = true;
             this.botonesForm1.Location = new System.Drawing.Point(0, 5);
             this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
             this.botonesForm1.Name = "botonesForm1";
             this.botonesForm1.Size = new System.Drawing.Size(817, 36);
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
+            // 
+            // cbFormato
+            // 
+            this.cbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFormato.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbFormato.FormattingEnabled = true;
+            this.cbFormato.Items.AddRange(new object[] {
+            "Visa",
+            "Master",
+            "Manual",
+            "Todo Pago"});
+            this.cbFormato.Location = new System.Drawing.Point(387, 61);
+            this.cbFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFormato.Name = "cbFormato";
+            this.cbFormato.Size = new System.Drawing.Size(208, 24);
+            this.cbFormato.TabIndex = 14;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(345, 68);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 17);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Tipo";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
             // 
             // FrmConciliaciones
             // 
@@ -521,8 +552,8 @@
             this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
+            this.Controls.Add(this.panelcarga);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConciliaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -584,5 +615,7 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_version;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.ComboBox cbFormato;
     }
 }
