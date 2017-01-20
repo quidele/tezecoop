@@ -408,6 +408,7 @@ namespace SGLibrary
 
                 foreach (PropertyInfo p in pi)
                 {
+
                     DataGridViewColumn columna = new DataGridViewColumn();
                     DataGridViewCell cell = new DataGridViewTextBoxCell();
                     columna.CellTemplate = cell;
@@ -454,6 +455,80 @@ namespace SGLibrary
                     dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
                 }
 
+            }
+
+
+        }
+
+        public void cargarDataGridViewCuponesTodoPago(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
+        {
+
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                foreach (PropertyInfo p in pi)
+                {
+                    if (p.Name == "FECHA_ACREDITACION") continue;
+
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                }
+                break;
+            }
+
+            DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+            doWork.Name = "CONCILIAR";
+            doWork.HeaderText = "CONCILIAR";
+            doWork.FalseValue = "0";
+            doWork.TrueValue = "1";
+
+            dgv.Columns.Add(doWork);
+
+            if (p_modoEdicion != "SI")
+            {
+                CalendarColumn doWork1 = new CalendarColumn();
+                doWork1.Name = "FECHA_ACREDITACION";
+                doWork1.HeaderText = "FECHA DE ACREDITACION";
+                doWork1.DefaultCellStyle.Format = "d";
+                dgv.Columns.Add(doWork1);
+            }
+
+
+            foreach (object item in lista)
+            {
+                var row = dgv.Rows.Add();
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                }
+
+                if (p_modoEdicion == "SI")
+                {
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                    dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                }
+                else
+                {
+                    dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString();
+                    DateTime dt;
+                    DateTime.TryParse(dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString (), out dt);
+                    dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dt.AddDays(10);
+                }
 
             }
 
@@ -713,7 +788,7 @@ namespace SGLibrary
                     this.txtNombreArchivoTarjeta.Text = "";
                     this.btnSelecccionarArchivoTarjeta.Enabled = false;
                     var listadeViajesaConciliarTodoPago = this.un_ServiceConciliacionTodoPago.ObtenerViajesaConciliar();
-                    cargarDataGridViewCupones(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
+                    cargarDataGridViewCuponesTodoPago(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
                 default:
                     this.cbtipoConciliacion.Enabled = true;

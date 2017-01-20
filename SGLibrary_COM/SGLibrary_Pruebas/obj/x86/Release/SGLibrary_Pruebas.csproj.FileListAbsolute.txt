@@ -7,8 +7,12 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\Re
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\Recursos Localizables\StringResources.EN-US.Designer.cs
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\SGLibrary_Pruebas.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\SGLibrary_Pruebas.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\x86\Release\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Release\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Release\SGLibrary_Pruebas.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\x86\Release\SGLibrary_Pruebas.pdb

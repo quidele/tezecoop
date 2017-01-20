@@ -53,6 +53,8 @@
             this.cbtipoConciliacion = new System.Windows.Forms.ComboBox();
             this.txtFormato = new System.Windows.Forms.TextBox();
             this.panelbusqueda = new System.Windows.Forms.Panel();
+            this.label13 = new System.Windows.Forms.Label();
+            this.cbFormato = new System.Windows.Forms.ComboBox();
             this.cbUsuariosConciliaciones = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -69,8 +71,6 @@
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.cbFormato = new System.Windows.Forms.ComboBox();
-            this.label13 = new System.Windows.Forms.Label();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -82,7 +82,7 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
             // 
             // panelcarga
             // 
@@ -366,6 +366,32 @@
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
             // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(345, 68);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(36, 17);
+            this.label13.TabIndex = 15;
+            this.label13.Text = "Tipo";
+            this.label13.Click += new System.EventHandler(this.label13_Click);
+            // 
+            // cbFormato
+            // 
+            this.cbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbFormato.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbFormato.FormattingEnabled = true;
+            this.cbFormato.Items.AddRange(new object[] {
+            "Visa",
+            "Master",
+            "Manual",
+            "Todo Pago"});
+            this.cbFormato.Location = new System.Drawing.Point(387, 61);
+            this.cbFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbFormato.Name = "cbFormato";
+            this.cbFormato.Size = new System.Drawing.Size(208, 24);
+            this.cbFormato.TabIndex = 14;
+            // 
             // cbUsuariosConciliaciones
             // 
             this.cbUsuariosConciliaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
@@ -519,32 +545,6 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // cbFormato
-            // 
-            this.cbFormato.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbFormato.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbFormato.FormattingEnabled = true;
-            this.cbFormato.Items.AddRange(new object[] {
-            "Visa",
-            "Master",
-            "Manual",
-            "Todo Pago"});
-            this.cbFormato.Location = new System.Drawing.Point(387, 61);
-            this.cbFormato.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbFormato.Name = "cbFormato";
-            this.cbFormato.Size = new System.Drawing.Size(208, 24);
-            this.cbFormato.TabIndex = 14;
-            // 
-            // label13
-            // 
-            this.label13.AutoSize = true;
-            this.label13.Location = new System.Drawing.Point(345, 68);
-            this.label13.Name = "label13";
-            this.label13.Size = new System.Drawing.Size(36, 17);
-            this.label13.TabIndex = 15;
-            this.label13.Text = "Tipo";
-            this.label13.Click += new System.EventHandler(this.label13_Click);
-            // 
             // FrmConciliaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -552,8 +552,8 @@
             this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
+            this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConciliaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

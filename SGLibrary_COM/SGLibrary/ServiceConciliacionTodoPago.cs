@@ -315,7 +315,8 @@ namespace SGLibrary
                                                     MONTO = c.vlMontoCupon,
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,
-                                                    DOCU_NRO = c.nrDocTarjeta
+                                                    DOCU_NRO = c.nrDocTarjeta,
+                                                    FECHA_ACREDITACION = c.dtCupon
                                                 }).OrderBy(c => c.FECHA);
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
