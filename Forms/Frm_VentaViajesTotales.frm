@@ -144,7 +144,7 @@ Begin VB.Form Frm_VentaViajesTotales
          MaxLength       =   4
          TabIndex        =   0
          Tag             =   "nrTarjeta"
-         Top             =   1680
+         Top             =   1665
          Width           =   2025
       End
       Begin VB.TextBox txtFields 

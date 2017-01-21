@@ -91,7 +91,8 @@ namespace SGLibrary
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
                                                              TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
-                                                             DOCU_NRO = c.nrDocTarjeta
+                                                             DOCU_NRO = c.nrDocTarjeta,
+                                                             CUPON = c.nrCuponPosnet
                                                 }).OrderBy(c =>  c.FECHA );
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 

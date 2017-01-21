@@ -316,6 +316,7 @@ namespace SGLibrary
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,
                                                     DOCU_NRO = c.nrDocTarjeta,
+                                                    CUPON = c.nrCuponPosnet,
                                                     FECHA_ACREDITACION = c.dtCupon
                                                 }).OrderBy(c => c.FECHA);
 

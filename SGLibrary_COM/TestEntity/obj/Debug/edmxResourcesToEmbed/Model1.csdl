@@ -1,0 +1,29 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityType Name="TB_Productos">
+    <Key>
+      <PropertyRef Name="cdProducto" />
+    </Key>
+    <Property Name="cdProducto" Type="Int32" Nullable="false" />
+    <Property Name="dsProducto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="vlPrecioViaje" Type="Double" />
+    <Property Name="vlPrecioPeaje" Type="Double" />
+    <Property Name="obsHoras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vlPorcentaje" Type="Int32" />
+    <Property Name="tpOperacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flMuestra" Type="Boolean" Nullable="false" />
+    <Property Name="cdOrden" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="vlPrecioViajeSinPeaje" Type="Double" />
+    <Property Name="vlKilometros" Type="Double" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="vlPrecioxKilometro" Type="Double" />
+    <Property Name="flMuestraenlaWEB" Type="Boolean" />
+    <Property Name="flIncluyeComisionRetorno" Type="Boolean" />
+    <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cdComision" Type="Int32" />
+  </EntityType>
+  <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" />
+  </EntityContainer>
+</Schema>
