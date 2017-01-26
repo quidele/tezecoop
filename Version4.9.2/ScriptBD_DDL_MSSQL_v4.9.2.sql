@@ -298,3 +298,16 @@ begin
 	 select * from #Resumen_Caja_Puesto  
 
 end;
+
+
+
+GO
+
+
+if not exists (select * FROM INFORMATION_SCHEMA.COLUMNS AS c1 where c1.column_name = 'formato' and c1.table_name = 'TB_Conciliacion') 
+begin
+	ALTER TABLE dbo.TB_Conciliacion ADD formato char(15) NULL
+end
+
+
+
