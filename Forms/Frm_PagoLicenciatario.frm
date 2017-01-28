@@ -1260,7 +1260,7 @@ Begin VB.Form frm_PagoLicenciatario
             SubItemIndex    =   17
             Object.Tag             =   "nrCupon"
             Text            =   "Nro. Cupon"
-            Object.Width           =   2540
+            Object.Width           =   0
          EndProperty
          BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   18
