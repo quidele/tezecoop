@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   283574273
+         Format          =   136839169
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -6231,11 +6231,11 @@ Dim lcdCliente       As String
         Case Else
             ObtenerCampo("cdCondVenta").Clear
             ObtenerCampo("cdCondVenta").AddItem "Contado"
-            ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+            ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+            ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta") = "Contado"
-            ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
         End Select
         ObtenerCampo("tpComision").Clear
         ObtenerCampo("tpComision").AddItem "A Clientes"

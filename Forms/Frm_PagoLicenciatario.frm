@@ -1144,7 +1144,7 @@ Begin VB.Form frm_PagoLicenciatario
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8.25
+            Size            =   9.75
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -2665,11 +2665,11 @@ Dim Valor       As Single
         Else
             ' grisamos el registro
             For j = 1 To Me.lstBusqueda.ListItems(i).ListSubItems.Count
-                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Gris
-                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = True
+                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = vbBlack ' Gris
+                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = False
             Next j
-            Me.lstBusqueda.ListItems(i).ForeColor = Gris
-            Me.lstBusqueda.ListItems(i).Bold = True
+            Me.lstBusqueda.ListItems(i).ForeColor = vbBlack ' Gris
+            Me.lstBusqueda.ListItems(i).Bold = False
             ' Me.lstBusqueda.ListItems(i).Ghosted = True
         End If
     
