@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ReimpComprobantes 
    Caption         =   "Búsquedas de Comprobantes"
    ClientHeight    =   7680
@@ -278,7 +278,7 @@ Begin VB.Form Frm_ReimpComprobantes
             Index           =   2
             ItemData        =   "Frm_ReimpComprobantes.frx":403E
             Left            =   240
-            List            =   "Frm_ReimpComprobantes.frx":4054
+            List            =   "Frm_ReimpComprobantes.frx":4057
             Style           =   2  'Dropdown List
             TabIndex        =   65
             Tag             =   "cdCondVenta"
@@ -1328,7 +1328,7 @@ Begin VB.Form Frm_ReimpComprobantes
       Begin VB.CommandButton cmdBuscar 
          Height          =   375
          Left            =   5685
-         Picture         =   "Frm_ReimpComprobantes.frx":40B5
+         Picture         =   "Frm_ReimpComprobantes.frx":40C3
          Style           =   1  'Graphical
          TabIndex        =   70
          Top             =   735
@@ -1356,27 +1356,27 @@ Begin VB.Form Frm_ReimpComprobantes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   6
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":41B7
+               Picture         =   "Frm_ReimpComprobantes.frx":41C5
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":42C9
+               Picture         =   "Frm_ReimpComprobantes.frx":42D7
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":43DB
+               Picture         =   "Frm_ReimpComprobantes.frx":43E9
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":44ED
+               Picture         =   "Frm_ReimpComprobantes.frx":44FB
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":45FF
+               Picture         =   "Frm_ReimpComprobantes.frx":460D
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ReimpComprobantes.frx":4711
+               Picture         =   "Frm_ReimpComprobantes.frx":471F
                Key             =   "Menor"
             EndProperty
          EndProperty
@@ -1521,7 +1521,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   112721921
+         Format          =   134152193
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1535,7 +1535,7 @@ Begin VB.Form Frm_ReimpComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   112721921
+         Format          =   134152193
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 

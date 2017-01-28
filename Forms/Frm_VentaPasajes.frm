@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   136839169
+         Format          =   134217729
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1252,7 +1252,7 @@ Begin VB.Form Frm_VentaPasajes
          EndProperty
       End
       Begin VB.Label Label16 
-         Caption         =   "Precio TD"
+         Caption         =   "Precio TP"
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -4003,6 +4003,9 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "vlPrecioTD", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlPrecioTD)
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTC", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlRecargoTC)
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTD", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlRecargoTD)
+        ObjTablasIO.setearCampoOperadorValor "vlRecargoTP", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlRecargoTP)
+        ObjTablasIO.setearCampoOperadorValor "vlPrecioTP", "<-", Me.lstItemsFactura.ListItems(i).ListSubItems(const_vlPrecioTP)
+        
         
         ObjTablasIO.setearCampoOperadorValor "dtInsercion", "<-", CStr(Date)
         ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", "0"

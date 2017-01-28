@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_AnularComprobantes 
    Caption         =   "Anular Comprobantes"
    ClientHeight    =   7800
@@ -166,7 +166,7 @@ Begin VB.Form Frm_AnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   95485953
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -180,7 +180,7 @@ Begin VB.Form Frm_AnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   95485953
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -979,7 +979,7 @@ Begin VB.Form Frm_AnularComprobantes
             Index           =   2
             ItemData        =   "Frm_AnularComprobantes.frx":49CC
             Left            =   240
-            List            =   "Frm_AnularComprobantes.frx":49E2
+            List            =   "Frm_AnularComprobantes.frx":49E5
             Style           =   2  'Dropdown List
             TabIndex        =   65
             Tag             =   "cdCondVenta"
