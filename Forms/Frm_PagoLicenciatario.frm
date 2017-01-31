@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -1153,7 +1153,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   23
+         NumItems        =   24
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "nrLicencia"
             Text            =   "Licencia"
@@ -1270,24 +1270,31 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   19
-            Object.Tag             =   "dsObservacion"
-            Text            =   "Observación"
+            Key             =   "dsLeyanda"
+            Object.Tag             =   "dsLeyanda"
+            Text            =   "Obs.Factura"
             Object.Width           =   5292
          EndProperty
          BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   20
+            Object.Tag             =   "dsObservacion"
+            Text            =   "OPago"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   21
             Object.Tag             =   "vlIVA"
             Text            =   "IVA"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   21
+         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   22
             Object.Tag             =   "flAnulado"
             Text            =   "flAnulado"
             Object.Width           =   2
          EndProperty
-         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   22
+         BeginProperty ColumnHeader(24) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   23
             Key             =   "dtCobradoalCliente"
             Object.Tag             =   "dtCobradoalCliente"
             Text            =   "Fecha Cobro"
@@ -1688,11 +1695,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-
-Const C_TPCUPON = 4
-Const C_dtCupon = 13
-Const C_vlIVA = 20
-Const C_nrCupon = 17
+' Anulados en la version 4.9.3
+' Const C_TPCUPON = 4
+' Const C_dtCupon = 13
+' Const C_vlIVA = 20
+' Const C_nrCupon = 17
 
 
 Dim EstadoABM  As Byte
@@ -2148,7 +2155,7 @@ Dim Valor   As Variant
     
     ObjTablasIO.nmTabla = "TB_Cupones"
     ObjTablasIO.setearCampoOperadorValor "nrCupon", _
-    "=", Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
+    "=", objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", Me.lstBusqueda.SelectedItem.Index)    ' Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
     
     ObjTablasIO.setearCampoOperadorValor "nrCupon", "->", ""
     ObjTablasIO.setearCampoOperadorValor "nrLicencia", "->", ""
@@ -2201,7 +2208,7 @@ Dim i  As Integer
    
    If Me.cmbCampos.Text = "Cliente" Then Exit Sub
    
-   If Not sepuedeCompensar(Item.ListSubItems(C_dtCupon).Text, _
+   If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", Item.Index), _
         objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", Item.Index) _
         , objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index), _
         Not Item.Checked, True, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", Item.Index), _
@@ -2541,6 +2548,7 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "->", ""
          ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "dsLeyenda", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "=", "0", " AND "
          
          If Not Me.cmbCampos.Text = "Cliente" Then
@@ -2717,7 +2725,9 @@ Dim Valor       As Single
         
 
         If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i) = "" Then
-            Me.lstBusqueda.ListItems(i).SubItems(C_vlIVA) = FormatNumber(0, 2)
+            ' Modificado en la version 4.9.3
+            ' Me.lstBusqueda.ListItems(i).SubItems(C_vlIVA) = FormatNumber(0, 2)
+            objControl.AsignarValorListviewColumnaIndice Me.lstBusqueda, "vlIVA", i, FormatNumber(0, 2)
         Else
             Valor = FormatNumber(CSng(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i)), 2)
         End If
