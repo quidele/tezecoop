@@ -5,6 +5,8 @@ go
 
 
 
+-- sp_helptext 'spu_obtenerPresentacionCAIs'
+
 
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtenerPresentacionCAIs' )
 	drop procedure  dbo.spu_obtenerPresentacionCAIs
@@ -86,10 +88,8 @@ begin
 		+ convert(varchar, DATEADD (day, 10,  A.dtComprobante ) ,112) --  as fecha_venc -- fecha de vencimiento de pago 
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
-		-- AND  (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI') and  dbo.ufn_ValidarCUIT('20-25475222-4')
-		--AND not (vlTotalGeneral   > 1000 AND  tpIVA <> 'RI')  
 		AND tpLetra <>'X' 
-		-- AND a.nrComprobante = '00602178' 
+		
 
 		-- select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
 
@@ -97,6 +97,46 @@ begin
 
 		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones' , @nombre_archivo = @nombre_archivo
 
+		return 0; 
+
+
+end 
+
+
+GO
+
+
+
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtenerUltNroCAIsUsados' )
+	drop procedure  dbo.spu_obtenerUltNroCAIsUsados
+
+go
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+---  exec  dbo.spu_obtieneDatosCITIVentas_v4_9 1, 2015
+CREATE procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
+as
+begin
+		
+
+
+		Select  tpComprobante,
+				a.nrCAI, 
+				tpLetra, 
+				A.nrTalonario,
+				max(A.nrComprobante)
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
+				AND tpLetra <>'X' 
+				GROUP BY tpComprobante,
+				a.nrCAI, 
+				tpLetra, 
+				A.nrTalonario
+		
 		return 0; 
 
 
