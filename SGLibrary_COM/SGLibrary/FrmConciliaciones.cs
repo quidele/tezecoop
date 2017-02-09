@@ -126,15 +126,30 @@ namespace SGLibrary
                             botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         }
 
-                        if (una_conciliacion.idArchivo.ToString() != "")
+
+
+                        switch (this.txtFormato.Text)
                         {
-                            cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text,true);
+                            case "Todo Pago":
+                                cargarDataGridViewCuponesTodoPago(dataGridView1, un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                                break;
+                            case "Manual":
+                                cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                                break;
+                            default:
+                                cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
+                                break;
                         }
-                        else
-                        {
-                            
-                            cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
-                        }
+
+                        //if (una_conciliacion.idArchivo.ToString() != "")
+                        //{
+                        //    cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
+                        //}
+                        //else
+                        //{
+
+                        //    cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                        //}
 
                     }
 
@@ -474,7 +489,10 @@ namespace SGLibrary
 
                 foreach (PropertyInfo p in pi)
                 {
-                    if (p.Name == "FECHA_ACREDITACION") continue;
+                    
+                    if (p_modoEdicion != "SI") {
+                        if (p.Name == "FECHA_ACREDITACION") continue;
+                    }
 
                     DataGridViewColumn columna = new DataGridViewColumn();
                     DataGridViewCell cell = new DataGridViewTextBoxCell();

@@ -126,6 +126,7 @@ namespace SGLibrary
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,
                                                     DOCU_NRO = c.nrDocTarjeta,
+                                                    CUPON = c.nrCuponPosnet,
                                                     COMPENSADO = c.flCompensado == true ? "SI" : "NO",
                                                     FECHA_ACREDITACION = x.fechaPago
                                                 });
