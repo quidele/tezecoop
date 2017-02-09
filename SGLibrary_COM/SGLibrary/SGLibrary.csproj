@@ -107,6 +107,12 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensiones\Extensiones.cs" />
+    <Compile Include="FormularioBase1.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBase1.Designer.cs">
+      <DependentUpon>FormularioBase1.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -245,6 +251,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBase1.resx">
+      <DependentUpon>FormularioBase1.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>

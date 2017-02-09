@@ -117,26 +117,24 @@ go
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2015
+---  exec  dbo.spu_obtenerUltNroCAIsUsados 3, 2016
 CREATE procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
 as
 begin
 		
 
 
-		Select  tpComprobante,
-				a.nrCAI, 
-				tpLetra, 
+		Select  @anio as anio,
+				@mes  as mes,
 				A.nrTalonario,
-				max(A.nrComprobante)
+				tpLetra, 
+				a.nrCAI, 
+				max(A.nrComprobante) as ultNroComprobante
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
-				AND tpLetra <>'X' 
-				GROUP BY tpComprobante,
-				a.nrCAI, 
-				tpLetra, 
-				A.nrTalonario
-		
+				AND tpLetra <>'X'  and nrCAI is not null
+				GROUP BY A.nrTalonario , tpLetra, nrCAI 
+
 		return 0; 
 
 
