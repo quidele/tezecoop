@@ -386,7 +386,7 @@ namespace SGLibrary
 
         
 
-        public string Usuario
+        public override string Usuario
         {
             get
             {
@@ -399,7 +399,7 @@ namespace SGLibrary
         }
 
 
-        public string CajaAdm
+        public override string CajaAdm
         {
             get
             {

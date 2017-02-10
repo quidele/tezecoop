@@ -117,16 +117,62 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="contextMenuStrip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <metadata name="openFileDialog1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>184, 17</value>
-  </metadata>
-  <metadata name="status_bar_usuario.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>324, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>169</value>
-  </metadata>
+  <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="botonBuscarImage" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\botonBuscarImage.bmp;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="botonBuscarText" xml:space="preserve">
+    <value>FIND</value>
+  </data>
+  <data name="botonEditarText" xml:space="preserve">
+    <value>EDIT</value>
+  </data>
+  <data name="Image_btn_form_add" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_add.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_anu" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_anu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_del" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_del.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_edit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_edit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_find" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_find.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_hrlp" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_hrlp.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_ok" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_ok.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_print" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_print.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_form_cancel" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_cancel.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Image_btn_form_exit" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\imagenes_varias\botones_form\btn_form_exit.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="botonADDText" xml:space="preserve">
+    <value>ADD</value>
+  </data>
+  <data name="botonCANCELText" xml:space="preserve">
+    <value>CANCEL</value>
+  </data>
+  <data name="botonDELETEText" xml:space="preserve">
+    <value>DELETE</value>
+  </data>
+  <data name="botonEXITText" xml:space="preserve">
+    <value>EXIT</value>
+  </data>
+  <data name="botonOKText" xml:space="preserve">
+    <value>OK</value>
+  </data>
+  <data name="botonPRINTText" xml:space="preserve">
+    <value>PRINT</value>
+  </data>
 </root>

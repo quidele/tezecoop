@@ -61,8 +61,8 @@ namespace SGLibrary
             throw new NotImplementedException();
         }
 
-        public string Usuario { get; set; }
+        public virtual string Usuario { get; set; }
 
-        public string CajaAdm { get; set; }
+        public virtual string CajaAdm { get; set; }
     }
 }

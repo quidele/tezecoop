@@ -32,6 +32,7 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>x86</PlatformTarget>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -107,11 +108,11 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensiones\Extensiones.cs" />
-    <Compile Include="FormularioBase1.cs">
+    <Compile Include="FormularioBase.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FormularioBase1.Designer.cs">
-      <DependentUpon>FormularioBase1.cs</DependentUpon>
+    <Compile Include="FormularioBase.Designer.cs">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
@@ -130,6 +131,12 @@
     </Compile>
     <Compile Include="FrmConciliaciones.Designer.cs">
       <DependentUpon>FrmConciliaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmResumenNrosCAIs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResumenNrosCAIs.Designer.cs">
+      <DependentUpon>FrmResumenNrosCAIs.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmSeleccionarImpresora.cs">
       <SubType>Form</SubType>
@@ -252,8 +259,8 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FormularioBase1.resx">
-      <DependentUpon>FormularioBase1.cs</DependentUpon>
+    <EmbeddedResource Include="FormularioBase.resx">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>
@@ -263,6 +270,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConciliaciones.resx">
       <DependentUpon>FrmConciliaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResumenNrosCAIs.resx">
+      <DependentUpon>FrmResumenNrosCAIs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeleccionarImpresora.resx">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
