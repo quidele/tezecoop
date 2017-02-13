@@ -20,10 +20,6 @@
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
           </AssociationSet>
-          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="dbSG2000Model.Store.FK_TB_Conciliacion_TB_ArchivoTarjeta">
-            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-          </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.Store.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
@@ -304,18 +300,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-          <End Role="TB_ArchivoTarjeta" Type="dbSG2000Model.Store.TB_ArchivoTarjeta" Multiplicity="0..1" />
-          <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_ArchivoTarjeta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TB_Conciliacion">
-              <PropertyRef Name="idArchivo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
           <End Role="TB_Conciliacion" Type="dbSG2000Model.Store.TB_Conciliacion" Multiplicity="1" />
           <End Role="TB_ConciliacionDetalle" Type="dbSG2000Model.Store.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -354,6 +338,10 @@
         </Association>
         <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idArchivo" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spu_obtenerUltNroCAIsUsados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
         </Function>
         <Function Name="spu_procesarMovimientosPosdatados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nrCaja" Type="decimal" Mode="In" />
@@ -405,6 +393,10 @@
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
+          <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
+            <Parameter Name="mes" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -753,6 +745,14 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+          <Property Type="Int32" Name="anio" Nullable="true" />
+          <Property Type="Int32" Name="mes" Nullable="true" />
+          <Property Type="String" Name="nrTalonario" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="tpLetra" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="nrCAI" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="ultNroComprobante" Nullable="true" MaxLength="12" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1039,6 +1039,18 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
+                <ScalarProperty Name="anio" ColumnName="anio" />
+                <ScalarProperty Name="mes" ColumnName="mes" />
+                <ScalarProperty Name="nrTalonario" ColumnName="nrTalonario" />
+                <ScalarProperty Name="tpLetra" ColumnName="tpLetra" />
+                <ScalarProperty Name="nrCAI" ColumnName="nrCAI" />
+                <ScalarProperty Name="ultNroComprobante" ColumnName="ultNroComprobante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

@@ -6,9 +6,3 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\EntityFramewo
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.pdb
-C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\TestEntity.exe.config
-C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\TestEntity.exe
-C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\TestEntity.pdb
-C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.csprojResolveAssemblyReference.cache
-C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.exe
-C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.pdb

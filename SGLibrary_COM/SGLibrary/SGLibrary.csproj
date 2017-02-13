@@ -144,6 +144,7 @@
     <Compile Include="FrmSeleccionarImpresora.Designer.cs">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaderForms.cs" />
     <Compile Include="ODBCManager.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -172,6 +173,7 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="ServiceCAI.cs" />
     <Compile Include="ServiceConciliacion.cs" />
     <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceConciliacionManual.cs" />
@@ -191,6 +193,9 @@
     <Compile Include="ServicePrinter.cs" />
     <Compile Include="ServiceTarifas.cs" />
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spu_obtenerUltNroCAIsUsados_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="spu_procesarMovimientosPosdatados_Result.cs">
@@ -532,9 +537,7 @@
     <None Include="Imagenes_Varias\botones_form\btn_form_add11.png" />
     <None Include="Imagenes_Varias\botones_form\btn_form_add1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
