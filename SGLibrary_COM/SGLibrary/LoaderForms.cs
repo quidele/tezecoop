@@ -38,7 +38,7 @@ namespace SGLibrary
 
         private String _usuarioActivo;
         private String _cajactiva;
-        private List<String> _listado_Errores;
+        private List<String> _listado_Errores=new List<String>();
 
 
         public override string Usuario
@@ -97,12 +97,32 @@ namespace SGLibrary
                 Object  f = new Form ();
                 switch (value)
                 {
+                    case "FrmConciliaciones":
+                        FrmConciliaciones f1 = new FrmConciliaciones();
+                        f1.serviceConciliaciones = new ServiceConciliacion();
+                        f1.serviceConciliaciones.CajaActiva(this._cajactiva);
+                        f1.serviceConciliaciones.UsuarioActivo(this._usuarioActivo);
+                        f1.serviceConciliacionesAutomaticas = new ServiceConciliacionAutomatica();
+                        f1.serviceConciliacionesAutomaticas.CajaActiva(this._cajactiva);
+                        f1.serviceConciliacionesAutomaticas.UsuarioActivo(this._usuarioActivo);
+                        f1.un_ServiceConciliacionManual = new ServiceConciliacionManual();
+                        f1.un_ServiceConciliacionManual.CajaActiva(this.CajaAdm);
+                        f1.un_ServiceConciliacionManual.UsuarioActivo(this.Usuario);
+                        f1.un_ServiceConciliacionTodoPago = new ServiceConciliacionTodoPago();
+                        f1.un_ServiceConciliacionTodoPago.CajaActiva(this.CajaAdm);
+                        f1.un_ServiceConciliacionTodoPago.UsuarioActivo(this.Usuario);
+                        f1.ShowDialog();
+                        f = (Form)f1;
+                        break;
                     case "FrmResumenNrosCAIs":
-                        f = new FrmResumenNrosCAIs();
+                        FrmResumenNrosCAIs f2 = new FrmResumenNrosCAIs();
+                        f2.serviceModel = this;
+                        f = (Form)f2;
                         break;
                     default:
                         break;
                 }
+
                 Form objForm = (Form) f;
                 objForm.ShowDialog();
 

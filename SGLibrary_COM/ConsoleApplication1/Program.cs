@@ -69,7 +69,8 @@ namespace ConsoleApplication1
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls
             */
 
-             Trace.TraceInformation("Logger EULISES 1sdsd ");
+            /*
+            Trace.TraceInformation("Logger EULISES 1sdsd ");
 
             ServiceConciliacion objConciliacion = new ServiceConciliacion();
             objConciliacion.UsuarioActivo("camilap");
@@ -77,7 +78,7 @@ namespace ConsoleApplication1
             objConciliacion.execFormulario();
 
             Trace.TraceInformation("Logger EULISES FFINdsdsd ");
-            
+            */
 
             //ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             // archivo visa fonseca
@@ -104,6 +105,11 @@ namespace ConsoleApplication1
             //miArchivo.ProcesarArchivo();
             //Console.WriteLine(miArchivo.miArchivoTarjeta.formato +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 
+
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmResumenNrosCAIs");
         }
     }
 }

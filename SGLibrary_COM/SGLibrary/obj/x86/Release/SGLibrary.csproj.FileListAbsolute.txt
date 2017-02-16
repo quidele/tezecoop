@@ -24,9 +24,11 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFram
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFramework.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Form1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FormularioBase.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmABMBase.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmCargaTarifas.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmConciliaciones.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmResumenNrosCAIs.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmSeleccionarImpresora.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources

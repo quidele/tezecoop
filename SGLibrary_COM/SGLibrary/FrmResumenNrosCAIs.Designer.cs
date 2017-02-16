@@ -31,6 +31,10 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelbusqueda = new System.Windows.Forms.Panel();
+            this.txtMes = new System.Windows.Forms.TextBox();
+            this.txtAnio = new System.Windows.Forms.TextBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbUsuariosConciliaciones = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -43,10 +47,6 @@
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
             this.panelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.status_bar_usuario.SuspendLayout();
@@ -56,7 +56,7 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
             // 
             // panelbusqueda
             // 
@@ -64,48 +64,86 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelbusqueda.BackColor = System.Drawing.Color.LightBlue;
-            this.panelbusqueda.Controls.Add(this.textBox2);
-            this.panelbusqueda.Controls.Add(this.textBox1);
+            this.panelbusqueda.Controls.Add(this.txtMes);
+            this.panelbusqueda.Controls.Add(this.txtAnio);
             this.panelbusqueda.Controls.Add(this.label3);
             this.panelbusqueda.Controls.Add(this.label2);
             this.panelbusqueda.Controls.Add(this.cbUsuariosConciliaciones);
             this.panelbusqueda.Controls.Add(this.label5);
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
-            this.panelbusqueda.Location = new System.Drawing.Point(12, 44);
+            this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.panelbusqueda.Name = "panelbusqueda";
-            this.panelbusqueda.Size = new System.Drawing.Size(1005, 328);
+            this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
             this.panelbusqueda.Paint += new System.Windows.Forms.PaintEventHandler(this.panelbusqueda_Paint);
+            // 
+            // txtMes
+            // 
+            this.txtMes.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtMes.Location = new System.Drawing.Point(67, 34);
+            this.txtMes.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMes.Name = "txtMes";
+            this.txtMes.Size = new System.Drawing.Size(58, 22);
+            this.txtMes.TabIndex = 17;
+            this.txtMes.TextChanged += new System.EventHandler(this.txtMes_TextChanged);
+            // 
+            // txtAnio
+            // 
+            this.txtAnio.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtAnio.Location = new System.Drawing.Point(175, 34);
+            this.txtAnio.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtAnio.Name = "txtAnio";
+            this.txtAnio.Size = new System.Drawing.Size(75, 22);
+            this.txtAnio.TabIndex = 16;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(19, 40);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(34, 17);
+            this.label3.TabIndex = 15;
+            this.label3.Text = "Mes";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(131, 40);
+            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(36, 17);
+            this.label2.TabIndex = 14;
+            this.label2.Text = "Anio";
             // 
             // cbUsuariosConciliaciones
             // 
             this.cbUsuariosConciliaciones.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
-            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(277, 21);
-            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
+            this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(341, 33);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
-            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(157, 21);
+            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(208, 24);
             this.cbUsuariosConciliaciones.TabIndex = 6;
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(225, 29);
-            this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label5.Location = new System.Drawing.Point(278, 39);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(43, 13);
+            this.label5.Size = new System.Drawing.Size(57, 17);
             this.label5.TabIndex = 5;
             this.label5.Text = "Usuario";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(14, 7);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label1.Location = new System.Drawing.Point(19, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(95, 13);
+            this.label1.Size = new System.Drawing.Size(126, 17);
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
             // 
@@ -119,12 +157,12 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(13, 61);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView2.Location = new System.Drawing.Point(17, 75);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(977, 252);
+            this.dataGridView2.Size = new System.Drawing.Size(1303, 310);
             this.dataGridView2.TabIndex = 13;
             this.dataGridView2.CellContentDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentDoubleClick);
             this.dataGridView2.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView2_RowHeaderMouseDoubleClick);
@@ -142,9 +180,10 @@
             this.statusbar_bd,
             this.statusbar_servidor,
             this.statusbar_version});
-            this.status_bar_usuario.Location = new System.Drawing.Point(0, 362);
+            this.status_bar_usuario.Location = new System.Drawing.Point(0, 448);
             this.status_bar_usuario.Name = "status_bar_usuario";
-            this.status_bar_usuario.Size = new System.Drawing.Size(1029, 22);
+            this.status_bar_usuario.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.status_bar_usuario.Size = new System.Drawing.Size(1372, 25);
             this.status_bar_usuario.TabIndex = 4;
             this.status_bar_usuario.Text = "statusStrip1";
             // 
@@ -152,89 +191,55 @@
             // 
             this.statusbar_usuario.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.statusbar_usuario.Name = "statusbar_usuario";
-            this.statusbar_usuario.Size = new System.Drawing.Size(47, 17);
+            this.statusbar_usuario.Size = new System.Drawing.Size(59, 20);
             this.statusbar_usuario.Text = "Usuario";
             // 
             // statusbar_nrocaja
             // 
             this.statusbar_nrocaja.Name = "statusbar_nrocaja";
-            this.statusbar_nrocaja.Size = new System.Drawing.Size(65, 17);
+            this.statusbar_nrocaja.Size = new System.Drawing.Size(83, 20);
             this.statusbar_nrocaja.Text = "nro de caja";
             // 
             // statusbar_bd
             // 
             this.statusbar_bd.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
             this.statusbar_bd.Name = "statusbar_bd";
-            this.statusbar_bd.Size = new System.Drawing.Size(74, 17);
+            this.statusbar_bd.Size = new System.Drawing.Size(93, 20);
             this.statusbar_bd.Text = "statusbar_bd";
             // 
             // statusbar_servidor
             // 
             this.statusbar_servidor.Name = "statusbar_servidor";
-            this.statusbar_servidor.Size = new System.Drawing.Size(102, 17);
+            this.statusbar_servidor.Size = new System.Drawing.Size(128, 20);
             this.statusbar_servidor.Text = "statusbar_servidor";
             // 
             // statusbar_version
             // 
             this.statusbar_version.Name = "statusbar_version";
-            this.statusbar_version.Size = new System.Drawing.Size(46, 17);
+            this.statusbar_version.Size = new System.Drawing.Size(57, 20);
             this.statusbar_version.Text = "Versión";
             // 
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
-            this.botonesForm1.Location = new System.Drawing.Point(0, 4);
-            this.botonesForm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
+            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
             this.botonesForm1.Name = "botonesForm1";
-            this.botonesForm1.Size = new System.Drawing.Size(613, 29);
+            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
             this.botonesForm1.TabIndex = 3;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(17, 31);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(28, 13);
-            this.label2.TabIndex = 14;
-            this.label2.Text = "Anio";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(130, 29);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(27, 13);
-            this.label3.TabIndex = 15;
-            this.label3.Text = "Mes";
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(52, 24);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(57, 20);
-            this.textBox1.TabIndex = 16;
-            // 
-            // textBox2
-            // 
-            this.textBox2.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox2.Location = new System.Drawing.Point(163, 22);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(44, 20);
-            this.textBox2.TabIndex = 17;
-            // 
             // FrmResumenNrosCAIs
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1029, 384);
+            this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelbusqueda);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmResumenNrosCAIs";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Resumen Números de CAI";
@@ -268,7 +273,7 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbar_version;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtMes;
+        private System.Windows.Forms.TextBox txtAnio;
     }
 }

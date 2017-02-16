@@ -117,7 +117,7 @@ go
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
----  exec  dbo.spu_obtenerUltNroCAIsUsados 3, 2016
+---  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2017
 CREATE procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
 as
 begin

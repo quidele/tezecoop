@@ -11,6 +11,7 @@ using System.Reflection;
 using SGLibrary.ArchivoTarjetas;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using Microsoft.VisualBasic;
 
 namespace SGLibrary
 {
@@ -44,7 +45,7 @@ namespace SGLibrary
             botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
             
             this.panelbusqueda.Visible = true;
-            this.botonesForm1.InicializarFindBoton();
+            //this.botonesForm1.InicializarFindBoton();
         }
 
 
@@ -60,9 +61,16 @@ namespace SGLibrary
                 
                 case "FIND":
                     {
+                       
+                        if (!Information.IsNumeric(this.txtMes.Text)) {
+                            MessageBox.Show("El mes ingresado no es válido", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            this.txtMes.Focus();
+                            return;
+                        }
 
-                        // var listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, "CLAVE");
-                        //cargarDataGridViewConciliaciones(dataGridView2, listadeRegistros);
+                        ServiceCAI objServiceCAI = new ServiceCAI();
+                        var listadeRegistros = objServiceCAI.obtenerEstadoCAIs (Convert.ToInt32(this.txtMes.Text), Convert.ToInt32(this.txtAnio.Text));
+                        cargarDataGridViewFIND(this.dataGridView2, listadeRegistros);
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
@@ -117,57 +125,14 @@ namespace SGLibrary
         }
 
 
-       
-
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
-        {
-
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
-
-            foreach (var item in lista)
-            {
-
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-
-                foreach (PropertyInfo p in pi)
-                {
-
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dgv.Columns.Add(columna);
-                }
-                break;
-            }
-
-
-            foreach (object item in lista)
-            {
-                var row = dgv.Rows.Add();
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-                foreach (PropertyInfo p in pi)
-                {
-                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
-                }
-
-            }
-
-
-        }
 
 
 
 
 
-        public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
+
+
+        public void cargarDataGridViewFIND(DataGridView dgv, IEnumerable<Object> lista)
         {
 
             //dgv.Rows.Clear();
@@ -258,6 +223,11 @@ namespace SGLibrary
         }
 
         private void panelbusqueda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void txtMes_TextChanged(object sender, EventArgs e)
         {
 
         }
