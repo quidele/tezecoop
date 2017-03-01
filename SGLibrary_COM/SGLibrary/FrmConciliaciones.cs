@@ -131,7 +131,13 @@ namespace SGLibrary
                         switch (this.txtFormato.Text)
                         {
                             case "Todo Pago":
-                                cargarDataGridViewCuponesTodoPago(dataGridView1, un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                                // probar este código
+                                this.progressBar1.Minimum = 0;
+                                var listaResultados = un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion);
+                                this.progressBar1.Maximum = listaResultados.Count();
+                                this.progressBar1.Visible = true;
+                                cargarDataGridViewCuponesTodoPago(dataGridView1, listaResultados , this.modoEdicion.Text);
+                                this.progressBar1.Visible = false;
                                 break;
                             case "Manual":
                                 cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
@@ -523,10 +529,20 @@ namespace SGLibrary
                 dgv.Columns.Add(doWork1);
             }
 
+            var i = 0;
 
             foreach (object item in lista)
             {
+
+                this.progressBar1.BringToFront();
+                dgv.Refresh();
+                //System.Threading.Thread.Sleep(10);
+                Application.DoEvents();
+                this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
+
+                dgv.Rows[row].HeaderCell.Value = i.ToString();
+
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
@@ -549,6 +565,9 @@ namespace SGLibrary
                 }
 
             }
+
+            dgv.BringToFront();
+            dgv.Refresh();
 
 
         }
