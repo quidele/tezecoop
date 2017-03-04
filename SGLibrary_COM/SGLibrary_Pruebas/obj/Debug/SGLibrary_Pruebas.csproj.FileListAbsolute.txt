@@ -3,3 +3,21 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibr
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD_FON.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD_CASA.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizables\StringResources.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.pdb
