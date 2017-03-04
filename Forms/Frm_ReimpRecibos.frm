@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   116523009
+         Format          =   109182977
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   105578497
+         Format          =   109182977
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -899,11 +899,15 @@ End Sub
 Private Sub Anular_Recibo()
 Dim resp                    As Byte
 Dim strSQL                  As String
+Dim ELIMINA_RECIBO_DE_OTRA_CAJA As String
 
-
-    If Me.lstBusqueda.SelectedItem.SubItems(6) <> objParametros.ObtenerValor("nrCaja") Then
-        MsgBox "No se puede eliminar este recibo ya que no pertenece a la caja de administración abierta, Caja Nro: " + objParametros.ObtenerValor("nrCaja") + ".", vbInformation + vbDefaultButton1, "Atención"
-        Exit Sub
+    ELIMINA_RECIBO_DE_OTRA_CAJA = objParametros.ObtenerValorBD("ELIMINA_RECIBO_DE_OTRA_CAJA")
+    
+    If ELIMINA_RECIBO_DE_OTRA_CAJA = "S" Then
+        If Me.lstBusqueda.SelectedItem.SubItems(6) <> objParametros.ObtenerValor("nrCaja") Then
+            MsgBox "No se puede eliminar este recibo ya que no pertenece a la caja de administración abierta, Caja Nro: " + objParametros.ObtenerValor("nrCaja") + ".", vbInformation + vbDefaultButton1, "Atención"
+            Exit Sub
+        End If
     End If
     
     If Me.lstBusqueda.SelectedItem.SubItems(5) = "SI" Then
