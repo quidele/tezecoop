@@ -13,11 +13,11 @@ namespace SGLibrary
     
     public partial class spu_obtenerUltNroCAIsUsados_Result
     {
-        public Nullable<int> anio { get; set; }
-        public Nullable<int> mes { get; set; }
-        public string nrTalonario { get; set; }
-        public string tpLetra { get; set; }
-        public string nrCAI { get; set; }
-        public string ultNroComprobante { get; set; }
+        public Nullable<int> Anio { get; set; }
+        public Nullable<int> Mes { get; set; }
+        public string PDV { get; set; }
+        public string Letra { get; set; }
+        public string CAI { get; set; }
+        public string UltNroComprobante { get; set; }
     }
 }

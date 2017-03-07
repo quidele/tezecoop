@@ -746,12 +746,12 @@
           </ReferentialConstraint>
         </Association>
         <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
-          <Property Type="Int32" Name="anio" Nullable="true" />
-          <Property Type="Int32" Name="mes" Nullable="true" />
-          <Property Type="String" Name="nrTalonario" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="tpLetra" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="nrCAI" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="ultNroComprobante" Nullable="true" MaxLength="12" />
+          <Property Type="Int32" Name="Anio" Nullable="true" />
+          <Property Type="Int32" Name="Mes" Nullable="true" />
+          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="Letra" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1042,12 +1042,12 @@
           <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
             <ResultMapping>
               <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
-                <ScalarProperty Name="anio" ColumnName="anio" />
-                <ScalarProperty Name="mes" ColumnName="mes" />
-                <ScalarProperty Name="nrTalonario" ColumnName="nrTalonario" />
-                <ScalarProperty Name="tpLetra" ColumnName="tpLetra" />
-                <ScalarProperty Name="nrCAI" ColumnName="nrCAI" />
-                <ScalarProperty Name="ultNroComprobante" ColumnName="ultNroComprobante" />
+                <ScalarProperty Name="Anio" ColumnName="Anio" />
+                <ScalarProperty Name="Mes" ColumnName="Mes" />
+                <ScalarProperty Name="PDV" ColumnName="PDV" />
+                <ScalarProperty Name="Letra" ColumnName="Letra" />
+                <ScalarProperty Name="CAI" ColumnName="CAI" />
+                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

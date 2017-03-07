@@ -284,12 +284,12 @@
     <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
       <ResultMapping>
         <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
-          <ScalarProperty Name="anio" ColumnName="anio" />
-          <ScalarProperty Name="mes" ColumnName="mes" />
-          <ScalarProperty Name="nrTalonario" ColumnName="nrTalonario" />
-          <ScalarProperty Name="tpLetra" ColumnName="tpLetra" />
-          <ScalarProperty Name="nrCAI" ColumnName="nrCAI" />
-          <ScalarProperty Name="ultNroComprobante" ColumnName="ultNroComprobante" />
+          <ScalarProperty Name="Anio" ColumnName="Anio" />
+          <ScalarProperty Name="Mes" ColumnName="Mes" />
+          <ScalarProperty Name="PDV" ColumnName="PDV" />
+          <ScalarProperty Name="Letra" ColumnName="Letra" />
+          <ScalarProperty Name="CAI" ColumnName="CAI" />
+          <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
