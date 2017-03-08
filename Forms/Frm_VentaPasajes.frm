@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   134217729
+         Format          =   272039937
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -6305,7 +6305,7 @@ Dim lnrCaja As String
         ObjTablasIO.setearCampoOperadorValor "flManual", "=", "M", " AND "
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante").Text, " AND "
-        ' ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text
         ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "->", ""
