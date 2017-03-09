@@ -1,6 +1,6 @@
-﻿namespace SGLibrary
+﻿namespace $rootnamespace$
 {
-    partial class FormularioBase
+    partial class $safeitemname$
     {
         /// <summary>
         /// Required designer variable.
@@ -410,7 +410,7 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // FormularioBase
+            // $safeitemname$
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -420,7 +420,7 @@
             this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
             this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.Name = "FormularioBase";
+            this.Name = "$safeitemname$";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Formulario Base";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;

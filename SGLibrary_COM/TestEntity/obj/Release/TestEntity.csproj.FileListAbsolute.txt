@@ -10,3 +10,4 @@ C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Release\TestEntity.pdb
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.pdb
+C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Release\TestEntity.csprojResolveAssemblyReference.cache
