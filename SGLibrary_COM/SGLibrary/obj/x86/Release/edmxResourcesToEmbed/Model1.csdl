@@ -46,6 +46,12 @@
       <Parameter Name="mes" Mode="In" Type="Int32" />
       <Parameter Name="anio" Mode="In" Type="Int32" />
     </FunctionImport>
+    <EntitySet Name="TB_PresentacionesCAI" EntityType="dbSG2000Model.TB_PresentacionesCAI" />
+    <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" />
+    <AssociationSet Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+      <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
+      <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -402,4 +408,40 @@
     <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
   </ComplexType>
+  <EntityType Name="TB_PresentacionesCAI">
+    <Key>
+      <PropertyRef Name="IdPresentacion" />
+    </Key>
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nrAnio" Type="Int32" />
+    <Property Name="nrMes" Type="Int32" />
+    <Property Name="dtPresentacion" Type="DateTime" Precision="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAIDetalle" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAI" ToRole="TB_PresentacionesCAIDetalle" />
+  </EntityType>
+  <EntityType Name="TB_PresentacionesCAIDetalle">
+    <Key>
+      <PropertyRef Name="IdPresentacion" />
+      <PropertyRef Name="nrCAI" />
+    </Key>
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
+    <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="nrUltNroComprobante" Type="Int32" />
+    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAI" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAIDetalle" ToRole="TB_PresentacionesCAI" />
+  </EntityType>
+  <Association Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+    <End Type="dbSG2000Model.TB_PresentacionesCAI" Role="TB_PresentacionesCAI" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_PresentacionesCAIDetalle" Role="TB_PresentacionesCAIDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PresentacionesCAI">
+        <PropertyRef Name="IdPresentacion" />
+      </Principal>
+      <Dependent Role="TB_PresentacionesCAIDetalle">
+        <PropertyRef Name="IdPresentacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>

@@ -115,6 +115,12 @@
     <Compile Include="FormularioBase.Designer.cs">
       <DependentUpon>FormularioBase.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmPresentacionesCAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresentacionesCAI.Designer.cs">
+      <DependentUpon>FrmPresentacionesCAI.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -226,6 +232,12 @@
     <Compile Include="TB_MovimientosContablesPosdatados.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_PresentacionesCAI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PresentacionesCAIDetalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Productos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -267,6 +279,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FormularioBase.resx">
       <DependentUpon>FormularioBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresentacionesCAI.resx">
+      <DependentUpon>FrmPresentacionesCAI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>

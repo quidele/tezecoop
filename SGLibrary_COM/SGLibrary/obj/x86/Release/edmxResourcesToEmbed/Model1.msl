@@ -293,5 +293,28 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <EntitySetMapping Name="TB_PresentacionesCAI">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_PresentacionesCAI">
+        <MappingFragment StoreEntitySet="TB_PresentacionesCAI">
+          <ScalarProperty Name="dtModificacion" ColumnName="dtModificacion" />
+          <ScalarProperty Name="flestado" ColumnName="flestado" />
+          <ScalarProperty Name="dsUsuario" ColumnName="dsUsuario" />
+          <ScalarProperty Name="dtPresentacion" ColumnName="dtPresentacion" />
+          <ScalarProperty Name="nrMes" ColumnName="nrMes" />
+          <ScalarProperty Name="nrAnio" ColumnName="nrAnio" />
+          <ScalarProperty Name="IdPresentacion" ColumnName="IdPresentacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_PresentacionesCAIDetalle">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_PresentacionesCAIDetalle">
+        <MappingFragment StoreEntitySet="TB_PresentacionesCAIDetalle">
+          <ScalarProperty Name="dtInsercion" ColumnName="dtInsercion" />
+          <ScalarProperty Name="nrUltNroComprobante" ColumnName="nrUltNroComprobante" />
+          <ScalarProperty Name="nrCAI" ColumnName="nrCAI" />
+          <ScalarProperty Name="IdPresentacion" ColumnName="IdPresentacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

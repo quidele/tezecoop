@@ -1,11 +1,64 @@
 -- Cambios de DDL version 4.9.3
-use dbSG2000
+USE dbSG2000
 go
 
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAI' )
+	drop table   dbo.TB_PresentacionesCAI
+
+SET ANSI_PADDING ON
+GO
+
+
+CREATE TABLE [dbo].[TB_PresentacionesCAI](
+	[IdPresentacion] [int] IDENTITY(1,1) NOT NULL,
+	[nrAnio] [int] NULL,
+	[nrMes] [int] NULL,
+	[dtPresentacion] [date] NULL,
+	[dsUsuario] [varchar](20) NULL,
+	[flestado] [char](1) NULL,
+	[dtModificacion] [datetime] NULL,
+ CONSTRAINT [PK_TB_PresentacionesCAI] PRIMARY KEY CLUSTERED 
+(
+	[IdPresentacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+SET ANSI_PADDING OFF
+GO
+
+
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAIDetalle' )
+	drop table   dbo.TB_PresentacionesCAIDetalle
 
 
 
--- sp_helptext 'spu_obtenerPresentacionCAIs'
+CREATE TABLE [dbo].[TB_PresentacionesCAIDetalle](
+	[IdPresentacion] [int] NOT NULL,
+	[nrCAI] [char](20) NOT NULL,
+	[nrUltNroComprobante] [int] NULL,
+	[dtInsercion] [datetime] NULL,
+ CONSTRAINT [PK_TB_TB_PresentacionesCAIDetalle] PRIMARY KEY CLUSTERED 
+(
+	[IdPresentacion] ASC,
+	[nrCAI] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[TB_PresentacionesCAIDetalle]  WITH CHECK ADD  CONSTRAINT [FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI] FOREIGN KEY([IdPresentacion])
+REFERENCES [dbo].[TB_PresentacionesCAI] ([IdPresentacion])
+GO
+
+ALTER TABLE [dbo].[TB_PresentacionesCAIDetalle] CHECK CONSTRAINT [FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI]
+GO
+
 
 
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtenerPresentacionCAIs' )
@@ -115,14 +168,12 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_o
 go
 
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-
+---------------------------------------------------------------------------
 ---  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2017
 ALTER procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
 as
 begin
 		
-
 
 		Select  @anio as Anio,
 				@mes  as Mes,
@@ -136,6 +187,5 @@ begin
 				GROUP BY A.nrTalonario , tpLetra, nrCAI 
 
 		return 0; 
-
 
 end 
