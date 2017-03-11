@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -2155,7 +2155,7 @@ Dim Valor   As Variant
     
     ObjTablasIO.nmTabla = "TB_Cupones"
     ObjTablasIO.setearCampoOperadorValor "nrCupon", _
-    "=", objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", Me.lstBusqueda.SelectedItem.Index)    ' Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
+    "=", objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "nrCupon", Me.lstBusqueda.SelectedItem.Index)    ' Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
     
     ObjTablasIO.setearCampoOperadorValor "nrCupon", "->", ""
     ObjTablasIO.setearCampoOperadorValor "nrLicencia", "->", ""
