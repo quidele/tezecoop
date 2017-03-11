@@ -2,6 +2,13 @@
 USE dbSG2000
 go
 
+
+
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAI' )
+	drop table   dbo.TB_PresentacionesCAIDetalle
+
+
+
 if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAI' )
 	drop table   dbo.TB_PresentacionesCAI
 
@@ -170,7 +177,7 @@ go
 
 ---------------------------------------------------------------------------
 ---  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2017
-ALTER procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
+create procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
 as
 begin
 		
