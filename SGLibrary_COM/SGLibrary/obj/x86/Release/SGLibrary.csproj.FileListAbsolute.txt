@@ -8,37 +8,6 @@ C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibr
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.csproj.GenerateResource.Cache
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.dll
 C:\Users\quidele\Documents\personal\tezecoop\ocx\testCSharp.NET\SGLibrary\SGLibrary\obj\x86\Release\SGLibrary.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_FON.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_CASA.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.EN-US.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.ES-ES.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.dll.config
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFramework.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFramework.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.csprojResolveAssemblyReference.cache
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ControlesdeUsuario.BotonesForm.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Form1.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FormularioBase.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmABMBase.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmCargaTarifas.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmConciliaciones.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmResumenNrosCAIs.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmSeleccionarImpresora.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.csproj.GenerateResource.Cache
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD.Xml
@@ -69,3 +38,34 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\EN-US\SGLibrary.resou
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_FON.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD_CASA.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ConfigBD.Xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.EN-US.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.ES-ES.resx
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.dll.config
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Release\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ControlesdeUsuario.BotonesForm.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Form1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FormularioBase.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmPresentacionesCAI.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmABMBase.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmCargaTarifas.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmConciliaciones.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmResumenNrosCAIs.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.FrmSeleccionarImpresora.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.csproj.GenerateResource.Cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\EN-US\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Release\SGLibrary.pdb
