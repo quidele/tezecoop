@@ -1,5 +1,5 @@
 
-create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_9](@mes int, @anio int) 
+alter procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_9](@mes int, @anio int) 
 as
 begin
 

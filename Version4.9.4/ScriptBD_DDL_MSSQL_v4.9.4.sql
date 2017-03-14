@@ -1,6 +1,6 @@
 -- Cambios de DDL version 4.9.3
 USE dbSG2000
-go
+GO
 
 
 if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCampoAFIP_cod_dgi_v4_9' )
@@ -50,16 +50,62 @@ END
 	RETURN @valor_retorno
 END
 
+
+/* +  case tpIVA when 'RI'    then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   
+   else ((CASE WHEN a.vlTotalGeneral > 999 THEN	dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE    REPLICATE('0',20) END) ) END -- As nro_dgi,  --- Código del Documento del Comprador
+*/
+
+
 go
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_9' )
-	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_9
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_10' )
+	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_10
 GO
 
 
---- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9] @mes = 11 , @anio = 2016
 
-create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_9](@mes int, @anio int) 
+
+
+if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCampoAFIP_nro_dgi_v4_9' )
+	drop function  dbo.UDF_obtenerCampoAFIP_nro_dgi_v4_9
+GO
+
+CREATE  FUNCTION [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_9 (@tpIVA  varchar(4) , 
+												@nrDoc as varchar(100), @vlTotalGeneral as float  )
+RETURNS varchar(50)
+BEGIN
+declare @valor_retorno char(2) = '99' 
+
+IF  @tpIVA = 'RI'  
+BEGIN
+	IF  dbo.ufn_ValidarCUIT(@nrDoc)=1
+		set @valor_retorno = '80'
+	ELSE
+		IF ISNULL(rtrim(@nrDoc),'')='' 
+			set @valor_retorno = '99'  -- VERIFICAR ESTA SITUACION
+END
+BEGIN
+	IF ISNULL(rtrim(@nrDoc),'') = ''
+		set @valor_retorno = '99' 
+	ELSE
+	BEGIN
+		IF dbo.ufn_ValidarCUIT(@nrDoc)=1
+			set @valor_retorno = '80'
+		ELSE 
+			set @valor_retorno = '80'
+	END
+END
+
+	RETURN @valor_retorno
+END
+
+GO
+/*
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9] @mes = 11 , @anio = 2016
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016
+*/
+
+create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_10](@mes int, @anio int) 
 as
 begin
 
@@ -106,8 +152,12 @@ begin
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
 				+ [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9](A.tpIVA, A.nrDoc , A.vlTotalGeneral ) -- As nro_dgi,  --- Código del Documento del Comprador
+																								  /*
+
+																								  */
 				+ Left (  case tpIVA when 'RI'  then A.dsRazonSocial   
-				else (CASE WHEN a.vlTotalGeneral > 999 THEN	A.dsRazonSocial   ELSE   'Consumidor Final'   END) END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
+				else (CASE WHEN a.vlTotalGeneral > 999 THEN	A.dsRazonSocial   
+				ELSE   'Consumidor Final'   END) END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
 		--vlTotalGeneral,
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (a.vlTotalGeneral, 15, 2)   --    As imp_total,     --  importe total del operacion
 		+ CASE isnull(a.vlIVA,0) WHEN 0 THEN dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (a.vlTotalGeneral,15,2) ELSE dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0 ,15,2) END --  ,	--  importe total conceptos que no integran el neto gravado		
