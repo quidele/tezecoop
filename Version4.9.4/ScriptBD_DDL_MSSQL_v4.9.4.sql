@@ -2,9 +2,51 @@
 USE dbSG2000
 go
 
+
+if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCampoAFIP_cod_dgi_v4_9' )
+	drop function  dbo.UDF_obtenerCampoAFIP_cod_dgi_v4_9
+GO
+
+CREATE  FUNCTION [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (@tpIVA  varchar(4) , 
+												@nrDoc as varchar(100), @vlTotalGeneral as float  )
+RETURNS varchar(50)
+BEGIN
+declare @valor_retorno char(2) = '99' 
+
+
+IF  @tpIVA = 'RI'  
+BEGIN
+	IF  dbo.ufn_ValidarCUIT(@nrDoc)=1
+		set @valor_retorno = '80'
+	ELSE
+		IF ISNULL(rtrim(@nrDoc),'')='' 
+			set @valor_retorno = '99'  -- VERIFICAR ESTA SITUACION
+END
+
+/* 
+@valor_retorno = case  @tpIVA when 'RI'  
+							  then (case WHEN dbo.ufn_ValidarCUIT(@nrDoc)=1 
+								THEN '80' ELSE  (CASE ISNULL(rtrim(@nrDoc),'') WHEN ''   
+										                                       THEN '99' ELSE '90' END)   END)
+							   else     (CASE ISNULL(rtrim(@nrDoc),'') WHEN ''   THEN '99' ELSE 
+											 (CASE WHEN @vlTotalGeneral > 999  
+												THEN	 (case WHEN dbo.ufn_ValidarCUIT(@nrDoc)=1
+														       THEN '80' 
+															   ELSE '90' END) ELSE   '90'  END ) END)    END  -- As cod_dgi,
+
+*/ 
+
+	RETURN @valor_retorno
+END
+
+go
+
 if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_9' )
 	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_9
 GO
+
+
+--- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9] @mes = 11 , @anio = 2016
 
 create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_9](@mes int, @anio int) 
 as
@@ -52,8 +94,10 @@ begin
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
-				+ case  tpIVA when 'RI'  then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then '80' ELSE '90' END)
-							else (CASE WHEN a.vlTotalGeneral > 999 THEN	'80' ELSE   '90'  END )    END -- As cod_dgi,
+				+ case  tpIVA when 'RI'  then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then '80' ELSE 
+				                      ( CASE ISNULL(rtrim(A.nrDoc),'') WHEN ''   THEN '99' ELSE '90' END)   END)
+							else     ( CASE ISNULL(rtrim(A.nrDoc),'') WHEN ''   THEN '99' ELSE 
+											 (CASE WHEN a.vlTotalGeneral > 999 THEN	 (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 THEN '80' ELSE '90' END) ELSE   '90'  END ) END)    END  -- As cod_dgi,
 				--, A.nrDoc
 				--, A.vlTotalGeneral, 
 				+  case tpIVA when 'RI'    then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   
