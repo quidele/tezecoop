@@ -22,6 +22,17 @@ BEGIN
 		IF ISNULL(rtrim(@nrDoc),'')='' 
 			set @valor_retorno = '99'  -- VERIFICAR ESTA SITUACION
 END
+BEGIN
+	IF ISNULL(rtrim(@nrDoc),'') = ''
+		set @valor_retorno = '99' 
+	ELSE
+	BEGIN
+		IF dbo.ufn_ValidarCUIT(@nrDoc)=1
+			set @valor_retorno = '80'
+		ELSE 
+			set @valor_retorno = '80'
+	END
+END
 
 /* 
 @valor_retorno = case  @tpIVA when 'RI'  
@@ -94,14 +105,7 @@ begin
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
-				+ case  tpIVA when 'RI'  then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then '80' ELSE 
-				                      ( CASE ISNULL(rtrim(A.nrDoc),'') WHEN ''   THEN '99' ELSE '90' END)   END)
-							else     ( CASE ISNULL(rtrim(A.nrDoc),'') WHEN ''   THEN '99' ELSE 
-											 (CASE WHEN a.vlTotalGeneral > 999 THEN	 (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 THEN '80' ELSE '90' END) ELSE   '90'  END ) END)    END  -- As cod_dgi,
-				--, A.nrDoc
-				--, A.vlTotalGeneral, 
-				+  case tpIVA when 'RI'    then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   
-				    else ((CASE WHEN a.vlTotalGeneral > 999 THEN	dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE    REPLICATE('0',20) END) ) END -- As nro_dgi,  --- Código del Documento del Comprador
+				+ [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9](A.tpIVA, A.nrDoc , A.vlTotalGeneral ) -- As nro_dgi,  --- Código del Documento del Comprador
 				+ Left (  case tpIVA when 'RI'  then A.dsRazonSocial   
 				else (CASE WHEN a.vlTotalGeneral > 999 THEN	A.dsRazonSocial   ELSE   'Consumidor Final'   END) END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
 		--vlTotalGeneral,
