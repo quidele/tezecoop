@@ -205,7 +205,16 @@ RETURNS char(20)
 BEGIN
 declare @valor_retorno char(20) =''
 
-	select @nrDoc = replace(replace(rtrim(@nrDoc),'.',''),'-','')
+select @nrDoc = replace(replace(rtrim(@nrDoc),'.',''),'-','')
+
+IF [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (@tpIVA, @nrDoc,@vlTotalGeneral) = '90'
+BEGIN
+	IF @nrDoc = '' and @nrDoc is not null 
+		SET @valor_retorno = dbo.UDF_obtenerFormatoCUITAFIP_v4_7(@nrDoc,20) 
+	ELSE
+		set @valor_retorno =  dbo.UDF_obtenerFormatoCUITAFIP_v4_7('20254752224',20)   -- VERIFICAR ESTA SITUACION
+Return @valor_retorno
+END
 
 IF  @tpIVA = 'RI'  
 BEGIN
