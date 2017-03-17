@@ -1,4 +1,4 @@
--- Cambios de DDL version 4.9.3
+-- Cambios de DDL version 4.9.4
 USE dbSG2000
 GO
 
@@ -81,7 +81,7 @@ AS
 BEGIN
 	declare @codigo_CITI varchar(2)
 	set @codigo_CITI = 0
-	if @escuitOK =  1
+	--if @escuitOK =  1
 	BEGIN
 		select @codigo_CITI =  case 
 					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'A'  THEN  1
@@ -101,6 +101,7 @@ BEGIN
 			return @codigo_CITI
 	END
 
+	-- NUNCA SE VA A LLEGAR ACA
 
 	if @escuitOK =  0
 	BEGIN
@@ -204,15 +205,23 @@ CREATE  FUNCTION [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_10 (@tpIVA  varchar(4) ,
 RETURNS char(20)
 BEGIN
 declare @valor_retorno char(20) =''
+declare @cod_dgi char(2) =''
 
 select @nrDoc = replace(replace(rtrim(@nrDoc),'.',''),'-','')
 
-IF [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (@tpIVA, @nrDoc,@vlTotalGeneral) = '90'
+select @cod_dgi = [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (@tpIVA, @nrDoc,@vlTotalGeneral) 
+
+IF @cod_dgi = '90'
 BEGIN
-	IF @nrDoc = '' and @nrDoc is not null 
-		SET @valor_retorno = dbo.UDF_obtenerFormatoCUITAFIP_v4_7(@nrDoc,20) 
+	IF @nrDoc = '' and @nrDoc is  null 
+		set @valor_retorno =  dbo.UDF_obtenerFormatoCUITAFIP_v4_7('99999999999',20)   -- VERIFICAR ESTA SITUACION
 	ELSE
-		set @valor_retorno =  dbo.UDF_obtenerFormatoCUITAFIP_v4_7('20254752224',20)   -- VERIFICAR ESTA SITUACION
+		SET @valor_retorno = dbo.UDF_obtenerFormatoCUITAFIP_v4_7(@nrDoc,20) 
+
+	IF  @valor_retorno = '00000000000000000000' 
+	BEGIN
+		set @valor_retorno =  dbo.UDF_obtenerFormatoCUITAFIP_v4_7('99999999999',20)   -- VERIFICAR ESTA SITUACION
+	END
 Return @valor_retorno
 END
 
@@ -241,7 +250,9 @@ BEGIN
 
 END
 
-	RETURN @valor_retorno
+
+
+RETURN @valor_retorno
 
 
 	 /* case tpIVA when 'RI'    then (case WHEN dbo.ufn_ValidarCUIT(A.nrDoc)=1 then dbo.UDF_obtenerFormatoCUITAFIP_v4_7(A.nrDoc,20) ELSE REPLICATE('0',20) END)   
@@ -273,6 +284,12 @@ GO
 
  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 6184
 
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 465
+
+
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 9910
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 10335
+
 
  
  
@@ -280,7 +297,6 @@ select
 	[dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (tpIVA,  nrDoc, vlTotalGeneral ), 
 	[dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_10  (tpIVA,  nrDoc, vlTotalGeneral ), *
  from TB_Comprobantes  where nrTalonario  = '0009' and nrComprobante = '00034008'
- 
 
  select dbo.ufn_ValidarCUIT_V4_10('0104162359          ')
  select dbo.ufn_ValidarCUIT_V4_10( '19026155            '  )
@@ -290,6 +306,26 @@ select
 
  select [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] ('CF',  '19026155            '          , 1030)
 
+
+	Select   convert(varchar, A.dtComprobante,112) ,
+						A.tpComprobante , A.tpLetra, A.nrDoc  ,
+						 A.nrTalonario , --  as  serie_comp,	-- Punto de Venta 
+						 A.nrComprobante ,  --  as  nro_comp,   -- NUmero de Comprobante
+						 A.vlTotalGeneral , -- As cod_dgi,  --- Código del Documento del Comprador
+						 a.tpIVA, 
+						 a.vlIVA, *
+				FROM TB_Comprobantes A WHERE
+							a.nrTalonario  ='0008'
+							and  a.nrComprobante = '00170091    '
+							and  a.tpLetra = 'F'
+							and  a.tpComprobante  = 'FA'
+							
+select * from tb_puestos
+
+
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 12 , @anio = 2016 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 1 , @anio = 2017 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 10 , @anio = 2016 , @renglon = -1
 
 */
 
@@ -303,13 +339,15 @@ declare @nro_linea decimal(18,0) = 0
 		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_10')
 					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_10
 
-		CREATE TABLE RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea decimal(18,0) , Renglon VARCHAR(400)  )
+		CREATE TABLE RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea decimal(18,0) , Renglon VARCHAR(400),
+		nrTalonario varchar(6) , nrComprobante varchar(12) , tpLetra  varchar(4),  tpComprobante  varchar(5)  )
 
 		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_10_final')
 					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_10_final
 
 
-		INSERT INTO RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea , Renglon)
+		INSERT INTO RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea , Renglon, 
+							nrTalonario , nrComprobante , tpLetra , tpComprobante  )
 		/* Select TOP 10  convert(varchar, A.dtComprobante,112) as  fec_comp,  -- Fecha de Comprobante
 				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ),3) as  cod_citi,  -- Tipo de Comprobante
 				right( replicate('0',5) + A.nrTalonario,5)  as  serie_comp,	-- Punto de Venta 
@@ -365,7 +403,8 @@ declare @nro_linea decimal(18,0) = 0
 		+ '1'     -- as cant_alicuotas_iva,			--  cantidad alicuotas iva  
 		+ case isnull(a.vlIVA,0) WHEN 0 THEN 'N' ELSE ' '   End  -- as codigo de operacion,			--  codigo de operacion
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0,15,2)     --  as otros_tributos,			    --  otros tributos
-		+ convert(varchar, DATEADD (day, 10,  A.dtComprobante ) ,112) --  as fecha_venc -- fecha de vencimiento de pago 
+		+ convert(varchar, DATEADD (day, 10,  A.dtComprobante ) ,112), --  as fecha_venc -- fecha de vencimiento de pago 
+		a.nrTalonario , a.nrComprobante , a.tpLetra , a.tpComprobante 
 		FROM TB_Comprobantes A 
 		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
 		 
@@ -381,6 +420,23 @@ declare @nro_linea decimal(18,0) = 0
 		if @renglon <> -1 
 		begin 
 			select * from RTMP_auxiliarPermisosRenglones_v4_10_final
+
+			
+ 			Select   convert(varchar, A.dtComprobante,112) ,
+						A.tpComprobante , A.tpLetra, A.nrDoc  ,
+						 A.nrTalonario , --  as  serie_comp,	-- Punto de Venta 
+						 A.nrComprobante ,  --  as  nro_comp,   -- NUmero de Comprobante
+						 A.vlTotalGeneral , -- As cod_dgi,  --- Código del Documento del Comprador
+						 a.tpIVA, 
+						 a.vlIVA, *
+				FROM TB_Comprobantes A  INNER JOIN  RTMP_auxiliarPermisosRenglones_v4_10_final b ON
+							a.nrTalonario  = b.nrTalonario  
+							and  a.nrComprobante = b.nrComprobante  
+							and  a.tpLetra = b.tpLetra
+							and  a.tpComprobante  = b.tpComprobante
+							where nro_linea = @nro_linea 
+
+
 		end 
 
 		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
