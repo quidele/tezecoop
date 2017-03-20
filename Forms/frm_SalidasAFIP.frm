@@ -384,8 +384,7 @@ Dim objControl  As New CControl
         Exit Function
     End If
 
-    
-    
+
     generarArchivo_CITI_Ventas_Alicuotas = True
     
     
@@ -402,9 +401,6 @@ Private Function ValidarEntrada() As Boolean
    ValidarEntrada = True
 
 End Function
-
-
-
 
 
 

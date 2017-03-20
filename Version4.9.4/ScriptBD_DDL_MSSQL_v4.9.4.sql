@@ -4,12 +4,12 @@ GO
 
 
 
-if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='ufn_ValidarCUIT_v4_10' )
-	drop function  dbo.ufn_ValidarCUIT_V4_10
+if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='ufn_ValidarCUIT_v4_9_4' )
+	drop function  dbo.ufn_ValidarCUIT_v4_9_4
 
 GO
 
-create function dbo.ufn_ValidarCUIT_v4_10 (@cuit varchar(13))
+create function dbo.ufn_ValidarCUIT_v4_9_4 (@cuit varchar(13))
 returns  bit
 as
 
@@ -70,12 +70,12 @@ end
 go
 
 
-if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCodDOC_CITIT_v4_10' )
-	drop function  dbo.UDF_obtenerCodDOC_CITIT_v4_10
+if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCodDOC_CITIT_v4_9_4' )
+	drop function  dbo.UDF_obtenerCodDOC_CITIT_v4_9_4
 
 GO
 
-CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_10 (@tpComprobante char(2), @tpLetra char(1), @escuitOK int )
+CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_9_4 (@tpComprobante char(2), @tpLetra char(1), @escuitOK int )
 RETURNS varchar(2)
 AS
 BEGIN
@@ -145,7 +145,7 @@ declare @valor_retorno char(2) = '99'
 
 IF  @tpIVA = 'RI'  
 BEGIN
-	IF  dbo.ufn_ValidarCUIT_V4_10(@nrDoc)=1
+	IF  dbo.ufn_ValidarCUIT_v4_9_4(@nrDoc)=1
 		set @valor_retorno = '80'
 	ELSE
 			set @valor_retorno = '90'  -- VERIFICAR ESTA SITUACION
@@ -160,7 +160,7 @@ BEGIN
 	END
 	ELSE
 	BEGIN
-		IF dbo.ufn_ValidarCUIT_V4_10(@nrDoc)=1
+		IF dbo.ufn_ValidarCUIT_v4_9_4(@nrDoc)=1
 			set @valor_retorno = '80'
 		ELSE 
 			set @valor_retorno = '90'
@@ -193,14 +193,14 @@ go
 */
 
 
---  select   [dbo].[UDF_obtenerCampoAFIP_nro_dgi_v4_10] ('CF' , '20100177341         ','580')
+--  select   [dbo].[UDF_obtenerCampoAFIP_nro_dgi_v4_9_4] ('CF' , '20100177341         ','580')
 
 
-if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCampoAFIP_nro_dgi_v4_10' )
-	drop function  dbo.UDF_obtenerCampoAFIP_nro_dgi_v4_10
+if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_obtenerCampoAFIP_nro_dgi_v4_9_4' )
+	drop function  dbo.UDF_obtenerCampoAFIP_nro_dgi_v4_9_4
 GO
 
-CREATE  FUNCTION [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_10 (@tpIVA  varchar(4) , 
+CREATE  FUNCTION [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_9_4 (@tpIVA  varchar(4) , 
 												@nrDoc as varchar(100), @vlTotalGeneral as float  )
 RETURNS char(20)
 BEGIN
@@ -227,7 +227,7 @@ END
 
 IF  @tpIVA = 'RI'  
 BEGIN
-	IF  dbo.ufn_ValidarCUIT_V4_10(@nrDoc)=1
+	IF  dbo.ufn_ValidarCUIT_v4_9_4(@nrDoc)=1
 		set @valor_retorno = dbo.UDF_obtenerFormatoCUITAFIP_v4_7(@nrDoc,20) 
 	ELSE
 		set @valor_retorno =  dbo.UDF_obtenerFormatoCUITAFIP_v4_7('20254752224',20)   -- VERIFICAR ESTA SITUACION
@@ -235,7 +235,7 @@ END
 BEGIN
 	IF @vlTotalGeneral > 999  
 	BEGIN
-		IF dbo.ufn_ValidarCUIT_V4_10(@nrDoc) = 1 
+		IF dbo.ufn_ValidarCUIT_v4_9_4(@nrDoc) = 1 
 		BEGIN
 			set @valor_retorno = dbo.UDF_obtenerFormatoCUITAFIP_v4_7(@nrDoc,20) 
 		END 
@@ -266,40 +266,40 @@ GO
 
 go
 
-if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_10' )
-	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_10
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtieneDatosCITIVentas_v4_9_4' )
+	drop procedure  dbo.spu_obtieneDatosCITIVentas_v4_9_4
 GO
 
 
 /*
  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9] @mes = 11 , @anio = 2016 
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = -1
 
-  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 465
+  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 465
 
-  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 1638
-
-
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 182
-
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 6184
-
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 465
+  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 1638
 
 
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 9910
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 11 , @anio = 2016 , @renglon = 10335
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 182
+
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 6184
+
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 465
+
+
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 9910
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 10335
 
 
  
  
 select 
 	[dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9] (tpIVA,  nrDoc, vlTotalGeneral ), 
-	[dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_10  (tpIVA,  nrDoc, vlTotalGeneral ), *
+	[dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_9_4  (tpIVA,  nrDoc, vlTotalGeneral ), *
  from TB_Comprobantes  where nrTalonario  = '0009' and nrComprobante = '00034008'
 
- select dbo.ufn_ValidarCUIT_V4_10('0104162359          ')
- select dbo.ufn_ValidarCUIT_V4_10( '19026155            '  )
+ select dbo.ufn_ValidarCUIT_v4_9_4('0104162359          ')
+ select dbo.ufn_ValidarCUIT_v4_9_4( '19026155            '  )
 
 
  select '0104162359          ' 
@@ -323,30 +323,30 @@ select
 select * from tb_puestos
 
 
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 12 , @anio = 2016 , @renglon = -1
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 1 , @anio = 2017 , @renglon = -1
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_10] @mes = 10 , @anio = 2016 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 12 , @anio = 2016 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 1 , @anio = 2017 , @renglon = -1
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 10 , @anio = 2016 , @renglon = -1
 
 */
 
 
-create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_10](@mes int, @anio int , @renglon int = -1) 
+create procedure  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4](@mes int, @anio int , @renglon int = -1) 
 as
 begin
 
 declare @nro_linea decimal(18,0) = 0
 
-		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_10')
-					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_10
+		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_9_4')
+					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_9_4
 
-		CREATE TABLE RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea decimal(18,0) , Renglon VARCHAR(400),
+		CREATE TABLE RTMP_auxiliarPermisosRenglones_v4_9_4 (nro_linea decimal(18,0) , Renglon VARCHAR(400),
 		nrTalonario varchar(6) , nrComprobante varchar(12) , tpLetra  varchar(4),  tpComprobante  varchar(5)  )
 
-		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_10_final')
-					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_10_final
+		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglones_v4_9_4_final')
+					DROP TABLE RTMP_auxiliarPermisosRenglones_v4_9_4_final
 
 
-		INSERT INTO RTMP_auxiliarPermisosRenglones_v4_10 (nro_linea , Renglon, 
+		INSERT INTO RTMP_auxiliarPermisosRenglones_v4_9_4 (nro_linea , Renglon, 
 							nrTalonario , nrComprobante , tpLetra , tpComprobante  )
 		/* Select TOP 10  convert(varchar, A.dtComprobante,112) as  fec_comp,  -- Fecha de Comprobante
 				right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT(tpComprobante , tpLetra ),3) as  cod_citi,  -- Tipo de Comprobante
@@ -381,13 +381,13 @@ declare @nro_linea decimal(18,0) = 0
 
 		
 		Select  ROW_NUMBER() OVER ( ORDER BY dtComprobante DESC )   ,  convert(varchar, A.dtComprobante,112) -- as  fec_comp,  -- Fecha de Comprobante
-				+ right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_10(tpComprobante , tpLetra, dbo.ufn_ValidarCUIT_V4_10(A.nrDoc)),3) --  as  cod_citi,  -- Tipo de Comprobante
+				+ right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_9_4(tpComprobante , tpLetra, dbo.ufn_ValidarCUIT_v4_9_4(A.nrDoc)),3) --  as  cod_citi,  -- Tipo de Comprobante
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( A.nrTalonario,5,0)  --  as  serie_comp,	-- Punto de Venta 
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim( A.nrComprobante),20,0 )--  as  nro_comp,   -- NUmero de Comprobante}
 				+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (rtrim(  A.nrComprobante),20,0) -- as  nro_comphasta,   -- NUmero de Comprobante hasta
 				+ [dbo].[UDF_obtenerCampoAFIP_cod_dgi_v4_9](A.tpIVA, A.nrDoc , A.vlTotalGeneral ) -- As cod_dgi,  --- Código del Documento del Comprador
 				-- +'EULISES'+
-				+ [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_10 (A.tpIVA, A.nrDoc , A.vlTotalGeneral ) -- As nro_dgi,  --- Documento del Comprador
+				+ [dbo].UDF_obtenerCampoAFIP_nro_dgi_v4_9_4 (A.tpIVA, A.nrDoc , A.vlTotalGeneral ) -- As nro_dgi,  --- Documento del Comprador
 				+ Left (CASE tpIVA when 'RI'  then A.dsRazonSocial   ELSE (CASE WHEN a.vlTotalGeneral > 999 THEN	A.dsRazonSocial   
 						ELSE   'Consumidor Final'   END) END   + Replicate(' ',30) , 30) --  as nom_tit,  -- Nombre y Apellido del Comprador
 		+ dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (a.vlTotalGeneral, 15, 2)   --    As imp_total,     --  importe total del operacion
@@ -414,12 +414,12 @@ declare @nro_linea decimal(18,0) = 0
 		-- AND a.nrComprobante = '00602178' 
 
 
-		select * INTO RTMP_auxiliarPermisosRenglones_v4_10_final from  RTMP_auxiliarPermisosRenglones_v4_10
+		select * INTO RTMP_auxiliarPermisosRenglones_v4_9_4_final from  RTMP_auxiliarPermisosRenglones_v4_9_4
 		where (nro_linea = @renglon  OR @renglon = -1)
 		-- select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones
 		if @renglon <> -1 
 		begin 
-			select * from RTMP_auxiliarPermisosRenglones_v4_10_final
+			select * from RTMP_auxiliarPermisosRenglones_v4_9_4_final
 
 			
  			Select   convert(varchar, A.dtComprobante,112) ,
@@ -429,7 +429,7 @@ declare @nro_linea decimal(18,0) = 0
 						 A.vlTotalGeneral , -- As cod_dgi,  --- Código del Documento del Comprador
 						 a.tpIVA, 
 						 a.vlIVA, *
-				FROM TB_Comprobantes A  INNER JOIN  RTMP_auxiliarPermisosRenglones_v4_10_final b ON
+				FROM TB_Comprobantes A  INNER JOIN  RTMP_auxiliarPermisosRenglones_v4_9_4_final b ON
 							a.nrTalonario  = b.nrTalonario  
 							and  a.nrComprobante = b.nrComprobante  
 							and  a.tpLetra = b.tpLetra
@@ -441,7 +441,7 @@ declare @nro_linea decimal(18,0) = 0
 
 		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
 
-		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones_v4_10_final  ' , @nombre_archivo = @nombre_archivo
+		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones_v4_9_4_final  ' , @nombre_archivo = @nombre_archivo
 
 		return 0; 
 

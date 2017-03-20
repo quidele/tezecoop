@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   118226945
+         Format          =   120782849
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   118226945
+         Format          =   120782849
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3918,6 +3918,7 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "Retorno"
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
@@ -3937,15 +3938,17 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "A Clientes"
                 ObtenerCampo("tpComision").Text = "A Clientes"
            Case Else
                 ObtenerCampo("cdCondVenta").Clear
                 ObtenerCampo("cdCondVenta").AddItem "Contado"
-                                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
                 ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("cdCondVenta") = "Contado"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "A Empleados"
@@ -3963,6 +3966,7 @@ Dim lcdCliente       As String
                         ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
+            ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
             ObtenerCampo("cdCondVenta") = "Contado"
         End Select
         ObtenerCampo("tpComision").Clear
