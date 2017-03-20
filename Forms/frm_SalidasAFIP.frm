@@ -344,7 +344,7 @@ Dim objControl  As New CControl
 
     
     
-    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_v4_9"
+    objSPs.nmStoredProcedure = "spu_obtieneDatosCITIVentas_v4_9_4"
     objSPs.setearCampoValor "@mes", ObtenerCampo("mes")
     objSPs.setearCampoValor "@anio", ObtenerCampo("anio")
     
