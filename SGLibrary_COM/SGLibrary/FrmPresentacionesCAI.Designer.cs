@@ -39,7 +39,7 @@
             this.txtnrCajaAdm = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.txtIdConciliacion = new System.Windows.Forms.TextBox();
+            this.txtIdPresentacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtdsUsuario = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
@@ -61,6 +61,12 @@
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbdtConciliacion = new System.Windows.Forms.DateTimePicker();
+            this.cbnrMes = new System.Windows.Forms.ComboBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.txtnrAnio = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -72,7 +78,7 @@
             // 
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(67, 4);
             // 
             // panelcarga
             // 
@@ -80,6 +86,12 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelcarga.Controls.Add(this.label13);
+            this.panelcarga.Controls.Add(this.txtnrAnio);
+            this.panelcarga.Controls.Add(this.label11);
+            this.panelcarga.Controls.Add(this.cbnrMes);
+            this.panelcarga.Controls.Add(this.label7);
+            this.panelcarga.Controls.Add(this.cbdtConciliacion);
             this.panelcarga.Controls.Add(this.label12);
             this.panelcarga.Controls.Add(this.progressBar1);
             this.panelcarga.Controls.Add(this.modoEdicion);
@@ -88,13 +100,13 @@
             this.panelcarga.Controls.Add(this.txtnrCajaAdm);
             this.panelcarga.Controls.Add(this.label9);
             this.panelcarga.Controls.Add(this.dataGridView1);
-            this.panelcarga.Controls.Add(this.txtIdConciliacion);
+            this.panelcarga.Controls.Add(this.txtIdPresentacion);
             this.panelcarga.Controls.Add(this.label8);
             this.panelcarga.Controls.Add(this.txtdsUsuario);
             this.panelcarga.Controls.Add(this.label6);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
@@ -111,7 +123,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(255, 181);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(421, 28);
             this.progressBar1.TabIndex = 4;
@@ -186,16 +198,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(1252, 241);
             this.dataGridView1.TabIndex = 12;
             // 
-            // txtIdConciliacion
+            // txtIdPresentacion
             // 
-            this.txtIdConciliacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtIdConciliacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtIdConciliacion.Location = new System.Drawing.Point(85, 43);
-            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtIdConciliacion.Name = "txtIdConciliacion";
-            this.txtIdConciliacion.ReadOnly = true;
-            this.txtIdConciliacion.Size = new System.Drawing.Size(113, 22);
-            this.txtIdConciliacion.TabIndex = 11;
+            this.txtIdPresentacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtIdPresentacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtIdPresentacion.Location = new System.Drawing.Point(85, 43);
+            this.txtIdPresentacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtIdPresentacion.Name = "txtIdPresentacion";
+            this.txtIdPresentacion.ReadOnly = true;
+            this.txtIdPresentacion.Size = new System.Drawing.Size(113, 22);
+            this.txtIdPresentacion.TabIndex = 11;
             // 
             // label8
             // 
@@ -250,7 +262,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
@@ -404,6 +416,73 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(22, 76);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(47, 17);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "Fecha";
+            // 
+            // cbdtConciliacion
+            // 
+            this.cbdtConciliacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.cbdtConciliacion.Location = new System.Drawing.Point(76, 74);
+            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbdtConciliacion.Name = "cbdtConciliacion";
+            this.cbdtConciliacion.Size = new System.Drawing.Size(112, 22);
+            this.cbdtConciliacion.TabIndex = 26;
+            // 
+            // cbnrMes
+            // 
+            this.cbnrMes.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbnrMes.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbnrMes.FormattingEnabled = true;
+            this.cbnrMes.Items.AddRange(new object[] {
+            "01",
+            "02",
+            "03",
+            "04",
+            "05",
+            "06",
+            "07",
+            "08",
+            "09",
+            "10",
+            "11",
+            "12"});
+            this.cbnrMes.Location = new System.Drawing.Point(268, 74);
+            this.cbnrMes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbnrMes.Name = "cbnrMes";
+            this.cbnrMes.Size = new System.Drawing.Size(56, 24);
+            this.cbnrMes.TabIndex = 28;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(205, 79);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(34, 17);
+            this.label11.TabIndex = 29;
+            this.label11.Text = "Mes";
+            // 
+            // txtnrAnio
+            // 
+            this.txtnrAnio.Location = new System.Drawing.Point(380, 76);
+            this.txtnrAnio.Name = "txtnrAnio";
+            this.txtnrAnio.Size = new System.Drawing.Size(70, 22);
+            this.txtnrAnio.TabIndex = 30;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(341, 81);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(33, 17);
+            this.label13.TabIndex = 31;
+            this.label13.Text = "Año";
+            // 
             // FrmPresentacionesCAI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -447,7 +526,7 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtdsUsuario;
         private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.TextBox txtIdConciliacion;
+        private System.Windows.Forms.TextBox txtIdPresentacion;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
@@ -466,5 +545,11 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbar_servidor;
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_version;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.DateTimePicker cbdtConciliacion;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.ComboBox cbnrMes;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox txtnrAnio;
     }
 }

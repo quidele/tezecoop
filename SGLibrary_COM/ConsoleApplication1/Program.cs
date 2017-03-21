@@ -109,7 +109,7 @@ namespace ConsoleApplication1
            LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
-            l.execFormulario("FrmResumenNrosCAIs");
+            l.execFormulario("FrmPresentacionesCAI");
            
 
         }

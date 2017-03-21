@@ -31,12 +31,12 @@ namespace SGLibrary
             throw new NotImplementedException();
         }
 
-        internal IEnumerable<Object> ObtenerRegistros(DateTime dateTime1, DateTime dateTime2, string p)
+        public virtual IEnumerable<Object> ObtenerRegistros(DateTime dateTime1, DateTime dateTime2, string p)
         {
             throw new NotImplementedException();
         }
 
-        internal object ObtenerRegistro(string p)
+        public virtual object ObtenerRegistro(string p)
         {
             throw new NotImplementedException();
         }

@@ -23,8 +23,26 @@ namespace SGLibrary
 
         }
 
-        
+
+        public override object ObtenerRegistro(String pId)
+        {
+
+            Int32 id = Int32.Parse(pId);
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                TB_PresentacionesCAI una_Presentacion = (from c in context.TB_PresentacionesCAI
+                                                    where c.IdPresentacion == id
+                                                    select c)
+                                                 .First();
+                // Should Load the Details
+                una_Presentacion.TB_PresentacionesCAIDetalle.ToList();
+                return una_Presentacion;
+            }
+        }
        
+
+
         public void agregarPresentacionCAI(TB_PresentacionesCAI objPresentacion ,IEnumerable<TB_PresentacionesCAIDetalle> objPresentacionDetalle)
         {
 

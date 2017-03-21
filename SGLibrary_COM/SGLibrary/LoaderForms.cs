@@ -119,6 +119,10 @@ namespace SGLibrary
                         f2.serviceModel = this;
                         f = (Form)f2;
                         break;
+                    case "FrmPresentacionesCAI":
+                        FrmPresentacionesCAI f3 = new FrmPresentacionesCAI();
+                        f3.ShowDialog();
+                        return;
                     default:
                         break;
                 }

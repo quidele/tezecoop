@@ -25,6 +25,8 @@ namespace SGLibrary
         public FrmPresentacionesCAI()
         {
             InitializeComponent();
+            // inicializamos el servicio pricinpal para el form
+            serviceModel = new ServiceCAI();
         }
 
         private void FrmConciliaciones_Load(object sender, EventArgs e)
@@ -77,7 +79,7 @@ namespace SGLibrary
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
                             this.modoEdicion.Text = "SI";
-                            Object una_registro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            TB_PresentacionesCAI una_registro = (TB_PresentacionesCAI)serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
 
                         }
                         deshabilitarycolorearGrillaABM();
@@ -184,10 +186,15 @@ namespace SGLibrary
 
             if ((lista.Count() == 0))
             {
-                MessageBox.Show("Debe seleccionar algún comprobante.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Debe seleccionar el periodo a presentar.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 dataGridView1.Focus();
                 return false;
             }
+
+            TB_PresentacionesCAI una_presentacion = new TB_PresentacionesCAI();
+            una_presentacion.nrAnio = Int32.Parse (this.cbnrMes.Text);
+            una_presentacion.nrMes = Int32.Parse(this.txtnrAnio.Text);
+
             return true;
         }
 
