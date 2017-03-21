@@ -31,22 +31,25 @@ namespace SGLibrary
             throw new NotImplementedException();
         }
 
-        public virtual IEnumerable<Object> ObtenerRegistros(DateTime dateTime1, DateTime dateTime2, string p)
-        {
-            throw new NotImplementedException();
-        }
+        
 
         public virtual object ObtenerRegistro(string p)
         {
             throw new NotImplementedException();
         }
 
-        internal void AnularRegistro(object unRegistro)
+
+        public virtual IEnumerable<Object> ObtenerRegistros(DateTime fechadesde, DateTime fechaHasta, String usuario)
         {
             throw new NotImplementedException();
         }
 
-        internal void AgregarRegistro()
+        public virtual void AnularRegistro(object unRegistro)
+        {
+            throw new NotImplementedException();
+        }
+
+        public virtual void AgregarRegistro(object unRegistro)
         {
             throw new NotImplementedException();
         }

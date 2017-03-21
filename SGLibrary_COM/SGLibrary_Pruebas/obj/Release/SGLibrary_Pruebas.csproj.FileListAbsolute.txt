@@ -16,3 +16,19 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\ES-ES\
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\ConfigBD_FON.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\ConfigBD_CASA.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\ConfigBD.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\Recursos Localizables\StringResources.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\Recursos Localizables\StringResources.EN-US.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\Recursos Localizables\StringResources.ES-ES.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\SGLibrary_Pruebas.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Release\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Release\SGLibrary_Pruebas.pdb

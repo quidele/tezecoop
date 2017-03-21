@@ -423,11 +423,13 @@
   </EntityType>
   <EntityType Name="TB_PresentacionesCAIDetalle">
     <Key>
-      <PropertyRef Name="IdPresentacion" />
-      <PropertyRef Name="nrCAI" />
+      <PropertyRef Name="Id" />
     </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
     <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PDV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="nrUltNroComprobante" Type="Int32" />
     <Property Name="dtInsercion" Type="DateTime" Precision="3" />
     <NavigationProperty Name="TB_PresentacionesCAI" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAIDetalle" ToRole="TB_PresentacionesCAI" />

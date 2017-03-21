@@ -22,7 +22,7 @@
         <AssociationConnector Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_PresentacionesCAI" Width="1.5" PointX="10.375" PointY="10" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" Width="1.5" PointX="12.625" PointY="10.25" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" Width="1.5" PointX="12.625" PointY="10" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" />
         </Diagram>
     </edmx:Diagrams>

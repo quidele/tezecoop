@@ -174,12 +174,10 @@ namespace SGLibrary
         {
 
             List<Decimal> lista = new List<Decimal>();
-            
 
             /*  validar a nivel de Items*/
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-
             }
 
             if ((lista.Count() == 0))

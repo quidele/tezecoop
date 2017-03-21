@@ -40,11 +40,74 @@ namespace SGLibrary
                 return una_Presentacion;
             }
         }
-       
+
+
+        public override  IEnumerable<Object> ObtenerRegistros(DateTime fechadesde, DateTime fechaHasta, String usuario)
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listadeViajesaConciliar1 = (from c in context.TB_PresentacionesCAI
+                                                where c.dtPresentacion  >= fechadesde
+                                                && c.dtPresentacion <= fechaHasta
+                                                && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
+                                                orderby c.IdPresentacion descending  // ordenamos desde mas reciente a mas vieja
+                                                select new
+                                                {
+                                                    ID = c.IdPresentacion ,
+                                                    FECHA = c.dtPresentacion ,
+                                                    AÑO = c.nrAnio ,
+                                                    MES = c.nrMes ,
+                                                    USUARIO = c.dsUsuario,
+                                                    FECHA_MODIF = c.dtModificacion,
+                                                    ESTADO = c.flestado
+                                                });
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
+        }
+
+
+
+        public override  void AgregarRegistro(object unRegistro)
+        {
+
+            TB_PresentacionesCAI objPresentacion = (TB_PresentacionesCAI) unRegistro;
+
+            Trace.TraceInformation("ingresando a agregarPresentacionCAI");
+            using (var context = new dbSG2000Entities())
+            {
+
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    TB_PresentacionesCAIDetalle detalleConciliacion = new TB_PresentacionesCAIDetalle();
+                    foreach (var item in objPresentacion.TB_PresentacionesCAIDetalle)
+                    {
+
+                        context.TB_PresentacionesCAIDetalle.Add(new TB_PresentacionesCAIDetalle
+                        {
+                            TB_PresentacionesCAI = objPresentacion,
+                            nrCAI = item.nrCAI,
+                            dtInsercion = DateTime.Now,
+                            nrUltNroComprobante = item.nrUltNroComprobante
+                        });
+
+                    }
+                    context.TB_PresentacionesCAI.Add(objPresentacion);
+                    context.SaveChanges();
+                    transaction.Complete();
+                    return;
+
+                }
+            }
+        }
 
 
         public void agregarPresentacionCAI(TB_PresentacionesCAI objPresentacion ,IEnumerable<TB_PresentacionesCAIDetalle> objPresentacionDetalle)
         {
+
+
 
             Trace.TraceInformation("ingresando a agregarPresentacionCAI");
             using (var context = new dbSG2000Entities())
@@ -73,11 +136,31 @@ namespace SGLibrary
         } // cierre agregarPresentacionCAI
 
 
+        public override void AnularRegistro(object unRegistro)
+        {
+            TB_PresentacionesCAI objPresentacion = (TB_PresentacionesCAI) unRegistro;
+            using (var context = new dbSG2000Entities())
+            {
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    var objPresentacionBD = (from c in context.TB_PresentacionesCAI
+                                             where c.IdPresentacion == objPresentacion.IdPresentacion
+                                             select c).First<TB_PresentacionesCAI>();
+
+                    objPresentacionBD.dtModificacion = DateTime.Now;
+                    objPresentacionBD.flestado = "E";  // Conciliacion Eliminada
+                    context.SaveChanges();
+                    transaction.Complete();
+                }
+
+            }
+        }
+
+
         public virtual void anularPresentacion(TB_PresentacionesCAI objPresentacion)
         {
             using (var context = new dbSG2000Entities())
             {
-
                 using (TransactionScope transaction = new TransactionScope())
                 {
                     var objPresentacionBD = (from c in context.TB_PresentacionesCAI 

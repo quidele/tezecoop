@@ -42,15 +42,27 @@ if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAIDetalle' )
 
 
 
+/****** Object:  Table [dbo].[TB_PresentacionesCAIDetalle]    Script Date: 21/03/2017 17:53:04 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
 CREATE TABLE [dbo].[TB_PresentacionesCAIDetalle](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
 	[IdPresentacion] [int] NOT NULL,
 	[nrCAI] [char](20) NOT NULL,
+	[PDV] [char](10) NULL,
+	[Letra] [char](1) NULL,
 	[nrUltNroComprobante] [int] NULL,
 	[dtInsercion] [datetime] NULL,
  CONSTRAINT [PK_TB_TB_PresentacionesCAIDetalle] PRIMARY KEY CLUSTERED 
 (
-	[IdPresentacion] ASC,
-	[nrCAI] ASC
+	[Id] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 
@@ -65,6 +77,7 @@ GO
 
 ALTER TABLE [dbo].[TB_PresentacionesCAIDetalle] CHECK CONSTRAINT [FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI]
 GO
+
 
 
 
