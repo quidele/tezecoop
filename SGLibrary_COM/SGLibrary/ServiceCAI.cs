@@ -42,6 +42,36 @@ namespace SGLibrary
         }
 
 
+        public  IEnumerable<Object> ObtenerDetalle(String pId)
+        {
+
+            Int32 id = Int32.Parse(pId);
+            using (var context = new dbSG2000Entities())
+            {
+
+                TB_PresentacionesCAI una_Presentacion = (from c in context.TB_PresentacionesCAI
+                                                         where c.IdPresentacion == id
+                                                         select c)
+                                      .First();
+                // Falta agregar filtro de fechas
+                var listaResultado = (from c in context.TB_PresentacionesCAIDetalle
+                                      where c.IdPresentacion == id
+                                      select new
+                                      {
+
+                                          AÑO = una_Presentacion.nrAnio,
+                                          MES = una_Presentacion.nrMes,
+                                          PDV = c.PDV,
+                                          LETRA = c.Letra,
+                                          CAI = c.nrCAI,
+                                          UltNroComprobante = c.nrUltNroComprobante
+                                      });
+                                        
+                return listaResultado;
+            }
+        }
+
+
         public override  IEnumerable<Object> ObtenerRegistros(DateTime fechadesde, DateTime fechaHasta, String usuario)
         {
 
@@ -81,19 +111,19 @@ namespace SGLibrary
 
                 using (TransactionScope transaction = new TransactionScope())
                 {
-                    TB_PresentacionesCAIDetalle detalleConciliacion = new TB_PresentacionesCAIDetalle();
-                    foreach (var item in objPresentacion.TB_PresentacionesCAIDetalle)
-                    {
+                    //TB_PresentacionesCAIDetalle detalleConciliacion = new TB_PresentacionesCAIDetalle();
+                    //foreach (var item in objPresentacion.TB_PresentacionesCAIDetalle)
+                    //{
 
-                        context.TB_PresentacionesCAIDetalle.Add(new TB_PresentacionesCAIDetalle
-                        {
-                            TB_PresentacionesCAI = objPresentacion,
-                            nrCAI = item.nrCAI,
-                            dtInsercion = DateTime.Now,
-                            nrUltNroComprobante = item.nrUltNroComprobante
-                        });
+                    //    context.TB_PresentacionesCAIDetalle.Add(new TB_PresentacionesCAIDetalle
+                    //    {
+                    //        TB_PresentacionesCAI = objPresentacion,
+                    //        nrCAI = item.nrCAI,
+                    //        dtInsercion = DateTime.Now,
+                    //        nrUltNroComprobante = item.nrUltNroComprobante
+                    //    });
 
-                    }
+                    //}
                     context.TB_PresentacionesCAI.Add(objPresentacion);
                     context.SaveChanges();
                     transaction.Complete();

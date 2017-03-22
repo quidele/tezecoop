@@ -77,12 +77,25 @@ namespace SGLibrary
                         TB_PresentacionesCAI un_registro=null;
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
                             this.modoEdicion.Text = "SI";
                             un_registro = (TB_PresentacionesCAI)serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
 
                         }
+
+                        this.txtdsUsuario.Text = un_registro.dsUsuario;
+                        this.txtflEstado.Text = un_registro.flestado;
+                        this.txtIdPresentacion.Text = un_registro.IdPresentacion.ToString();
+                        this.txtnrAnio.Text = un_registro.nrAnio.ToString();
+                        this.cbnrMes.Text = un_registro.nrMes.ToString();
+
+                        this.txtnrAnio.Enabled = false;
+                        this.cbnrMes.Enabled = false;
+                        this.btnObtenerResumenEstadoCAIs.Enabled = false;
+
+                        var resultado = serviceModel.ObtenerDetalle(un_registro.IdPresentacion.ToString());
                         cargarDataGridViewEdicion(dataGridView1, un_registro.TB_PresentacionesCAIDetalle, this.modoEdicion.Text);
                         deshabilitarycolorearGrillaABM();
                         break;
