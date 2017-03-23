@@ -75,7 +75,7 @@ if exists (SELECT * FROM  INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='UDF_
 
 GO
 
-CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_9_4 (@tpComprobante char(2), @tpLetra char(1), @escuitOK int )
+CREATE FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_9_4 (@tpComprobante char(2), @tpLetra char(1), @escuitOK int = 1)
 RETURNS varchar(2)
 AS
 BEGIN
@@ -447,4 +447,175 @@ declare @nro_linea decimal(18,0) = 0
 
 
 end 
+
+
+
+GO
+
+
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAI' )
+	drop table   dbo.TB_PresentacionesCAIDetalle
+
+
+GO
+
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAI' )
+	drop table   dbo.TB_PresentacionesCAI
+
+SET ANSI_PADDING ON
+GO
+
+
+CREATE TABLE [dbo].[TB_PresentacionesCAI](
+	[IdPresentacion] [int] IDENTITY(1,1) NOT NULL,
+	[nrAnio] [int] NULL,
+	[nrMes] [int] NULL,
+	[dtPresentacion] [date] NULL,
+	[dsUsuario] [varchar](20) NULL,
+	[flestado] [char](1) NULL,
+	[dtModificacion] [datetime] NULL,
+ CONSTRAINT [PK_TB_PresentacionesCAI] PRIMARY KEY CLUSTERED 
+(
+	[IdPresentacion] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+
+SET ANSI_PADDING OFF
+GO
+
+
+if exists (SELECT * FROM sys.tables where name  ='TB_PresentacionesCAIDetalle' )
+	drop table   dbo.TB_PresentacionesCAIDetalle
+
+
+
+
+CREATE TABLE [dbo].[TB_PresentacionesCAIDetalle](
+	[Id] [int] IDENTITY(1,1) NOT NULL,
+	[IdPresentacion] [int] NOT NULL,
+	[tpComprobante] [char](2) NULL,
+	[nrCAI] [char](20) NOT NULL,
+	[PDV] [char](10) NULL,
+	[Letra] [char](1) NULL,
+	[nrUltNroComprobante] [int] NULL,
+	[dtInsercion] [datetime] NULL,
+ CONSTRAINT [PK_TB_TB_PresentacionesCAIDetalle] PRIMARY KEY CLUSTERED 
+(
+	[Id] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+SET ANSI_PADDING OFF
+GO
+
+ALTER TABLE [dbo].[TB_PresentacionesCAIDetalle]  WITH CHECK ADD  CONSTRAINT [FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI] FOREIGN KEY([IdPresentacion])
+REFERENCES [dbo].[TB_PresentacionesCAI] ([IdPresentacion])
+GO
+
+ALTER TABLE [dbo].[TB_PresentacionesCAIDetalle] CHECK CONSTRAINT [FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI]
+GO
+
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_generarPresentacionCAI_v4_9_4' )
+	drop procedure  dbo.spu_generarPresentacionCAI_v4_9_4
+GO
+
+/*
+
+select  * from [TB_PresentacionesCAI]
+
+select  * from [TB_PresentacionesCAIDetalle]  where idPresentacion = 2
+
+
+
+exec [dbo].[spu_generarPresentacionCAI_v4_9_4] @IdPresentacion = 2  , @realizarLOG = 'S'
+
+
+*/
+
+create procedure  [dbo].[spu_generarPresentacionCAI_v4_9_4](@IdPresentacion integer, @realizarLOG char(1)='N') 
+as
+begin
+
+declare @nro_linea decimal(18,0) = 0
+declare @nrMes decimal(18,0) = 0
+declare @nrAnio decimal(18,0) = 0
+
+
+select  * from [TB_PresentacionesCAI]
+
+		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglonesCAI')
+					DROP TABLE RTMP_auxiliarPermisosRenglonesCAI
+
+		CREATE TABLE RTMP_auxiliarPermisosRenglonesCAI( Renglon VARCHAR(400))
+
+		INSERT INTO RTMP_auxiliarPermisosRenglonesCAI ( Renglon )
+		Select  'TIPOREGISTRO: 4'      --    as 'TipodeRegistro' 4- ALTA / 5-MODIFICACION
+				+ 'TIPODECOMPROBANTE: ' + right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_9_4(y.tpComprobante , y.Letra , 1 ),3) --  as  cod_citi,  -- Tipo de Comprobante
+				+ 'PERIODO:  ' + convert(varchar,x.nrAnio)  +  right ('0' + convert(varchar,x.nrMes),2)  -- Periodo
+				+ 'CUIT: 30708249919'
+				+ 'PDV: ' + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( y.PDV ,5,0) +
+				+ 'ULTNRO:' + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( y.nrUltNroComprobante  ,8,0) 
+				+ 'EN_USO: S'+ 
+				+ 'REGIMEN + ' + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0  ,14,0) 
+		FROM TB_PresentacionesCAI x INNER JOIN   TB_PresentacionesCAIDetalle y 
+							ON x.IdPresentacion  = y.IdPresentacion
+		WHERE X.IdPresentacion = @IdPresentacion 
+		
+		IF @realizarLOG = 'S' 
+		BEGIN
+			select * from  RTMP_auxiliarPermisosRenglonesCAI 
+		END
+
+		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,x.nrAnio)  +  right ('0' + convert(varchar,x.nrMes),2)  + '.txt'
+
+		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones  ' , @nombre_archivo = @nombre_archivo
+
+		return 0; 
+
+
+end 
+
+
+
+
+GO
+
+
+if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtenerUltNroCAIsUsados' )
+	drop procedure  dbo.spu_obtenerUltNroCAIsUsados
+
+GO
+
+
+---------------------------------------------------------------------------
+---  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2017
+create procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
+as
+begin
+		
+
+		Select  @anio as 'AÑO',
+				@mes  as MES,
+				A.tpComprobante as DOC,
+				A.nrTalonario   as PDV,
+				tpLetra         as LETRA, 
+				a.nrCAI		    as CAI, 
+				max(A.nrComprobante) as UltNroComprobante
+		FROM TB_Comprobantes A 
+		WHERE month(A.dtComprobante) = @mes    and year(A.dtComprobante) = @anio 
+				AND tpLetra <>'X'  and nrCAI is not null
+				GROUP BY A.nrTalonario , tpLetra, nrCAI , A.tpComprobante
+
+		return 0; 
+
+end 
+
+GO
 

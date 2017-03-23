@@ -84,13 +84,13 @@ namespace SGLibrary
                             un_registro = (TB_PresentacionesCAI)serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
 
                         }
-
+                        
                         this.txtdsUsuario.Text = un_registro.dsUsuario;
                         this.txtflEstado.Text = un_registro.flestado;
                         this.txtIdPresentacion.Text = un_registro.IdPresentacion.ToString();
                         this.txtnrAnio.Text = un_registro.nrAnio.ToString();
-                        this.cbnrMes.Text = un_registro.nrMes.ToString();
-
+                        this.cbnrMes.Text =   Strings.Right ("0" +  un_registro.nrMes.ToString(),2);
+                        this.cbdtPresentacion.Enabled = false;
                         this.txtnrAnio.Enabled = false;
                         this.cbnrMes.Enabled = false;
                         this.btnObtenerResumenEstadoCAIs.Enabled = false;
@@ -195,6 +195,8 @@ namespace SGLibrary
                 un_TB_PresentacionesCAIDetalle.PDV =  item.Cells["PDV"].EditedFormattedValue.ToString(); 
                 un_TB_PresentacionesCAIDetalle.Letra  = item.Cells["Letra"].EditedFormattedValue.ToString();
                 un_TB_PresentacionesCAIDetalle.nrUltNroComprobante = int.Parse ( item.Cells["UltNroComprobante"].EditedFormattedValue.ToString()) ;
+                un_TB_PresentacionesCAIDetalle.dtInsercion = DateTime.Today;
+                un_TB_PresentacionesCAIDetalle.tpComprobante  = item.Cells["DOC"].EditedFormattedValue.ToString();
                 lista.Add (un_TB_PresentacionesCAIDetalle);
 
             }
@@ -207,9 +209,9 @@ namespace SGLibrary
             }
 
             TB_PresentacionesCAI una_presentacion = new TB_PresentacionesCAI();
-            una_presentacion.nrAnio = int.Parse(this.cbnrMes.Text);
-            una_presentacion.nrMes = int.Parse(this.txtnrAnio.Text);
-            una_presentacion.dtPresentacion = this.cbdtConciliacion.Value.Date;
+            una_presentacion.nrAnio = int.Parse(this.txtnrAnio.Text);
+            una_presentacion.nrMes = int.Parse(this.cbnrMes.Text); 
+            una_presentacion.dtPresentacion = this.cbdtPresentacion.Value.Date;
             una_presentacion.flestado = "A";
             una_presentacion.dtModificacion = DateTime.Now;
             una_presentacion.TB_PresentacionesCAIDetalle = lista;

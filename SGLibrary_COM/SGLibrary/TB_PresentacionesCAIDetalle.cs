@@ -16,6 +16,7 @@ namespace SGLibrary
     {
         public int Id { get; set; }
         public int IdPresentacion { get; set; }
+        public string tpComprobante { get; set; }
         public string nrCAI { get; set; }
         public string PDV { get; set; }
         public string Letra { get; set; }

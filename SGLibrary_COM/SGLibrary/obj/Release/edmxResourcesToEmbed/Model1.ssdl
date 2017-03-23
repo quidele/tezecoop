@@ -229,6 +229,7 @@
     </Key>
     <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="IdPresentacion" Type="int" Nullable="false" />
+    <Property Name="tpComprobante" Type="char" MaxLength="2" />
     <Property Name="nrCAI" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="PDV" Type="char" MaxLength="10" />
     <Property Name="Letra" Type="char" MaxLength="1" />

@@ -12,7 +12,6 @@ namespace SGLibrary
 
         public IEnumerable<Object> obtenerEstadoCAIs(int mes, int anio)
         {
-
             using (var context = new dbSG2000Entities())
             {
                 var lista = context.spu_obtenerUltNroCAIsUsados(mes, anio);
@@ -20,7 +19,6 @@ namespace SGLibrary
                 return lista.ToList();
 
             }
-
         }
 
 
@@ -32,9 +30,7 @@ namespace SGLibrary
             {
                 // Falta agregar filtro de fechas
                 TB_PresentacionesCAI una_Presentacion = (from c in context.TB_PresentacionesCAI
-                                                    where c.IdPresentacion == id
-                                                    select c)
-                                                 .First();
+                                                         where c.IdPresentacion == id select c).First();
                 // Should Load the Details
                 una_Presentacion.TB_PresentacionesCAIDetalle.ToList();
                 return una_Presentacion;
@@ -58,9 +54,9 @@ namespace SGLibrary
                                       where c.IdPresentacion == id
                                       select new
                                       {
-
                                           AÑO = una_Presentacion.nrAnio,
                                           MES = una_Presentacion.nrMes,
+                                          DOC = c.tpComprobante, 
                                           PDV = c.PDV,
                                           LETRA = c.Letra,
                                           CAI = c.nrCAI,
@@ -78,7 +74,7 @@ namespace SGLibrary
             using (var context = new dbSG2000Entities())
             {
                 // Falta agregar filtro de fechas
-                var listadeViajesaConciliar1 = (from c in context.TB_PresentacionesCAI
+                var listaResultado = (from c in context.TB_PresentacionesCAI
                                                 where c.dtPresentacion  >= fechadesde
                                                 && c.dtPresentacion <= fechaHasta
                                                 && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
@@ -93,7 +89,7 @@ namespace SGLibrary
                                                     FECHA_MODIF = c.dtModificacion,
                                                     ESTADO = c.flestado
                                                 });
-                return listadeViajesaConciliar1.ToList();
+                return listaResultado.ToList();
                 //return listadeViajesaConciliar.ToList();
             }
         }

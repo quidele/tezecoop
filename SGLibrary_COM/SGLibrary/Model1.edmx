@@ -234,6 +234,7 @@
           </Key>
           <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="IdPresentacion" Type="int" Nullable="false" />
+          <Property Name="tpComprobante" Type="char" MaxLength="2" />
           <Property Name="nrCAI" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="PDV" Type="char" MaxLength="10" />
           <Property Name="Letra" Type="char" MaxLength="1" />
@@ -435,16 +436,16 @@
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
-          <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
-            <Parameter Name="mes" Mode="In" Type="Int32" />
-            <Parameter Name="anio" Mode="In" Type="Int32" />
-          </FunctionImport>
           <EntitySet Name="TB_PresentacionesCAI" EntityType="dbSG2000Model.TB_PresentacionesCAI" />
           <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" />
           <AssociationSet Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
             <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
             <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
           </AssociationSet>
+          <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
+            <Parameter Name="mes" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -793,14 +794,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
-          <Property Type="Int32" Name="Anio" Nullable="true" />
-          <Property Type="Int32" Name="Mes" Nullable="true" />
-          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="Letra" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
-        </ComplexType>
         <EntityType Name="TB_PresentacionesCAI">
           <Key>
             <PropertyRef Name="IdPresentacion" />
@@ -820,6 +813,7 @@
           </Key>
           <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
+          <Property Name="tpComprobante" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="PDV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
@@ -839,6 +833,15 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+          <Property Type="Int32" Name="AÑO" Nullable="true" />
+          <Property Type="Int32" Name="MES" Nullable="true" />
+          <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1125,18 +1128,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
-                <ScalarProperty Name="Anio" ColumnName="Anio" />
-                <ScalarProperty Name="Mes" ColumnName="Mes" />
-                <ScalarProperty Name="PDV" ColumnName="PDV" />
-                <ScalarProperty Name="Letra" ColumnName="Letra" />
-                <ScalarProperty Name="CAI" ColumnName="CAI" />
-                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
           <EntitySetMapping Name="TB_PresentacionesCAI">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_PresentacionesCAI">
               <MappingFragment StoreEntitySet="TB_PresentacionesCAI">
@@ -1158,11 +1149,25 @@
                 <ScalarProperty Name="Letra" ColumnName="Letra" />
                 <ScalarProperty Name="PDV" ColumnName="PDV" />
                 <ScalarProperty Name="nrCAI" ColumnName="nrCAI" />
+                <ScalarProperty Name="tpComprobante" ColumnName="tpComprobante" />
                 <ScalarProperty Name="IdPresentacion" ColumnName="IdPresentacion" />
                 <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="MES" ColumnName="MES" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="PDV" ColumnName="PDV" />
+                <ScalarProperty Name="LETRA" ColumnName="LETRA" />
+                <ScalarProperty Name="CAI" ColumnName="CAI" />
+                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
