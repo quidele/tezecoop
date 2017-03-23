@@ -52,6 +52,10 @@
       <Parameter Name="mes" Mode="In" Type="Int32" />
       <Parameter Name="anio" Mode="In" Type="Int32" />
     </FunctionImport>
+    <FunctionImport Name="spu_generarPresentacionCAI_v4_9_4" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result)">
+      <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+      <Parameter Name="realizarLOG" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -345,7 +349,7 @@
     <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="dtproceso" Precision="3" />
     <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
     <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
   </EntityType>
@@ -447,5 +451,9 @@
     <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
     <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
     <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
   </ComplexType>
 </Schema>

@@ -529,11 +529,7 @@ GO
 /*
 
 select  * from [TB_PresentacionesCAI]
-
 select  * from [TB_PresentacionesCAIDetalle]  where idPresentacion = 2
-
-
-
 exec [dbo].[spu_generarPresentacionCAI_v4_9_4] @IdPresentacion = 2  , @realizarLOG = 'S'
 
 
@@ -544,19 +540,42 @@ as
 begin
 
 declare @nro_linea decimal(18,0) = 0
-declare @nrMes decimal(18,0) = 0
-declare @nrAnio decimal(18,0) = 0
+declare @nrMes  int
+declare @nrAnio int
 
 
-select  * from [TB_PresentacionesCAI]
+	    select  @nrMes = nrMes , @nrAnio = nrAnio   from [TB_PresentacionesCAI]  
+					 where  IdPresentacion =  @IdPresentacion
 
+		IF @@ROWCOUNT = 0 
+		BEGIN
+				select 'ERROR' as resultado , 'No existe la presentación ' + convert(varchar,@IdPresentacion) as Descrip 
+			return;
+		END
+		
 		IF EXISTS (SELECT 1 FROM sys.tables WHERE name = 'RTMP_auxiliarPermisosRenglonesCAI')
 					DROP TABLE RTMP_auxiliarPermisosRenglonesCAI
 
 		CREATE TABLE RTMP_auxiliarPermisosRenglonesCAI( Renglon VARCHAR(400))
 
 		INSERT INTO RTMP_auxiliarPermisosRenglonesCAI ( Renglon )
-		Select  'TIPOREGISTRO: 4'      --    as 'TipodeRegistro' 4- ALTA / 5-MODIFICACION
+		Select  /*'TIPOREGISTRO: */ '4'      --    as 'TipodeRegistro' 4- ALTA / 5-MODIFICACION
+				/*+ 'TIPODECOMPROBANTE: '*/ + right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_9_4(y.tpComprobante , y.Letra , 1 ),3) --  as  cod_citi,  -- Tipo de Comprobante
+				/*+ 'PERIODO:  '*/  + convert(varchar,x.nrAnio)  +  right ('0' + convert(varchar,x.nrMes),2)  -- Periodo
+				/*+ 'CUIT:*/ + '30708249919'
+				/*+ 'PDV: '*/ + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( y.PDV ,5,0) +
+				/*+ 'ULTNRO:'*/ + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( y.nrUltNroComprobante  ,8,0) 
+				/*+ 'EN_USO: */ +'S'+ 
+				/*+ 'REGIMEN '*/  + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0  ,14,0) 
+		FROM TB_PresentacionesCAI x INNER JOIN   TB_PresentacionesCAIDetalle y 
+							ON x.IdPresentacion  = y.IdPresentacion
+		WHERE X.IdPresentacion = @IdPresentacion 
+		
+		IF @realizarLOG = 'S' 
+		BEGIN
+				TRUNCATE TABLE RTMP_auxiliarPermisosRenglonesCAI
+				INSERT INTO RTMP_auxiliarPermisosRenglonesCAI ( Renglon )
+				Select  'TIPOREGISTRO: 4'      --    as 'TipodeRegistro' 4- ALTA / 5-MODIFICACION
 				+ 'TIPODECOMPROBANTE: ' + right( replicate('0',3) + dbo.UDF_obtenerCodDOC_CITIT_v4_9_4(y.tpComprobante , y.Letra , 1 ),3) --  as  cod_citi,  -- Tipo de Comprobante
 				+ 'PERIODO:  ' + convert(varchar,x.nrAnio)  +  right ('0' + convert(varchar,x.nrMes),2)  -- Periodo
 				+ 'CUIT: 30708249919'
@@ -564,23 +583,28 @@ select  * from [TB_PresentacionesCAI]
 				+ 'ULTNRO:' + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 ( y.nrUltNroComprobante  ,8,0) 
 				+ 'EN_USO: S'+ 
 				+ 'REGIMEN + ' + dbo.UDF_obtenerFormatoNumericoAFIP_v4_7 (0  ,14,0) 
-		FROM TB_PresentacionesCAI x INNER JOIN   TB_PresentacionesCAIDetalle y 
-							ON x.IdPresentacion  = y.IdPresentacion
-		WHERE X.IdPresentacion = @IdPresentacion 
-		
-		IF @realizarLOG = 'S' 
-		BEGIN
+				FROM TB_PresentacionesCAI x INNER JOIN   TB_PresentacionesCAIDetalle y 
+									ON x.IdPresentacion  = y.IdPresentacion
+				WHERE X.IdPresentacion = @IdPresentacion 
 			select * from  RTMP_auxiliarPermisosRenglonesCAI 
 		END
 
-		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,x.nrAnio)  +  right ('0' + convert(varchar,x.nrMes),2)  + '.txt'
+		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2)  + '.txt'
 
 		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones  ' , @nombre_archivo = @nombre_archivo
+		
 
+		select 'OK' as resultado , 'El archivo se ha generado con éxito, verifique el archivo '+ @nombre_archivo as Descrip 
 		return 0; 
 
 
 end 
+
+
+
+
+
+
 
 
 

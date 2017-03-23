@@ -14,7 +14,7 @@
           <Property Name="nombrearchivo" Type="varchar" MaxLength="50" />
           <Property Name="dtproceso" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
-          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="500" />
+          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="400" />
         </EntityType>
         <EntityType Name="TB_ArchivoTarjetaDetalle">
           <Key>
@@ -213,8 +213,8 @@
           <Property Name="flProcesado" Type="bit" />
           <Property Name="dtProcesado" Type="datetime" />
           <Property Name="IdMovimiento_Procesado" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="Error_Procesado" Type="varchar" MaxLength="400" />
           <Property Name="nro_trans" Type="int" />
+          <Property Name="Error_Procesado" Type="varchar" MaxLength="400" />
         </EntityType>
         <EntityType Name="TB_PresentacionesCAI">
           <Key>
@@ -297,6 +297,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
           <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
           <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -348,6 +372,10 @@
         <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="idArchivo" Type="int" Mode="In" />
         </Function>
+        <Function Name="spu_generarPresentacionCAI_v4_9_4" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="IdPresentacion" Type="int" Mode="In" />
+          <Parameter Name="realizarLOG" Type="char" Mode="In" />
+        </Function>
         <Function Name="spu_obtenerUltNroCAIsUsados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mes" Type="int" Mode="In" />
           <Parameter Name="anio" Type="int" Mode="In" />
@@ -372,6 +400,14 @@
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
@@ -445,6 +481,10 @@
           <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
             <Parameter Name="mes" Mode="In" Type="Int32" />
             <Parameter Name="anio" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spu_generarPresentacionCAI_v4_9_4" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result)">
+            <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+            <Parameter Name="realizarLOG" Mode="In" Type="String" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
@@ -739,7 +779,7 @@
           <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="dtproceso" Precision="3" />
           <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
           <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
         </EntityType>
@@ -841,6 +881,10 @@
           <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
           <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
           <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+        </ComplexType>
+        <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
         </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1165,6 +1209,14 @@
                 <ScalarProperty Name="LETRA" ColumnName="LETRA" />
                 <ScalarProperty Name="CAI" ColumnName="CAI" />
                 <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_4" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="Descrip" ColumnName="Descrip" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

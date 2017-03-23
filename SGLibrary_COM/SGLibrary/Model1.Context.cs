@@ -120,5 +120,18 @@ namespace SGLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerUltNroCAIsUsados_Result>("spu_obtenerUltNroCAIsUsados", mesParameter, anioParameter);
         }
+    
+        public virtual ObjectResult<spu_generarPresentacionCAI_v4_9_4_Result> spu_generarPresentacionCAI_v4_9_4(Nullable<int> idPresentacion, string realizarLOG)
+        {
+            var idPresentacionParameter = idPresentacion.HasValue ?
+                new ObjectParameter("IdPresentacion", idPresentacion) :
+                new ObjectParameter("IdPresentacion", typeof(int));
+    
+            var realizarLOGParameter = realizarLOG != null ?
+                new ObjectParameter("realizarLOG", realizarLOG) :
+                new ObjectParameter("realizarLOG", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_generarPresentacionCAI_v4_9_4_Result>("spu_generarPresentacionCAI_v4_9_4", idPresentacionParameter, realizarLOGParameter);
+        }
     }
 }

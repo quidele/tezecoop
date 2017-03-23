@@ -22,6 +22,19 @@ namespace SGLibrary
         }
 
 
+        public void generarPresentacionCAI(int idPresetancion)
+        {
+            using (var context = new dbSG2000Entities())
+            {
+                spu_generarPresentacionCAI_v4_9_4_Result resultado = context.spu_generarPresentacionCAI_v4_9_4
+                    (idPresetancion, "N").First();
+                Trace.TraceInformation(resultado.resultado + " "  + resultado.Descrip);
+                
+
+            }
+        }
+
+
         public override object ObtenerRegistro(String pId)
         {
 

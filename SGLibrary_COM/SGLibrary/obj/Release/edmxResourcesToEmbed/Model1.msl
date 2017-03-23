@@ -321,5 +321,13 @@
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_4" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="Descrip" ColumnName="Descrip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>
