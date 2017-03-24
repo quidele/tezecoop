@@ -59,8 +59,7 @@ namespace SGLibrary
 
                 TB_PresentacionesCAI una_Presentacion = (from c in context.TB_PresentacionesCAI
                                                          where c.IdPresentacion == id
-                                                         select c)
-                                      .First();
+                                                         select c).First();
                 // Falta agregar filtro de fechas
                 var listaResultado = (from c in context.TB_PresentacionesCAIDetalle
                                       where c.IdPresentacion == id
@@ -75,7 +74,7 @@ namespace SGLibrary
                                           UltNroComprobante = c.nrUltNroComprobante
                                       });
                                         
-                return listaResultado;
+                return listaResultado.ToList();
             }
         }
 

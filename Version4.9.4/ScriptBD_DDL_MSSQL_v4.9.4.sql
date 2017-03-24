@@ -439,7 +439,7 @@ declare @nro_linea decimal(18,0) = 0
 
 		end 
 
-		declare @nombre_archivo varchar(255)=  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
+		declare @nombre_archivo varchar(255) =  'CITIVentas_' + convert(varchar,@anio) + right('0' + convert(varchar,@mes), 2) + '.txt'
 
 		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones_v4_9_4_final  ' , @nombre_archivo = @nombre_archivo
 
@@ -589,7 +589,8 @@ declare @nrAnio int
 			select * from  RTMP_auxiliarPermisosRenglonesCAI 
 		END
 
-		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2) + right( '000000' + convert(varchar,@IdPresentacion),6)+ '.txt'
+		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2) 
+		+'_'  + right( '000000' + convert(varchar,@IdPresentacion),6)+ '.txt'
 
 		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones  ' , @nombre_archivo = @nombre_archivo
 		
@@ -602,13 +603,6 @@ end
 
 
 
-
-
-
-
-
-
-
 GO
 
 
@@ -616,7 +610,6 @@ if exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_o
 	drop procedure  dbo.spu_obtenerUltNroCAIsUsados
 
 GO
-
 
 ---------------------------------------------------------------------------
 ---  exec  dbo.spu_obtenerUltNroCAIsUsados 1, 2017
@@ -626,7 +619,7 @@ begin
 		
 
 		Select  @anio as 'AÑO',
-				@mes  as MES,
+				@mes  as 'MES',
 				A.tpComprobante as DOC,
 				A.nrTalonario   as PDV,
 				tpLetra         as LETRA, 

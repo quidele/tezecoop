@@ -101,22 +101,22 @@
             this.panelcarga.Controls.Add(this.label10);
             this.panelcarga.Controls.Add(this.txtnrCajaAdm);
             this.panelcarga.Controls.Add(this.label9);
-            this.panelcarga.Controls.Add(this.dataGridView1);
             this.panelcarga.Controls.Add(this.txtIdPresentacion);
             this.panelcarga.Controls.Add(this.label8);
             this.panelcarga.Controls.Add(this.txtdsUsuario);
             this.panelcarga.Controls.Add(this.label6);
             this.panelcarga.Controls.Add(this.label2);
+            this.panelcarga.Controls.Add(this.dataGridView1);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
             // 
             // btnObtenerResumenEstadoCAIs
             // 
-            this.btnObtenerResumenEstadoCAIs.Location = new System.Drawing.Point(472, 73);
-            this.btnObtenerResumenEstadoCAIs.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnObtenerResumenEstadoCAIs.Location = new System.Drawing.Point(472, 71);
+            this.btnObtenerResumenEstadoCAIs.Margin = new System.Windows.Forms.Padding(4);
             this.btnObtenerResumenEstadoCAIs.Name = "btnObtenerResumenEstadoCAIs";
             this.btnObtenerResumenEstadoCAIs.Size = new System.Drawing.Size(204, 28);
             this.btnObtenerResumenEstadoCAIs.TabIndex = 32;
@@ -204,11 +204,12 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(255, 181);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(421, 28);
             this.progressBar1.TabIndex = 4;
             this.progressBar1.Visible = false;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // modoEdicion
             // 
@@ -271,7 +272,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 114);
+            this.dataGridView1.Location = new System.Drawing.Point(24, 105);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
@@ -343,7 +344,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
@@ -504,8 +505,8 @@
             this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
+            this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmPresentacionesCAI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

@@ -12,6 +12,8 @@ using SGLibrary.ArchivoTarjetas;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
 using Microsoft.VisualBasic;
+using System.Threading;
+
 
 namespace SGLibrary
 {
@@ -83,7 +85,7 @@ namespace SGLibrary
                         {
                             this.modoEdicion.Text = "SI";
                             un_registro = (TB_PresentacionesCAI)serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
-
+                            una_presentacion_actual = un_registro;
                         }
                         
                         this.txtdsUsuario.Text = un_registro.dsUsuario;
@@ -97,7 +99,7 @@ namespace SGLibrary
                         this.btnObtenerResumenEstadoCAIs.Enabled = false;
 
                         var resultado = serviceModel.ObtenerDetalle(un_registro.IdPresentacion.ToString());
-                        cargarDataGridViewEdicion(dataGridView1, un_registro.TB_PresentacionesCAIDetalle, this.modoEdicion.Text);
+                        cargarDataGridViewEdicion(dataGridView1, resultado, this.modoEdicion.Text);
                         deshabilitarycolorearGrillaABM();
                         break;
                     }
@@ -133,18 +135,46 @@ namespace SGLibrary
                         }
                         else
                         {
-                            if (!ediciondeRegistro()) break;
+                            //if (!ediciondeRegistro()) break;
                         }
-                        this.modoEdicion.Text = "NO";
-                        var btnFind = new ToolStripButton();
-                        btnFind.Tag = "FIND";
+
                         MessageBox.Show("La presetanción se ha guardado con éxito, se procedera a generar el archivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+                        this.progressBar1.Minimum = 1;
+                        this.progressBar1.Maximum = 10;
+                        this.progressBar1.Visible = true;
+                        Thread t = new Thread(delegate()
+                            {
+                                int i = 0;
+                                while (true)
+                                {
+                                    if (i < this.progressBar1.Maximum)
+                                         i++;
+                                    else
+                                         i=10;
+
+                                    MethodInvoker m = new MethodInvoker(() => { progressBar1.Value = i;
+                                    progressBar1.Refresh(); this.Refresh(); this.progressBar1.PerformLayout();
+                                    this.progressBar1.PerformStep();  Application.DoEvents();
+                                    });
+                                    progressBar1.Invoke(m) ;
+                                }
+                            });
+                        t.Start();
+                        Thread.Sleep(1000);
                         spu_generarPresentacionCAI_v4_9_4_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
+                        t.Suspend();
+                        this.progressBar1.Visible = false;
                         if (resultado.resultado.CompareTo ( "OK")==0)
                             MessageBox.Show(resultado.Descrip, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
                         else
                             MessageBox.Show(resultado.Descrip, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                         cargarCombo(this.cbUsuarios, serviceModel.obtenerUsuarios());
+                        this.modoEdicion.Text = "NO";
+                        var btnFind = new ToolStripButton();
+                        btnFind.Tag = "FIND";
                         botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
@@ -175,7 +205,6 @@ namespace SGLibrary
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
                         botonesForm1_ClickEventDelegateHandler(btnFind, null);
-
                         break;
                     }
                 case "EXIT":
@@ -186,6 +215,8 @@ namespace SGLibrary
             }
 
         }
+
+
 
 
         public Boolean altadeRegistro()
@@ -413,6 +444,11 @@ namespace SGLibrary
 
             cargarDataGridViewEdicion(dataGridView1, listadeRegistros , this.modoEdicion.Text);
             deshabilitarycolorearGrillaABM();
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
         }
 
 
