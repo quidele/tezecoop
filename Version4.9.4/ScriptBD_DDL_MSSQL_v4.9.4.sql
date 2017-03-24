@@ -589,7 +589,7 @@ declare @nrAnio int
 			select * from  RTMP_auxiliarPermisosRenglonesCAI 
 		END
 
-		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2)  + '.txt'
+		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2) + right( '000000' + convert(varchar,@IdPresentacion),6)+ '.txt'
 
 		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones  ' , @nombre_archivo = @nombre_archivo
 		

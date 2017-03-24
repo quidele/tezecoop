@@ -120,8 +120,13 @@ namespace SGLibrary
                         f = (Form)f2;
                         break;
                     case "FrmPresentacionesCAI":
+
+
                         FrmPresentacionesCAI f3 = new FrmPresentacionesCAI();
-                        //f2.serviceModel = this;
+                        ServiceCAI serviceCAI = new ServiceCAI();
+                        serviceCAI.Usuario = this.Usuario;
+                        serviceCAI.CajaAdm = this.CajaAdm;
+                        f3.serviceModel =  serviceCAI ;
                         f = (Form)f3;
                         break;
                     default:

@@ -22,15 +22,14 @@ namespace SGLibrary
         }
 
 
-        public void generarPresentacionCAI(int idPresetancion)
+        public spu_generarPresentacionCAI_v4_9_4_Result generarPresentacionCAI(int idPresetancion)
         {
             using (var context = new dbSG2000Entities())
             {
                 spu_generarPresentacionCAI_v4_9_4_Result resultado = context.spu_generarPresentacionCAI_v4_9_4
                     (idPresetancion, "N").First();
                 Trace.TraceInformation(resultado.resultado + " "  + resultado.Descrip);
-                
-
+                return resultado;
             }
         }
 
@@ -216,10 +215,23 @@ namespace SGLibrary
         }  // anularPresentacion 
 
 
-        
+        public IEnumerable<Object> obtenerUsuarios()
+        {
 
-    }
-}
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listaResultado = (from c in context.TB_PresentacionesCAI
+                                      where c.dsUsuario != null
+                                                select new { USUARIO = c.dsUsuario }).Distinct();
+                return listaResultado.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
+        }
+
+    } // Cierre Clase
+
+} // Cierrar NAMESPACE
 
 
         

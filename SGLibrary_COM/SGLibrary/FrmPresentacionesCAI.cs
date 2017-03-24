@@ -20,6 +20,7 @@ namespace SGLibrary
 
 
         public ServiceCAI serviceModel { get; set; }
+        private TB_PresentacionesCAI una_presentacion_actual;
 
 
 
@@ -27,7 +28,6 @@ namespace SGLibrary
         {
             InitializeComponent();
             // inicializamos el servicio pricinpal para el form
-            serviceModel = new ServiceCAI();
         }
 
         private void FrmConciliaciones_Load(object sender, EventArgs e)
@@ -43,6 +43,7 @@ namespace SGLibrary
 
             }
 
+            cargarCombo ( this.cbUsuarios, serviceModel.obtenerUsuarios() );
 
             botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
@@ -105,6 +106,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         this.txtdsUsuario.Text = serviceModel.Usuario;
                         this.txtnrCajaAdm.Text = serviceModel.CajaAdm;
+                        this.txtflEstado.Text = "A";
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         dataGridView1.Columns.Clear();
@@ -113,7 +115,7 @@ namespace SGLibrary
                     }
                 case "FIND":
                     {
-                        var listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.txtdsUsuario.Text);
+                        var listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuarios.Text);
                         cargarDataGridViewBusqueda(dataGridView2, listadeRegistros);
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = false;
@@ -136,7 +138,13 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
-                        MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("La presetanción se ha guardado con éxito, se procedera a generar el archivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        spu_generarPresentacionCAI_v4_9_4_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
+                        if (resultado.resultado.CompareTo ( "OK")==0)
+                            MessageBox.Show(resultado.Descrip, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        else
+                            MessageBox.Show(resultado.Descrip, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        cargarCombo(this.cbUsuarios, serviceModel.obtenerUsuarios());
                         botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
@@ -154,8 +162,8 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
-                            Object un_registro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
-                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro " + un_registro.ToString(), "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            TB_PresentacionesCAI un_registro = (TB_PresentacionesCAI)serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación de la presentación " + un_registro.IdPresentacion, "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMLETAR ELIMINACION
                             // serviceModel.anularPresentacion
@@ -213,11 +221,12 @@ namespace SGLibrary
             una_presentacion.nrMes = int.Parse(this.cbnrMes.Text); 
             una_presentacion.dtPresentacion = this.cbdtPresentacion.Value.Date;
             una_presentacion.flestado = "A";
+            una_presentacion.dsUsuario = serviceModel.Usuario;
             una_presentacion.dtModificacion = DateTime.Now;
             una_presentacion.TB_PresentacionesCAIDetalle = lista;
             //serviceModel.agregarPresentacionCAI(una_presentacion, lista);
-            serviceModel.AgregarRegistro(una_presentacion); 
-
+            serviceModel.AgregarRegistro(una_presentacion);
+            una_presentacion_actual = una_presentacion;
             return true;
         }
 
