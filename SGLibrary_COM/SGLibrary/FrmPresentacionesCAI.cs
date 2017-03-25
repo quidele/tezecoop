@@ -141,28 +141,7 @@ namespace SGLibrary
                         MessageBox.Show("La presetanción se ha guardado con éxito, se procedera a generar el archivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        this.progressBar1.Minimum = 1;
-                        this.progressBar1.Maximum = 10;
-                        this.progressBar1.Visible = true;
-                        Thread t = new Thread(delegate()
-                            {
-                                int i = 0;
-                                while (true)
-                                {
-                                    if (i < this.progressBar1.Maximum)
-                                         i++;
-                                    else
-                                         i=10;
-
-                                    MethodInvoker m = new MethodInvoker(() => { progressBar1.Value = i;
-                                    progressBar1.Refresh(); this.Refresh(); this.progressBar1.PerformLayout();
-                                    this.progressBar1.PerformStep();  Application.DoEvents();
-                                    });
-                                    progressBar1.Invoke(m) ;
-                                }
-                            });
-                        t.Start();
-                        Thread.Sleep(1000);
+                        Thread t = iniciarHiloProgressBar();
                         spu_generarPresentacionCAI_v4_9_4_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
                         t.Suspend();
                         this.progressBar1.Visible = false;
@@ -214,6 +193,34 @@ namespace SGLibrary
                     }
             }
 
+        }
+
+        private Thread iniciarHiloProgressBar()
+        {
+            this.progressBar1.Minimum = 1;
+            this.progressBar1.Maximum = 10;
+            this.progressBar1.Visible = true;
+            Thread t = new Thread(delegate()
+            {
+                int i = 0;
+                while (true)
+                {
+                    if (i < this.progressBar1.Maximum)
+                        i++;
+                    else
+                        i = 10;
+
+                    MethodInvoker m = new MethodInvoker(() =>
+                    {
+                        progressBar1.Value = i;
+                        progressBar1.Refresh(); this.Refresh(); this.progressBar1.PerformLayout();
+                        this.progressBar1.PerformStep(); Application.DoEvents();
+                    });
+                    progressBar1.Invoke(m);
+                }
+            });
+            t.Start();
+            return t;
         }
 
 

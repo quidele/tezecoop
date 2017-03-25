@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   225
-   ClientTop       =   870
+   ClientLeft      =   165
+   ClientTop       =   810
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -279,6 +279,9 @@ Begin VB.MDIForm Frm_Principal
       End
       Begin VB.Menu optSalidasAFIP 
          Caption         =   "Salidas AFIP"
+      End
+      Begin VB.Menu optPresentacionesCAIAFIP 
+         Caption         =   "Presentaciones CAI"
       End
    End
    Begin VB.Menu mnConciliaciones 
@@ -1120,6 +1123,37 @@ Private Sub optParametros_Click()
     On Error Resume Next
     Frm_ABMParametros.Show 1
     On Error GoTo 0
+End Sub
+
+Private Sub optPresentacionesCAIAFIP_Click()
+
+
+Dim objServicePresentacionCAIs As Object
+
+
+    
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms"
+    Set objServicePresentacionCAIs = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objServicePresentacionCAIs.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click- Antes de  CajaActiva objCajas.nrCaja "
+    objServicePresentacionCAIs.CajaActiva CStr(objCajas.nrCaja)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  CajaActiva objCajas.nrCaja "
+    objServicePresentacionCAIs.execFormulario "FrmPresentacionesCAI"
+    
 End Sub
 
 Private Sub optPuestos_Click()

@@ -79,10 +79,10 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibr
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EntityFramework.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EntityFramework.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FormularioBase.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPresentacionesCAI.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMBase.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
