@@ -592,7 +592,7 @@ declare @nrAnio int
 		declare @nombre_archivo varchar(255)=  'CAIComprobantesxLote_' + convert(varchar,@nrAnio)  +  right ('0' + convert(varchar,@nrMes),2) 
 		+'_'  + right( '000000' + convert(varchar,@IdPresentacion),6)+ '.txt'
 
-		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglones  ' , @nombre_archivo = @nombre_archivo
+		exec  [dbo].[spu_generarArchivo_v4_8] @sql_select = 'select Renglon  from dbSG2000.dbo.RTMP_auxiliarPermisosRenglonesCAI  ' , @nombre_archivo = @nombre_archivo
 		
 
 		select 'OK' as resultado , 'El archivo se ha generado con éxito, verifique el archivo '+ @nombre_archivo as Descrip 
