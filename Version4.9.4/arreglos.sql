@@ -1,6 +1,8 @@
 ﻿
 
- exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 12812
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 101
+ exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 11 , @anio = 2016 , @renglon = 1325
+
 
  30-63020908-7 ⋆ CUIT Online
 
