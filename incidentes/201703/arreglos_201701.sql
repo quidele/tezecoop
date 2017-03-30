@@ -447,3 +447,32 @@ exec [dbo].[SP_ActualizarComprobante_v4_9]
  -- para que salgo por cod_dgi 90 tiene que tener 'Consumidor Final' es razon social 
  update c  set c.nrDoc = null  ,  c.dsRazonSocial = 'Consumidor Final' from TB_Comprobantes  c 
  where nrTalonario = '0001' and  nrComprobante = '00201265' and  tpLetra ='B' and   tpComprobante = 'FA'
+
+
+
+ 
+
+	select dbo.ufn_ValidarCUIT_v4_9_4 (nrDoc) as cuitok, 
+	tpIVA, nrDoc , vlTotalGeneral, dsRazonSocial,
+	nrTalonario, nrComprobante  ,   tpLetra , tpComprobante from TB_Comprobantes 
+	where tpLetra  in ('A','M') and  tpComprobante = 'FA'  and year(dtComprobante) = 2016 and month(dtComprobante) = 10
+
+	
+	select dbo.ufn_ValidarCUIT_v4_9_4 (nrDoc) as cuitok, 
+	tpIVA, nrDoc , vlTotalGeneral, dsRazonSocial,
+	nrTalonario, nrComprobante  ,   tpLetra , tpComprobante from TB_Comprobantes 
+	where dsRazonSocial like '%MEGATOUR S.R.L.%'
+	
+
+	
+  update c  set c.nrDoc = '30710457022' from TB_Comprobantes  c 
+	where dsRazonSocial like '%MEGATOUR S.R.L.%'
+
+
+
+	 exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 10 , @anio = 2016 , @renglon = 12167
+	 exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 10 , @anio = 2016 , @renglon = 12386
+
+	
+	
+
