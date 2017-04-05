@@ -3,13 +3,14 @@ USE dbSG2000
 GO
 
 
-sp_helptext 'spu_obtener_puntosdeventa_facturacion_v4_7'
+-- sp_helptext 'spu_obtener_puntosdeventa_facturacion_v4_7'
 
 
-go
 
-Text
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+IF exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtener_puntosdeventa_facturacion_v4_9_5'  )
+	DROP PROCEDURE  [dbo].spu_obtener_puntosdeventa_facturacion_v4_9_5
+
+GO
 
 
 /*
@@ -41,15 +42,21 @@ Text
 
 	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = EX,  @auto_impresor = S, @tpFormadePago = null,  @tpComprobante = 'FA'
 
+
+	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = 'RI',  @auto_impresor = 'N', @tpFormadePago = null,  @tpComprobante = 'FA'
+
+
+	--- Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=1, @tipo_iva = 'RI',  @auto_impresor = 'N', @tpFormadePago =  null,  @tpComprobante = 'FA'
+
 */
 
 
 
-create procedure dbo.spu_obtener_puntosdeventa_facturacion_v4_7
+create procedure dbo.spu_obtener_puntosdeventa_facturacion_v4_9_5
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
 @auto_impresor     char(1)='S',
-@tpFormadePago	   varchar(20)=null,
+@tpFormadePago	   varchar(20)=null,  -- 'Cuenta Corriente'  / ''
 @tpComprobante	   char(2)='FA'	  -- FA / ND / NC 
 as
 begin
@@ -194,8 +201,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 			select  @nrTalonario_auto_ctacte       as nrTalonario,
 					@nrComprobante_auto_ctacte_nd_ult as nrComprobante,
 					@tpLetraRecibo				    as tpLetra,
-					null	as nrCAI,
-					null    as dtCai,
+					''	as nrCAI,
+					''    as dtCai,
 					@flFacturaCtacte	as flFacturaCtacte
 			return;
 			
@@ -241,8 +248,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 			select  @nrTalonario_auto_ctacte       as nrTalonario,
 					@nrComprobante_auto_ctacte_nc_ult as nrComprobante,
 					@tpLetraRecibo				    as tpLetra,
-					null	as nrCAI,
-					null    as dtCai,
+					''	as nrCAI,
+					''    as dtCai,
 					@flFacturaCtacte	as flFacturaCtacte
 			return;
 
@@ -253,8 +260,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 			select  @nrTalonario_auto_ctacte    as nrTalonario,
 				@nrComprobante_auto_ctacte_ult  as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
-				null	as nrCAI,
-				null    as dtCai,
+				''	as nrCAI,
+				''    as dtCai,
 				@flFacturaCtacte	as flFacturaCtacte
 				return;	
 		end
@@ -285,8 +292,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		select  @nrTalonario_auto_ctacte       as nrTalonario,
 				@nrComprobante_auto_ctacte_ult as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
-				null	as nrCAI,
-				null    as dtCai,
+				''	as nrCAI,
+				''    as dtCai,
 				@flFacturaCtacte	as flFacturaCtacte
 		return;
 
@@ -300,8 +307,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 	select  @nrTalonario_manual_ctacte       as nrTalonario,
 			@nrComprobante_manual_ctacte_ult as nrComprobante,
 			@tpLetraRecibo_manual		    as tpLetra,
-			null	as nrCAI,
-			null    as dtCai,
+			''	as nrCAI,
+			''    as dtCai,
 			@flFacturaCtacte	as flFacturaCtacte	
 			return;	
 	end
@@ -311,8 +318,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		select  @nrTalonario_manual       as nrTalonario,
 				@nrComprobante_manual_ult as nrComprobante,
 				@tpLetra		    as tpLetra,
-				null	as nrCAI,
-				null    as dtCai,
+				''	as nrCAI,
+				''    as dtCai,
 				@flFacturaCtacte	as flFacturaCtacte
 		return;					
 	end 
@@ -322,8 +329,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 		select  @nrTalonario_manual_empresa       as nrTalonario,
 				@nrComprobante_manual_empresa_ult as nrComprobante,
 				@tpLetraEmpresa_manual				    as tpLetra,
-				null	as nrCAI,
-				null   as dtCai,
+				''	as nrCAI,
+				''   as dtCai,
 				@flFacturaCtacte	as flFacturaCtacte
 		return;
 	end
@@ -332,8 +339,8 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 	select  @nrTalonario_manual_ctacte       as nrTalonario,
 			@nrComprobante_manual_ctacte_ult as nrComprobante,
 			@tpLetraRecibo_manual		    as tpLetra,
-			null	as nrCAI,
-			null    as dtCai,
+			''    as nrCAI,
+			''    as dtCai,
 			@flFacturaCtacte	as flFacturaCtacte
 
 

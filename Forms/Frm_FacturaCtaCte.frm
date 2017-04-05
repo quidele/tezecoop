@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.Form Frm_FacturaCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte."
@@ -1518,6 +1518,11 @@ Dim ItemList    As ListItem
            HabilitarCampos "dsRazonSocial", False
            HabilitarCampos "nrDoc", False
            HabilitarCampos "dsEmail", False
+           
+           If objParametros.ObtenerValor("FacturarCtaCte.TipoFacturacion") = "Manual" Then
+            HabilitarCampos "nrComprobante", True
+           End If
+               
            PresentarPantalla Button
            
     Case "Salir"
@@ -1582,6 +1587,52 @@ Private Function validarEntradadedatos() As Boolean
         validarEntradadedatos = False
     End If
     
+    
+    validarEntradadedatos = Not ExisteComprobante()
+    
+
+
+
+
+End Function
+
+
+    
+Private Function ExisteComprobante() As Boolean
+Dim ldsUsuario As String
+Dim lnrCaja As String
+
+        If ObtenerCampo("nrTalonario").Text = "" Then Exit Function
+        If ObtenerCampo("nrComprobante").Text = "" Then Exit Function
+        If ObtenerCampo("tpComprobante").Text = "" Then Exit Function
+        
+
+        ObjTablasIO.nmTabla = "TB_Comprobantes"
+        ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text
+        ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
+        ObjTablasIO.setearCampoOperadorValor "nrTalonario", "->", ""
+        ObjTablasIO.setearCampoOperadorValor "nrComprobante", "->", ""
+        ObjTablasIO.setearCampoOperadorValor "dsUsuario", "->", ""
+        ObjTablasIO.setearCampoOperadorValor "nrcaja", "->", ""
+        
+        ObjTablasIO.Seleccionar
+        If Not ObjTablasIO.rs_resultados.EOF Then
+             ldsUsuario = ObjTablasIO.rs_resultados("dsUsuario").value
+             lnrCaja = ObjTablasIO.rs_resultados("nrCaja").value
+            AvisarError "nrComprobante", True
+            If frm_SeleccionarPuesto.Visible = False Then
+                MsgBox "Este Comprobante ha sido cargado por el usuario " + ldsUsuario + ". Nro de caja. " + lnrCaja, vbInformation + vbDefaultButton1, "Atención"
+                ObtenerCampo("nrComprobante").SetFocus
+                ExisteComprobante = True
+            End If
+            ExisteComprobante = True
+        Else
+            ExisteComprobante = False
+        End If
+
 End Function
 
 Private Function GrabarDatosdelCliente() As Boolean

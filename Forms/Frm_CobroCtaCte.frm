@@ -784,6 +784,7 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.tpIVA", tpIVA
     objParametros.GrabarValor "FacturarCtaCte.dsDetalle", strDetalle
     objParametros.GrabarValor "FacturarCtaCte.tpComprobante", "FA"
+    objParametros.GrabarValor "FacturarCtaCte.TipoFacturacion", Me.cbTipoFacturacion.Text
     
     
     Dim strSQL As String
