@@ -36,6 +36,7 @@ namespace SGLibrary
         private void button1_Click(object sender, EventArgs e)
         {
             this.button2.Enabled = false;
+            openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 /* MessageBox.Show ( openFileDialog1.FileName); */ 
