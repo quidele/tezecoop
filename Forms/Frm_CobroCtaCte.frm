@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar a Cuentas Corrientes"
@@ -790,7 +790,7 @@ Dim i             As Integer
     Dim strSQL As String
     '***********************************************************'
     ' Modificacion EZE V4.6
-    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=" + objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE") + ", "
+    strSQL = "dbo.spu_obtener_puntosdeventa_facturacion_v4_9_5 @nrPuesto_param=" + objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE") + ", "
     strSQL = strSQL + "@tipo_iva = " + objParametros.ObtenerValor("FacturarCtaCte.tpIVA") + ",  "
     
     ' strSQL = strSQL + "@auto_impresor = " + IIf(objConfig.tpImpresion = "CONTINUO", "S", "N") + ", "
