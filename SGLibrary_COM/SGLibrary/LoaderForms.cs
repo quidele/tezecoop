@@ -121,7 +121,6 @@ namespace SGLibrary
                         break;
                     case "FrmPresentacionesCAI":
 
-
                         FrmPresentacionesCAI f3 = new FrmPresentacionesCAI();
                         ServiceCAI serviceCAI = new ServiceCAI();
                         serviceCAI.Usuario = this.Usuario;
@@ -131,6 +130,10 @@ namespace SGLibrary
                         break;
                     default:
                         break;
+                    case "ServiceTarifas":
+                        ServiceTarifas miServiceTarifas = new ServiceTarifas();
+                        miServiceTarifas.cargarTarifas();
+                        return;
                 }
 
                 Form objForm = (Form) f;

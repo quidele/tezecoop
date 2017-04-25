@@ -41,6 +41,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Release\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\ControlesdeUsuario.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.Form1.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Release\SGLibrary.FormularioBase.resources

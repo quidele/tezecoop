@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   165
-   ClientTop       =   810
+   ClientLeft      =   225
+   ClientTop       =   855
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -288,6 +288,12 @@ Begin VB.MDIForm Frm_Principal
       Caption         =   "Conciliaciones"
       Begin VB.Menu optConciliarViajes 
          Caption         =   "Conciliar Viajes"
+      End
+   End
+   Begin VB.Menu mnVarios 
+      Caption         =   "Varios"
+      Begin VB.Menu optCargaTarifas 
+         Caption         =   "Carga de Tarifas"
       End
    End
 End
@@ -766,6 +772,35 @@ Dim strnrCaja               As String
     ' Analisis de la version 4.7 <Llamada para facturacion manual>
     Frm_VentaPasajes.Show vbModal
     
+    
+    
+End Sub
+
+Private Sub optCargaTarifas_Click()
+Dim objLoaderForms As Object
+
+
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms"
+    Set objLoaderForms = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objLoaderForms.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click- Antes de  CajaActiva objCajas.nrCaja "
+    objLoaderForms.CajaActiva CStr(objCajas.nrCaja)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  CajaActiva objCajas.nrCaja "
+    objLoaderForms.execFormulario "ServiceTarifas"
     
     
 End Sub
