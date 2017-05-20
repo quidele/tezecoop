@@ -14,6 +14,7 @@ using SGLibrary.Extensiones;
 
 namespace SGLibrary
 {
+
     public class ServiceConciliacionTodoPago : ServiceConciliacion
     {
 

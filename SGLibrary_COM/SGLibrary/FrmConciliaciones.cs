@@ -827,6 +827,13 @@ namespace SGLibrary
                     var listadeViajesaConciliarTodoPago = this.un_ServiceConciliacionTodoPago.ObtenerViajesaConciliar();
                     cargarDataGridViewCuponesTodoPago(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
+                case "Amca":  // Procesamos el archivo Excel enviado por AMCA
+                    this.cbtipoConciliacion.Enabled = true;
+                    this.dataGridView1.Rows.Clear();
+                    this.txtNombreArchivoTarjeta.Text = "";
+                    this.btnSelecccionarArchivoTarjeta.Enabled = true;
+                    this.btnSelecccionarArchivoTarjeta.PerformClick();
+                    break;
                 default:
                     this.cbtipoConciliacion.Enabled = true;
                     this.dataGridView1.Rows.Clear();
@@ -843,6 +850,9 @@ namespace SGLibrary
             ArchivoTarjeta miArchivo;
             switch (cbtipoConciliacion.Text)
             {
+                case "Amca": 
+                    miArchivo = new ArchivoTarjetaAMCA();
+                    break;
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
                     break;
@@ -853,6 +863,8 @@ namespace SGLibrary
             }
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
+
+
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
             this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo); 
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
