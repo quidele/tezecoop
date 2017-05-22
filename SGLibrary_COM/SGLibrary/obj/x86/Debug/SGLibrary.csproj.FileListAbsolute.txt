@@ -82,7 +82,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resourc
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FomXLSSelect.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmXLSSelect.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FormularioBase.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPresentacionesCAI.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMBase.resources

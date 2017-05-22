@@ -863,17 +863,17 @@ namespace SGLibrary
             }
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
-
-
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
-            this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo); 
+            miArchivo.ProcesarArchivo(); 
+
+
+
+            return;
+
+            this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo);
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
-
-
             var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
-
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
-
             var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
@@ -882,9 +882,7 @@ namespace SGLibrary
             cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
-
             this.progressBar1.Visible = false;
-
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();
             // obtener los viajes conciliados automaticamente mas  
 

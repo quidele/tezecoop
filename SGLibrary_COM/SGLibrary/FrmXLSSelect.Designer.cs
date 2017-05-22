@@ -29,28 +29,29 @@
         private void InitializeComponent()
         {
             this.printDialog1 = new System.Windows.Forms.PrintDialog();
-            this.cbUsuarios = new System.Windows.Forms.ComboBox();
+            this.cbHojas = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.dataGridView2 = new System.Windows.Forms.DataGridView();
-            this.button1 = new System.Windows.Forms.Button();
+            this.dataGridViewRelColumnasXLSaTarjeta = new System.Windows.Forms.DataGridView();
+            this.btnProcesar = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRelColumnasXLSaTarjeta)).BeginInit();
             this.SuspendLayout();
             // 
             // printDialog1
             // 
             this.printDialog1.UseEXDialog = true;
             // 
-            // cbUsuarios
+            // cbHojas
             // 
-            this.cbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbUsuarios.FormattingEnabled = true;
-            this.cbUsuarios.Location = new System.Drawing.Point(49, 11);
-            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(2);
-            this.cbUsuarios.Name = "cbUsuarios";
-            this.cbUsuarios.Size = new System.Drawing.Size(157, 21);
-            this.cbUsuarios.TabIndex = 8;
+            this.cbHojas.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbHojas.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbHojas.FormattingEnabled = true;
+            this.cbHojas.Location = new System.Drawing.Point(49, 11);
+            this.cbHojas.Margin = new System.Windows.Forms.Padding(2);
+            this.cbHojas.Name = "cbHojas";
+            this.cbHojas.Size = new System.Drawing.Size(157, 21);
+            this.cbHojas.TabIndex = 8;
+            this.cbHojas.SelectedIndexChanged += new System.EventHandler(this.cbHojas_SelectedIndexChanged);
             // 
             // label5
             // 
@@ -62,33 +63,32 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Hojas";
             // 
-            // dataGridView2
+            // dataGridViewRelColumnasXLSaTarjeta
             // 
-            this.dataGridView2.AllowUserToAddRows = false;
-            this.dataGridView2.AllowUserToDeleteRows = false;
-            this.dataGridView2.AllowUserToOrderColumns = true;
-            this.dataGridView2.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.dataGridViewRelColumnasXLSaTarjeta.AllowUserToAddRows = false;
+            this.dataGridViewRelColumnasXLSaTarjeta.AllowUserToDeleteRows = false;
+            this.dataGridViewRelColumnasXLSaTarjeta.AllowUserToOrderColumns = true;
+            this.dataGridViewRelColumnasXLSaTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView2.Location = new System.Drawing.Point(14, 52);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
-            this.dataGridView2.Name = "dataGridView2";
-            this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView2.Size = new System.Drawing.Size(439, 258);
-            this.dataGridView2.TabIndex = 14;
-            this.dataGridView2.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellContentClick);
+            this.dataGridViewRelColumnasXLSaTarjeta.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridViewRelColumnasXLSaTarjeta.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridViewRelColumnasXLSaTarjeta.Location = new System.Drawing.Point(14, 52);
+            this.dataGridViewRelColumnasXLSaTarjeta.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridViewRelColumnasXLSaTarjeta.Name = "dataGridViewRelColumnasXLSaTarjeta";
+            this.dataGridViewRelColumnasXLSaTarjeta.RowTemplate.Height = 24;
+            this.dataGridViewRelColumnasXLSaTarjeta.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridViewRelColumnasXLSaTarjeta.Size = new System.Drawing.Size(439, 258);
+            this.dataGridViewRelColumnasXLSaTarjeta.TabIndex = 14;
             // 
-            // button1
+            // btnProcesar
             // 
-            this.button1.Location = new System.Drawing.Point(224, 11);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "button1";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btnProcesar.Location = new System.Drawing.Point(224, 11);
+            this.btnProcesar.Name = "btnProcesar";
+            this.btnProcesar.Size = new System.Drawing.Size(75, 23);
+            this.btnProcesar.TabIndex = 15;
+            this.btnProcesar.Text = "Procesar";
+            this.btnProcesar.UseVisualStyleBackColor = true;
             // 
             // button2
             // 
@@ -96,24 +96,24 @@
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(75, 23);
             this.button2.TabIndex = 16;
-            this.button2.Text = "button2";
+            this.button2.Text = "Cancelar";
             this.button2.UseVisualStyleBackColor = true;
             // 
-            // FomXLSSelect
+            // FrmXLSSelect
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(464, 321);
             this.ControlBox = false;
             this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.dataGridView2);
-            this.Controls.Add(this.cbUsuarios);
+            this.Controls.Add(this.btnProcesar);
+            this.Controls.Add(this.dataGridViewRelColumnasXLSaTarjeta);
+            this.Controls.Add(this.cbHojas);
             this.Controls.Add(this.label5);
-            this.Name = "FomXLSSelect";
-            this.Text = "Form1";
+            this.Name = "FrmXLSSelect";
+            this.Text = "Formato XLS - Tarjeta";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridViewRelColumnasXLSaTarjeta)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -122,10 +122,10 @@
         #endregion
 
         private System.Windows.Forms.PrintDialog printDialog1;
-        private System.Windows.Forms.ComboBox cbUsuarios;
+        private System.Windows.Forms.ComboBox cbHojas;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.DataGridView dataGridView2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.DataGridView dataGridViewRelColumnasXLSaTarjeta;
+        private System.Windows.Forms.Button btnProcesar;
         private System.Windows.Forms.Button button2;
     }
 }

@@ -119,7 +119,7 @@ namespace SGLibrary
                 if (MyValues.GetValue(1, index).ToString().CompareTo ("")!=0) {
                     RelColumnasXLSSAT objRelColumnasXLSSAT = new RelColumnasXLSSAT();
                     objRelColumnasXLSSAT.IndiceXLS  = index;
-                    objRelColumnasXLSSAT.NombreColumnaXLS = MyValues.GetValue(1, index).ToString();  
+                    objRelColumnasXLSSAT.NombreColumnaXLS = MyValues.GetValue(1, index).ToString();
                     lista.Add(objRelColumnasXLSSAT);
                 }
             }

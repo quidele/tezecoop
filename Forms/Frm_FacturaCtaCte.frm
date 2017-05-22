@@ -1200,15 +1200,18 @@ Dim resp   As Integer
                 MsgBox "ERROR: El talonario ha llegado a su fin, por favor de aviso a la administración", vbInformation + vbDefaultButton1, "Atención"
                 Exit Sub
            End If
-            
-           '**********************************************************
-           ' Version 4.7 VERIFICAR EL PROCEDIMIENTO
-            If Not grabarPuesto() Then
-                objbasededatos.RollBackTrans
-                MsgBox "ERROR: " + objbasededatos.Error, vbInformation + vbDefaultButton1, "Atención"
-                Exit Sub
-            End If
-           '**********************************************************
+                        
+                        
+           If UCase(objParametros.ObtenerValor("FacturarCtaCte.tipofacturacion")) <> "MANUAL" Then
+                '**********************************************************
+                ' Version 4.7 VERIFICAR EL PROCEDIMIENTO
+                 If Not grabarPuesto() Then
+                     objbasededatos.RollBackTrans
+                     MsgBox "ERROR: " + objbasededatos.Error, vbInformation + vbDefaultButton1, "Atención"
+                     Exit Sub
+                 End If
+                '**********************************************************
+           End If
            
            On Error Resume Next
            objbasededatos.CommitTrans

@@ -50,7 +50,7 @@ namespace SGLibrary.ArchivoTarjetas
 
         }
 
-        public List<ColumnaArchivoTarjeta>   ObtenerColumnasArchivoTarjeta(){
+        public static  List<ColumnaArchivoTarjeta>   ObtenerColumnasArchivoTarjeta(){
             List<ColumnaArchivoTarjeta> listaColumnasArchivoTarjeta = new List<ColumnaArchivoTarjeta>();
 
             /*
