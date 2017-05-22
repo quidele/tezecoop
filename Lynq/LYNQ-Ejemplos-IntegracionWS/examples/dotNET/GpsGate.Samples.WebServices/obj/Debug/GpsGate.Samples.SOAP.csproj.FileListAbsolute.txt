@@ -1,0 +1,5 @@
+C:\Users\Euli\github\tezecoop\Lynq\LYNQ-Ejemplos-IntegracionWS\examples\dotNET\GpsGate.Samples.WebServices\bin\Debug\GpsGate.Samples.SOAP.dll.config
+C:\Users\Euli\github\tezecoop\Lynq\LYNQ-Ejemplos-IntegracionWS\examples\dotNET\GpsGate.Samples.WebServices\bin\Debug\GpsGate.Samples.SOAP.dll
+C:\Users\Euli\github\tezecoop\Lynq\LYNQ-Ejemplos-IntegracionWS\examples\dotNET\GpsGate.Samples.WebServices\bin\Debug\GpsGate.Samples.SOAP.pdb
+C:\Users\Euli\github\tezecoop\Lynq\LYNQ-Ejemplos-IntegracionWS\examples\dotNET\GpsGate.Samples.WebServices\obj\Debug\GpsGate.Samples.SOAP.dll
+C:\Users\Euli\github\tezecoop\Lynq\LYNQ-Ejemplos-IntegracionWS\examples\dotNET\GpsGate.Samples.WebServices\obj\Debug\GpsGate.Samples.SOAP.pdb
