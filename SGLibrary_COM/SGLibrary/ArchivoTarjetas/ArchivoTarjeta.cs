@@ -50,8 +50,8 @@ namespace SGLibrary.ArchivoTarjetas
 
         }
 
-        public static  List<ColumnaArchivoTarjeta>   ObtenerColumnasArchivoTarjeta(){
-            List<ColumnaArchivoTarjeta> listaColumnasArchivoTarjeta = new List<ColumnaArchivoTarjeta>();
+        public static  List<String>   ObtenerColumnasArchivoTarjeta(){
+            List<String> listaColumnasArchivoTarjeta = new List<String>();
 
             /*
              * case 0: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]).Date; break; // Fecha Presentacion
@@ -66,11 +66,11 @@ namespace SGLibrary.ArchivoTarjetas
                             case 10: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".",""), CultureInfo.InvariantCulture ) / 100 ; break;  // Importe
                             default:*/
 
-            listaColumnasArchivoTarjeta.Add(new ColumnaArchivoTarjeta("Fecha de Presentación", 1));
-            listaColumnasArchivoTarjeta.Add(new ColumnaArchivoTarjeta("Fecha de Pago", 2));
-            listaColumnasArchivoTarjeta.Add(new ColumnaArchivoTarjeta("Cupon", 3));   // comprobante 
-            listaColumnasArchivoTarjeta.Add(new ColumnaArchivoTarjeta("Tarjeta", 4));   // comprobante 
-            listaColumnasArchivoTarjeta.Add(new ColumnaArchivoTarjeta("Importe", 5));   // comprobante 
+            listaColumnasArchivoTarjeta.Add("Fecha de Presentación");  // 1
+            listaColumnasArchivoTarjeta.Add("Fecha de Pago");  // 2 
+            listaColumnasArchivoTarjeta.Add("Cupon");   // 3 comprobante 
+            listaColumnasArchivoTarjeta.Add("Tarjeta");   // 4 comprobante 
+            listaColumnasArchivoTarjeta.Add("Importe");   //  5 comprobante 
             return listaColumnasArchivoTarjeta;
         }
         

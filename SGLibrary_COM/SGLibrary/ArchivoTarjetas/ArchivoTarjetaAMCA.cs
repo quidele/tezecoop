@@ -4,7 +4,7 @@ using System.Globalization;
 using System.Linq;
 using System.Text;
 using System.Diagnostics;
-
+using System.IO;
 
 
 namespace SGLibrary.ArchivoTarjetas
@@ -25,15 +25,17 @@ namespace SGLibrary.ArchivoTarjetas
             miServiceXLS.obtenerNombresHojas();
             miServiceXLS.SeleccionaHoja("Hoja1");
             List<RelColumnasXLSSAT>  listaColumansXLS = miServiceXLS.ObtenerNombresdeColumnas();
+            miServiceXLS.ObtenerContenido(); 
 
             Trace.TraceInformation("procesa metodo: AbrirArchivo ,  new TB_ArchivoTarjeta ");
 
             this._archivoTarjeta = new TB_ArchivoTarjeta();
             _archivoTarjeta.dsUsuario = pUsuario; // El usuario debera completar este dato desde afuera
             _archivoTarjeta.dtproceso = DateTime.Now;
-            _archivoTarjeta.nombrearchivo = this.NombreArchivo;
+            _archivoTarjeta.nombrearchivo = Path.GetFileName(pNombreArchivo) ;
             _archivoTarjeta.nombreArchivoCompleto = pNombreArchivo;
             //this._listaArchivoTarjetaDetalle = new List<TB_ArchivoTarjetaDetalle>();
+            _archivoTarjeta.formato = "Amca"; 
             
         }
 
@@ -41,6 +43,8 @@ namespace SGLibrary.ArchivoTarjetas
         public  override void ProcesarArchivo()
         {
             
+            this.miArchivoTarjeta.formato = "Amca";
+
             // Frm = new Frm
             FrmXLSSelect objFrmXLSSelect = new FrmXLSSelect();
 

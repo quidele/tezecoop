@@ -27,7 +27,8 @@ namespace SGLibrary
         private void Form1_Load(object sender, EventArgs e)
         {
             // Cargamos las hojas disponibles para el archivo XLS 
-            cargarCombo(this.cbHojas, miServiceXLS.obtenerNombresHojas());
+            // cargarCombo(this.cbHojas, miServiceXLS.obtenerNombresHojas());
+            this.cbHojas.Items.AddRange(miServiceXLS.obtenerNombresHojas().ToArray<String>()  ); 
         }
 
 
@@ -42,7 +43,7 @@ namespace SGLibrary
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    cb.Items.Add(p.GetValue(item, null));
+                    cb.Items.Add(item);
                 }
             }
 
@@ -91,8 +92,11 @@ namespace SGLibrary
             cmb.HeaderText = "Columna Tarjeta";
             cmb.Name = "colTarjeta";
             cmb.MaxDropDownItems = 4;
-            List<ColumnaArchivoTarjeta> listaListColumnaArchivoTarjeta = ArchivoTarjeta.ObtenerColumnasArchivoTarjeta ();
-            cmb.Items.AddRange(listaListColumnaArchivoTarjeta);
+
+            cmb.Items.Add("");
+            cmb.Items.AddRange  ( ArchivoTarjeta.ObtenerColumnasArchivoTarjeta ().ToArray <String> ()  );
+            
+                            
             dgv.Columns.Add(cmb);
 
             foreach (object item in lista)

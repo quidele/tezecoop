@@ -4,7 +4,8 @@ using System.Linq;
 using System.Text;
 using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-using SGLibrary.ArchivoTarjetas; 
+using SGLibrary.ArchivoTarjetas;
+using System.Diagnostics;
 
 //using SGLibrary.ExcelNuke;
 
@@ -100,8 +101,9 @@ namespace SGLibrary
             {
                 if (wSheet.Name.CompareTo(pNombreHoja) == 0)
                 {
-
                     MySheet = MyBook.Sheets[wSheet.Index]; // Explict cast is not required here
+                    lastRow = MySheet.Cells.SpecialCells(XlCellType.xlCellTypeLastCell).Row; // Informamos cual es la ultima fila con datos 
+                    return; 
                 }
             }
         }
@@ -111,11 +113,10 @@ namespace SGLibrary
         {
             List<RelColumnasXLSSAT> lista = new List<RelColumnasXLSSAT>();
             lista.Clear();
+            System.Array MyValues = (System.Array)MySheet.get_Range("A1", "H1").Cells.Value;
 
-            for (int index = 1; index <= 8; index++)
-            {
-                System.Array MyValues = (System.Array)MySheet.get_Range("A1" , "H1").Cells.Value;
-                
+            for (int index = 1; index <= 7; index++)
+            {    
                 if (MyValues.GetValue(1, index).ToString().CompareTo ("")!=0) {
                     RelColumnasXLSSAT objRelColumnasXLSSAT = new RelColumnasXLSSAT();
                     objRelColumnasXLSSAT.IndiceXLS  = index;
@@ -126,6 +127,22 @@ namespace SGLibrary
             return lista;
         }
 
+
+        public List<Object> ObtenerContenido()
+        {
+            Trace.TraceInformation("Ingresa a metodo ObtenerContenido");
+            List<Object> lista = new List<Object>();
+            lista.Clear();
+            for (int i = 2; i < lastRow; i++)
+            {
+                System.Array MyValues = (System.Array) MySheet.get_Range("A" + i.ToString () , "H" + i.ToString () ).Cells.Value;
+                Trace.TraceInformation(MyValues.ToString());
+                lista.Add(MyValues);    
+            }
+            Trace.TraceInformation("finaliza a metodo ObtenerContenido");
+            return lista;
+
+        }
 
        /*public List<TB_Productos> ObtenerNombresdeColumnas()
         {
