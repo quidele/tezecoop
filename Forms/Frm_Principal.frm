@@ -295,6 +295,9 @@ Begin VB.MDIForm Frm_Principal
       Begin VB.Menu optCargaTarifas 
          Caption         =   "Carga de Tarifas"
       End
+      Begin VB.Menu optModifComprobante 
+         Caption         =   "Modificar Datos del Comprobante"
+      End
    End
 End
 Attribute VB_Name = "Frm_Principal"
@@ -1073,6 +1076,14 @@ Private Sub optLicenciatarios_Click()
     objParametros.GrabarValor "frm_PagoLicenciatario.vlDiaReal", objCajas.vlDiaReal
     
     frm_PagoLicenciatario.Show 1
+    
+End Sub
+
+Private Sub optModifComprobante_Click()
+
+    If Not objSeguridad.ObtenerPermisoSupervisor() Then Exit Sub
+    
+    frm_ModifComprobante.Show 1
     
 End Sub
 
