@@ -24,7 +24,7 @@ Begin VB.Form frm_ModifComprobante
       MaxLength       =   4
       ScrollBars      =   2  'Vertical
       TabIndex        =   6
-      Tag             =   "nrTalonario_nuevo"
+      Tag             =   "@nrTalonario_new_param"
       Top             =   855
       Width           =   810
    End
@@ -37,7 +37,7 @@ Begin VB.Form frm_ModifComprobante
       Left            =   3525
       MaxLength       =   1
       TabIndex        =   8
-      Tag             =   "tpLetra_nuevo"
+      Tag             =   "@tpLetra_new_param"
       Top             =   1680
       Width           =   285
    End
@@ -51,8 +51,8 @@ Begin VB.Form frm_ModifComprobante
       MaxLength       =   8
       ScrollBars      =   2  'Vertical
       TabIndex        =   7
-      Tag             =   "nrComprobante_nuevo"
-      Top             =   1275
+      Tag             =   "@nrComprobante_new_param"
+      Top             =   1290
       Width           =   1860
    End
    Begin VB.TextBox txtFields 
@@ -64,7 +64,7 @@ Begin VB.Form frm_ModifComprobante
       Left            =   3510
       MaxLength       =   2
       TabIndex        =   5
-      Tag             =   "tpComprobante_nuevo"
+      Tag             =   "@tpComprobante_new_param"
       Top             =   435
       Width           =   510
    End
@@ -89,7 +89,7 @@ Begin VB.Form frm_ModifComprobante
          Left            =   945
          MaxLength       =   2
          TabIndex        =   1
-         Tag             =   "@tpComprobante"
+         Tag             =   "@tpComprobante_param"
          Top             =   330
          Width           =   510
       End
@@ -102,7 +102,7 @@ Begin VB.Form frm_ModifComprobante
          Left            =   945
          MaxLength       =   8
          TabIndex        =   3
-         Tag             =   "nrComprobante"
+         Tag             =   "@nrComprobante_param"
          Top             =   1170
          Width           =   1860
       End
@@ -115,7 +115,7 @@ Begin VB.Form frm_ModifComprobante
          Left            =   960
          MaxLength       =   1
          TabIndex        =   4
-         Tag             =   "tpLetra"
+         Tag             =   "@tpLetra_param"
          Top             =   1575
          Width           =   285
       End
@@ -128,14 +128,14 @@ Begin VB.Form frm_ModifComprobante
          Left            =   945
          MaxLength       =   4
          TabIndex        =   2
-         Tag             =   "nrTalonario"
+         Tag             =   "@nrTalonario_param"
          Top             =   750
          Width           =   810
       End
       Begin VB.CommandButton cmdAceptar 
          Caption         =   "&Aceptar"
          Height          =   375
-         Left            =   135
+         Left            =   120
          TabIndex        =   9
          Top             =   2235
          Width           =   1050
