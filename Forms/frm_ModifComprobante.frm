@@ -35,7 +35,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   0
          Left            =   975
          TabIndex        =   7
-         Tag             =   "tpComprobante"
+         Tag             =   "@tpComprobante_param"
          Top             =   1170
          Width           =   810
       End
@@ -48,7 +48,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   13
          Left            =   150
          TabIndex        =   6
-         Tag             =   "nrComprobante"
+         Tag             =   "@nrComprobante_param"
          Top             =   1270
          Width           =   810
       End
@@ -61,7 +61,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   14
          Left            =   150
          TabIndex        =   6
-         Tag             =   "nrTalonario"
+         Tag             =   "@nrTalonario_param"
          Top             =   1370
          Width           =   810
       End
@@ -74,7 +74,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   14
          Left            =   150
          TabIndex        =   6
-         Tag             =   "nrTalonario"
+         Tag             =   "@nrTalonario"
          Top             =   1170
          Width           =   810
       End

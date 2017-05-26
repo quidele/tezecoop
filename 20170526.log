@@ -1,0 +1,235 @@
+26/05/2017 14:22:59 | Exec  sco_TB_Productos_v4_1 
+26/05/2017 14:23:00 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+26/05/2017 14:23:05 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:23:05 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:23:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+26/05/2017 14:23:05 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+26/05/2017 14:23:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+26/05/2017 14:23:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+26/05/2017 14:23:05 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+26/05/2017 14:23:06 | Exec SP_ValorPromoRetorno
+26/05/2017 14:23:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+26/05/2017 14:23:06 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+26/05/2017 14:23:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+26/05/2017 14:23:06 | Exec sco_validarVencimientosCAI_v4_1
+26/05/2017 14:23:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+26/05/2017 14:23:08 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:23:08 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:23:20 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAcceso'
+26/05/2017 14:23:23 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE  tpNivelAcceso Like ('%%%') Order by TB_NivelAcceso.tpNivelAcceso ASC 
+26/05/2017 14:23:25 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Parametrización'  
+26/05/2017 14:23:25 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' 
+26/05/2017 14:23:29 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Parametrización'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Parametrización'  
+26/05/2017 14:23:29 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAccesoOpcionesMenu'
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 206  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 207  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 208  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 211  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+26/05/2017 14:23:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Parametrización'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+26/05/2017 14:23:32 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Auxiliar Administración'  
+26/05/2017 14:23:32 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' 
+26/05/2017 14:23:36 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Auxiliar Administración'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Auxiliar Administración'  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 206  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 207  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 208  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 211  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+26/05/2017 14:23:36 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+26/05/2017 14:23:43 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'  
+26/05/2017 14:23:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' 
+26/05/2017 14:23:49 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Administración'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'  
+26/05/2017 14:23:49 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+26/05/2017 14:23:49 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+26/05/2017 14:23:49 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+26/05/2017 14:23:49 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+26/05/2017 14:23:49 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 206  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 207  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 208  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 211  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+26/05/2017 14:23:50 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+26/05/2017 14:23:53 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'  
+26/05/2017 14:23:53 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' 
+26/05/2017 14:24:00 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:25:34 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.flEliminar = 0  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.tpNivelJerarquico = 'Supervisor'  
+26/05/2017 14:25:41 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:26:00 | Exec  sco_TB_Productos_v4_1 
+26/05/2017 14:26:00 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+26/05/2017 14:26:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:26:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:26:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+26/05/2017 14:26:03 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+26/05/2017 14:26:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+26/05/2017 14:26:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+26/05/2017 14:26:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+26/05/2017 14:26:03 | Exec SP_ValorPromoRetorno
+26/05/2017 14:26:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+26/05/2017 14:26:03 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+26/05/2017 14:26:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+26/05/2017 14:26:03 | Exec sco_validarVencimientosCAI_v4_1
+26/05/2017 14:26:04 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+26/05/2017 14:26:04 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:26:04 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:26:08 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:29:01 | Exec  sco_TB_Productos_v4_1 
+26/05/2017 14:29:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+26/05/2017 14:29:04 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:29:04 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+26/05/2017 14:29:04 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+26/05/2017 14:29:04 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+26/05/2017 14:29:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+26/05/2017 14:29:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+26/05/2017 14:29:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+26/05/2017 14:29:04 | Exec SP_ValorPromoRetorno
+26/05/2017 14:29:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+26/05/2017 14:29:04 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+26/05/2017 14:29:04 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+26/05/2017 14:29:04 | Exec sco_validarVencimientosCAI_v4_1
+26/05/2017 14:29:06 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+26/05/2017 14:29:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:29:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+26/05/2017 14:29:21 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 

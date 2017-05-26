@@ -22,7 +22,8 @@ Begin VB.Form frm_ModifComprobante
       Index           =   4
       Left            =   3510
       MaxLength       =   4
-      TabIndex        =   14
+      ScrollBars      =   2  'Vertical
+      TabIndex        =   6
       Tag             =   "nrTalonario_nuevo"
       Top             =   855
       Width           =   810
@@ -35,7 +36,7 @@ Begin VB.Form frm_ModifComprobante
       Index           =   3
       Left            =   3525
       MaxLength       =   1
-      TabIndex        =   13
+      TabIndex        =   8
       Tag             =   "tpLetra_nuevo"
       Top             =   1680
       Width           =   285
@@ -48,7 +49,8 @@ Begin VB.Form frm_ModifComprobante
       Index           =   2
       Left            =   3510
       MaxLength       =   8
-      TabIndex        =   12
+      ScrollBars      =   2  'Vertical
+      TabIndex        =   7
       Tag             =   "nrComprobante_nuevo"
       Top             =   1275
       Width           =   1860
@@ -61,7 +63,7 @@ Begin VB.Form frm_ModifComprobante
       Index           =   1
       Left            =   3510
       MaxLength       =   2
-      TabIndex        =   11
+      TabIndex        =   5
       Tag             =   "tpComprobante_nuevo"
       Top             =   435
       Width           =   510
@@ -86,8 +88,8 @@ Begin VB.Form frm_ModifComprobante
          Index           =   0
          Left            =   945
          MaxLength       =   2
-         TabIndex        =   4
-         Tag             =   "tpComprobante"
+         TabIndex        =   1
+         Tag             =   "@tpComprobante"
          Top             =   330
          Width           =   510
       End
@@ -112,7 +114,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   14
          Left            =   960
          MaxLength       =   1
-         TabIndex        =   7
+         TabIndex        =   4
          Tag             =   "tpLetra"
          Top             =   1575
          Width           =   285
@@ -125,7 +127,7 @@ Begin VB.Form frm_ModifComprobante
          Index           =   1000
          Left            =   945
          MaxLength       =   4
-         TabIndex        =   8
+         TabIndex        =   2
          Tag             =   "nrTalonario"
          Top             =   750
          Width           =   810
@@ -133,8 +135,8 @@ Begin VB.Form frm_ModifComprobante
       Begin VB.CommandButton cmdAceptar 
          Caption         =   "&Aceptar"
          Height          =   375
-         Left            =   150
-         TabIndex        =   2
+         Left            =   135
+         TabIndex        =   9
          Top             =   2235
          Width           =   1050
       End
@@ -143,7 +145,7 @@ Begin VB.Form frm_ModifComprobante
          Caption         =   "Cancelar"
          Height          =   375
          Left            =   1260
-         TabIndex        =   1
+         TabIndex        =   11
          Top             =   2235
          Width           =   1050
       End
@@ -161,7 +163,7 @@ Begin VB.Form frm_ModifComprobante
          EndProperty
          Height          =   300
          Left            =   180
-         TabIndex        =   10
+         TabIndex        =   14
          Top             =   1230
          Width           =   570
       End
@@ -179,7 +181,7 @@ Begin VB.Form frm_ModifComprobante
          EndProperty
          Height          =   300
          Left            =   180
-         TabIndex        =   9
+         TabIndex        =   13
          Top             =   390
          Width           =   570
       End
@@ -197,7 +199,7 @@ Begin VB.Form frm_ModifComprobante
          EndProperty
          Height          =   300
          Left            =   165
-         TabIndex        =   6
+         TabIndex        =   12
          Top             =   1620
          Width           =   570
       End
@@ -215,7 +217,7 @@ Begin VB.Form frm_ModifComprobante
          EndProperty
          Height          =   300
          Left            =   180
-         TabIndex        =   5
+         TabIndex        =   10
          Top             =   795
          Width           =   570
       End
@@ -347,6 +349,12 @@ Dim Control As Object
 End Function
 
 
+Private Sub Form_Activate()
+
+    ObtenerCampo("tpComprobante").SetFocus
+    
+End Sub
+
 Private Sub Form_Unload(Cancel As Integer)
 
     objbasededatos.CommandTimeout = 120
@@ -361,41 +369,41 @@ Private Sub txtFields_Change(Index As Integer)
 End Sub
 
 
-'Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
-'Dim tabindexsig As Integer
-'
-'    If Not KeyAscii = vbKeyReturn Then
-'       If Me.txtFields(Index).Tag <> "" Then
-'        KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Cajas", _
-'                            Me.txtFields(Index), KeyAscii)
-'       End If
-'    End If
-'
-'End Sub
+Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
+Dim tabindexsig As Integer
 
-'
-'Private Sub txtFields_LostFocus(Index As Integer)
-'
-'    If Me.txtFields(Index).Tag <> "" Then
-'        objDiccionariodeDatos.FormatearCampoControl "TB_Cajas", _
-'                              Me.txtFields(Index), "LostFocus"
-'    End If
-'
-'End Sub
-'
-'
-'Private Sub txtFields_GotFocus(Index As Integer)
-'
-'
-'    DoEvents
-'
-'    If Me.txtFields(Index).Tag <> "" Then
-'        objDiccionariodeDatos.FormatearCampoControl "TB_Cajas", _
-'                                  Me.txtFields(Index), "GotFocus"
-'    End If
-'
-'
-'End Sub
+    If Not KeyAscii = vbKeyReturn Then
+       If Me.txtFields(Index).Tag <> "" Then
+        KeyAscii = objDiccionariodeDatos.ValidarEntrada("SP_ActualizarComprobante_v4_9_7", _
+                            Me.txtFields(Index), KeyAscii)
+       End If
+    End If
+
+End Sub
+
+
+Private Sub txtFields_LostFocus(Index As Integer)
+
+    If Me.txtFields(Index).Tag <> "" Then
+        objDiccionariodeDatos.FormatearCampoControl "SP_ActualizarComprobante_v4_9_7", _
+                              Me.txtFields(Index), "LostFocus"
+    End If
+
+End Sub
+
+
+Private Sub txtFields_GotFocus(Index As Integer)
+
+
+    DoEvents
+
+    If Me.txtFields(Index).Tag <> "" Then
+        objDiccionariodeDatos.FormatearCampoControl "SP_ActualizarComprobante_v4_9_7", _
+                                  Me.txtFields(Index), "GotFocus"
+    End If
+
+
+End Sub
 
 Private Sub cmdAceptar_Click()
 Dim resp As Byte

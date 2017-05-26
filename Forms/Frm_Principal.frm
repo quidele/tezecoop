@@ -1081,7 +1081,7 @@ End Sub
 
 Private Sub optModifComprobante_Click()
 
-    If Not objSeguridad.ObtenerPermisoSupervisor() Then Exit Sub
+    ' If Not objSeguridad.ObtenerPermisoSupervisor() Then Exit Sub
     
     frm_ModifComprobante.Show 1
     
