@@ -1,17 +1,18 @@
 VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Begin VB.Form frm_ModifComprobante 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Modificación de Comprobantes"
-   ClientHeight    =   3255
+   ClientHeight    =   4395
    ClientLeft      =   45
    ClientTop       =   330
-   ClientWidth     =   6045
+   ClientWidth     =   7380
    ControlBox      =   0   'False
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   3255
-   ScaleWidth      =   6045
+   ScaleHeight     =   4395
+   ScaleWidth      =   7380
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtFields 
@@ -38,6 +39,7 @@ Begin VB.Form frm_ModifComprobante
       MaxLength       =   1
       TabIndex        =   8
       Tag             =   "@tpLetra_new_param"
+      Text            =   "B"
       Top             =   1680
       Width           =   285
    End
@@ -65,6 +67,7 @@ Begin VB.Form frm_ModifComprobante
       MaxLength       =   2
       TabIndex        =   5
       Tag             =   "@tpComprobante_new_param"
+      Text            =   "FA"
       Top             =   435
       Width           =   510
    End
@@ -72,14 +75,40 @@ Begin VB.Form frm_ModifComprobante
       Appearance      =   0  'Flat
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
-      Height          =   3030
-      Left            =   90
-      ScaleHeight     =   3000
-      ScaleWidth      =   5820
+      Height          =   4170
+      Left            =   60
+      ScaleHeight     =   4140
+      ScaleWidth      =   7170
       TabIndex        =   0
       TabStop         =   0   'False
-      Top             =   105
-      Width           =   5850
+      Top             =   75
+      Width           =   7200
+      Begin VB.ComboBox Combox1 
+         BackColor       =   &H00FFFFFF&
+         Height          =   315
+         Index           =   0
+         ItemData        =   "frm_ModifComprobante.frx":0000
+         Left            =   3420
+         List            =   "frm_ModifComprobante.frx":0010
+         Style           =   2  'Dropdown List
+         TabIndex        =   21
+         Tag             =   "@cdCondVenta_new_param"
+         Top             =   2400
+         Width           =   1725
+      End
+      Begin MSComCtl2.DTPicker dtComprobante_new_param 
+         Height          =   330
+         Left            =   3420
+         TabIndex        =   19
+         Tag             =   "@dtComprobante_new_param"
+         Top             =   1965
+         Width           =   1875
+         _ExtentX        =   3307
+         _ExtentY        =   582
+         _Version        =   393216
+         Format          =   109838337
+         CurrentDate     =   42882
+      End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
@@ -90,6 +119,7 @@ Begin VB.Form frm_ModifComprobante
          MaxLength       =   2
          TabIndex        =   1
          Tag             =   "@tpComprobante_param"
+         Text            =   "FA"
          Top             =   330
          Width           =   510
       End
@@ -116,6 +146,7 @@ Begin VB.Form frm_ModifComprobante
          MaxLength       =   1
          TabIndex        =   4
          Tag             =   "@tpLetra_param"
+         Text            =   "B"
          Top             =   1575
          Width           =   285
       End
@@ -135,19 +166,146 @@ Begin VB.Form frm_ModifComprobante
       Begin VB.CommandButton cmdAceptar 
          Caption         =   "&Aceptar"
          Height          =   375
-         Left            =   120
+         Left            =   1710
          TabIndex        =   9
-         Top             =   2235
+         Top             =   3510
          Width           =   1050
       End
       Begin VB.CommandButton cmdCancelar 
          Cancel          =   -1  'True
          Caption         =   "Cancelar"
          Height          =   375
-         Left            =   1260
+         Left            =   2835
          TabIndex        =   11
-         Top             =   2235
+         Top             =   3510
          Width           =   1050
+      End
+      Begin VB.Label Label14 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "FA / NC / ND"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   5370
+         TabIndex        =   27
+         Top             =   300
+         Width           =   1455
+      End
+      Begin VB.Label Label13 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "00000000"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   5355
+         TabIndex        =   26
+         Top             =   1170
+         Width           =   1305
+      End
+      Begin VB.Label Label12 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "0000"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   5355
+         TabIndex        =   25
+         Top             =   810
+         Width           =   570
+      End
+      Begin VB.Label Label11 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Nuevos Datos"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   3405
+         TabIndex        =   24
+         Top             =   30
+         Width           =   2085
+      End
+      Begin VB.Label Label10 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Datos Actuales"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   180
+         TabIndex        =   23
+         Top             =   45
+         Width           =   2085
+      End
+      Begin VB.Label lblLabels 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Cond. de Venta"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   225
+         Index           =   2
+         Left            =   1800
+         TabIndex        =   22
+         Top             =   2475
+         Width           =   1530
+      End
+      Begin VB.Label Label9 
+         BackColor       =   &H00FFC0C0&
+         Caption         =   "Fecha"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   300
+         Left            =   2685
+         TabIndex        =   20
+         Top             =   2025
+         Width           =   570
       End
       Begin VB.Label Label4 
          BackColor       =   &H00FFC0C0&
@@ -351,8 +509,22 @@ End Function
 
 Private Sub Form_Activate()
 
-    ObtenerCampo("tpComprobante").SetFocus
+    ObtenerCampo("@tpComprobante_param").SetFocus
     
+End Sub
+
+Private Sub Form_Load()
+
+
+                ObtenerCampo("@cdCondVenta_new_param").Clear
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Contado"
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Cuenta Corriente"
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Tarjeta de Débito"
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Todo Pago"
+                ObtenerCampo("@cdCondVenta_new_param").AddItem "Retorno"
+                
+                
 End Sub
 
 Private Sub Form_Unload(Cancel As Integer)
@@ -476,16 +648,19 @@ Private Function relizarModificacionenBD() As Boolean
     
     
     objSPs.nmStoredProcedure = "SP_ActualizarComprobante_v4_9_7"
-    objSPs.setearCampoValor "@nrTalonario_param", ObtenerCampo("nrTalonario")
-    objSPs.setearCampoValor "@nrComprobante_param", ObtenerCampo("nrComprobante")
-        objSPs.setearCampoValor "@tpComprobante_param", ObtenerCampo("tpComprobante")
-        objSPs.setearCampoValor "@tpLetra_param", ObtenerCampo("tpLetra")
-        objSPs.setearCampoValor "@nrTalonario_new_param", ObtenerCampo("nrTalonario_nuevo")
-        objSPs.setearCampoValor "@nrComprobante_new_param", ObtenerCampo("nrComprobante_nuevo")
-        objSPs.setearCampoValor "@tpComprobante_new_param", ObtenerCampo("tpComprobante_nuevo")
-        objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("tpLetra_nuevo")
-        objSPs.setearCampoValor "@dtComprobante_new_param", ObtenerCampo("dtComprobante_nuevo")
-        objSPs.setearCampoValor "@solo_cambio_cabecera_comprobante", "SI"
+    objSPs.setearCampoValor "@nrTalonario_param", ObtenerCampo("@nrTalonario_param")
+    objSPs.setearCampoValor "@nrComprobante_param", ObtenerCampo("@nrComprobante_param")
+        objSPs.setearCampoValor "@tpComprobante_param", ObtenerCampo("@tpComprobante_param")
+        objSPs.setearCampoValor "@tpLetra_param", ObtenerCampo("@tpLetra_param")
+        objSPs.setearCampoValor "@nrTalonario_new_param", ObtenerCampo("@nrTalonario_new_param")
+        objSPs.setearCampoValor "@nrComprobante_new_param", ObtenerCampo("@nrComprobante_new_param")
+        objSPs.setearCampoValor "@tpComprobante_new_param", ObtenerCampo("@tpComprobante_new_param")
+        objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("@tpLetra_new_param")
+        objSPs.setearCampoValor "@dtComprobante_new_param", ObtenerCampo("@dtComprobante_new_param")
+        ' objSPs.setearCampoValor "@vlComision_new_param", "null"
+        objSPs.setearCampoValor "@cdCondVenta_new_param", ObtenerCampo("@cdCondVenta_new_param")
+        
+        objSPs.setearCampoValor "@solo_cambio_cabecera_comprobante", "NO"
         
 
     If Not objSPs.ExecSP() Then

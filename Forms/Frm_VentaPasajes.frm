@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   272039937
+         Format          =   133038081
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1514,7 +1514,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   2
          Left            =   135
          TabIndex        =   70
-         Top             =   5175
+         Top             =   5160
          Width           =   1620
       End
       Begin VB.Label Label3 
