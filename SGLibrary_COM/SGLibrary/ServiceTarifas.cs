@@ -47,7 +47,7 @@ namespace SGLibrary
                         var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.cdProducto select c).First();
                         viajedestino.vlPrecioViaje = p.vlPrecioViaje;
                         viajedestino.vlPrecioViajeSinPeaje = p.vlPrecioViajeSinPeaje;
-                        viajedestino.vlPrecioPeaje = viajedestino.vlPrecioPeaje ;
+                        viajedestino.vlPrecioPeaje = p.vlPrecioPeaje ;
                         Console.WriteLine(p.cdProducto + " - " + p.dsProducto + " -  " + p.vlPrecioViaje.ToString() + p.flMuestraenlaWEB);
                         //break;
 

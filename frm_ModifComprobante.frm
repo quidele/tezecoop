@@ -106,7 +106,7 @@ Begin VB.Form frm_ModifComprobante
          _ExtentX        =   3307
          _ExtentY        =   582
          _Version        =   393216
-         Format          =   109838337
+         Format          =   132513793
          CurrentDate     =   42882
       End
       Begin VB.TextBox txtFields 
@@ -588,8 +588,6 @@ Dim resp As Byte
         MousePointer = vbHourglass
         If relizarModificacionenBD() Then
             MsgBox "La modificación se ha realizado con éxito.", vbInformation, "Atención"
-        Else
-            MsgBox "Error: " + objbasededatos.Error, vbCritical, "Atención"
         End If
         MousePointer = vbDefault
         
@@ -668,6 +666,11 @@ Private Function relizarModificacionenBD() As Boolean
         Exit Function
     End If
 
+
+    If objSPs.rs_resultados("Resultado") = "ERROR" Then
+        MsgBox "ERROR: " + objSPs.rs_resultados("DescripcionError"), vbCritical, "Atención"
+        Exit Function
+    End If
     
     
     relizarModificacionenBD = True

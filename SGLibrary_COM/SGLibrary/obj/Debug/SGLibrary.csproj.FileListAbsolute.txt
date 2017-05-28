@@ -14,7 +14,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.tlb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Form1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmXLSSelect.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FormularioBase.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPresentacionesCAI.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmABMBase.resources

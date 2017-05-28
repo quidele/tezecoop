@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ABMProductos 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Maestro de Productos"
@@ -221,6 +221,560 @@ Begin VB.Form Frm_ABMProductos
          EndProperty
       End
    End
+   Begin VB.Frame fraABMProductos 
+      BorderStyle     =   0  'None
+      Height          =   5985
+      Left            =   -75
+      TabIndex        =   21
+      Top             =   660
+      Width           =   10785
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFC0C0&
+         ForeColor       =   &H80000008&
+         Height          =   4830
+         Left            =   225
+         ScaleHeight     =   4800
+         ScaleWidth      =   9645
+         TabIndex        =   22
+         Top             =   555
+         Width           =   9672
+         Begin VB.ComboBox cbComision 
+            Appearance      =   0  'Flat
+            Height          =   315
+            ItemData        =   "Frm_ABMProductos.frx":4358
+            Left            =   195
+            List            =   "Frm_ABMProductos.frx":4362
+            Style           =   2  'Dropdown List
+            TabIndex        =   45
+            Tag             =   "cdComision"
+            Top             =   4020
+            Width           =   4305
+         End
+         Begin VB.ComboBox cbtpDestino 
+            Appearance      =   0  'Flat
+            Height          =   288
+            ItemData        =   "Frm_ABMProductos.frx":4377
+            Left            =   6336
+            List            =   "Frm_ABMProductos.frx":4381
+            Style           =   2  'Dropdown List
+            TabIndex        =   43
+            Tag             =   "tpDestino"
+            Top             =   1860
+            Width           =   2055
+         End
+         Begin VB.CheckBox Check3 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFC0C0&
+            Caption         =   "Comisión Retorno"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   435
+            Left            =   5715
+            TabIndex        =   42
+            Tag             =   "flIncluyeComisionRetorno"
+            Top             =   3240
+            Width           =   3075
+         End
+         Begin VB.CheckBox Check2 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFC0C0&
+            Caption         =   "Se muestra en la WEB"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   435
+            Left            =   3135
+            TabIndex        =   41
+            Tag             =   "flMuestraenlaWEB"
+            Top             =   3240
+            Width           =   2385
+         End
+         Begin VB.TextBox txtLabel 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   312
+            Index           =   9
+            Left            =   3168
+            Locked          =   -1  'True
+            TabIndex        =   1
+            TabStop         =   0   'False
+            Tag             =   "vlIVA"
+            Top             =   1104
+            Width           =   1332
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   312
+            Index           =   10
+            Left            =   1536
+            TabIndex        =   7
+            Tag             =   "vlPrecioxKilometro"
+            Top             =   1107
+            Width           =   1608
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   312
+            Index           =   8
+            Left            =   192
+            TabIndex        =   6
+            Tag             =   "vlKilometros"
+            Top             =   1107
+            Width           =   1320
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   330
+            Index           =   3
+            Left            =   7065
+            TabIndex        =   8
+            Tag             =   "vlPrecioViaje"
+            Top             =   1095
+            Width           =   1485
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   312
+            Index           =   5
+            Left            =   6045
+            TabIndex        =   9
+            Tag             =   "vlPrecioPeaje"
+            Top             =   1107
+            Width           =   930
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   285
+            Index           =   7
+            Left            =   4284
+            Locked          =   -1  'True
+            TabIndex        =   0
+            TabStop         =   0   'False
+            Tag             =   "cdOrden"
+            Top             =   1872
+            Width           =   432
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   312
+            Index           =   4
+            Left            =   4545
+            TabIndex        =   2
+            TabStop         =   0   'False
+            Tag             =   "vlPrecioViajeSinPeaje"
+            Top             =   1110
+            Width           =   1368
+         End
+         Begin VB.CheckBox Check1 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFC0C0&
+            Caption         =   "Se muestra en la facturación"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H80000008&
+            Height          =   435
+            Left            =   240
+            TabIndex        =   13
+            Tag             =   "flMuestra"
+            Top             =   3240
+            Width           =   3075
+         End
+         Begin VB.ComboBox Combo1 
+            Appearance      =   0  'Flat
+            Height          =   288
+            ItemData        =   "Frm_ABMProductos.frx":4396
+            Left            =   2208
+            List            =   "Frm_ABMProductos.frx":43B2
+            Style           =   2  'Dropdown List
+            TabIndex        =   11
+            Tag             =   "tpOperacion"
+            Top             =   1872
+            Width           =   2055
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   285
+            Index           =   1
+            Left            =   204
+            TabIndex        =   10
+            Tag             =   "vlPorcentaje"
+            Top             =   1860
+            Width           =   1980
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmApellido"
+            Height          =   732
+            Index           =   6
+            Left            =   204
+            TabIndex        =   12
+            Tag             =   "ObsHoras"
+            Top             =   2484
+            Width           =   9192
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            CausesValidation=   0   'False
+            DataField       =   "nmNombre"
+            Height          =   288
+            Index           =   2
+            Left            =   2196
+            TabIndex        =   5
+            Tag             =   "dsProducto"
+            Top             =   390
+            Width           =   7296
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   0
+            Left            =   216
+            Locked          =   -1  'True
+            TabIndex        =   4
+            TabStop         =   0   'False
+            Tag             =   "cdProducto"
+            Top             =   396
+            Width           =   1965
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Comisión"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   10
+            Left            =   210
+            TabIndex        =   46
+            Top             =   3780
+            Width           =   1965
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Predefinido como:"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   9
+            Left            =   6312
+            TabIndex        =   44
+            Top             =   1620
+            Width           =   2016
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Precio x Kilometro"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   8
+            Left            =   1530
+            TabIndex        =   40
+            Top             =   885
+            Width           =   1635
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "IVA"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   7
+            Left            =   3210
+            TabIndex        =   39
+            Top             =   870
+            Width           =   465
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Observación"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   6
+            Left            =   204
+            TabIndex        =   38
+            Top             =   2256
+            Width           =   2736
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Kilometros"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   5
+            Left            =   216
+            TabIndex        =   37
+            Top             =   852
+            Width           =   1308
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Orden de la Descripción"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   495
+            Index           =   4
+            Left            =   4260
+            TabIndex        =   31
+            Top             =   1485
+            Width           =   2010
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Precio sin Peajes"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   240
+            Index           =   3
+            Left            =   4515
+            TabIndex        =   30
+            Top             =   870
+            Width           =   1740
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Tipo de Operación"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   2
+            Left            =   2205
+            TabIndex        =   29
+            Top             =   1635
+            Width           =   1905
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Porcentaje (1 a 100%)"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   1
+            Left            =   216
+            TabIndex        =   28
+            Top             =   1608
+            Width           =   1968
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Peaje"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   12
+            Left            =   6060
+            TabIndex        =   27
+            Top             =   870
+            Width           =   870
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Observación Horas"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   13
+            Left            =   216
+            TabIndex        =   26
+            Top             =   3012
+            Width           =   1908
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Cod. de Producto"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   0
+            Left            =   216
+            TabIndex        =   25
+            Top             =   168
+            Width           =   1968
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Total"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   28
+            Left            =   7050
+            TabIndex        =   24
+            Top             =   870
+            Width           =   1500
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Descripción"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   252
+            Index           =   27
+            Left            =   2184
+            TabIndex        =   23
+            Top             =   180
+            Width           =   2736
+         End
+      End
+   End
    Begin VB.Frame fraBusqProductos 
       BorderStyle     =   0  'None
       Height          =   6360
@@ -300,27 +854,27 @@ Begin VB.Form Frm_ABMProductos
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   6
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4358
+               Picture         =   "Frm_ABMProductos.frx":441E
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":446A
+               Picture         =   "Frm_ABMProductos.frx":4530
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":457C
+               Picture         =   "Frm_ABMProductos.frx":4642
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":468E
+               Picture         =   "Frm_ABMProductos.frx":4754
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":47A0
+               Picture         =   "Frm_ABMProductos.frx":4866
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":48B2
+               Picture         =   "Frm_ABMProductos.frx":4978
                Key             =   "Menor"
             EndProperty
          EndProperty
@@ -343,7 +897,7 @@ Begin VB.Form Frm_ABMProductos
       End
       Begin MSComctlLib.ListView lstBusqueda 
          Height          =   5220
-         Left            =   165
+         Left            =   180
          TabIndex        =   14
          Top             =   795
          Width           =   9705
@@ -363,7 +917,7 @@ Begin VB.Form Frm_ABMProductos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -387,7 +941,7 @@ Begin VB.Form Frm_ABMProductos
          BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   2
             Object.Tag             =   "vlPrecioViajeSinPeaje"
-            Text            =   "Importe"
+            Text            =   "Precio"
             Object.Width           =   2470
          EndProperty
          BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -445,561 +999,6 @@ Begin VB.Form Frm_ABMProductos
          TabIndex        =   18
          Top             =   105
          Width           =   795
-      End
-   End
-   Begin VB.Frame fraABMProductos 
-      BorderStyle     =   0  'None
-      Height          =   5985
-      Left            =   -75
-      TabIndex        =   21
-      Top             =   675
-      Width           =   10785
-      Begin VB.PictureBox Picture1 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFC0C0&
-         ForeColor       =   &H80000008&
-         Height          =   4830
-         Left            =   225
-         ScaleHeight     =   4800
-         ScaleWidth      =   9645
-         TabIndex        =   22
-         Top             =   555
-         Width           =   9672
-         Begin VB.ComboBox cbComision 
-            Appearance      =   0  'Flat
-            Height          =   315
-            ItemData        =   "Frm_ABMProductos.frx":49C4
-            Left            =   195
-            List            =   "Frm_ABMProductos.frx":49CE
-            Style           =   2  'Dropdown List
-            TabIndex        =   45
-            Tag             =   "cdComision"
-            Top             =   4020
-            Width           =   4305
-         End
-         Begin VB.ComboBox cbtpDestino 
-            Appearance      =   0  'Flat
-            Height          =   288
-            ItemData        =   "Frm_ABMProductos.frx":49E3
-            Left            =   6336
-            List            =   "Frm_ABMProductos.frx":49ED
-            Style           =   2  'Dropdown List
-            TabIndex        =   43
-            Tag             =   "tpDestino"
-            Top             =   1860
-            Width           =   2055
-         End
-         Begin VB.CheckBox Check3 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFC0C0&
-            Caption         =   "Comisión Retorno"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H80000008&
-            Height          =   435
-            Left            =   5715
-            TabIndex        =   42
-            Tag             =   "flIncluyeComisionRetorno"
-            Top             =   3240
-            Width           =   3075
-         End
-         Begin VB.CheckBox Check2 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFC0C0&
-            Caption         =   "Se muestra en la WEB"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H80000008&
-            Height          =   435
-            Left            =   3135
-            TabIndex        =   41
-            Tag             =   "flMuestraenlaWEB"
-            Top             =   3240
-            Width           =   2385
-         End
-         Begin VB.TextBox txtLabel 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   9
-            Left            =   3168
-            Locked          =   -1  'True
-            TabIndex        =   1
-            TabStop         =   0   'False
-            Tag             =   "vlIVA"
-            Top             =   1104
-            Width           =   1332
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   10
-            Left            =   1536
-            TabIndex        =   7
-            Tag             =   "vlPrecioxKilometro"
-            Top             =   1107
-            Width           =   1608
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   8
-            Left            =   192
-            TabIndex        =   6
-            Tag             =   "vlKilometros"
-            Top             =   1107
-            Width           =   1320
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   3
-            Left            =   4524
-            TabIndex        =   8
-            Tag             =   "vlPrecioViaje"
-            Top             =   1107
-            Width           =   1485
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   5
-            Left            =   6045
-            TabIndex        =   9
-            Tag             =   "vlPrecioPeaje"
-            Top             =   1107
-            Width           =   930
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   285
-            Index           =   7
-            Left            =   4284
-            Locked          =   -1  'True
-            TabIndex        =   0
-            TabStop         =   0   'False
-            Tag             =   "cdOrden"
-            Top             =   1872
-            Width           =   432
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   312
-            Index           =   4
-            Left            =   7008
-            Locked          =   -1  'True
-            TabIndex        =   2
-            TabStop         =   0   'False
-            Tag             =   "vlPrecioViajeSinPeaje"
-            Top             =   1104
-            Width           =   1368
-         End
-         Begin VB.CheckBox Check1 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFC0C0&
-            Caption         =   "Se muestra en la facturación"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H80000008&
-            Height          =   435
-            Left            =   240
-            TabIndex        =   13
-            Tag             =   "flMuestra"
-            Top             =   3240
-            Width           =   3075
-         End
-         Begin VB.ComboBox Combo1 
-            Appearance      =   0  'Flat
-            Height          =   288
-            ItemData        =   "Frm_ABMProductos.frx":4A02
-            Left            =   2208
-            List            =   "Frm_ABMProductos.frx":4A1E
-            Style           =   2  'Dropdown List
-            TabIndex        =   11
-            Tag             =   "tpOperacion"
-            Top             =   1872
-            Width           =   2055
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   285
-            Index           =   1
-            Left            =   204
-            TabIndex        =   10
-            Tag             =   "vlPorcentaje"
-            Top             =   1860
-            Width           =   1980
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmApellido"
-            Height          =   732
-            Index           =   6
-            Left            =   204
-            TabIndex        =   12
-            Tag             =   "ObsHoras"
-            Top             =   2484
-            Width           =   9192
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            CausesValidation=   0   'False
-            DataField       =   "nmNombre"
-            Height          =   288
-            Index           =   2
-            Left            =   2196
-            TabIndex        =   5
-            Tag             =   "dsProducto"
-            Top             =   390
-            Width           =   7296
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   0
-            Left            =   216
-            Locked          =   -1  'True
-            TabIndex        =   4
-            TabStop         =   0   'False
-            Tag             =   "cdProducto"
-            Top             =   396
-            Width           =   1965
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Comisión"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   10
-            Left            =   210
-            TabIndex        =   46
-            Top             =   3780
-            Width           =   1965
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Predefinido como:"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   9
-            Left            =   6312
-            TabIndex        =   44
-            Top             =   1620
-            Width           =   2016
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Precio x Kilometro"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   8
-            Left            =   1530
-            TabIndex        =   40
-            Top             =   885
-            Width           =   1635
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "IVA"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   7
-            Left            =   3210
-            TabIndex        =   39
-            Top             =   870
-            Width           =   465
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Observación"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   6
-            Left            =   204
-            TabIndex        =   38
-            Top             =   2256
-            Width           =   2736
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Kilometros"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   5
-            Left            =   216
-            TabIndex        =   37
-            Top             =   852
-            Width           =   1308
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Orden de la Descripción"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   495
-            Index           =   4
-            Left            =   4260
-            TabIndex        =   31
-            Top             =   1485
-            Width           =   2010
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Precio sin Peajes"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   240
-            Index           =   3
-            Left            =   6990
-            TabIndex        =   30
-            Top             =   870
-            Width           =   1740
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Tipo de Operación"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   2
-            Left            =   2205
-            TabIndex        =   29
-            Top             =   1635
-            Width           =   1905
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Porcentaje (1 a 100%)"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   1
-            Left            =   216
-            TabIndex        =   28
-            Top             =   1608
-            Width           =   1968
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Peaje"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   12
-            Left            =   6060
-            TabIndex        =   27
-            Top             =   870
-            Width           =   870
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Observación Horas"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   13
-            Left            =   216
-            TabIndex        =   26
-            Top             =   3012
-            Width           =   1908
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Cod. de Producto"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   0
-            Left            =   216
-            TabIndex        =   25
-            Top             =   168
-            Width           =   1968
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Precio del Viaje"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   28
-            Left            =   4545
-            TabIndex        =   24
-            Top             =   885
-            Width           =   1500
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Descripción"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8,25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   252
-            Index           =   27
-            Left            =   2184
-            TabIndex        =   23
-            Top             =   180
-            Width           =   2736
-         End
       End
    End
 End
@@ -1464,6 +1463,34 @@ Dim resp As Byte
         resp = MsgBox("Esta guardando el viaje como " + Me.cbtpDestino.Text + "." + vbCrLf + " Confirma la operacion", vbQuestion + vbYesNo, "Atencion")
         If resp = vbNo Then Exit Function
     End If
+    
+    
+    If Not IsNumeric(ObtenerCampo("vlPrecioViajeSinPeaje").Text) Then
+        resp = MsgBox("Debe completar el campo Precio del Viaje Sin Peaje", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViajeSinPeaje").SetFocus
+        Exit Function
+    End If
+    
+    
+    If Not IsNumeric(ObtenerCampo("vlPrecioViaje").Text) Then
+        resp = MsgBox("Debe completar el campo Total", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViaje").SetFocus
+        Exit Function
+    End If
+     
+     
+     If CSng(ObtenerCampo("vlPrecioViajeSinPeaje").Text) = 0 Then
+        resp = MsgBox("Debe completar el campo Precio del Viaje Sin Peaje", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViajeSinPeaje").SetFocus
+        Exit Function
+    End If
+    
+    
+    If CSng(ObtenerCampo("vlPrecioViaje").Text) = 0 Then
+        resp = MsgBox("Debe completar el campo Total", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViaje").SetFocus
+        Exit Function
+    End If
 
     validaEntrada = True
 
@@ -1830,8 +1857,8 @@ Dim vlPrecioxKilometro   As Double
     
     Select Case txtFields(Index).Tag
     Case "vlPrecioViaje", "vlPrecioPeaje"
-        If ObtenerCampo("vlPrecioViaje").Text <> "" And ObtenerCampo("vlPrecioPeaje").Text <> "" Then _
-          ObtenerCampo("vlPrecioViajeSinPeaje").Text = FormatNumber(CDbl(ObtenerCampo("vlPrecioViaje").Text) - CDbl(ObtenerCampo("vlPrecioPeaje").Text), 2)
+        ' If ObtenerCampo("vlPrecioViaje").Text <> "" And ObtenerCampo("vlPrecioPeaje").Text <> "" Then _
+        ' ObtenerCampo("vlPrecioViajeSinPeaje").Text = FormatNumber(CDbl(ObtenerCampo("vlPrecioViaje").Text) - CDbl(ObtenerCampo("vlPrecioPeaje").Text), 2)
     Case "vlKilometros"
         If ObtenerCampo("vlKilometros") = "" Then
              ObtenerCampo("vlKilometros") = 0

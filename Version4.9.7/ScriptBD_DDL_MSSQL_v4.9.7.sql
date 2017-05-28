@@ -63,6 +63,8 @@ declare @vlPagoReales       float
 declare @vlTotalGeneral      float
 
 
+BEGIN TRY
+
 	if @nrCierre_param is not null 
 	begin
 		---- guardar el comprobante anterior 
@@ -95,7 +97,7 @@ declare @vlTotalGeneral      float
 	if @cantidad_registros=0 
 	begin
 		select @error = 'No se ha encontrado el talonario '+ @nrTalonario_param + ' comprobante nro. '+ rtrim(@nrComprobante_param) +'.'
-         	raiserror (@error, 16, 1)
+        raiserror (@error, 16, 1)
 		return 0	
 	end
 
@@ -371,6 +373,16 @@ declare @vlTotalGeneral      float
 	--------------------------------------------------------------------
 	--------------------------------------------------------------------	
 
+	SELECT 'OK' as  Resultado , null as DescripcionError
+
+END TRY
+BEGIN CATCH
+
+
+	SELECT 'ERROR' as  Resultado , ERROR_MESSAGE()
+
+
+END CATCH
 
 
 end
