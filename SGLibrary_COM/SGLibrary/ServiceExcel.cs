@@ -25,6 +25,7 @@ namespace SGLibrary
 
 
         public static List<TB_Productos> listaProductos = new List<TB_Productos>();
+        public static List<TarifasXLS> listaTarifas = new List<TarifasXLS>();
 
         public  void InitializeExcel(String pNombreArchivo)
         {
@@ -51,11 +52,11 @@ namespace SGLibrary
                 System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
                 listaProductos.Add(new TB_Productos
                 {
-                    cdProducto = Int32.Parse ( MyValues.GetValue(1, 1).ToString()),
-                    dsProducto  = MyValues.GetValue(1, 2).ToString(),
-                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()),
-                    vlPrecioPeaje =   Double.Parse (MyValues.GetValue(1, 4).ToString()),
-                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()),
+                    cdProducto = Int32.Parse ( MyValues.GetValue(1, 1).ToString()),   // CODIGO
+                    dsProducto  = MyValues.GetValue(1, 2).ToString(),  // DESCRIPCION
+                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()), // PRECIO
+                    vlPrecioPeaje = Double.Parse(MyValues.GetValue(1, 4).ToString()),    // PEAJE
+                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()), // TOTAL
                     flMuestraenlaWEB = myFunc(MyValues.GetValue(1, 6).ToString()) 
                     
                 });
@@ -72,6 +73,45 @@ namespace SGLibrary
 
             return listaProductos;
         }
+
+        public List<TarifasXLS> ReadMyExcelTarifas()
+        {
+            listaTarifas.Clear();
+
+            Func<String, bool> myFunc = (x) => (x.CompareTo("SI") == 1);
+
+            /* bool result = myFunc(4); // returns false of course */
+
+            for (int index = 2; index <= lastRow; index++)
+            {
+                System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
+                listaTarifas.Add(new TarifasXLS
+                {
+                    Codigo = Int32.Parse(MyValues.GetValue(1, 1).ToString()),   // CODIGO
+                    Descripcion = MyValues.GetValue(1, 2).ToString(),  // DESCRIPCION
+                    Precio = Double.Parse(MyValues.GetValue(1, 3).ToString()), // PRECIO
+                    Peaje = Double.Parse(MyValues.GetValue(1, 4).ToString()),    // PEAJE
+                    Total = Double.Parse(MyValues.GetValue(1, 5).ToString()), // TOTAL
+                    Kilometros = Double.Parse(MyValues.GetValue(1, 6).ToString()),
+                    Muestra_en_la_Web =  myFunc( MyValues.GetValue(1,7).ToString())
+
+                    /*
+                             public int Codigo { get; set; }
+                        public String Descripcion { get; set; }
+                        public Double Precio { get; set; }
+                        public Double Peaje { get; set; }
+                        public Double Total { get; set; }
+                        public Double Kilometros { get; set; }
+                        public bool Muestra_en_la_Web { get; set; }
+                     */
+                });
+
+
+            }
+            return listaTarifas;
+        }
+
+
 
 
         public  void CerrarExcel()

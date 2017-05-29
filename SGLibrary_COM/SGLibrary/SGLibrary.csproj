@@ -218,6 +218,7 @@
     <Compile Include="spu_procesarMovimientosPosdatados_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TarifasXLS.cs" />
     <Compile Include="TB_ArchivoTarjeta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
