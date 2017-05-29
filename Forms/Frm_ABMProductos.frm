@@ -221,6 +221,239 @@ Begin VB.Form Frm_ABMProductos
          EndProperty
       End
    End
+   Begin VB.Frame fraBusqProductos 
+      BorderStyle     =   0  'None
+      Height          =   6510
+      Left            =   -75
+      TabIndex        =   17
+      Top             =   660
+      Width           =   10785
+      Begin VB.Frame fra_ProgressBar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "Exportando los datos ....."
+         ForeColor       =   &H80000008&
+         Height          =   1650
+         Left            =   2655
+         TabIndex        =   32
+         Top             =   2205
+         Visible         =   0   'False
+         Width           =   5340
+         Begin MSComctlLib.ProgressBar ProgressBar 
+            Height          =   480
+            Left            =   315
+            TabIndex        =   33
+            Top             =   615
+            Width           =   4575
+            _ExtentX        =   8070
+            _ExtentY        =   847
+            _Version        =   393216
+            Appearance      =   0
+         End
+         Begin VB.Label Label3 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "100 %"
+            Height          =   240
+            Left            =   4380
+            TabIndex        =   36
+            Top             =   390
+            Width           =   510
+         End
+         Begin VB.Label lblvlPorcentaje 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "10 %"
+            Height          =   255
+            Left            =   1155
+            TabIndex        =   35
+            Top             =   375
+            Width           =   510
+         End
+         Begin VB.Label Label4 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "Porcentaje "
+            Height          =   255
+            Left            =   315
+            TabIndex        =   34
+            Top             =   375
+            Width           =   855
+         End
+      End
+      Begin VB.TextBox txtBusqueda 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   4350
+         TabIndex        =   3
+         Top             =   270
+         Width           =   6360
+      End
+      Begin MSComctlLib.ImageList ImgOperadores 
+         Left            =   7215
+         Top             =   1560
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483648
+         ImageWidth      =   16
+         ImageHeight     =   16
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   6
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":4358
+               Key             =   "Similar"
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":446A
+               Key             =   "Igual"
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":457C
+               Key             =   "MayoroIgual"
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":468E
+               Key             =   "Mayor"
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":47A0
+               Key             =   "MenoroIgual"
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_ABMProductos.frx":48B2
+               Key             =   "Menor"
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ImageCombo ImageCombo1 
+         Height          =   330
+         Left            =   2565
+         TabIndex        =   16
+         Top             =   330
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   582
+         _Version        =   393216
+         ForeColor       =   -2147483640
+         BackColor       =   14737632
+         OLEDropMode     =   1
+         Indentation     =   1
+         Locked          =   -1  'True
+         ImageList       =   "ImgOperadores"
+      End
+      Begin MSComctlLib.ListView lstBusqueda 
+         Height          =   5580
+         Left            =   180
+         TabIndex        =   14
+         Top             =   795
+         Width           =   10515
+         _ExtentX        =   18547
+         _ExtentY        =   9843
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         FullRowSelect   =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         NumItems        =   9
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Object.Tag             =   "cdProducto"
+            Text            =   "Producto"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Object.Tag             =   "dsProducto"
+            Text            =   "Descripción"
+            Object.Width           =   5292
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Object.Tag             =   "vlPrecioViajeSinPeaje"
+            Text            =   "Precio"
+            Object.Width           =   2470
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "vlPrecioPeaje"
+            Text            =   "Peajes"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Object.Tag             =   "vlPrecioViaje"
+            Text            =   "Total"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Key             =   "vlKilometros"
+            Object.Tag             =   "vlKilometros"
+            Text            =   "Kilometros"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Object.Tag             =   "flMuestraenlaWEB"
+            Text            =   "Mostrar en la WEB"
+            Object.Width           =   3175
+         EndProperty
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
+            Object.Tag             =   "flIncluyeComisionRetorno"
+            Text            =   "Comisión Retorno"
+            Object.Width           =   2999
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Object.Tag             =   "obsHoras"
+            Text            =   "Obs. Horas"
+            Object.Width           =   2822
+         EndProperty
+      End
+      Begin VB.ComboBox cmbCampos 
+         BackColor       =   &H00E0E0E0&
+         Height          =   315
+         Left            =   150
+         Style           =   2  'Dropdown List
+         TabIndex        =   15
+         Top             =   330
+         Width           =   2400
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Valor para la busqueda"
+         Height          =   210
+         Left            =   4305
+         TabIndex        =   19
+         Top             =   90
+         Width           =   1755
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Campo"
+         Height          =   210
+         Left            =   165
+         TabIndex        =   18
+         Top             =   105
+         Width           =   795
+      End
+   End
    Begin VB.Frame fraABMProductos 
       BorderStyle     =   0  'None
       Height          =   5985
@@ -242,9 +475,9 @@ Begin VB.Form Frm_ABMProductos
          Begin VB.ComboBox cbComision 
             Appearance      =   0  'Flat
             Height          =   315
-            ItemData        =   "Frm_ABMProductos.frx":4358
+            ItemData        =   "Frm_ABMProductos.frx":49C4
             Left            =   195
-            List            =   "Frm_ABMProductos.frx":4362
+            List            =   "Frm_ABMProductos.frx":49CE
             Style           =   2  'Dropdown List
             TabIndex        =   45
             Tag             =   "cdComision"
@@ -254,9 +487,9 @@ Begin VB.Form Frm_ABMProductos
          Begin VB.ComboBox cbtpDestino 
             Appearance      =   0  'Flat
             Height          =   288
-            ItemData        =   "Frm_ABMProductos.frx":4377
+            ItemData        =   "Frm_ABMProductos.frx":49E3
             Left            =   6336
-            List            =   "Frm_ABMProductos.frx":4381
+            List            =   "Frm_ABMProductos.frx":49ED
             Style           =   2  'Dropdown List
             TabIndex        =   43
             Tag             =   "tpDestino"
@@ -425,9 +658,9 @@ Begin VB.Form Frm_ABMProductos
          Begin VB.ComboBox Combo1 
             Appearance      =   0  'Flat
             Height          =   288
-            ItemData        =   "Frm_ABMProductos.frx":4396
+            ItemData        =   "Frm_ABMProductos.frx":4A02
             Left            =   2208
-            List            =   "Frm_ABMProductos.frx":43B2
+            List            =   "Frm_ABMProductos.frx":4A1E
             Style           =   2  'Dropdown List
             TabIndex        =   11
             Tag             =   "tpOperacion"
@@ -773,232 +1006,6 @@ Begin VB.Form Frm_ABMProductos
             Top             =   180
             Width           =   2736
          End
-      End
-   End
-   Begin VB.Frame fraBusqProductos 
-      BorderStyle     =   0  'None
-      Height          =   6360
-      Left            =   -30
-      TabIndex        =   17
-      Top             =   585
-      Width           =   10740
-      Begin VB.Frame fra_ProgressBar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "Exportando los datos ....."
-         ForeColor       =   &H80000008&
-         Height          =   1650
-         Left            =   2655
-         TabIndex        =   32
-         Top             =   2205
-         Visible         =   0   'False
-         Width           =   5340
-         Begin MSComctlLib.ProgressBar ProgressBar 
-            Height          =   480
-            Left            =   315
-            TabIndex        =   33
-            Top             =   615
-            Width           =   4575
-            _ExtentX        =   8070
-            _ExtentY        =   847
-            _Version        =   393216
-            Appearance      =   0
-         End
-         Begin VB.Label Label3 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "100 %"
-            Height          =   240
-            Left            =   4380
-            TabIndex        =   36
-            Top             =   390
-            Width           =   510
-         End
-         Begin VB.Label lblvlPorcentaje 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "10 %"
-            Height          =   255
-            Left            =   1155
-            TabIndex        =   35
-            Top             =   375
-            Width           =   510
-         End
-         Begin VB.Label Label4 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "Porcentaje "
-            Height          =   255
-            Left            =   315
-            TabIndex        =   34
-            Top             =   375
-            Width           =   855
-         End
-      End
-      Begin VB.TextBox txtBusqueda 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   330
-         Left            =   4335
-         TabIndex        =   3
-         Top             =   315
-         Width           =   5535
-      End
-      Begin MSComctlLib.ImageList ImgOperadores 
-         Left            =   7215
-         Top             =   1560
-         _ExtentX        =   1005
-         _ExtentY        =   1005
-         BackColor       =   -2147483648
-         ImageWidth      =   16
-         ImageHeight     =   16
-         MaskColor       =   12632256
-         _Version        =   393216
-         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
-            NumListImages   =   6
-            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":441E
-               Key             =   "Similar"
-            EndProperty
-            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4530
-               Key             =   "Igual"
-            EndProperty
-            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4642
-               Key             =   "MayoroIgual"
-            EndProperty
-            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4754
-               Key             =   "Mayor"
-            EndProperty
-            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4866
-               Key             =   "MenoroIgual"
-            EndProperty
-            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_ABMProductos.frx":4978
-               Key             =   "Menor"
-            EndProperty
-         EndProperty
-      End
-      Begin MSComctlLib.ImageCombo ImageCombo1 
-         Height          =   330
-         Left            =   2565
-         TabIndex        =   16
-         Top             =   330
-         Width           =   1680
-         _ExtentX        =   2963
-         _ExtentY        =   582
-         _Version        =   393216
-         ForeColor       =   -2147483640
-         BackColor       =   14737632
-         OLEDropMode     =   1
-         Indentation     =   1
-         Locked          =   -1  'True
-         ImageList       =   "ImgOperadores"
-      End
-      Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5220
-         Left            =   180
-         TabIndex        =   14
-         Top             =   795
-         Width           =   9705
-         _ExtentX        =   17119
-         _ExtentY        =   9208
-         View            =   3
-         LabelEdit       =   1
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         FullRowSelect   =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         NumItems        =   8
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Object.Tag             =   "cdProducto"
-            Text            =   "Producto"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Object.Tag             =   "dsProducto"
-            Text            =   "Descripción"
-            Object.Width           =   5292
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Object.Tag             =   "vlPrecioViajeSinPeaje"
-            Text            =   "Precio"
-            Object.Width           =   2470
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Object.Tag             =   "vlPrecioPeaje"
-            Text            =   "Peajes"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Object.Tag             =   "vlPrecioViaje"
-            Text            =   "Total"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Object.Tag             =   "flMuestraenlaWEB"
-            Text            =   "Mostrar en la WEB"
-            Object.Width           =   3175
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Object.Tag             =   "flIncluyeComisionRetorno"
-            Text            =   "Comisión Retorno"
-            Object.Width           =   2999
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "obsHoras"
-            Text            =   "Obs. Horas"
-            Object.Width           =   2822
-         EndProperty
-      End
-      Begin VB.ComboBox cmbCampos 
-         BackColor       =   &H00E0E0E0&
-         Height          =   315
-         Left            =   150
-         Style           =   2  'Dropdown List
-         TabIndex        =   15
-         Top             =   330
-         Width           =   2400
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Valor para la busqueda"
-         Height          =   210
-         Left            =   4305
-         TabIndex        =   19
-         Top             =   90
-         Width           =   1755
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Campo"
-         Height          =   210
-         Left            =   165
-         TabIndex        =   18
-         Top             =   105
-         Width           =   795
       End
    End
 End
@@ -1789,6 +1796,7 @@ Dim encontrado As Boolean
                 ObjTablasIO.setearCampoOperadorValor objDiccionariodeDatos.nmCampo, _
                 "->", ""
          Next
+         ObjTablasIO.setearCampoOperadorValor "vlKilometros", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlPrecioViaje", "->", ""
          ObjTablasIO.setearCampoOperadorValor "obsHoras", "->", ""
          ObjTablasIO.Seleccionar

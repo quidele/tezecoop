@@ -379,7 +379,7 @@ END TRY
 BEGIN CATCH
 
 
-	SELECT 'ERROR' as  Resultado , ERROR_MESSAGE()
+	SELECT 'ERROR' as  Resultado , ERROR_MESSAGE()   as DescripcionError
 
 
 END CATCH

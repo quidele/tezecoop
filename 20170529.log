@@ -1,0 +1,26 @@
+29/05/2017 06:53:37 | Exec  sco_TB_Productos_v4_1 
+29/05/2017 06:53:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+29/05/2017 06:53:41 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+29/05/2017 06:53:41 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+29/05/2017 06:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+29/05/2017 06:53:41 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+29/05/2017 06:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+29/05/2017 06:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+29/05/2017 06:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+29/05/2017 06:53:41 | Exec SP_ValorPromoRetorno
+29/05/2017 06:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+29/05/2017 06:53:41 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+29/05/2017 06:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+29/05/2017 06:53:41 | Exec sco_validarVencimientosCAI_v4_1
+29/05/2017 06:53:43 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+29/05/2017 06:53:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+29/05/2017 06:53:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+29/05/2017 06:53:52 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAcceso'
+29/05/2017 06:53:55 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+29/05/2017 06:53:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+29/05/2017 06:53:57 |  SELECT TB_Comisiones.cdComision ,TB_Comisiones.dsComision  FROM TB_Comisiones 
+29/05/2017 06:53:58 |  SELECT TB_Productos.cdProducto ,TB_Productos.dsProducto ,TB_Productos.vlPrecioViaje ,TB_Productos.vlPrecioPeaje ,TB_Productos.ObsHoras ,TB_Productos.vlPrecioViajeSinPeaje ,TB_Productos.vlKilometros ,TB_Productos.flMuestraenlaWEB ,TB_Productos.flIncluyeComisionRetorno ,TB_Productos.tpDestino ,TB_Productos.cdComision ,TB_Productos.vlKilometros ,TB_Productos.vlPrecioViaje ,TB_Productos.obsHoras  FROM TB_Productos  WHERE  dsProducto Like ('%%%') AND TB_Productos.flEliminar = 0   Order by TB_Productos.dsProducto ASC 
+29/05/2017 06:54:26 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+29/05/2017 06:54:38 |  SELECT TB_Comisiones.cdComision ,TB_Comisiones.dsComision  FROM TB_Comisiones 
+29/05/2017 06:54:40 |  SELECT TB_Productos.cdProducto ,TB_Productos.dsProducto ,TB_Productos.vlPrecioViaje ,TB_Productos.vlPrecioPeaje ,TB_Productos.ObsHoras ,TB_Productos.vlPrecioViajeSinPeaje ,TB_Productos.vlKilometros ,TB_Productos.flMuestraenlaWEB ,TB_Productos.flIncluyeComisionRetorno ,TB_Productos.tpDestino ,TB_Productos.cdComision ,TB_Productos.vlKilometros ,TB_Productos.vlPrecioViaje ,TB_Productos.obsHoras  FROM TB_Productos  WHERE  dsProducto Like ('%/%') AND TB_Productos.flEliminar = 0   Order by TB_Productos.dsProducto ASC 
+29/05/2017 06:55:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
