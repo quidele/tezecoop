@@ -70,7 +70,8 @@ namespace SGLibrary
                     foreach (TarifasXLS p in listaTarifas)
                     {
                         // realizar busqueda
-                        var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.Codigo  select c).First();
+                        var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.Codigo select c).FirstOrDefault();
+                        if (viajedestino == null) continue;
                         viajedestino.vlPrecioViajeSinPeaje = p.Precio;
                         viajedestino.vlPrecioPeaje = p.Peaje ;
                         viajedestino.vlPrecioViaje = p.Total;
