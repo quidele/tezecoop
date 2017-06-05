@@ -852,7 +852,7 @@ namespace SGLibrary
             {
                 case "Amca": 
                     miArchivo = new ArchivoTarjetaAMCA();
-                    break;
+                    return;
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
                     break;
@@ -866,9 +866,9 @@ namespace SGLibrary
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
             miArchivo.ProcesarArchivo(); 
 
+            /* Para pruebas AMCA decomentar */
+            /* return; */ 
 
-
-            return;
 
             this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo);
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
