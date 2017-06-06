@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_IVAVentas 
    AutoRedraw      =   -1  'True
    BorderStyle     =   3  'Fixed Dialog
@@ -7,7 +7,7 @@ Begin VB.Form Frm_IVAVentas
    ClientHeight    =   7335
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   10230
+   ClientWidth     =   10575
    ClipControls    =   0   'False
    DrawStyle       =   5  'Transparent
    Icon            =   "Frm_IVAVentas.frx":0000
@@ -17,7 +17,7 @@ Begin VB.Form Frm_IVAVentas
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   7335
-   ScaleWidth      =   10230
+   ScaleWidth      =   10575
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form Frm_IVAVentas
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   10230
-      _ExtentX        =   18045
+      Width           =   10575
+      _ExtentX        =   18653
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -237,15 +237,41 @@ Begin VB.Form Frm_IVAVentas
       TabIndex        =   1
       Top             =   615
       Width           =   10305
-      Begin VB.ComboBox cboFacturacion 
+      Begin VB.ComboBox cbotpComprobante 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
          ItemData        =   "Frm_IVAVentas.frx":4262
-         Left            =   2844
-         List            =   "Frm_IVAVentas.frx":426F
+         Left            =   1980
+         List            =   "Frm_IVAVentas.frx":4278
          Style           =   2  'Dropdown List
-         TabIndex        =   15
+         TabIndex        =   18
+         Tag             =   "tpComprobante"
+         Top             =   360
+         Width           =   840
+      End
+      Begin VB.ComboBox cbotpLetra 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   315
+         ItemData        =   "Frm_IVAVentas.frx":4291
+         Left            =   2880
+         List            =   "Frm_IVAVentas.frx":42AD
+         Style           =   2  'Dropdown List
+         TabIndex        =   17
+         Tag             =   "tpLetra"
+         Top             =   360
+         Width           =   840
+      End
+      Begin VB.ComboBox cboFacturacion 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   315
+         ItemData        =   "Frm_IVAVentas.frx":42CC
+         Left            =   3750
+         List            =   "Frm_IVAVentas.frx":42D9
+         Style           =   2  'Dropdown List
+         TabIndex        =   14
          Tag             =   "tpComprobante"
          Top             =   360
          Width           =   1320
@@ -254,9 +280,9 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":428A
+         ItemData        =   "Frm_IVAVentas.frx":42F4
          Left            =   990
-         List            =   "Frm_IVAVentas.frx":42E5
+         List            =   "Frm_IVAVentas.frx":434F
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComprobante"
@@ -267,27 +293,14 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":4397
+         ItemData        =   "Frm_IVAVentas.frx":4401
          Left            =   150
-         List            =   "Frm_IVAVentas.frx":43BF
+         List            =   "Frm_IVAVentas.frx":4429
          Style           =   2  'Dropdown List
          TabIndex        =   10
          Tag             =   "tpComprobante"
          Top             =   360
          Width           =   825
-      End
-      Begin VB.ComboBox cbotpComprobante 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   288
-         ItemData        =   "Frm_IVAVentas.frx":43F3
-         Left            =   1980
-         List            =   "Frm_IVAVentas.frx":4409
-         Style           =   2  'Dropdown List
-         TabIndex        =   12
-         Tag             =   "tpComprobante"
-         Top             =   360
-         Width           =   840
       End
       Begin VB.Frame fra_ProgressBar 
          Appearance      =   0  'Flat
@@ -304,7 +317,7 @@ Begin VB.Form Frm_IVAVentas
             Caption         =   "&Cancelar"
             Height          =   420
             Left            =   2160
-            TabIndex        =   17
+            TabIndex        =   16
             Top             =   1110
             Width           =   1065
          End
@@ -349,10 +362,10 @@ Begin VB.Form Frm_IVAVentas
       End
       Begin VB.CommandButton cmdBuscar 
          Height          =   330
-         Left            =   4215
-         Picture         =   "Frm_IVAVentas.frx":4422
+         Left            =   5085
+         Picture         =   "Frm_IVAVentas.frx":445D
          Style           =   1  'Graphical
-         TabIndex        =   13
+         TabIndex        =   12
          Top             =   345
          Width           =   375
       End
@@ -369,31 +382,31 @@ Begin VB.Form Frm_IVAVentas
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   7
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4524
+               Picture         =   "Frm_IVAVentas.frx":455F
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4636
+               Picture         =   "Frm_IVAVentas.frx":4671
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4748
+               Picture         =   "Frm_IVAVentas.frx":4783
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":485A
+               Picture         =   "Frm_IVAVentas.frx":4895
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":496C
+               Picture         =   "Frm_IVAVentas.frx":49A7
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4A7E
+               Picture         =   "Frm_IVAVentas.frx":4AB9
                Key             =   "Menor"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4B90
+               Picture         =   "Frm_IVAVentas.frx":4BCB
                Key             =   ""
             EndProperty
          EndProperty
@@ -401,7 +414,7 @@ Begin VB.Form Frm_IVAVentas
       Begin MSComctlLib.ListView lstBusqueda 
          Height          =   5820
          Left            =   168
-         TabIndex        =   14
+         TabIndex        =   13
          Top             =   780
          Width           =   9996
          _ExtentX        =   17621
@@ -422,7 +435,7 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -499,28 +512,46 @@ Begin VB.Form Frm_IVAVentas
          EndProperty
       End
       Begin VB.Label lblLabels 
-         Caption         =   "Facturación"
+         Caption         =   "Letra"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Height          =   252
+         Height          =   255
+         Index           =   2
+         Left            =   2895
+         TabIndex        =   19
+         Top             =   135
+         Width           =   645
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Facturación"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
          Index           =   0
-         Left            =   2856
-         TabIndex        =   16
+         Left            =   3750
+         TabIndex        =   15
          Top             =   120
-         Width           =   1296
+         Width           =   1290
       End
       Begin VB.Label lblLabels 
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -648,7 +679,7 @@ Dim rs     As Object
 
 
     Me.lstBusqueda.ListItems.Clear
-    strSQL = "SP_ObtenerIVAVentas_v2_1"
+    strSQL = "SP_ObtenerIVAVentas__v4_9_71"
     
     If Trim(Me.cboMes.Text) = "" Then
         MsgBox "Por favor complete el mes.", vbInformation, "Atención"
@@ -674,11 +705,18 @@ Dim rs     As Object
     
     Select Case Me.cboFacturacion.Text
     Case "Todo", ""
-        strSQL = strSQL + "@tpFacturacion_param=null"
+        strSQL = strSQL + "@tpFacturacion_param=null,"
     Case "Manual"
-            strSQL = strSQL + "@tpFacturacion_param='M'"
+            strSQL = strSQL + "@tpFacturacion_param='M',"
     Case "Sistema"
-            strSQL = strSQL + "@tpFacturacion_param='N'"
+            strSQL = strSQL + "@tpFacturacion_param='N',"
+    End Select
+    
+    Select Case Me.cbotpLetra.Text
+    Case "Todo", ""
+        strSQL = strSQL + "@tpLetra_param=null"
+    Case Else
+        strSQL = strSQL + "@tpLetra_param='" + Me.cbotpLetra.Text + "'"
     End Select
 
     HabilitarDeshabilitar_Controles False
@@ -888,6 +926,7 @@ Private Sub Form_Activate()
         Me.cboAnio.Text = Year(Date)
     End If
     Me.cbotpComprobante.ListIndex = 0
+    Me.cbotpLetra.ListIndex = 0
     Me.cboFacturacion.ListIndex = 0
     Me.cboMes.SetFocus
     Me.Visible = True
@@ -930,6 +969,33 @@ End Sub
 
 Private Sub Form_Load()
 
+    
+    
+    
+    Me.cbotpComprobante.Clear
+    
+    Me.cbotpComprobante.AddItem ("Todo")
+    Me.cbotpComprobante.AddItem ("A")
+    Me.cbotpComprobante.AddItem ("B")
+    Me.cbotpComprobante.AddItem ("B1")
+    Me.cbotpComprobante.AddItem ("C")
+    Me.cbotpComprobante.AddItem ("E")
+    Me.cbotpComprobante.AddItem ("FA")
+    Me.cbotpComprobante.AddItem ("M")
+    Me.cbotpComprobante.AddItem ("NC")
+    Me.cbotpComprobante.AddItem ("RE")
+    Me.cbotpComprobante.AddItem ("X")
+    
+    
+    Me.cbotpLetra.Clear
+    Me.cbotpLetra.AddItem ("Todo")
+    Me.cbotpLetra.AddItem ("A")
+    Me.cbotpLetra.AddItem ("B")
+    Me.cbotpLetra.AddItem ("B1")
+    Me.cbotpLetra.AddItem ("C")
+    Me.cbotpLetra.AddItem ("E")
+    Me.cbotpLetra.AddItem ("M")
+    Me.cbotpLetra.AddItem ("X")
     
     
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos

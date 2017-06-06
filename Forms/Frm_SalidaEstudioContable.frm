@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_SalidaEstudioContable 
    AutoRedraw      =   -1  'True
    BorderStyle     =   3  'Fixed Dialog
@@ -7,7 +7,7 @@ Begin VB.Form Frm_SalidaEstudioContable
    ClientHeight    =   7335
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   10230
+   ClientWidth     =   10620
    ClipControls    =   0   'False
    DrawStyle       =   5  'Transparent
    Icon            =   "Frm_SalidaEstudioContable.frx":0000
@@ -17,7 +17,7 @@ Begin VB.Form Frm_SalidaEstudioContable
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   7335
-   ScaleWidth      =   10230
+   ScaleWidth      =   10620
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form Frm_SalidaEstudioContable
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   10230
-      _ExtentX        =   18045
+      Width           =   10620
+      _ExtentX        =   18733
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -234,15 +234,28 @@ Begin VB.Form Frm_SalidaEstudioContable
    Begin VB.Frame fraBusqCajas 
       BorderStyle     =   0  'None
       Height          =   7305
-      Left            =   -30
+      Left            =   -45
       TabIndex        =   1
-      Top             =   615
+      Top             =   600
       Width           =   10305
-      Begin VB.ComboBox txtTalonario 
+      Begin VB.ComboBox cbotpLetra 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
          Height          =   315
          ItemData        =   "Frm_SalidaEstudioContable.frx":4262
+         Left            =   3855
+         List            =   "Frm_SalidaEstudioContable.frx":427E
+         Style           =   2  'Dropdown List
+         TabIndex        =   20
+         Tag             =   "tpLetra"
+         Top             =   360
+         Width           =   840
+      End
+      Begin VB.ComboBox txtTalonario 
+         Height          =   315
+         ItemData        =   "Frm_SalidaEstudioContable.frx":429D
          Left            =   1935
-         List            =   "Frm_SalidaEstudioContable.frx":4269
+         List            =   "Frm_SalidaEstudioContable.frx":42A4
          TabIndex        =   19
          Tag             =   "nrTalonario"
          Top             =   360
@@ -252,9 +265,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":4273
-         Left            =   3810
-         List            =   "Frm_SalidaEstudioContable.frx":4280
+         ItemData        =   "Frm_SalidaEstudioContable.frx":42AE
+         Left            =   4710
+         List            =   "Frm_SalidaEstudioContable.frx":42BB
          Style           =   2  'Dropdown List
          TabIndex        =   16
          Tag             =   "tpFacturacion"
@@ -265,9 +278,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":429B
+         ItemData        =   "Frm_SalidaEstudioContable.frx":42D6
          Left            =   990
-         List            =   "Frm_SalidaEstudioContable.frx":42F6
+         List            =   "Frm_SalidaEstudioContable.frx":4331
          Style           =   2  'Dropdown List
          TabIndex        =   12
          Tag             =   "tpComprobante"
@@ -278,9 +291,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":43A8
+         ItemData        =   "Frm_SalidaEstudioContable.frx":43E3
          Left            =   150
-         List            =   "Frm_SalidaEstudioContable.frx":43D0
+         List            =   "Frm_SalidaEstudioContable.frx":440B
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComprobante"
@@ -291,9 +304,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":4404
+         ItemData        =   "Frm_SalidaEstudioContable.frx":443F
          Left            =   2955
-         List            =   "Frm_SalidaEstudioContable.frx":441A
+         List            =   "Frm_SalidaEstudioContable.frx":4455
          Style           =   2  'Dropdown List
          TabIndex        =   13
          Tag             =   "tpComprobante"
@@ -360,8 +373,8 @@ Begin VB.Form Frm_SalidaEstudioContable
       End
       Begin VB.CommandButton cmdBuscar 
          Height          =   330
-         Left            =   5175
-         Picture         =   "Frm_SalidaEstudioContable.frx":4433
+         Left            =   6030
+         Picture         =   "Frm_SalidaEstudioContable.frx":446E
          Style           =   1  'Graphical
          TabIndex        =   14
          Top             =   345
@@ -380,31 +393,31 @@ Begin VB.Form Frm_SalidaEstudioContable
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   7
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4535
+               Picture         =   "Frm_SalidaEstudioContable.frx":4570
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4647
+               Picture         =   "Frm_SalidaEstudioContable.frx":4682
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4759
+               Picture         =   "Frm_SalidaEstudioContable.frx":4794
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":486B
+               Picture         =   "Frm_SalidaEstudioContable.frx":48A6
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":497D
+               Picture         =   "Frm_SalidaEstudioContable.frx":49B8
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4A8F
+               Picture         =   "Frm_SalidaEstudioContable.frx":4ACA
                Key             =   "Menor"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4BA1
+               Picture         =   "Frm_SalidaEstudioContable.frx":4BDC
                Key             =   ""
             EndProperty
          EndProperty
@@ -516,6 +529,24 @@ Begin VB.Form Frm_SalidaEstudioContable
          EndProperty
       End
       Begin VB.Label lblLabels 
+         Caption         =   "Letra"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   2
+         Left            =   3870
+         TabIndex        =   21
+         Top             =   135
+         Width           =   645
+      End
+      Begin VB.Label lblLabels 
          Caption         =   "Facturación"
          BeginProperty Font 
             Name            =   "Verdana"
@@ -528,7 +559,7 @@ Begin VB.Form Frm_SalidaEstudioContable
          EndProperty
          Height          =   255
          Index           =   0
-         Left            =   3840
+         Left            =   4710
          TabIndex        =   17
          Top             =   135
          Width           =   1290
@@ -667,6 +698,8 @@ Dim ItemList  As ListItem
 End Sub
 
 
+
+
 ' Modificado en la version 2.1
 Private Sub cmdBuscar_Click()
 Dim strSQL As String
@@ -674,7 +707,7 @@ Dim rs     As Object
 
     
     Me.lstBusqueda.ListItems.Clear
-    strSQL = "SP_ObtenerFacturacionMensual_2_1 "
+    strSQL = "SP_ObtenerFacturacionMensual_v4_9_71 "
     
     If Trim(Me.cboMes.Text) = "" Then
         MsgBox "Por favor complete el mes.", vbInformation, "Atención"
@@ -723,10 +756,19 @@ Dim rs     As Object
     End Select
     
     If Me.cboFacturacion.Text = "Todo" And Me.txtTalonario.Text = "Todo" And Me.cbotpComprobante.Text = "Todo" Then
-        strSQL = strSQL + "'FECHA'"
+        strSQL = strSQL + "'FECHA',"
     Else
-        strSQL = strSQL + "'COMPROBANTE'"
+        strSQL = strSQL + "'COMPROBANTE',"
     End If
+    
+    
+    Select Case Me.cbotpLetra.Text
+    Case "Todo", ""
+        strSQL = strSQL + "null"
+    Case Else
+        strSQL = strSQL + "'" + Me.cbotpLetra.Text + "'"
+    End Select
+    
     
     HabilitarDeshabilitar_Controles False
     
@@ -927,8 +969,19 @@ Private Sub Form_Activate()
     Else
         Me.cboAnio.Text = Year(Date)
     End If
-    Me.cbotpComprobante.Text = "B"
+    
+
+        
+     
+    Me.cbotpComprobante.Text = "Todo"
     Me.cboFacturacion.ListIndex = 0
+    
+
+     
+    Me.cbotpLetra.Text = "Todo"
+    Me.cbotpLetra.ListIndex = 0
+    
+    
     Me.txtTalonario.SetFocus
     Me.Visible = True
     
@@ -968,6 +1021,33 @@ End Sub
 
 Private Sub Form_Load()
 
+
+
+    Me.cbotpComprobante.Clear
+    
+    Me.cbotpComprobante.AddItem ("Todo")
+    Me.cbotpComprobante.AddItem ("A")
+    Me.cbotpComprobante.AddItem ("B")
+    Me.cbotpComprobante.AddItem ("B1")
+    Me.cbotpComprobante.AddItem ("C")
+    Me.cbotpComprobante.AddItem ("E")
+    Me.cbotpComprobante.AddItem ("FA")
+    Me.cbotpComprobante.AddItem ("M")
+    Me.cbotpComprobante.AddItem ("NC")
+    Me.cbotpComprobante.AddItem ("RE")
+    Me.cbotpComprobante.AddItem ("X")
+    
+    
+    Me.cbotpLetra.Clear
+    Me.cbotpLetra.AddItem ("Todo")
+    Me.cbotpLetra.AddItem ("A")
+    Me.cbotpLetra.AddItem ("B")
+    Me.cbotpLetra.AddItem ("B1")
+    Me.cbotpLetra.AddItem ("C")
+    Me.cbotpLetra.AddItem ("E")
+    Me.cbotpLetra.AddItem ("M")
+    Me.cbotpLetra.AddItem ("X")
+    
     
     
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
