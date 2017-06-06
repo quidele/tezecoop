@@ -118,17 +118,19 @@ namespace ConsoleApplication1
             Console.ReadKey(); 
              **/
 
+            /* 
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.execFormulario("ServiceTarifas");
+             * */
 
 
-            /* LoaderForms l = new LoaderForms();
+            LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.execFormulario("FrmConciliaciones");
-            */ 
+            
         }
     }
 }

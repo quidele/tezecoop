@@ -1,0 +1,142 @@
+05/06/2017 22:32:56 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 22:32:56 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 22:33:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:33:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 22:33:01 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 22:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 22:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 22:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 22:33:01 | Exec SP_ValorPromoRetorno
+05/06/2017 22:33:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 22:33:01 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 22:33:01 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 22:33:01 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 22:33:02 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 22:33:02 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:33:02 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:42:21 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 22:42:22 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 22:42:24 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:42:24 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:42:24 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 22:42:24 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 22:42:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 22:42:24 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 22:42:24 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 22:42:24 | Exec SP_ValorPromoRetorno
+05/06/2017 22:42:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 22:42:24 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 22:42:24 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 22:42:24 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 22:42:26 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 22:42:26 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:42:26 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:42:27 | Exec sco_DiccionariodeDatos @nmtabla_param='SalidaEstudioContable'
+05/06/2017 22:42:34 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:45:44 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 22:45:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 22:45:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:45:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:45:47 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 22:45:47 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 22:45:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 22:45:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 22:45:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 22:45:47 | Exec SP_ValorPromoRetorno
+05/06/2017 22:45:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 22:45:47 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 22:45:47 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 22:45:47 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 22:45:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 22:45:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:45:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:45:54 | Exec sco_DiccionariodeDatos @nmtabla_param='SalidaEstudioContable'
+05/06/2017 22:45:56 | Exec SP_ObtenerFacturacionMensual_2_1 06,2017,null,'B',null,'COMPROBANTE'
+05/06/2017 22:46:00 | Exec SP_ObtenerFacturacionMensual_2_1 06,2017,null,'B',null,'COMPROBANTE'
+05/06/2017 22:46:09 | Exec SP_ObtenerFacturacionMensual_2_1 01,2017,null,'B',null,'COMPROBANTE'
+05/06/2017 22:46:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:53:38 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 22:53:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 22:53:41 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:53:41 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 22:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 22:53:41 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 22:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 22:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 22:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 22:53:41 | Exec SP_ValorPromoRetorno
+05/06/2017 22:53:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 22:53:41 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 22:53:41 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 22:53:41 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 22:53:43 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 22:53:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:53:43 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:53:45 | Exec sco_DiccionariodeDatos @nmtabla_param='SalidaEstudioContable'
+05/06/2017 22:58:34 | Exec SP_ObtenerFacturacionMensual_v4_9_71 01,2017,1,null,null,'COMPROBANTE',null
+05/06/2017 22:58:47 | Exec SP_ObtenerFacturacionMensual_v4_9_71 01,2017,6,null,null,'COMPROBANTE',null
+05/06/2017 22:59:02 | Exec SP_ObtenerFacturacionMensual_v4_9_71 01,2017,null,null,null,'FECHA',null
+05/06/2017 22:59:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:59:23 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 22:59:34 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:06:32 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 23:06:32 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 23:06:37 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:06:37 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:06:37 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 23:06:37 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 23:06:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 23:06:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 23:06:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 23:06:37 | Exec SP_ValorPromoRetorno
+05/06/2017 23:06:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 23:06:37 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 23:06:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 23:06:37 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 23:06:39 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 23:06:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:06:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:06:41 | Exec sco_DiccionariodeDatos @nmtabla_param='SalidaEstudioContable'
+05/06/2017 23:06:45 | Exec SP_ObtenerFacturacionMensual_v4_9_71 06,2017,null,null,null,'COMPROBANTE',null
+05/06/2017 23:06:51 | Exec SP_ObtenerFacturacionMensual_v4_9_71 06,2017,null,null,null,'FECHA',null
+05/06/2017 23:07:01 | Exec SP_ObtenerFacturacionMensual_v4_9_71 01,2017,null,null,null,'FECHA',null
+05/06/2017 23:07:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:07:10 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:07:45 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 23:07:45 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 23:07:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:07:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:07:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 23:07:48 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 23:07:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 23:07:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 23:07:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 23:07:48 | Exec SP_ValorPromoRetorno
+05/06/2017 23:07:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 23:07:48 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 23:07:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 23:07:48 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 23:07:50 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 23:07:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:07:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:08:02 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:09:33 | Exec  sco_TB_Productos_v4_1 
+05/06/2017 23:09:33 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+05/06/2017 23:09:37 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:09:37 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+05/06/2017 23:09:37 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+05/06/2017 23:09:37 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+05/06/2017 23:09:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+05/06/2017 23:09:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+05/06/2017 23:09:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+05/06/2017 23:09:37 | Exec SP_ValorPromoRetorno
+05/06/2017 23:09:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+05/06/2017 23:09:37 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+05/06/2017 23:09:37 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+05/06/2017 23:09:37 | Exec sco_validarVencimientosCAI_v4_1
+05/06/2017 23:09:39 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+05/06/2017 23:09:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:09:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+05/06/2017 23:11:37 | Exec SP_ObtenerIVAVentas__v4_9_71 @nrMes_param=01,@nrAnio_param=2017,@tpComprobante_param=null,@tpFacturacion_param=null,@tpLetra_param=null
+05/06/2017 23:11:42 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
