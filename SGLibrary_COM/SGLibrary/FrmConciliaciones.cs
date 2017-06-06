@@ -864,7 +864,7 @@ namespace SGLibrary
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
-            miArchivo.ProcesarArchivo(); 
+            //miArchivo.ProcesarArchivo(); OJO esta linea duplica la generacion de los registrosa
 
             /* Para pruebas AMCA decomentar */
             /* return; */ 
