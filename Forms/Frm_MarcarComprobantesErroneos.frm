@@ -21,15 +21,15 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
    StartUpPosition =   2  'CenterScreen
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   35
       Top             =   0
       Width           =   9480
       _ExtentX        =   16722
-      _ExtentY        =   1111
-      ButtonWidth     =   2328
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2566
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgReimpComprobantesResaltado"
@@ -1393,7 +1393,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   112394241
+         Format          =   123600897
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1407,7 +1407,7 @@ Begin VB.Form Frm_MarcarComprobantesErroneos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   112394241
+         Format          =   123600897
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
