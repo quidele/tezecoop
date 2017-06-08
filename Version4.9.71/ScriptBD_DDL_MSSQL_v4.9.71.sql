@@ -213,3 +213,79 @@ as
 
 
 GO
+
+
+
+IF exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_validarNroComprobanteManual_v4_9_71'  )
+	DROP PROCEDURE  [dbo].spu_validarNroComprobanteManual_v4_9_71
+	
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+
+
+GO
+
+-- drop procedure spu_validarNroComprobanteManual_v4_9_71
+
+
+---  Voy por acacacac !!!
+--- SP_ActualizarComprobanteManual_v2_4 ->>> SP_ActualizarComprobanteManual_v2_5
+-- Actualiza el nro de comprobante y talonario de una carga manual
+CREATE     procedure spu_validarNroComprobanteManual_v4_9_71
+(@nrTalonario_param        varchar(4),
+@nrComprobante_param      varchar(12),
+@tpComprobante_param      varchar(4),
+@tpLetra_param            varchar(2),
+@dtComprobante_param      date=null) 
+AS
+BEGIN
+
+	
+
+	DECLARE @maximo_nrComprobante   DECIMAL (18,0) 
+	DECLARE @vlParametro		    DECIMAL (18,0) 
+	DECLARE @maximo_dtComprobante  DATE
+
+	SELECT @vlParametro = vlParametro  FROM TB_Parametros  where dsParametro =  'DESVIO_EN_NUMERACION_CARGA_MANUAL'
+
+	SELECT @maximo_nrComprobante =  max(nrComprobante) FROM TB_Comprobantes WHERE   nrTalonario =   @nrTalonario_param
+															AND tpComprobante = @tpComprobante_param
+																	AND tpLetra = @tpLetra_param
+
+	IF @nrComprobante_param > @maximo_nrComprobante +  @vlParametro 
+	BEGIN
+		SELECT 'ERROR' as Resultado , 'El número de comprobante ingresado ('+ convert(varchar,@nrComprobante_param) + ') supera el maximo permitido (' + convert(varchar, @maximo_nrComprobante +  @vlParametro)  + ')'
+						  as DescripcionError
+		RETURN;
+	END
+
+	IF @nrComprobante_param < @maximo_nrComprobante -  @vlParametro 
+	BEGIN
+		SELECT 'ERROR' as Resultado , 'El número de comprobante ingresado ('+ convert(varchar,@nrComprobante_param) + ') es menor al mínimo permitido (' + convert(varchar, @maximo_nrComprobante +  @vlParametro)  + ')'
+						  as DescripcionError
+		RETURN;
+	END
+
+	SELECT @maximo_dtComprobante =  dtComprobante FROM TB_Comprobantes WHERE   nrTalonario =   @nrTalonario_param
+															AND tpComprobante = @tpComprobante_param
+																	AND tpLetra = @tpLetra_param
+																		 AND  nrComprobante  = @maximo_nrComprobante  
+
+	IF @dtComprobante_param  < @maximo_dtComprobante
+	BEGIN
+		SELECT 'ERROR' as Resultado , 'La fecha ingresada ('+ convert(varchar,@nrComprobante_param) +
+				 ') es menor a la fecha del último comprobante ingresado para este talonario (Comprobante: ' + 
+				 @tpComprobante_param +'-'+ @tpLetra_param +'-'+ @nrTalonario_param  +'-'+ convert(varchar, @maximo_nrComprobante ) +', Fecha: '+ convert(varchar,  @maximo_dtComprobante , 103 ) + ' )'
+						  as DescripcionError
+		RETURN;
+	END
+
+	SELECT 'OK'  as Resultado , null  as DescripcionError 
+
+
+END
+
+
+

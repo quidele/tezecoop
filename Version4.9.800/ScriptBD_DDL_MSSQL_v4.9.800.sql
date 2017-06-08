@@ -75,38 +75,12 @@ PRIMARY KEY CLUSTERED
 GO
 
 
-IF exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_validarNroComprobanteManual_v4_9_8'  )
-	DROP PROCEDURE  [dbo].spu_validarNroComprobanteManual_v4_9_8
-	
-SET ANSI_NULLS ON
-GO
-SET QUOTED_IDENTIFIER ON
-GO
+/**
 
---- sp_helptext 'SP_ActualizarComprobante_v3_7'
-
-
----  Voy por acacacac !!!
---- SP_ActualizarComprobanteManual_v2_4 ->>> SP_ActualizarComprobanteManual_v2_5
--- Actualiza el nro de comprobante y talonario de una carga manual
-CREATE     procedure spu_validarNroComprobanteManual_v4_9_8
-(@nrTalonario_param        varchar(4),
-@nrComprobante_param      varchar(12),
-@tpComprobante_param      varchar(4),
-@tpLetra_param            varchar(2),
-@dtComprobante_new_param  datetime=null) 
-AS
-BEGIN
-
-	SELECT 'OK'
+	La conciliación para AMCA graba la cuenta corriente con el documento CONC numero de conciliación
+	con la cantidad de dinero que se le debe pagar de comision
+	1 Registro para ingreso de dinero para Caja Adm, por la Diferencia
 
 	
-	SELECT vlParametro  FROM TB_Parametros  where dsParametro =  'DESVIO_EN_NUMERACION_CARGA_MANUAL'
-
-	SELECT max(nrComprobante) FROM TB_Comprobantes WHERE   nrTalonario =   @nrTalonario_param
-															AND tpComprobante = @tpComprobante_param
-																AND tpLetra = @tpLetra_param
-
-END
-
+**/
 

@@ -2791,6 +2791,37 @@ Dim strMotivo        As String
             Exit Function
     End If
     
+	'/************************************************************************/
+	'/* INICIO agregado en la version 4.9.71  								 */
+    strSQL = "spu_validarNroComprobanteManual_v4_9_71"
+	strSQL = strSQL + "@nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")+"',"
+	strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")+"',"
+	strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")+"',"
+	strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra") +"',"
+	strSQL = strSQL + "@dtComprobante_param= '"+ ObtenerCampo("dtComprobante") + "'"
+	 
+    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+            MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
+            CorrigeErrores = False
+        Exit Function
+    End If
+
+	if objbasededatos.rs_resultados.EOF then
+	        MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+            CorrigeErrores = False
+        Exit Function
+    End If
+	
+    if objbasededatos.rs_resultados("resultado") = "ERROR" then
+			MsgBox objbasededatos.rs_resultados("resultado") , vbInformation, "Atención"
+            CorrigeErrores = False
+		Exit Function
+	end if
+    
+    objbasededatos.rs_resultados.Close
+	'/* FIN agregado en la version 4.9.71  								 */
+	'/************************************************************************/
+    
     ' Transaccionamos
     objbasededatos.BeginTrans
     
