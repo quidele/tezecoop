@@ -84,3 +84,26 @@ GO
 	
 **/
 
+
+
+
+IF EXISTS (SELECT * FROM SYS.objects   WHERE NAME = 'spu_obtenerDeudoresaFecha')
+BEGIN
+	DROP procedure  dbo.spu_obtenerDeudoresaFecha
+END
+
+
+GO
+
+--- EXEC  dbo.spu_obtenerDeudoresaFecha
+
+
+CREATE PROCEDURE dbo.spu_obtenerDeudoresaFecha 
+AS
+BEGIN
+
+	SELECT top 10   tpCupon  ,  count(*) as cantidad  , sum(vlMontoCupon) as sumavlMontoCupon
+	FROM TB_Cupones  WHERE dtCobradoalCliente > '20170101'
+	GROUP BY tpCupon
+
+END
