@@ -12,7 +12,7 @@ using System.Diagnostics;
 
 namespace SGLibrary.Reportes
 {
-    public partial class FormularioBase1 : Form
+    public partial class rpt_AnalisisDeudores : Form
     {
 
 
@@ -20,7 +20,7 @@ namespace SGLibrary.Reportes
 
 
 
-        public FormularioBase1()
+        public rpt_AnalisisDeudores()
         {
             InitializeComponent();
         }
@@ -32,17 +32,15 @@ namespace SGLibrary.Reportes
             {
                 this.statusbar_bd.Text = "Base de datos: " + context.Database.Connection.Database;
                 this.statusbar_servidor.Text = "Base de datos: " + context.Database.Connection.DataSource;
-                this.statusbar_usuario.Text = "usuario: " + serviceModel.Usuario;
-                this.statusbar_nrocaja.Text = "Caja Nro: " + serviceModel.CajaAdm;
+
                 
             }
 
 
-            botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
+            botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
-            this.fechadesde.Value = DateTime.Now.AddDays(-30).Date;
-            this.fechahasta.Value = DateTime.Now.Date;
+            this.fechadesde.Value = DateTime.Now.Date;
             this.botonesForm1.InicializarFindBoton();
         }
 
@@ -96,8 +94,7 @@ namespace SGLibrary.Reportes
                 case "FIND":
                     {
 
-                        var listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, "CLAVE");
-                        cargarDataGridViewConciliaciones(dataGridView2, listadeRegistros);
+
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
@@ -209,55 +206,71 @@ namespace SGLibrary.Reportes
             return true;
         }
 
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
+
+
+        public void cargarCombo(ComboBox cb, IEnumerable<Object> lista)
         {
 
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
 
-            foreach (var item in lista)
-            {
-
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-
-                foreach (PropertyInfo p in pi)
-                {
-
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dgv.Columns.Add(columna);
-                }
-                break;
-            }
-
+            cb.Items.Clear();
 
             foreach (object item in lista)
             {
-                var row = dgv.Rows.Add();
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                    cb.Items.Add(p.GetValue(item, null));
                 }
-
             }
-
 
         }
 
 
 
+        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var btnFind = new ToolStripButton();
+            btnFind.Tag = "EDIT";
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+        }
 
+        private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            var btnFind = new ToolStripButton();
+            btnFind.Tag = "EDIT";
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+        }
 
-        public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
+        private void botonesForm1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panelbusqueda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void cmdAnalisisDeudores_Click(object sender, EventArgs e)
+        {
+            IEnumerable<Object> lista;
+
+            using (var context = new dbSG2000Entities())
+            {
+
+                var listaSQL = context.spu_obtenerDeudoresaFecha( this.fechadesde.Value.Date);
+                Trace.TraceInformation(listaSQL.ToString());
+                lista = listaSQL.ToList(); 
+            }
+            // lista.ToList();
+            cargarDataGridViewBusqueda(dataGridView2, lista);
+            deshabilitarycolorearGrillaABM();
+
+        }
+
+        public void cargarDataGridViewBusqueda(DataGridView dgv, IEnumerable<Object> lista)
         {
 
             //dgv.Rows.Clear();
@@ -305,49 +318,6 @@ namespace SGLibrary.Reportes
 
 
         }
-
-
-        public void cargarCombo(ComboBox cb, IEnumerable<Object> lista)
-        {
-
-
-            cb.Items.Clear();
-
-            foreach (object item in lista)
-            {
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-                foreach (PropertyInfo p in pi)
-                {
-                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    cb.Items.Add(p.GetValue(item, null));
-                }
-            }
-
-        }
-
-
-
-        private void dataGridView2_CellContentDoubleClick(object sender, DataGridViewCellEventArgs e)
-        {
-            var btnFind = new ToolStripButton();
-            btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler(btnFind, null);
-        }
-
-        private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            var btnFind = new ToolStripButton();
-            btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler(btnFind, null);
-        }
-
-        private void botonesForm1_Load(object sender, EventArgs e)
-        {
-
-        }
-
-
 
     } // Cierre declaracion Clase 
 } // Cierre namespace

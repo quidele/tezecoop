@@ -133,5 +133,14 @@ namespace SGLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_generarPresentacionCAI_v4_9_4_Result>("spu_generarPresentacionCAI_v4_9_4", idPresentacionParameter, realizarLOGParameter);
         }
+    
+        public virtual ObjectResult<spu_obtenerDeudoresaFecha_Result> spu_obtenerDeudoresaFecha(Nullable<System.DateTime> fecha)
+        {
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerDeudoresaFecha_Result>("spu_obtenerDeudoresaFecha", fechaParameter);
+        }
     }
 }

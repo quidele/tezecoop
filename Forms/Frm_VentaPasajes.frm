@@ -1104,7 +1104,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   133038081
+         Format          =   134414337
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3972,6 +3972,40 @@ Private Function validarEntradadedatos() As Boolean
         End If
     End If
     
+    
+    Dim strSQL As String
+     
+    
+    Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
+    Case "administracion.cajapuesto"
+        '/************************************************************************/
+        '/* INICIO agregado en la version 4.9.71                                                                 */
+        strSQL = "spu_validarNroComprobanteManual_v4_9_71"
+        strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
+        strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
+        strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
+        strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
+        strSQL = strSQL + "@dtComprobante_param= '" + CStr(ObtenerCampo("dtComprobante")) + "'"
+         
+        If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+            MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        
+        If objbasededatos.rs_resultados.EOF Then
+                MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        
+        If objbasededatos.rs_resultados("resultado") = "ERROR" Then
+            MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        objbasededatos.rs_resultados.Close
+    End Select
     
 End Function
 

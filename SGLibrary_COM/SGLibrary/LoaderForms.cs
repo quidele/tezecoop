@@ -128,6 +128,10 @@ namespace SGLibrary
                         f3.serviceModel =  serviceCAI ;
                         f = (Form)f3;
                         break;
+                    case "rpt_AnalisisDeudores":
+                        SGLibrary.Reportes.rpt_AnalisisDeudores f4 = new SGLibrary.Reportes.rpt_AnalisisDeudores();
+                        f = (Form)f4;
+                        break;
                     default:
                         break;
                     case "ServiceTarifas":

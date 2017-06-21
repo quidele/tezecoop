@@ -177,9 +177,9 @@ namespace ControlesdeUsuario
                     this.botonADD.Visible = false;
                     this.botonDELETE.Visible = false;
                     this.botonOK.Visible = false;
-                    this.botonCANCEL.Visible = true;
+                    this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = false;
-                    this.botonEXIT.Visible = false;
+                    this.botonEXIT.Visible = true;
                     break;
                 default:
                     break;

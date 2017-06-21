@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   104464385
+         Format          =   133496833
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   104464385
+         Format          =   133496833
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -738,10 +738,6 @@ Private Sub Form_Resize()
 
    objGUI.SizeControls Me, Me.fraBusqComprobantes, Me.lstBusqueda
     
-End Sub
-
-Private Sub fraBusqComprobantes_DragDrop(Source As Control, X As Single, Y As Single)
-
 End Sub
 
 Private Sub lstBusqueda_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)

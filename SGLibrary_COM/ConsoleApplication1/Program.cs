@@ -126,10 +126,16 @@ namespace ConsoleApplication1
              * */
 
 
+            /* LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmConciliaciones");*/
+
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
-            l.execFormulario("FrmConciliaciones");
+            l.execFormulario("rpt_AnalisisDeudores");
+            
             
         }
     }

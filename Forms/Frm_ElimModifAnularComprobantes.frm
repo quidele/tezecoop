@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ElimModifAnularComprobantes 
    Caption         =   "Corregir o Eliminar un Comprobante mal Cargado"
    ClientHeight    =   7740
@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   120782849
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   120782849
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -2791,36 +2791,36 @@ Dim strMotivo        As String
             Exit Function
     End If
     
-	'/************************************************************************/
-	'/* INICIO agregado en la version 4.9.71  								 */
+        '/************************************************************************/
+        '/* INICIO agregado en la version 4.9.71                                                                 */
     strSQL = "spu_validarNroComprobanteManual_v4_9_71"
-	strSQL = strSQL + "@nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")+"',"
-	strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")+"',"
-	strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")+"',"
-	strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra") +"',"
-	strSQL = strSQL + "@dtComprobante_param= '"+ ObtenerCampo("dtComprobante") + "'"
-	 
+        strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
+        strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
+        strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
+        strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
+        strSQL = strSQL + "@dtComprobante_param= '" + ObtenerCampo("dtComprobante") + "'"
+         
     If Not objbasededatos.ExecStoredProcedures(strSQL) Then
             MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
             CorrigeErrores = False
         Exit Function
     End If
 
-	if objbasededatos.rs_resultados.EOF then
-	        MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+        If objbasededatos.rs_resultados.EOF Then
+                MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
             CorrigeErrores = False
         Exit Function
     End If
-	
-    if objbasededatos.rs_resultados("resultado") = "ERROR" then
-			MsgBox objbasededatos.rs_resultados("resultado") , vbInformation, "Atención"
+        
+    If objbasededatos.rs_resultados("resultado") = "ERROR" Then
+                        MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
             CorrigeErrores = False
-		Exit Function
-	end if
+                Exit Function
+        End If
     
     objbasededatos.rs_resultados.Close
-	'/* FIN agregado en la version 4.9.71  								 */
-	'/************************************************************************/
+        '/* FIN agregado en la version 4.9.71                                                            */
+        '/************************************************************************/
     
     ' Transaccionamos
     objbasededatos.BeginTrans

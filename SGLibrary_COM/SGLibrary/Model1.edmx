@@ -376,6 +376,9 @@
           <Parameter Name="IdPresentacion" Type="int" Mode="In" />
           <Parameter Name="realizarLOG" Type="char" Mode="In" />
         </Function>
+        <Function Name="spu_obtenerDeudoresaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="fecha" Type="date" Mode="In" />
+        </Function>
         <Function Name="spu_obtenerUltNroCAIsUsados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="mes" Type="int" Mode="In" />
           <Parameter Name="anio" Type="int" Mode="In" />
@@ -485,6 +488,9 @@
           <FunctionImport Name="spu_generarPresentacionCAI_v4_9_4" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result)">
             <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
             <Parameter Name="realizarLOG" Mode="In" Type="String" />
+          </FunctionImport>
+          <FunctionImport Name="spu_obtenerDeudoresaFecha" ReturnType="Collection(dbSG2000Model.spu_obtenerDeudoresaFecha_Result)">
+            <Parameter Name="fecha" Mode="In" Type="DateTime" />
           </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
@@ -886,6 +892,11 @@
           <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
         </ComplexType>
+        <ComplexType Name="spu_obtenerDeudoresaFecha_Result">
+          <Property Type="String" Name="tpCupon" Nullable="true" MaxLength="20" />
+          <Property Type="Int32" Name="cantidad" Nullable="true" />
+          <Property Type="Double" Name="sumavlMontoCupon" Nullable="true" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1217,6 +1228,15 @@
               <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result">
                 <ScalarProperty Name="resultado" ColumnName="resultado" />
                 <ScalarProperty Name="Descrip" ColumnName="Descrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spu_obtenerDeudoresaFecha" FunctionName="dbSG2000Model.Store.spu_obtenerDeudoresaFecha">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerDeudoresaFecha_Result">
+                <ScalarProperty Name="tpCupon" ColumnName="tpCupon" />
+                <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+                <ScalarProperty Name="sumavlMontoCupon" ColumnName="sumavlMontoCupon" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

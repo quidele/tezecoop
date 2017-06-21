@@ -95,15 +95,15 @@ END
 
 GO
 
---- EXEC  dbo.spu_obtenerDeudoresaFecha
+--- EXEC  dbo.spu_obtenerDeudoresaFecha '20170101'
 
 
-CREATE PROCEDURE dbo.spu_obtenerDeudoresaFecha 
+CREATE PROCEDURE dbo.spu_obtenerDeudoresaFecha (@fecha as date) 
 AS
 BEGIN
 
 	SELECT top 10   tpCupon  ,  count(*) as cantidad  , sum(vlMontoCupon) as sumavlMontoCupon
-	FROM TB_Cupones  WHERE dtCobradoalCliente > '20170101'
+	FROM TB_Cupones  WHERE convert(date,dtCobradoalCliente) > @fecha
 	GROUP BY tpCupon
 
 END

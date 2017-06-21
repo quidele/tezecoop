@@ -228,7 +228,13 @@ GO
 GO
 
 -- drop procedure spu_validarNroComprobanteManual_v4_9_71
+/*
 
+EXEC spu_validarNroComprobanteManual_v4_9_71 @nrTalonario_param   = '0006',@nrComprobante_param = '00633560',
+@tpComprobante_param = 'FA',@tpLetra_param = 'B',@dtComprobante_param= '04/08/2016'
+
+
+*/ 
 
 ---  Voy por acacacac !!!
 --- SP_ActualizarComprobanteManual_v2_4 ->>> SP_ActualizarComprobanteManual_v2_5
@@ -275,7 +281,7 @@ BEGIN
 
 	IF @dtComprobante_param  < @maximo_dtComprobante
 	BEGIN
-		SELECT 'ERROR' as Resultado , 'La fecha ingresada ('+ convert(varchar,@nrComprobante_param) +
+		SELECT 'ERROR' as Resultado , 'La fecha ingresada ('+ convert(varchar,@dtComprobante_param) +
 				 ') es menor a la fecha del último comprobante ingresado para este talonario (Comprobante: ' + 
 				 @tpComprobante_param +'-'+ @tpLetra_param +'-'+ @nrTalonario_param  +'-'+ convert(varchar, @maximo_nrComprobante ) +', Fecha: '+ convert(varchar,  @maximo_dtComprobante , 103 ) + ' )'
 						  as DescripcionError

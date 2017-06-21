@@ -23,6 +23,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmCon
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmResumenNrosCAIs.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmSeleccionarImpresora.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Reportes.rpt_AnalisisDeudores.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csproj.GenerateResource.Cache
