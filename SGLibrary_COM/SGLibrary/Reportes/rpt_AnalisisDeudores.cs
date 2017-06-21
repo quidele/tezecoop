@@ -267,7 +267,7 @@ namespace SGLibrary.Reportes
             // lista.ToList();
             cargarDataGridViewBusqueda(dataGridView2, lista);
             deshabilitarycolorearGrillaABM();
-
+            cargarDataGridViewBusqueda(dataGridView3 , lista);
         }
 
         public void cargarDataGridViewBusqueda(DataGridView dgv, IEnumerable<Object> lista)
