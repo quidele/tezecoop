@@ -246,10 +246,66 @@ Begin VB.Form Frm_ABMPuestos
             Caption         =   "Facturación Manual"
             ForeColor       =   &H80000008&
             Height          =   2100
-            Left            =   135
+            Left            =   150
             TabIndex        =   36
-            Top             =   2805
+            Top             =   2820
             Width           =   9780
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   31
+               Left            =   5880
+               TabIndex        =   76
+               Tag             =   "nrComprobante_manual_nd_ult"
+               Top             =   915
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   30
+               Left            =   5880
+               TabIndex        =   75
+               Tag             =   "nrComprobante_manual_nd_ult"
+               Top             =   540
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   29
+               Left            =   6735
+               TabIndex        =   74
+               Tag             =   "nrComprobante_manual_empresa_nc_ult"
+               Top             =   915
+               Width           =   810
+            End
+            Begin VB.TextBox txtFields 
+               Alignment       =   2  'Center
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFFFFF&
+               CausesValidation=   0   'False
+               DataField       =   "nmApellido"
+               Height          =   285
+               Index           =   28
+               Left            =   6735
+               TabIndex        =   73
+               Tag             =   "nrComprobante_manual_nc_ult"
+               Top             =   540
+               Width           =   810
+            End
             Begin VB.CheckBox Check1 
                Appearance      =   0  'Flat
                BackColor       =   &H00FFC0C0&
@@ -414,6 +470,44 @@ Begin VB.Form Frm_ABMPuestos
                TabIndex        =   37
                Top             =   1260
                Width           =   960
+            End
+            Begin VB.Label lblLabels 
+               BackStyle       =   0  'Transparent
+               Caption         =   "NC"
+               BeginProperty Font 
+                  Name            =   "Verdana"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   240
+               Index           =   18
+               Left            =   6855
+               TabIndex        =   78
+               Top             =   315
+               Width           =   570
+            End
+            Begin VB.Label lblLabels 
+               BackStyle       =   0  'Transparent
+               Caption         =   "ND"
+               BeginProperty Font 
+                  Name            =   "Verdana"
+                  Size            =   8.25
+                  Charset         =   0
+                  Weight          =   400
+                  Underline       =   0   'False
+                  Italic          =   0   'False
+                  Strikethrough   =   0   'False
+               EndProperty
+               Height          =   240
+               Index           =   17
+               Left            =   6030
+               TabIndex        =   77
+               Top             =   300
+               Width           =   570
             End
             Begin VB.Label lblLabels 
                BackStyle       =   0  'Transparent
@@ -812,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   109510657
+               Format          =   215547905
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -826,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   109510657
+               Format          =   215547905
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -2164,15 +2258,18 @@ Dim strSQL      As String
             '-- ADD Version 4.7
             strSQL = strSQL + "@nrComprobante_automatico_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_automatico_nd_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_auto_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_auto_ctacte_nd_ult=null, "
-            strSQL = strSQL + "@nrComprobante_manual_nd_ult=null, "
-            strSQL = strSQL + "@nrComprobante_manual_empresa_nd_ult=null, "
+            
+            '-- MODIFY Version 4.7
+            strSQL = strSQL + "@nrComprobante_auto_ctacte_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_empresa_nd_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_manual_ctacte_nd_ult=null, "
+            
             strSQL = strSQL + "@nrComprobante_automatico_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_automatico_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_auto_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_auto_ctacte_nc_ult=null, "
-            strSQL = strSQL + "@nrComprobante_manual_nc_ult=null, "
-            strSQL = strSQL + "@nrComprobante_manual_empresa_nc_ult=null, "
+            strSQL = strSQL + "@nrComprobante_manual_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_nc_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_empresa_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_manual_ctacte_nc_ult=null, "
             
             strSQL = strSQL + "@flFacturaCtacte=" + objbasededatos.FormatearValorSQL(ObtenerCampo("flFacturaCtacte"), "BIT", "flFacturaCtacte")
