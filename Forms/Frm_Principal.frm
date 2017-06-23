@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   225
-   ClientTop       =   855
+   ClientLeft      =   165
+   ClientTop       =   810
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"

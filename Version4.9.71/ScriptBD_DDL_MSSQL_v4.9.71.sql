@@ -478,6 +478,49 @@ begin
 
 
 	--- SI NO ES AUTOIMPRESOR
+
+
+	
+			-- INICIA @tpComprobante ='ND'  
+		if @tpComprobante ='ND'    
+		begin
+			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
+			begin
+				update  x set nrComprobante_manual_nd_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
+				return;					
+			end 		
+			if @tipo_iva = 'RI' 						
+			begin
+				update  x set nrComprobante_manual_empresa_nd_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
+				return;
+			end
+			update  x set nrComprobante_auto_ctacte_nd_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param	
+			return;
+			
+		end -- FIN @tpComprobante ='ND'  
+
+		-- INICIA   @tpComprobante ='NC'
+		if @tpComprobante ='NC'
+		begin
+		
+			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
+			begin
+				update  x set nrComprobante_manual_nc_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
+				return;					
+			end 
+						
+			if @tipo_iva = 'RI' 						
+			begin
+				update  x set nrComprobante_manual_empresa_nc_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param
+				return;
+			end
+
+			update  x set nrComprobante_auto_ctacte_nc_ult = @nrComprobante  from TB_Puestos x where  nrPuesto = @nrPuesto_param				
+			return;
+
+		end -- FIN   @tpComprobante ='NC'
+
+
 	if @tpFormadePago='Cuenta Corriente' 
 	begin
 
@@ -564,11 +607,13 @@ GO
 
 	Exec dbo.spu_obtener_puntosdeventa_facturacion_v4_7 @nrPuesto_param=4, @tipo_iva = EX,  @auto_impresor = S, @tpFormadePago = null,  @tpComprobante = 'FA'
 
+Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'N' ,@tpFormadePago = null ,@tpComprobante = 'ND' 
+
 */
 
 GO
 
-create procedure dbo.spu_obtener_puntosdeventa_facturacion_v4_7
+create procedure dbo.spu_obtener_puntosdeventa_facturacion_v4_9_71
 @nrPuesto_param    int=null,
 @tipo_iva		   char(10)='CF',
 @auto_impresor     char(1)='S',
@@ -805,7 +850,7 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 			return;
 		end
 		
-		select  @nrTalonario_auto_ctacte       as nrTalonario,
+		select  @nrTalonario_manual_ctacte         as nrTalonario,
 				@nrComprobante_auto_ctacte_ult as nrComprobante,
 				@tpLetraRecibo				    as tpLetra,
 				null	as nrCAI,
@@ -817,7 +862,84 @@ declare	    @nrComprobante_manual_ctacte_nc_ult	as int
 	--- FIN IF -> if @auto_impresor ='S' 
 
 
-	--- SI NO ES AUTOIMPRESOR
+	    --- SI NO ES AUTOIMPRESOR
+
+			-- INICIA @tpComprobante ='ND'  
+		if @tpComprobante ='ND'    
+		begin
+			
+		
+			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
+			begin
+				select  @nrTalonario_manual         as nrTalonario,
+						@nrComprobante_manual_nd_ult	 as nrComprobante,
+						@tpletra_manual  				    as tpLetra,
+						null	as nrCAI,
+						null   as dtCai,
+						@flFacturaCtacte	as flFacturaCtacte
+				return;					
+			end 
+						
+			if @tipo_iva = 'RI' 						
+			begin
+				select  @nrTalonario_manual_empresa           as nrTalonario,
+						@nrComprobante_manual_empresa_nd_ult  as nrComprobante,
+						@tpLetraEmpresa_manual  			  as tpLetra,
+						null	as nrCAI,
+						null   as dtCai,
+						@flFacturaCtacte	as flFacturaCtacte
+				return;
+			end
+		
+		
+			select  @nrTalonario_manual_ctacte         as nrTalonario,
+					@nrComprobante_auto_ctacte_nd_ult  as nrComprobante,
+					@tpLetraRecibo_manual		       as tpLetra,
+					null	as nrCAI,
+					null    as dtCai,
+					@flFacturaCtacte	as flFacturaCtacte
+			return;
+			
+		end -- FIN @tpComprobante ='ND'  
+
+		-- INICIA   @tpComprobante ='NC'
+		if @tpComprobante ='NC'
+		begin
+		
+			if @tipo_iva = 'CF' or @tipo_iva = 'EX'
+			begin
+				select  @nrTalonario_manual         as nrTalonario,
+						@nrComprobante_manual_nc_ult	 as nrComprobante,
+						@tpletra_manual  				    as tpLetra,
+						null	as nrCAI,
+						null   as dtCai,
+						@flFacturaCtacte	as flFacturaCtacte
+				return;					
+			end 
+						
+			if @tipo_iva = 'RI' 						
+			begin
+				select  @nrTalonario_manual_empresa           as nrTalonario,
+						@nrComprobante_manual_empresa_nc_ult  as nrComprobante,
+						@tpLetraEmpresa_manual  			  as tpLetra,
+						null	as nrCAI,
+						null   as dtCai,
+						@flFacturaCtacte	as flFacturaCtacte
+				return;
+			end
+		
+		
+			select  @nrTalonario_manual_ctacte         as nrTalonario,
+					@nrComprobante_auto_ctacte_nc_ult  as nrComprobante,
+					@tpLetraRecibo_manual		       as tpLetra,
+					null	as nrCAI,
+					null    as dtCai,
+					@flFacturaCtacte	as flFacturaCtacte
+			return;
+
+		end -- FIN   @tpComprobante ='NC'
+
+
 	if @tpFormadePago='Cuenta Corriente' 
 	begin
 	select  @nrTalonario_manual_ctacte       as nrTalonario,

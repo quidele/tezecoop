@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ABMPuestos 
    Caption         =   "Maestro de Puestos"
    ClientHeight    =   7110
@@ -260,7 +260,7 @@ Begin VB.Form Frm_ABMPuestos
                Index           =   31
                Left            =   5880
                TabIndex        =   76
-               Tag             =   "nrComprobante_manual_nd_ult"
+               Tag             =   "nrComprobante_manual_empresa_nd_ult"
                Top             =   915
                Width           =   810
             End
@@ -906,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   215547905
+               Format          =   111935489
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   215547905
+               Format          =   111935489
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
