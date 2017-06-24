@@ -115,7 +115,7 @@ Begin VB.Form frm_CobroCtaCte
       Left            =   120
       TabIndex        =   5
       Tag             =   "cmdCompensar"
-      Top             =   6630
+      Top             =   6615
       Width           =   2175
    End
    Begin VB.TextBox txtSaldos 

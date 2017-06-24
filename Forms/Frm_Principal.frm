@@ -1102,6 +1102,15 @@ End Sub
 
 Private Sub optNotasCredito_Click()
 
+    ' Agregado en la version 4.9.71
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+
+
+  objParametros.GrabarValor "nrCaja", objCajas.nrCaja
+
   ' Version 3.7: obtenemos los datos de las caja
   objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
 
@@ -1126,6 +1135,16 @@ Private Sub optNotasCredito_Click()
 End Sub
 
 Private Sub optNotasDebito_Click()
+
+
+    ' Agregado en la version 4.9.71
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+
+
+  objParametros.GrabarValor "nrCaja", objCajas.nrCaja
 
   ' Version 3.7: obtenemos los datos de las caja
   objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")

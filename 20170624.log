@@ -1,0 +1,214 @@
+24/06/2017 07:30:15 | Exec  sco_TB_Productos_v4_1 
+24/06/2017 07:30:15 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+24/06/2017 07:30:17 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('m%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:17 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ma%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:17 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('mar%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:17 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('mari%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:18 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('marie%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:18 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('mariel%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:23 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'MARIELAP'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:30:23 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'MARIELAP'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:30:23 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+24/06/2017 07:30:23 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'MARIELAP' 
+24/06/2017 07:30:23 | Exec sp_obtenerCajasRechazadas_v2_9 
+24/06/2017 07:30:23 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+24/06/2017 07:30:23 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/06/2017 07:30:23 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/06/2017 07:30:23 | Exec SP_ValorPromoRetorno
+24/06/2017 07:30:23 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+24/06/2017 07:30:23 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/06/2017 07:30:23 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/06/2017 07:30:23 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+24/06/2017 07:30:23 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'MARIELAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0  
+24/06/2017 07:30:23 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+24/06/2017 07:30:23 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+24/06/2017 07:30:38 | Exec  sco_TB_Productos_v4_1 
+24/06/2017 07:30:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+24/06/2017 07:30:39 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('p%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:39 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('a%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('as%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+24/06/2017 07:30:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CPASQUALI'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:30:46 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CPASQUALI'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:30:46 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+24/06/2017 07:30:46 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CPASQUALI' 
+24/06/2017 07:30:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+24/06/2017 07:30:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/06/2017 07:30:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/06/2017 07:30:46 | Exec SP_ValorPromoRetorno
+24/06/2017 07:30:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+24/06/2017 07:30:46 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/06/2017 07:30:46 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/06/2017 07:30:46 | Exec sco_validarVencimientosCAI_v4_1
+24/06/2017 07:30:49 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+24/06/2017 07:30:49 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:30:49 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:31:00 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('u%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:01 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('us%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:01 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usr%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:01 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrr%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:02 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrp%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:02 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpa%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:02 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpar%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:02 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpara%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:02 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrparam%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:06 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:31:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/06/2017 07:31:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/06/2017 07:31:06 | Exec SP_ValorPromoRetorno
+24/06/2017 07:31:06 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/06/2017 07:31:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/06/2017 07:31:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+24/06/2017 07:31:06 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+24/06/2017 07:31:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAcceso'
+24/06/2017 07:31:12 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE  tpNivelAcceso Like ('%%%') Order by TB_NivelAcceso.tpNivelAcceso ASC 
+24/06/2017 07:31:19 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Auxiliar Administración'  
+24/06/2017 07:31:19 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' 
+24/06/2017 07:31:26 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Auxiliar Administración'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Auxiliar Administración'  
+24/06/2017 07:31:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAccesoOpcionesMenu'
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 217  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 218  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+24/06/2017 07:31:26 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+24/06/2017 07:31:27 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+24/06/2017 07:31:27 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+24/06/2017 07:31:27 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 222  
+24/06/2017 07:31:27 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 223  
+24/06/2017 07:31:27 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Auxiliar Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 224  
+24/06/2017 07:31:29 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+24/06/2017 07:31:34 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('c%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:35 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cp%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:35 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpas%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:35 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpas%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:36 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasc%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:36 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasu%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:36 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasa%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:37 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpa%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:38 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cp%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:31:43 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CPASQUALI'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:31:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/06/2017 07:31:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/06/2017 07:31:44 | Exec SP_ValorPromoRetorno
+24/06/2017 07:31:44 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/06/2017 07:31:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/06/2017 07:31:44 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:31:44 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:31:46 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+24/06/2017 07:31:46 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+24/06/2017 07:31:46 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+24/06/2017 07:31:46 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+24/06/2017 07:31:46 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+24/06/2017 07:31:46 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TP'  
+24/06/2017 07:31:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+24/06/2017 07:31:46 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+24/06/2017 07:31:46 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/06/2017 07:31:46 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:31:46 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+24/06/2017 07:31:46 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 999  AND  TB_Proveedores.flEliminar = 0  
+24/06/2017 07:31:46 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_9_71'
+24/06/2017 07:31:46 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:32:38 | Exec  sco_TB_Productos_v4_1 
+24/06/2017 07:32:39 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+24/06/2017 07:32:43 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('c%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:43 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cp%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:43 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpas%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:43 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpas%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:44 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasc%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:44 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasu%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:44 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasa%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:44 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasl%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:44 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpasi%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:45 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cpa%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:46 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cp%') AND TB_Usuarios.flEliminar = 0
+24/06/2017 07:32:49 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CPASQUALI'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:32:49 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CPASQUALI'  AND  TB_Usuarios.flEliminar = 0  
+24/06/2017 07:32:49 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+24/06/2017 07:32:50 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CPASQUALI' 
+24/06/2017 07:32:50 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+24/06/2017 07:32:50 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'  
+24/06/2017 07:32:50 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'  
+24/06/2017 07:32:50 | Exec SP_ValorPromoRetorno
+24/06/2017 07:32:50 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+24/06/2017 07:32:50 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0  
+24/06/2017 07:32:50 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'  
+24/06/2017 07:32:50 | Exec sco_validarVencimientosCAI_v4_1
+24/06/2017 07:32:51 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+24/06/2017 07:32:51 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:32:51 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
+24/06/2017 07:32:53 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+24/06/2017 07:32:53 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+24/06/2017 07:37:04 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta 
+24/06/2017 07:37:04 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+24/06/2017 07:37:04 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+24/06/2017 07:37:07 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PUESTO_FACTURACION_ND'  
+24/06/2017 07:37:07 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TD'  
+24/06/2017 07:37:07 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TC'  
+24/06/2017 07:37:07 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'PORC_RECARGO_TP'  
+24/06/2017 07:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+24/06/2017 07:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = null ,@tpCliente_param = null ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = null ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Proveedores'
+24/06/2017 07:37:07 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 999  AND  TB_Proveedores.flEliminar = 0  
+24/06/2017 07:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_obtener_puntosdeventa_facturacion_v4_9_71'
+24/06/2017 07:37:07 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'NC' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 999  AND  TB_Proveedores.flEliminar = 0  
+24/06/2017 07:37:07 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:37:07 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'NC' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'NC' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 |  SELECT TB_Proveedores.nmNombre ,TB_Proveedores.nmApellido  FROM TB_Proveedores  WHERE TB_Proveedores.tpCategoria = 'Licenciatario'  AND  TB_Proveedores.nrLicencia = 999  AND  TB_Proveedores.flEliminar = 0  
+24/06/2017 07:37:07 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:37:07 | Exec spu_obtener_puntosdeventa_facturacion_v4_9_71 @nrPuesto_param = 1 ,@tipo_iva = 'CF' ,@auto_impresor = 'S' ,@tpFormadePago = null ,@tpComprobante = 'NC' 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'NC' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'NC' ,@vlTotalGeneral_param = 0 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = null 
+24/06/2017 07:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Productos'
+24/06/2017 07:37:20 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Auxiliar Administración' ,@p_operaconcaja = 1 
