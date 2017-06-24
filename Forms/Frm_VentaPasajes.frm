@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   135200769
+         Format          =   136183809
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3448,9 +3448,7 @@ Private Sub Form_Activate()
     On Error Resume Next
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
-        If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
-            Me.cbTipoFacturacion.Visible = True
-            Me.cbTipoFacturacion.Text = objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")
+        If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
             ObtenerCampo("cdCliente").SetFocus
         Else
             ObtenerCampo("dsProductoBuscado").SetFocus
@@ -3458,6 +3456,7 @@ Private Sub Form_Activate()
     Case Else
         ObtenerCampo("nrComprobante").SetFocus
     End Select
+    Me.cbTipoFacturacion.Text = objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")
     On Error GoTo 0
     
     
@@ -3572,6 +3571,12 @@ Dim strValor    As String
     
     ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
 
+    If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+        Me.cbTipoFacturacion.Locked = False
+    Else
+        Me.cbTipoFacturacion.Locked = True
+    End If
+    
      
     '***********************************************************
     ' Modificación version 1.4
@@ -4714,8 +4719,8 @@ Dim i  As Integer
            On Error Resume Next
             Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
             Case "puesto"
-                If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
-                ObtenerCampo("cdCliente").SetFocus
+                If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+                    ObtenerCampo("cdCliente").SetFocus
                 Else
                 ObtenerCampo("dsProductoBuscado").SetFocus
                 End If
