@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   136183809
+         Format          =   133758977
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3454,9 +3454,11 @@ Private Sub Form_Activate()
             ObtenerCampo("dsProductoBuscado").SetFocus
         End If
     Case Else
+        If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+            Me.cbTipoFacturacion.Text = objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")
+        End If
         ObtenerCampo("nrComprobante").SetFocus
     End Select
-    Me.cbTipoFacturacion.Text = objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")
     On Error GoTo 0
     
     
