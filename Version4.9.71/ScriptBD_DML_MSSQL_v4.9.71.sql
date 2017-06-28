@@ -4,8 +4,6 @@ use dbSG2000
 go 
 
 
-
-
 -- select * from TB_Parametros where grupo_parametro  = 'Mòdulo de Ventas'
 
 
