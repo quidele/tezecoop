@@ -1,4 +1,5 @@
 VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
@@ -756,10 +757,10 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.Frame Frame2 
          Caption         =   "Falta compensar"
          ForeColor       =   &H000000C0&
-         Height          =   960
+         Height          =   915
          Left            =   7470
          TabIndex        =   36
-         Top             =   75
+         Top             =   60
          Width           =   6375
          Begin VB.Label Label28 
             Caption         =   "R$"
@@ -813,9 +814,9 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   510
+            Left            =   3180
             TabIndex        =   44
-            Top             =   645
+            Top             =   630
             Width           =   615
          End
          Begin VB.Label lbl_falta_comp_dtcupon_hora_corte 
@@ -834,7 +835,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   1170
+            Left            =   3810
             TabIndex        =   43
             Top             =   600
             Width           =   2475
@@ -1039,11 +1040,11 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.TextBox txtBusqueda 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         Height          =   324
-         Left            =   4260
+         Height          =   315
+         Left            =   3180
          TabIndex        =   1
-         Top             =   324
-         Width           =   3075
+         Top             =   330
+         Width           =   1515
       End
       Begin MSComctlLib.ImageList ImgOperadores 
          Left            =   7230
@@ -1104,11 +1105,11 @@ Begin VB.Form frm_PagoLicenciatario
       End
       Begin MSComctlLib.ImageCombo ImageCombo1 
          Height          =   330
-         Left            =   2595
+         Left            =   2250
          TabIndex        =   4
          Top             =   315
-         Width           =   1680
-         _ExtentX        =   2963
+         Width           =   945
+         _ExtentX        =   1667
          _ExtentY        =   582
          _Version        =   393216
          ForeColor       =   -2147483640
@@ -1310,7 +1311,35 @@ Begin VB.Form frm_PagoLicenciatario
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   315
-         Width           =   2400
+         Width           =   2085
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   360
+         Index           =   0
+         Left            =   4755
+         TabIndex        =   91
+         Tag             =   "dtDesde"
+         Top             =   315
+         Width           =   1305
+         _ExtentX        =   2302
+         _ExtentY        =   635
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   38267
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   345
+         Index           =   1
+         Left            =   6105
+         TabIndex        =   92
+         Tag             =   "dtHasta"
+         Top             =   330
+         Width           =   1320
+         _ExtentX        =   2328
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   58982401
+         CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
          Alignment       =   2  'Center
@@ -1381,9 +1410,9 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.Label Label2 
          Caption         =   "Valor para la busqueda"
          Height          =   210
-         Left            =   4335
+         Left            =   3180
          TabIndex        =   7
-         Top             =   90
+         Top             =   120
          Width           =   1755
       End
       Begin VB.Label Label1 
@@ -2018,6 +2047,10 @@ Private Sub Form_Load()
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
     limpiarControles
     cargarcamposdebusqueda
+    
+    ObtenerCampo("dtDesde").value = Date - 30
+    ObtenerCampo("dtHasta").value = Date
+    
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Buscar")
     EstadoABM = Consulta
     Me.cmbCampos.ListIndex = 1
@@ -2564,6 +2597,16 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "dsObservacion", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlIVA", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flAnulado", "->", ""
+         
+         Dim strWhereAdicional As String
+         
+
+         
+         strWhereAdicional = " AND (  CONVERT(DATE, dtCupon) >= " + objbasededatos.FormatearValorSQL(ObtenerCampo("dtDesde"), "SMALLDATETIME")
+         strWhereAdicional = strWhereAdicional + " AND CONVERT(DATE, dtCupon) <= " + objbasededatos.FormatearValorSQL(ObtenerCampo("dtHasta"), "SMALLDATETIME")
+         strWhereAdicional = strWhereAdicional + "    OR tpCupon in ('Retorno','Cobro en Destino')) "
+         
+         ObjTablasIO.strWhereAdicional = strWhereAdicional
          
          ObjTablasIO.Seleccionar
          

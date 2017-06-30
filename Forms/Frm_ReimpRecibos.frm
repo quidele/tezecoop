@@ -20,7 +20,7 @@ Begin VB.Form Frm_ReimpRecibos
       Height          =   7020
       Left            =   15
       TabIndex        =   1
-      Top             =   720
+      Top             =   705
       Width           =   9825
       Begin VB.ComboBox cmbCampos 
          BackColor       =   &H00E0E0E0&
@@ -159,12 +159,12 @@ Begin VB.Form Frm_ReimpRecibos
          Left            =   1410
          TabIndex        =   11
          Tag             =   "dtDesde"
-         Top             =   720
+         Top             =   705
          Width           =   1695
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   133496833
+         Format          =   58523649
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   133496833
+         Format          =   58523649
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -311,7 +311,7 @@ Begin VB.Form Frm_ReimpRecibos
          Index           =   10
          Left            =   90
          TabIndex        =   13
-         Top             =   840
+         Top             =   825
          Width           =   1200
       End
    End
