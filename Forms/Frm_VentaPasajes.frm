@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   132579329
+         Format          =   134742017
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2638,7 +2638,7 @@ On Error Resume Next
         MsgBox Err.Description
     End If
     
-    MsgBox "Eulises: sale de calcularTotalesFactura "
+    ' MsgBox "Eulises: sale de calcularTotalesFactura "
 On Error GoTo 0
 
     
@@ -3445,7 +3445,7 @@ End Sub
 
 Private Sub Form_Activate()
 
-    MsgBox "ingreso al Form_Activate"
+    ' MsgBox "ingreso al Form_Activate"
 
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "manual" Then
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -3475,7 +3475,7 @@ Private Sub Form_Activate()
     On Error GoTo 0
     
     
-    MsgBox "ingreso al Form_Activate"
+    ' MsgBox "ingreso al Form_Activate"
     
     
 End Sub
