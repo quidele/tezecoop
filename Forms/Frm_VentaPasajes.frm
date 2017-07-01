@@ -782,7 +782,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   5145
          TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
-         Top             =   6945
+         Top             =   6975
          Width           =   3960
       End
       Begin VB.TextBox txtFields 
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   134021121
+         Format          =   135528449
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3436,6 +3436,8 @@ End Sub
 
 Private Sub Form_Activate()
 
+    MsgBox "ingreso al Form_Activate"
+
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "manual" Then
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
         Case "puesto"
@@ -3462,6 +3464,9 @@ Private Sub Form_Activate()
         ObtenerCampo("nrComprobante").SetFocus
     End Select
     On Error GoTo 0
+    
+    
+    MsgBox "ingreso al Form_Activate"
     
     
 End Sub
