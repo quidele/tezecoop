@@ -7,7 +7,7 @@ Begin VB.Form Frm_VentaPasajes
    ClientHeight    =   8190
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   11850
+   ClientWidth     =   11985
    Icon            =   "Frm_VentaPasajes.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,7 +15,7 @@ Begin VB.Form Frm_VentaPasajes
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   8190
-   ScaleWidth      =   11850
+   ScaleWidth      =   11985
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtItemFactura 
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   133758977
+         Format          =   134021121
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1988,8 +1988,8 @@ Begin VB.Form Frm_VentaPasajes
       Left            =   0
       TabIndex        =   1
       Top             =   0
-      Width           =   11850
-      _ExtentX        =   20902
+      Width           =   11985
+      _ExtentX        =   21140
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -3439,9 +3439,11 @@ Private Sub Form_Activate()
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "manual" Then
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
         Case "puesto"
-            Me.Caption = Me.Caption + " - Carga de Comprobantes MANUALES"
-            MsgBox "Desde aquí solo se pueden cargar los comprobantes manuales. " + vbCrLf + "Verifique que la numeración del talonario físico coincida con la que se muestra en pantalla, si no es así no realice la carga.", vbInformation, "Atención"
-            Me.BackColor = Rojo
+            If ObtenerCampo("tpComprobante").Text = "FA" Then
+                Me.Caption = Me.Caption + " - Carga de Comprobantes MANUALES"
+                MsgBox "Desde aquí solo se pueden cargar los comprobantes manuales. " + vbCrLf + "Verifique que la numeración del talonario físico coincida con la que se muestra en pantalla, si no es así no realice la carga.", vbInformation, "Atención"
+                Me.BackColor = Rojo
+            End If
         End Select
     End If
     
