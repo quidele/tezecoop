@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   135528449
+         Format          =   132579329
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2537,6 +2537,8 @@ Dim resp         As Byte
 Dim vlRecargoTarjeta As Single
 Dim vlDescuentoEfectivo As Single
 
+On Error Resume Next
+
     vlRecargoTarjeta = 0
     vlDescuentoEfectivo = 0
 
@@ -2602,6 +2604,7 @@ Dim vlDescuentoEfectivo As Single
     End If
     
     
+
     ObtenerCampo("vlIVA").Text = FormatNumber(vlIVA, "2")
     ObtenerCampo("vlSubtotal").Text = FormatNumber(vlSubtotal, "2")
     
@@ -2631,6 +2634,12 @@ Dim vlDescuentoEfectivo As Single
       Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
     End If
     
+    If Err <> 0 Then
+        MsgBox Err.Description
+    End If
+    
+    MsgBox "Eulises: sale de calcularTotalesFactura "
+On Error GoTo 0
 
     
 End Sub
