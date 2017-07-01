@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   58523649
+         Format          =   110690305
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   58523649
+         Format          =   110690305
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -903,7 +903,7 @@ Dim ELIMINA_RECIBO_DE_OTRA_CAJA As String
 
     ELIMINA_RECIBO_DE_OTRA_CAJA = objParametros.ObtenerValorBD("ELIMINA_RECIBO_DE_OTRA_CAJA")
     
-    If ELIMINA_RECIBO_DE_OTRA_CAJA = "S" Then
+    If ELIMINA_RECIBO_DE_OTRA_CAJA = "N" Then
         If Me.lstBusqueda.SelectedItem.SubItems(6) <> objParametros.ObtenerValor("nrCaja") Then
             MsgBox "No se puede eliminar este recibo ya que no pertenece a la caja de administración abierta, Caja Nro: " + objParametros.ObtenerValor("nrCaja") + ".", vbInformation + vbDefaultButton1, "Atención"
             Exit Sub
