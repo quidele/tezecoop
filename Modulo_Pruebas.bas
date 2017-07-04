@@ -86,7 +86,7 @@ End Function
 Public Sub EjecutarPruebas()
 Dim resp As Integer
 
-    inicializarAmbientePruebas
+    ' inicializarAmbientePruebas  --- apartir de la version 4.9.71 no hace falta invocar a esta funcion
     
     strResultadoPruebas = ""
     ' If Not Prueba_ObtenerTalonariosND() Then strResultadoPruebas = strResultadoPruebas + vbCrLf + "Error en Prueba_ObtenerTalonariosND " + vbCrLf
