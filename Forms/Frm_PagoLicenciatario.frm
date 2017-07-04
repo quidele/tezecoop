@@ -213,332 +213,6 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
       End
    End
-   Begin VB.Frame fraPagoLicenciatarios 
-      BorderStyle     =   0  'None
-      Height          =   8715
-      Left            =   60
-      TabIndex        =   0
-      Top             =   705
-      Width           =   11130
-      Begin VB.PictureBox Picture1 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFC0C0&
-         ForeColor       =   &H80000008&
-         Height          =   5685
-         Left            =   1770
-         ScaleHeight     =   5655
-         ScaleWidth      =   6870
-         TabIndex        =   13
-         Top             =   225
-         Width           =   6900
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            Height          =   1350
-            Index           =   7
-            Left            =   300
-            Locked          =   -1  'True
-            MultiLine       =   -1  'True
-            ScrollBars      =   2  'Vertical
-            TabIndex        =   93
-            TabStop         =   0   'False
-            Tag             =   "dsLeyenda"
-            Top             =   1725
-            Width           =   6210
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   6
-            Left            =   285
-            Locked          =   -1  'True
-            TabIndex        =   34
-            TabStop         =   0   'False
-            Tag             =   "vlIVA"
-            Top             =   5205
-            Width           =   1410
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   3
-            Left            =   4200
-            Locked          =   -1  'True
-            TabIndex        =   19
-            TabStop         =   0   'False
-            Tag             =   "dtCupon"
-            Top             =   480
-            Width           =   2310
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00FFFFFF&
-            Height          =   1350
-            Index           =   20
-            Left            =   300
-            MultiLine       =   -1  'True
-            ScrollBars      =   2  'Vertical
-            TabIndex        =   18
-            TabStop         =   0   'False
-            Tag             =   "dsObservacion"
-            Top             =   3525
-            Width           =   6210
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   2
-            Left            =   330
-            Locked          =   -1  'True
-            TabIndex        =   17
-            TabStop         =   0   'False
-            Tag             =   "nrLicencia"
-            Top             =   480
-            Width           =   810
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   1
-            Left            =   2025
-            Locked          =   -1  'True
-            TabIndex        =   16
-            TabStop         =   0   'False
-            Tag             =   "nrComprabanteCliente"
-            Top             =   480
-            Width           =   2145
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   0
-            Left            =   1185
-            Locked          =   -1  'True
-            TabIndex        =   15
-            TabStop         =   0   'False
-            Tag             =   "nrTalonarioCliente"
-            Top             =   480
-            Width           =   810
-         End
-         Begin VB.TextBox txtFields 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            DataField       =   "cdCaja"
-            ForeColor       =   &H00000000&
-            Height          =   285
-            Index           =   5
-            Left            =   315
-            Locked          =   -1  'True
-            TabIndex        =   14
-            TabStop         =   0   'False
-            Tag             =   "dsDestino"
-            Top             =   1065
-            Width           =   6180
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Observación Factura"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   8
-            Left            =   315
-            TabIndex        =   94
-            Top             =   1485
-            Width           =   3810
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "IVA"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   7
-            Left            =   285
-            TabIndex        =   35
-            Top             =   4965
-            Width           =   480
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Fecha y Hora del Viaje"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   4
-            Left            =   4200
-            TabIndex        =   25
-            Top             =   255
-            Width           =   2085
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Observación de Pago"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   3
-            Left            =   315
-            TabIndex        =   24
-            Top             =   3285
-            Width           =   3810
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Licencia"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   2
-            Left            =   345
-            TabIndex        =   23
-            Top             =   240
-            Width           =   915
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Comprobante"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   1
-            Left            =   2025
-            TabIndex        =   22
-            Top             =   240
-            Width           =   1380
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Talonario"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   0
-            Left            =   1155
-            TabIndex        =   21
-            Top             =   240
-            Width           =   915
-         End
-         Begin VB.Label lblLabels 
-            BackStyle       =   0  'Transparent
-            Caption         =   "Destinos"
-            BeginProperty Font 
-               Name            =   "Verdana"
-               Size            =   8.25
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            Height          =   255
-            Index           =   6
-            Left            =   330
-            TabIndex        =   20
-            Top             =   825
-            Width           =   915
-         End
-      End
-      Begin VB.TextBox txtFields 
-         BackColor       =   &H00E0E0E0&
-         DataField       =   "cdCaja"
-         ForeColor       =   &H00000000&
-         Height          =   285
-         Index           =   4
-         Left            =   270
-         Locked          =   -1  'True
-         TabIndex        =   11
-         TabStop         =   0   'False
-         Tag             =   "nrCupon"
-         Top             =   6420
-         Visible         =   0   'False
-         Width           =   810
-      End
-      Begin VB.Label lblLabels 
-         BackStyle       =   0  'Transparent
-         Caption         =   "Nro. de Cupón"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   5
-         Left            =   270
-         TabIndex        =   12
-         Top             =   6180
-         Visible         =   0   'False
-         Width           =   915
-      End
-   End
    Begin VB.Frame fraBusqCajas 
       BorderStyle     =   0  'None
       Height          =   7395
@@ -1650,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   61276161
+         Format          =   134807553
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1664,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   61276161
+         Format          =   134807553
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
@@ -1748,6 +1422,332 @@ Begin VB.Form frm_PagoLicenciatario
          TabIndex        =   6
          Top             =   105
          Width           =   795
+      End
+   End
+   Begin VB.Frame fraPagoLicenciatarios 
+      BorderStyle     =   0  'None
+      Height          =   8715
+      Left            =   60
+      TabIndex        =   0
+      Top             =   705
+      Width           =   11130
+      Begin VB.PictureBox Picture1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFC0C0&
+         ForeColor       =   &H80000008&
+         Height          =   5685
+         Left            =   1770
+         ScaleHeight     =   5655
+         ScaleWidth      =   6870
+         TabIndex        =   13
+         Top             =   225
+         Width           =   6900
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            Height          =   1350
+            Index           =   7
+            Left            =   300
+            Locked          =   -1  'True
+            MultiLine       =   -1  'True
+            ScrollBars      =   2  'Vertical
+            TabIndex        =   93
+            TabStop         =   0   'False
+            Tag             =   "dsLeyenda"
+            Top             =   1725
+            Width           =   6210
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   6
+            Left            =   285
+            Locked          =   -1  'True
+            TabIndex        =   34
+            TabStop         =   0   'False
+            Tag             =   "vlIVA"
+            Top             =   5205
+            Width           =   1410
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   3
+            Left            =   4200
+            Locked          =   -1  'True
+            TabIndex        =   19
+            TabStop         =   0   'False
+            Tag             =   "dtCupon"
+            Top             =   480
+            Width           =   2310
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00FFFFFF&
+            Height          =   1350
+            Index           =   20
+            Left            =   300
+            MultiLine       =   -1  'True
+            ScrollBars      =   2  'Vertical
+            TabIndex        =   18
+            TabStop         =   0   'False
+            Tag             =   "dsObservacion"
+            Top             =   3525
+            Width           =   6210
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   2
+            Left            =   330
+            Locked          =   -1  'True
+            TabIndex        =   17
+            TabStop         =   0   'False
+            Tag             =   "nrLicencia"
+            Top             =   480
+            Width           =   810
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   1
+            Left            =   2025
+            Locked          =   -1  'True
+            TabIndex        =   16
+            TabStop         =   0   'False
+            Tag             =   "nrComprabanteCliente"
+            Top             =   480
+            Width           =   2145
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   0
+            Left            =   1185
+            Locked          =   -1  'True
+            TabIndex        =   15
+            TabStop         =   0   'False
+            Tag             =   "nrTalonarioCliente"
+            Top             =   480
+            Width           =   810
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            DataField       =   "cdCaja"
+            ForeColor       =   &H00000000&
+            Height          =   285
+            Index           =   5
+            Left            =   315
+            Locked          =   -1  'True
+            TabIndex        =   14
+            TabStop         =   0   'False
+            Tag             =   "dsDestino"
+            Top             =   1065
+            Width           =   6180
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Observación Factura"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   8
+            Left            =   315
+            TabIndex        =   94
+            Top             =   1485
+            Width           =   3810
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "IVA"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   7
+            Left            =   285
+            TabIndex        =   35
+            Top             =   4965
+            Width           =   480
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Fecha y Hora del Viaje"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   4
+            Left            =   4200
+            TabIndex        =   25
+            Top             =   255
+            Width           =   2085
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Observación de Pago"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   3
+            Left            =   315
+            TabIndex        =   24
+            Top             =   3285
+            Width           =   3810
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Licencia"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   2
+            Left            =   345
+            TabIndex        =   23
+            Top             =   240
+            Width           =   915
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Comprobante"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   1
+            Left            =   2025
+            TabIndex        =   22
+            Top             =   240
+            Width           =   1380
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Talonario"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   0
+            Left            =   1155
+            TabIndex        =   21
+            Top             =   240
+            Width           =   915
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
+            Caption         =   "Destinos"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   6
+            Left            =   330
+            TabIndex        =   20
+            Top             =   825
+            Width           =   915
+         End
+      End
+      Begin VB.TextBox txtFields 
+         BackColor       =   &H00E0E0E0&
+         DataField       =   "cdCaja"
+         ForeColor       =   &H00000000&
+         Height          =   285
+         Index           =   4
+         Left            =   270
+         Locked          =   -1  'True
+         TabIndex        =   11
+         TabStop         =   0   'False
+         Tag             =   "nrCupon"
+         Top             =   6420
+         Visible         =   0   'False
+         Width           =   810
+      End
+      Begin VB.Label lblLabels 
+         BackStyle       =   0  'Transparent
+         Caption         =   "Nro. de Cupón"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   5
+         Left            =   270
+         TabIndex        =   12
+         Top             =   6180
+         Visible         =   0   'False
+         Width           =   915
       End
    End
 End
@@ -2082,7 +2082,7 @@ Private Sub Form_Load()
     limpiarControles
     cargarcamposdebusqueda
     
-    ObtenerCampo("dtDesde").value = Date - 30
+    ObtenerCampo("dtDesde").value = Date - 60
     ObtenerCampo("dtHasta").value = Date
     
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Buscar")
@@ -2177,7 +2177,7 @@ Private Sub Form_Resize()
 
 End Sub
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControlsPagoLicenciatario Me, Me.fraBusqCajas, Me.lstBusqueda, 50, 50, fra_totales
 

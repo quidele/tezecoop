@@ -16,8 +16,8 @@ Begin VB.Form frm_ResumenLicenciatario
    LinkTopic       =   "Form1"
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   7335
-   ScaleWidth      =   16215
+   ScaleHeight     =   12495
+   ScaleWidth      =   22920
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form frm_ResumenLicenciatario
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   16215
-      _ExtentX        =   28601
+      Width           =   22920
+      _ExtentX        =   40428
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   133496833
+            Format          =   134807553
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   133496833
+            Format          =   134807553
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -829,7 +829,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Height          =   8115
          Left            =   45
          TabIndex        =   21
-         Top             =   1800
+         Top             =   1785
          Width           =   19830
          _ExtentX        =   34978
          _ExtentY        =   14314
@@ -1716,7 +1716,7 @@ End Sub
 
 
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1733,7 +1733,7 @@ End Sub
 
 
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1875,7 +1875,7 @@ Private Sub lstBusqueda_LostFocus()
         
 End Sub
 
-Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
    ' comentado en la version 3.5
    ' objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
@@ -2227,7 +2227,7 @@ End Sub
 
 
 
-Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     ' comentado en la version 3.5
     'objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda

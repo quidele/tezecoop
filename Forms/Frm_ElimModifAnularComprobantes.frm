@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   133890049
+         Format          =   255983617
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   133890049
+         Format          =   255983617
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3999,6 +3999,7 @@ Dim lcdCliente       As String
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
             ObtenerCampo("cdCondVenta") = "Contado"
+        
         End Select
         ObtenerCampo("tpComision").Clear
         ObtenerCampo("tpComision").AddItem "A Clientes"
