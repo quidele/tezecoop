@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ElimModifAnularComprobantes 
    Caption         =   "Corregir o Eliminar un Comprobante mal Cargado"
    ClientHeight    =   7740
@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   118685697
+         Format          =   134021121
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   118685697
+         Format          =   134021121
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -2791,37 +2791,45 @@ Dim strMotivo        As String
             Exit Function
     End If
     
-        '/************************************************************************/
-        '/* INICIO agregado en la version 4.9.71                                                                 */
-    strSQL = "spu_validarNroComprobanteManual_v4_9_71"
-        strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
-        strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
-        strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
-        strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
-        strSQL = strSQL + "@dtComprobante_param= '" + ObtenerCampo("dtComprobante") + "'"
-         
-    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
-            MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
-            CorrigeErrores = False
-        Exit Function
-    End If
-
-        If objbasededatos.rs_resultados.EOF Then
-                MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
-            CorrigeErrores = False
-        Exit Function
-    End If
+    If Not (nrTalonario_anterior = Trim(ObtenerCampo("nrTalonario")) And _
+       nrComprobante_anterior = Trim(ObtenerCampo("nrComprobante")) And _
+       tpComprobante_anterior = Trim(ObtenerCampo("tpComprobante")) And _
+       dtComprobante_anterior = ObtenerCampo("dtComprobante")) Then
         
-    If objbasededatos.rs_resultados("resultado") = "ERROR" Then
-                        MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
-            CorrigeErrores = False
-                Exit Function
+           
+            '/************************************************************************/
+            '/* INICIO agregado en la version 4.9.71                                                                 */
+        strSQL = "spu_validarNroComprobanteManual_v4_9_71"
+            strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
+            strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
+            strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
+            strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
+            strSQL = strSQL + "@dtComprobante_param= '" + ObtenerCampo("dtComprobante") + "'"
+             
+        If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+                MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
+                CorrigeErrores = False
+            Exit Function
         End If
     
-    objbasededatos.rs_resultados.Close
-        '/* FIN agregado en la version 4.9.71                                                            */
-        '/************************************************************************/
-    
+            If objbasededatos.rs_resultados.EOF Then
+                    MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+                CorrigeErrores = False
+            Exit Function
+        End If
+            
+        If objbasededatos.rs_resultados("resultado") = "ERROR" Then
+                            MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
+                CorrigeErrores = False
+                    Exit Function
+            End If
+        
+        objbasededatos.rs_resultados.Close
+            '/* FIN agregado en la version 4.9.71                                                            */
+            '/************************************************************************/
+    End If
+        
+        
     ' Transaccionamos
     objbasededatos.BeginTrans
     

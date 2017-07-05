@@ -16,8 +16,8 @@ Begin VB.Form frm_ResumenLicenciatario
    LinkTopic       =   "Form1"
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   12495
-   ScaleWidth      =   22920
+   ScaleHeight     =   7335
+   ScaleWidth      =   16215
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form frm_ResumenLicenciatario
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   22920
-      _ExtentX        =   40428
+      Width           =   16215
+      _ExtentX        =   28601
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -234,7 +234,7 @@ Begin VB.Form frm_ResumenLicenciatario
       Height          =   10200
       Left            =   75
       TabIndex        =   19
-      Top             =   705
+      Top             =   675
       Width           =   20205
       Begin MSComctlLib.ListView lstExcelIVA 
          Height          =   2400
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   134807553
+            Format          =   213647361
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   134807553
+            Format          =   213647361
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -949,7 +949,7 @@ Begin VB.Form frm_ResumenLicenciatario
          BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   14
             Object.Tag             =   "nrComprabanteCliente"
-            Text            =   "Comprabante"
+            Text            =   "Comprobante"
             Object.Width           =   2646
          EndProperty
          BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -1657,10 +1657,23 @@ Private Sub Form_Load()
    Dim i As Integer
    
 
-    If UCase(objUsuario.dsUsuario) = "RETORNO" Then
+    If UCase(objUsuario.dsUsuario) = "RETORNO" Or objConfig.nrPuesto <> "9" Then
+    
         For i = OptionSeleccionViajes.LBound To OptionSeleccionViajes.UBound
             OptionSeleccionViajes(i).Enabled = False
         Next i
+    
+        
+        For i = 1 To lstBusqueda.ColumnHeaders.Count
+            If lstBusqueda.ColumnHeaders(i).Tag = "flCompensado" Then
+                lstBusqueda.ColumnHeaders(i).Width = 0.1
+            End If
+            If lstBusqueda.ColumnHeaders(i).Tag = "dtCompensado" Then
+                lstBusqueda.ColumnHeaders(i).Width = 0.1
+            End If
+        Next i
+    
+        
     End If
     
     
@@ -1716,7 +1729,7 @@ End Sub
 
 
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1733,7 +1746,7 @@ End Sub
 
 
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1875,7 +1888,7 @@ Private Sub lstBusqueda_LostFocus()
         
 End Sub
 
-Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
    ' comentado en la version 3.5
    ' objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
@@ -2227,7 +2240,7 @@ End Sub
 
 
 
-Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     ' comentado en la version 3.5
     'objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda

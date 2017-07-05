@@ -1,0 +1,405 @@
+04/07/2017 22:14:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:14:31 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:14:31 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:14:38 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:14:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:14:39 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('r%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:14:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('e%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:14:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+04/07/2017 22:14:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('r%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:14:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:14:44 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:14:44 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:14:49 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:14:49 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:14:50 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('r%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:14:53 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:14:53 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:14:53 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:14:53 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'RETORNO' 
+04/07/2017 22:14:53 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:14:53 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:14:53 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:14:53 | Exec SP_ValorPromoRetorno
+04/07/2017 22:14:53 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:14:53 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:14:53 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:14:53 | Exec sco_validarVencimientosCAI_v4_1
+04/07/2017 22:14:53 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:14:53 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:14:53 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:15:08 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:15:08 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:15:08 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:15:13 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:15:13 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:15:15 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso = 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+04/07/2017 22:15:20 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'NOEMI'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:15:20 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'NOEMI'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:15:20 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:15:20 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'NOEMI' 
+04/07/2017 22:15:20 | Exec sp_obtenerCajasRechazadas_v2_9 
+04/07/2017 22:15:20 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:15:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:15:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:15:20 | Exec SP_ValorPromoRetorno
+04/07/2017 22:15:20 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:15:20 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:15:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:15:20 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+04/07/2017 22:15:20 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'NOEMI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+04/07/2017 22:15:22 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:15:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+04/07/2017 22:15:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+04/07/2017 22:28:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:28:48 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:28:48 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 4    
+04/07/2017 22:28:54 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:28:54 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:28:57 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'NOEMI'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:28:57 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'NOEMI'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:28:57 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:28:57 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'NOEMI' 
+04/07/2017 22:28:57 | Exec sp_obtenerCajasRechazadas_v2_9 
+04/07/2017 22:28:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:28:57 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:28:57 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:28:57 | Exec SP_ValorPromoRetorno
+04/07/2017 22:28:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:28:57 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:28:57 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:28:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+04/07/2017 22:28:57 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'NOEMI'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+04/07/2017 22:28:58 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:28:58 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+04/07/2017 22:28:58 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Puestos' ,@p_operaconcaja = 1 
+04/07/2017 22:29:13 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:29:13 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:29:13 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 4    
+04/07/2017 22:29:22 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:29:22 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:29:23 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('y%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:24 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('s%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:24 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('sr%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:25 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:25 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('u%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:25 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('us%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usr%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpa%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpar%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrpar%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrparam%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:26 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('usrparam%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:29:30 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:29:30 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:29:30 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:29:30 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'USRPARAM' 
+04/07/2017 22:29:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:29:30 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:29:30 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:29:31 | Exec SP_ValorPromoRetorno
+04/07/2017 22:29:31 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:29:31 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:29:31 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:29:31 | Exec sco_validarVencimientosCAI_v4_1
+04/07/2017 22:29:31 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:29:31 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+04/07/2017 22:29:31 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+04/07/2017 22:29:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAcceso'
+04/07/2017 22:29:40 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE  tpNivelAcceso Like ('%%%')   Order by TB_NivelAcceso.tpNivelAcceso ASC 
+04/07/2017 22:30:12 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Administracion de Retornos'    
+04/07/2017 22:30:12 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' 
+04/07/2017 22:30:28 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Administracion de Retornos'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Administracion de Retornos'  
+04/07/2017 22:30:28 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAccesoOpcionesMenu'
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+04/07/2017 22:30:28 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 217  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 218  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 222  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 223  
+04/07/2017 22:30:29 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administracion de Retornos'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 224  
+04/07/2017 22:30:32 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+04/07/2017 22:30:34 | Exec sco_NivelJerarquico 
+04/07/2017 22:30:34 | Exec sco_TipodeAcceso 
+04/07/2017 22:30:36 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmApellido ,TB_Usuarios.nmNombre ,TB_Usuarios.tpAcceso ,TB_Usuarios.tpNivelJerarquico ,TB_Usuarios.flBloqueado  FROM TB_Usuarios  WHERE  nmApellido Like ('%%%') AND TB_Usuarios.flEliminar = 0     Order by TB_Usuarios.nmApellido ASC 
+04/07/2017 22:30:50 |  SELECT TB_Usuarios.tpNivelJerarquico ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpAcceso ,TB_Usuarios.cdPostal ,TB_Usuarios.nrCUIL ,TB_Usuarios.nrTelefono ,TB_Usuarios.nmLocalidad ,TB_Usuarios.dsPassword ,TB_Usuarios.dsDomicilio ,TB_Usuarios.nmNombre ,TB_Usuarios.dsUsuario ,TB_Usuarios.nmApellido  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:30:55 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+04/07/2017 22:31:03 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('r%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:03 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('re%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:03 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ret%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:03 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('reto%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:03 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('retor%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:04 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('retorn%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:31:14 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:31:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:31:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:31:14 | Exec SP_ValorPromoRetorno
+04/07/2017 22:31:14 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:31:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:31:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:31:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:31:16 | Exec  sp_obtiene_falta_compensar_v4_2 
+04/07/2017 22:31:17 | Exec  SP_TB_Cupones_Qry_v3_9 @dtCupon_desde_param='04-07-2017 00:00:00.000',@dtCupon_hasta_param='04-07-2017 23:59:59.000',@nrLicencia_param=0,@flAnulado_param=0,@flCompensado_param=0,@flNoPagados_param=0,@flAgrupado=0,@vlMontoCupon_param=0,@flIVA=0
+04/07/2017 22:32:01 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:33:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:33:03 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:33:03 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:33:11 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:33:11 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:33:14 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:33:14 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'RETORNO'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:33:14 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:33:14 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'RETORNO' 
+04/07/2017 22:33:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:33:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:33:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:33:14 | Exec SP_ValorPromoRetorno
+04/07/2017 22:33:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:33:14 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:33:14 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:33:14 | Exec sco_validarVencimientosCAI_v4_1
+04/07/2017 22:33:14 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:33:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:33:14 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:33:17 | Exec  sp_obtiene_falta_compensar_v4_2 
+04/07/2017 22:33:18 | Exec  SP_TB_Cupones_Qry_v3_9 @dtCupon_desde_param='04-07-2017 00:00:00.000',@dtCupon_hasta_param='04-07-2017 23:59:59.000',@nrLicencia_param=0,@flAnulado_param=0,@flCompensado_param=0,@flNoPagados_param=0,@flAgrupado=0,@vlMontoCupon_param=0,@flIVA=0
+04/07/2017 22:33:25 | Exec  SP_TB_Cupones_Qry_v3_9 @dtCupon_desde_param='27-03-2017 00:00:00.000',@dtCupon_hasta_param='04-07-2017 23:59:59.000',@nrLicencia_param=0,@flAnulado_param=0,@flCompensado_param=0,@flNoPagados_param=0,@flAgrupado=0,@vlMontoCupon_param=0,@flIVA=0
+04/07/2017 22:33:25 | Exec  SP_TB_Cupones_Qry_v3_9 @dtCupon_desde_param='27-03-2017 00:00:00.000',@dtCupon_hasta_param='04-07-2017 23:59:59.000',@nrLicencia_param=0,@flAnulado_param=0,@flCompensado_param=0,@flNoPagados_param=0,@flAgrupado=0,@vlMontoCupon_param=0,@flIVA=0
+04/07/2017 22:34:44 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administracion de Retornos' ,@p_operaconcaja = 1 
+04/07/2017 22:36:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:36:48 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:36:48 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:36:55 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:36:56 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:36:59 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('c%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:36:59 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ca%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:36:59 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cam%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:36:59 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cami%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:36:59 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('camil%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:37:00 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('camila%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:37:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:37:03 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:37:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:37:03 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:37:03 | Exec sp_obtenerCajasRechazadas_v2_9 
+04/07/2017 22:37:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:37:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:37:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:37:03 | Exec SP_ValorPromoRetorno
+04/07/2017 22:37:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:37:03 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:37:03 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:37:03 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+04/07/2017 22:37:03 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+04/07/2017 22:37:04 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+04/07/2017 22:37:04 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+04/07/2017 22:37:04 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+04/07/2017 22:37:04 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+04/07/2017 22:37:05 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '04/07/2017 10:37:05' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+04/07/2017 22:37:05 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+04/07/2017 22:37:05 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+04/07/2017 22:37:05 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+04/07/2017 22:37:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+04/07/2017 22:37:05 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+04/07/2017 22:37:05 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+04/07/2017 22:37:05 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+04/07/2017 22:37:05 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+04/07/2017 22:37:05 | Exec sco_validarVencimientosCAI_v4_1
+04/07/2017 22:37:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:37:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+04/07/2017 22:37:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+04/07/2017 22:37:11 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto ,TB_Puestos.dsPuesto ,TB_Puestos.nrTalonario_manual ,TB_Puestos.nrTalonario_manual ,TB_Puestos.nrTalonario_automatico ,TB_Puestos.nrTalonario_automatico ,TB_Puestos.nrComprobante_manual_ult ,TB_Puestos.nrComprobante_manual_ult ,TB_Puestos.nrComprobante_automatico_ult ,TB_Puestos.nrComprobante_automatico_ult ,TB_Puestos.tpletra ,TB_Puestos.tpletra ,TB_Puestos.flFacturaCtacte  FROM TB_Puestos  WHERE  dsPuesto Like ('%%%') AND TB_Puestos.flEliminar = 0     Order by TB_Puestos.dsPuesto ASC 
+04/07/2017 22:37:13 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+04/07/2017 22:37:18 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajasPuestos_v2_5'
+04/07/2017 22:37:18 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '19/06/2017 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:37:29 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '01/01/2017 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:37:36 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '01/01/2015 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:37:39 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '01/01/2015 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:37:46 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlFondoFijoEuros ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlFondoFijoReales ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlFondoFijoPesos ,TB_Cajas.dsDiferenciaDeCierre ,TB_Cajas.vlDiaReal ,TB_Cajas.vlFondoFijoDolares ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlDiferenciaDeCierre ,TB_Cajas.dtObservacion ,TB_Cajas.dsObservacion ,TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalReales ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlSaldoFinalRealReales ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlCierreReales ,TB_Cajas.vlCierreEuros ,TB_Cajas.vlTotalSaldoCierre ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010107    
+04/07/2017 22:37:46 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaPuestosCondVenta_v3_7'
+04/07/2017 22:37:46 | Exec SP_SumaCajaPuestosCondVenta_v3_7 @pnrCaja_param = 1000010107 
+04/07/2017 22:37:50 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.flEliminar = 0  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.tpNivelJerarquico = 'Supervisor'    
+04/07/2017 22:38:01 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:38:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_7'
+04/07/2017 22:38:01 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:38:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Comprobantes_cajapuesto_v3_7'
+04/07/2017 22:38:01 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:38:01 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_obtenerCierresCajaPuesto_v2_5'
+04/07/2017 22:38:01 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:38:02 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_puedeOperarUsuarioCajaPuesto_v3_2'
+04/07/2017 22:38:02 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:38:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+04/07/2017 22:38:06 | Exec  SP_ObtenerTalonarioMaximo_v1_4 
+04/07/2017 22:38:06 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrComprobante = '00633561'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'B'    
+04/07/2017 22:38:06 |  SELECT TB_Comprobantes.dsLeyenda ,TB_Comprobantes.tpLetra ,TB_Comprobantes.vlTotalGeneral ,TB_Comprobantes.vlPagoEuros ,TB_Comprobantes.vlPagoPesos ,TB_Comprobantes.tpMoneda ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.nmLocalidad ,TB_Comprobantes.dsEmail ,TB_Comprobantes.cdPostal ,TB_Comprobantes.dtVencimiento ,TB_Comprobantes.nrBultos ,TB_Comprobantes.nrPasajeros ,TB_Comprobantes.vlPagoDolares ,TB_Comprobantes.nrTel ,TB_Comprobantes.vlDiaEuro ,TB_Comprobantes.cdCliente ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nmApellido ,TB_Comprobantes.nmNombre ,TB_Comprobantes.dsOpcional3 ,TB_Comprobantes.IdReciboCtaCte ,TB_Comprobantes.flAnulado ,TB_Comprobantes.flEliminar ,TB_Comprobantes.flManual ,TB_Comprobantes.tpComision ,TB_Comprobantes.cdCliente ,TB_Comprobantes.vlPagoReales  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrComprobante = '00633561    '  AND  TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrCaja = 1000010107  AND  TB_Comprobantes.tpLetra = 'B'  AND  TB_Comprobantes.tpComprobante = 'FA'    
+04/07/2017 22:38:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_ComprobantesDetalle'
+04/07/2017 22:38:06 |  SELECT TB_ComprobantesDetalle.nrItem ,TB_ComprobantesDetalle.cdProducto ,TB_ComprobantesDetalle.dsProducto ,TB_ComprobantesDetalle.vlPrecioViaje ,TB_ComprobantesDetalle.vlTotalItem  FROM TB_ComprobantesDetalle  WHERE TB_ComprobantesDetalle.nrTalonario = '0006'  AND  TB_ComprobantesDetalle.nrComprobante = '00633561'  AND  TB_ComprobantesDetalle.tpComprobante = 'FA'  AND  TB_ComprobantesDetalle.tpLetra = 'B'    
+04/07/2017 22:38:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Clientes'
+04/07/2017 22:38:06 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.tpDoc ,TB_Clientes.nrDoc ,TB_Clientes.dsEmail ,TB_Clientes.nrPuesto ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 1    
+04/07/2017 22:39:01 | Exec spu_validarNroComprobanteManual_v4_9_71 @nrTalonario_param   = '0006',@nrComprobante_param = '00633561',@tpComprobante_param = 'FA',@tpLetra_param = 'B',@dtComprobante_param= '04/08/2016'
+04/07/2017 22:39:43 | Exec spu_validarNroComprobanteManual_v4_9_71 @nrTalonario_param   = '0006',@nrComprobante_param = '00633561',@tpComprobante_param = 'FA',@tpLetra_param = 'B',@dtComprobante_param= '04/08/2016'
+04/07/2017 22:43:19 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+04/07/2017 22:43:19 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+04/07/2017 22:43:19 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+04/07/2017 22:43:37 | Exec  sco_TB_Productos_v4_1 
+04/07/2017 22:43:37 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+04/07/2017 22:43:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('c%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ca%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cam%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:40 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('cami%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('camil%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:41 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('camila%') AND TB_Usuarios.flEliminar = 0
+04/07/2017 22:43:44 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:43:44 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:43:44 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+04/07/2017 22:43:44 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:43:44 | Exec sp_obtenerCajasRechazadas_v2_9 
+04/07/2017 22:43:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+04/07/2017 22:43:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+04/07/2017 22:43:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+04/07/2017 22:43:44 | Exec SP_ValorPromoRetorno
+04/07/2017 22:43:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+04/07/2017 22:43:44 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+04/07/2017 22:43:44 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+04/07/2017 22:43:44 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+04/07/2017 22:43:44 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+04/07/2017 22:43:46 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+04/07/2017 22:43:46 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+04/07/2017 22:43:46 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+04/07/2017 22:43:46 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+04/07/2017 22:43:48 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '04/07/2017 10:43:47' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+04/07/2017 22:43:48 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+04/07/2017 22:43:48 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+04/07/2017 22:43:48 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+04/07/2017 22:43:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+04/07/2017 22:43:48 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+04/07/2017 22:43:48 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+04/07/2017 22:43:48 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+04/07/2017 22:43:48 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+04/07/2017 22:43:48 | Exec sco_validarVencimientosCAI_v4_1
+04/07/2017 22:43:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+04/07/2017 22:43:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+04/07/2017 22:43:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+04/07/2017 22:43:53 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajasPuestos_v2_5'
+04/07/2017 22:43:53 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '19/06/2017 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:44:05 |  SELECT VW_CajasPuestos_v2_5.nrCaja ,VW_CajasPuestos_v2_5.dtApertura ,VW_CajasPuestos_v2_5.dtCierre ,VW_CajasPuestos_v2_5.nrPuesto ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlDiferenciaDeCierre ,VW_CajasPuestos_v2_5.dsUsuario ,VW_CajasPuestos_v2_5.vlSaldoInicialPesos ,VW_CajasPuestos_v2_5.vlSaldoFinalPesos ,VW_CajasPuestos_v2_5.flSincronizado ,VW_CajasPuestos_v2_5.tpEstadoAprobacion  FROM VW_CajasPuestos_v2_5  WHERE VW_CajasPuestos_v2_5.nrPuesto <> 9 AND VW_CajasPuestos_v2_5.dtApertura >= '02/06/2015 00:00:00'  AND  VW_CajasPuestos_v2_5.dtApertura <= '04/07/2017 23:59:59'  AND   nrCaja Like ('%%%')   Order by VW_CajasPuestos_v2_5.dtApertura DESC 
+04/07/2017 22:44:11 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.flEliminar = 0  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.tpNivelJerarquico = 'Supervisor'    
+04/07/2017 22:44:20 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0    
+04/07/2017 22:44:20 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_7'
+04/07/2017 22:44:20 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:44:20 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_Comprobantes_cajapuesto_v3_7'
+04/07/2017 22:44:20 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:44:20 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_obtenerCierresCajaPuesto_v2_5'
+04/07/2017 22:44:20 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:44:20 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_puedeOperarUsuarioCajaPuesto_v3_2'
+04/07/2017 22:44:20 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:44:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comprobantes'
+04/07/2017 22:44:24 | Exec  SP_ObtenerTalonarioMaximo_v1_4 
+04/07/2017 22:44:24 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0001'  AND  TB_Comprobantes.nrComprobante = '00000001'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'B'    
+04/07/2017 22:44:24 |  SELECT TB_Comprobantes.dsLeyenda ,TB_Comprobantes.tpLetra ,TB_Comprobantes.vlTotalGeneral ,TB_Comprobantes.vlPagoEuros ,TB_Comprobantes.vlPagoPesos ,TB_Comprobantes.tpMoneda ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.nmLocalidad ,TB_Comprobantes.dsEmail ,TB_Comprobantes.cdPostal ,TB_Comprobantes.dtVencimiento ,TB_Comprobantes.nrBultos ,TB_Comprobantes.nrPasajeros ,TB_Comprobantes.vlPagoDolares ,TB_Comprobantes.nrTel ,TB_Comprobantes.vlDiaEuro ,TB_Comprobantes.cdCliente ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nmApellido ,TB_Comprobantes.nmNombre ,TB_Comprobantes.dsOpcional3 ,TB_Comprobantes.IdReciboCtaCte ,TB_Comprobantes.flAnulado ,TB_Comprobantes.flEliminar ,TB_Comprobantes.flManual ,TB_Comprobantes.tpComision ,TB_Comprobantes.cdCliente ,TB_Comprobantes.vlPagoReales  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrComprobante = '00000001    '  AND  TB_Comprobantes.nrTalonario = '0001'  AND  TB_Comprobantes.nrCaja = 1000010107  AND  TB_Comprobantes.tpLetra = 'B'  AND  TB_Comprobantes.tpComprobante = 'FA'    
+04/07/2017 22:44:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_ComprobantesDetalle'
+04/07/2017 22:44:24 |  SELECT TB_ComprobantesDetalle.nrItem ,TB_ComprobantesDetalle.cdProducto ,TB_ComprobantesDetalle.dsProducto ,TB_ComprobantesDetalle.vlPrecioViaje ,TB_ComprobantesDetalle.vlTotalItem  FROM TB_ComprobantesDetalle  WHERE TB_ComprobantesDetalle.nrTalonario = '0001'  AND  TB_ComprobantesDetalle.nrComprobante = '00000001'  AND  TB_ComprobantesDetalle.tpComprobante = 'FA'  AND  TB_ComprobantesDetalle.tpLetra = 'B'    
+04/07/2017 22:44:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Clientes'
+04/07/2017 22:44:24 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.tpDoc ,TB_Clientes.nrDoc ,TB_Clientes.dsEmail ,TB_Clientes.nrPuesto ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 1    
+04/07/2017 22:44:27 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:44:27 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:44:27 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:44:27 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:44:31 | Exec  SP_ObtenerTalonarioMaximo_v1_4 
+04/07/2017 22:44:31 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrComprobante = '00633561'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'B'    
+04/07/2017 22:44:31 |  SELECT TB_Comprobantes.dsLeyenda ,TB_Comprobantes.tpLetra ,TB_Comprobantes.vlTotalGeneral ,TB_Comprobantes.vlPagoEuros ,TB_Comprobantes.vlPagoPesos ,TB_Comprobantes.tpMoneda ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.nmLocalidad ,TB_Comprobantes.dsEmail ,TB_Comprobantes.cdPostal ,TB_Comprobantes.dtVencimiento ,TB_Comprobantes.nrBultos ,TB_Comprobantes.nrPasajeros ,TB_Comprobantes.vlPagoDolares ,TB_Comprobantes.nrTel ,TB_Comprobantes.vlDiaEuro ,TB_Comprobantes.cdCliente ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nmApellido ,TB_Comprobantes.nmNombre ,TB_Comprobantes.dsOpcional3 ,TB_Comprobantes.IdReciboCtaCte ,TB_Comprobantes.flAnulado ,TB_Comprobantes.flEliminar ,TB_Comprobantes.flManual ,TB_Comprobantes.tpComision ,TB_Comprobantes.cdCliente ,TB_Comprobantes.vlPagoReales  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrComprobante = '00633561    '  AND  TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrCaja = 1000010107  AND  TB_Comprobantes.tpLetra = 'B'  AND  TB_Comprobantes.tpComprobante = 'FA'    
+04/07/2017 22:44:31 |  SELECT TB_ComprobantesDetalle.nrItem ,TB_ComprobantesDetalle.cdProducto ,TB_ComprobantesDetalle.dsProducto ,TB_ComprobantesDetalle.vlPrecioViaje ,TB_ComprobantesDetalle.vlTotalItem  FROM TB_ComprobantesDetalle  WHERE TB_ComprobantesDetalle.nrTalonario = '0006'  AND  TB_ComprobantesDetalle.nrComprobante = '00633561'  AND  TB_ComprobantesDetalle.tpComprobante = 'FA'  AND  TB_ComprobantesDetalle.tpLetra = 'B'    
+04/07/2017 22:44:31 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.tpDoc ,TB_Clientes.nrDoc ,TB_Clientes.dsEmail ,TB_Clientes.nrPuesto ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 1    
+04/07/2017 22:45:06 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerComision_v4_7'
+04/07/2017 22:45:06 | Exec sp_obtenerComision_v4_7 @tpComprobante_param = 'FA' ,@vlTotalGeneral_param = 900 ,@tpComision_param = 'A Clientes' ,@tpCliente_param = 'A Clientes' ,@dsCodigoDestinos_param = ''''',null,450' 
+04/07/2017 22:45:07 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_ActualizarComprobante_v3_7'
+04/07/2017 22:45:07 | Exec SP_ActualizarComprobante_v3_7 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633561' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' ,@nrTalonario_new_param = '0006' ,@nrComprobante_new_param = '00633561' ,@tpComprobante_new_param = 'FA' ,@tpLetra_new_param = 'F' ,@dtComprobante_new_param = '04/08/2016' ,@cdCondVenta_new_param = 'Retorno' ,@tpComision_new_param = 'A Clientes' ,@vlComision_new_param = 36.00 ,@nrCierre_param = 2 
+04/07/2017 22:45:07 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_marcarTipodeActualizacionCajaPuesto_v3_7'
+04/07/2017 22:45:07 | Exec sp_marcarTipodeActualizacionCajaPuesto_v3_7 @nrTalonario_param = '0006' ,@nrComprobante_param = '00633561' ,@tpComprobante_param = 'FA' ,@tpLetra_param = 'B' ,@tpModificacionCajaPuesto_param = 'Modificado' ,@dsObservacionCajaPuesto_param = 'dcdf' 
+04/07/2017 22:45:07 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCondVentayValoresdePagosModificados_v3_7'
+04/07/2017 22:45:07 | Exec sp_obtenerCondVentayValoresdePagosModificados_v3_7 @cdCondVenta_param = 'Contado' ,@cdCondVenta_new_param = 'Retorno' ,@vlPagoPesos_param = 900.00 ,@vlPagoDolares_param = 0.00 ,@vlPagoEuros_param = 0.00 ,@vlPagoReales_param = 0.00 ,@vlTotalGeneral = 900.00 
+04/07/2017 22:45:07 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010107  AND  TB_Cajas.flEstado = 0    
+04/07/2017 22:45:07 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010107  AND  TB_Cajas.flCajaAdm = 0    
+04/07/2017 22:45:07 |  SELECT TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlSaldoFinalRealReales ,TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlSaldoFinalReales  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010107    
+04/07/2017 22:45:07 | SET DATEFORMAT dmy
+04/07/2017 22:45:07 | select getdate() AS FECHA
+04/07/2017 22:45:07 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalPesos  = 5000 ,TB_Cajas.vlSaldoFinalDolares  = 100 ,TB_Cajas.vlSaldoFinalEuros  = 50 ,TB_Cajas.vlSaldoFinalReales  = 0 ,TB_Cajas.dtActualizacion  = '04/07/2017 10:45:07'   WHERE TB_Cajas.nrCaja = 1000010107  
+04/07/2017 22:45:07 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_ActualizarDiferenciaSaldoCajaPuesto_v2_5'
+04/07/2017 22:45:07 | Exec sp_ActualizarDiferenciaSaldoCajaPuesto_v2_5 @pnrCaja_param = 1000010107 
+04/07/2017 22:45:07 | Exec sp_ActualizarDiferenciaSaldoCajaPuesto_v2_5 @pnrCaja_param = 1000010107 
+04/07/2017 22:45:11 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrComprobante = '00633561'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'B'    
+04/07/2017 22:45:11 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:45:11 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:45:11 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:45:11 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:45:28 | Exec  SP_ObtenerTalonarioMaximo_v1_4 
+04/07/2017 22:45:28 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrComprobante = '00633561'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'F'    
+04/07/2017 22:45:28 |  SELECT TB_Comprobantes.dsLeyenda ,TB_Comprobantes.tpLetra ,TB_Comprobantes.vlTotalGeneral ,TB_Comprobantes.vlPagoEuros ,TB_Comprobantes.vlPagoPesos ,TB_Comprobantes.tpMoneda ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.nmLocalidad ,TB_Comprobantes.dsEmail ,TB_Comprobantes.cdPostal ,TB_Comprobantes.dtVencimiento ,TB_Comprobantes.nrBultos ,TB_Comprobantes.nrPasajeros ,TB_Comprobantes.vlPagoDolares ,TB_Comprobantes.nrTel ,TB_Comprobantes.vlDiaEuro ,TB_Comprobantes.cdCliente ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nmApellido ,TB_Comprobantes.nmNombre ,TB_Comprobantes.dsOpcional3 ,TB_Comprobantes.IdReciboCtaCte ,TB_Comprobantes.flAnulado ,TB_Comprobantes.flEliminar ,TB_Comprobantes.flManual ,TB_Comprobantes.tpComision ,TB_Comprobantes.cdCliente ,TB_Comprobantes.vlPagoReales  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrComprobante = '00633561    '  AND  TB_Comprobantes.nrTalonario = '0006'  AND  TB_Comprobantes.nrCaja = 1000010107  AND  TB_Comprobantes.tpLetra = 'F'  AND  TB_Comprobantes.tpComprobante = 'FA'    
+04/07/2017 22:45:28 |  SELECT TB_ComprobantesDetalle.nrItem ,TB_ComprobantesDetalle.cdProducto ,TB_ComprobantesDetalle.dsProducto ,TB_ComprobantesDetalle.vlPrecioViaje ,TB_ComprobantesDetalle.vlTotalItem  FROM TB_ComprobantesDetalle  WHERE TB_ComprobantesDetalle.nrTalonario = '0006'  AND  TB_ComprobantesDetalle.nrComprobante = '00633561'  AND  TB_ComprobantesDetalle.tpComprobante = 'FA'  AND  TB_ComprobantesDetalle.tpLetra = 'F'    
+04/07/2017 22:45:28 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.tpDoc ,TB_Clientes.nrDoc ,TB_Clientes.dsEmail ,TB_Clientes.nrPuesto ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 1    
+04/07/2017 22:46:09 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:46:09 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:46:09 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:46:09 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:46:19 | Exec  SP_ObtenerTalonarioMaximo_v1_4 
+04/07/2017 22:46:19 |  SELECT TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCliente ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.tpLetra ,TB_Comprobantes.flManual  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrTalonario = '0001'  AND  TB_Comprobantes.nrComprobante = '00000001'  AND  TB_Comprobantes.tpComprobante = 'FA'  AND  TB_Comprobantes.tpLetra = 'B'    
+04/07/2017 22:46:19 |  SELECT TB_Comprobantes.dsLeyenda ,TB_Comprobantes.tpLetra ,TB_Comprobantes.vlTotalGeneral ,TB_Comprobantes.vlPagoEuros ,TB_Comprobantes.vlPagoPesos ,TB_Comprobantes.tpMoneda ,TB_Comprobantes.dsDomicilio ,TB_Comprobantes.nmLocalidad ,TB_Comprobantes.dsEmail ,TB_Comprobantes.cdPostal ,TB_Comprobantes.dtVencimiento ,TB_Comprobantes.nrBultos ,TB_Comprobantes.nrPasajeros ,TB_Comprobantes.vlPagoDolares ,TB_Comprobantes.nrTel ,TB_Comprobantes.vlDiaEuro ,TB_Comprobantes.cdCliente ,TB_Comprobantes.nrTalonario ,TB_Comprobantes.dtComprobante ,TB_Comprobantes.nrComprobante ,TB_Comprobantes.cdCodBar ,TB_Comprobantes.tpComprobante ,TB_Comprobantes.nrCaja ,TB_Comprobantes.cdCondVenta ,TB_Comprobantes.nrDoc ,TB_Comprobantes.dsRazonSocial ,TB_Comprobantes.nrLicencia ,TB_Comprobantes.nmLicenciatario ,TB_Comprobantes.dsUsuario ,TB_Comprobantes.nrPuesto ,TB_Comprobantes.nmApellido ,TB_Comprobantes.nmNombre ,TB_Comprobantes.dsOpcional3 ,TB_Comprobantes.IdReciboCtaCte ,TB_Comprobantes.flAnulado ,TB_Comprobantes.flEliminar ,TB_Comprobantes.flManual ,TB_Comprobantes.tpComision ,TB_Comprobantes.cdCliente ,TB_Comprobantes.vlPagoReales  FROM TB_Comprobantes  WHERE TB_Comprobantes.nrComprobante = '00000001    '  AND  TB_Comprobantes.nrTalonario = '0001'  AND  TB_Comprobantes.nrCaja = 1000010107  AND  TB_Comprobantes.tpLetra = 'B'  AND  TB_Comprobantes.tpComprobante = 'FA'    
+04/07/2017 22:46:19 |  SELECT TB_ComprobantesDetalle.nrItem ,TB_ComprobantesDetalle.cdProducto ,TB_ComprobantesDetalle.dsProducto ,TB_ComprobantesDetalle.vlPrecioViaje ,TB_ComprobantesDetalle.vlTotalItem  FROM TB_ComprobantesDetalle  WHERE TB_ComprobantesDetalle.nrTalonario = '0001'  AND  TB_ComprobantesDetalle.nrComprobante = '00000001'  AND  TB_ComprobantesDetalle.tpComprobante = 'FA'  AND  TB_ComprobantesDetalle.tpLetra = 'B'    
+04/07/2017 22:46:19 |  SELECT TB_Clientes.dsRazonSocial ,TB_Clientes.tpDoc ,TB_Clientes.nrDoc ,TB_Clientes.dsEmail ,TB_Clientes.nrPuesto ,TB_Clientes.tpFormadePago  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 1    
+04/07/2017 22:46:21 | Exec sco_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:46:21 | Exec sco_Comprobantes_cajapuesto_v3_7 @nrCaja_param = 1000010107 
+04/07/2017 22:46:21 | Exec sco_obtenerCierresCajaPuesto_v2_5 @nrCaja_param = 1000010107 
+04/07/2017 22:46:21 | Exec SP_puedeOperarUsuarioCajaPuesto_v3_2 @pnrCaja_param = 1000010107 ,@pdsUsuario_param = 'CAMILAP' 
+04/07/2017 22:46:34 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlFondoFijoEuros ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlFondoFijoReales ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlFondoFijoPesos ,TB_Cajas.dsDiferenciaDeCierre ,TB_Cajas.vlDiaReal ,TB_Cajas.vlFondoFijoDolares ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalDolares ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlDiferenciaDeCierre ,TB_Cajas.dtObservacion ,TB_Cajas.dsObservacion ,TB_Cajas.vlSaldoFinalPesos ,TB_Cajas.vlSaldoFinalReales ,TB_Cajas.vlSaldoFinalEuros ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlSaldoFinalRealReales ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlCierreReales ,TB_Cajas.vlCierreEuros ,TB_Cajas.vlTotalSaldoCierre ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 1000010107    
+04/07/2017 22:46:34 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaPuestosCondVenta_v3_7'
+04/07/2017 22:46:34 | Exec SP_SumaCajaPuestosCondVenta_v3_7 @pnrCaja_param = 1000010107 
+04/07/2017 22:46:37 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
