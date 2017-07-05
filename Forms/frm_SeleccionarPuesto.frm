@@ -132,7 +132,7 @@ Private Sub Form_Load()
     ObjTablasIO.nmTabla = "TB_Puestos"
     ObjTablasIO.setearCampoOperadorValor "nrPuesto", "->", ""
     If App.LogMode <> MODO_DEBUG Then
-        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9", " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9"
     End If
     ObjTablasIO.setearCampoOperadorValor "dsPuesto", "->", ""
     ObjTablasIO.Seleccionar
