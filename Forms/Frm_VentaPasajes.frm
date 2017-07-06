@@ -179,7 +179,7 @@ Begin VB.Form Frm_VentaPasajes
          TabIndex        =   91
          TabStop         =   0   'False
          Tag             =   "tpLetra"
-         Top             =   450
+         Top             =   465
          Width           =   480
       End
       Begin VB.TextBox txtItemFactura 
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   134742017
+         Format          =   132972545
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
