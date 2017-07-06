@@ -1,12 +1,12 @@
 
 select x.nrTalonario , x.nrComprobante , x.tpComprobante , x.tpLetra  , y.tpletra as  tpletraOK
-     --into ztmp_comprobantesF_error
+     into ztmp_comprobantesF_error_06072017
 	 from TB_Comprobantes x  inner join TB_Puestos y on
                     x.nrPuesto = y.nrPuesto
   where x.tpletra = 'F'
 
 
-  select * from ztmp_comprobantesF_error x  inner join TB_Comprobantes y
+  select * from ztmp_comprobantesF_error_06072017 x  inner join TB_Comprobantes y
 				on x.nrComprobante = y.nrComprobante
 						and x.nrTalonario = y.nrTalonario
 						  and x.tpComprobante = y.tpComprobante
