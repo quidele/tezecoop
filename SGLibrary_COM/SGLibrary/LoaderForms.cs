@@ -138,6 +138,11 @@ namespace SGLibrary
                         ServiceTarifas miServiceTarifas = new ServiceTarifas();
                         miServiceTarifas.cargarTarifas();
                         return;
+                    case "Frm_GroupByGrid":
+                        SGLibrary.Frm_GroupByGrid f5 = new SGLibrary.Frm_GroupByGrid();
+                        f = (Form)f5;
+                        break;
+
                 }
 
                 Form objForm = (Form) f;

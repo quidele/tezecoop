@@ -119,6 +119,15 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensiones\Extensiones.cs" />
+    <Compile Include="Extensiones\GroupByGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frm_GroupByGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_GroupByGrid.Designer.cs">
+      <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>
+    </Compile>
     <Compile Include="FormularioBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -296,6 +305,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frm_GroupByGrid.resx">
+      <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmXLSSelect.resx">
       <DependentUpon>FrmXLSSelect.cs</DependentUpon>
