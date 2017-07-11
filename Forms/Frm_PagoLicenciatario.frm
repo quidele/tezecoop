@@ -1164,7 +1164,7 @@ Begin VB.Form frm_PagoLicenciatario
             SubItemIndex    =   1
             Object.Tag             =   "tpComprobanteCliente"
             Text            =   "Doc"
-            Object.Width           =   0
+            Object.Width           =   706
          EndProperty
          BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   2
@@ -1324,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   134807553
+         Format          =   158072833
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   134807553
+         Format          =   158072833
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
