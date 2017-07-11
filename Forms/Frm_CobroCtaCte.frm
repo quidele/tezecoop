@@ -812,7 +812,7 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.tpLetra", Trim(objbasededatos.rs_resultados("tpLetra"))
     objParametros.GrabarValor "FacturarCtaCte.nrCAI", Trim(objbasededatos.rs_resultados("nrCAI"))
     objParametros.GrabarValor "FacturarCtaCte.dtVencimiento", Trim(objbasededatos.rs_resultados("dtCAI"))
-    
+    objParametros.GrabarValor "FacturarCtaCte.flManual", IIf(Me.cbTipoFacturacion.Text = "Automática", "N", "M")
     
     ' REVEER CTA. CTES
     Frm_FacturaCtaCte.Show 1

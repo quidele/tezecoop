@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_FacturaCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte."
@@ -513,7 +513,7 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   9
          TabStop         =   0   'False
          Tag             =   "nrCaja"
-         Top             =   480
+         Top             =   465
          Width           =   1080
       End
       Begin MSComctlLib.ListView lstItemsFactura 
@@ -2052,6 +2052,12 @@ Dim strSQL       As String
     
     ObjTablasIO.setearCampoOperadorValor _
               "dsUsuario", "<-", objUsuario.dsUsuario
+              
+    ObjTablasIO.setearCampoOperadorValor _
+              "flManual", "<-", objParametros.ObtenerValor("FacturarCtaCte.flManual")
+              
+          
+
     
     Select Case EstadoABM
     Case modificacion
