@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   134021121
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   134021121
+         Format          =   133890049
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -2847,7 +2847,7 @@ Dim strMotivo        As String
     objSPs.setearCampoValor "@nrTalonario_new_param", ObtenerCampo("nrTalonario")
     objSPs.setearCampoValor "@nrComprobante_new_param", ObtenerCampo("nrComprobante")
     objSPs.setearCampoValor "@tpComprobante_new_param", ObtenerCampo("tpComprobante")
-    objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("tpComprobante")
+    objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("tpLetra")
     objSPs.setearCampoValor "@dtComprobante_new_param", ObtenerCampo("dtComprobante")
     objSPs.setearCampoValor "@cdCondVenta_new_param", ObtenerCampo("cdCondVenta")
     objSPs.setearCampoValor "@tpComision_new_param", ObtenerCampo("tpComision")

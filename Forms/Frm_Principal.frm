@@ -1041,7 +1041,12 @@ End Sub
 
 Private Sub optFacturarCtaCte_Click()
 
-    frm_CobroCtaCte.Show 1
+    If App.LogMode = MODO_DEBUG Then
+       frm_CobroCtaCte_v2.Show 1
+    Else
+      frm_CobroCtaCte.Show 1
+    End If
+  
     
 End Sub
 
