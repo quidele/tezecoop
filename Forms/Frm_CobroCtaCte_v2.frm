@@ -8,7 +8,7 @@ Begin VB.Form frm_CobroCtaCte_v2
    ClientTop       =   435
    ClientWidth     =   12690
    ClipControls    =   0   'False
-   Icon            =   "frm_CobroCtaCte_v2.frx":0000
+   Icon            =   "Frm_CobroCtaCte_v2.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -18,22 +18,22 @@ Begin VB.Form frm_CobroCtaCte_v2
    ScaleWidth      =   12690
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
-   Begin VB.ComboBox Combo1 
+   Begin VB.ComboBox cbTipoLiquidacion 
       BackColor       =   &H00C0FFFF&
       Height          =   315
-      ItemData        =   "frm_CobroCtaCte_v2.frx":030A
-      Left            =   135
-      List            =   "frm_CobroCtaCte_v2.frx":0317
+      ItemData        =   "Frm_CobroCtaCte_v2.frx":030A
+      Left            =   2835
+      List            =   "Frm_CobroCtaCte_v2.frx":0317
       Style           =   2  'Dropdown List
-      TabIndex        =   25
-      Top             =   1470
+      TabIndex        =   20
+      Top             =   795
       Width           =   4785
    End
    Begin VB.Frame FraFacturaAdelantes 
       Height          =   3360
-      Left            =   945
-      TabIndex        =   24
-      Top             =   1860
+      Left            =   1065
+      TabIndex        =   19
+      Top             =   2175
       Width           =   10140
       Begin VB.TextBox txtFields 
          Alignment       =   2  'Center
@@ -53,14 +53,14 @@ Begin VB.Form frm_CobroCtaCte_v2
          Index           =   18
          Left            =   4680
          ScrollBars      =   2  'Vertical
-         TabIndex        =   35
+         TabIndex        =   30
          TabStop         =   0   'False
          Tag             =   "vlPagoPesos"
          Text            =   "0"
          Top             =   2775
          Width           =   1635
       End
-      Begin VB.TextBox txtSaldos 
+      Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
          CausesValidation=   0   'False
@@ -68,26 +68,25 @@ Begin VB.Form frm_CobroCtaCte_v2
          ForeColor       =   &H00000000&
          Height          =   390
          Index           =   3
-         Left            =   1470
+         Left            =   1455
          Locked          =   -1  'True
-         TabIndex        =   32
+         TabIndex        =   27
          Tag             =   "dsRazonSocial"
-         Top             =   465
+         Top             =   450
          Width           =   7125
       End
-      Begin VB.TextBox txtSaldos 
+      Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
+         BackColor       =   &H00FFFFFF&
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
          ForeColor       =   &H00000000&
          Height          =   390
          Index           =   2
          Left            =   255
-         Locked          =   -1  'True
-         TabIndex        =   31
+         TabIndex        =   26
          Tag             =   "cdCliente"
-         Top             =   465
+         Top             =   450
          Width           =   1170
       End
       Begin VB.TextBox txtFields 
@@ -98,9 +97,9 @@ Begin VB.Form frm_CobroCtaCte_v2
          Height          =   1125
          Index           =   0
          Left            =   240
-         TabIndex        =   30
+         TabIndex        =   25
          TabStop         =   0   'False
-         Tag             =   "dsLeyenda"
+         Tag             =   "dsOpcional2"
          Top             =   1305
          Width           =   9555
       End
@@ -112,7 +111,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          Height          =   285
          Index           =   8
          Left            =   255
-         TabIndex        =   28
+         TabIndex        =   23
          TabStop         =   0   'False
          Tag             =   "dsLeyenda"
          Top             =   2775
@@ -131,7 +130,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          EndProperty
          Height          =   255
          Left            =   4710
-         TabIndex        =   36
+         TabIndex        =   31
          Top             =   2520
          Width           =   4230
       End
@@ -139,15 +138,15 @@ Begin VB.Form frm_CobroCtaCte_v2
          Caption         =   "Razón Social"
          Height          =   255
          Left            =   1470
-         TabIndex        =   34
-         Top             =   255
+         TabIndex        =   29
+         Top             =   240
          Width           =   1110
       End
       Begin VB.Label Label12 
          Caption         =   "Nro. de Cliente"
          Height          =   255
          Left            =   270
-         TabIndex        =   33
+         TabIndex        =   28
          Top             =   240
          Width           =   1155
       End
@@ -164,7 +163,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          EndProperty
          Height          =   255
          Left            =   300
-         TabIndex        =   29
+         TabIndex        =   24
          Top             =   2520
          Width           =   4230
       End
@@ -172,7 +171,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          Caption         =   "Detalle Factura Adelantada"
          Height          =   255
          Left            =   270
-         TabIndex        =   27
+         TabIndex        =   22
          Top             =   1050
          Width           =   3465
       End
@@ -183,15 +182,15 @@ Begin VB.Form frm_CobroCtaCte_v2
       Caption         =   "Exportando los datos ....."
       ForeColor       =   &H80000008&
       Height          =   1650
-      Left            =   7080
-      TabIndex        =   13
-      Top             =   1260
+      Left            =   3840
+      TabIndex        =   8
+      Top             =   2940
       Visible         =   0   'False
       Width           =   5340
       Begin MSComctlLib.ProgressBar ProgressBar 
          Height          =   480
          Left            =   315
-         TabIndex        =   14
+         TabIndex        =   9
          Top             =   615
          Width           =   4575
          _ExtentX        =   8070
@@ -204,7 +203,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          Caption         =   "Porcentaje "
          Height          =   255
          Left            =   315
-         TabIndex        =   17
+         TabIndex        =   12
          Top             =   375
          Width           =   855
       End
@@ -213,7 +212,7 @@ Begin VB.Form frm_CobroCtaCte_v2
          Caption         =   "10 %"
          Height          =   255
          Left            =   1155
-         TabIndex        =   16
+         TabIndex        =   11
          Top             =   375
          Width           =   510
       End
@@ -222,32 +221,53 @@ Begin VB.Form frm_CobroCtaCte_v2
          Caption         =   "100 %"
          Height          =   240
          Left            =   4380
-         TabIndex        =   15
+         TabIndex        =   10
          Top             =   390
          Width           =   510
       End
    End
    Begin VB.Frame frm_liquidaViajes 
-      Height          =   4590
-      Left            =   120
-      TabIndex        =   21
-      Top             =   1860
-      Width           =   12270
+      Height          =   5220
+      Left            =   105
+      TabIndex        =   16
+      Top             =   1230
+      Width           =   12360
+      Begin VB.TextBox txtBusqueda 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   300
+         Left            =   4275
+         TabIndex        =   33
+         Top             =   510
+         Width           =   5880
+      End
+      Begin VB.ComboBox cmbCampos 
+         BackColor       =   &H00E0E0E0&
+         Height          =   315
+         ItemData        =   "Frm_CobroCtaCte_v2.frx":0387
+         Left            =   195
+         List            =   "Frm_CobroCtaCte_v2.frx":0389
+         Locked          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   32
+         Top             =   510
+         Width           =   2400
+      End
       Begin VB.CheckBox CheckTodos 
          Appearance      =   0  'Flat
          Caption         =   "Seleccionar Todos"
          ForeColor       =   &H80000008&
          Height          =   255
          Left            =   210
-         TabIndex        =   22
-         Top             =   270
+         TabIndex        =   17
+         Top             =   990
          Width           =   1755
       End
       Begin MSComctlLib.ListView lstBusqueda 
          Height          =   3825
          Left            =   195
-         TabIndex        =   23
-         Top             =   570
+         TabIndex        =   18
+         Top             =   1290
          Width           =   11925
          _ExtentX        =   21034
          _ExtentY        =   6747
@@ -339,41 +359,52 @@ Begin VB.Form frm_CobroCtaCte_v2
             Object.Width           =   2540
          EndProperty
       End
+      Begin MSComctlLib.ImageCombo ImageCombo1 
+         Height          =   330
+         Left            =   2610
+         TabIndex        =   34
+         Top             =   510
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   582
+         _Version        =   393216
+         ForeColor       =   -2147483640
+         BackColor       =   14737632
+         OLEDropMode     =   1
+         Indentation     =   1
+         Locked          =   -1  'True
+         ImageList       =   "ImgOperadores"
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Valor para la busqueda"
+         Height          =   210
+         Left            =   4320
+         TabIndex        =   36
+         Top             =   255
+         Width           =   1755
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Campo"
+         Height          =   210
+         Left            =   210
+         TabIndex        =   35
+         Top             =   285
+         Width           =   795
+      End
    End
    Begin VB.ComboBox cbTipoFacturacion 
       BackColor       =   &H00C0FFFF&
       Height          =   315
-      ItemData        =   "frm_CobroCtaCte_v2.frx":036A
+      ItemData        =   "Frm_CobroCtaCte_v2.frx":038B
       Left            =   135
-      List            =   "frm_CobroCtaCte_v2.frx":0374
+      List            =   "Frm_CobroCtaCte_v2.frx":0395
       Style           =   2  'Dropdown List
-      TabIndex        =   19
-      Top             =   6825
+      TabIndex        =   14
+      Top             =   6810
       Width           =   2850
    End
-   Begin VB.ComboBox cmbCampos 
-      BackColor       =   &H00E0E0E0&
-      Height          =   315
-      ItemData        =   "frm_CobroCtaCte_v2.frx":038C
-      Left            =   135
-      List            =   "frm_CobroCtaCte_v2.frx":038E
-      Locked          =   -1  'True
-      Style           =   2  'Dropdown List
-      TabIndex        =   7
-      Top             =   885
-      Width           =   2400
-   End
-   Begin VB.TextBox txtBusqueda 
-      Appearance      =   0  'Flat
-      BackColor       =   &H00FFFFFF&
-      Height          =   300
-      Left            =   4215
-      TabIndex        =   5
-      Top             =   885
-      Width           =   5880
-   End
    Begin VB.CommandButton cmdFacturar 
-      Caption         =   "Facturar"
+      Caption         =   "Aceptar"
       BeginProperty Font 
          Name            =   "MS Sans Serif"
          Size            =   8.25
@@ -384,10 +415,10 @@ Begin VB.Form frm_CobroCtaCte_v2
          Strikethrough   =   0   'False
       EndProperty
       Height          =   585
-      Left            =   10290
+      Left            =   9735
       TabIndex        =   4
       Tag             =   "cmdCompensar"
-      Top             =   6645
+      Top             =   6615
       Width           =   2175
    End
    Begin VB.TextBox txtSaldos 
@@ -397,7 +428,7 @@ Begin VB.Form frm_CobroCtaCte_v2
       DataField       =   "nmNombre"
       ForeColor       =   &H00000000&
       Height          =   390
-      Index           =   22
+      Index           =   2
       Left            =   8055
       Locked          =   -1  'True
       TabIndex        =   3
@@ -513,7 +544,7 @@ Begin VB.Form frm_CobroCtaCte_v2
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "frm_CobroCtaCte_v2.frx":0390
+      MouseIcon       =   "Frm_CobroCtaCte_v2.frx":03AD
       Begin MSComctlLib.ImageList imgCobroClientesResaltado 
          Left            =   5850
          Top             =   885
@@ -527,47 +558,47 @@ Begin VB.Form frm_CobroCtaCte_v2
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":04F2
+               Picture         =   "Frm_CobroCtaCte_v2.frx":050F
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":060E
+               Picture         =   "Frm_CobroCtaCte_v2.frx":062B
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":0762
+               Picture         =   "Frm_CobroCtaCte_v2.frx":077F
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":0872
+               Picture         =   "Frm_CobroCtaCte_v2.frx":088F
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":0974
+               Picture         =   "Frm_CobroCtaCte_v2.frx":0991
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":0AC8
+               Picture         =   "Frm_CobroCtaCte_v2.frx":0AE5
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":0BD4
+               Picture         =   "Frm_CobroCtaCte_v2.frx":0BF1
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":1250
+               Picture         =   "Frm_CobroCtaCte_v2.frx":126D
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":13B8
+               Picture         =   "Frm_CobroCtaCte_v2.frx":13D5
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":180C
+               Picture         =   "Frm_CobroCtaCte_v2.frx":1829
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":1C60
+               Picture         =   "Frm_CobroCtaCte_v2.frx":1C7D
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -585,47 +616,47 @@ Begin VB.Form frm_CobroCtaCte_v2
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":22DA
+               Picture         =   "Frm_CobroCtaCte_v2.frx":22F7
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":23F2
+               Picture         =   "Frm_CobroCtaCte_v2.frx":240F
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":2546
+               Picture         =   "Frm_CobroCtaCte_v2.frx":2563
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":265E
+               Picture         =   "Frm_CobroCtaCte_v2.frx":267B
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":276A
+               Picture         =   "Frm_CobroCtaCte_v2.frx":2787
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":28BE
+               Picture         =   "Frm_CobroCtaCte_v2.frx":28DB
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":29C6
+               Picture         =   "Frm_CobroCtaCte_v2.frx":29E3
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":3042
+               Picture         =   "Frm_CobroCtaCte_v2.frx":305F
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":31A2
+               Picture         =   "Frm_CobroCtaCte_v2.frx":31BF
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":35F6
+               Picture         =   "Frm_CobroCtaCte_v2.frx":3613
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "frm_CobroCtaCte_v2.frx":3A4A
+               Picture         =   "Frm_CobroCtaCte_v2.frx":3A67
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -644,51 +675,35 @@ Begin VB.Form frm_CobroCtaCte_v2
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   6
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":40C4
+            Picture         =   "Frm_CobroCtaCte_v2.frx":40E1
             Key             =   "Similar"
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":41D6
+            Picture         =   "Frm_CobroCtaCte_v2.frx":41F3
             Key             =   "Igual"
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":42E8
+            Picture         =   "Frm_CobroCtaCte_v2.frx":4305
             Key             =   "MayoroIgual"
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":43FA
+            Picture         =   "Frm_CobroCtaCte_v2.frx":4417
             Key             =   "Mayor"
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":450C
+            Picture         =   "Frm_CobroCtaCte_v2.frx":4529
             Key             =   "MenoroIgual"
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "frm_CobroCtaCte_v2.frx":461E
+            Picture         =   "Frm_CobroCtaCte_v2.frx":463B
             Key             =   "Menor"
          EndProperty
       EndProperty
    End
-   Begin MSComctlLib.ImageCombo ImageCombo1 
-      Height          =   330
-      Left            =   2550
-      TabIndex        =   6
-      Top             =   885
-      Width           =   1680
-      _ExtentX        =   2963
-      _ExtentY        =   582
-      _Version        =   393216
-      ForeColor       =   -2147483640
-      BackColor       =   14737632
-      OLEDropMode     =   1
-      Indentation     =   1
-      Locked          =   -1  'True
-      ImageList       =   "ImgOperadores"
-   End
    Begin MSComctlLib.ImageCombo ImageCombo2 
       Height          =   330
       Left            =   0
-      TabIndex        =   18
+      TabIndex        =   13
       Top             =   0
       Width           =   1680
       _ExtentX        =   2963
@@ -704,40 +719,24 @@ Begin VB.Form frm_CobroCtaCte_v2
    Begin VB.Label Label9 
       Caption         =   "Operacion"
       Height          =   210
-      Left            =   150
-      TabIndex        =   26
-      Top             =   1245
+      Left            =   120
+      TabIndex        =   21
+      Top             =   765
       Width           =   2415
    End
    Begin VB.Label Label8 
       Caption         =   "Tipo Facturación"
       Height          =   210
       Left            =   150
-      TabIndex        =   20
+      TabIndex        =   15
       Top             =   6600
       Width           =   2415
-   End
-   Begin VB.Label Label1 
-      Caption         =   "Campo"
-      Height          =   210
-      Left            =   150
-      TabIndex        =   12
-      Top             =   660
-      Width           =   795
-   End
-   Begin VB.Label Label2 
-      Caption         =   "Valor para la busqueda"
-      Height          =   210
-      Left            =   4290
-      TabIndex        =   11
-      Top             =   645
-      Width           =   1755
    End
    Begin VB.Label Label3 
       Caption         =   "Acumulado"
       Height          =   255
       Left            =   8085
-      TabIndex        =   10
+      TabIndex        =   7
       Top             =   6555
       Width           =   885
    End
@@ -745,7 +744,7 @@ Begin VB.Form frm_CobroCtaCte_v2
       Caption         =   "Nro. de Cliente"
       Height          =   255
       Left            =   3060
-      TabIndex        =   9
+      TabIndex        =   6
       Top             =   6570
       Width           =   1155
    End
@@ -753,7 +752,7 @@ Begin VB.Form frm_CobroCtaCte_v2
       Caption         =   "Razón Social"
       Height          =   255
       Left            =   4260
-      TabIndex        =   8
+      TabIndex        =   5
       Top             =   6585
       Width           =   1110
    End
@@ -848,6 +847,60 @@ End Sub
 
 
 Private Sub CheckDetalle_Click()
+
+End Sub
+
+Private Sub cbTipoLiquidacion_Change()
+    
+    Select Case cbTipoLiquidacion.Text
+    Case "Facturar Adelantos(FACTURA)"
+      
+        Me.frm_liquidaViajes.Visible = False
+          Me.FraFacturaAdelantes.Visible = True
+        Me.FraFacturaAdelantes.ZOrder 0
+    Case "Facturar Viajes Realizados (FACTURA)"
+        Me.FraFacturaAdelantes.Visible = False
+        Me.frm_liquidaViajes.Visible = True
+        Me.txtBusqueda.SetFocus
+    Case "Consolidar Viajes Adelantados (RECIBO)"
+        Me.FraFacturaAdelantes.Visible = False
+        Me.frm_liquidaViajes.Visible = True
+        Me.txtBusqueda.SetFocus
+    End Select
+
+End Sub
+
+
+Private Sub Facturar_Adelantos()
+
+End Sub
+
+
+Private Sub Facturar_Viajes_Realizados()
+
+End Sub
+
+
+Private Sub Consolidar_Viajes_Adelantados()
+
+End Sub
+
+Private Sub cbTipoLiquidacion_Click()
+    
+    Select Case cbTipoLiquidacion.Text
+    Case "Facturar Adelantos (FACTURA)"
+        Me.FraFacturaAdelantes.Visible = True
+        Me.frm_liquidaViajes.Visible = False
+        ObtenerCampo("cdCliente").SetFocus
+    Case "Facturar Viajes Realizados (FACTURA)"
+        Me.FraFacturaAdelantes.Visible = False
+        Me.frm_liquidaViajes.Visible = True
+        Me.txtBusqueda.SetFocus
+    Case "Consolidar Viajes Adelantados (RECIBO)"
+        Me.FraFacturaAdelantes.Visible = False
+        Me.frm_liquidaViajes.Visible = True
+        Me.txtBusqueda.SetFocus
+    End Select
 
 End Sub
 
@@ -1088,6 +1141,7 @@ End Sub
 
 
 
+
 Private Sub Form_Activate()
 
 
@@ -1103,6 +1157,8 @@ Private Sub Form_Activate()
         On Error Resume Next
         Me.txtBusqueda.SetFocus
         On Error GoTo 0
+    
+    
     
 End Sub
 
@@ -1151,8 +1207,10 @@ Private Sub Form_Load()
     EstadoABM = Consulta
     Me.cmbCampos.ListIndex = 3
     Me.cbTipoFacturacion.ListIndex = 0
-      
-    
+    Me.FraFacturaAdelantes.Visible = False
+    Me.frm_liquidaViajes.Visible = False
+        
+
 End Sub
 
 ' Eulises: Nueva Funcion
@@ -1750,7 +1808,203 @@ End Function
 
 
 
+Private Sub HabilitarCampos(nmCampo As String, habilitar As Boolean)
+    'habilitar = True Habilita
+    'habilitar = False Deshabilita
+    If Not habilitar Then
+          ObtenerCampo(nmCampo).Locked = True
+          ObtenerCampo(nmCampo).BackColor = Gris '&HE0E0E0
+    Else
+          ObtenerCampo(nmCampo).BackColor = Blanco
+          ObtenerCampo(nmCampo).Locked = False
+    End If
+
+End Sub
+
+Private Sub AvisarError(nmCampo As String, Error As Boolean)
+
+    If Error Then
+          ObtenerCampo(nmCampo).BackColor = Rojo
+          ' ObtenerCampo(nmCampo).SetFocus
+    Else
+          If ObtenerCampo(nmCampo).Locked Then
+                ObtenerCampo(nmCampo).BackColor = Gris
+          Else
+                ObtenerCampo(nmCampo).BackColor = Blanco
+          End If
+    End If
+
+End Sub
 
 
 
+
+
+
+Private Sub txtFields_Change(Index As Integer)
+
+    Select Case txtFields(Index).Tag
+    Case "cdCliente"
+    If txtFields(Index).Text = "" Then
+            ObtenerCampo("cdCliente").BackColor = Blanco
+            HabilitarCampos "dsRazonSocial", False
+        End If
+    Case "vlPagoPesos"
+        Me.txtSaldos(2).Text = ObtenerCampo("vlPagoPesos").Text
+    End Select
+
+End Sub
+
+Private Sub txtFields_GotFocus(Index As Integer)
+
+    
+    DoEvents
+    
+    If Me.txtFields(Index).Tag <> "" Then
+            objDiccionariodeDatos.FormatearCampoControl "TB_Comprobantes", _
+                                      Me.txtFields(Index), "GotFocus"
+    End If
+
+
+End Sub
+
+Private Sub txtFields_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+Dim Control As Control
+Dim Valor   As Variant
+
+    Select Case KeyCode
+    Case vbKeyF1
+        Select Case UCase(txtFields(Index).Tag)
+        Case UCase("cdCliente")
+            ObtenerCampo("cdCliente").Text = ""
+            objParametros.GrabarValor "nmTablaBusqueda", "TB_Clientes"
+            objParametros.GrabarValor "nmCampoClaveBusqueda", "cdCliente"
+            objParametros.GrabarValor "vlCampoClaveBusqueda", ""
+            objParametros.GrabarValor "Frm_Busquedas.nmCampoTipo", "tpFormadePago"
+            objParametros.GrabarValor "Frm_Busquedas.nmCampoTipoValorDefecto", "Cuenta Corriente"
+            objParametros.GrabarValor "tpCampoBusqueda", "Razón Social"
+            Frm_Busquedas.Show 1
+            ObtenerCampo("cdCliente").Text = objParametros.ObtenerValor("vlCampoClaveBusqueda")
+            buscarcampocliente
+        End Select
+    End Select
+
+End Sub
+
+Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
+
+
+    Select Case KeyAscii
+    Case vbKeyReturn
+        Select Case Me.txtFields(Index).Tag
+        Case "cdCliente"
+            ' -- agregado en la version 4.9
+            If Not ObtenerCampo("cdCliente").Text = "" Then
+                buscarcampocliente
+            End If
+            ObtenerCampo("dsOpcional2").SetFocus
+        Case "dsOpcional2"
+            ObtenerCampo("dsLeyenda").SetFocus
+        Case "dsLeyenda"
+            ObtenerCampo("vlPagoPesos").SetFocus
+        Case "vlPagoPesos"
+            Me.cbTipoFacturacion.SetFocus
+        End Select
+    Case vbKeyBack
+    Case Else
+        KeyAscii = objDiccionariodeDatos.ValidarEntrada("TB_Comprobantes", _
+                            Me.txtFields(Index), KeyAscii)
+    End Select
+End Sub
+
+
+
+
+
+
+' versión  1.4
+Private Sub buscarcampocliente()
+Dim Control As Control
+Dim Valor   As Variant
+Dim i       As Integer
+Dim tpIVA   As String
+
+
+
+
+       ObjTablasIO.nmTabla = "TB_Clientes"
+       ObjTablasIO.setearCampoOperadorValor "flEliminar", "=", "0", " AND "
+       ObjTablasIO.setearCampoOperadorValor "cdCliente", "=", ObtenerCampo("cdCliente").Text, " AND ("
+       ObjTablasIO.setearCampoOperadorValor "dtBaja", ">", Format(Date, "DD-MM-YYYY"), " OR "
+       ObjTablasIO.setearCampoOperadorValor "dtBaja", " IS NULL ", "", " ) "
+       ObjTablasIO.setearCampoOperadorValor "dsRazonSocial", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "nmApellido", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "nmNombre", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "dsDomicilio", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "nrDoc", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "nmLocalidad", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "dsEmail", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "nrTel", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "cdPostal", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "tpIVA", "->", ""
+       ObjTablasIO.setearCampoOperadorValor "tpFormadePago", "->", ""
+       
+       If Not ObjTablasIO.Seleccionar Then
+           AvisarError "cdCliente", True
+           MsgBox "El cliente no existe, por favor ingrese un nuevo valor.", vbInformation + vbDefaultButton1, "Atención"
+           Exit Sub
+       End If
+       
+       If Not ObjTablasIO.rs_resultados.EOF Then
+           For Each Control In Me.Controls
+               If Not IsMissing(Control.Tag) Then
+                   If Not Control.Tag = "" Then
+                           If Control.Tag <> "cdCliente" Then
+                               For i = 0 To ObjTablasIO.rs_resultados.Fields.Count - 1
+                                   If Control.Tag = ObjTablasIO.rs_resultados.Fields(i).Name Then
+                                       Valor = objDiccionariodeDatos.FormatearCampoValor _
+                                               ("TB_Clientes", Control.Tag, _
+                                               CStr(AdaptarNulos(ObjTablasIO.rs_resultados(Control.Tag), "")))
+                                       
+                                       Select Case Control.Tag
+                                       Case "tpIVA" ' para no desplegar sub eventos
+                                           tpIVA = Valor
+                                       Case Else
+                                           On Error Resume Next
+                                           Control.Text = Valor
+                                           If Err Then
+                                               Control.Text = ""
+                                           End If
+                                           On Error GoTo 0
+                                      End Select
+                                   End If
+                               Next i
+                           End If
+                       End If
+                   End If
+           Next
+           Me.txtSaldos(0).Text = ObtenerCampo("cdCliente").Text
+           Me.txtSaldos(1).Text = ObtenerCampo("dsRazonSocial").Text
+           ObtenerCampo("dsOpcional2").SetFocus
+            
+       Else
+           HabilitarCampos "dsRazonSocial", False
+           ObtenerCampo("cdCliente").BackColor = Rojo
+           ObtenerCampo("cdCliente").SetFocus
+       End If
+   
+End Sub
+
+
+
+
+Private Sub txtFields_LostFocus(Index As Integer)
+
+
+    If Me.txtFields(Index).Tag <> "" Then
+        objDiccionariodeDatos.FormatearCampoControl "TB_Comprobantes", _
+                                  Me.txtFields(Index), "LostFocus"
+    End If
+    
+End Sub
 

@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   132972545
+         Format          =   232980481
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2907,7 +2907,7 @@ Dim objLicenciatario  As New CLicenciatario
     '/****************************************************/
     
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
-    EstadoABM = facturar
+    EstadoABM = Facturar
     Me.cmdFacturar.Enabled = True
     Me.Enabled = True
     
@@ -3491,7 +3491,7 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
     Case vbKeyF1
     Case vbKeyF2
         If tlb_ABM.Buttons("Buscar").Visible Then
-            If EstadoABM <> facturar Then
+            If EstadoABM <> Facturar Then
                 tlb_ABM_ButtonClick tlb_ABM.Buttons("Buscar")
             End If
         End If
@@ -3560,7 +3560,7 @@ Dim strSQL_Params As String
     objParametros.GrabarValor "Facturar", "NO"
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.modo")
     Case "Facturar"
-        EstadoABM = facturar
+        EstadoABM = Facturar
     Case Else
         EstadoABM = Consulta
     End Select
@@ -3772,7 +3772,7 @@ Dim strValor    As String
            EstadoABM = Consulta
            ' Pasar datos
     Case "Agregar"
-           If Not EstadoABM = facturar Then
+           If Not EstadoABM = Facturar Then
             EstadoABM = alta
            End If
            limpiarControles
@@ -3818,8 +3818,8 @@ Dim strValor    As String
          cmdFacturar_Click
     Case "Cancelar"
            Sleep (100)
-           If EstadoABM = facturar Then
-                EstadoABM = facturar
+           If EstadoABM = Facturar Then
+                EstadoABM = Facturar
                 '/****************************************************/
                 '/* Version 1.9                                      */
                 Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -4547,7 +4547,7 @@ Dim strSQL       As String
             Else
                 Guardarregistro = True
             End If
-    Case alta, facturar
+    Case alta, Facturar
             If Not ObjTablasIO.Insertar Then
                 Guardarregistro = False
             Else
@@ -4664,7 +4664,7 @@ Dim strValor     As String
               "dsUsuario", "<-", objUsuario.dsUsuario
     
     Select Case EstadoABM
-    Case modificacion, alta, facturar
+    Case modificacion, alta, Facturar
             If Not ObjTablasIO.Insertar Then
                 Guardarregistro_Imprime = False
             Else
@@ -4776,7 +4776,7 @@ Dim i  As Integer
            Me.tlb_ABM.Buttons("Cancelar").Visible = False
            Me.fraVentaPasajes.Visible = False
     Case "Aceptar"
-           If EstadoABM = facturar Then
+           If EstadoABM = Facturar Then
                 Me.fraVentaPasajes.Visible = True
                 Me.tlb_ABM.Buttons("Buscar").Visible = False
                 Me.tlb_ABM.Buttons("Seleccionar").Visible = False
@@ -4798,7 +4798,7 @@ Dim i  As Integer
                 Me.tlb_ABM.Buttons("Cancelar").Visible = False
           End If
     Case "Cancelar"
-        If EstadoABM = facturar Then
+        If EstadoABM = Facturar Then
            Me.fraVentaPasajes.Visible = True
            Me.tlb_ABM.Buttons("Buscar").Visible = False
            Me.tlb_ABM.Buttons("Seleccionar").Visible = False
