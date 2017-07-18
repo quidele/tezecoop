@@ -67,7 +67,7 @@ select * from tb_puestos
  
 
 
-
+  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9] @mes = 3 , @anio = 2017, @renglon = 1004
 
 
 
@@ -192,3 +192,39 @@ declare @nro_linea decimal(18,0) = 0
 
 end 
 
+
+
+
+GO 
+
+
+--- SITUACION CON IMPORTE SUPERA LOS 999 PESOS
+	select dbo.ufn_ValidarCUIT_v4_9_4 (nrDoc) as cuitok, 
+	tpIVA, nrDoc , vlTotalGeneral, dsRazonSocial,
+	nrTalonario, nrComprobante  ,   tpLetra , tpComprobante from TB_Comprobantes 
+	where  tpComprobante = 'FA'  and year(dtComprobante) = 2017 
+	and month(dtComprobante) = 2 and vlTotalGeneral > 999
+
+
+	 	--- SITUACION CON IMPORTE SUPERA LOS 999 PESOS
+		-- Debemos poner en null al nrDOC y en dsRazonSocial Consumidor Final
+		-- Debemos modificar el store de generacion 
+	select dbo.ufn_ValidarCUIT_v4_9_4 (nrDoc) as cuitok, 
+	tpIVA, nrDoc , vlTotalGeneral, dsRazonSocial,
+	nrTalonario, nrComprobante  ,   tpLetra , tpComprobante from TB_Comprobantes 
+	where  tpComprobante = 'FA'  and year(dtComprobante) = 2017 
+	and month(dtComprobante) = 3 and vlTotalGeneral > 999  and tpIVA = 'CF'
+
+
+
+--Agregamos campos para la nueva regneracion 	   
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='dsRazonSocial_AFIP')
+     ALTER TABLE TB_Comprobantes ADD dsRazonSocial_AFIP VARCHAR(100) NULL
+
+	   
+if not exists (SELECT * FROM INFORMATION_SCHEMA.COLUMNS where TABLE_NAME='TB_Comprobantes' and COLUMN_NAME='nrDoc_AFIP')
+     ALTER TABLE TB_Comprobantes ADD nrDoc_AFIP CHAR(20) NULL
+
+select * from TB_Comprobantes
+
+go 
