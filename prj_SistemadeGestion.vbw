@@ -97,4 +97,4 @@ frm_CambiosCotizacion = 0, 0, 0, 0, C, 176, 184, 1139, 714, C
 Modulo_Pruebas = 125, 125, 1058, 668, C
 frm_SalidasAFIP = 150, 150, 927, 693, C, 150, 150, 1050, 693, C
 frm_ModifComprobante = 175, 175, 1108, 718, C, 150, 150, 1083, 693, C
-frm_CobroCtaCte_v2 = 130, 130, 1059, 635, Z, 26, 26, 955, 531, C
+frm_CobroCtaCte_v2 = 130, 130, 1059, 635, , 26, 26, 955, 531, C
