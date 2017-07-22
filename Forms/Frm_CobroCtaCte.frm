@@ -3,10 +3,10 @@ Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Liquidar / Facturar / Adelantos  a Cuentas Corrientes"
-   ClientHeight    =   6990
+   ClientHeight    =   6810
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   12510
+   ClientWidth     =   16245
    ClipControls    =   0   'False
    Icon            =   "Frm_CobroCtaCte.frx":0000
    KeyPreview      =   -1  'True
@@ -14,8 +14,8 @@ Begin VB.Form frm_CobroCtaCte
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   6990
-   ScaleWidth      =   12510
+   ScaleHeight     =   6810
+   ScaleWidth      =   16245
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.Frame fra_ProgressBar 
@@ -66,119 +66,6 @@ Begin VB.Form frm_CobroCtaCte
          TabIndex        =   15
          Top             =   390
          Width           =   510
-      End
-   End
-   Begin VB.Frame frm_liquidaViajes 
-      Height          =   4590
-      Left            =   120
-      TabIndex        =   21
-      Top             =   1305
-      Width           =   12270
-      Begin VB.CheckBox CheckTodos 
-         Appearance      =   0  'Flat
-         Caption         =   "Seleccionar Todos"
-         ForeColor       =   &H80000008&
-         Height          =   255
-         Left            =   210
-         TabIndex        =   22
-         Top             =   270
-         Width           =   1755
-      End
-      Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   3825
-         Left            =   195
-         TabIndex        =   23
-         Top             =   570
-         Width           =   11925
-         _ExtentX        =   21034
-         _ExtentY        =   6747
-         View            =   3
-         LabelEdit       =   1
-         Sorted          =   -1  'True
-         MultiSelect     =   -1  'True
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         Checkboxes      =   -1  'True
-         FullRowSelect   =   -1  'True
-         GridLines       =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         NumItems        =   10
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Object.Tag             =   "cdCliente"
-            Text            =   "Nro. Cliente"
-            Object.Width           =   1499
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Object.Tag             =   "nrComprabanteCliente"
-            Text            =   "Comprobante"
-            Object.Width           =   2646
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Object.Tag             =   "vlMontoCupon"
-            Text            =   "Total Fact."
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Object.Tag             =   "tpCupon"
-            Text            =   "Cond. Venta"
-            Object.Width           =   2822
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Object.Tag             =   "nrTalonarioCliente"
-            Text            =   "Talonario"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Object.Tag             =   "dtCupon"
-            Text            =   "Fecha"
-            Object.Width           =   2117
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Object.Tag             =   "nrLicencia"
-            Text            =   "Licencia"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "flCobradoalCliente"
-            Text            =   "Cobrado"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
-            Object.Tag             =   "cdCodBar"
-            Text            =   "Cod. de Barras"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
-            Object.Tag             =   "nrCupon"
-            Text            =   "Nro. Cupon"
-            Object.Width           =   2540
-         EndProperty
       End
    End
    Begin VB.ComboBox cbTipoFacturacion 
@@ -282,8 +169,8 @@ Begin VB.Form frm_CobroCtaCte
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   12510
-      _ExtentX        =   22066
+      Width           =   16245
+      _ExtentX        =   28654
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -541,6 +428,119 @@ Begin VB.Form frm_CobroCtaCte
       Indentation     =   1
       Locked          =   -1  'True
       ImageList       =   "ImgOperadores"
+   End
+   Begin VB.Frame frm_liquidaViajes 
+      Height          =   4590
+      Left            =   150
+      TabIndex        =   21
+      Top             =   1395
+      Width           =   12315
+      Begin VB.CheckBox CheckTodos 
+         Appearance      =   0  'Flat
+         Caption         =   "Seleccionar Todos"
+         ForeColor       =   &H80000008&
+         Height          =   255
+         Left            =   210
+         TabIndex        =   22
+         Top             =   270
+         Width           =   1755
+      End
+      Begin MSComctlLib.ListView lstBusqueda 
+         Height          =   3825
+         Left            =   195
+         TabIndex        =   23
+         Top             =   570
+         Width           =   11925
+         _ExtentX        =   21034
+         _ExtentY        =   6747
+         View            =   3
+         LabelEdit       =   1
+         Sorted          =   -1  'True
+         MultiSelect     =   -1  'True
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         Checkboxes      =   -1  'True
+         FullRowSelect   =   -1  'True
+         GridLines       =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         NumItems        =   10
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Object.Tag             =   "cdCliente"
+            Text            =   "Nro. Cliente"
+            Object.Width           =   1499
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Object.Tag             =   "nrComprabanteCliente"
+            Text            =   "Comprobante"
+            Object.Width           =   2646
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Object.Tag             =   "vlMontoCupon"
+            Text            =   "Total Fact."
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "tpCupon"
+            Text            =   "Cond. Venta"
+            Object.Width           =   2822
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Object.Tag             =   "nrTalonarioCliente"
+            Text            =   "Talonario"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Object.Tag             =   "dtCupon"
+            Text            =   "Fecha"
+            Object.Width           =   2117
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Object.Tag             =   "nrLicencia"
+            Text            =   "Licencia"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
+            Object.Tag             =   "flCobradoalCliente"
+            Text            =   "Cobrado"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Object.Tag             =   "cdCodBar"
+            Text            =   "Cod. de Barras"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Object.Tag             =   "nrCupon"
+            Text            =   "Nro. Cupon"
+            Object.Width           =   2540
+         EndProperty
+      End
    End
    Begin VB.Label Label8 
       Caption         =   "Tipo Facturación"

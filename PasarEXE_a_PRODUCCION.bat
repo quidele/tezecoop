@@ -1,12 +1,13 @@
 
-REM EQ 23072017
-If  exist C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017\GestiondeViajes.exe  (
+REM EQ 23072017 _
+
+If  exist C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017_1\GestiondeViajes.exe  (
 	xcopy GestiondeViajes.exe C:\Gestion\GestiondeViajesADM /y
 	xcopy GestiondeViajes.exe C:\Gestion\GestiondeViajesFacturacionRETORNO /y
 ) else (
-	MD C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017
-	xcopy C:\Gestion\GestiondeViajesADM\GestiondeViajes.exe C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017 /y
-	xcopy C:\Gestion\GestiondeViajesFacturacionRETORNO\GestiondeViajes.exe C:\Gestion\GestiondeViajesFacturacionRETORNO\Versiones_Anteriores\23072017  /y
+	MD C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017_1
+	xcopy C:\Gestion\GestiondeViajesADM\GestiondeViajes.exe C:\Gestion\GestiondeViajesADM\Versiones_Anteriores\23072017_1 /y
+	xcopy C:\Gestion\GestiondeViajesFacturacionRETORNO\GestiondeViajes.exe C:\Gestion\GestiondeViajesFacturacionRETORNO\Versiones_Anteriores\23072017_1  /y
 	xcopy GestiondeViajes.exe C:\Gestion\GestiondeViajesADM /y
 	xcopy GestiondeViajes.exe C:\Gestion\GestiondeViajesFacturacionRETORNO /y
 )
