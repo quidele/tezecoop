@@ -300,15 +300,78 @@ select * from TB_Comprobantes x  where
 select * from sys.procedures where name like   '%Alicuo%'
 
 
-  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017, @renglon = 1277
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 3 , @anio = 2017, @renglon = 1277
  
-  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017, @renglon = 1416
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 3 , @anio = 2017, @renglon = 1416
 
   
-  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017, @renglon = 8496
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 3 , @anio = 2017, @renglon = 8496
 
   
-  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017, @renglon = 8516
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 3 , @anio = 2017, @renglon = 8516
 
   
-  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017, @renglon = 14747
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 3 , @anio = 2017, @renglon = 14747
+
+
+  GO
+
+
+ALTER FUNCTION dbo.UDF_obtenerCodDOC_CITIT_v4_9_4 (@tpComprobante char(2), @tpLetra char(1), @escuitOK int = 1)
+RETURNS varchar(2)
+AS
+BEGIN
+	declare @codigo_CITI varchar(2)
+	set @codigo_CITI = 0
+	--if @escuitOK =  1
+	BEGIN
+		select @codigo_CITI =  case 
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'A'  THEN  2
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'A'  THEN  3
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'B'  THEN  7		 
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'B'  THEN  8
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'M'  THEN  51
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'M'  THEN  52
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'M'  THEN  53
+					END
+			return @codigo_CITI
+	END
+
+	-- NUNCA SE VA A LLEGAR ACA
+
+	if @escuitOK =  0
+	BEGIN
+		select @codigo_CITI =  case 
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'A'  THEN  6
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'A'  THEN  7
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'A'  THEN  8
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'B'  THEN  7		 
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'B'  THEN  8
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'A' AND @tpLetra =  'A'  THEN  1
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'B' AND @tpLetra =  'B'  THEN  6
+					 WHEN @tpComprobante = 'FA' AND @tpLetra =  'M'  THEN  51
+					 WHEN @tpComprobante = 'NC' AND @tpLetra =  'M'  THEN  52
+					 WHEN @tpComprobante = 'ND' AND @tpLetra =  'M'  THEN  53
+
+					END
+			return @codigo_CITI
+	END
+	
+	return @codigo_CITI
+END
+
+
+Go 
