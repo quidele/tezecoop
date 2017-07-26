@@ -287,10 +287,8 @@ select * from TB_Comprobantes x  where
 	and dbo.ufn_ValidarCUIT_v4_9_4 (nrDoc) = 0
 
 
-
 	
   exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 3 , @anio = 2017
-
 
   exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 3 , @anio = 2017
 
