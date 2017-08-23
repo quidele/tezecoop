@@ -372,4 +372,9 @@ BEGIN
 END
 
 
-Go 
+GO
+
+
+exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 7 , @anio = 2017 ,  @renglon = 6295
+
+
