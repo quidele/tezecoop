@@ -121,7 +121,7 @@ select nrDOC, dsRazonSocial ,  * from TB_Comprobantes
 	  
 	begin tran 
 
-	update x set  x.nrDoc =  '0652621151'
+	update x set  x.nrDoc =  '30652621151'
 	 from TB_Comprobantes  x 
 	where   year(dtComprobante) = 2017 
 	and month(dtComprobante) = 7 and nrTalonario = '0001' and nrComprobante = '00000844'
