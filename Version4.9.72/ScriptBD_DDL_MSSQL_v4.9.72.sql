@@ -117,8 +117,6 @@ GO
 select * from tb_cupones where tpCupon = 'Todo Pago' and ( vlPagoEuros = 0 OR vlPagoDolares = 0 or vlPagoReales = 0  )  
 
 
-
-
 Exec sp_obtiene_falta_compensar_v4_9_72
 Exec sp_obtiene_falta_compensar_v4_2
 
