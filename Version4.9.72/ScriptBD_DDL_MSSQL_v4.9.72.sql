@@ -117,15 +117,17 @@ GO
 select * from tb_cupones where tpCupon = 'Todo Pago' and ( vlPagoEuros = 0 OR vlPagoDolares = 0 or vlPagoReales = 0  )  
 
 
-Exec sp_obtiene_falta_compensar_v4_9_72
+set dateformat dmy
 Exec sp_obtiene_falta_compensar_v4_2
+Exec sp_obtiene_falta_compensar_v4_9_72 @mostrar_detalles = 'S'
+
 
 */
 GO
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 --- incluir logica de reales
-CREATE  procedure sp_obtiene_falta_compensar_v4_9_72  
+CREATE  procedure sp_obtiene_falta_compensar_v4_9_72   ( @mostrar_detalles as CHAR(1)='N' ) 
 as  
 begin  
 declare @fecha_corte datetime  
@@ -155,7 +157,7 @@ declare @RESTRICCION_COMPENSACION_DIAS_PAGO   int
   --PRINT @fecha_corte  
    
   SELECT --dtCupon, nrLicencia,  
-         tpCupon,suma_vlPagoPesos = CASE tpCupon  
+         tpCupon ,suma_vlPagoPesos = CASE tpCupon  
 		   WHEN 'Contado' THEN  isnull(SUM(vlPagoPesos)- sum(vlComision+isnull(vlIVA,0)),0)  
            WHEN 'Cuenta Corriente' THEN isnull(SUM(vlMontoCupon)- sum(vlComision+isnull(vlIVA,0)),0)  
            WHEN 'Retorno' THEN isnull(SUM(0)- sum(vlComision+isnull(vlIVA,0)),0)  
@@ -172,7 +174,8 @@ declare @RESTRICCION_COMPENSACION_DIAS_PAGO   int
   WHERE (flCompensado = 0) AND (flAnulado = 0) AND   
       tpCupon IN ('Contado', 'Cuenta Corriente', 'Retorno','Cobro en Destino', 'Tarjeta de Crédito' ,  'Tarjeta de Débito' , 'Todo Pago') AND   
       nrLicencia NOT IN (999, 998, 990)   
-      and dbo.f_sepuedecompensar_2_0(dtCupon,@RESTRICCION_COMPENSACION_DIAS_PAGO,@RESTRICCION_COMPENSACION_HORA_PAGO,getdate())=1  
+      and dbo.f_sepuedecompensar_2_1(dtCupon,@RESTRICCION_COMPENSACION_DIAS_PAGO,@RESTRICCION_COMPENSACION_HORA_PAGO,getdate()
+									 , tpCupon, flCobradoalCliente , dtCobradoalCliente)=1  
   Group by tpCupon --, dtCupon  
   
   select isnull(sum(suma_vlPagoPesos),0)   as suma_vlPagoPesos,  
@@ -212,9 +215,106 @@ declare @RESTRICCION_COMPENSACION_DIAS_PAGO   int
          'Sin restricción'				   as dtcupon_hora_corte  
   from #tb_falta_compensar_agrupado_sin_restri  
   
-   
  end   
+
+-----------------------------------------------------------------------------------------------------------
+-----------------------------------------------------------------------------------------------------------
+
+-- mostramos detalle del saldo  
+ IF  ( @mostrar_detalles ='N' ) 
+		RETURN; 
+
+
+
+ if @RESTRICCION_COMPENSACION_ACTIVADA='SI'  
+ begin  
+  select @RESTRICCION_COMPENSACION_HORA_PAGO=vlParametro from TB_Parametros where  dsParametro='RESTRICCION_COMPENSACION_HORA_PAGO'  
+  select @RESTRICCION_COMPENSACION_DIAS_PAGO=convert(int,vlParametro) from TB_Parametros where  dsParametro='RESTRICCION_COMPENSACION_DIAS_PAGO'  
   
+   
+  ---SET @fecha_corte=Convert(datetime,CONVERT(varchar, getdate()-@RESTRICCION_COMPENSACION_DIAS_PAGO, 103)   
+           ---+ ' '+@RESTRICCION_COMPENSACION_HORA_PAGO)  
+   
+  PRINT 'DETALLE VIAJES SALDO A COMPENSAR'  
+   
+  SELECT tpComprobanteCliente as 'DOC' , tpLetraCliente as 'LETRA' ,  nrTalonarioCliente as 'PDV' , nrComprabanteCliente 'NRO',   dtCupon as 'FECHA', 
+		 nrLicencia as 'LICENCIA',  tpCupon 'COND.VENTA', 'PESOS' = CASE tpCupon  
+		   WHEN 'Contado' THEN  isnull((vlPagoPesos)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cuenta Corriente' THEN isnull((vlMontoCupon)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Retorno' THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cobro en Destino'   THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+		   WHEN 'Tarjeta de Crédito' THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Tarjeta de Débito'  THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Todo Pago'			 THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) + vlRecargoTarjeta ),0)  
+         END,  
+         isnull(vlPagoEuros,0)   AS   'EUROS',   
+         isnull(vlPagoDolares,0) AS   'DOLARES', 
+         isnull(vlPagoReales,0)  AS   'REALES',
+		 flCobradoalCliente      AS 'COBRO_CONCILIADO',
+		 dtCobradoalCliente      AS 'FECHA_COBRO_CONCILIADO'
+  FROM TB_Cupones  
+  WHERE (flCompensado = 0) AND (flAnulado = 0) AND   
+      tpCupon IN ('Contado', 'Cuenta Corriente', 'Retorno','Cobro en Destino', 'Tarjeta de Crédito' ,  'Tarjeta de Débito' , 'Todo Pago') AND   
+      nrLicencia NOT IN (999, 998, 990)   
+	  and dbo.f_sepuedecompensar_2_1(dtCupon,@RESTRICCION_COMPENSACION_DIAS_PAGO,@RESTRICCION_COMPENSACION_HORA_PAGO,getdate()
+									 , tpCupon, flCobradoalCliente , dtCobradoalCliente)=1  
+  
+    PRINT 'DETALLE VIAJES SALDO A COMPENSAR - NO LLEGO A FECHA '  
+
+    SELECT tpComprobanteCliente as 'DOC' , tpLetraCliente as 'LETRA' ,  nrTalonarioCliente as 'PDV' , nrComprabanteCliente 'NRO',   dtCupon as 'FECHA', 
+		 nrLicencia as 'LICENCIA',  tpCupon 'COND.VENTA', 'PESOS' = CASE tpCupon  
+		   WHEN 'Contado' THEN  isnull((vlPagoPesos)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cuenta Corriente' THEN isnull((vlMontoCupon)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Retorno' THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cobro en Destino'   THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+		   WHEN 'Tarjeta de Crédito' THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Tarjeta de Débito'  THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Todo Pago'			 THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) + vlRecargoTarjeta ),0)  
+         END,  
+         isnull(vlPagoEuros,0)   AS   'EUROS',   
+         isnull(vlPagoDolares,0) AS   'DOLARES', 
+         isnull(vlPagoReales,0)  AS   'REALES',
+		 flCobradoalCliente      AS 'COBRO_CONCILIADO',
+		 dtCobradoalCliente      AS 'FECHA_COBRO_CONCILIADO'
+  FROM TB_Cupones  
+  WHERE (flCompensado = 0) AND (flAnulado = 0) AND   
+      tpCupon IN ('Contado', 'Cuenta Corriente', 'Retorno','Cobro en Destino', 'Tarjeta de Crédito' ,  'Tarjeta de Débito' , 'Todo Pago') AND   
+      nrLicencia NOT IN (999, 998, 990)   
+	  and dbo.f_sepuedecompensar_2_1(dtCupon,@RESTRICCION_COMPENSACION_DIAS_PAGO,@RESTRICCION_COMPENSACION_HORA_PAGO,getdate()
+									 , tpCupon, flCobradoalCliente , dtCobradoalCliente)=0 
+
+ 
+ end  
+ else  
+ begin   
+
+
+PRINT 'DETALLE VIAJES SALDO A COMPENSAR - SIN RESTRICCION DE FECHA DE CORTE '  
+
+  SELECT tpComprobanteCliente as 'DOC' , tpLetraCliente as 'LETRA' ,  nrTalonarioCliente as 'PDV' , nrComprabanteCliente 'NRO',   dtCupon as 'FECHA', 
+		 nrLicencia as 'LICENCIA',  tpCupon 'COND.VENTA', 'PESOS' = CASE tpCupon  
+		   WHEN 'Contado' THEN  isnull((vlPagoPesos)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cuenta Corriente' THEN isnull((vlMontoCupon)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Retorno' THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+           WHEN 'Cobro en Destino'   THEN isnull((0)- (vlComision+isnull(vlIVA,0)),0)  
+		   WHEN 'Tarjeta de Crédito' THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Tarjeta de Débito'  THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) +  vlRecargoTarjeta  ),0)  
+		   WHEN 'Todo Pago'			 THEN isnull((vlMontoCupon)- ( vlComision+isnull(vlIVA,0) + vlRecargoTarjeta ),0)  
+         END,  
+         isnull(vlPagoEuros,0)   AS   'EUROS',   
+         isnull(vlPagoDolares,0) AS   'DOLARES', 
+         isnull(vlPagoReales,0)  AS   'REALES',
+		 flCobradoalCliente      AS 'COBRO_CONCILIADO',
+		 dtCobradoalCliente      AS 'FECHA_COBRO_CONCILIADO'
+  FROM TB_Cupones  
+  WHERE (flCompensado = 0) AND (flAnulado = 0) AND   
+      tpCupon IN ('Contado', 'Cuenta Corriente', 'Retorno','Cobro en Destino') AND   
+      nrLicencia NOT IN (999, 998, 990)   
+
+  
+ end   
+
+
 end -- fin de procedure  
   
 
