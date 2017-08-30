@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_SalidaEstudioContable 
    AutoRedraw      =   -1  'True
    BorderStyle     =   3  'Fixed Dialog
@@ -244,7 +244,7 @@ Begin VB.Form Frm_SalidaEstudioContable
          Height          =   315
          ItemData        =   "Frm_SalidaEstudioContable.frx":4262
          Left            =   3855
-         List            =   "Frm_SalidaEstudioContable.frx":427E
+         List            =   "Frm_SalidaEstudioContable.frx":4275
          Style           =   2  'Dropdown List
          TabIndex        =   20
          Tag             =   "tpLetra"
@@ -253,9 +253,9 @@ Begin VB.Form Frm_SalidaEstudioContable
       End
       Begin VB.ComboBox txtTalonario 
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":429D
+         ItemData        =   "Frm_SalidaEstudioContable.frx":428B
          Left            =   1935
-         List            =   "Frm_SalidaEstudioContable.frx":42A4
+         List            =   "Frm_SalidaEstudioContable.frx":4292
          TabIndex        =   19
          Tag             =   "nrTalonario"
          Top             =   360
@@ -265,9 +265,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":42AE
+         ItemData        =   "Frm_SalidaEstudioContable.frx":429C
          Left            =   4710
-         List            =   "Frm_SalidaEstudioContable.frx":42BB
+         List            =   "Frm_SalidaEstudioContable.frx":42A9
          Style           =   2  'Dropdown List
          TabIndex        =   16
          Tag             =   "tpFacturacion"
@@ -278,9 +278,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":42D6
+         ItemData        =   "Frm_SalidaEstudioContable.frx":42C4
          Left            =   990
-         List            =   "Frm_SalidaEstudioContable.frx":4331
+         List            =   "Frm_SalidaEstudioContable.frx":431F
          Style           =   2  'Dropdown List
          TabIndex        =   12
          Tag             =   "tpComprobante"
@@ -291,9 +291,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":43E3
+         ItemData        =   "Frm_SalidaEstudioContable.frx":43D1
          Left            =   150
-         List            =   "Frm_SalidaEstudioContable.frx":440B
+         List            =   "Frm_SalidaEstudioContable.frx":43F9
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComprobante"
@@ -304,9 +304,9 @@ Begin VB.Form Frm_SalidaEstudioContable
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_SalidaEstudioContable.frx":443F
+         ItemData        =   "Frm_SalidaEstudioContable.frx":442D
          Left            =   2955
-         List            =   "Frm_SalidaEstudioContable.frx":4455
+         List            =   "Frm_SalidaEstudioContable.frx":4440
          Style           =   2  'Dropdown List
          TabIndex        =   13
          Tag             =   "tpComprobante"
@@ -374,7 +374,7 @@ Begin VB.Form Frm_SalidaEstudioContable
       Begin VB.CommandButton cmdBuscar 
          Height          =   330
          Left            =   6030
-         Picture         =   "Frm_SalidaEstudioContable.frx":446E
+         Picture         =   "Frm_SalidaEstudioContable.frx":445A
          Style           =   1  'Graphical
          TabIndex        =   14
          Top             =   345
@@ -393,31 +393,31 @@ Begin VB.Form Frm_SalidaEstudioContable
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   7
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4570
+               Picture         =   "Frm_SalidaEstudioContable.frx":455C
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4682
+               Picture         =   "Frm_SalidaEstudioContable.frx":466E
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4794
+               Picture         =   "Frm_SalidaEstudioContable.frx":4780
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":48A6
+               Picture         =   "Frm_SalidaEstudioContable.frx":4892
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":49B8
+               Picture         =   "Frm_SalidaEstudioContable.frx":49A4
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4ACA
+               Picture         =   "Frm_SalidaEstudioContable.frx":4AB6
                Key             =   "Menor"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_SalidaEstudioContable.frx":4BDC
+               Picture         =   "Frm_SalidaEstudioContable.frx":4BC8
                Key             =   ""
             EndProperty
          EndProperty

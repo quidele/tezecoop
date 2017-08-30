@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMProductos 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Maestro de Productos"
@@ -1425,7 +1425,7 @@ Dim strValor    As String
     Case "ImprimirCapFed"
         objbasededatos.Exec_SP_GeneraTarifas
         Frm_Principal.LimpiarReporte
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V4_9_72.rpt"
         
         Frm_Principal.CrystalReport1.StoredProcParam(0) = 1
         Frm_Principal.CrystalReport1.Formulas(0) = "Zona='CAPITAL FEDERAL'"
@@ -1442,7 +1442,7 @@ Dim strValor    As String
     Case "ImprimirGBA"
         objbasededatos.Exec_SP_GeneraTarifas
         Frm_Principal.LimpiarReporte
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V4_9_72.rpt"
         
         Frm_Principal.CrystalReport1.StoredProcParam(0) = 0
         Frm_Principal.CrystalReport1.Formulas(0) = "Zona='GRAN BUENOS AIRES'"

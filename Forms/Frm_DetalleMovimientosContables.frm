@@ -1,17 +1,17 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_DetalleMovimientosContables 
    Caption         =   "Detalle Movimientos Contables"
    ClientHeight    =   7755
    ClientLeft      =   60
    ClientTop       =   405
-   ClientWidth     =   10320
+   ClientWidth     =   10410
    ClipControls    =   0   'False
    Icon            =   "Frm_DetalleMovimientosContables.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    ScaleHeight     =   7755
-   ScaleWidth      =   10320
+   ScaleWidth      =   10410
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtTotales 
       Alignment       =   2  'Center
@@ -169,8 +169,8 @@ Begin VB.Form Frm_DetalleMovimientosContables
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   10320
-      _ExtentX        =   18203
+      Width           =   10410
+      _ExtentX        =   18362
       _ExtentY        =   1164
       ButtonWidth     =   2117
       ButtonHeight    =   1111
@@ -943,6 +943,8 @@ Dim resp        As Byte
     Case "Exportar"
           ExportaraExcel
           EstadoABM = Consulta
+    Case "Aceptar"
+         EstadoABM = Consulta
     Case "Salir"
            Unload Me
     End Select

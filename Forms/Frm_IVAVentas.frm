@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_IVAVentas 
    AutoRedraw      =   -1  'True
    BorderStyle     =   3  'Fixed Dialog
@@ -243,7 +243,7 @@ Begin VB.Form Frm_IVAVentas
          Height          =   315
          ItemData        =   "Frm_IVAVentas.frx":4262
          Left            =   1980
-         List            =   "Frm_IVAVentas.frx":4278
+         List            =   "Frm_IVAVentas.frx":4275
          Style           =   2  'Dropdown List
          TabIndex        =   18
          Tag             =   "tpComprobante"
@@ -254,9 +254,9 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":4291
+         ItemData        =   "Frm_IVAVentas.frx":428F
          Left            =   2880
-         List            =   "Frm_IVAVentas.frx":42AD
+         List            =   "Frm_IVAVentas.frx":42A5
          Style           =   2  'Dropdown List
          TabIndex        =   17
          Tag             =   "tpLetra"
@@ -267,9 +267,9 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":42CC
+         ItemData        =   "Frm_IVAVentas.frx":42BE
          Left            =   3750
-         List            =   "Frm_IVAVentas.frx":42D9
+         List            =   "Frm_IVAVentas.frx":42CB
          Style           =   2  'Dropdown List
          TabIndex        =   14
          Tag             =   "tpComprobante"
@@ -280,9 +280,9 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":42F4
+         ItemData        =   "Frm_IVAVentas.frx":42E6
          Left            =   990
-         List            =   "Frm_IVAVentas.frx":434F
+         List            =   "Frm_IVAVentas.frx":4341
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComprobante"
@@ -293,9 +293,9 @@ Begin VB.Form Frm_IVAVentas
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   315
-         ItemData        =   "Frm_IVAVentas.frx":4401
+         ItemData        =   "Frm_IVAVentas.frx":43F3
          Left            =   150
-         List            =   "Frm_IVAVentas.frx":4429
+         List            =   "Frm_IVAVentas.frx":441B
          Style           =   2  'Dropdown List
          TabIndex        =   10
          Tag             =   "tpComprobante"
@@ -363,7 +363,7 @@ Begin VB.Form Frm_IVAVentas
       Begin VB.CommandButton cmdBuscar 
          Height          =   330
          Left            =   5085
-         Picture         =   "Frm_IVAVentas.frx":445D
+         Picture         =   "Frm_IVAVentas.frx":444F
          Style           =   1  'Graphical
          TabIndex        =   12
          Top             =   345
@@ -382,31 +382,31 @@ Begin VB.Form Frm_IVAVentas
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   7
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":455F
+               Picture         =   "Frm_IVAVentas.frx":4551
                Key             =   "Similar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4671
+               Picture         =   "Frm_IVAVentas.frx":4663
                Key             =   "Igual"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4783
+               Picture         =   "Frm_IVAVentas.frx":4775
                Key             =   "MayoroIgual"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4895
+               Picture         =   "Frm_IVAVentas.frx":4887
                Key             =   "Mayor"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":49A7
+               Picture         =   "Frm_IVAVentas.frx":4999
                Key             =   "MenoroIgual"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4AB9
+               Picture         =   "Frm_IVAVentas.frx":4AAB
                Key             =   "Menor"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_IVAVentas.frx":4BCB
+               Picture         =   "Frm_IVAVentas.frx":4BBD
                Key             =   ""
             EndProperty
          EndProperty

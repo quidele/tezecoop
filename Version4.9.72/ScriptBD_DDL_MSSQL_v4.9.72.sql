@@ -322,6 +322,101 @@ end -- fin de procedure
 GO
 
 
+IF exists (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_rpt_Productos_v4_9_72'  )
+	DROP PROCEDURE  [dbo].spu_rpt_Productos_v4_9_72  
+
+GO
+	
+/*
+		sp_helptext 'SP_GeneraTarifas'
+		sp_helptext 'SP_ActualizarProductos'
+*/
+
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+--*********************************************************************************************************************
+/*
+
+exec [spu_rpt_Productos_v4_9_72]  @flCapitalFederal_param = 1 
+ 
+*/
+CREATE PROCEDURE [spu_rpt_Productos_v4_9_72] @flCapitalFederal_param bit
+AS
+
+
+	/* 
+
+	Me.vlRecargo_TD = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100, 0)
+	Me.vlRecargo_TC = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100, 0)
+	Me.vlRecargo_TP = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100, 0)
+	Me.vlPrecio_TD = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100), 0)
+	Me.vlPrecio_TC = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100), 0)
+	Me.vlPrecio_TP = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100), 0)
+
+	PORC_RECARGO_TD 
+    PORC_RECARGO_TC 
+    PORC_RECARGO_TP 
+
+	select @PORC_RECARGO_TD = vlParametro from tb_parametros  where dsParametro = 'PORC_RECARGO_TD'
+	select @PORC_RECARGO_TC = vlParametro from tb_parametros  where dsParametro = 'PORC_RECARGO_TC'
+	select @PORC_RECARGO_TP = vlParametro  from tb_parametros  where dsParametro = 'PORC_RECARGO_TP'
+
+	*/
+
+set dateformat dmy
+exec SP_GeneraTarifas
+
+
+declare  @PORC_RECARGO_TD  as decimal(5,2)
+declare  @PORC_RECARGO_TC  as decimal(5,2)
+declare  @PORC_RECARGO_TP  as decimal(5,2)
+
+
+	select @PORC_RECARGO_TD = replace(isnull(vlParametro,0) , ',', '.') from tb_parametros  where dsParametro = 'PORC_RECARGO_TD'
+	select @PORC_RECARGO_TC = replace(isnull(vlParametro,0)  , ',', '.') from tb_parametros  where dsParametro = 'PORC_RECARGO_TC'
+	select @PORC_RECARGO_TP =  replace(isnull(vlParametro,0)  , ',', '.')  from tb_parametros  where dsParametro = 'PORC_RECARGO_TP'
+
+	print @PORC_RECARGO_TD
+	print @PORC_RECARGO_TC
+	print @PORC_RECARGO_TP
+
+if @flCapitalFederal_param=1
+	SELECT  TB_Productos.cdProducto, 
+			TB_Productos.dsProducto, 
+			TB_Productos.vlPrecioViaje, 
+			TB_Productos.vlPrecioPeaje, 
+			TB_Productos.cdOrden, 
+			TB_Productos.vlPrecioViajeSinPeaje,
+			'vlPrecio_TD' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TD ) / 100 , 0 ),0),
+			'vlPrecio_TC' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TC ) / 100 , 0 ),0),
+			'vlPrecio_TP' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TP ) / 100 , 0 ),0)
+	FROM
+   			TB_Productos TB_Productos
+	WHERE
+    	TB_Productos.flMuestra =1 And TB_Productos.dsProducto LIKE '%CAPITAL FEDERAL%' and  cdOrden is not null
+	and TB_Productos.flEliminar =0
+	ORDER BY TB_Productos.cdOrden ASC
+else
+	SELECT  TB_Productos.cdProducto, 
+			TB_Productos.dsProducto, 
+			TB_Productos.vlPrecioViaje, 
+			TB_Productos.vlPrecioPeaje, 
+			TB_Productos.cdOrden, 
+			TB_Productos.vlPrecioViajeSinPeaje,
+			'vlPrecio_TD' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TD ) / 100 , 0 ),0),
+			'vlPrecio_TC' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TC ) / 100 , 0 ),0),
+			'vlPrecio_TP' = Round(TB_Productos.vlPrecioViaje +  isnull( ( TB_Productos.vlPrecioViaje *  @PORC_RECARGO_TP ) / 100 , 0 ),0)
+	FROM
+   		TB_Productos TB_Productos
+	WHERE
+    	TB_Productos.flMuestra =1 And TB_Productos.dsProducto <> '99 - PAGO DE CUPONES' And  not TB_Productos.dsProducto LIKE '%CAPITAL FEDERAL%'
+	 and  cdOrden is not null
+	and TB_Productos.flEliminar =0
+	ORDER BY TB_Productos.cdOrden ASC
+
+
+--*****************************************************************************************************************************
+
 
 
 
