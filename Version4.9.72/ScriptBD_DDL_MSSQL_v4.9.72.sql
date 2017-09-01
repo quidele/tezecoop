@@ -417,6 +417,23 @@ else
 
 --*****************************************************************************************************************************
 
+GO
 
+GO
 
+IF EXISTS  (SELECT * FROM INFORMATION_SCHEMA.ROUTINES where SPECIFIC_NAME ='spu_obtenerTalonariosActivos'  )
+	DROP PROCEDURE  dbo.spu_obtenerTaloanriosActivos  
+GO
+	
+-- EXEC dbo.spu_obtenerTaloanriosActivos  
+CREATE PROCEDURE dbo.spu_obtenerTalonariosActivos 
+AS
+BEGIN
 
+		SELECT  DISTINCT  A.nrTalonario as PDV 
+		FROM TB_Comprobantes A 
+		WHERE  dtComprobante >=   DATEADD (month, -4 , getdate()) 
+
+END
+
+GO

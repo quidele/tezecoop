@@ -1048,6 +1048,8 @@ Private Sub Form_Load()
     Me.cbotpLetra.AddItem ("M")
     Me.cbotpLetra.AddItem ("X")
     
+    ' -- Verwsion 4.9.72
+    cargarTalonariosActivos
     
     
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
@@ -1058,7 +1060,25 @@ Private Sub Form_Load()
 End Sub
 
 
+Private Sub cargarTalonariosActivos()
+Dim strSQL  As String
 
+       
+    strSQL = "spu_obtenerTalonariosActivos "
+
+    If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+        Exit Sub
+    End If
+    
+    Do Until objbasededatos.rs_resultados.EOF
+        Me.txtTalonario.AddItem objbasededatos.rs_resultados("PDV")
+        objbasededatos.rs_resultados.MoveNext
+    Loop
+
+    objbasededatos.rs_resultados.Close
+    
+    
+End Sub
 
 Private Sub BusquedaporClave(pClave As String)
 Dim Control As Control
