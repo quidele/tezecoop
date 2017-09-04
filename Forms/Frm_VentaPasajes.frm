@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -968,7 +968,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   2
          ItemData        =   "Frm_VentaPasajes.frx":069B
          Left            =   750
-         List            =   "Frm_VentaPasajes.frx":06B1
+         List            =   "Frm_VentaPasajes.frx":06A8
          Style           =   2  'Dropdown List
          TabIndex        =   3
          TabStop         =   0   'False
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   232980481
+         Format          =   113901569
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2053,7 +2053,7 @@ Begin VB.Form Frm_VentaPasajes
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_VentaPasajes.frx":06CD
+      MouseIcon       =   "Frm_VentaPasajes.frx":06B8
       Begin MSComctlLib.ImageList imgVentaPasajesResaltado 
          Left            =   5850
          Top             =   885
@@ -2067,43 +2067,43 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   10
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":082F
+               Picture         =   "Frm_VentaPasajes.frx":081A
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":094B
+               Picture         =   "Frm_VentaPasajes.frx":0936
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0A9F
+               Picture         =   "Frm_VentaPasajes.frx":0A8A
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0BAF
+               Picture         =   "Frm_VentaPasajes.frx":0B9A
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0CB1
+               Picture         =   "Frm_VentaPasajes.frx":0C9C
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0E05
+               Picture         =   "Frm_VentaPasajes.frx":0DF0
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0F11
+               Picture         =   "Frm_VentaPasajes.frx":0EFC
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":158D
+               Picture         =   "Frm_VentaPasajes.frx":1578
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":16F5
+               Picture         =   "Frm_VentaPasajes.frx":16E0
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1B49
+               Picture         =   "Frm_VentaPasajes.frx":1B34
                Key             =   "Salir"
             EndProperty
          EndProperty
@@ -2121,47 +2121,47 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1F9D
+               Picture         =   "Frm_VentaPasajes.frx":1F88
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":20B5
+               Picture         =   "Frm_VentaPasajes.frx":20A0
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2209
+               Picture         =   "Frm_VentaPasajes.frx":21F4
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2321
+               Picture         =   "Frm_VentaPasajes.frx":230C
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":242D
+               Picture         =   "Frm_VentaPasajes.frx":2418
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2581
+               Picture         =   "Frm_VentaPasajes.frx":256C
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2689
+               Picture         =   "Frm_VentaPasajes.frx":2674
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2D05
+               Picture         =   "Frm_VentaPasajes.frx":2CF0
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2E65
+               Picture         =   "Frm_VentaPasajes.frx":2E50
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":32B9
+               Picture         =   "Frm_VentaPasajes.frx":32A4
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":370D
+               Picture         =   "Frm_VentaPasajes.frx":36F8
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -2907,7 +2907,7 @@ Dim objLicenciatario  As New CLicenciatario
     '/****************************************************/
     
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
-    EstadoABM = Facturar
+    EstadoABM = facturar
     Me.cmdFacturar.Enabled = True
     Me.Enabled = True
     
@@ -3239,6 +3239,9 @@ Dim strValor  As String
         calcularTotalesFactura
             ' Version 1.4
     Case "tpIVA" ' Alteración de la condición de IVA
+        ' CF , RI, NR, MT, EX, OT
+
+    
         obtener_num_Proxima_Factura
         
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -3491,7 +3494,7 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
     Case vbKeyF1
     Case vbKeyF2
         If tlb_ABM.Buttons("Buscar").Visible Then
-            If EstadoABM <> Facturar Then
+            If EstadoABM <> facturar Then
                 tlb_ABM_ButtonClick tlb_ABM.Buttons("Buscar")
             End If
         End If
@@ -3560,7 +3563,7 @@ Dim strSQL_Params As String
     objParametros.GrabarValor "Facturar", "NO"
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.modo")
     Case "Facturar"
-        EstadoABM = Facturar
+        EstadoABM = facturar
     Case Else
         EstadoABM = Consulta
     End Select
@@ -3772,7 +3775,7 @@ Dim strValor    As String
            EstadoABM = Consulta
            ' Pasar datos
     Case "Agregar"
-           If Not EstadoABM = Facturar Then
+           If Not EstadoABM = facturar Then
             EstadoABM = alta
            End If
            limpiarControles
@@ -3818,8 +3821,8 @@ Dim strValor    As String
          cmdFacturar_Click
     Case "Cancelar"
            Sleep (100)
-           If EstadoABM = Facturar Then
-                EstadoABM = Facturar
+           If EstadoABM = facturar Then
+                EstadoABM = facturar
                 '/****************************************************/
                 '/* Version 1.9                                      */
                 Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -4547,7 +4550,7 @@ Dim strSQL       As String
             Else
                 Guardarregistro = True
             End If
-    Case alta, Facturar
+    Case alta, facturar
             If Not ObjTablasIO.Insertar Then
                 Guardarregistro = False
             Else
@@ -4664,7 +4667,7 @@ Dim strValor     As String
               "dsUsuario", "<-", objUsuario.dsUsuario
     
     Select Case EstadoABM
-    Case modificacion, alta, Facturar
+    Case modificacion, alta, facturar
             If Not ObjTablasIO.Insertar Then
                 Guardarregistro_Imprime = False
             Else
@@ -4776,7 +4779,7 @@ Dim i  As Integer
            Me.tlb_ABM.Buttons("Cancelar").Visible = False
            Me.fraVentaPasajes.Visible = False
     Case "Aceptar"
-           If EstadoABM = Facturar Then
+           If EstadoABM = facturar Then
                 Me.fraVentaPasajes.Visible = True
                 Me.tlb_ABM.Buttons("Buscar").Visible = False
                 Me.tlb_ABM.Buttons("Seleccionar").Visible = False
@@ -4798,7 +4801,7 @@ Dim i  As Integer
                 Me.tlb_ABM.Buttons("Cancelar").Visible = False
           End If
     Case "Cancelar"
-        If EstadoABM = Facturar Then
+        If EstadoABM = facturar Then
            Me.fraVentaPasajes.Visible = True
            Me.tlb_ABM.Buttons("Buscar").Visible = False
            Me.tlb_ABM.Buttons("Seleccionar").Visible = False
