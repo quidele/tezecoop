@@ -161,3 +161,7 @@ select nrDOC, dsRazonSocial ,  * from TB_Comprobantes
   exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 7 , @anio = 2017
 
   exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 7 , @anio = 2017
+
+    exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 8 , @anio = 2017
+
+  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 8 , @anio = 2017

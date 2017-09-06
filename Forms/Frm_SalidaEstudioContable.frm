@@ -1026,25 +1026,30 @@ Private Sub Form_Load()
     Me.cbotpComprobante.Clear
     
     Me.cbotpComprobante.AddItem ("Todo")
-    Me.cbotpComprobante.AddItem ("A")
-    Me.cbotpComprobante.AddItem ("B")
-    Me.cbotpComprobante.AddItem ("B1")
-    Me.cbotpComprobante.AddItem ("C")
-    Me.cbotpComprobante.AddItem ("E")
+    ' Me.cbotpComprobante.AddItem ("A")
+    ' Me.cbotpComprobante.AddItem ("B")
+    ' Me.cbotpComprobante.AddItem ("B1")
+    ' Me.cbotpComprobante.AddItem ("C")
+    ' Me.cbotpComprobante.AddItem ("E")
+    ' Me.cbotpComprobante.AddItem ("X")
+    ' Me.cbotpComprobante.AddItem ("M")
+    
     Me.cbotpComprobante.AddItem ("FA")
-    Me.cbotpComprobante.AddItem ("M")
     Me.cbotpComprobante.AddItem ("NC")
+    Me.cbotpComprobante.AddItem ("ND")
     Me.cbotpComprobante.AddItem ("RE")
-    Me.cbotpComprobante.AddItem ("X")
+    
     
     
     Me.cbotpLetra.Clear
     Me.cbotpLetra.AddItem ("Todo")
+    
+    ' Me.cbotpLetra.AddItem ("B1")
+    ' Me.cbotpLetra.AddItem ("C")
+    ' Me.cbotpLetra.AddItem ("E")
+    
     Me.cbotpLetra.AddItem ("A")
     Me.cbotpLetra.AddItem ("B")
-    Me.cbotpLetra.AddItem ("B1")
-    Me.cbotpLetra.AddItem ("C")
-    Me.cbotpLetra.AddItem ("E")
     Me.cbotpLetra.AddItem ("M")
     Me.cbotpLetra.AddItem ("X")
     

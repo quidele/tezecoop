@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -1324,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   158072833
+         Format          =   119865345
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   158072833
+         Format          =   119865345
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
@@ -2177,7 +2177,7 @@ Private Sub Form_Resize()
 
 End Sub
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControlsPagoLicenciatario Me, Me.fraBusqCajas, Me.lstBusqueda, 50, 50, fra_totales
 
@@ -3624,7 +3624,7 @@ End Sub
 Private Sub obtener_suma_falta_compensar()
 Dim strSQL As String
 
-    strSQL = " sp_obtiene_falta_compensar_v4_2 "
+    strSQL = " sp_obtiene_falta_compensar_v4_9_72 "
  
     If objbasededatos.ExecStoredProcedures(strSQL) Then
         If objbasededatos.rs_resultados.EOF Then
