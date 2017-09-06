@@ -1,11 +1,11 @@
 CBasededatos = 106, 149, 1069, 679, C
-CTablasIO = 44, 46, 1096, 512, 
+CTablasIO = 44, 46, 1096, 512, Z
 CDiccionariodeDatos = 44, 45, 809, 426, C
 Global = 33, 264, 1085, 730, C
 CControl = 0, 0, 838, 388, C
 CUsuario = 208, 208, 1070, 705, C
 CConfig = -22, 198, 1045, 669, C
-CParametros = 25, 25, 670, 414, Z
+CParametros = 25, 25, 670, 414, 
 CCajas = 66, 69, 1023, 535, C
 CExport = 26, 26, 904, 538, C
 CAFIP = 66, 69, 934, 599, C
