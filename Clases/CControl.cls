@@ -36,7 +36,7 @@ Public Sub CargarCombo _
    Do Until rs_registros.EOF
      cb_lista.AddItem _
      CStr(rs_registros(fld_columna.Name))
-     rs_registros.movenext
+     rs_registros.MoveNext
    Loop
    
 End Sub
@@ -103,7 +103,7 @@ Public Function CargarListView _
             End If
          End If
      Next
-     rs_registros.movenext
+     rs_registros.MoveNext
      i = i + 1
   Loop
   
@@ -153,7 +153,7 @@ Public Function CargarListView_SG _
          End If
      Next
      On Error GoTo 0
-     rs_registros.movenext
+     rs_registros.MoveNext
      i = i + 1
   Loop
   
@@ -197,7 +197,7 @@ Public Function CargarListView_SG_conFORMATO _
             elemList.ListSubItems.Add j, , ""
          End If
      Next
-     rs_registros.movenext
+     rs_registros.MoveNext
      i = i + 1
   Loop
   
@@ -248,7 +248,7 @@ Public Function CargarListView_SG_ColumnaDinamicas _
             elemList.SubItems(j - 1) = Valor
          End If
      Next
-     rs_registros.movenext
+     rs_registros.MoveNext
      i = i + 1
   Loop
   
@@ -309,7 +309,7 @@ Public Sub CargarComboConData _
         cb_lista.AddItem _
         CStr(rs_registros(fld_columna.Name))
         cb_lista.ItemData(nI) = rs_registros(fld_dataindex.Name)
-     rs_registros.movenext
+     rs_registros.MoveNext
      nI = nI + 1
    Loop
 End Sub
@@ -380,6 +380,34 @@ Public Function buscarListviewValorColumnaIndice(ByRef lst_lista As ListView, pn
 End Function
 '*******************************************'
 
+
+
+'*******************************************'
+Public Function AsignarValorListviewColumnaIndice(ByRef lst_lista As ListView, pnmColumna As String, indice As Integer, pValor As String) As Boolean
+  Dim i, j             As Integer
+  Dim Valor            As String
+  Dim elemList         As ListItem
+  
+  For j = 1 To lst_lista.ColumnHeaders.Count
+    If j = 1 Then
+        If lst_lista.ColumnHeaders(1).Tag = pnmColumna Then
+              lst_lista.ListItems(indice).Text = pValor
+              AsignarValorListviewColumnaIndice = True
+              Exit Function
+        End If
+    Else
+        If lst_lista.ColumnHeaders(j).Tag = pnmColumna Then
+              lst_lista.ListItems(indice).SubItems(j - 1) = pValor
+              AsignarValorListviewColumnaIndice = True
+              Exit Function
+        End If
+    End If
+  Next j
+  
+  AsignarValorListviewColumnaIndice = False
+  
+End Function
+'*******************************************'
 
 Public Function obtenerHoraDTpicker(pdatepicker As DTPicker) As String
 Dim hora As String

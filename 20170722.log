@@ -1,0 +1,252 @@
+22/07/2017 12:12:14 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:12:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:12:18 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:12:18 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:12:18 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:12:18 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:12:18 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:12:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:12:18 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:12:18 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:12:18 | Exec SP_ValorPromoRetorno
+22/07/2017 12:12:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:12:18 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:12:18 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:12:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:12:18 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:12:19 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:12:19 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:12:19 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:12:20 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:12:21 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:12:21' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:12:21 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:12:21 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:12:21 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:12:21 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:12:21 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:12:21 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:12:21 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:12:21 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:12:21 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:12:21 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:12:21 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:12:21 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:12:25 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:12:25 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:12:25 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:12:25 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:12:25 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:12:36 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlComision ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon  FROM TB_Cupones  WHERE TB_Cupones.cdCliente = 12  AND  TB_Cupones.tpCupon = 'Cuenta Corriente' AND TB_Cupones.flEliminar = 0  AND  TB_Cupones.flCobradoalCliente = 0 AND TB_Cupones.flAnulado = 0     Order by TB_Cupones.cdCliente ASC 
+22/07/2017 12:12:39 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlComision ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon  FROM TB_Cupones  WHERE TB_Cupones.cdCliente = 111  AND  TB_Cupones.tpCupon = 'Cuenta Corriente' AND TB_Cupones.flEliminar = 0  AND  TB_Cupones.flCobradoalCliente = 0 AND TB_Cupones.flAnulado = 0     Order by TB_Cupones.cdCliente ASC 
+22/07/2017 12:12:47 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlComision ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon  FROM TB_Cupones  WHERE TB_Cupones.cdCliente = 1013  AND  TB_Cupones.tpCupon = 'Cuenta Corriente' AND TB_Cupones.flEliminar = 0  AND  TB_Cupones.flCobradoalCliente = 0 AND TB_Cupones.flAnulado = 0     Order by TB_Cupones.cdCliente ASC 
+22/07/2017 12:12:55 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlComision ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon  FROM TB_Cupones  WHERE TB_Cupones.cdCliente = 1013  AND  TB_Cupones.tpCupon = 'Cuenta Corriente' AND TB_Cupones.flEliminar = 0  AND  TB_Cupones.flCobradoalCliente = 0 AND TB_Cupones.flAnulado = 0     Order by TB_Cupones.cdCliente ASC 
+22/07/2017 12:13:01 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlComision ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon  FROM TB_Cupones  WHERE TB_Cupones.cdCliente = 4013  AND  TB_Cupones.tpCupon = 'Cuenta Corriente' AND TB_Cupones.flEliminar = 0  AND  TB_Cupones.flCobradoalCliente = 0 AND TB_Cupones.flAnulado = 0     Order by TB_Cupones.cdCliente ASC 
+22/07/2017 12:13:01 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Clientes'
+22/07/2017 12:13:01 |  SELECT TB_Clientes.cdCliente ,TB_Clientes.dsRazonSocial  FROM TB_Clientes  WHERE TB_Clientes.cdCliente = 4013    
+22/07/2017 12:13:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:16:45 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:16:45 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:16:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:16:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:16:48 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:16:48 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:16:48 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:16:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:16:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:16:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:16:48 | Exec SP_ValorPromoRetorno
+22/07/2017 12:16:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:16:48 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:16:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:16:48 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:16:48 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:16:49 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:16:49 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:16:49 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:16:49 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:16:50 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:16:50' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:16:50 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:16:50 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:16:50 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:16:50 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:16:50 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:16:50 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:16:50 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:16:50 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:16:50 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:16:50 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:16:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:16:50 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:16:53 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:16:53 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:16:53 | Exec  sp_obtiene_falta_compensar_v4_2 
+22/07/2017 12:16:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'    
+22/07/2017 12:16:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'    
+22/07/2017 12:16:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'    
+22/07/2017 12:16:53 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'    
+22/07/2017 12:16:56 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:16:58 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:16:58 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:16:58 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:16:58 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:17:05 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:18:02 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+22/07/2017 12:18:02 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+22/07/2017 12:18:02 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+22/07/2017 12:18:05 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:18:05 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:18:08 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:18:12 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:18:12 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:18:12 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:18:12 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:18:12 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:18:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:18:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:18:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:18:12 | Exec SP_ValorPromoRetorno
+22/07/2017 12:18:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:18:12 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:18:12 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:18:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:18:12 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:18:13 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:18:13 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:18:13 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:18:13 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:18:14 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:18:14' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:18:15 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:18:15 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:18:15 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:18:15 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:18:15 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:18:15 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:18:15 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:18:15 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:18:15 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:18:15 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:18:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:18:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:18:18 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:18:18 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:18:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:18:18 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:18:18 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:18:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:19:18 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:19:18 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:19:21 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:19:21 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:19:21 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:19:21 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:19:21 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:19:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:19:21 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:19:21 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:19:21 | Exec SP_ValorPromoRetorno
+22/07/2017 12:19:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:19:21 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:19:21 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:19:21 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:19:21 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:19:23 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:19:23 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:19:23 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:19:23 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:19:24 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:19:24' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:19:24 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:19:24 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:19:24 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:19:24 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:19:24 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:19:24 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:19:24 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:19:24 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:19:24 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:19:24 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:19:24 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:19:24 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:19:27 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:19:27 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:19:27 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:19:27 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:19:27 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:19:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:21:57 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:21:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:22:00 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:22:00 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:22:00 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:22:00 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:22:00 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:22:00 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:22:00 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:22:00 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:22:00 | Exec SP_ValorPromoRetorno
+22/07/2017 12:22:00 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:22:00 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:22:00 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:22:00 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:22:00 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:22:02 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:22:02 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:22:02 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:22:02 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:22:03 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:22:03' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:22:03 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:22:03 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:22:03 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:22:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:22:03 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:22:03 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:22:03 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:22:03 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:22:03 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:22:03 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:22:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:22:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:22:05 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:22:05 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:22:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:22:06 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:22:06 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:22:09 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:25:46 | Exec  sco_TB_Productos_v4_1 
+22/07/2017 12:25:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+22/07/2017 12:25:51 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:25:51 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+22/07/2017 12:25:51 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+22/07/2017 12:25:51 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+22/07/2017 12:25:51 | Exec sp_obtenerCajasRechazadas_v2_9 
+22/07/2017 12:25:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+22/07/2017 12:25:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+22/07/2017 12:25:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+22/07/2017 12:25:51 | Exec SP_ValorPromoRetorno
+22/07/2017 12:25:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+22/07/2017 12:25:51 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+22/07/2017 12:25:51 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+22/07/2017 12:25:51 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+22/07/2017 12:25:51 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+22/07/2017 12:25:53 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773    
+22/07/2017 12:25:53 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+22/07/2017 12:25:53 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000003773 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+22/07/2017 12:25:53 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:25:55 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000003773 ,TB_Cajas.vlTotalSaldoFinal  = -258.92 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '19/08/2015 11:17:24' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 0.00 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '22/07/2017 12:25:54' ,TB_Cajas.vlCierrePesos  = -258.92 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = -258.92 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000003773  
+22/07/2017 12:25:55 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+22/07/2017 12:25:55 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+22/07/2017 12:25:55 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000003773  AND  TB_Cajas.flEstado = 0    
+22/07/2017 12:25:55 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+22/07/2017 12:25:55 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003772 
+22/07/2017 12:25:55 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000003773 
+22/07/2017 12:25:55 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+22/07/2017 12:25:55 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000003773 
+22/07/2017 12:25:55 | Exec sco_validarVencimientosCAI_v4_1
+22/07/2017 12:25:55 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+22/07/2017 12:25:55 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:25:55 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+22/07/2017 12:25:57 | Inicializando Servicio SGLibrary.ServicePrinter
+22/07/2017 12:25:57 | Inicializando Servicio SGLibrary.ServicePrinter OK 
+22/07/2017 12:25:57 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+22/07/2017 12:25:57 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+22/07/2017 12:25:57 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+22/07/2017 12:25:59 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 

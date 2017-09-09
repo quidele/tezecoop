@@ -6,6 +6,7 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Windows.Forms;
+using System.Reflection;
 
 namespace SGLibrary
 {
@@ -22,7 +23,7 @@ namespace SGLibrary
 
 
         private String nombreArchivo;
-        private List<TB_Productos> listaProductos; 
+        private List<TarifasXLS> listaTarifas; 
 
         public String getNombreArchivo() {
             return nombreArchivo;
@@ -36,6 +37,7 @@ namespace SGLibrary
         private void button1_Click(object sender, EventArgs e)
         {
             this.button2.Enabled = false;
+            openFileDialog1.FileName = "";
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 /* MessageBox.Show ( openFileDialog1.FileName); */ 
@@ -45,8 +47,13 @@ namespace SGLibrary
                 ServiceExcel miServiceExcel = new ServiceExcel();
                 miServiceExcel.InitializeExcel(textBox1.Text);
                 dataGridView1.AutoSize = true;
-                listaProductos = miServiceExcel.ReadMyExcel();
-                dataGridView1.DataSource = listaProductos;            
+
+                
+                //listaProductos = miServiceExcel.ReadMyExcel();
+
+                listaTarifas = miServiceExcel.ReadMyExcelTarifas();
+
+                dataGridView1.DataSource = listaTarifas;            
 
             }
             this.button2.Enabled = true;
@@ -63,9 +70,61 @@ namespace SGLibrary
         private void button2_Click(object sender, EventArgs e)
         {
             ServiceTarifas miServTarifas = new ServiceTarifas ();
-            miServTarifas.ActualizarTarifas(listaProductos);
+            miServTarifas.ActualizarTarifas(listaTarifas);
             MessageBox.Show("El proceso ha finalizado con exito");
             this.Hide();
         }
-    }
+
+
+        public void cargarDataGridViewBusqueda(DataGridView dgv, IEnumerable<Object> lista)
+        {
+
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                foreach (PropertyInfo p in pi)
+                {
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                }
+                break;
+            }
+
+
+
+            foreach (object item in lista)
+            {
+                var row = dgv.Rows.Add();
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                }
+            }
+
+            // Modificamos los Encabezados de las columnas
+            foreach (DataGridViewColumn item in dgv.Columns)
+            {
+                item.HeaderText = item.HeaderText.Replace("_", " ");
+            }
+
+
+        }
+
+
+    }// cierre clase Form 
 }

@@ -126,15 +126,36 @@ namespace SGLibrary
                             botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         }
 
-                        if (una_conciliacion.idArchivo.ToString() != "")
+
+
+                        switch (this.txtFormato.Text)
                         {
-                            cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text,true);
+                            case "Todo Pago":
+                                // probar este código
+                                this.progressBar1.Minimum = 0;
+                                var listaResultados = un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion);
+                                this.progressBar1.Maximum = listaResultados.Count();
+                                this.progressBar1.Visible = true;
+                                cargarDataGridViewCuponesTodoPago(dataGridView1, listaResultados , this.modoEdicion.Text);
+                                this.progressBar1.Visible = false;
+                                break;
+                            case "Manual":
+                                cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                                break;
+                            default:
+                                cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
+                                break;
                         }
-                        else
-                        {
-                            
-                            cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
-                        }
+
+                        //if (una_conciliacion.idArchivo.ToString() != "")
+                        //{
+                        //    cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
+                        //}
+                        //else
+                        //{
+
+                        //    cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                        //}
 
                     }
 
@@ -474,7 +495,10 @@ namespace SGLibrary
 
                 foreach (PropertyInfo p in pi)
                 {
-                    if (p.Name == "FECHA_ACREDITACION") continue;
+                    
+                    if (p_modoEdicion != "SI") {
+                        if (p.Name == "FECHA_ACREDITACION") continue;
+                    }
 
                     DataGridViewColumn columna = new DataGridViewColumn();
                     DataGridViewCell cell = new DataGridViewTextBoxCell();
@@ -505,10 +529,20 @@ namespace SGLibrary
                 dgv.Columns.Add(doWork1);
             }
 
+            var i = 0;
 
             foreach (object item in lista)
             {
+
+                this.progressBar1.BringToFront();
+                dgv.Refresh();
+                //System.Threading.Thread.Sleep(10);
+                Application.DoEvents();
+                this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
+
+                dgv.Rows[row].HeaderCell.Value = i.ToString();
+
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
@@ -531,6 +565,9 @@ namespace SGLibrary
                 }
 
             }
+
+            dgv.BringToFront();
+            dgv.Refresh();
 
 
         }
@@ -790,6 +827,13 @@ namespace SGLibrary
                     var listadeViajesaConciliarTodoPago = this.un_ServiceConciliacionTodoPago.ObtenerViajesaConciliar();
                     cargarDataGridViewCuponesTodoPago(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
+                case "Amca":  // Procesamos el archivo Excel enviado por AMCA
+                    this.cbtipoConciliacion.Enabled = true;
+                    this.dataGridView1.Rows.Clear();
+                    this.txtNombreArchivoTarjeta.Text = "";
+                    this.btnSelecccionarArchivoTarjeta.Enabled = true;
+                    this.btnSelecccionarArchivoTarjeta.PerformClick();
+                    break;
                 default:
                     this.cbtipoConciliacion.Enabled = true;
                     this.dataGridView1.Rows.Clear();
@@ -806,6 +850,9 @@ namespace SGLibrary
             ArchivoTarjeta miArchivo;
             switch (cbtipoConciliacion.Text)
             {
+                case "Amca": 
+                    miArchivo = new ArchivoTarjetaAMCA();
+                    return;
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
                     break;
@@ -817,14 +864,16 @@ namespace SGLibrary
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
-            this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo); 
+            //miArchivo.ProcesarArchivo(); OJO esta linea duplica la generacion de los registrosa
+
+            /* Para pruebas AMCA decomentar */
+            /* return; */ 
+
+
+            this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo);
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
-
-
             var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
-
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
-
             var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
             this.progressBar1.Minimum = 0;
@@ -833,9 +882,7 @@ namespace SGLibrary
             cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
-
             this.progressBar1.Visible = false;
-
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();
             // obtener los viajes conciliados automaticamente mas  
 

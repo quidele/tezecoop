@@ -47,7 +47,9 @@ Begin VB.Form frm_SeleccionarPuesto
       Width           =   4245
       Begin VB.ComboBox cbPuestos 
          Height          =   315
+         ItemData        =   "frm_SeleccionarPuesto.frx":000C
          Left            =   330
+         List            =   "frm_SeleccionarPuesto.frx":000E
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   435
@@ -105,7 +107,11 @@ Private Sub Form_Activate()
 
     ObjTablasIO.nmTabla = "TB_Puestos"
     ObjTablasIO.setearCampoOperadorValor "nrPuesto", "->", ""
-    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9", " AND "
+    
+    If App.LogMode <> MODO_DEBUG Then
+        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9", " AND "
+    End If
+    
     ObjTablasIO.setearCampoOperadorValor "nrPuesto", "=", objParametros.ObtenerValor("frm_SeleccionarPuesto.nrPuesto")
     ObjTablasIO.setearCampoOperadorValor "dsPuesto", "->", ""
     ObjTablasIO.Seleccionar
@@ -125,7 +131,9 @@ Private Sub Form_Load()
 
     ObjTablasIO.nmTabla = "TB_Puestos"
     ObjTablasIO.setearCampoOperadorValor "nrPuesto", "->", ""
-    ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9"
+    If App.LogMode <> MODO_DEBUG Then
+        ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<>", "9"
+    End If
     ObjTablasIO.setearCampoOperadorValor "dsPuesto", "->", ""
     ObjTablasIO.Seleccionar
     

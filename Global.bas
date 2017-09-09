@@ -102,10 +102,6 @@ End Function
 Sub Main()
 Dim lnrCaja As String
 
-    If App.LogMode = MODO_DEBUG Then
-        ' Realizar Pruebas
-        Modulo_Pruebas.EjecutarPruebas
-    End If
 
     objConfigRegional.ConfigurarSistema
     
@@ -121,6 +117,10 @@ Dim lnrCaja As String
     
     
     objConfig.CargarINI
+    
+
+
+
     
     If objConfig.GrabaLog = "SI" Then
         objLog.GrabaLog = "SI"
@@ -187,6 +187,17 @@ Dim lnrCaja As String
     Set objSPs.lobjConfigRegional = objConfigRegional
     
     
+    
+    If App.LogMode = MODO_DEBUG Then
+        ' Solicitamos Puesto
+        
+        objParametros.GrabarValor "frm_SeleccionarPuesto.nrPuesto", objConfig.nrPuesto
+        frm_SeleccionarPuesto.Show vbModal
+        
+         objConfig.nrPuesto = objParametros.ObtenerValor("frm_SeleccionarPuesto.nrPuesto")
+        ' Realizar Pruebas
+        Modulo_Pruebas.EjecutarPruebas
+    End If
     
     frm_Splash.Show 1
     

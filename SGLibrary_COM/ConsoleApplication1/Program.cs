@@ -69,15 +69,15 @@ namespace ConsoleApplication1
             C:\\Users\\quidele\\Documents\\personal\\tezecoop\\Importador_Excel\\plantilla_ref.xls
             */
 
-             Trace.TraceInformation("Logger EULISES 1sdsd ");
-
+            /*
+             * PARA INCIDENTES   DE CONCILIACION
+            Trace.TraceInformation("Logger EULISES 1sdsd ");
             ServiceConciliacion objConciliacion = new ServiceConciliacion();
             objConciliacion.UsuarioActivo("camilap");
             objConciliacion.CajaActiva("1");
-            objConciliacion.execFormulario();
-
+            objConciliacion.execFormulario(); 
             Trace.TraceInformation("Logger EULISES FFINdsdsd ");
-            
+            **/
 
             //ArchivoTarjeta miArchivo = new ArchivoTarjetaVisa();
             // archivo visa fonseca
@@ -104,6 +104,42 @@ namespace ConsoleApplication1
             //miArchivo.ProcesarArchivo();
             //Console.WriteLine(miArchivo.miArchivoTarjeta.formato +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
 
+
+           
+           /* LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmPresentacionesCAI");
+            * */
+            
+            /*
+            ServiceTarifas miServiceTarifas = new ServiceTarifas();
+            miServiceTarifas.cargarTarifas();
+            Console.ReadKey(); 
+             **/
+
+            /* 
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("ServiceTarifas");
+             * */
+
+
+            /* LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmConciliaciones");*/
+
+            //LoaderForms l = new LoaderForms();
+            //l.CajaActiva("1");
+            //l.UsuarioActivo("camilap");
+            //l.execFormulario("rpt_AnalisisDeudores");
+
+
+            LoaderForms l = new LoaderForms();
+            l.execFormulario("Frm_GroupByGrid");
+            
         }
     }
 }

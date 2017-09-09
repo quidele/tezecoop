@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMProductos 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Maestro de Productos"
@@ -223,11 +223,11 @@ Begin VB.Form Frm_ABMProductos
    End
    Begin VB.Frame fraBusqProductos 
       BorderStyle     =   0  'None
-      Height          =   6360
-      Left            =   -30
+      Height          =   6510
+      Left            =   -75
       TabIndex        =   17
-      Top             =   585
-      Width           =   10740
+      Top             =   660
+      Width           =   10785
       Begin VB.Frame fra_ProgressBar 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
@@ -282,10 +282,10 @@ Begin VB.Form Frm_ABMProductos
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
          Height          =   330
-         Left            =   4335
+         Left            =   4350
          TabIndex        =   3
-         Top             =   315
-         Width           =   5535
+         Top             =   270
+         Width           =   6360
       End
       Begin MSComctlLib.ImageList ImgOperadores 
          Left            =   7215
@@ -342,13 +342,13 @@ Begin VB.Form Frm_ABMProductos
          ImageList       =   "ImgOperadores"
       End
       Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5220
-         Left            =   165
+         Height          =   5580
+         Left            =   180
          TabIndex        =   14
          Top             =   795
-         Width           =   9705
-         _ExtentX        =   17119
-         _ExtentY        =   9208
+         Width           =   10515
+         _ExtentX        =   18547
+         _ExtentY        =   9843
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -363,7 +363,7 @@ Begin VB.Form Frm_ABMProductos
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -372,7 +372,7 @@ Begin VB.Form Frm_ABMProductos
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   8
+         NumItems        =   9
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "cdProducto"
             Text            =   "Producto"
@@ -387,7 +387,7 @@ Begin VB.Form Frm_ABMProductos
          BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   2
             Object.Tag             =   "vlPrecioViajeSinPeaje"
-            Text            =   "Importe"
+            Text            =   "Precio"
             Object.Width           =   2470
          EndProperty
          BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -404,18 +404,25 @@ Begin VB.Form Frm_ABMProductos
          EndProperty
          BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   5
+            Key             =   "vlKilometros"
+            Object.Tag             =   "vlKilometros"
+            Text            =   "Kilometros"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
             Object.Tag             =   "flMuestraenlaWEB"
             Text            =   "Mostrar en la WEB"
             Object.Width           =   3175
          EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
             Object.Tag             =   "flIncluyeComisionRetorno"
             Text            =   "Comisión Retorno"
             Object.Width           =   2999
          EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
             Object.Tag             =   "obsHoras"
             Text            =   "Obs. Horas"
             Object.Width           =   2822
@@ -452,7 +459,7 @@ Begin VB.Form Frm_ABMProductos
       Height          =   5985
       Left            =   -75
       TabIndex        =   21
-      Top             =   675
+      Top             =   660
       Width           =   10785
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
@@ -495,7 +502,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Comisión Retorno"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -516,7 +523,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Se muestra en la WEB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -577,12 +584,12 @@ Begin VB.Form Frm_ABMProductos
             BackColor       =   &H00FFFFFF&
             CausesValidation=   0   'False
             DataField       =   "nmApellido"
-            Height          =   312
+            Height          =   330
             Index           =   3
-            Left            =   4524
+            Left            =   7065
             TabIndex        =   8
             Tag             =   "vlPrecioViaje"
-            Top             =   1107
+            Top             =   1095
             Width           =   1485
          End
          Begin VB.TextBox txtFields 
@@ -615,17 +622,16 @@ Begin VB.Form Frm_ABMProductos
          End
          Begin VB.TextBox txtFields 
             Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
+            BackColor       =   &H00FFFFFF&
             CausesValidation=   0   'False
             DataField       =   "nmApellido"
             Height          =   312
             Index           =   4
-            Left            =   7008
-            Locked          =   -1  'True
+            Left            =   4545
             TabIndex        =   2
             TabStop         =   0   'False
             Tag             =   "vlPrecioViajeSinPeaje"
-            Top             =   1104
+            Top             =   1110
             Width           =   1368
          End
          Begin VB.CheckBox Check1 
@@ -634,7 +640,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Se muestra en la facturación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -720,7 +726,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Comisión"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -739,7 +745,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Predefinido como:"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -758,7 +764,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Precio x Kilometro"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -777,7 +783,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -796,7 +802,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Observación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -815,7 +821,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Kilometros"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -834,7 +840,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Orden de la Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -853,7 +859,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Precio sin Peajes"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -862,7 +868,7 @@ Begin VB.Form Frm_ABMProductos
             EndProperty
             Height          =   240
             Index           =   3
-            Left            =   6990
+            Left            =   4515
             TabIndex        =   30
             Top             =   870
             Width           =   1740
@@ -872,7 +878,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Tipo de Operación"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -891,7 +897,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Porcentaje (1 a 100%)"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -910,7 +916,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Peaje"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -929,7 +935,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Observación Horas"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -948,7 +954,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Cod. de Producto"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -964,10 +970,10 @@ Begin VB.Form Frm_ABMProductos
          End
          Begin VB.Label lblLabels 
             BackStyle       =   0  'Transparent
-            Caption         =   "Precio del Viaje"
+            Caption         =   "Total"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -976,9 +982,9 @@ Begin VB.Form Frm_ABMProductos
             EndProperty
             Height          =   255
             Index           =   28
-            Left            =   4545
+            Left            =   7050
             TabIndex        =   24
-            Top             =   885
+            Top             =   870
             Width           =   1500
          End
          Begin VB.Label lblLabels 
@@ -986,7 +992,7 @@ Begin VB.Form Frm_ABMProductos
             Caption         =   "Descripción"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1419,7 +1425,7 @@ Dim strValor    As String
     Case "ImprimirCapFed"
         objbasededatos.Exec_SP_GeneraTarifas
         Frm_Principal.LimpiarReporte
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V4_9_72.rpt"
         
         Frm_Principal.CrystalReport1.StoredProcParam(0) = 1
         Frm_Principal.CrystalReport1.Formulas(0) = "Zona='CAPITAL FEDERAL'"
@@ -1436,7 +1442,7 @@ Dim strValor    As String
     Case "ImprimirGBA"
         objbasededatos.Exec_SP_GeneraTarifas
         Frm_Principal.LimpiarReporte
-        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V1.rpt"
+        Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_Productos_V4_9_72.rpt"
         
         Frm_Principal.CrystalReport1.StoredProcParam(0) = 0
         Frm_Principal.CrystalReport1.Formulas(0) = "Zona='GRAN BUENOS AIRES'"
@@ -1463,6 +1469,34 @@ Dim resp As Byte
     If Me.cbtpDestino.Text <> "" Then
         resp = MsgBox("Esta guardando el viaje como " + Me.cbtpDestino.Text + "." + vbCrLf + " Confirma la operacion", vbQuestion + vbYesNo, "Atencion")
         If resp = vbNo Then Exit Function
+    End If
+    
+    
+    If Not IsNumeric(ObtenerCampo("vlPrecioViajeSinPeaje").Text) Then
+        resp = MsgBox("Debe completar el campo Precio del Viaje Sin Peaje", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViajeSinPeaje").SetFocus
+        Exit Function
+    End If
+    
+    
+    If Not IsNumeric(ObtenerCampo("vlPrecioViaje").Text) Then
+        resp = MsgBox("Debe completar el campo Total", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViaje").SetFocus
+        Exit Function
+    End If
+     
+     
+     If CSng(ObtenerCampo("vlPrecioViajeSinPeaje").Text) = 0 Then
+        resp = MsgBox("Debe completar el campo Precio del Viaje Sin Peaje", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViajeSinPeaje").SetFocus
+        Exit Function
+    End If
+    
+    
+    If CSng(ObtenerCampo("vlPrecioViaje").Text) = 0 Then
+        resp = MsgBox("Debe completar el campo Total", vbInformation, "Atencion")
+        ObtenerCampo("vlPrecioViaje").SetFocus
+        Exit Function
     End If
 
     validaEntrada = True
@@ -1762,6 +1796,7 @@ Dim encontrado As Boolean
                 ObjTablasIO.setearCampoOperadorValor objDiccionariodeDatos.nmCampo, _
                 "->", ""
          Next
+         ObjTablasIO.setearCampoOperadorValor "vlKilometros", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlPrecioViaje", "->", ""
          ObjTablasIO.setearCampoOperadorValor "obsHoras", "->", ""
          ObjTablasIO.Seleccionar
@@ -1830,8 +1865,8 @@ Dim vlPrecioxKilometro   As Double
     
     Select Case txtFields(Index).Tag
     Case "vlPrecioViaje", "vlPrecioPeaje"
-        If ObtenerCampo("vlPrecioViaje").Text <> "" And ObtenerCampo("vlPrecioPeaje").Text <> "" Then _
-          ObtenerCampo("vlPrecioViajeSinPeaje").Text = FormatNumber(CDbl(ObtenerCampo("vlPrecioViaje").Text) - CDbl(ObtenerCampo("vlPrecioPeaje").Text), 2)
+        ' If ObtenerCampo("vlPrecioViaje").Text <> "" And ObtenerCampo("vlPrecioPeaje").Text <> "" Then _
+        ' ObtenerCampo("vlPrecioViajeSinPeaje").Text = FormatNumber(CDbl(ObtenerCampo("vlPrecioViaje").Text) - CDbl(ObtenerCampo("vlPrecioPeaje").Text), 2)
     Case "vlKilometros"
         If ObtenerCampo("vlKilometros") = "" Then
              ObtenerCampo("vlKilometros") = 0

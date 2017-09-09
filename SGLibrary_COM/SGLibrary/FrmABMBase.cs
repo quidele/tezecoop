@@ -146,7 +146,7 @@ namespace SGLibrary
         public Boolean  altaRegistro()
         {
 
-            serviceModel.AgregarRegistro();
+            
             return true;
         }
 

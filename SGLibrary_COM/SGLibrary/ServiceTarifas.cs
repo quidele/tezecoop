@@ -47,12 +47,39 @@ namespace SGLibrary
                         var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.cdProducto select c).First();
                         viajedestino.vlPrecioViaje = p.vlPrecioViaje;
                         viajedestino.vlPrecioViajeSinPeaje = p.vlPrecioViajeSinPeaje;
-                        viajedestino.vlPrecioPeaje = viajedestino.vlPrecioPeaje ;
+                        viajedestino.vlPrecioPeaje = p.vlPrecioPeaje ;
                         Console.WriteLine(p.cdProducto + " - " + p.dsProducto + " -  " + p.vlPrecioViaje.ToString() + p.flMuestraenlaWEB);
                         //break;
 
                     }
 
+                    context.SaveChanges();
+                }
+
+
+
+            }
+
+
+            public void ActualizarTarifas(List<TarifasXLS> listaTarifas)
+            {
+
+                using (var context = new dbSG2000Entities())
+                {
+
+                    foreach (TarifasXLS p in listaTarifas)
+                    {
+                        // realizar busqueda
+                        var viajedestino = (from c in context.TB_Productos where c.cdProducto == p.Codigo select c).FirstOrDefault();
+                        if (viajedestino == null) continue;
+                        viajedestino.vlPrecioViajeSinPeaje = p.Precio;
+                        viajedestino.vlPrecioPeaje = p.Peaje ;
+                        viajedestino.vlPrecioViaje = p.Total;
+                        viajedestino.vlKilometros = p.Kilometros;
+                        viajedestino.flMuestraenlaWEB  = p.Muestra_en_la_Web;
+                        Console.WriteLine(viajedestino.cdProducto + " - " + viajedestino.dsProducto + " -  " + viajedestino.vlPrecioViaje.ToString() + viajedestino.flMuestraenlaWEB);
+                        //break;
+                    }
                     context.SaveChanges();
                 }
 

@@ -50,6 +50,7 @@ Private lobjDiccionariodedatos   As New CDiccionariodeDatos
 Private lrs                      As Object
 Private ldsMotorBD               As String
 Public strUltimoWhere            As String
+Private lstrWhereAdicional       As String
 
 Private Function TraducirError(pError As ErrObject) As String
 
@@ -104,6 +105,12 @@ Property Set DiccionarioDeDatos(Valor As CDiccionariodeDatos)
     Set lobjDiccionariodedatos = Valor
 End Property
 
+
+
+
+Property Let strWhereAdicional(Valor As String)
+    lstrWhereAdicional = Valor
+End Property
 
 ' Tomar Parametro que introduce desde afuera
 Public Function setearCampoOperadorValor _
@@ -160,9 +167,9 @@ Dim strCondicion      As String
     strCondicion = ArmarCondicion()
     
     strSQL = " SELECT " + ArmarSeleccion() + " FROM " + Me.nmTabla + _
-    " " + strCondicion + ArmarOrderBY
+    " " + strCondicion + " " + lstrWhereAdicional + " " + ArmarOrderBY
     
-    strUltimoWhere = strCondicion
+    strUltimoWhere = strCondicion + " " + lstrWhereAdicional
     
     If Not lrs Is Nothing Then
         If lrs.State = adStateOpen Then
@@ -175,6 +182,7 @@ Dim strCondicion      As String
     On Error Resume Next
     If Not lObjbasededatos.ExecuteSQL(strSQL) Then
         lerror = objbasededatos.Error
+        lstrWhereAdicional = ""
         Seleccionar = False
         On Error GoTo 0
         Exit Function
@@ -185,7 +193,7 @@ Dim strCondicion      As String
     lrs.Requery
     ReDim mCampoOperadorValor(0 To 0)
     Seleccionar = True
-    
+    lstrWhereAdicional = ""
     
 End Function
 
@@ -592,3 +600,8 @@ tpLike As String, Caracter As String) As String
     
 End Function
 
+Private Sub Class_Initialize()
+
+    lstrWhereAdicional = ""
+
+End Sub

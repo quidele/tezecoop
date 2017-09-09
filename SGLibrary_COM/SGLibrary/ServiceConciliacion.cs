@@ -159,7 +159,7 @@ namespace SGLibrary
 
         // se anade virtual ya que puede ser sobreescrito , palabra clacve override
         public virtual void modificarConciliacion(List<Decimal> ids_cupones, 
-                                                         List<Decimal> ids_cupones_conciliados, 
+                                                    List<Decimal> ids_cupones_conciliados, 
                                                          TB_Conciliacion objConciliacion)
         {
 
@@ -386,7 +386,7 @@ namespace SGLibrary
 
         
 
-        public string Usuario
+        public override string Usuario
         {
             get
             {
@@ -399,7 +399,7 @@ namespace SGLibrary
         }
 
 
-        public string CajaAdm
+        public override string CajaAdm
         {
             get
             {

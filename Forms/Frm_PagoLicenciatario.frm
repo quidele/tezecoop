@@ -1,5 +1,6 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -756,10 +757,10 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.Frame Frame2 
          Caption         =   "Falta compensar"
          ForeColor       =   &H000000C0&
-         Height          =   960
+         Height          =   915
          Left            =   7470
          TabIndex        =   36
-         Top             =   75
+         Top             =   60
          Width           =   6375
          Begin VB.Label Label28 
             Caption         =   "R$"
@@ -813,9 +814,9 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00800000&
             Height          =   255
-            Left            =   510
+            Left            =   3180
             TabIndex        =   44
-            Top             =   645
+            Top             =   630
             Width           =   615
          End
          Begin VB.Label lbl_falta_comp_dtcupon_hora_corte 
@@ -834,7 +835,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00FF0000&
             Height          =   300
-            Left            =   1170
+            Left            =   3810
             TabIndex        =   43
             Top             =   600
             Width           =   2475
@@ -1039,11 +1040,11 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.TextBox txtBusqueda 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFFFFF&
-         Height          =   324
-         Left            =   4260
+         Height          =   315
+         Left            =   3180
          TabIndex        =   1
-         Top             =   324
-         Width           =   3075
+         Top             =   330
+         Width           =   1515
       End
       Begin MSComctlLib.ImageList ImgOperadores 
          Left            =   7230
@@ -1104,11 +1105,11 @@ Begin VB.Form frm_PagoLicenciatario
       End
       Begin MSComctlLib.ImageCombo ImageCombo1 
          Height          =   330
-         Left            =   2595
+         Left            =   2250
          TabIndex        =   4
          Top             =   315
-         Width           =   1680
-         _ExtentX        =   2963
+         Width           =   945
+         _ExtentX        =   1667
          _ExtentY        =   582
          _Version        =   393216
          ForeColor       =   -2147483640
@@ -1153,7 +1154,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          OLEDragMode     =   1
          OLEDropMode     =   1
-         NumItems        =   23
+         NumItems        =   24
          BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             Object.Tag             =   "nrLicencia"
             Text            =   "Licencia"
@@ -1163,7 +1164,7 @@ Begin VB.Form frm_PagoLicenciatario
             SubItemIndex    =   1
             Object.Tag             =   "tpComprobanteCliente"
             Text            =   "Doc"
-            Object.Width           =   0
+            Object.Width           =   706
          EndProperty
          BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   2
@@ -1270,24 +1271,31 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   19
-            Object.Tag             =   "dsObservacion"
-            Text            =   "Observación"
+            Key             =   "dsLeyenda"
+            Object.Tag             =   "dsLeyenda"
+            Text            =   "Obs.Factura"
             Object.Width           =   5292
          EndProperty
          BeginProperty ColumnHeader(21) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   20
+            Object.Tag             =   "dsObservacion"
+            Text            =   "OPago"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   21
             Object.Tag             =   "vlIVA"
             Text            =   "IVA"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(22) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   21
+         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   22
             Object.Tag             =   "flAnulado"
             Text            =   "flAnulado"
             Object.Width           =   2
          EndProperty
-         BeginProperty ColumnHeader(23) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   22
+         BeginProperty ColumnHeader(24) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   23
             Key             =   "dtCobradoalCliente"
             Object.Tag             =   "dtCobradoalCliente"
             Text            =   "Fecha Cobro"
@@ -1303,7 +1311,35 @@ Begin VB.Form frm_PagoLicenciatario
          Style           =   2  'Dropdown List
          TabIndex        =   3
          Top             =   315
-         Width           =   2400
+         Width           =   2085
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   360
+         Index           =   0
+         Left            =   4755
+         TabIndex        =   91
+         Tag             =   "dtDesde"
+         Top             =   315
+         Width           =   1305
+         _ExtentX        =   2302
+         _ExtentY        =   635
+         _Version        =   393216
+         Format          =   119865345
+         CurrentDate     =   38267
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   345
+         Index           =   1
+         Left            =   6105
+         TabIndex        =   92
+         Tag             =   "dtHasta"
+         Top             =   330
+         Width           =   1320
+         _ExtentX        =   2328
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   119865345
+         CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
          Alignment       =   2  'Center
@@ -1374,9 +1410,9 @@ Begin VB.Form frm_PagoLicenciatario
       Begin VB.Label Label2 
          Caption         =   "Valor para la busqueda"
          Height          =   210
-         Left            =   4335
+         Left            =   3180
          TabIndex        =   7
-         Top             =   90
+         Top             =   120
          Width           =   1755
       End
       Begin VB.Label Label1 
@@ -1399,13 +1435,28 @@ Begin VB.Form frm_PagoLicenciatario
          Appearance      =   0  'Flat
          BackColor       =   &H00FFC0C0&
          ForeColor       =   &H80000008&
-         Height          =   3900
+         Height          =   5685
          Left            =   1770
-         ScaleHeight     =   3870
+         ScaleHeight     =   5655
          ScaleWidth      =   6870
          TabIndex        =   13
-         Top             =   1350
+         Top             =   225
          Width           =   6900
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            Height          =   1350
+            Index           =   7
+            Left            =   300
+            Locked          =   -1  'True
+            MultiLine       =   -1  'True
+            ScrollBars      =   2  'Vertical
+            TabIndex        =   93
+            TabStop         =   0   'False
+            Tag             =   "dsLeyenda"
+            Top             =   1725
+            Width           =   6210
+         End
          Begin VB.TextBox txtFields 
             Appearance      =   0  'Flat
             BackColor       =   &H00E0E0E0&
@@ -1418,7 +1469,7 @@ Begin VB.Form frm_PagoLicenciatario
             TabIndex        =   34
             TabStop         =   0   'False
             Tag             =   "vlIVA"
-            Top             =   3375
+            Top             =   5205
             Width           =   1410
          End
          Begin VB.TextBox txtFields 
@@ -1447,7 +1498,7 @@ Begin VB.Form frm_PagoLicenciatario
             TabIndex        =   18
             TabStop         =   0   'False
             Tag             =   "dsObservacion"
-            Top             =   1665
+            Top             =   3525
             Width           =   6210
          End
          Begin VB.TextBox txtFields 
@@ -1512,6 +1563,25 @@ Begin VB.Form frm_PagoLicenciatario
          End
          Begin VB.Label lblLabels 
             BackStyle       =   0  'Transparent
+            Caption         =   "Observación Factura"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   8
+            Left            =   315
+            TabIndex        =   94
+            Top             =   1485
+            Width           =   3810
+         End
+         Begin VB.Label lblLabels 
+            BackStyle       =   0  'Transparent
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
@@ -1526,7 +1596,7 @@ Begin VB.Form frm_PagoLicenciatario
             Index           =   7
             Left            =   285
             TabIndex        =   35
-            Top             =   3135
+            Top             =   4965
             Width           =   480
          End
          Begin VB.Label lblLabels 
@@ -1564,7 +1634,7 @@ Begin VB.Form frm_PagoLicenciatario
             Index           =   3
             Left            =   315
             TabIndex        =   24
-            Top             =   1425
+            Top             =   3285
             Width           =   3810
          End
          Begin VB.Label lblLabels 
@@ -1688,11 +1758,11 @@ Attribute VB_PredeclaredId = True
 Attribute VB_Exposed = False
 Option Explicit
 
-
-Const C_TPCUPON = 4
-Const C_dtCupon = 13
-Const C_vlIVA = 20
-Const C_nrCupon = 17
+' Anulados en la version 4.9.3
+' Const C_TPCUPON = 4
+' Const C_dtCupon = 13
+' Const C_vlIVA = 20
+' Const C_nrCupon = 17
 
 
 Dim EstadoABM  As Byte
@@ -2011,6 +2081,10 @@ Private Sub Form_Load()
     Set objControl.objDiccionariodeDatos = objDiccionariodeDatos
     limpiarControles
     cargarcamposdebusqueda
+    
+    ObtenerCampo("dtDesde").value = Date - 60
+    ObtenerCampo("dtHasta").value = Date
+    
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Buscar")
     EstadoABM = Consulta
     Me.cmbCampos.ListIndex = 1
@@ -2148,7 +2222,7 @@ Dim Valor   As Variant
     
     ObjTablasIO.nmTabla = "TB_Cupones"
     ObjTablasIO.setearCampoOperadorValor "nrCupon", _
-    "=", Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
+    "=", objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "nrCupon", Me.lstBusqueda.SelectedItem.Index)    ' Me.lstBusqueda.SelectedItem.SubItems(C_nrCupon)
     
     ObjTablasIO.setearCampoOperadorValor "nrCupon", "->", ""
     ObjTablasIO.setearCampoOperadorValor "nrLicencia", "->", ""
@@ -2158,6 +2232,7 @@ Dim Valor   As Variant
     ObjTablasIO.setearCampoOperadorValor "dsDestino", "->", ""
     ObjTablasIO.setearCampoOperadorValor "vlIVA", "->", ""
     ObjTablasIO.setearCampoOperadorValor "dsObservacion", "->", ""
+    ObjTablasIO.setearCampoOperadorValor "dsLeyenda", "->", ""
     
     ObjTablasIO.Seleccionar
     
@@ -2201,7 +2276,7 @@ Dim i  As Integer
    
    If Me.cmbCampos.Text = "Cliente" Then Exit Sub
    
-   If Not sepuedeCompensar(Item.ListSubItems(C_dtCupon).Text, _
+   If Not sepuedeCompensar(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCupon", Item.Index), _
         objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flAnulado", Item.Index) _
         , objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index), _
         Not Item.Checked, True, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", Item.Index), _
@@ -2541,6 +2616,7 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "dtCobradoalCliente", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "->", ""
          ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "dsLeyenda", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flCompensado", "=", "0", " AND "
          
          If Not Me.cmbCampos.Text = "Cliente" Then
@@ -2556,6 +2632,17 @@ Dim strBuscada As String
          ObjTablasIO.setearCampoOperadorValor "dsObservacion", "->", ""
          ObjTablasIO.setearCampoOperadorValor "vlIVA", "->", ""
          ObjTablasIO.setearCampoOperadorValor "flAnulado", "->", ""
+         ObjTablasIO.setearCampoOperadorValor "dsLeyenda", "->", ""
+         
+         Dim strWhereAdicional As String
+         
+
+         
+         strWhereAdicional = " AND (  CONVERT(DATE, dtCupon) >= " + objbasededatos.FormatearValorSQL(ObtenerCampo("dtDesde"), "SMALLDATETIME")
+         strWhereAdicional = strWhereAdicional + " AND CONVERT(DATE, dtCupon) <= " + objbasededatos.FormatearValorSQL(ObtenerCampo("dtHasta"), "SMALLDATETIME")
+         strWhereAdicional = strWhereAdicional + "    OR tpCupon in ('Retorno','Cobro en Destino')) "
+         
+         ObjTablasIO.strWhereAdicional = strWhereAdicional
          
          ObjTablasIO.Seleccionar
          
@@ -2717,7 +2804,9 @@ Dim Valor       As Single
         
 
         If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i) = "" Then
-            Me.lstBusqueda.ListItems(i).SubItems(C_vlIVA) = FormatNumber(0, 2)
+            ' Modificado en la version 4.9.3
+            ' Me.lstBusqueda.ListItems(i).SubItems(C_vlIVA) = FormatNumber(0, 2)
+            objControl.AsignarValorListviewColumnaIndice Me.lstBusqueda, "vlIVA", i, FormatNumber(0, 2)
         Else
             Valor = FormatNumber(CSng(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i)), 2)
         End If
@@ -3535,7 +3624,7 @@ End Sub
 Private Sub obtener_suma_falta_compensar()
 Dim strSQL As String
 
-    strSQL = " sp_obtiene_falta_compensar_v4_2 "
+    strSQL = " sp_obtiene_falta_compensar_v4_9_72 "
  
     If objbasededatos.ExecStoredProcedures(strSQL) Then
         If objbasededatos.rs_resultados.EOF Then

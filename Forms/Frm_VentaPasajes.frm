@@ -1,13 +1,13 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
    ClientHeight    =   8190
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   11850
+   ClientWidth     =   11985
    Icon            =   "Frm_VentaPasajes.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,7 +15,7 @@ Begin VB.Form Frm_VentaPasajes
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   8190
-   ScaleWidth      =   11850
+   ScaleWidth      =   11985
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtItemFactura 
@@ -40,6 +40,17 @@ Begin VB.Form Frm_VentaPasajes
       TabIndex        =   2
       Top             =   630
       Width           =   11790
+      Begin VB.ComboBox cbTipoFacturacion 
+         BackColor       =   &H00C0FFFF&
+         Height          =   315
+         ItemData        =   "Frm_VentaPasajes.frx":030A
+         Left            =   9390
+         List            =   "Frm_VentaPasajes.frx":0314
+         Style           =   2  'Dropdown List
+         TabIndex        =   106
+         Top             =   405
+         Width           =   1890
+      End
       Begin VB.TextBox txtItemFactura 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -168,7 +179,7 @@ Begin VB.Form Frm_VentaPasajes
          TabIndex        =   91
          TabStop         =   0   'False
          Tag             =   "tpLetra"
-         Top             =   450
+         Top             =   465
          Width           =   480
       End
       Begin VB.TextBox txtItemFactura 
@@ -271,7 +282,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdAgregarCliente 
          Height          =   285
          Left            =   855
-         Picture         =   "Frm_VentaPasajes.frx":030A
+         Picture         =   "Frm_VentaPasajes.frx":032C
          Style           =   1  'Graphical
          TabIndex        =   84
          Top             =   1035
@@ -430,9 +441,9 @@ Begin VB.Form Frm_VentaPasajes
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_VentaPasajes.frx":040A
+         ItemData        =   "Frm_VentaPasajes.frx":042C
          Left            =   120
-         List            =   "Frm_VentaPasajes.frx":041A
+         List            =   "Frm_VentaPasajes.frx":043C
          Style           =   2  'Dropdown List
          TabIndex        =   30
          Tag             =   "cdCondVenta"
@@ -601,7 +612,7 @@ Begin VB.Form Frm_VentaPasajes
          Enabled         =   0   'False
          Height          =   285
          Left            =   11385
-         Picture         =   "Frm_VentaPasajes.frx":0454
+         Picture         =   "Frm_VentaPasajes.frx":0476
          Style           =   1  'Graphical
          TabIndex        =   21
          Top             =   3750
@@ -757,7 +768,7 @@ Begin VB.Form Frm_VentaPasajes
       Begin VB.CommandButton cmdCalcular 
          Height          =   285
          Left            =   9105
-         Picture         =   "Frm_VentaPasajes.frx":0554
+         Picture         =   "Frm_VentaPasajes.frx":0576
          Style           =   1  'Graphical
          TabIndex        =   0
          TabStop         =   0   'False
@@ -771,7 +782,7 @@ Begin VB.Form Frm_VentaPasajes
          Left            =   5145
          TabIndex        =   41
          ToolTipText     =   "Imprimir la Factura"
-         Top             =   6945
+         Top             =   6975
          Width           =   3960
       End
       Begin VB.TextBox txtFields 
@@ -847,9 +858,9 @@ Begin VB.Form Frm_VentaPasajes
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   1
-         ItemData        =   "Frm_VentaPasajes.frx":0646
+         ItemData        =   "Frm_VentaPasajes.frx":0668
          Left            =   1890
-         List            =   "Frm_VentaPasajes.frx":0653
+         List            =   "Frm_VentaPasajes.frx":0675
          Style           =   2  'Dropdown List
          TabIndex        =   11
          Tag             =   "tpComision"
@@ -955,9 +966,9 @@ Begin VB.Form Frm_VentaPasajes
          BackColor       =   &H00FFFFFF&
          Height          =   315
          Index           =   2
-         ItemData        =   "Frm_VentaPasajes.frx":0679
+         ItemData        =   "Frm_VentaPasajes.frx":069B
          Left            =   750
-         List            =   "Frm_VentaPasajes.frx":068F
+         List            =   "Frm_VentaPasajes.frx":06A8
          Style           =   2  'Dropdown List
          TabIndex        =   3
          TabStop         =   0   'False
@@ -1104,7 +1115,11 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
+<<<<<<< HEAD
          Format          =   135397377
+=======
+         Format          =   113901569
+>>>>>>> version4_9_3_post_impl_todopago
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1251,6 +1266,14 @@ Begin VB.Form Frm_VentaPasajes
             Object.Width           =   2
          EndProperty
       End
+      Begin VB.Label Label20 
+         Caption         =   "Tipo Facturación"
+         Height          =   210
+         Left            =   9420
+         TabIndex        =   107
+         Top             =   225
+         Width           =   1455
+      End
       Begin VB.Label Label16 
          Caption         =   "Precio TP"
          BeginProperty Font 
@@ -1316,7 +1339,7 @@ Begin VB.Form Frm_VentaPasajes
          Height          =   225
          Left            =   1815
          TabIndex        =   92
-         Top             =   240
+         Top             =   225
          Width           =   495
       End
       Begin VB.Label Label1 
@@ -1496,7 +1519,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   3
          Left            =   1005
          TabIndex        =   71
-         Top             =   255
+         Top             =   225
          Width           =   570
       End
       Begin VB.Label lblLabels 
@@ -1514,7 +1537,7 @@ Begin VB.Form Frm_VentaPasajes
          Index           =   2
          Left            =   135
          TabIndex        =   70
-         Top             =   5175
+         Top             =   5160
          Width           =   1620
       End
       Begin VB.Label Label3 
@@ -1969,8 +1992,8 @@ Begin VB.Form Frm_VentaPasajes
       Left            =   0
       TabIndex        =   1
       Top             =   0
-      Width           =   11850
-      _ExtentX        =   20902
+      Width           =   11985
+      _ExtentX        =   21140
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -2034,7 +2057,7 @@ Begin VB.Form Frm_VentaPasajes
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_VentaPasajes.frx":06AB
+      MouseIcon       =   "Frm_VentaPasajes.frx":06B8
       Begin MSComctlLib.ImageList imgVentaPasajesResaltado 
          Left            =   5850
          Top             =   885
@@ -2048,43 +2071,43 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   10
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":080D
+               Picture         =   "Frm_VentaPasajes.frx":081A
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0929
+               Picture         =   "Frm_VentaPasajes.frx":0936
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0A7D
+               Picture         =   "Frm_VentaPasajes.frx":0A8A
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0B8D
+               Picture         =   "Frm_VentaPasajes.frx":0B9A
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0C8F
+               Picture         =   "Frm_VentaPasajes.frx":0C9C
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0DE3
+               Picture         =   "Frm_VentaPasajes.frx":0DF0
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":0EEF
+               Picture         =   "Frm_VentaPasajes.frx":0EFC
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":156B
+               Picture         =   "Frm_VentaPasajes.frx":1578
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":16D3
+               Picture         =   "Frm_VentaPasajes.frx":16E0
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1B27
+               Picture         =   "Frm_VentaPasajes.frx":1B34
                Key             =   "Salir"
             EndProperty
          EndProperty
@@ -2102,47 +2125,47 @@ Begin VB.Form Frm_VentaPasajes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":1F7B
+               Picture         =   "Frm_VentaPasajes.frx":1F88
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2093
+               Picture         =   "Frm_VentaPasajes.frx":20A0
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":21E7
+               Picture         =   "Frm_VentaPasajes.frx":21F4
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":22FF
+               Picture         =   "Frm_VentaPasajes.frx":230C
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":240B
+               Picture         =   "Frm_VentaPasajes.frx":2418
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":255F
+               Picture         =   "Frm_VentaPasajes.frx":256C
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2667
+               Picture         =   "Frm_VentaPasajes.frx":2674
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2CE3
+               Picture         =   "Frm_VentaPasajes.frx":2CF0
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":2E43
+               Picture         =   "Frm_VentaPasajes.frx":2E50
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":3297
+               Picture         =   "Frm_VentaPasajes.frx":32A4
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_VentaPasajes.frx":36EB
+               Picture         =   "Frm_VentaPasajes.frx":36F8
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -2254,6 +2277,17 @@ Dim Control As Object
     
 End Function
 
+
+
+Private Sub cbTipoFacturacion_Click()
+        
+        
+
+        objParametros.GrabarValor "Frm_VentaPasajes.tipofacturacion", Me.cbTipoFacturacion.Text
+        tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
+        
+
+End Sub
 
 Private Sub cmdAgregarCliente_Click()
 Dim resp As Byte
@@ -2507,6 +2541,8 @@ Dim resp         As Byte
 Dim vlRecargoTarjeta As Single
 Dim vlDescuentoEfectivo As Single
 
+On Error Resume Next
+
     vlRecargoTarjeta = 0
     vlDescuentoEfectivo = 0
 
@@ -2572,6 +2608,7 @@ Dim vlDescuentoEfectivo As Single
     End If
     
     
+
     ObtenerCampo("vlIVA").Text = FormatNumber(vlIVA, "2")
     ObtenerCampo("vlSubtotal").Text = FormatNumber(vlSubtotal, "2")
     
@@ -2601,6 +2638,12 @@ Dim vlDescuentoEfectivo As Single
       Me.lblRecargoTarjeta.Caption = "Descuento Efectivo: $ " + FormatNumber(vlDescuentoEfectivo, 2)
     End If
     
+    If Err <> 0 Then
+        MsgBox Err.Description
+    End If
+    
+    ' MsgBox "Eulises: sale de calcularTotalesFactura "
+On Error GoTo 0
 
     
 End Sub
@@ -3103,7 +3146,7 @@ Private Function grabarPuesto() As Boolean
         grabarPuesto = False
 
         '***********************************************************
-        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
+        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_9_71"
         objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
         objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
         objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
@@ -3200,6 +3243,9 @@ Dim strValor  As String
         calcularTotalesFactura
             ' Version 1.4
     Case "tpIVA" ' Alteración de la condición de IVA
+        ' CF , RI, NR, MT, EX, OT
+
+    
         obtener_num_Proxima_Factura
         
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
@@ -3406,27 +3452,37 @@ End Sub
 
 Private Sub Form_Activate()
 
+    ' MsgBox "ingreso al Form_Activate"
+
     If objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion") = "manual" Then
         Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
         Case "puesto"
-            Me.Caption = Me.Caption + " - Carga de Comprobantes MANUALES"
-            MsgBox "Desde aquí solo se pueden cargar los comprobantes manuales. " + vbCrLf + "Verifique que la numeración del talonario físico coincida con la que se muestra en pantalla, si no es así no realice la carga.", vbInformation, "Atención"
-            Me.BackColor = Rojo
+            If ObtenerCampo("tpComprobante").Text = "FA" Then
+                Me.Caption = Me.Caption + " - Carga de Comprobantes MANUALES"
+                MsgBox "Desde aquí solo se pueden cargar los comprobantes manuales. " + vbCrLf + "Verifique que la numeración del talonario físico coincida con la que se muestra en pantalla, si no es así no realice la carga.", vbInformation, "Atención"
+                Me.BackColor = Rojo
+            End If
         End Select
     End If
     
     On Error Resume Next
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
-        If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
+        If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
             ObtenerCampo("cdCliente").SetFocus
         Else
             ObtenerCampo("dsProductoBuscado").SetFocus
         End If
     Case Else
+        If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+            Me.cbTipoFacturacion.Text = objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")
+        End If
         ObtenerCampo("nrComprobante").SetFocus
     End Select
     On Error GoTo 0
+    
+    
+    ' MsgBox "ingreso al Form_Activate"
     
     
 End Sub
@@ -3484,6 +3540,7 @@ Dim strSQL_Params As String
 
     
     
+    
     PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
     PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
     PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
@@ -3536,13 +3593,19 @@ Private Sub obtener_num_Proxima_Factura()
 Dim strSQL      As String
 Dim strValor    As String
     
+    
     ObtenerCampo("tpComprobante") = objParametros.ObtenerValor("Frm_VentaPasajes.tpComprobante")
 
-
+    If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+        Me.cbTipoFacturacion.Locked = False
+    Else
+        Me.cbTipoFacturacion.Locked = True
+    End If
+    
      
     '***********************************************************
     ' Modificación version 1.4
-    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_7"
+    objSPs.nmStoredProcedure = "spu_obtener_puntosdeventa_facturacion_v4_9_71"
     objSPs.setearCampoValor "@nrPuesto_param", CStr(objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto"))
     objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
     objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("Frm_VentaPasajes.tipofacturacion")) = "MANUAL", "N", "S")
@@ -3972,6 +4035,40 @@ Private Function validarEntradadedatos() As Boolean
         End If
     End If
     
+    
+    Dim strSQL As String
+     
+    
+    Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
+    Case "administracion.cajapuesto"
+        '/************************************************************************/
+        '/* INICIO agregado en la version 4.9.71                                                                 */
+        strSQL = "spu_validarNroComprobanteManual_v4_9_71"
+        strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
+        strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
+        strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
+        strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
+        strSQL = strSQL + "@dtComprobante_param= '" + CStr(ObtenerCampo("dtComprobante")) + "'"
+         
+        If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+            MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        
+        If objbasededatos.rs_resultados.EOF Then
+                MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        
+        If objbasededatos.rs_resultados("resultado") = "ERROR" Then
+            MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        objbasededatos.rs_resultados.Close
+    End Select
     
 End Function
 
@@ -4647,8 +4744,8 @@ Dim i  As Integer
            On Error Resume Next
             Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
             Case "puesto"
-                If ObtenerCampo("tpComprobamte").Text = "ND" Or ObtenerCampo("tpComprobamte").Text = "NC" Then
-                ObtenerCampo("cdCliente").SetFocus
+                If ObtenerCampo("tpComprobante").Text = "ND" Or ObtenerCampo("tpComprobante").Text = "NC" Then
+                    ObtenerCampo("cdCliente").SetFocus
                 Else
                 ObtenerCampo("dsProductoBuscado").SetFocus
                 End If
@@ -5391,6 +5488,8 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
     Case vbKeyBack
         If Me.txtFields(Index).Text <> "" Then Exit Sub
         
+        On Error Resume Next
+        
         Select Case Me.txtFields(Index).Tag
         Case "cdCliente"
             ObtenerCampo("dsRazonSocial").SetFocus
@@ -5417,6 +5516,8 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
         Case "vlPagoPesos"
             ObtenerCampo("vlPagoDolares").SetFocus
         End Select
+        
+        On Error GoTo 0
     
     Case Else
         

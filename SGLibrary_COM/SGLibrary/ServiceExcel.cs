@@ -2,10 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-//using Microsoft.Office.Interop.Excel;
+using Microsoft.Office.Interop.Excel;
 using System.Runtime.InteropServices;
-//using Microsoft.Office.Interop.Excel;
-using SGLibrary.ExcelNuke;
+using SGLibrary.ArchivoTarjetas;
+using System.Diagnostics;
+
+//using SGLibrary.ExcelNuke;
 
 namespace SGLibrary
 {
@@ -23,6 +25,7 @@ namespace SGLibrary
 
 
         public static List<TB_Productos> listaProductos = new List<TB_Productos>();
+        public static List<TarifasXLS> listaTarifas = new List<TarifasXLS>();
 
         public  void InitializeExcel(String pNombreArchivo)
         {
@@ -49,11 +52,11 @@ namespace SGLibrary
                 System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
                 listaProductos.Add(new TB_Productos
                 {
-                    cdProducto = Int32.Parse ( MyValues.GetValue(1, 1).ToString()),
-                    dsProducto  = MyValues.GetValue(1, 2).ToString(),
-                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()),
-                    vlPrecioPeaje =   Double.Parse (MyValues.GetValue(1, 4).ToString()),
-                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()),
+                    cdProducto = Int32.Parse ( MyValues.GetValue(1, 1).ToString()),   // CODIGO
+                    dsProducto  = MyValues.GetValue(1, 2).ToString(),  // DESCRIPCION
+                    vlPrecioViajeSinPeaje  =  Double.Parse (MyValues.GetValue(1, 3).ToString()), // PRECIO
+                    vlPrecioPeaje = Double.Parse(MyValues.GetValue(1, 4).ToString()),    // PEAJE
+                    vlPrecioViaje  = Double.Parse ( MyValues.GetValue(1, 5).ToString()), // TOTAL
                     flMuestraenlaWEB = myFunc(MyValues.GetValue(1, 6).ToString()) 
                     
                 });
@@ -71,6 +74,45 @@ namespace SGLibrary
             return listaProductos;
         }
 
+        public List<TarifasXLS> ReadMyExcelTarifas()
+        {
+            listaTarifas.Clear();
+
+            Func<String, bool> myFunc = (x) => (x.CompareTo("SI") == 1);
+
+            /* bool result = myFunc(4); // returns false of course */
+
+            for (int index = 2; index <= lastRow; index++)
+            {
+                System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
+                listaTarifas.Add(new TarifasXLS
+                {
+                    Codigo = Int32.Parse(MyValues.GetValue(1, 1).ToString()),   // CODIGO
+                    Descripcion = MyValues.GetValue(1, 2).ToString(),  // DESCRIPCION
+                    Precio = Double.Parse(MyValues.GetValue(1, 3).ToString()), // PRECIO
+                    Peaje = Double.Parse(MyValues.GetValue(1, 4).ToString()),    // PEAJE
+                    Total = Double.Parse(MyValues.GetValue(1, 5).ToString()), // TOTAL
+                    Kilometros = Double.Parse(MyValues.GetValue(1, 6).ToString()),
+                    Muestra_en_la_Web =  myFunc( MyValues.GetValue(1,7).ToString())
+
+                    /*
+                             public int Codigo { get; set; }
+                        public String Descripcion { get; set; }
+                        public Double Precio { get; set; }
+                        public Double Peaje { get; set; }
+                        public Double Total { get; set; }
+                        public Double Kilometros { get; set; }
+                        public bool Muestra_en_la_Web { get; set; }
+                     */
+                });
+
+
+            }
+            return listaTarifas;
+        }
+
+
+
 
         public  void CerrarExcel()
         {
@@ -79,7 +121,129 @@ namespace SGLibrary
 
         }
 
-    }
+        public List<String> obtenerNombresHojas()
+        {
+            List<String> nombreHojas = new List<String>();
+
+            foreach (Microsoft.Office.Interop.Excel.Worksheet wSheet in MyApp.Worksheets)
+            {
+                nombreHojas.Add ( wSheet.Name ) ;
+            }
+            return nombreHojas;
+        }
+
+
+        public void SeleccionaHoja(String pNombreHoja)
+        {
+            List<String> nombreHojas = new List<String>();
+
+            foreach (Microsoft.Office.Interop.Excel.Worksheet wSheet in MyApp.Worksheets)
+            {
+                if (wSheet.Name.CompareTo(pNombreHoja) == 0)
+                {
+                    MySheet = MyBook.Sheets[wSheet.Index]; // Explict cast is not required here
+                    lastRow = MySheet.Cells.SpecialCells(XlCellType.xlCellTypeLastCell).Row; // Informamos cual es la ultima fila con datos 
+                    return; 
+                }
+            }
+        }
+
+
+        public List<RelColumnasXLSSAT> ObtenerNombresdeColumnas()
+        {
+            List<RelColumnasXLSSAT> lista = new List<RelColumnasXLSSAT>();
+            lista.Clear();
+            System.Array MyValues = (System.Array)MySheet.get_Range("A1", "H1").Cells.Value;
+
+            for (int index = 1; index <= 7; index++)
+            {    
+                if (MyValues.GetValue(1, index).ToString().CompareTo ("")!=0) {
+                    RelColumnasXLSSAT objRelColumnasXLSSAT = new RelColumnasXLSSAT();
+                    objRelColumnasXLSSAT.IndiceXLS  = index;
+                    objRelColumnasXLSSAT.NombreColumnaXLS = MyValues.GetValue(1, index).ToString();
+                    lista.Add(objRelColumnasXLSSAT);
+                }
+            }
+            return lista;
+        }
+
+
+        public List<Object> ObtenerContenido()
+        {
+            Trace.TraceInformation("Ingresa a metodo ObtenerContenido");
+            List<Object> lista = new List<Object>();
+            lista.Clear();
+            for (int i = 2; i < lastRow; i++)
+            {
+                System.Array MyValues = (System.Array) MySheet.get_Range("A" + i.ToString () , "H" + i.ToString () ).Cells.Value;
+                Trace.TraceInformation(MyValues.ToString());
+                lista.Add(MyValues);    
+            }
+            Trace.TraceInformation("finaliza a metodo ObtenerContenido");
+            return lista;
+
+        }
+
+       /*public List<TB_Productos> ObtenerNombresdeColumnas()
+        {
+            listaProductos.Clear();
+
+            Func<String, bool> myFunc = (x) => (x.CompareTo("SI") == 1);
+        */
+            /* bool result = myFunc(4); // returns false of course */
+        /*
+            for (int index = 2; index <= lastRow; index++)
+            {
+                System.Array MyValues = (System.Array)MySheet.get_Range("A" + index.ToString(), "H" + index.ToString()).Cells.Value;
+                listaProductos.Add(new TB_Productos
+                {
+                    cdProducto = Int32.Parse(MyValues.GetValue(1, 1).ToString()),
+                    dsProducto = MyValues.GetValue(1, 2).ToString(),
+                    vlPrecioViajeSinPeaje = Double.Parse(MyValues.GetValue(1, 3).ToString()),
+                    vlPrecioPeaje = Double.Parse(MyValues.GetValue(1, 4).ToString()),
+                    vlPrecioViaje = Double.Parse(MyValues.GetValue(1, 5).ToString()),
+                    flMuestraenlaWEB = myFunc(MyValues.GetValue(1, 6).ToString())
+
+                });
+
+
+
+            }
+        }*/
+
+    } // cierra la declaracion de la clase 
+
+
+    /**
+     * Ejemplos de como obtener los nombre de hojas de un archivo excel 
+        Microsoft.Office.Interop.Excel.Application xlApp = new Microsoft.Office.Interop.Excel.Application();
+        Microsoft.Office.Interop.Excel.Workbook excelBook = xlApp.Workbooks.Open("D:\\Book1.xlsx"); 
+
+        String[] excelSheets = new String[excelBook.Worksheets.Count];
+        int i = 0;
+        foreach(Microsoft.Office.Interop.Excel.Worksheet wSheet in excelBook.Worksheets)    
+        {
+          excelSheets[i] = wSheet.Name;
+          i++;
+        }
+
+     * 
+     * 
+     *   Private Sub ListExcelTablesDAO()
+
+
+            Dim ExcelWB As dao.Database
+            Dim tbl As dao.TableDef
+            Dim JetEngine As New dao.DBEngine
+
+            ExcelWB = JetEngine.OpenDatabase("C:\Test Files\Book20.xls", False, True, "Excel 8.0;")
+
+            For Each tbl In ExcelWB.TableDefs
+              Console.WriteLine(tbl.Name)
+            Next tbl
+            ExcelWB.Close()
+        End Sub
+     * */
 
 
 }

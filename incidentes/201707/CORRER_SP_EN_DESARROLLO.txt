@@ -1,0 +1,113 @@
+
+set dateformat dmy 
+
+ Exec spu_validarNroComprobanteManual_v4_9_71 @nrTalonario_param   = '0004',
+	 @nrComprobante_param = '00015179',@tpComprobante_param = 'FA',@tpLetra_param = 'B',
+	 @dtComprobante_param= '22/06/2017'
+
+
+	SELECT  vlParametro  FROM TB_Parametros  where dsParametro =  'DESVIO_EN_NUMERACION_CARGA_MANUAL'
+
+
+	SELECT  max(nrComprobante) FROM TB_Comprobantes WHERE   nrTalonario =   '0001'
+															AND tpComprobante =  'FA'
+																	AND tpLetra = 'B'
+																	AND flManual = 'M'
+
+	SELECT  * FROM TB_Comprobantes WHERE   nrTalonario =    '0001'
+															AND tpComprobante = 'FA'
+																	AND tpLetra = 'B'
+																		AND flManual = 'M'
+	order by nrTalonario ,  nrComprobante asc
+
+
+
+Go
+
+Sp_helptext 'spu_validarNroComprobanteManual_v4_9_71'
+
+GO
+
+
+-- drop procedure spu_validarNroComprobanteManual_v4_9_71
+/*
+
+EXEC spu_validarNroComprobanteManual_v4_9_71 @nrTalonario_param   = '0006',@nrComprobante_param = '00633560',
+@tpComprobante_param = 'FA',@tpLetra_param = 'B',@dtComprobante_param= '04/08/2016'
+
+
+*/ 
+
+---  Voy por acacacac !!!
+--- SP_ActualizarComprobanteManual_v2_4 ->>> SP_ActualizarComprobanteManual_v2_5
+-- Actualiza el nro de comprobante y talonario de una carga manual
+ALTER     procedure spu_validarNroComprobanteManual_v4_9_71
+(@nrTalonario_param        varchar(4),
+@nrComprobante_param      varchar(12),
+@tpComprobante_param      varchar(4),
+@tpLetra_param            varchar(2),
+@dtComprobante_param      date=null) 
+AS
+BEGIN
+
+	
+
+	DECLARE @maximo_nrComprobante   DECIMAL (18,0) 
+	DECLARE @vlParametro		    DECIMAL (18,0) 
+	DECLARE @maximo_dtComprobante  DATE
+	DECLARE @HABILITA_DESVIO_EN_NUMERACION_CARGA_MANUAL  CHAR(2)
+
+	SELECT @HABILITA_DESVIO_EN_NUMERACION_CARGA_MANUAL = vlParametro  FROM TB_Parametros  where dsParametro =  'HABILITA_DESVIO_EN_NUMERACION_CARGA_MANUAL'
+
+	IF left(@HABILITA_DESVIO_EN_NUMERACION_CARGA_MANUAL,1) ='N'
+	BEGIN
+		SELECT 'OK'  as Resultado , null  as DescripcionError 
+		RETURN
+	END
+
+	SELECT @vlParametro = vlParametro  FROM TB_Parametros  where dsParametro =  'DESVIO_EN_NUMERACION_CARGA_MANUAL'
+
+	SELECT @maximo_nrComprobante =  max(nrComprobante) FROM TB_Comprobantes WHERE   nrTalonario =   @nrTalonario_param
+															AND tpComprobante = @tpComprobante_param
+																	AND tpLetra = @tpLetra_param
+
+	print @maximo_nrComprobante 
+
+	DECLARE @datocomprobante as VARCHAR(20)
+	SET @datocomprobante = @tpComprobante_param  + '-'+   @tpLetra_param +'-' + @nrTalonario_param +'-'+ convert(varchar , @maximo_nrComprobante ) 
+
+	IF @nrComprobante_param > @maximo_nrComprobante +  @vlParametro 
+	BEGIN
+
+		
+		SELECT 'ERROR' as Resultado , 'El número de comprobante ingresado ('+ convert(varchar,@nrComprobante_param) + ') supera el maximo permitido (' + convert(varchar, @maximo_nrComprobante +  @vlParametro)  + ') , ultimo comprobante : ' + @datocomprobante
+						  as DescripcionError
+		RETURN;
+	END
+
+	IF @nrComprobante_param < @maximo_nrComprobante -  @vlParametro 
+	BEGIN
+		
+		SELECT 'ERROR' as Resultado , 'El número de comprobante ingresado ('+ convert(varchar,@nrComprobante_param) + ') es menor al mínimo permitido (' + convert(varchar, @maximo_nrComprobante -  @vlParametro)   + ') , ultimo comprobante : ' + @datocomprobante
+						  as DescripcionError
+		RETURN;
+	END
+
+	SELECT @maximo_dtComprobante =  dtComprobante FROM TB_Comprobantes WHERE   nrTalonario =   @nrTalonario_param
+															AND tpComprobante = @tpComprobante_param
+																	AND tpLetra = @tpLetra_param
+																		 AND  nrComprobante  = @maximo_nrComprobante  
+
+	IF @dtComprobante_param  < @maximo_dtComprobante
+	BEGIN
+		SELECT 'ERROR' as Resultado , 'La fecha ingresada ('+ convert(varchar,@dtComprobante_param) +
+				 ') es menor a la fecha del último comprobante ingresado para este talonario (Comprobante: ' + 
+				 @tpComprobante_param +'-'+ @tpLetra_param +'-'+ @nrTalonario_param  +'-'+ convert(varchar, @maximo_nrComprobante ) +', Fecha: '+ convert(varchar,  @maximo_dtComprobante , 103 ) + ' )'
+						  as DescripcionError
+		RETURN;
+	END
+
+	SELECT 'OK'  as Resultado , null  as DescripcionError 
+
+
+END

@@ -1,5 +1,9 @@
 VERSION 5.00
+<<<<<<< HEAD
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+=======
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+>>>>>>> version4_9_3_post_impl_todopago
 Begin VB.Form Frm_DetalleCajaPuesto 
    Caption         =   "Detalle Movimientos Caja Puesto"
    ClientHeight    =   9030
@@ -2110,7 +2114,7 @@ Private Sub cmdAnularComprobante()
     objParametros.GrabarValor "Frm_ElimModifAnularComprobantes.vlDiaDolar", ObtenerCampo("vlDiaDolar")
     objParametros.GrabarValor "Frm_ElimModifAnularComprobantes.vlDiaEuro", ObtenerCampo("vlDiaEuro")
     objParametros.GrabarValor "Frm_ElimModifAnularComprobantes.vlDiaReal", ObtenerCampo("vlDiaReal")
-    objParametros.GrabarValor "Frm_VentasPasajes.vlDiaReal", ObtenerCampo("vlDiaReal")
+    objParametros.GrabarValor "Frm_ElimModifAnularComprobantes.vlDiaReal", ObtenerCampo("vlDiaReal")
      
     Frm_ElimModifAnularComprobantes.Show 1
     

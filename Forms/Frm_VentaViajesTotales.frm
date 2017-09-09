@@ -38,7 +38,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   2340
       TabIndex        =   10
-      Top             =   3735
+      Top             =   3720
       Width           =   1050
    End
    Begin VB.PictureBox pnl 
@@ -753,7 +753,10 @@ End Sub
 
 Private Sub cmdCancelar_Click()
 
-         
+    If Trim(objParametros.ObtenerValor("Frm_VentaViajesTotales.caption")) = "Ingrese los datos de la TARJETA" Then
+        If Not validarEntradadedatos() Then Exit Sub
+    End If
+    
     objParametros.GrabarValor "Facturar", "NO"
     
     Unload Me
@@ -841,6 +844,8 @@ Private Sub Form_Activate()
     End If
     
 End Sub
+
+
 
 Private Sub Form_Load()
     

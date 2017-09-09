@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   225
-   ClientTop       =   870
+   ClientLeft      =   165
+   ClientTop       =   810
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -280,11 +280,23 @@ Begin VB.MDIForm Frm_Principal
       Begin VB.Menu optSalidasAFIP 
          Caption         =   "Salidas AFIP"
       End
+      Begin VB.Menu optPresentacionesCAIAFIP 
+         Caption         =   "Presentaciones CAI"
+      End
    End
    Begin VB.Menu mnConciliaciones 
       Caption         =   "Conciliaciones"
       Begin VB.Menu optConciliarViajes 
          Caption         =   "Conciliar Viajes"
+      End
+   End
+   Begin VB.Menu mnVarios 
+      Caption         =   "Varios"
+      Begin VB.Menu optCargaTarifas 
+         Caption         =   "Carga de Tarifas"
+      End
+      Begin VB.Menu optModifComprobante 
+         Caption         =   "Modificar Datos del Comprobante"
       End
    End
 End
@@ -767,6 +779,35 @@ Dim strnrCaja               As String
     
 End Sub
 
+Private Sub optCargaTarifas_Click()
+Dim objLoaderForms As Object
+
+
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms"
+    Set objLoaderForms = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objLoaderForms.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click- Antes de  CajaActiva objCajas.nrCaja "
+    objLoaderForms.CajaActiva CStr(objCajas.nrCaja)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  CajaActiva objCajas.nrCaja "
+    objLoaderForms.execFormulario "ServiceTarifas"
+    
+    
+End Sub
+
 Private Sub optCerrarCaja_Click()
 Dim resp As Byte
 
@@ -1000,7 +1041,13 @@ End Sub
 
 Private Sub optFacturarCtaCte_Click()
 
-    frm_CobroCtaCte.Show 1
+    If App.LogMode = MODO_DEBUG Then
+       frm_CobroCtaCte.Show 1
+       ' frm_CobroCtaCte_v2.Show 1
+    Else
+      frm_CobroCtaCte.Show 1
+    End If
+  
     
 End Sub
 
@@ -1038,6 +1085,14 @@ Private Sub optLicenciatarios_Click()
     
 End Sub
 
+Private Sub optModifComprobante_Click()
+
+    ' If Not objSeguridad.ObtenerPermisoSupervisor() Then Exit Sub
+    
+    frm_ModifComprobante.Show 1
+    
+End Sub
+
 Private Sub optMovimientosContables_Click()
 
     Frm_MovimientosContables.Show 1
@@ -1052,6 +1107,15 @@ Private Sub optNivelesdeAcceso_Click()
 End Sub
 
 Private Sub optNotasCredito_Click()
+
+    ' Agregado en la version 4.9.71
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+
+
+  objParametros.GrabarValor "nrCaja", objCajas.nrCaja
 
   ' Version 3.7: obtenemos los datos de las caja
   objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
@@ -1077,6 +1141,16 @@ Private Sub optNotasCredito_Click()
 End Sub
 
 Private Sub optNotasDebito_Click()
+
+
+    ' Agregado en la version 4.9.71
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+
+
+  objParametros.GrabarValor "nrCaja", objCajas.nrCaja
 
   ' Version 3.7: obtenemos los datos de las caja
   objCajas.obtenerCaja objParametros.ObtenerValor("nrCaja")
@@ -1120,6 +1194,37 @@ Private Sub optParametros_Click()
     On Error Resume Next
     Frm_ABMParametros.Show 1
     On Error GoTo 0
+End Sub
+
+Private Sub optPresentacionesCAIAFIP_Click()
+
+
+Dim objServicePresentacionCAIs As Object
+
+
+    
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms"
+    Set objServicePresentacionCAIs = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objServicePresentacionCAIs.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click- Antes de  CajaActiva objCajas.nrCaja "
+    objServicePresentacionCAIs.CajaActiva CStr(objCajas.nrCaja)
+
+    objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  CajaActiva objCajas.nrCaja "
+    objServicePresentacionCAIs.execFormulario "FrmPresentacionesCAI"
+    
 End Sub
 
 Private Sub optPuestos_Click()

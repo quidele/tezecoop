@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_ResumenLicenciatario 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
@@ -234,7 +234,7 @@ Begin VB.Form frm_ResumenLicenciatario
       Height          =   10200
       Left            =   75
       TabIndex        =   19
-      Top             =   705
+      Top             =   675
       Width           =   20205
       Begin MSComctlLib.ListView lstExcelIVA 
          Height          =   2400
@@ -325,7 +325,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Index           =   3
          Left            =   10950
          TabIndex        =   56
-         Top             =   165
+         Top             =   150
          Width           =   3540
       End
       Begin VB.TextBox txtBusqueda 
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   166854657
+            Format          =   103415809
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   166854657
+            Format          =   104005633
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -829,7 +829,7 @@ Begin VB.Form frm_ResumenLicenciatario
          Height          =   8115
          Left            =   45
          TabIndex        =   21
-         Top             =   1800
+         Top             =   1785
          Width           =   19830
          _ExtentX        =   34978
          _ExtentY        =   14314
@@ -949,7 +949,7 @@ Begin VB.Form frm_ResumenLicenciatario
          BeginProperty ColumnHeader(15) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   14
             Object.Tag             =   "nrComprabanteCliente"
-            Text            =   "Comprabante"
+            Text            =   "Comprobante"
             Object.Width           =   2646
          EndProperty
          BeginProperty ColumnHeader(16) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -1587,6 +1587,8 @@ End Sub
 Private Sub Form_Activate()
 
 
+
+
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
     
@@ -1652,8 +1654,29 @@ Private Sub Form_Load()
    tTip.Delay = 0 ' Tiempo de duración
    tTip.Duracion = 999999999
    
-
+   Dim i As Integer
    
+
+    If UCase(objUsuario.dsUsuario) = "RETORNO" Or objConfig.nrPuesto <> "9" Then
+    
+        For i = OptionSeleccionViajes.LBound To OptionSeleccionViajes.UBound
+            OptionSeleccionViajes(i).Enabled = False
+        Next i
+    
+        
+        For i = 1 To lstBusqueda.ColumnHeaders.Count
+            If lstBusqueda.ColumnHeaders(i).Tag = "flCompensado" Then
+                lstBusqueda.ColumnHeaders(i).Width = 0.1
+            End If
+            If lstBusqueda.ColumnHeaders(i).Tag = "dtCompensado" Then
+                lstBusqueda.ColumnHeaders(i).Width = 0.1
+            End If
+        Next i
+    
+        
+    End If
+    
+    
    
 End Sub
 
@@ -2410,7 +2433,7 @@ End Sub
 Private Sub obtener_suma_falta_compensar()
 Dim strSQL As String
 
-    strSQL = " sp_obtiene_falta_compensar_v4_2 "
+    strSQL = " sp_obtiene_falta_compensar_v4_9_72 "
  
     If objbasededatos.ExecStoredProcedures(strSQL) Then
         Me.lbl_falta_comp_pesos.Caption = objbasededatos.rs_resultados("suma_vlPagoPesos")

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.modoEdicion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.cbUsuariosConciliaciones = new System.Windows.Forms.ComboBox();
@@ -42,7 +43,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.modoEdicion = new System.Windows.Forms.TextBox();
             this.panelcarga.SuspendLayout();
             this.panelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -66,6 +66,18 @@
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(700, 314);
             this.panelcarga.TabIndex = 2;
+            // 
+            // modoEdicion
+            // 
+            this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.modoEdicion.Location = new System.Drawing.Point(112, 7);
+            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
+            this.modoEdicion.Name = "modoEdicion";
+            this.modoEdicion.ReadOnly = true;
+            this.modoEdicion.Size = new System.Drawing.Size(123, 20);
+            this.modoEdicion.TabIndex = 18;
+            this.modoEdicion.Visible = false;
             // 
             // label2
             // 
@@ -198,26 +210,14 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // modoEdicion
-            // 
-            this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.modoEdicion.Location = new System.Drawing.Point(112, 7);
-            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
-            this.modoEdicion.Name = "modoEdicion";
-            this.modoEdicion.ReadOnly = true;
-            this.modoEdicion.Size = new System.Drawing.Size(123, 20);
-            this.modoEdicion.TabIndex = 18;
-            this.modoEdicion.Visible = false;
-            // 
             // FrmABMBase
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 384);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
+            this.Controls.Add(this.panelcarga);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmABMBase";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

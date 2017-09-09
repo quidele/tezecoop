@@ -83,6 +83,8 @@ namespace SGLibrary
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_ArchivoTarjeta> TB_ArchivoTarjeta { get; set; }
         public DbSet<TB_Conciliacion> TB_Conciliacion { get; set; }
+        public DbSet<TB_PresentacionesCAI> TB_PresentacionesCAI { get; set; }
+        public DbSet<TB_PresentacionesCAIDetalle> TB_PresentacionesCAIDetalle { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {
@@ -104,6 +106,41 @@ namespace SGLibrary
                 new ObjectParameter("dsUsuario", typeof(string));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_procesarMovimientosPosdatados_Result>("spu_procesarMovimientosPosdatados", nrCajaParameter, dsUsuarioParameter);
+        }
+    
+        public virtual ObjectResult<spu_obtenerUltNroCAIsUsados_Result> spu_obtenerUltNroCAIsUsados(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerUltNroCAIsUsados_Result>("spu_obtenerUltNroCAIsUsados", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<spu_generarPresentacionCAI_v4_9_4_Result> spu_generarPresentacionCAI_v4_9_4(Nullable<int> idPresentacion, string realizarLOG)
+        {
+            var idPresentacionParameter = idPresentacion.HasValue ?
+                new ObjectParameter("IdPresentacion", idPresentacion) :
+                new ObjectParameter("IdPresentacion", typeof(int));
+    
+            var realizarLOGParameter = realizarLOG != null ?
+                new ObjectParameter("realizarLOG", realizarLOG) :
+                new ObjectParameter("realizarLOG", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_generarPresentacionCAI_v4_9_4_Result>("spu_generarPresentacionCAI_v4_9_4", idPresentacionParameter, realizarLOGParameter);
+        }
+    
+        public virtual ObjectResult<spu_obtenerDeudoresaFecha_Result> spu_obtenerDeudoresaFecha(Nullable<System.DateTime> fecha)
+        {
+            var fechaParameter = fecha.HasValue ?
+                new ObjectParameter("fecha", fecha) :
+                new ObjectParameter("fecha", typeof(System.DateTime));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerDeudoresaFecha_Result>("spu_obtenerDeudoresaFecha", fechaParameter);
         }
     }
 }

@@ -1610,7 +1610,11 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
+<<<<<<< HEAD
          Format          =   135069697
+=======
+         Format          =   133890049
+>>>>>>> version4_9_3_post_impl_todopago
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1628,11 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
+<<<<<<< HEAD
          Format          =   135069697
+=======
+         Format          =   133890049
+>>>>>>> version4_9_3_post_impl_todopago
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -2791,6 +2799,45 @@ Dim strMotivo        As String
             Exit Function
     End If
     
+    If Not (nrTalonario_anterior = Trim(ObtenerCampo("nrTalonario")) And _
+       nrComprobante_anterior = Trim(ObtenerCampo("nrComprobante")) And _
+       tpComprobante_anterior = Trim(ObtenerCampo("tpComprobante")) And _
+       dtComprobante_anterior = ObtenerCampo("dtComprobante")) Then
+        
+           
+            '/************************************************************************/
+            '/* INICIO agregado en la version 4.9.71                                                                 */
+        strSQL = "spu_validarNroComprobanteManual_v4_9_71"
+            strSQL = strSQL + " @nrTalonario_param   = '" + Trim(ObtenerCampo("nrTalonario")) + "',"
+            strSQL = strSQL + "@nrComprobante_param = '" + Trim(ObtenerCampo("nrComprobante")) + "',"
+            strSQL = strSQL + "@tpComprobante_param = '" + Trim(ObtenerCampo("tpComprobante")) + "',"
+            strSQL = strSQL + "@tpLetra_param = '" + Trim(ObtenerCampo("tpLetra")) + "',"
+            strSQL = strSQL + "@dtComprobante_param= '" + ObtenerCampo("dtComprobante") + "'"
+             
+        If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+                MsgBox "No se podido validar el comprobante (1), no se puede modificar el comprobante.", vbInformation, "Atención"
+                CorrigeErrores = False
+            Exit Function
+        End If
+    
+            If objbasededatos.rs_resultados.EOF Then
+                    MsgBox "No se podido validar el comprobante (2), no se puede modificar el comprobante.", vbInformation, "Atención"
+                CorrigeErrores = False
+            Exit Function
+        End If
+            
+        If objbasededatos.rs_resultados("resultado") = "ERROR" Then
+                            MsgBox objbasededatos.rs_resultados("DescripcionError"), vbInformation, "Atención"
+                CorrigeErrores = False
+                    Exit Function
+            End If
+        
+        objbasededatos.rs_resultados.Close
+            '/* FIN agregado en la version 4.9.71                                                            */
+            '/************************************************************************/
+    End If
+        
+        
     ' Transaccionamos
     objbasededatos.BeginTrans
     
@@ -2808,7 +2855,7 @@ Dim strMotivo        As String
     objSPs.setearCampoValor "@nrTalonario_new_param", ObtenerCampo("nrTalonario")
     objSPs.setearCampoValor "@nrComprobante_new_param", ObtenerCampo("nrComprobante")
     objSPs.setearCampoValor "@tpComprobante_new_param", ObtenerCampo("tpComprobante")
-    objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("tpComprobante")
+    objSPs.setearCampoValor "@tpLetra_new_param", ObtenerCampo("tpLetra")
     objSPs.setearCampoValor "@dtComprobante_new_param", ObtenerCampo("dtComprobante")
     objSPs.setearCampoValor "@cdCondVenta_new_param", ObtenerCampo("cdCondVenta")
     objSPs.setearCampoValor "@tpComision_new_param", ObtenerCampo("tpComision")
@@ -3918,6 +3965,7 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "Retorno"
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
@@ -3937,15 +3985,17 @@ Dim lcdCliente       As String
                 ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "A Clientes"
                 ObtenerCampo("tpComision").Text = "A Clientes"
            Case Else
                 ObtenerCampo("cdCondVenta").Clear
                 ObtenerCampo("cdCondVenta").AddItem "Contado"
-                                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+                ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
                 ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
                 ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
+                ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
                 ObtenerCampo("cdCondVenta") = "Contado"
                 ObtenerCampo("tpComision").Clear
                 ObtenerCampo("tpComision").AddItem "A Empleados"
@@ -3956,15 +4006,23 @@ Dim lcdCliente       As String
         Case "Cuenta Corriente"
             ObtenerCampo("cdCondVenta").Clear
             ObtenerCampo("cdCondVenta").AddItem "Cuenta Corriente"
+            ObtenerCampo("cdCondVenta").AddItem "Retorno"   ' Agregado en la version 4.9.7x
             ObtenerCampo("cdCondVenta") = "Cuenta Corriente"
+            
         Case Else
             ObtenerCampo("cdCondVenta").Clear
             ObtenerCampo("cdCondVenta").AddItem "Contado"
-                        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+            ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
+<<<<<<< HEAD
+=======
+            ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
+            ObtenerCampo("cdCondVenta").AddItem "Retorno"   ' Agregado en la version 4.9.7x
+>>>>>>> version4_9_3_post_impl_todopago
             ObtenerCampo("cdCondVenta") = "Contado"
+        
         End Select
         ObtenerCampo("tpComision").Clear
         ObtenerCampo("tpComision").AddItem "A Clientes"

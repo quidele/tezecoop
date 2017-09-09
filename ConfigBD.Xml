@@ -3,6 +3,6 @@
 <ConfigBD>
   <ConnectionString DbContext="dbSG2000Entities">
     <DataSource>MSI\SQLEXPRESS</DataSource>
-	<InitialCatalog>dbSG2000</InitialCatalog>
+    <InitialCatalog>dbSG2000</InitialCatalog>
   </ConnectionString>
 </ConfigBD>

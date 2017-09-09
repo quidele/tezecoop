@@ -124,9 +124,18 @@ Dim strDato                 As String
         Select Case UCase(objDiccionariodeDatos.tpTipo)
         Case "INTEGER", "BIT", "INT", "LONGINT", "COUNTER", "NUMERIC", "INT_CERO_POSITIVO"
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "0"
-            strDato = pLista.ListItems.Item(cantidadItems).Text
+            If pLista.ListItems.Item(cantidadItems).Text = "" Then
+                strDato = "0"
+            Else
+                strDato = pLista.ListItems.Item(cantidadItems).Text
+            End If
         Case "FLOAT", "DOUBLE"
-            strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text, ".", "!")
+            If pLista.ListItems.Item(cantidadItems).Text = "" Then
+                strDato = "0"
+            Else
+                strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).Text, ".", "!")
+            End If
+            ' strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text, ".", "!") OJO V4.9.7.07
             strDato = ReemplazarPalabra(strDato, ",", ".")
             strDato = ReemplazarPalabra(strDato, "!", ",")
             xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "#.##"
@@ -157,9 +166,18 @@ Dim strDato                 As String
                     Select Case UCase(objDiccionariodeDatos.tpTipo)
                     Case "INTEGER", "BIT", "INT", "LONGINT", "COUNTER", "NUMERIC"
                         xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "0"
-                        strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
+                        If pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text = "" Then
+                            strDato = "0"
+                        Else
+                            strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
+                        End If
                     Case "FLOAT", "DOUBLE"
-                        strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text, ".", "!")
+                        If pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text = "" Then
+                            strDato = "0"
+                        Else
+                            strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text, ".", "!")
+                        End If
+                        ' strDato = ReemplazarPalabra(pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text, ".", "!")
                         strDato = ReemplazarPalabra(strDato, ",", ".")
                         strDato = ReemplazarPalabra(strDato, "!", ",")
                         xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "#.##"

@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -24,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
     <RegisterForComInterop>true</RegisterForComInterop>
     <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -32,6 +33,8 @@
     <DefineConstants>TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup>
     <SignAssembly>true</SignAssembly>
@@ -49,6 +52,7 @@
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
     <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
     <OutputPath>bin\x86\Release\</OutputPath>
@@ -58,15 +62,19 @@
     <PlatformTarget>x86</PlatformTarget>
     <ErrorReport>prompt</ErrorReport>
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+    <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\lib\net40\EntityFramework.dll</HintPath>
+      <HintPath>..\lib\EntityFramework.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=14.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <EmbedInteropTypes>True</EmbedInteropTypes>
     </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -77,6 +85,7 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
     <Reference Include="System.Transactions" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -87,8 +96,11 @@
   <ItemGroup>
     <Compile Include="ArchivoTarjetas\ArchivoTarjeta.cs" />
     <Compile Include="ArchivoTarjetas\ArchivoTarjetaMaster.cs" />
+    <Compile Include="ArchivoTarjetas\ArchivoTarjetaAMCA.cs" />
     <Compile Include="ArchivoTarjetas\ArchivoTarjetaVisa.cs" />
-    <Compile Include="ArchivoTarjetas\IArchivoTarjeta.cs" />
+    <Compile Include="ArchivoTarjetas\ColumnaArchivoTarjeta.cs" />
+    <Compile Include="ArchivoTarjetas\RelColumnasXLSSAT.cs" />
+    <Compile Include="ArchivoTarjetas\IArchivoConciliacion.cs" />
     <Compile Include="ArchivoTarjetas\TB_ConciliacionDetalleEx.cs" />
     <Compile Include="BotonesForm.cs">
       <SubType>UserControl</SubType>
@@ -107,6 +119,27 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="Extensiones\Extensiones.cs" />
+    <Compile Include="Extensiones\GroupByGrid.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Frm_GroupByGrid.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frm_GroupByGrid.Designer.cs">
+      <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormularioBase.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormularioBase.Designer.cs">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPresentacionesCAI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPresentacionesCAI.Designer.cs">
+      <DependentUpon>FrmPresentacionesCAI.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmABMBase.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,12 +158,19 @@
     <Compile Include="FrmConciliaciones.Designer.cs">
       <DependentUpon>FrmConciliaciones.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmResumenNrosCAIs.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmResumenNrosCAIs.Designer.cs">
+      <DependentUpon>FrmResumenNrosCAIs.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmSeleccionarImpresora.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="FrmSeleccionarImpresora.Designer.cs">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
     </Compile>
+    <Compile Include="LoaderForms.cs" />
     <Compile Include="ODBCManager.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>
@@ -159,17 +199,24 @@
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
       <DesignTime>True</DesignTime>
     </Compile>
+    <Compile Include="Reportes\rpt_AnalisisDeudores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\rpt_AnalisisDeudores.Designer.cs">
+      <DependentUpon>rpt_AnalisisDeudores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ServiceCAI.cs" />
     <Compile Include="ServiceConciliacion.cs" />
     <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceConciliacionManual.cs" />
     <Compile Include="ServiceConciliacionTodoPago.cs" />
     <Compile Include="ServiceDestinos.cs" />
     <Compile Include="DBCOM_Class.cs" />
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmXLSSelect.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmXLSSelect.Designer.cs">
+      <DependentUpon>FrmXLSSelect.cs</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceExcel.cs" />
@@ -180,9 +227,19 @@
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="spu_generarPresentacionCAI_v4_9_4_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spu_obtenerDeudoresaFecha_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spu_obtenerUltNroCAIsUsados_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="spu_procesarMovimientosPosdatados_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TarifasXLS.cs" />
     <Compile Include="TB_ArchivoTarjeta.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -205,6 +262,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_MovimientosContablesPosdatados.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PresentacionesCAI.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_PresentacionesCAIDetalle.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_Productos.cs">
@@ -243,8 +306,17 @@
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="Frm_GroupByGrid.resx">
+      <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmXLSSelect.resx">
+      <DependentUpon>FrmXLSSelect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormularioBase.resx">
+      <DependentUpon>FormularioBase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPresentacionesCAI.resx">
+      <DependentUpon>FrmPresentacionesCAI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>
@@ -254,6 +326,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConciliaciones.resx">
       <DependentUpon>FrmConciliaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmResumenNrosCAIs.resx">
+      <DependentUpon>FrmResumenNrosCAIs.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeleccionarImpresora.resx">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
@@ -270,6 +345,9 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>StringResources.Designer.cs</LastGenOutput>
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\rpt_AnalisisDeudores.resx">
+      <DependentUpon>rpt_AnalisisDeudores.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
@@ -513,9 +591,7 @@
     <None Include="Imagenes_Varias\botones_form\btn_form_add11.png" />
     <None Include="Imagenes_Varias\botones_form\btn_form_add1.png" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="NewFolder1\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

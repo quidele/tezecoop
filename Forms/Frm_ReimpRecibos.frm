@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -20,7 +20,7 @@ Begin VB.Form Frm_ReimpRecibos
       Height          =   7020
       Left            =   15
       TabIndex        =   1
-      Top             =   720
+      Top             =   705
       Width           =   9825
       Begin VB.ComboBox cmbCampos 
          BackColor       =   &H00E0E0E0&
@@ -159,12 +159,12 @@ Begin VB.Form Frm_ReimpRecibos
          Left            =   1410
          TabIndex        =   11
          Tag             =   "dtDesde"
-         Top             =   720
+         Top             =   705
          Width           =   1695
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   116523009
+         Format          =   252641281
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   105578497
+         Format          =   252641281
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -311,7 +311,7 @@ Begin VB.Form Frm_ReimpRecibos
          Index           =   10
          Left            =   90
          TabIndex        =   13
-         Top             =   840
+         Top             =   825
          Width           =   1200
       End
    End
@@ -899,12 +899,16 @@ End Sub
 Private Sub Anular_Recibo()
 Dim resp                    As Byte
 Dim strSQL                  As String
+Dim ELIMINA_RECIBO_DE_OTRA_CAJA As String
 
-
-    If Me.lstBusqueda.SelectedItem.SubItems(6) <> objParametros.ObtenerValor("nrCaja") Then
-        MsgBox "No se puede eliminar este recibo ya que no pertenece a la caja de administración abierta, Caja Nro: " + objParametros.ObtenerValor("nrCaja") + ".", vbInformation + vbDefaultButton1, "Atención"
-        Exit Sub
-    End If
+    ELIMINA_RECIBO_DE_OTRA_CAJA = objParametros.ObtenerValorBD("ELIMINA_RECIBO_DE_OTRA_CAJA")
+    
+'    If ELIMINA_RECIBO_DE_OTRA_CAJA = "N" Then
+'        If Me.lstBusqueda.SelectedItem.SubItems(6) <> objParametros.ObtenerValor("nrCaja") Then
+'            MsgBox "No se puede eliminar este recibo ya que no pertenece a la caja de administración abierta, Caja Nro: " + objParametros.ObtenerValor("nrCaja") + ".", vbInformation + vbDefaultButton1, "Atención"
+'            Exit Sub
+'        End If
+'    End If
     
     If Me.lstBusqueda.SelectedItem.SubItems(5) = "SI" Then
         MsgBox "El recibo " + Me.lstBusqueda.SelectedItem.Text + " ha sido Anulado por el usuario " + Me.lstBusqueda.SelectedItem.SubItems(7), vbInformation + vbDefaultButton1, "Atención"
