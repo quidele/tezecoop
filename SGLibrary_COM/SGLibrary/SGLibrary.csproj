@@ -116,6 +116,7 @@
     <Compile Include="EXCELNuke\Workbook.cs" />
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
+    <Compile Include="Exceptions\DAOEntityException.cs" />
     <Compile Include="Extensiones\CalendarColumn.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -211,6 +212,7 @@
     <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceConciliacionManual.cs" />
     <Compile Include="ServiceConciliacionTodoPago.cs" />
+    <Compile Include="ServiceCupones.cs" />
     <Compile Include="ServiceDestinos.cs" />
     <Compile Include="DBCOM_Class.cs" />
     <Compile Include="FrmXLSSelect.cs">
