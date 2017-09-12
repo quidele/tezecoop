@@ -827,13 +827,6 @@ namespace SGLibrary
                     var listadeViajesaConciliarTodoPago = this.un_ServiceConciliacionTodoPago.ObtenerViajesaConciliar();
                     cargarDataGridViewCuponesTodoPago(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
-                case "Amca":  // Procesamos el archivo Excel enviado por AMCA
-                    this.cbtipoConciliacion.Enabled = true;
-                    this.dataGridView1.Rows.Clear();
-                    this.txtNombreArchivoTarjeta.Text = "";
-                    this.btnSelecccionarArchivoTarjeta.Enabled = true;
-                    this.btnSelecccionarArchivoTarjeta.PerformClick();
-                    break;
                 default:
                     this.cbtipoConciliacion.Enabled = true;
                     this.dataGridView1.Rows.Clear();
@@ -845,31 +838,39 @@ namespace SGLibrary
         }
 
 
+        /*
+        Visa
+        Master
+        Manual
+        Todo Pago
+        Amca Amex
+        Amca Visa
+        Amca Master
+         */
+
         private void procesarArchivo(String pNombreArchivo )
         {
             ArchivoTarjeta miArchivo;
             switch (cbtipoConciliacion.Text)
             {
-                case "Amca": 
-                    miArchivo = new ArchivoTarjetaAMCA();
-                    return;
+                case "Amca Amex": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaAmex(), cbtipoConciliacion.Text); break;
+                case "Amca Visa": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaVisa(), cbtipoConciliacion.Text); break;
+                case "Amca Master": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaVisa(), cbtipoConciliacion.Text); break;
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
                     break;
-                default :
-                     miArchivo = new ArchivoTarjetaMaster();
+                case "Master":
+                    miArchivo = new ArchivoTarjetaMaster();
                     break;
-
+                default :
+                    MessageBox.Show("Debe seleccionar el tipo de conciliación.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    return; 
             }
+
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
-            //miArchivo.ProcesarArchivo(); OJO esta linea duplica la generacion de los registrosa
-
-            /* Para pruebas AMCA decomentar */
-            /* return; */ 
-
-
+            
             this.serviceConciliacionesAutomaticas.procesarArchivo(miArchivo);
             this.serviceConciliacionesAutomaticas.ConcilialiarAutomaticaticamente(miArchivo.miArchivoTarjeta);
             var listadeViajesaConciliar1 = this.serviceConciliacionesAutomaticas.ObtenerViajesNoConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);

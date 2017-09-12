@@ -7,6 +7,8 @@ namespace SGLibrary.ArchivoTarjetas
 {
     public interface IArchivoConciliacion
     {
+        void AbrirArchivo(string aa, string bb); 
         void ProcesarArchivo();         
+
     }
 }

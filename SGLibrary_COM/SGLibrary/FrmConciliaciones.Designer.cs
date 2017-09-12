@@ -149,7 +149,7 @@
             this.txtIdArchivo.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtIdArchivo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdArchivo.Location = new System.Drawing.Point(723, 36);
-            this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdArchivo.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdArchivo.Name = "txtIdArchivo";
             this.txtIdArchivo.ReadOnly = true;
             this.txtIdArchivo.Size = new System.Drawing.Size(24, 20);
@@ -183,7 +183,7 @@
             this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.modoEdicion.Location = new System.Drawing.Point(808, 36);
-            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
             this.modoEdicion.Size = new System.Drawing.Size(24, 20);
@@ -194,7 +194,7 @@
             this.txtflEstado.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtflEstado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtflEstado.Location = new System.Drawing.Point(635, 37);
-            this.txtflEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtflEstado.Margin = new System.Windows.Forms.Padding(2);
             this.txtflEstado.Name = "txtflEstado";
             this.txtflEstado.ReadOnly = true;
             this.txtflEstado.Size = new System.Drawing.Size(27, 20);
@@ -215,7 +215,7 @@
             this.txtnrCajaAdm.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtnrCajaAdm.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnrCajaAdm.Location = new System.Drawing.Point(425, 37);
-            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnrCajaAdm.Margin = new System.Windows.Forms.Padding(2);
             this.txtnrCajaAdm.Name = "txtnrCajaAdm";
             this.txtnrCajaAdm.ReadOnly = true;
             this.txtnrCajaAdm.Size = new System.Drawing.Size(163, 20);
@@ -242,7 +242,7 @@
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView1.Location = new System.Drawing.Point(19, 93);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -254,7 +254,7 @@
             this.txtIdConciliacion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtIdConciliacion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtIdConciliacion.Location = new System.Drawing.Point(64, 35);
-            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdConciliacion.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdConciliacion.Name = "txtIdConciliacion";
             this.txtIdConciliacion.ReadOnly = true;
             this.txtIdConciliacion.Size = new System.Drawing.Size(85, 20);
@@ -275,7 +275,7 @@
             this.txtdsUsuario.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtdsUsuario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtdsUsuario.Location = new System.Drawing.Point(201, 35);
-            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtdsUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtdsUsuario.Name = "txtdsUsuario";
             this.txtdsUsuario.ReadOnly = true;
             this.txtdsUsuario.Size = new System.Drawing.Size(163, 20);
@@ -305,7 +305,7 @@
             // 
             this.cbdtConciliacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.cbdtConciliacion.Location = new System.Drawing.Point(56, 65);
-            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(2);
             this.cbdtConciliacion.Name = "cbdtConciliacion";
             this.cbdtConciliacion.Size = new System.Drawing.Size(85, 20);
             this.cbdtConciliacion.TabIndex = 6;
@@ -330,9 +330,11 @@
             "Master",
             "Manual",
             "Todo Pago",
-            "Amca"});
+            "Amca Amex",
+            "Amca Visa",
+            "Amca Master"});
             this.cbtipoConciliacion.Location = new System.Drawing.Point(146, 65);
-            this.cbtipoConciliacion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbtipoConciliacion.Margin = new System.Windows.Forms.Padding(2);
             this.cbtipoConciliacion.Name = "cbtipoConciliacion";
             this.cbtipoConciliacion.Size = new System.Drawing.Size(97, 21);
             this.cbtipoConciliacion.TabIndex = 21;
@@ -343,7 +345,7 @@
             this.txtFormato.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtFormato.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtFormato.Location = new System.Drawing.Point(146, 66);
-            this.txtFormato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFormato.Margin = new System.Windows.Forms.Padding(2);
             this.txtFormato.Name = "txtFormato";
             this.txtFormato.ReadOnly = true;
             this.txtFormato.Size = new System.Drawing.Size(96, 20);
@@ -392,7 +394,7 @@
             "Manual",
             "Todo Pago"});
             this.cbFormato.Location = new System.Drawing.Point(290, 50);
-            this.cbFormato.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFormato.Margin = new System.Windows.Forms.Padding(2);
             this.cbFormato.Name = "cbFormato";
             this.cbFormato.Size = new System.Drawing.Size(157, 21);
             this.cbFormato.TabIndex = 14;
@@ -403,7 +405,7 @@
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
             this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(91, 50);
-            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
             this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(157, 21);
             this.cbUsuariosConciliaciones.TabIndex = 6;
@@ -444,7 +446,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(204, 25);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(101, 20);
             this.fechahasta.TabIndex = 2;
@@ -453,7 +455,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(91, 25);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 1;
@@ -479,7 +481,7 @@
             this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView2.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
             this.dataGridView2.Location = new System.Drawing.Point(13, 82);
-            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView2.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -562,7 +564,7 @@
             this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmConciliaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Conciliaciones";
