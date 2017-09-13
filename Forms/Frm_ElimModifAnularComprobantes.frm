@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ElimModifAnularComprobantes 
    Caption         =   "Corregir o Eliminar un Comprobante mal Cargado"
    ClientHeight    =   7740
@@ -1610,11 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-<<<<<<< HEAD
-         Format          =   135069697
-=======
-         Format          =   133890049
->>>>>>> version4_9_3_post_impl_todopago
+         Format          =   121438209
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1628,11 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-<<<<<<< HEAD
-         Format          =   135069697
-=======
-         Format          =   133890049
->>>>>>> version4_9_3_post_impl_todopago
+         Format          =   121438209
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -4016,11 +4008,8 @@ Dim lcdCliente       As String
             ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
-<<<<<<< HEAD
-=======
             ObtenerCampo("cdCondVenta").AddItem "Cobro en Destino"
             ObtenerCampo("cdCondVenta").AddItem "Retorno"   ' Agregado en la version 4.9.7x
->>>>>>> version4_9_3_post_impl_todopago
             ObtenerCampo("cdCondVenta") = "Contado"
         
         End Select

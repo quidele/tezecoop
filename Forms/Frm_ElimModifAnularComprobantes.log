@@ -1,9 +1,4 @@
-Line 20: Class MSComctlLib.Toolbar of control tlb_ABM was not a loaded control class.
-Line 108: Class MSComctlLib.ImageList of control imgReimpComprobantesResaltado was not a loaded control class.
-Line 176: Class MSComctlLib.ImageList of control imgReimpComprobantes was not a loaded control class.
-Line 712: Class MSComctlLib.ListView of control lstItemsFactura was not a loaded control class.
-Line 1539: Class MSComctlLib.ImageList of control ImgOperadores was not a loaded control class.
-Line 1577: Class MSComctlLib.ImageCombo of control ImageCombo1 was not a loaded control class.
-Line 1602: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 1616: Class MSComCtl2.DTPicker of control DTPicker1 was not a loaded control class.
-Line 1630: Class MSComctlLib.ListView of control lstBusqueda was not a loaded control class.
+Line 1613: Syntax error: property <<<<<<< in DTPicker1 was missing an '='.
+Line 1617: Syntax error: property >>>>>>> in DTPicker1 was missing an '='.
+Line 1631: Syntax error: property <<<<<<< in DTPicker1 was missing an '='.
+Line 1635: Syntax error: property >>>>>>> in DTPicker1 was missing an '='.
