@@ -18,8 +18,12 @@ namespace SGLibrary
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
         public void GrabarCupon(Double pvlPesos, decimal pnrCaja, String pdsUsuario, String pIdConciliacion,
-                                                    dbSG2000Entities pdbSG2000Entities, string pnrLicencia, string pnrFactura, DateTime pdtFecha,
-                                                    Decimal pnrCupon, String pdsObservaccion)
+                                                    dbSG2000Entities pdbSG2000Entities, int pnrLicencia,
+                                                    String pnrFactura, DateTime pdtFecha,
+                                                    Decimal pnrCupon, String pdsObservaccion,
+                                                    int  pcdCliente , String ptpComprobanteCliente ,
+                                                    String pnrComprabanteCliente, String pnrTalonarioCliente,
+                                                    String ptpLetraCliente) 
         {
 
             Trace.TraceInformation("ingresando a GrabarCupon");
@@ -40,6 +44,13 @@ namespace SGLibrary
                 else
                 {
                     unCupon.nrCupon = max.nrCupon + 1;
+                    unCupon.cdCliente = pcdCliente; 
+                    unCupon.nrLicencia = pnrLicencia;
+                    unCupon.tpComprobanteCliente = ptpComprobanteCliente;
+                    unCupon.nrComprabanteCliente = pnrComprabanteCliente;
+                    unCupon.nrTalonarioCliente = pnrTalonarioCliente;
+                    unCupon.tpLetraCliente = ptpLetraCliente;
+                    
                     pdbSG2000Entities.TB_Cupones.Add(unCupon);
                     pdbSG2000Entities.SaveChanges();
                 }
