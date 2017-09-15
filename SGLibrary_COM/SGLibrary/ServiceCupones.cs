@@ -17,13 +17,14 @@ namespace SGLibrary
         /// </summary>
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
-        public void GrabarCupon(Double pvlPesos, decimal pnrCaja, String pdsUsuario, String pIdConciliacion,
+        public void GrabarCupon(Double pvlPesos, decimal pnrCaja, String pdsUsuario, int pIdConciliacion,
                                                     dbSG2000Entities pdbSG2000Entities, int pnrLicencia,
                                                     String pnrFactura, DateTime pdtFecha,
                                                     Decimal pnrCupon, String pdsObservaccion,
                                                     int  pcdCliente , String ptpComprobanteCliente ,
                                                     String pnrComprabanteCliente, String pnrTalonarioCliente,
-                                                    String ptpLetraCliente) 
+                                                    String ptpLetraCliente, double pvlMontoCupon,
+                                                    double pvlComision ) 
         {
 
             Trace.TraceInformation("ingresando a GrabarCupon");
@@ -43,16 +44,31 @@ namespace SGLibrary
                 }
                 else
                 {
+
                     unCupon.nrCupon = max.nrCupon + 1;
+                    unCupon.dtCupon = DateTime.UtcNow ;
                     unCupon.cdCliente = pcdCliente; 
-                    unCupon.nrLicencia = pnrLicencia;
+                    unCupon.nrLicencia = 99 ; //  definir que licencia vamos a utilizar para el armado de estos recibos
                     unCupon.tpComprobanteCliente = ptpComprobanteCliente;
                     unCupon.nrComprabanteCliente = pnrComprabanteCliente;
                     unCupon.nrTalonarioCliente = pnrTalonarioCliente;
                     unCupon.tpLetraCliente = ptpLetraCliente;
-                    
+                    unCupon.vlMontoCupon = pvlMontoCupon;
+                    unCupon.vlComision = pvlComision;
+                    unCupon.vlPagoPesos = 0;
+                    unCupon.vlPagoReales  = 0;
+                    unCupon.vlPagoEuros = 0;
+                    unCupon.vlPagoDolares = 0;
+                    unCupon.IdConciliacion = pIdConciliacion;
+                    unCupon.flCobradoalCliente = false;
+                    unCupon.flCompensado = false;
+                    unCupon.flAnulado = false;
+                    unCupon.nrCajaCliente = pnrCaja;
+                    unCupon.vlIVA = 0;
+                    unCupon.vlSubtotal = 0; 
                     pdbSG2000Entities.TB_Cupones.Add(unCupon);
                     pdbSG2000Entities.SaveChanges();
+
                 }
 
 
