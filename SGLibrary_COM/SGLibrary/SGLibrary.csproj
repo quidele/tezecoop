@@ -209,6 +209,7 @@
     </Compile>
     <Compile Include="ServiceCAI.cs" />
     <Compile Include="ServiceConciliacion.cs" />
+    <Compile Include="ServiceConciliacionAutomaticaAMCA.cs" />
     <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceConciliacionManual.cs" />
     <Compile Include="ServiceConciliacionTodoPago.cs" />
