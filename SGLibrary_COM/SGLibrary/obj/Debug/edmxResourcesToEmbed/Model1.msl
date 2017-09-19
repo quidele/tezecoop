@@ -281,6 +281,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spu_obtenerDeudoresaFecha" FunctionName="dbSG2000Model.Store.spu_obtenerDeudoresaFecha">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerDeudoresaFecha_Result">
+          <ScalarProperty Name="tpCupon" ColumnName="tpCupon" />
+          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
+          <ScalarProperty Name="sumavlMontoCupon" ColumnName="sumavlMontoCupon" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
     <EntitySetMapping Name="TB_PresentacionesCAI">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_PresentacionesCAI">
         <MappingFragment StoreEntitySet="TB_PresentacionesCAI">
@@ -308,35 +317,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
-          <ScalarProperty Name="AÑO" ColumnName="AÑO" />
-          <ScalarProperty Name="MES" ColumnName="MES" />
-          <ScalarProperty Name="DOC" ColumnName="DOC" />
-          <ScalarProperty Name="PDV" ColumnName="PDV" />
-          <ScalarProperty Name="LETRA" ColumnName="LETRA" />
-          <ScalarProperty Name="CAI" ColumnName="CAI" />
-          <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_4" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result">
-          <ScalarProperty Name="resultado" ColumnName="resultado" />
-          <ScalarProperty Name="Descrip" ColumnName="Descrip" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
-    <FunctionImportMapping FunctionImportName="spu_obtenerDeudoresaFecha" FunctionName="dbSG2000Model.Store.spu_obtenerDeudoresaFecha">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerDeudoresaFecha_Result">
-          <ScalarProperty Name="tpCupon" ColumnName="tpCupon" />
-          <ScalarProperty Name="cantidad" ColumnName="cantidad" />
-          <ScalarProperty Name="sumavlMontoCupon" ColumnName="sumavlMontoCupon" />
-        </ComplexTypeMapping>
-      </ResultMapping>
-    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

@@ -142,5 +142,14 @@ namespace SGLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerDeudoresaFecha_Result>("spu_obtenerDeudoresaFecha", fechaParameter);
         }
+    
+        public virtual int spu_conciliarAutomaticamente_v4_9_900(Nullable<int> idArchivo)
+        {
+            var idArchivoParameter = idArchivo.HasValue ?
+                new ObjectParameter("idArchivo", idArchivo) :
+                new ObjectParameter("idArchivo", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spu_conciliarAutomaticamente_v4_9_900", idArchivoParameter);
+        }
     }
 }

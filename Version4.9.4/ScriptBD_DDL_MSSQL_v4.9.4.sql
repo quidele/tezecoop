@@ -646,7 +646,7 @@ GO
    
 ---------------------------------------------------------------------------
 ---  exec  dbo.spu_obtenerUltNroCAIsUsados 12, 2016
-ALTER procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
+CREATE procedure  [dbo].[spu_obtenerUltNroCAIsUsados](@mes int, @anio int) 
 as
 begin
 		

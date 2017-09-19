@@ -20,9 +20,7 @@ namespace SGLibrary
 
         public ServiceConciliacionAutomaticaAMCA()
         {
-
         }
-
 
 
         public override void agregarConciliacion(List<TB_ConciliacionDetalleEx> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
