@@ -317,5 +317,10 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente_v4_9_900" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente_v4_9_900">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result" />
+      </ResultMapping>
+    </FunctionImportMapping>
   </EntityContainerMapping>
 </Mapping>

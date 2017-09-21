@@ -110,21 +110,27 @@ END
 
 GO
 
+	
+--exec [dbo].[spu_conciliarAutomaticamente_v4_9_900] @idArchivo=414
+-- exec [dbo].[spu_conciliarAutomaticamente_v4_9_900] @idArchivo=416
 
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+if NOT EXISTS (select * from sys.procedures where name  = 'spu_conciliarAutomaticamente_bkp_antes_v4_9_900') 
+	EXEC sp_rename 'spu_conciliarAutomaticamente' , 'spu_conciliarAutomaticamente_bkp_antes_v4_9_900'
+-- drop procedure spu_conciliarAutomaticamente_bkp_antes_v4_9_900
+/*
+sp_help 'dbo.spu_conciliarAutomaticamente'
+sp_help 'dbo.spu_conciliarAutomaticamente_bkp_antes_v4_9_900'
+*/
+GO
 
-IF EXISTS (SELECT * FROM SYS.objects   WHERE NAME = 'spu_conciliarAutomaticamente_v4_9_900')
+IF   EXISTS (select * from sys.procedures where name  = 'spu_conciliarAutomaticamente') 
 BEGIN
-	DROP procedure  dbo.spu_conciliarAutomaticamente_v4_9_900
+	DROP PROCEDURE  dbo.spu_conciliarAutomaticamente
 END
-
-			
---exec [dbo].[spu_conciliarAutomaticamente_v4_9_900] @idArchivo=4
 
 GO
 
-CREATE procedure dbo.spu_conciliarAutomaticamente_v4_9_900 (@idArchivo int) 
+create procedure dbo.spu_conciliarAutomaticamente (@idArchivo int) 
 as
 begin 
 DECLARE @formato VARCHAR(10)
@@ -284,7 +290,7 @@ DECLARE @formato VARCHAR(10)
 	where x.nrNivelConciliacion is null
 	 
 	
-	select 'OK' as resultado , 'en el store debemos desarrollar toda la logica de la conciliacion' descripcion_error 
+	select 'OK' as resultado , 'EULISES' descripcion_error 
 
 end
 

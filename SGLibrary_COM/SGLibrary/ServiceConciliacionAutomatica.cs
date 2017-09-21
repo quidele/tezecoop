@@ -73,7 +73,7 @@ namespace SGLibrary
                 try
                 {
                 // La logica de la conciliación queda suscripta en el SP
-                    spu_conciliarAutomaticamente_Result resul = context.spu_conciliarAutomaticamente(unTB_ArchivoTarjeta.id).First();
+                 spu_conciliarAutomaticamente_Result   resul = context.spu_conciliarAutomaticamente (unTB_ArchivoTarjeta.id).First();
                 // verificar el resultado que devuelve el STORE
                  Console.WriteLine(resul.resultado + " " + resul.descripcion_error);
                 }

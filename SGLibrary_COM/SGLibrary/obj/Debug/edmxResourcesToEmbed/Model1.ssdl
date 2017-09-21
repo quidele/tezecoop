@@ -343,6 +343,9 @@
   <Function Name="spu_conciliarAutomaticamente" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="idArchivo" Type="int" Mode="In" />
   </Function>
+  <Function Name="spu_conciliarAutomaticamente_v4_9_900" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="idArchivo" Type="int" Mode="In" />
+  </Function>
   <Function Name="spu_obtenerDeudoresaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fecha" Type="date" Mode="In" />
   </Function>

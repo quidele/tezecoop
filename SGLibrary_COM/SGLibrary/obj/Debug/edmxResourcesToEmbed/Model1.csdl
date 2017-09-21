@@ -59,7 +59,7 @@
       <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
       <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
     </AssociationSet>
-    <FunctionImport Name="spu_conciliarAutomaticamente_v4_9_900">
+    <FunctionImport Name="spu_conciliarAutomaticamente_v4_9_900" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result)">
       <Parameter Name="idArchivo" Mode="In" Type="Int32" />
     </FunctionImport>
   </EntityContainer>
@@ -467,4 +467,5 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="spu_conciliarAutomaticamente_v4_9_900_Result" />
 </Schema>

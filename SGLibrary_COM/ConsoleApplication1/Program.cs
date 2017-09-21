@@ -137,8 +137,16 @@ namespace ConsoleApplication1
             //l.execFormulario("rpt_AnalisisDeudores");
 
 
+            //LoaderForms l = new LoaderForms();
+            //l.execFormulario("Frm_GroupByGrid");
+
+
             LoaderForms l = new LoaderForms();
-            l.execFormulario("Frm_GroupByGrid");
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmConciliaciones");
+
+
             
         }
     }
