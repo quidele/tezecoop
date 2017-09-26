@@ -13,6 +13,11 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe.config
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.pdb
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\AdvancedDataGridView.dll
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\AdvancedDataGridView.pdb
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\AdvancedDataGridView.xml
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\fr\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\ru\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb

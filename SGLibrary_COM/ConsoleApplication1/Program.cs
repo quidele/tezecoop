@@ -112,11 +112,11 @@ namespace ConsoleApplication1
             l.execFormulario("FrmPresentacionesCAI");
             * */
             
-            /*
+            
             ServiceTarifas miServiceTarifas = new ServiceTarifas();
             miServiceTarifas.cargarTarifas();
             Console.ReadKey(); 
-             **/
+            
 
             /* 
             LoaderForms l = new LoaderForms();
@@ -141,10 +141,11 @@ namespace ConsoleApplication1
             //l.execFormulario("Frm_GroupByGrid");
 
 
-            LoaderForms l = new LoaderForms();
+            /* LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.execFormulario("FrmConciliaciones");
+             * */
 
 
             
