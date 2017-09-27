@@ -125,6 +125,19 @@ namespace SGLibrary
 
         }
 
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
+        {
+            
+           MessageBox.Show(this.dataGridView1.FilterString);
+           this.bindingSource.Filter = this.dataGridView1.FilterString;
+            
+        }
+
 
     }// cierre clase Form 
 }

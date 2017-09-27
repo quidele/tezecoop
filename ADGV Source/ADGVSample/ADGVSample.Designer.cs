@@ -196,6 +196,7 @@
             this.statusStrip.Size = new System.Drawing.Size(867, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
+            this.statusStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip_ItemClicked);
             // 
             // toolStripStatusLabel1
             // 
@@ -231,6 +232,7 @@
             this.dataGridView.TimeFilter = false;
             this.dataGridView.SortStringChanged += new System.EventHandler(this.dataGridView_SortStringChanged);
             this.dataGridView.FilterStringChanged += new System.EventHandler(this.dataGridView_FilterStringChanged);
+            this.dataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView_CellContentClick);
             this.dataGridView.CellMouseDown += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dataGridView_CellMouseDown);
             // 
             // searchToolBar
@@ -259,6 +261,7 @@
             this.Controls.Add(this.statusStrip);
             this.Name = "ADGVSample";
             this.Text = "ADGVSample";
+            this.Load += new System.EventHandler(this.ADGVSample_Load);
             this.toolStrip.ResumeLayout(false);
             this.toolStrip.PerformLayout();
             this.statusStrip.ResumeLayout(false);

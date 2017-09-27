@@ -172,5 +172,20 @@ namespace ADGVSample
         {
 
         }
+
+        private void ADGVSample_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void statusStrip_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void dataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.button2 = new System.Windows.Forms.Button();
             this.dataGridView1 = new ADGV.AdvancedDataGridView();
+            this.bindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet = new System.Data.DataSet();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -93,6 +98,16 @@
             this.dataGridView1.Size = new System.Drawing.Size(693, 259);
             this.dataGridView1.TabIndex = 5;
             this.dataGridView1.TimeFilter = false;
+            this.dataGridView1.FilterStringChanged += new System.EventHandler(this.dataGridView1_FilterStringChanged);
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // bindingSource
+            // 
+            this.bindingSource.AllowNew = true;
+            // 
+            // dataSet
+            // 
+            this.dataSet.DataSetName = "NewDataSet";
             // 
             // FrmCargaTarifas
             // 
@@ -108,6 +123,8 @@
             this.Text = "Carga de Tarifas";
             this.Load += new System.EventHandler(this.Form2_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -121,5 +138,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
         private ADGV.AdvancedDataGridView dataGridView1;
+        private System.Windows.Forms.BindingSource bindingSource;
+        private System.Data.DataSet dataSet;
     }
 }
