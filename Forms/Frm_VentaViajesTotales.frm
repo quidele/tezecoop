@@ -3,7 +3,7 @@ Begin VB.Form Frm_VentaViajesTotales
    Appearance      =   0  'Flat
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "         Confirme los valores de Pago"
-   ClientHeight    =   4455
+   ClientHeight    =   4950
    ClientLeft      =   6060
    ClientTop       =   2775
    ClientWidth     =   4680
@@ -13,7 +13,7 @@ Begin VB.Form Frm_VentaViajesTotales
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
    MinButton       =   0   'False
-   ScaleHeight     =   4455
+   ScaleHeight     =   4950
    ScaleWidth      =   4680
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
@@ -27,9 +27,9 @@ Begin VB.Form Frm_VentaViajesTotales
       Caption         =   "&Aceptar"
       Default         =   -1  'True
       Height          =   375
-      Left            =   1050
+      Left            =   1065
       TabIndex        =   8
-      Top             =   3735
+      Top             =   4455
       Width           =   1050
    End
    Begin VB.CommandButton cmdCancelar 
@@ -38,21 +38,46 @@ Begin VB.Form Frm_VentaViajesTotales
       Height          =   375
       Left            =   2340
       TabIndex        =   10
-      Top             =   3720
+      Top             =   4440
       Width           =   1050
    End
    Begin VB.PictureBox pnl 
       Appearance      =   0  'Flat
       BackColor       =   &H00FFC0C0&
       ForeColor       =   &H80000008&
-      Height          =   3405
+      Height          =   3930
       Index           =   2
       Left            =   90
-      ScaleHeight     =   3375
+      ScaleHeight     =   3900
       ScaleWidth      =   4410
       TabIndex        =   9
       Top             =   135
       Width           =   4440
+      Begin VB.ComboBox Combox1 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00E0E0E0&
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   700
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         ForeColor       =   &H000000FF&
+         Height          =   315
+         Index           =   2
+         ItemData        =   "Frm_VentaViajesTotales.frx":0000
+         Left            =   1905
+         List            =   "Frm_VentaViajesTotales.frx":0010
+         Locked          =   -1  'True
+         Style           =   2  'Dropdown List
+         TabIndex        =   22
+         Tag             =   "nmEmpresaTarjeta"
+         Top             =   3285
+         Width           =   2400
+      End
       Begin VB.TextBox txtFields 
          Alignment       =   2  'Center
          Appearance      =   0  'Flat
@@ -91,9 +116,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   1
-         ItemData        =   "Frm_VentaViajesTotales.frx":0000
+         ItemData        =   "Frm_VentaViajesTotales.frx":002F
          Left            =   120
-         List            =   "Frm_VentaViajesTotales.frx":0016
+         List            =   "Frm_VentaViajesTotales.frx":0045
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -188,9 +213,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_VentaViajesTotales.frx":003C
+         ItemData        =   "Frm_VentaViajesTotales.frx":006B
          Left            =   75
-         List            =   "Frm_VentaViajesTotales.frx":0055
+         List            =   "Frm_VentaViajesTotales.frx":0084
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   7
@@ -284,6 +309,19 @@ Begin VB.Form Frm_VentaViajesTotales
          TabIndex        =   11
          Top             =   240
          Width           =   330
+      End
+      Begin VB.Label lbl 
+         Alignment       =   2  'Center
+         AutoSize        =   -1  'True
+         BackStyle       =   0  'Transparent
+         Caption         =   "Empresa"
+         ForeColor       =   &H00000000&
+         Height          =   195
+         Index           =   8
+         Left            =   1155
+         TabIndex        =   23
+         Top             =   3360
+         Width           =   630
       End
       Begin VB.Label lbl 
          Alignment       =   2  'Center
@@ -698,6 +736,12 @@ Private Function validarEntradadedatos() As Boolean
                 Exit Function
            End If
            
+           If ObtenerCampo("nmEmpresaTarjeta").Text = "" Then
+                MsgBox "Debe completar el número cupón emitido por el posnet u número de operación todo pago", vbInformation + vbDefaultButton1
+                ObtenerCampo("nmEmpresaTarjeta").SetFocus
+                Exit Function
+           End If
+           
            
         End If
         
@@ -731,6 +775,7 @@ Private Sub cmdAceptar_Click()
     objParametros.GrabarValor "Frm_VentaViajesTotales.tpDocTarjeta", ObtenerCampo("tpDocTarjeta").Text
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrDocTarjeta", ObtenerCampo("nrDocTarjeta").Text
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrCuponPosnet", ObtenerCampo("nrCuponPosnet").Text
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nmEmpresaTarjeta", ObtenerCampo("nmEmpresaTarjeta").Text
        
     
     Unload Me
@@ -791,17 +836,20 @@ Private Sub Combox1_Click(Index As Integer)
             HabilitarCampos "tpDocTarjeta", True
             HabilitarCampos "nrDocTarjeta", True
             HabilitarCampos "nrCuponPosnet", True
+            HabilitarCampos "nmEmpresaTarjeta", True
         Else
             HabilitarCampos "nrTarjeta", False
             HabilitarCampos "tpDocTarjeta", False
             HabilitarCampos "nrDocTarjeta", False
             HabilitarCampos "nrCuponPosnet", False
+            HabilitarCampos "nmEmpresaTarjeta", False
         End If
     Else
         HabilitarCampos "nrTarjeta", False
         HabilitarCampos "tpDocTarjeta", False
         HabilitarCampos "nrDocTarjeta", False
         HabilitarCampos "nrCuponPosnet", False
+        HabilitarCampos "nmEmpresaTarjeta", False
     End If
        
 End Sub
@@ -825,7 +873,7 @@ Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)
             If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
                 objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
                     objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
-                ObtenerCampo("nrTarjeta").SetFocus
+                 ObtenerCampo("nrTarjeta").SetFocus
              Else
                  cmdAceptar_Click
              End If
@@ -854,6 +902,8 @@ Private Sub Form_Load()
     objParametros.GrabarValor "Frm_VentaViajesTotales.tpDocTarjeta", ""
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrDocTarjeta", ""
     objParametros.GrabarValor "Frm_VentaViajesTotales.nrCuponPosnet", ""
+    objParametros.GrabarValor "Frm_VentaViajesTotales.nmEmpresaTarjeta", ""
+    
     
     Me.cmdAceptar.Caption = objParametros.ObtenerValor("Frm_VentaViajesTotales.cmdAceptar.caption")
     Me.Caption = objParametros.ObtenerValor("Frm_VentaViajesTotales.caption")
@@ -917,6 +967,8 @@ Private Sub txtFields_KeyPress(Index As Integer, KeyAscii As Integer)
         Case "nrDocTarjeta"
             ObtenerCampo("nrCuponPosnet").SetFocus
         Case "nrCuponPosnet"
+            ObtenerCampo("nmEmpresaTarjeta").SetFocus
+        Case "nmEmpresaTarjeta"
             cmdAceptar_Click
         End Select
     Else
