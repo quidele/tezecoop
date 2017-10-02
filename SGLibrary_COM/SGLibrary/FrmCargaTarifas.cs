@@ -17,6 +17,7 @@ namespace SGLibrary
         public FrmCargaTarifas()
         {
             InitializeComponent();
+            this.dataGridView1.AutoGenerateColumns = true;
             nombreArchivo = ""; 
             
         }
@@ -52,8 +53,16 @@ namespace SGLibrary
                 //listaProductos = miServiceExcel.ReadMyExcel();
 
                 listaTarifas = miServiceExcel.ReadMyExcelTarifas();
+                this.dataSet = Extensiones.ExtensionString.ToDataSet(listaTarifas);
 
-                dataGridView1.DataSource = listaTarifas;            
+   
+
+                this.bindingSource.DataSource = this.dataSet;
+                this.bindingSource.DataMember = this.dataSet.Tables[0].TableName; 
+                this.dataGridView1.DataSource = bindingSource;
+
+                //this.dataGridView1.DataSource = listaTarifas;
+
 
             }
             this.button2.Enabled = true;
@@ -134,10 +143,19 @@ namespace SGLibrary
         {
             
            MessageBox.Show(this.dataGridView1.FilterString);
+
+          
+
            this.bindingSource.Filter = this.dataGridView1.FilterString;
-            
+       
+          
         }
 
 
+       
     }// cierre clase Form 
+
+
+
+
 }

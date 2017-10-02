@@ -55,13 +55,13 @@
             // 
             // columnComboBox
             // 
-            this.columnComboBox.Name = "columnComboBox";
+            resources.ApplyResources(this.columnComboBox, "columnComboBox");
             this.columnComboBox.AutoToolTip = true;
             this.columnComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.columnComboBox.Items.AddRange(new object[] {
-                resources.GetString("columnComboBox.Items")});
+            resources.GetString("columnComboBox.Items")});
             this.columnComboBox.Margin = new System.Windows.Forms.Padding(0, 2, 8, 2);
-            resources.ApplyResources(this.columnComboBox, "columnComboBox");
+            this.columnComboBox.Name = "columnComboBox";
             // 
             // searchTextBox
             // 

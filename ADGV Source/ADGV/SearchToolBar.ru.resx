@@ -121,7 +121,7 @@
   <data name="closeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAB2SURBVChTdY5BCoAwDATzCUHw/z8oePLqSRAEQfAxulMa
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAB2SURBVChTdY5BCoAwDATzCUHw/z8oePLqSRAEQfAxulMa
         iREXlqaboV2TRnmSOy5JZOxgbJOvdkaYOe5skM8W7HLfzEzGDqaK4ZAddojsgVwR/oVQ/M5fJnspd8qd
         qyLk3+XOFV5akDtFeCUoMvCnj0Q2m1m5AbPFL4bQ7bKZAAAAAElFTkSuQmCC
 </value>
@@ -129,11 +129,17 @@
   <data name="closeButton.ToolTipText" xml:space="preserve">
     <value>Скрыть</value>
   </data>
+  <data name="searchLabel.Size" type="System.Drawing.Size, System.Drawing">
+    <value>55, 20</value>
+  </data>
   <data name="searchLabel.Text" xml:space="preserve">
     <value>Поиск:</value>
   </data>
   <data name="columnComboBox.Items" xml:space="preserve">
     <value>(Все столбцы)</value>
+  </data>
+  <data name="columnComboBox.Size" type="System.Drawing.Size, System.Drawing">
+    <value>150, 28</value>
   </data>
   <data name="columnComboBox.ToolTipText" xml:space="preserve">
     <value>Столбец, в котором будет осуществляться поиск</value>
@@ -144,7 +150,7 @@
   <data name="fromBeginButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFqSURBVDhPYxhmoHfz3/8w3Lb22//GFZ//1y5+/79i3qv/
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFqSURBVDhPYxhmoHfz3/8w3Lb22//GFZ//1y5+/79i3qv/
         JbOf/y+Y/vh/6azH/6HKMUHXhl//N5389n/loS//F+z59P/yg5//e9e++9+89A3YkLzpL/7rhq7CbQDI
         1hUHv/yft+vT/1tPfv0HgYYlb/6Xzn35P2fq8/9Jvc/+q/otwm0AyMlzdnz6//DlD7BmECiZ/fJ/1pTn
         /xN6n/4Pa338X85tFm4DQP69+egzVCsqOHb5zX+v2of/xewm4TYA5M/mZW/+n7ryEqrt///ozif/A5se
@@ -159,13 +165,13 @@
   <data name="caseSensButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFXSURBVDhPjZCNicJAEIUlGKJIPBWNfxB/UFTERCu4Eizh
-        SrCElJASUoIlWEJKsISUMPfeOitqDs8HHzvz3uwPW3nV4XCYALHs9/tEo8+02+1OURSJZbvdXjX6TNiQ
-        A258JNb4vTabzWS9XgtZrVbnhzrVkfdaLBan5XIpSjyfz3OtPztgNpvlQEDBfjqdJqgvJvxPGI7DMBQl
-        sx74Zj0ej6/MuLIvaTQapQg5IMPh8Ki2EXubKeVPHQwGVyAkCIKEoDa3Y83o9/v9XNfnP+n1ejGQV7rd
-        rjkAdaGenTN/dFe73U47nY4oOfoLODNrtVpH67Pnyp4+e6NGo1E0m00h2PilthG8jL7v+yftE501H12p
-        1+tHHCCKudWKhz1kT9RqtcJchiIDNMiP7jViT9/zvAIXXSzs/5ovqVqtnl3XFazm+VbwUvWfXlyS4zhC
-        UE5uzl3xLXPkFwVficT6RXU1AAAAAElFTkSuQmCC
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAFYSURBVDhPjZCNjYJAEIUN0SgQPDUq/iT4E4kYo0AFV4Il
+        XAmUQAmUQAmWQAmUYAmUMDdvnTUiF8+XfNl5b2Z/sq1XxXG8YkgTRVEqrc90Op2S8/lMmuPxeJPWZ+IN
+        JYONz4TSfq/D4bAKgoDAfr+/PtWZjLzXbrdLfN8nIdxut6XUnx2w2WxKhpgKfr1ep1wXqvmfeDj0PI+E
+        XGfMN+rlcnlDDyt8Q4vFIuMmBmg+n18kVoLXPaH5qbPZ7MYQmE6nKeBa3c5rjtx13VLW+p9MJpOQoVfG
+        47E6gOtKMj2n/uih4XCYjUYjEkr2BXNFbzAYXHQOjxUeObySZVlVv98nwBu/JFbiLEfuOE4iPpVZ9dEt
+        0zQvtm2ToG7VwmFPvRrdbrdSl/V6vZwh4Uf2KsEjxzBfVGjg/5pvqN1uXzudDvGqnq/FWSZ57cUNGYZB
+        gMvVPXkovPcM+gX/NYm+lAtFMgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="caseSensButton.ToolTipText" xml:space="preserve">
@@ -174,16 +180,16 @@
   <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAINSURBVDhPY6AJ+Pbtm+X3798TgDgNiB3+///PBJXCD75+
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAINSURBVDhPY6AJ+Pbtm+X3798TgDgNiB3+///PBJXCD75+
         /WoO1NC06u6bs/Xnn96pPP34/qLbr89//fZtG1DcBaoMO/j165fx43dfdkXvvPPKbPmV/8g4dMv191df
         ftwPNMQJqhwT/Pjxoy5t9fUXllPO/g9aePbTzOOPLy8+/fRC9LKr78Bic6+8A7kEq3eAJiucuv/mkGXP
         yf/2PWe/vv74dQfQQG+QjSBNQXNPvQPJLT/x6BwwfOyg2hAAqNBt9sH7lyxbjv5v3nTjNlBRHFQKRa5+
         7ZV7QH4KVAoBQDYtPnD/gmXNgf/VKy7fB/LToFIMP3/+DJ+y/fZVkFz96mt3gHIJUCkE+Pjxo/Ddp2/3
-        2iTt+atdtffPhTtvDgC9UAzE+Y9eftztkX/gu2Xp7v+7zz09DjRQF6oNFYBsnbT6yjXL3C3/tQq2/cmZ
-        dOJJyYyjjxzjF/2GiZ289vwwsvdQADB02YCGZE1adf6aVsbaPxapq//DcGDZ2o8g2iln/a+Tlx4TNCTl
+        2iTu+atVtffPhTtvDgC9UAzE+Y9eftztkX/gu2Xp7v+7zz09DjRQF6oNFYBsnbT6yjXL3C3/tQq2/cmZ
+        dOJJyYyjjxzjF/6GiZ289vwwsvdQADB02YCGZE1adf6aVsbaPxapq//DcGDZ2o8g2iln/a+Tlx4TNCTl
         +at3O7cfvn5i/b5rp+49erPn69dv21Ia1z83Dp/539Zn3q+j5+7jNgQE/v37xw30qz4ocQENFQSxQYYk
         lC18ru3Z9N/Up/7X0bO3DgMtU4JqIQxghkRm9z5Xssr4X9+z7AZQLBQqTRwAGfLp09dtU2bOOwcKL5BL
-        oVLEA1BSRqRGBgYAZdmSPRhMXX0AAAAASUVORK5CYII=
+        oVLEA1BSRqRGBgYAYESSOrCpXGoAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="searchButton.ToolTipText" xml:space="preserve">
@@ -192,7 +198,7 @@
   <data name="wholeWordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHUSURBVDhPlZJLa1NRFIW3kIogqKCIllKK/gR15m9QUurA
+        YQUAAAAJcEhZcwAAEnQAABJ0Ad5mH3gAAAHUSURBVDhPlZJLa1NRFIW3kIogqKCIllKK/gR15m9QUurA
         RpN4mxeJBhERjYK9eRU1io9oOnKqA1GqdiS2pFatIARFYmJCrBPxraW5xATN57m3xVEgvQs2e3EO39rn
         HI4Uf26j1uqj1uzjQ3srnuEk8397KdcHKC8OUG30W2V66aSxCxqe/Sku54Z5z3q0g3Grl5ubrEqf13AN
         naNY39I5oNReQxUHPneCCj0EDun4vXFOxaK8MjaguVIUW2spLGzsHHDl5l6Cmm5VESHgTVBS3e9J8kb1

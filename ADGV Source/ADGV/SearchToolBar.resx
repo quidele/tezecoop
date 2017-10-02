@@ -126,18 +126,21 @@
   </data>
   <data name="caseSensButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAFZSURBVDhPjZCNjYJAEIUNwaBBPDXifwCjBgkgUMGVQAlX
-        giVQAiVQgiVQAiVQAiXMzayzRuTi+ZIvO+/N7E+296okSWwEJHEcZ9z6TGEYXi+XC0iCIKi59Zl8368Q
-        eCHi9nt5nmefz2cgXNe9PdU5j7zX8Xi8nk4nYKLD4VBx/dkB+/2+QgBpyDuOk2FdiuZ/wuHIsixgCpkh
-        31TvdruaerSS72iz2eTb7RaI9XqdcixEXvaY7qeuVqsaAWKxWGQE1uJ2XAvKl8tlxWv7T0zTjBB4ZT6f
-        iwOwbjiTc+KPHppOp/lsNgOmQl8iN+pNJpNU5uRpJU85eaHRaNSMx2MgcOMXx0KYFZQbhnFln/Gs+Oje
-        cDhMdV0HRtwqRYc99VrgvkZcNhgMCgSYH94rRJ5yTdMa3FBKyP8135Gqqrd+vw+4iudLYZZz3npxR4qi
-        AIGlfU8eiu49BX4BLXOJ1j+x7rEAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAVlJREFUOE+NkI2NgkAQhQ3BoEE8NeJ/AKMGCSBQwZVACVeCJVACJVCCJVACJVAC
+        JczNrLNG5OL5ki87783sT7b3qiRJbAQkcRxn3PpMYRheL5cLSIIgqLn1mXzfrxB4IeL2e3meZ5/PZyBc
+        17091TmPvNfxeLyeTidgosPhUHH92QH7/b5CAGnIO46TYV2K5n/C4ciyLGAKmSHfVO92u5p6tJLvaLPZ
+        5NvtFoj1ep1yLERe9pjup65WqxoBYrFYZATW4nZcC8qXy2XFa/tPTNOMEHhlPp+LA7BuOJNz4o8emk6n
+        +Ww2A6ZCXyI36k0mk1Tm5GklTzl5odFo1IzHYyBw4xfHQpgVlBuGcWWf8az46N5wOEx1XQdG3CpFhz31
+        WuC+Rlw2GAwKBJgf3itEnnJN0xrcUErI/zXfkaqqt36/D7iK50thlnPeenFHiqIAgaV9Tx6K7j0FfgEt
+        c4nWP7HusQAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="searchTextBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
+  </data>
+  <data name="&gt;&gt;closeButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="closeButton.ToolTipText" xml:space="preserve">
     <value>Hide</value>
@@ -149,51 +152,77 @@
   <data name="&gt;&gt;searchSeparator.Name" xml:space="preserve">
     <value>searchSeparator</value>
   </data>
+  <data name="fromBeginButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAWpJREFUOE9jGGagd/Pf/zDctvbb/8YVn//XLn7/v2Leq/8ls5//L5j++H/prMf/
+        ocoxQdeGX/83nfz2f+WhL/8X7Pn0//KDn/97177737z0DdiQvOkv/uuGrsJtAMjWFQe//J+369P/W09+
+        /QeBhiVv/pfOffk/Z+rz/0m9z/6r+i3CbQDIyXN2fPr/8OUPsGYQKJn98n/WlOf/E3qf/g9rffxfzm0W
+        bgNA/r356DNUKyo4dvnNf6/ah//F7CbhNgDkz+Zlb/6fuvISqu3//+jOJ/8Dmx6B2Q6l9//zm3XjNgAU
+        0uVAQ3KmPf+/88hdsKaAhkf/3aoegNlmeXf/cxq04jYAFE3ZQP8mAv0b3vb4/5x1F/67Vtz/b1N8D2yA
+        Xsat/6w6jbgNAMVxXM/T/6Etj/771D3871R+/7914b3/Jtl3wAaoJxFhgGXSNjA2jtnwXyt4+X8Fj7ng
+        gOM16fzPptuE34ChCBgYAIkjKG0jEu4nAAAAAElFTkSuQmCC
+</value>
+  </data>
   <data name="&gt;&gt;caseSensButton.Name" xml:space="preserve">
     <value>caseSensButton</value>
   </data>
   <data name="searchButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAINSURBVDhPY6AJ+Pbtm+X3798TgDgNiB3+///PBJXCD75+
-        /WoO1NC06u6bs/Xnn96pPP34/qLbr89//fZtG1DcBaoMO/j165fx43dfdkXvvPPKbPmV/8g4dMv191df
-        ftwPNMQJqhwT/Pjxoy5t9fUXllPO/g9aePbTzOOPLy8+/fRC9LKr78Bic6+8A7kEq3eAJiucuv/mkGXP
-        yf/2PWe/vv74dQfQQG+QjSBNQXNPvQPJLT/x6BwwfOyg2hAAqNBt9sH7lyxbjv5v3nTjNlBRHFQKRa5+
-        7ZV7QH4KVAoBQDYtPnD/gmXNgf/VKy7fB/LToFIMP3/+DJ+y/fZVkFz96mt3gHIJUCkE+Pjxo/Ddp2/3
-        2iTv+atTtffPhTtvDgC9UAzE+Y9eftztkX/gu2Xp7v+7zz09DjRQF6oNFYBsnbT6yjXL3C3/tQq2/cmZ
-        dOJJyYyjjxzjF/+GiZ289vwwsvdQADB02YCGZE1adf6aVsbaPxapq//DcGDZ2o8g2iln/a+Tlx4TNCTl
-        +at3O7cfvn5i/b5rp+49erPn69dv21Ia1z83Dp/539Zn3q+j5+7jNgQE/v37xw30qz4ocQENFQSxQYYk
-        lC18ru3Z9N/Up/7X0bO3DgMtU4JqIQxghkRm9z5Xssr4X9+z7AZQLBQqTRwAGfLp09dtU2bOOwcKL5BL
-        oVLEA1BSRqRGBgYAa26SQMTC8GAAAAAASUVORK5CYII=
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAg1JREFUOE9joAn49u2b5ffv3xOAOA2IHf7//88ElcIPvn79ag7U0LTq7puz9eef
+        3qk8/fj+otuvz3/99m0bUNwFqgw7+PXrl/Hjd192Re+888ps+ZX/yDh0y/X3V19+3A80xAmqHBP8+PGj
+        Lm319ReWU87+D1p49tPM448vLz799EL0sqvvwGJzr7wDuQSrd4AmK5y6/+aQZc/J//Y9Z7++/vh1B9BA
+        b5CNIE1Bc0+9A8ktP/HoHDB87KDaEACo0G32wfuXLFuO/m/edOM2UFEcVApFrn7tlXtAfgpUCgFANi0+
+        cP+CZc2B/9UrLt8H8tOgUgw/f/4Mn7L99lWQXP3qa3eAcglQKQT4+PGj8N2nb/faJO/5q1O198+FO28O
+        AL1QDMT5j15+3O2Rf+C7Zenu/7vPPT0ONFAXqg0VgGydtPrKNcvcLf+1Crb9yZl04knJjKOPHOMX/4aJ
+        nbz2/DCy91AAMHTZgIZkTVp1/ppWxto/Fqmr/8NwYNnajyDaKWf9r5OXHhM0JOX5q3c7tx++fmL9vmun
+        7j16s+fr12/bUhrXPzcOn/nf1mfer6Pn7uM2BAT+/fvHDfSrPihxAQ0VBLFBhiSULXyu7dn039Sn/tfR
+        s7cOAy1TgmohDGCGRGb3Pleyyvhf37PsBlAsFCpNHAAZ8unT121TZs47BwovkEuhUsQDUFJGpEYGBgBr
+        bpJAxMLwYAAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="&gt;&gt;$this.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;searchTextBox.Name" xml:space="preserve">
+    <value>searchTextBox</value>
+  </data>
+  <data name="wholeWordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAdRJREFUOE+VkktrU1EUhbeQiiCooIiWUor+BHXmb1BS6sBGk3ibF4kGERGNgr15
+        FTWKj2g6cqoDUap2JLakVq0gBEViYkKsE/GtpbnEBM3nubfFUSC9CzZ7cQ7f2uccjhR/bqPW6qPW7OND
+        eyue4STzf3sp1wcoLw5QbfRbZXrppLELGp79KS7nhnnPerSDcauXm5usSp/XcA2do1jf0jmg1F5DFQc+
+        d4IKPQQO6fi9cU7ForwyNqC5UhRbayksbOwccOXmXoKablURIeBNUFLd70nyRvWRA2kKv1fz4te6/wG5
+        GeFGXhiflZ1yOHTGAkMjOgUrIMnr5V5oqyB3ipdN4dlCjxWQnRJMlRq7ufRQkHjGRTQSI+wfZe6PkL42
+        RCRwltO6nyeLQmw0SMCdZkb57LTwpX6HiuGk3PCQua8CHA7HLhW8o1vlZoVvxgT6beHxdyHzQMFLe92V
+        eyp8Nm5RNfYx9UO4aB59pXBWPRZ84l19kEdfbU4enzPhj+pTOblbswkHfEcVXKPS2GN/ciR8jETyKpPP
+        XeQNdedJG7ApnzdGKHiCQadGSP1MtbRyeL7Vf+8tqwgHTxI9ctwebEqf2Mz1vEwra4L24GWZ0PYl200i
+        /wC09jnInz+EYgAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="&gt;&gt;searchTextBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripTextBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="caseSensButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
-    <value>Magenta</value>
-  </data>
   <data name="searchButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 24</value>
   </data>
-  <data name="&gt;&gt;wholeWordButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="searchButton.ToolTipText" xml:space="preserve">
+    <value>Find next</value>
   </data>
   <data name="&gt;&gt;fromBeginButton.Name" xml:space="preserve">
     <value>fromBeginButton</value>
   </data>
-  <data name="fromBeginButton.Size" type="System.Drawing.Size, System.Drawing">
-    <value>23, 20</value>
-  </data>
   <assembly alias="mscorlib" name="mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="searchSeparator.AutoSize" type="System.Boolean, mscorlib">
+    <value>False</value>
+  </data>
   <data name="columnComboBox.MaxDropDownItems" type="System.Int32, mscorlib">
     <value>12</value>
   </data>
-  <data name="&gt;&gt;searchButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="&gt;&gt;columnComboBox.Name" xml:space="preserve">
-    <value>columnComboBox</value>
+  <data name="searchSeparator.Size" type="System.Drawing.Size, System.Drawing">
+    <value>10, 25</value>
   </data>
   <data name="fromBeginButton.ToolTipText" xml:space="preserve">
     <value>Search from begin</value>
@@ -204,8 +233,11 @@
   <data name="wholeWordButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 20</value>
   </data>
-  <data name="columnComboBox.IntegralHeight" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="caseSensButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
+    <value>Magenta</value>
+  </data>
+  <data name="closeButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
   <data name="caseSensButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 20</value>
@@ -213,22 +245,19 @@
   <data name="columnComboBox.FlatStyle" type="System.Windows.Forms.FlatStyle, System.Windows.Forms">
     <value>Standard</value>
   </data>
-  <data name="searchSeparator.AutoSize" type="System.Boolean, mscorlib">
-    <value>False</value>
+  <data name="&gt;&gt;searchButton.Name" xml:space="preserve">
+    <value>searchButton</value>
   </data>
   <data name="closeButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAB2SURBVChTdY5BCoAwDATzCUHw/z8oePLqSRAEQfAxulMa
-        iREXlqaboV2TRnmSOy5JZOxgbJOvdkaYOe5skM8W7HLfzEzGDqaK4ZAddojsgVwR/oVQ/M5fJnspd8qd
-        qyLk3+XOFV5akDtFeCUoMvCnj0Q2m1m5AbPFL4bQ7bKZAAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAAAoAAAAKCAYAAACNMs+9AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        vgAADr4B6kKxwAAAAHZJREFUKFN1jkEKgDAMBPMJQfD/Pyh48upJEARB8DG6UxqJEReWppuhXZNGeZI7
+        Lklk7GBsk692Rpg57myQzxbsct/MTMYOporhkB12iOyBXBH+hVD8zl8meyl3yp2rIuTf5c4VXlqQO0V4
+        JSgy8KePRDabWbkBs8UvhtDtspkAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="wholeWordButton.ToolTipText" xml:space="preserve">
     <value>Search only whole word</value>
-  </data>
-  <data name="&gt;&gt;searchButton.Name" xml:space="preserve">
-    <value>searchButton</value>
   </data>
   <data name="searchButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
@@ -239,17 +268,14 @@
   <data name="wholeWordButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
     <value>None</value>
   </data>
-  <data name="&gt;&gt;$this.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStrip, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
   <data name="searchLabel.Text" xml:space="preserve">
     <value>Search:</value>
   </data>
   <data name="&gt;&gt;closeButton.Name" xml:space="preserve">
     <value>closeButton</value>
   </data>
-  <data name="&gt;&gt;searchLabel.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  <data name="&gt;&gt;searchButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;$this.Name" xml:space="preserve">
     <value>SearchToolBar</value>
@@ -257,26 +283,23 @@
   <data name="searchLabel.Size" type="System.Drawing.Size, System.Drawing">
     <value>45, 15</value>
   </data>
-  <data name="closeButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
+  <data name="&gt;&gt;columnComboBox.Name" xml:space="preserve">
+    <value>columnComboBox</value>
   </data>
   <data name="columnComboBox.AutoSize" type="System.Boolean, mscorlib">
     <value>False</value>
   </data>
-  <data name="&gt;&gt;wholeWordButton.Name" xml:space="preserve">
-    <value>wholeWordButton</value>
-  </data>
   <data name="closeButton.Size" type="System.Drawing.Size, System.Drawing">
     <value>23, 24</value>
   </data>
-  <data name="columnComboBox.Items" xml:space="preserve">
-    <value>(All columns)</value>
+  <data name="fromBeginButton.Size" type="System.Drawing.Size, System.Drawing">
+    <value>23, 20</value>
   </data>
   <data name="fromBeginButton.ImageTransparentColor" type="System.Drawing.Color, System.Drawing">
     <value>Magenta</value>
   </data>
-  <data name="searchButton.ToolTipText" xml:space="preserve">
-    <value>Find next</value>
+  <data name="&gt;&gt;wholeWordButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="caseSensButton.ToolTipText" xml:space="preserve">
     <value>Case sensitivity</value>
@@ -284,23 +307,11 @@
   <data name="&gt;&gt;searchSeparator.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripSeparator, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="fromBeginButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAFqSURBVDhPYxhmoHfz3/8w3Lb22//GFZ//1y5+/79i3qv/
-        JbOf/y+Y/vh/6azH/6HKMUHXhl//N5389n/loS//F+z59P/yg5//e9e++9+89A3YkLzpL/7rhq7CbQDI
-        1hUHv/yft+vT/1tPfv0HgYYlb/6Xzn35P2fq8/9Jvc/+q/otwm0AyMlzdnz6//DlD7BmECiZ/fJ/1pTn
-        /xN6n/4Pa338X85tFm4DQP69+egzVCsqOHb5zX+v2of/xewm4TYA5M/mZW/+n7ryEqrt///ozif/A5se
-        gdkOpff/85t14zYAFNLlQENypj3/v/PIXbCmgIZH/92qHoDZZnl3/3MatOI2ABRN2UD/JgL9G972+P+c
-        dRf+u1bc/29TfA9sgF7Grf+sOo24DQDFcVzP0/+hLY/++9Q9/O9Ufv+/deG9/ybZd8AGqCcRYYBl0jYw
-        No7Z8F8rePl/BY+54IDjNen8z6bbhN+AoQgYGACJIyhtIxLuJwAAAABJRU5ErkJggg==
-</value>
+  <data name="&gt;&gt;searchLabel.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripLabel, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="searchTextBox.ToolTipText" xml:space="preserve">
     <value>Value for search</value>
-  </data>
-  <data name="&gt;&gt;fromBeginButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
   <data name="&gt;&gt;searchLabel.Name" xml:space="preserve">
     <value>searchLabel</value>
@@ -308,34 +319,23 @@
   <data name="&gt;&gt;columnComboBox.Type" xml:space="preserve">
     <value>System.Windows.Forms.ToolStripComboBox, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
-  <data name="&gt;&gt;searchTextBox.Name" xml:space="preserve">
-    <value>searchTextBox</value>
+  <data name="caseSensButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
+    <value>None</value>
   </data>
-  <data name="wholeWordButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADr4AAA6+AepCscAAAAHUSURBVDhPlZJLa1NRFIW3kIogqKCIllKK/gR15m9QUurA
-        RpN4mxeJBhERjYK9eRU1io9oOnKqA1GqdiS2pFatIARFYmJCrBPxraW5xATN57m3xVEgvQs2e3EO39rn
-        HI4Uf26j1uqj1uzjQ3srnuEk8397KdcHKC8OUG30W2V66aSxCxqe/Sku54Z5z3q0g3Grl5ubrEqf13AN
-        naNY39I5oNReQxUHPneCCj0EDun4vXFOxaK8MjaguVIUW2spLGzsHHDl5l6Cmm5VESHgTVBS3e9J8kb1
-        kQNpCr9X8+LXuv8BuRnhRl4Yn5Wdcjh0xgJDIzoFKyDJ6+VeaKsgd4qXTeHZQo8VkJ0STJUau7n0UJB4
-        xkU0EiPsH2Xuj5C+NkQkcJbTup8ni0JsNEjAnWZG+ey08KV+h4rhpNzwkLmvAhwOxy4VvKNb5WaFb8YE
-        +m3h8Xch80DBS3vdlXsqfDZuUTX2MfVDuGgefaVwVj0WfOJdfZBHX21OHp8z4Y/qUzm5W7MJB3xHFVyj
-        0thjf3IkfIxE8iqTz13kDXXnSRuwKZ83Rih4gkGnRkj9TLW0cni+1X/vLasIB08SPXLcHmxKn9jM9bxM
-        K2uC9uBlmdD2JdtNIv8AtPY5yJ8/hGIAAAAASUVORK5CYII=
-</value>
+  <data name="columnComboBox.Items" xml:space="preserve">
+    <value>(All columns)</value>
   </data>
-  <data name="searchSeparator.Size" type="System.Drawing.Size, System.Drawing">
-    <value>10, 25</value>
+  <data name="&gt;&gt;fromBeginButton.Type" xml:space="preserve">
+    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="&gt;&gt;wholeWordButton.Name" xml:space="preserve">
+    <value>wholeWordButton</value>
   </data>
   <data name="columnComboBox.ToolTipText" xml:space="preserve">
     <value>Column for search</value>
   </data>
-  <data name="&gt;&gt;closeButton.Type" xml:space="preserve">
-    <value>System.Windows.Forms.ToolStripButton, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
-  </data>
-  <data name="caseSensButton.ImageScaling" type="System.Windows.Forms.ToolStripItemImageScaling, System.Windows.Forms">
-    <value>None</value>
+  <data name="columnComboBox.IntegralHeight" type="System.Boolean, mscorlib">
+    <value>False</value>
   </data>
   <data name="$this.Size" type="System.Drawing.Size, System.Drawing">
     <value>0, 27</value>
@@ -346,13 +346,13 @@
   <data name="columnComboBox.Size" type="System.Drawing.Size, System.Drawing">
     <value>150, 23</value>
   </data>
-  <data name="$this.Localizable" type="System.Boolean, mscorlib">
+  <metadata name="$this.Localizable" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
-  </data>
-  <data name="$this.Language" type="System.Globalization.CultureInfo, mscorlib">
+  </metadata>
+  <metadata name="$this.Language" type="System.Globalization.CultureInfo, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>ru</value>
-  </data>
-  <data name="$this.TrayLargeIcon" type="System.Boolean, mscorlib">
+  </metadata>
+  <metadata name="$this.TrayLargeIcon" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>False</value>
-  </data>
+  </metadata>
 </root>

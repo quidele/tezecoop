@@ -50,6 +50,7 @@
             // 
             this.toolStrip.AutoSize = false;
             this.toolStrip.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
+            this.toolStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.toolStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.clearFiltersButton,
             this.clearSortButton,
@@ -65,9 +66,10 @@
             this.toolStrip.Location = new System.Drawing.Point(0, 0);
             this.toolStrip.Name = "toolStrip";
             this.toolStrip.RenderMode = System.Windows.Forms.ToolStripRenderMode.System;
-            this.toolStrip.Size = new System.Drawing.Size(867, 40);
+            this.toolStrip.Size = new System.Drawing.Size(1245, 49);
             this.toolStrip.TabIndex = 0;
             this.toolStrip.Text = "toolStrip1";
+            this.toolStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip_ItemClicked);
             // 
             // clearFiltersButton
             // 
@@ -75,7 +77,7 @@
             this.clearFiltersButton.Image = ((System.Drawing.Image)(resources.GetObject("clearFiltersButton.Image")));
             this.clearFiltersButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.clearFiltersButton.Name = "clearFiltersButton";
-            this.clearFiltersButton.Size = new System.Drawing.Size(69, 37);
+            this.clearFiltersButton.Size = new System.Drawing.Size(86, 46);
             this.clearFiltersButton.Text = "ClearFilters";
             this.clearFiltersButton.Click += new System.EventHandler(this.clearFilterButton_Click);
             // 
@@ -85,14 +87,14 @@
             this.clearSortButton.Image = ((System.Drawing.Image)(resources.GetObject("clearSortButton.Image")));
             this.clearSortButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.clearSortButton.Name = "clearSortButton";
-            this.clearSortButton.Size = new System.Drawing.Size(59, 37);
+            this.clearSortButton.Size = new System.Drawing.Size(74, 46);
             this.clearSortButton.Text = "ClearSort";
             this.clearSortButton.Click += new System.EventHandler(this.clearSortButton_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 49);
             // 
             // searchButton
             // 
@@ -101,14 +103,14 @@
             this.searchButton.Image = ((System.Drawing.Image)(resources.GetObject("searchButton.Image")));
             this.searchButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.searchButton.Name = "searchButton";
-            this.searchButton.Size = new System.Drawing.Size(46, 37);
+            this.searchButton.Size = new System.Drawing.Size(57, 46);
             this.searchButton.Text = "Search";
             this.searchButton.Click += new System.EventHandler(this.searchButton_Click);
             // 
             // toolStripSeparator4
             // 
             this.toolStripSeparator4.Name = "toolStripSeparator4";
-            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator4.Size = new System.Drawing.Size(6, 49);
             // 
             // toolStripButton3
             // 
@@ -119,7 +121,7 @@
             this.toolStripButton3.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton3.Image")));
             this.toolStripButton3.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton3.Name = "toolStripButton3";
-            this.toolStripButton3.Size = new System.Drawing.Size(107, 37);
+            this.toolStripButton3.Size = new System.Drawing.Size(135, 46);
             this.toolStripButton3.Text = "Enabled \"int\" filter";
             this.toolStripButton3.Click += new System.EventHandler(this.toolStripButton3_Click);
             // 
@@ -132,7 +134,7 @@
             this.hideColumnButton.Image = ((System.Drawing.Image)(resources.GetObject("hideColumnButton.Image")));
             this.hideColumnButton.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.hideColumnButton.Name = "hideColumnButton";
-            this.hideColumnButton.Size = new System.Drawing.Size(145, 37);
+            this.hideColumnButton.Size = new System.Drawing.Size(181, 46);
             this.hideColumnButton.Text = "Visible \"boolean\" column";
             this.hideColumnButton.Click += new System.EventHandler(this.hideColumnButton_Click);
             // 
@@ -143,7 +145,7 @@
             this.toolStripButton2.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton2.Image")));
             this.toolStripButton2.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton2.Name = "toolStripButton2";
-            this.toolStripButton2.Size = new System.Drawing.Size(163, 37);
+            this.toolStripButton2.Size = new System.Drawing.Size(205, 46);
             this.toolStripButton2.Text = "Toggle \"date\" DateWithTime";
             this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
@@ -154,14 +156,14 @@
             this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
             this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(151, 37);
+            this.toolStripButton1.Size = new System.Drawing.Size(191, 46);
             this.toolStripButton1.Text = "Enabled  \"date\"  TimeFilter";
             this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator2
             // 
             this.toolStripSeparator2.Name = "toolStripSeparator2";
-            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 40);
+            this.toolStripSeparator2.Size = new System.Drawing.Size(6, 49);
             // 
             // toolStripDropDownButton1
             // 
@@ -172,28 +174,30 @@
             this.toolStripDropDownButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripDropDownButton1.Image")));
             this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
-            this.toolStripDropDownButton1.Size = new System.Drawing.Size(83, 37);
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(104, 46);
             this.toolStripDropDownButton1.Text = "Saved filters";
             // 
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
-            this.toolStripMenuItem1.Size = new System.Drawing.Size(171, 22);
+            this.toolStripMenuItem1.Size = new System.Drawing.Size(208, 26);
             this.toolStripMenuItem1.Text = "Save filter and sort";
             this.toolStripMenuItem1.Click += new System.EventHandler(this.toolStripMenuItem1_Click);
             // 
             // toolStripSeparator3
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
-            this.toolStripSeparator3.Size = new System.Drawing.Size(168, 6);
+            this.toolStripSeparator3.Size = new System.Drawing.Size(205, 6);
             // 
             // statusStrip
             // 
+            this.statusStrip.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.statusStrip.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.toolStripStatusLabel1});
-            this.statusStrip.Location = new System.Drawing.Point(0, 342);
+            this.statusStrip.Location = new System.Drawing.Point(0, 426);
             this.statusStrip.Name = "statusStrip";
-            this.statusStrip.Size = new System.Drawing.Size(867, 22);
+            this.statusStrip.Padding = new System.Windows.Forms.Padding(1, 0, 19, 0);
+            this.statusStrip.Size = new System.Drawing.Size(1245, 22);
             this.statusStrip.TabIndex = 1;
             this.statusStrip.Text = "statusStrip1";
             this.statusStrip.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip_ItemClicked);
@@ -224,10 +228,11 @@
             this.dataGridView.DataSource = this.bindingSource;
             this.dataGridView.DateWithTime = true;
             this.dataGridView.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.dataGridView.Location = new System.Drawing.Point(0, 67);
+            this.dataGridView.Location = new System.Drawing.Point(0, 82);
+            this.dataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.dataGridView.Name = "dataGridView";
             this.dataGridView.ReadOnly = true;
-            this.dataGridView.Size = new System.Drawing.Size(867, 275);
+            this.dataGridView.Size = new System.Drawing.Size(1245, 344);
             this.dataGridView.TabIndex = 2;
             this.dataGridView.TimeFilter = false;
             this.dataGridView.SortStringChanged += new System.EventHandler(this.dataGridView_SortStringChanged);
@@ -239,12 +244,13 @@
             // 
             this.searchToolBar.AllowMerge = false;
             this.searchToolBar.GripStyle = System.Windows.Forms.ToolStripGripStyle.Hidden;
-            this.searchToolBar.Location = new System.Drawing.Point(0, 40);
-            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 27);
-            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 27);
+            this.searchToolBar.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.searchToolBar.Location = new System.Drawing.Point(0, 49);
+            this.searchToolBar.MaximumSize = new System.Drawing.Size(0, 33);
+            this.searchToolBar.MinimumSize = new System.Drawing.Size(0, 33);
             this.searchToolBar.Name = "searchToolBar";
             this.searchToolBar.RenderMode = System.Windows.Forms.ToolStripRenderMode.Professional;
-            this.searchToolBar.Size = new System.Drawing.Size(867, 27);
+            this.searchToolBar.Size = new System.Drawing.Size(1245, 33);
             this.searchToolBar.TabIndex = 3;
             this.searchToolBar.Text = "searchToolBar1";
             this.searchToolBar.Search += new ADGV.SearchToolBarSearchEventHandler(this.searchToolBar_Search);
@@ -252,13 +258,14 @@
             // 
             // ADGVSample
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(867, 364);
+            this.ClientSize = new System.Drawing.Size(1245, 448);
             this.Controls.Add(this.dataGridView);
             this.Controls.Add(this.searchToolBar);
             this.Controls.Add(this.toolStrip);
             this.Controls.Add(this.statusStrip);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "ADGVSample";
             this.Text = "ADGVSample";
             this.Load += new System.EventHandler(this.ADGVSample_Load);

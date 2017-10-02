@@ -26,3 +26,16 @@ C:\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.Properties.Re
 C:\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.csproj.GenerateResource.Cache
 C:\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.exe
 C:\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.pdb
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\ADGVSample.exe
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\ADGVSample.pdb
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\AdvancedDataGridView.dll
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\AdvancedDataGridView.pdb
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\AdvancedDataGridView.xml
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\fr\AdvancedDataGridView.resources.dll
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.ADGVSample.resources
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.Properties.Resources.resources
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.csproj.GenerateResource.Cache
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.exe
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGVSample\obj\x86\Debug\ADGVSample.pdb
