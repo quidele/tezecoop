@@ -53,10 +53,7 @@ namespace SGLibrary
                 //listaProductos = miServiceExcel.ReadMyExcel();
 
                 listaTarifas = miServiceExcel.ReadMyExcelTarifas();
-                this.dataSet = Extensiones.ExtensionString.ToDataSet(listaTarifas);
-
-   
-
+                this.dataSet = Extensiones.Extensions.ToDataSet(listaTarifas);
                 this.bindingSource.DataSource = this.dataSet;
                 this.bindingSource.DataMember = this.dataSet.Tables[0].TableName; 
                 this.dataGridView1.DataSource = bindingSource;
@@ -143,11 +140,32 @@ namespace SGLibrary
         {
             
            MessageBox.Show(this.dataGridView1.FilterString);
-
-          
-
            this.bindingSource.Filter = this.dataGridView1.FilterString;
-       
+
+
+
+           MessageBox.Show( this.bindingSource.List.Count.ToString() );
+
+           //this.bindingSource. 
+           //List<TarifasXLS> products = (List<TarifasXLS>)this.bindingSource.DataSource;
+
+
+           List<TarifasXLS> datos = ((DataView)this.bindingSource.List[0]).ToTable().Rows.Cast<DataRowView>().Select(r =>
+                new TarifasXLS() { Codigo = r.Field<int>("Codigo"), Descripcion = r.Field<String>("Descripcion") ,
+                                   Kilometros = r.Field<double>("Kilometros"),
+                                   Muestra_en_la_Web = r.Field<bool>("Muestra_en_la_Web"),
+                                   Peaje = r.Field<double>("Peaje"),
+                                   Precio = r.Field<double>("Precio"),
+                                   Total = r.Field<double>("Total") 
+                                   }).ToList();
+
+          // var listaBinding = 
+           var listaprueba = this.bindingSource.List.Cast<TarifasXLS>(); 
+
+           // Console.WriteLine(listaprueba.Current.ToString());
+           //  this.dataSet.Tables
+           // List<TarifasXLS> products = ((List<TarifasXLS>)this.bindingSource.DataSource).Cast<object>().ToList();
+     
           
         }
 
