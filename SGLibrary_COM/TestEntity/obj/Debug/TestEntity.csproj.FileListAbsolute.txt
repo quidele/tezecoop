@@ -24,5 +24,6 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\AdvancedDataGri
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\EntityFramework.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb

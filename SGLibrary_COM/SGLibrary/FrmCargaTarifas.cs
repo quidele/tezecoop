@@ -17,15 +17,13 @@ namespace SGLibrary
         public FrmCargaTarifas()
         {
             InitializeComponent();
-            this.dataGridView1.AutoGenerateColumns = true;
             nombreArchivo = ""; 
             
         }
 
 
         private String nombreArchivo;
-        private List<TarifasXLS> listaTarifas;
-        private List<TarifasXLS> datosprueba; 
+        private List<TarifasXLS> listaTarifas; 
 
         public String getNombreArchivo() {
             return nombreArchivo;
@@ -54,30 +52,8 @@ namespace SGLibrary
                 //listaProductos = miServiceExcel.ReadMyExcel();
 
                 listaTarifas = miServiceExcel.ReadMyExcelTarifas();
-                this.dataSet = Extensiones.Extensions.ToDataSet(listaTarifas);
-                this.bindingSource.DataSource = this.dataSet;
-                this.bindingSource.DataMember = this.dataSet.Tables[0].TableName; 
-                //this.dataGridView1.DataSource = bindingSource;
 
-                //this.dataGridView1.DataSource = listaTarifas;
-
-                if (this.bindingSource.List.Count > 0)
-                {
-                    datosprueba = ((DataRowView)this.bindingSource.List[0]).DataView.ToTable().Rows.Cast<DataRow>().Select(r =>
-                    new TarifasXLS()
-                    {
-                        Codigo = r.Field<int>("Codigo"),
-                        Descripcion = r.Field<String>("Descripcion"),
-                        Kilometros = r.Field<double>("Kilometros"),
-                        Muestra_en_la_Web = r.Field<bool>("Muestra_en_la_Web"),
-                        Peaje = r.Field<double>("Peaje"),
-                        Precio = r.Field<double>("Precio"),
-                        Total = r.Field<double>("Total")
-                    }).ToList();
-
-                    cargarDataGridViewBusqueda(this.dataGridView1, datosprueba);
-                }
-
+                dataGridView1.DataSource = listaTarifas;            
 
             }
             this.button2.Enabled = true;
@@ -149,55 +125,6 @@ namespace SGLibrary
 
         }
 
-        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
-        }
-
-        private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
-        {
-            
-           MessageBox.Show(this.dataGridView1.FilterString.Replace ("CAPITAL","CAPITAL%"));
-           this.bindingSource.Filter = this.dataGridView1.FilterString.Replace ("CAPITAL","CAPITAL%"); ;
-
-
-
-           MessageBox.Show( this.bindingSource.List.Count.ToString() );
-
-           //this.bindingSource. 
-           
-            //List<TarifasXLS> products = (List<TarifasXLS>)this.bindingSource.DataSource;
-
-
-       
-     
-
-           if (this.bindingSource.List.Count > 0 ) {
-              datosprueba = ((DataRowView)this.bindingSource.List[0]).DataView.ToTable().Rows.Cast<DataRow>().Select(r =>
-              new TarifasXLS()
-              {
-                  Codigo = r.Field<int>("Codigo"),
-                  Descripcion = r.Field<String>("Descripcion"),
-                  Kilometros = r.Field<double>("Kilometros"),
-                  Muestra_en_la_Web = r.Field<bool>("Muestra_en_la_Web"),
-                  Peaje = r.Field<double>("Peaje"),
-                  Precio = r.Field<double>("Precio"),
-                  Total = r.Field<double>("Total")
-              }).ToList();
-
-              cargarDataGridViewBusqueda(this.dataGridView1, datosprueba);
-           }
-             
-
-                
-          
-        }
-
-
-       
     }// cierre clase Form 
-
-
-
-
 }

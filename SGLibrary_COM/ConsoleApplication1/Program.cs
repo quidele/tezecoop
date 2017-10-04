@@ -112,10 +112,11 @@ namespace ConsoleApplication1
             l.execFormulario("FrmPresentacionesCAI");
             * */
             
-            
+            /*
             ServiceTarifas miServiceTarifas = new ServiceTarifas();
             miServiceTarifas.cargarTarifas();
             Console.ReadKey(); 
+             */
             
 
             /* 
@@ -147,6 +148,12 @@ namespace ConsoleApplication1
             l.execFormulario("FrmConciliaciones");
              * */
 
+            
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmCargaTarifasEjemploADGV");
+            
 
             
         }

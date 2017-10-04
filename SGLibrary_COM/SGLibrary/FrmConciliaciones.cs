@@ -918,5 +918,10 @@ namespace SGLibrary
         {
 
         }
+
+        private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
+        {
+
+        }
     }
 }

@@ -142,6 +142,10 @@ namespace SGLibrary
                         SGLibrary.Frm_GroupByGrid f5 = new SGLibrary.Frm_GroupByGrid();
                         f = (Form)f5;
                         break;
+                    case "FrmCargaTarifasEjemploADGV":
+                        FrmCargaTarifasEjemploADGV f6 = new FrmCargaTarifasEjemploADGV();
+                        f = (Form)f6;
+                        break;
 
                 }
 

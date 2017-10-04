@@ -133,6 +133,18 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmCargaTarifas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargaTarifas.Designer.cs">
+      <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmCargaTarifasEjemploADGV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmCargaTarifasEjemploADGV.Designer.cs">
+      <DependentUpon>FrmCargaTarifasEjemploADGV.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GroupByGrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -156,12 +168,6 @@
     </Compile>
     <Compile Include="FrmABMBase.Designer.cs">
       <DependentUpon>FrmABMBase.cs</DependentUpon>
-    </Compile>
-    <Compile Include="FrmCargaTarifas.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="FrmCargaTarifas.Designer.cs">
-      <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmConciliaciones.cs">
       <SubType>Form</SubType>
@@ -325,6 +331,12 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="FrmCargaTarifas.resx">
+      <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmCargaTarifasEjemploADGV.resx">
+      <DependentUpon>FrmCargaTarifasEjemploADGV.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Frm_GroupByGrid.resx">
       <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>
     </EmbeddedResource>
@@ -339,9 +351,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMBase.resx">
       <DependentUpon>FrmABMBase.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="FrmCargaTarifas.resx">
-      <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmConciliaciones.resx">
       <DependentUpon>FrmConciliaciones.cs</DependentUpon>

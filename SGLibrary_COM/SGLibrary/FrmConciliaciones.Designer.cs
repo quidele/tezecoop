@@ -112,7 +112,7 @@
             this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.txtFormato);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
@@ -138,7 +138,7 @@
             // progressBar1
             // 
             this.progressBar1.Location = new System.Drawing.Point(255, 181);
-            this.progressBar1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.progressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(421, 28);
             this.progressBar1.TabIndex = 4;
@@ -159,7 +159,7 @@
             // 
             this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(1243, 80);
-            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
             this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
             this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
@@ -174,7 +174,7 @@
             this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(331, 81);
-            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
             this.txtNombreArchivoTarjeta.ReadOnly = true;
             this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(910, 22);
@@ -249,6 +249,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(1252, 241);
             this.dataGridView1.TabIndex = 12;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             // 
             // txtIdConciliacion
             // 
@@ -365,7 +366,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
