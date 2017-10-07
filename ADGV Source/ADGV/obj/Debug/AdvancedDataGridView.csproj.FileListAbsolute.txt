@@ -51,3 +51,4 @@ C:\Users\Euli\github\tezecoop\ADGV Source\ADGV\obj\Debug\ru\AdvancedDataGridView
 C:\Users\Euli\github\tezecoop\ADGV Source\ADGV\obj\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\ADGV Source\ADGV\obj\Debug\AdvancedDataGridView.dll
 C:\Users\Euli\github\tezecoop\ADGV Source\ADGV\obj\Debug\AdvancedDataGridView.pdb
+C:\Users\Euli\github\tezecoop\ADGV Source\ADGV\obj\Debug\AdvancedDataGridView.csprojResolveAssemblyReference.cache

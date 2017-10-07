@@ -42,7 +42,6 @@
             this.label10 = new System.Windows.Forms.Label();
             this.txtnrCajaAdm = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.txtIdConciliacion = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.txtdsUsuario = new System.Windows.Forms.TextBox();
@@ -71,11 +70,12 @@
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.panelcarga.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.status_bar_usuario.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -230,26 +230,6 @@
             this.label9.Size = new System.Drawing.Size(72, 17);
             this.label9.TabIndex = 13;
             this.label9.Text = "Caja Adm.";
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.AllowUserToAddRows = false;
-            this.dataGridView1.AllowUserToDeleteRows = false;
-            this.dataGridView1.AllowUserToOrderColumns = true;
-            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
-            this.dataGridView1.Location = new System.Drawing.Point(25, 114);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(1252, 241);
-            this.dataGridView1.TabIndex = 12;
-            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
-            this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
             // 
             // txtIdConciliacion
             // 
@@ -551,6 +531,26 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
+            // dataGridView1
+            // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
+            this.dataGridView1.AllowUserToOrderColumns = true;
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnEnter;
+            this.dataGridView1.Location = new System.Drawing.Point(25, 114);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.RowTemplate.Height = 24;
+            this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dataGridView1.Size = new System.Drawing.Size(1252, 241);
+            this.dataGridView1.TabIndex = 12;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            this.dataGridView1.ColumnAdded += new System.Windows.Forms.DataGridViewColumnEventHandler(this.dataGridView1_ColumnAdded);
+            // 
             // FrmConciliaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -568,12 +568,12 @@
             this.Load += new System.EventHandler(this.FrmConciliaciones_Load);
             this.panelcarga.ResumeLayout(false);
             this.panelcarga.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.panelbusqueda.ResumeLayout(false);
             this.panelbusqueda.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.status_bar_usuario.ResumeLayout(false);
             this.status_bar_usuario.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -598,7 +598,6 @@
         private System.Windows.Forms.DateTimePicker cbdtConciliacion;
         private System.Windows.Forms.TextBox txtIdConciliacion;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.DataGridView dataGridView2;
         private ControlesdeUsuario.BotonesForm botonesForm1;
         private System.Windows.Forms.TextBox txtnrCajaAdm;
@@ -623,5 +622,6 @@
         private System.Windows.Forms.ToolStripStatusLabel statusbar_version;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.ComboBox cbFormato;
+        private System.Windows.Forms.DataGridView dataGridView1;
     }
 }

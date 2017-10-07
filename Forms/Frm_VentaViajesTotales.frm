@@ -70,7 +70,7 @@ Begin VB.Form Frm_VentaViajesTotales
          Index           =   2
          ItemData        =   "Frm_VentaViajesTotales.frx":0000
          Left            =   1905
-         List            =   "Frm_VentaViajesTotales.frx":0010
+         List            =   "Frm_VentaViajesTotales.frx":0013
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   22
@@ -116,9 +116,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   1
-         ItemData        =   "Frm_VentaViajesTotales.frx":002F
+         ItemData        =   "Frm_VentaViajesTotales.frx":0040
          Left            =   120
-         List            =   "Frm_VentaViajesTotales.frx":0045
+         List            =   "Frm_VentaViajesTotales.frx":0056
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -213,9 +213,9 @@ Begin VB.Form Frm_VentaViajesTotales
          ForeColor       =   &H000000FF&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_VentaViajesTotales.frx":006B
+         ItemData        =   "Frm_VentaViajesTotales.frx":007C
          Left            =   75
-         List            =   "Frm_VentaViajesTotales.frx":0084
+         List            =   "Frm_VentaViajesTotales.frx":0095
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   7
@@ -737,7 +737,7 @@ Private Function validarEntradadedatos() As Boolean
            End If
            
            If ObtenerCampo("nmEmpresaTarjeta").Text = "" Then
-                MsgBox "Debe completar el número cupón emitido por el posnet u número de operación todo pago", vbInformation + vbDefaultButton1
+                MsgBox "Debe completar la empresa emisora de la tarjeta", vbInformation + vbDefaultButton1
                 ObtenerCampo("nmEmpresaTarjeta").SetFocus
                 Exit Function
            End If
@@ -852,6 +852,30 @@ Private Sub Combox1_Click(Index As Integer)
         HabilitarCampos "nmEmpresaTarjeta", False
     End If
        
+End Sub
+
+Private Sub Combox1_KeyDown(Index As Integer, KeyCode As Integer, Shift As Integer)
+
+    If KeyCode = vbKeyReturn Then
+            cmdAceptar_Click
+            Exit Sub
+    End If
+    
+    
+    Select Case Combox1(Index).Tag
+        Case "cdCondVenta"
+            If objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Débito" Or _
+                objParametros.ObtenerValor("cdCondVenta") = "Tarjeta de Crédito" Or _
+                    objParametros.ObtenerValor("cdCondVenta") = "Todo Pago" Then
+                 ObtenerCampo("nrTarjeta").SetFocus
+             Else
+                 cmdAceptar_Click
+             End If
+        Case "tpDocTarjeta"
+                ObtenerCampo("nrDocTarjeta").SetFocus
+        End Select
+
+    
 End Sub
 
 Private Sub Combox1_KeyPress(Index As Integer, KeyAscii As Integer)

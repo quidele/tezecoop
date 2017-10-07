@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   107610113
+         Format          =   276430849
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2865,11 +2865,14 @@ Dim objLicenciatario  As New CLicenciatario
         ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
         ObjTablasIO.setearCampoOperadorValor "nrCuponPosnet", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrCuponPosnet")
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
-           
+        ObjTablasIO.setearCampoOperadorValor "nmEmpresaTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nmEmpresaTarjeta")
+        
         ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra"), " AND "
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante"), " AND "
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario"), " AND "
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante")
+
+        
       
         If Not ObjTablasIO.Actualizar() Then
             MsgBox "Los datos de la tarjeta no fueron cargados al comprobante, recolectelos en forma manual.", vbInformation, "Atención"
@@ -2882,6 +2885,7 @@ Dim objLicenciatario  As New CLicenciatario
         ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
         ObjTablasIO.setearCampoOperadorValor "nrCuponPosnet", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrCuponPosnet")
         ObjTablasIO.setearCampoOperadorValor "nrCupon", "=", txtnrCupon.Text
+        ObjTablasIO.setearCampoOperadorValor "nmEmpresaTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nmEmpresaTarjeta")
       
         If Not ObjTablasIO.Actualizar() Then
             MsgBox "Los datos de la tarjeta no fueron cargados a la cuenta corriente de licenciatario, recolectelos en forma manual.", vbInformation, "Atención"

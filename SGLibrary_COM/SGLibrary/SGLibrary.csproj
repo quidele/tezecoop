@@ -65,8 +65,9 @@
     <Prefer32Bit>false</Prefer32Bit>
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="AdvancedDataGridView">
-      <HintPath>..\packages\ADGV.0.1.0.10\lib\net40\AdvancedDataGridView.dll</HintPath>
+    <Reference Include="AdvancedDataGridView, Version=0.1.0.10, Culture=neutral, PublicKeyToken=379f40ae819b8944, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\ADGV Source\ADGV\bin\Debug\AdvancedDataGridView.dll</HintPath>
     </Reference>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
