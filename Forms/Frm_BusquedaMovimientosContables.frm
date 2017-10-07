@@ -1,32 +1,27 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_BusquedaMovimientosContables 
-   BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Busqueda Movimientos Contables"
-   ClientHeight    =   8100
-   ClientLeft      =   45
-   ClientTop       =   435
-   ClientWidth     =   11805
+   ClientHeight    =   9645
+   ClientLeft      =   60
+   ClientTop       =   450
+   ClientWidth     =   16635
    ClipControls    =   0   'False
    Icon            =   "Frm_BusquedaMovimientosContables.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
-   MaxButton       =   0   'False
-   MinButton       =   0   'False
    Moveable        =   0   'False
-   ScaleHeight     =   8100
-   ScaleWidth      =   11805
-   ShowInTaskbar   =   0   'False
-   StartUpPosition =   2  'CenterScreen
+   ScaleHeight     =   9645
+   ScaleWidth      =   16635
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
       Height          =   660
       Left            =   0
       TabIndex        =   18
       Top             =   0
-      Width           =   11805
-      _ExtentX        =   20823
+      Width           =   16635
+      _ExtentX        =   29342
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -210,11 +205,11 @@ Begin VB.Form Frm_BusquedaMovimientosContables
    End
    Begin VB.Frame fraBusqContables 
       BorderStyle     =   0  'None
-      Height          =   7140
-      Left            =   0
+      Height          =   8880
+      Left            =   -15
       TabIndex        =   15
-      Top             =   570
-      Width           =   10290
+      Top             =   645
+      Width           =   16605
       Begin VB.Frame fra_ProgressBar 
          Appearance      =   0  'Flat
          BackColor       =   &H80000005&
@@ -338,13 +333,13 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          ImageList       =   "ImgOperadores"
       End
       Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5835
-         Left            =   135
+         Height          =   7530
+         Left            =   210
          TabIndex        =   12
          Top             =   1215
-         Width           =   10065
-         _ExtentX        =   17754
-         _ExtentY        =   10292
+         Width           =   16305
+         _ExtentX        =   28760
+         _ExtentY        =   13282
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -383,44 +378,44 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          EndProperty
          BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   2
+            Object.Tag             =   "dtMovimiento"
+            Text            =   "Fecha"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
             Object.Tag             =   "vlPesos"
             Text            =   "Pesos"
             Object.Width           =   2117
          EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
             Object.Tag             =   "vlDolares"
             Text            =   "Dolares"
             Object.Width           =   2117
          EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
             Object.Tag             =   "vlEuros"
             Text            =   "Euros"
             Object.Width           =   2117
          EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
             Object.Tag             =   "dsConcepto"
             Text            =   "Concepto"
             Object.Width           =   4410
          EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
             Object.Tag             =   "tpConcepto"
             Text            =   "Tipo Concepto"
             Object.Width           =   2540
          EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "dsMovimiento"
-            Text            =   "Descripción"
-            Object.Width           =   2540
-         EndProperty
          BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   8
-            Object.Tag             =   "dtMovimiento"
-            Text            =   "Fecha"
+            Object.Tag             =   "dsMovimiento"
+            Text            =   "Descripción"
             Object.Width           =   2540
          EndProperty
          BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -480,7 +475,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   123600897
+         Format          =   276824065
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -494,7 +489,7 @@ Begin VB.Form Frm_BusquedaMovimientosContables
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   107544577
+         Format          =   276824065
          CurrentDate     =   38267
       End
       Begin VB.Label lblLabels 
@@ -552,11 +547,11 @@ Begin VB.Form Frm_BusquedaMovimientosContables
    End
    Begin VB.Frame fraMovimientosContables 
       BorderStyle     =   0  'None
-      Height          =   7245
+      Height          =   8910
       Left            =   75
       TabIndex        =   19
-      Top             =   585
-      Width           =   10770
+      Top             =   600
+      Width           =   16530
       Begin VB.PictureBox Picture1 
          Appearance      =   0  'Flat
          BackColor       =   &H00FFC0C0&
@@ -1560,6 +1555,19 @@ End Function
 
 
 
+
+Private Sub Form_Resize()
+Dim i As Integer
+
+    On Error Resume Next
+    objGUI.SizeControls Me, Me.fraBusqContables, Me.lstBusqueda, 100, 300
+    On Error GoTo 0
+    
+        
+    i = Me.lstBusqueda.ListItems.Add(, , "").Index
+    Me.lstBusqueda.ListItems.Remove i
+    
+End Sub
 
 Private Sub lstBusqueda_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
 

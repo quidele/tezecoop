@@ -27,7 +27,7 @@ Begin VB.Form Frm_VentaViajesTotales
       Caption         =   "&Aceptar"
       Default         =   -1  'True
       Height          =   375
-      Left            =   1065
+      Left            =   1095
       TabIndex        =   8
       Top             =   4455
       Width           =   1050
