@@ -86,6 +86,76 @@ namespace SGLibrary.Extensiones
             }
             return item;
         }
+
+        public static DataSet ToDataSet<T>(this IEnumerable<T> lista)
+        {
+            Type elementType = typeof(T);
+            DataSet ds = new DataSet();
+            DataTable t = new DataTable();
+            ds.Tables.Add(t);
+
+            var primero_registro = true;
+            Type t1 ;
+            PropertyInfo[] pi = new  PropertyInfo[0] ;
+            var i = 1;
+
+            foreach (object item in lista)
+            {
+                t1 = item.GetType();
+                pi = t1.GetProperties();
+
+                if (primero_registro)
+                {
+                    foreach (PropertyInfo p in pi)
+                    {
+                        Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                        Console.WriteLine(p.PropertyType.Name);
+
+                        switch (p.PropertyType.Name)
+                        {
+                            case "Nullable`1":
+                                t.Columns.Add(p.Name, p.PropertyType.GetGenericArguments()[0]);
+                                break;
+                            default:
+                                t.Columns.Add(p.Name, p.PropertyType);
+                                break;
+                        }
+
+                    }
+                    primero_registro = false;
+                } // cierra if 
+               
+
+                DataRow row = t.NewRow();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine("DATO1: " + p.Name + " "  +  p.GetValue(item, null).ToString());
+                    Console.WriteLine("DATO2: " + p.PropertyType.Name);
+                    Console.WriteLine("EULISES.................." + i.ToString());
+
+                    if (i.ToString().CompareTo("31") == 0)
+                    {
+                        Console.WriteLine("para : " );
+                    }
+                    switch (p.PropertyType.Name)
+                    {
+                        case "Nullable`1":
+                            row[p.Name] = p.GetValue(item, null);
+                            break;
+                        default:
+                            row[p.Name] = p.GetValue(item, null);
+                            break;
+                    }
+                   
+                }
+                t.Rows.Add(row);
+                i++;
+
+            } // Cierra el foreach (object item in lista)
+
+          
+            return ds;
+        }
     }
 
 }

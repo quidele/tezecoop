@@ -143,7 +143,7 @@ namespace SGLibrary
                                 cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
                                 break;
                             default:
-                                cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
+                                cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true,this.dataSet1 , this.bindingSource1);
                                 break;
                         }
 
@@ -573,23 +573,29 @@ namespace SGLibrary
         }
 
 
-        public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion, bool crea_encabezados)
+        public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista_datos, String p_modoEdicion, bool crea_encabezados, DataSet p_DataSet, BindingSource p_BindingSource)
         {
-
+            // A la lista la transfiere al DATASET
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista_datos);
+            //Al binding source le configuramos el dataset
+            p_BindingSource.DataSource = p_DataSet;
+            // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
+            p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
        
 
             try
             {
                 Trace.TraceInformation(dgv.ToString());
-                Trace.TraceInformation(lista.ToString());
+                Trace.TraceInformation(lista_datos.ToString());
                 
        
             if (crea_encabezados)
             {
+                dgv.AutoGenerateColumns = false;
                 //dgv.Rows.Clear();
                 dgv.Columns.Clear();
 
-                foreach (var item in lista)
+                foreach (var item in lista_datos)
                 {
 
                     Type t = item.GetType();
@@ -610,12 +616,13 @@ namespace SGLibrary
                             case "IdArchivoTarjetaDetalle": columna.Visible = false; break;
                         }
                         dgv.Columns.Add(columna);
+                        columna.DataPropertyName = columna.Name;  
+                                  // esta propiedad es la permite enlazar la columna del datagridview con el 
+                                  // con la columna del datasource: definida en la creacion de dataset
+               
                     }
                     break;
                 }
-
-
-             
 
                
                 DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
@@ -626,9 +633,18 @@ namespace SGLibrary
                 dgv.Columns.Add(doWork);
 
             } //crea_encabezados
+  
+            // Modificamos los Encabezados de las columnas
+            foreach (DataGridViewColumn item in dgv.Columns)
+            {
+                   item.HeaderText = item.HeaderText.Replace("_", " ");
+            }
+            dgv.DataSource = p_BindingSource;
 
+
+            /*
+            
             var i=0;
-
             foreach (object item in lista)
             {
                 this.progressBar1.BringToFront();
@@ -639,8 +655,7 @@ namespace SGLibrary
                 this.progressBar1.Increment(i++);
                 var row = dgv.Rows.Add();
 
-                dgv.Rows[row].HeaderCell.Value = i.ToString();
-  
+                dgv.Rows[row].HeaderCell.Value  = i.ToString();
 
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
@@ -679,7 +694,8 @@ namespace SGLibrary
 
                 dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
        
-            }
+            }  // cierra el foreach
+             */
 
 
             dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
@@ -796,7 +812,7 @@ namespace SGLibrary
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
                 /* MessageBox.Show ( openFileDialog1.FileName); */
-                nombreArchivo = openFileDialog1.FileName;
+            nombreArchivo = openFileDialog1.FileName;
                 txtNombreArchivoTarjeta.Text = openFileDialog1.FileName;
                 Cursor.Current = Cursors.WaitCursor;
                 Application.DoEvents();
@@ -880,7 +896,9 @@ namespace SGLibrary
             this.progressBar1.Minimum = 0;
             this.progressBar1.Maximum = listadeViajesaConciliar3.Count();  //  listadeViajesaConciliar1.Count()  +  listadeViajesaConciliar2.Count();  
             this.progressBar1.Visible = true;
-            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true);
+            cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true
+                ,this.dataSet1 , this.bindingSource1);
+                
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
             this.progressBar1.Visible = false;
