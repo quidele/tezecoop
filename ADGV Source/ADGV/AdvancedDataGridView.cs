@@ -160,7 +160,10 @@ namespace ADGV
 
         protected override void OnCellValueChanged(DataGridViewCellEventArgs e)
         {
-            this.readyToShowFilters.Remove(this.Columns[e.ColumnIndex].Name);
+            if (e.ColumnIndex != -1)
+            {
+                this.readyToShowFilters.Remove(this.Columns[e.ColumnIndex].Name);
+            }
             base.OnCellValueChanged(e);
         }
 

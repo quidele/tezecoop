@@ -575,8 +575,26 @@ namespace SGLibrary
 
         public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista_datos, String p_modoEdicion, bool crea_encabezados, DataSet p_DataSet, BindingSource p_BindingSource)
         {
+            Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
+            lista_campo_tipo.Add("ID", "System.Decimal");
+            lista_campo_tipo.Add("FECHA", "System.DateTime");
+            lista_campo_tipo.Add("LICENCIA", "System.Int32");
+            lista_campo_tipo.Add("DOC", "System.String");
+            lista_campo_tipo.Add("LETRA", "System.String");
+            lista_campo_tipo.Add("PDV", "System.String");
+            lista_campo_tipo.Add("NRO", "System.String");
+            lista_campo_tipo.Add("MONTO", "System.Double");
+            lista_campo_tipo.Add("MONTO_ARCHI", "System.Double");
+            lista_campo_tipo.Add("TARJETA", "System.String");
+            lista_campo_tipo.Add("TARJETA_ARCHI", "System.String");
+            lista_campo_tipo.Add("CUPON", "System.String");
+            lista_campo_tipo.Add("CUPON_ARCHI", "System.String");
+            lista_campo_tipo.Add("NIVEL", "System.Int32");
+            lista_campo_tipo.Add("IdArchivoTarjetaDetalle", "System.Decimal");
+            lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");   
+
             // A la lista la transfiere al DATASET
-            p_DataSet = Extensiones.Extensions.ToDataSet(lista_datos);
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista_datos, lista_campo_tipo );
             //Al binding source le configuramos el dataset
             p_BindingSource.DataSource = p_DataSet;
             // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
@@ -724,6 +742,9 @@ namespace SGLibrary
             var dgv = dataGridView1;
             var row = e.RowIndex;
 
+            dgv.Rows[row].HeaderCell.Value = 10; 
+            // dgv.Rows[row].Cells[0].Value = row;
+            
             switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
             {
                 case "-1": dgv.Rows[row].Cells["CONCILIAR"].Value = false;
@@ -934,8 +955,11 @@ namespace SGLibrary
             this.progressBar1.Minimum = 0;
             this.progressBar1.Maximum = listadeViajesaConciliar3.Count();  //  listadeViajesaConciliar1.Count()  +  listadeViajesaConciliar2.Count();  
             this.progressBar1.Visible = true;
+
+                                                                                                                                  
+            
             cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true
-                ,this.dataSet1 , this.bindingSource1);
+                , this.dataSet1, this.bindingSource1);
                 
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
@@ -978,6 +1002,17 @@ namespace SGLibrary
         private void dataGridView1_ColumnAdded(object sender, DataGridViewColumnEventArgs e)
         {
 
+        }
+
+        private void dataGridView1_CellContentClick_1(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.bindingSource1.Filter = this.dataGridView1.FilterString;
+            MessageBox.Show(this.bindingSource1.List.Count.ToString());
         }
     }
 }

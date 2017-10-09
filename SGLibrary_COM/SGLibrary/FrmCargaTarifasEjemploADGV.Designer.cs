@@ -146,6 +146,7 @@
         private System.Windows.Forms.OpenFileDialog openFileDialog1;
         private System.Windows.Forms.Button button2;
         private ADGV.AdvancedDataGridView dataGridView1;
+        //private ADGV.AdvancedDataGridView dataGridView1;
         private System.Windows.Forms.BindingSource bindingSource;
         private System.Data.DataSet dataSet;
     }

@@ -391,6 +391,7 @@
     </Content>
     <Content Include="ConfigBD_CASA.Xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+      <SubType>Designer</SubType>
     </Content>
     <Content Include="ConfigBD.Xml">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
