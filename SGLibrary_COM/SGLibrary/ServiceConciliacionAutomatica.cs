@@ -114,7 +114,7 @@ namespace SGLibrary
                                                     MONTO_ARCHI = x.importe,
                                                     TARJETA = c.nrTarjeta,
                                                     TARJETA_ARCHI = x.tarjeta,
-                                                    CUPON = c.nrCuponPosnet,
+                                                    CUPON = c.nrCuponPosnet != null ? c.nrCuponPosnet : "0",
                                                     CUPON_ARCHI = x.comprobante,
                                                     NIVEL = x.nrNivelConciliacion,
                                                     IdArchivoTarjetaDetalle = x.Id,

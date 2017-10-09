@@ -633,6 +633,11 @@ namespace SGLibrary
                 dgv.Columns.Add(doWork);
 
             } //crea_encabezados
+
+
+            dataGridView1.CellFormatting +=
+        new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+        this.dataGridView1_CellFormatting);
   
             // Modificamos los Encabezados de las columnas
             foreach (DataGridViewColumn item in dgv.Columns)
@@ -709,6 +714,39 @@ namespace SGLibrary
                 throw; 
             }
            
+        }
+
+        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+
+            if (e.ColumnIndex != dataGridView1.Columns.Count  -1 ) return;
+
+            var dgv = dataGridView1;
+            var row = e.RowIndex;
+
+            switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
+            {
+                case "-1": dgv.Rows[row].Cells["CONCILIAR"].Value = false;
+                    dgv.Rows[row].ReadOnly = true;
+                    dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
+                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
+                    break;
+                case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
+                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.White;
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                    break;
+                case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
+                case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
+                case "4": dgv.Rows[row].DefaultCellStyle.BackColor = Color.OrangeRed; break;
+                default:
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = false;
+                    dgv.Rows[row].ReadOnly = true;
+                    dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
+                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
+                    break;
+            }
+            dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value.ToString().Remove(10);
+
         }
 
         public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
