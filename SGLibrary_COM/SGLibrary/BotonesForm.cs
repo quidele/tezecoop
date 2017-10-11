@@ -50,6 +50,7 @@ namespace ControlesdeUsuario
             this.botonCANCEL.Image = StringResources.Image_form_cancel;
             this.botonPRINT.Image = StringResources.Image_btn_form_print;
             this.botonEXIT.Image = StringResources.Image_btn_form_exit;
+            this.botonEXCEL.Image = StringResources.Image_btn_form_excel;
         }
 
 
@@ -116,7 +117,6 @@ namespace ControlesdeUsuario
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
                     this.botonEXCEL.Visible = true;
-                    
                     break;
                 case ABMBotonesForm.EDIT:
                     this.botonFIND.Visible = false;

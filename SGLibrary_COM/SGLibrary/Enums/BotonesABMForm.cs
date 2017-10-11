@@ -53,7 +53,10 @@ namespace ControlesdeUsuario
         CANCEL,
 
         [Description("VIEW")]
-        VIEW
+        VIEW,
+
+        [Description("EXCEL")]
+        EXCEL
     }
 
     

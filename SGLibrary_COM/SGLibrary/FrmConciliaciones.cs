@@ -257,12 +257,39 @@ namespace SGLibrary
                         
                         break;
                     }
+                case "EXCEL":
+                    {
+                        exportaraExcel();
+                        break;
+                    }
                 case "EXIT":
                     {
                         this.Close();
                         break;
                     }
             } 
+
+        }
+
+
+        public void exportaraExcel()
+        {
+            String nombreArchivo;
+            OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            openFileDialog1.Title = "Excel Spreadsheet";
+            openFileDialog1.FileName = "";
+            openFileDialog1.DefaultExt = ".xls";
+            openFileDialog1.AddExtension = true;
+            openFileDialog1.Filter = "Excel Worksheets|*.xls; *.xlsx";
+
+            if (openFileDialog1.ShowDialog() == DialogResult.OK)
+            {
+                /* MessageBox.Show ( openFileDialog1.FileName); */
+                nombreArchivo = openFileDialog1.FileName;
+                ServiceExcel miServiceExcel = new ServiceExcel();
+                miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
+                MessageBox.Show("El archivo se ha generado con exito", "Exportar", MessageBoxButtons.OK);
+            }
 
         }
 
@@ -1019,6 +1046,12 @@ namespace SGLibrary
         private void dataGridView1_SortStringChanged(object sender, EventArgs e)
         {
             this.bindingSource1.Sort = this.dataGridView1.SortString;
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes()
+            miFrmBuscarComprobantes.Show ();
         }
     }
 }

@@ -25,7 +25,7 @@ namespace SGLibrary
 
         private String nombreArchivo;
         private List<TarifasXLS> listaTarifas;
-        private List<TarifasXLS> datosprueba; 
+
 
         public String getNombreArchivo() {
             return nombreArchivo;

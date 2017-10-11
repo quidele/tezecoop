@@ -134,6 +134,12 @@
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarComprobantes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarComprobantes.Designer.cs">
+      <DependentUpon>FrmBuscarComprobantes.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCargaTarifas.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -336,6 +342,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarComprobantes.resx">
+      <DependentUpon>FrmBuscarComprobantes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCargaTarifas.resx">
       <DependentUpon>FrmCargaTarifas.cs</DependentUpon>
@@ -592,6 +601,10 @@
     <Content Include="Imagenes_Varias\treeview_01.ico" />
     <Content Include="Imagenes_Varias\treeview_01.png" />
     <Content Include="Imagenes_Varias\treeview_02.gif" />
+    <None Include="Resources\Image_btn_form_excel3.png" />
+    <None Include="Resources\Image_btn_form_excel2.png" />
+    <None Include="Resources\Image_btn_form_excel1.png" />
+    <None Include="Resources\Image_btn_form_excel.png" />
     <None Include="Resources\botonBuscarImage.ES-ES.bmp" />
     <None Include="Resources\botonBuscarImage.EN-US.bmp" />
     <None Include="Resources\botonBuscarImage.bmp" />
