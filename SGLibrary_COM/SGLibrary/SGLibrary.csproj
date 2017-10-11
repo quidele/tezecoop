@@ -206,6 +206,11 @@
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="PrinterManager.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
     <Compile Include="Recursos Localizables\StringResources.Designer.cs">
       <DependentUpon>StringResources.resx</DependentUpon>
       <AutoGen>True</AutoGen>
@@ -361,6 +366,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmSeleccionarImpresora.resx">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Recursos Localizables\StringResources.EN-US.resx">
       <Generator>ResXFileCodeGenerator</Generator>

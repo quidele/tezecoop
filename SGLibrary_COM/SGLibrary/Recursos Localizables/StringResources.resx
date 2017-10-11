@@ -175,4 +175,7 @@
   <data name="botonPRINTText" xml:space="preserve">
     <value>PRINT</value>
   </data>
+  <data name="botonEXCEL" xml:space="preserve">
+    <value>EXCEL</value>
+  </data>
 </root>

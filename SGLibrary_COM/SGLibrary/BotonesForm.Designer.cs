@@ -38,6 +38,7 @@
             this.botonCANCEL = new System.Windows.Forms.ToolStripButton();
             this.botonPRINT = new System.Windows.Forms.ToolStripButton();
             this.botonEXIT = new System.Windows.Forms.ToolStripButton();
+            this.botonEXCEL = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -52,10 +53,11 @@
             this.botonOK,
             this.botonCANCEL,
             this.botonPRINT,
-            this.botonEXIT});
+            this.botonEXIT,
+            this.botonEXCEL});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(596, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(784, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -140,6 +142,15 @@
             this.botonEXIT.Text = "EXIT";
             this.botonEXIT.Click += new System.EventHandler(this.botonEXIT_Click);
             // 
+            // botonEXCEL
+            // 
+            this.botonEXCEL.Image = ((System.Drawing.Image)(resources.GetObject("botonEXCEL.Image")));
+            this.botonEXCEL.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonEXCEL.Name = "botonEXCEL";
+            this.botonEXCEL.Size = new System.Drawing.Size(74, 24);
+            this.botonEXCEL.Text = "EXCEL";
+            this.botonEXCEL.Click += new System.EventHandler(this.botonEXCEL_Click);
+            // 
             // BotonesForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -148,7 +159,7 @@
             this.Controls.Add(this.toolStrip1);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BotonesForm";
-            this.Size = new System.Drawing.Size(596, 34);
+            this.Size = new System.Drawing.Size(784, 34);
             this.Load += new System.EventHandler(this.BotonesForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
@@ -168,5 +179,6 @@
         private System.Windows.Forms.ToolStripButton botonCANCEL;
         private System.Windows.Forms.ToolStripButton botonPRINT;
         private System.Windows.Forms.ToolStripButton botonEXIT;
+        private System.Windows.Forms.ToolStripButton botonEXCEL;
     }
 }

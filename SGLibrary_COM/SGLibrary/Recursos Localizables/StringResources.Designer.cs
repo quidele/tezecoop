@@ -116,6 +116,15 @@ namespace SGLibrary.Recursos_Localizables {
         }
         
         /// <summary>
+        ///   Busca una cadena traducida similar a EXCEL.
+        /// </summary>
+        internal static string botonEXCEL {
+            get {
+                return ResourceManager.GetString("botonEXCEL", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Busca una cadena traducida similar a EXIT.
         /// </summary>
         internal static string botonEXITText {

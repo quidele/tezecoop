@@ -195,4 +195,8 @@
     <value>IMPRIMIR</value>
     <comment>Imprimir</comment>
   </data>
+  <data name="botonEXCEL" xml:space="preserve">
+    <value>EXCEL</value>
+    <comment>Exportar a Excel</comment>
+  </data>
 </root>

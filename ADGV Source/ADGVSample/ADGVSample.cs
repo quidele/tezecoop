@@ -51,6 +51,15 @@ namespace ADGVSample
             }
             dt.Rows.Add(new object[] { null, null, null, null, null, null, null });
             this.bindingSource.DataMember = dt.TableName;
+
+            int j = 1;
+            foreach (DataGridViewRow item in dataGridView.Rows)
+            {
+       
+                item.HeaderCell.Style.BackColor = Color.SkyBlue;
+                item.HeaderCell.Style.ForeColor = Color.Red;
+                item.HeaderCell.Value = j.ToString();
+            }
         }
         
 

@@ -115,6 +115,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
+                    this.botonEXCEL.Visible = true;
                     
                     break;
                 case ABMBotonesForm.EDIT:
@@ -138,6 +139,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = true;
                     this.botonPRINT.Visible = false;
                     this.botonEXIT.Visible = false;
+                    this.botonEXCEL.Visible = true;
                     break;
                 case ABMBotonesForm.DELETE:
                     this.botonFIND.Visible = true;
@@ -158,6 +160,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
+                    this.botonEXCEL.Visible = true;
                     break;
                 case ABMBotonesForm.CANCEL:
                     this.botonFIND.Visible = true;
@@ -169,6 +172,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = true;
                     this.botonEXIT.Visible = true;
+                    this.botonEXCEL.Visible = true;
                     break;
                 case ABMBotonesForm.VIEW:
                     this.botonFIND.Visible = false;
@@ -180,6 +184,7 @@ namespace ControlesdeUsuario
                     this.botonCANCEL.Visible = false;
                     this.botonPRINT.Visible = false;
                     this.botonEXIT.Visible = true;
+                    this.botonEXCEL.Visible = true;
                     break;
                 default:
                     break;
@@ -192,6 +197,11 @@ namespace ControlesdeUsuario
         private void botonEXIT_Click(object sender, EventArgs e)
         {
             ClickEventDelegateHandler.Invoke(sender, e);
+        }
+
+        private void botonEXCEL_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

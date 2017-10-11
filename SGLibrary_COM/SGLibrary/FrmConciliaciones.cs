@@ -1012,7 +1012,13 @@ namespace SGLibrary
         private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
         {
             this.bindingSource1.Filter = this.dataGridView1.FilterString;
-            MessageBox.Show(this.bindingSource1.List.Count.ToString());
+            this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString(); 
+
+        }
+
+        private void dataGridView1_SortStringChanged(object sender, EventArgs e)
+        {
+            this.bindingSource1.Sort = this.dataGridView1.SortString;
         }
     }
 }
