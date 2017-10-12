@@ -13,7 +13,5 @@ namespace SGLibrary
     
     public partial class spu_conciliarAutomaticamente_v4_9_900_Result
     {
-        public string resultado { get; set; }
-        public string descripcion_error { get; set; }
     }
 }

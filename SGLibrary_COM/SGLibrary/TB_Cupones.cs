@@ -78,5 +78,6 @@ namespace SGLibrary
         public Nullable<System.DateTime> dtFechaAcreditacion { get; set; }
         public Nullable<double> vlMontoAcreditacion { get; set; }
         public Nullable<int> IdConciliacion { get; set; }
+        public string nmEmpresaTarjeta { get; set; }
     }
 }

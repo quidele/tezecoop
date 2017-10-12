@@ -89,6 +89,42 @@ namespace SGLibrary
                 throw;
             }
             return;
+        } // CIERRA GrabarCupon
+
+
+        public IEnumerable<Object> obtenerViajes(DateTime pfechadesde, DateTime pfechaHasta, String pEmpresa,
+                                                 String pnrCuponPosnet, String  pnrTajeta , int pnrLicencia,
+                                                 String Factura )
+        {
+            
+            String[] substrings = Factura.Split('-');
+            String comprobante="";
+            String pdv = substrings[0];
+            if (substrings.Count() == 2) { comprobante = substrings[1]; }
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Falta agregar filtro de fechas
+                var listadeViajes = (from c in context.TB_Cupones 
+                                                where c.dtCupon  >= pfechadesde
+                                                      && c.dtCupon <= pfechaHasta
+                                                      && c.nmEmpresaTarjeta == pEmpresa
+                                                      && c.nrTarjeta == pnrTajeta
+                                                      && c.nrLicencia == pnrLicencia
+                                                //&& (c.nm == usuario || usuario.Trim().Length == 0)
+                                                orderby c.IdConciliacion descending  // ordenamos desde mas reciente a mas vieja
+                                                select new
+                                                {
+                                                    ID = c.nrCupon 
+                                                });
+                return listadeViajes.ToList();
+                //return listadeViajesaConciliar.ToList();
+            }
         }
-    }
+
+
+    } // CIERRA CLASE 
+
+
+
 }
