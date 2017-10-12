@@ -226,7 +226,7 @@ namespace SGLibrary
             app.Visible = true;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
-            worksheet = workbook.Sheets["Sheet1"];
+            worksheet = workbook.Sheets[1];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
             worksheet.Name = "Exported from gridview";
@@ -236,7 +236,7 @@ namespace SGLibrary
                 worksheet.Cells[1, i] = dataGridView1.Columns[i - 1].HeaderText;
             }
             // storing Each row and column value to excel sheet  
-            for (int i = 0; i < dataGridView1.Rows.Count - 1; i++)
+            for (int i = 0; i < dataGridView1.Rows.Count ; i++)
             {
                 for (int j = 0; j < dataGridView1.Columns.Count; j++)
                 {

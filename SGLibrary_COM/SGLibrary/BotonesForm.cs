@@ -201,7 +201,7 @@ namespace ControlesdeUsuario
 
         private void botonEXCEL_Click(object sender, EventArgs e)
         {
-
+            ClickEventDelegateHandler.Invoke(sender, e);
         }
 
     }

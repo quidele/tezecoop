@@ -111,6 +111,9 @@ namespace SGLibrary.Extensiones
                 pi = t1.GetProperties();
 
                 DataRow row = t.NewRow();
+
+                row["Nº"] = i.ToString(); 
+
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine("DATO1: " + p.Name + " "  +  p.GetValue(item, null).ToString());

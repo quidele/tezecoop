@@ -274,6 +274,11 @@ namespace SGLibrary
 
         public void exportaraExcel()
         {
+            // Deshabilitamos el Evento que realizar el formateo
+            dataGridView1.CellFormatting -=
+            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+            this.dataGridView1_CellFormatting);
+
             String nombreArchivo;
             OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             openFileDialog1.Title = "Excel Spreadsheet";
@@ -281,6 +286,7 @@ namespace SGLibrary
             openFileDialog1.DefaultExt = ".xls";
             openFileDialog1.AddExtension = true;
             openFileDialog1.Filter = "Excel Worksheets|*.xls; *.xlsx";
+            openFileDialog1.CheckFileExists = false;
 
             if (openFileDialog1.ShowDialog() == DialogResult.OK)
             {
@@ -290,6 +296,11 @@ namespace SGLibrary
                 miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
                 MessageBox.Show("El archivo se ha generado con exito", "Exportar", MessageBoxButtons.OK);
             }
+
+            // Habilitamos el Evento que realizar el formateo
+            dataGridView1.CellFormatting +=
+            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+            this.dataGridView1_CellFormatting);
 
         }
 
@@ -603,6 +614,7 @@ namespace SGLibrary
         public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista_datos, String p_modoEdicion, bool crea_encabezados, DataSet p_DataSet, BindingSource p_BindingSource)
         {
             Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
+            lista_campo_tipo.Add("Nº", "System.Decimal");
             lista_campo_tipo.Add("ID", "System.Decimal");
             lista_campo_tipo.Add("FECHA", "System.DateTime");
             lista_campo_tipo.Add("LICENCIA", "System.Int32");
@@ -618,7 +630,9 @@ namespace SGLibrary
             lista_campo_tipo.Add("CUPON_ARCHI", "System.String");
             lista_campo_tipo.Add("NIVEL", "System.Int32");
             lista_campo_tipo.Add("IdArchivoTarjetaDetalle", "System.Decimal");
-            lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");   
+            lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");
+            lista_campo_tipo.Add("CONCILIAR", "System.Boolean");
+     
 
             // A la lista la transfiere al DATASET
             p_DataSet = Extensiones.Extensions.ToDataSet(lista_datos, lista_campo_tipo );
@@ -645,6 +659,17 @@ namespace SGLibrary
 
                     Type t = item.GetType();
                     PropertyInfo[] pi = t.GetProperties();
+
+                    DataGridViewColumn columna1 = new DataGridViewColumn();
+                    DataGridViewCell cell1 = new DataGridViewTextBoxCell();
+                    columna1.CellTemplate = cell1;
+                    columna1.Name = "Nº";
+                    columna1.HeaderText = "Nº";
+                    columna1.ReadOnly = true;
+                    columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna1);
+                    columna1.DataPropertyName = "Nº";  
+
 
                     foreach (PropertyInfo p in pi)
                     {
@@ -675,6 +700,7 @@ namespace SGLibrary
                 doWork.HeaderText = "CONCILIAR";
                 doWork.FalseValue = "0";
                 doWork.TrueValue = "1";
+                doWork.DataPropertyName = "CONCILIAR";  
                 dgv.Columns.Add(doWork);
 
             } //crea_encabezados
@@ -769,8 +795,7 @@ namespace SGLibrary
             var dgv = dataGridView1;
             var row = e.RowIndex;
 
-            dgv.Rows[row].HeaderCell.Value = 10; 
-            // dgv.Rows[row].Cells[0].Value = row;
+     
             
             switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
             {
@@ -915,6 +940,11 @@ namespace SGLibrary
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+            this.dataSet1.Clear();
+            this.bindingSource1.Clear();
+            this.dataGridView1.Rows.Clear();
+
             switch (cbtipoConciliacion.Text )
             {
                 case "Manual":
@@ -930,8 +960,7 @@ namespace SGLibrary
                     cargarDataGridViewCuponesTodoPago(dataGridView1, listadeViajesaConciliarTodoPago, modoEdicion.Text);
                     break;
                 default:
-                    this.cbtipoConciliacion.Enabled = true;
-                    this.dataGridView1.Rows.Clear();
+                    this.cbtipoConciliacion.Enabled = true;   
                     this.txtNombreArchivoTarjeta.Text = "";
                     this.btnSelecccionarArchivoTarjeta.Enabled = true;
                     this.btnSelecccionarArchivoTarjeta.PerformClick();
@@ -1050,7 +1079,7 @@ namespace SGLibrary
 
         private void button1_Click(object sender, EventArgs e)
         {
-            FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes()
+            FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes();
             miFrmBuscarComprobantes.Show ();
         }
     }

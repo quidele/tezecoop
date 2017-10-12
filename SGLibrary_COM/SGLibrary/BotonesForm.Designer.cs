@@ -37,8 +37,8 @@
             this.botonOK = new System.Windows.Forms.ToolStripButton();
             this.botonCANCEL = new System.Windows.Forms.ToolStripButton();
             this.botonPRINT = new System.Windows.Forms.ToolStripButton();
-            this.botonEXIT = new System.Windows.Forms.ToolStripButton();
             this.botonEXCEL = new System.Windows.Forms.ToolStripButton();
+            this.botonEXIT = new System.Windows.Forms.ToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -57,7 +57,7 @@
             this.botonEXIT});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(588, 27);
+            this.toolStrip1.Size = new System.Drawing.Size(784, 27);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             this.toolStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.toolStrip1_ItemClicked);
@@ -67,7 +67,7 @@
             this.botonFIND.Image = ((System.Drawing.Image)(resources.GetObject("botonFIND.Image")));
             this.botonFIND.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonFIND.Name = "botonFIND";
-            this.botonFIND.Size = new System.Drawing.Size(57, 24);
+            this.botonFIND.Size = new System.Drawing.Size(66, 24);
             this.botonFIND.Tag = "FIND";
             this.botonFIND.Text = "FIND";
             this.botonFIND.Click += new System.EventHandler(this.toolStripButton1_Click);
@@ -77,7 +77,7 @@
             this.botonEDIT.Image = ((System.Drawing.Image)(resources.GetObject("botonEDIT.Image")));
             this.botonEDIT.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonEDIT.Name = "botonEDIT";
-            this.botonEDIT.Size = new System.Drawing.Size(55, 24);
+            this.botonEDIT.Size = new System.Drawing.Size(64, 24);
             this.botonEDIT.Tag = "EDIT";
             this.botonEDIT.Text = "EDIT";
             this.botonEDIT.Click += new System.EventHandler(this.toolStripButton2_Click);
@@ -87,7 +87,7 @@
             this.botonADD.Image = ((System.Drawing.Image)(resources.GetObject("botonADD.Image")));
             this.botonADD.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonADD.Name = "botonADD";
-            this.botonADD.Size = new System.Drawing.Size(55, 24);
+            this.botonADD.Size = new System.Drawing.Size(65, 24);
             this.botonADD.Tag = "ADD";
             this.botonADD.Text = "ADD";
             this.botonADD.Click += new System.EventHandler(this.toolStripButton3_Click);
@@ -97,7 +97,7 @@
             this.botonDELETE.Image = ((System.Drawing.Image)(resources.GetObject("botonDELETE.Image")));
             this.botonDELETE.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonDELETE.Name = "botonDELETE";
-            this.botonDELETE.Size = new System.Drawing.Size(70, 24);
+            this.botonDELETE.Size = new System.Drawing.Size(83, 24);
             this.botonDELETE.Tag = "DELETE";
             this.botonDELETE.Text = "DELETE";
             this.botonDELETE.Click += new System.EventHandler(this.toolStripButton4_Click);
@@ -107,7 +107,7 @@
             this.botonOK.Image = ((System.Drawing.Image)(resources.GetObject("botonOK.Image")));
             this.botonOK.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonOK.Name = "botonOK";
-            this.botonOK.Size = new System.Drawing.Size(47, 24);
+            this.botonOK.Size = new System.Drawing.Size(53, 24);
             this.botonOK.Tag = "OK";
             this.botonOK.Text = "OK";
             this.botonOK.Click += new System.EventHandler(this.toolStripButton5_Click);
@@ -117,7 +117,7 @@
             this.botonCANCEL.Image = ((System.Drawing.Image)(resources.GetObject("botonCANCEL.Image")));
             this.botonCANCEL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonCANCEL.Name = "botonCANCEL";
-            this.botonCANCEL.Size = new System.Drawing.Size(76, 24);
+            this.botonCANCEL.Size = new System.Drawing.Size(87, 24);
             this.botonCANCEL.Tag = "CANCEL";
             this.botonCANCEL.Text = "CANCEL";
             this.botonCANCEL.Click += new System.EventHandler(this.toolStripButton6_Click);
@@ -127,40 +127,40 @@
             this.botonPRINT.Image = ((System.Drawing.Image)(resources.GetObject("botonPRINT.Image")));
             this.botonPRINT.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonPRINT.Name = "botonPRINT";
-            this.botonPRINT.Size = new System.Drawing.Size(64, 24);
+            this.botonPRINT.Size = new System.Drawing.Size(73, 24);
             this.botonPRINT.Tag = "PRINT";
             this.botonPRINT.Text = "PRINT";
             this.botonPRINT.Click += new System.EventHandler(this.toolStripButton7_Click);
-            // 
-            // botonEXIT
-            // 
-            this.botonEXIT.Image = ((System.Drawing.Image)(resources.GetObject("botonEXIT.Image")));
-            this.botonEXIT.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.botonEXIT.Name = "botonEXIT";
-            this.botonEXIT.Size = new System.Drawing.Size(54, 24);
-            this.botonEXIT.Tag = "EXIT";
-            this.botonEXIT.Text = "EXIT";
-            this.botonEXIT.Click += new System.EventHandler(this.botonEXIT_Click);
             // 
             // botonEXCEL
             // 
             this.botonEXCEL.Image = ((System.Drawing.Image)(resources.GetObject("botonEXCEL.Image")));
             this.botonEXCEL.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.botonEXCEL.Name = "botonEXCEL";
-            this.botonEXCEL.Size = new System.Drawing.Size(64, 24);
-            this.botonEXCEL.Tag = "EXIT";
+            this.botonEXCEL.Size = new System.Drawing.Size(74, 24);
+            this.botonEXCEL.Tag = "EXCEL";
             this.botonEXCEL.Text = "EXCEL";
             this.botonEXCEL.Click += new System.EventHandler(this.botonEXCEL_Click);
             // 
+            // botonEXIT
+            // 
+            this.botonEXIT.Image = ((System.Drawing.Image)(resources.GetObject("botonEXIT.Image")));
+            this.botonEXIT.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.botonEXIT.Name = "botonEXIT";
+            this.botonEXIT.Size = new System.Drawing.Size(62, 24);
+            this.botonEXIT.Tag = "EXIT";
+            this.botonEXIT.Text = "EXIT";
+            this.botonEXIT.Click += new System.EventHandler(this.botonEXIT_Click);
+            // 
             // BotonesForm
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.Controls.Add(this.toolStrip1);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "BotonesForm";
-            this.Size = new System.Drawing.Size(588, 28);
+            this.Size = new System.Drawing.Size(784, 34);
             this.Load += new System.EventHandler(this.BotonesForm_Load);
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
