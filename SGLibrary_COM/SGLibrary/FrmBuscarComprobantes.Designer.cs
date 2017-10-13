@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             this.label7 = new System.Windows.Forms.Label();
-            this.cbdtConciliacion = new System.Windows.Forms.DateTimePicker();
+            this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.fechahasta = new System.Windows.Forms.DateTimePicker();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.cbtipoConciliacion = new System.Windows.Forms.ComboBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtnrCuponPosnet = new System.Windows.Forms.TextBox();
+            this.txtnrTarjeta = new System.Windows.Forms.TextBox();
+            this.cbEmpresa = new System.Windows.Forms.ComboBox();
+            this.txtnrLicencia = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtFactura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new ADGV.AdvancedDataGridView();
+            this.btnBuscar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -56,14 +57,14 @@
             this.label7.TabIndex = 9;
             this.label7.Text = "Fecha";
             // 
-            // cbdtConciliacion
+            // fechadesde
             // 
-            this.cbdtConciliacion.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cbdtConciliacion.Location = new System.Drawing.Point(11, 20);
-            this.cbdtConciliacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cbdtConciliacion.Name = "cbdtConciliacion";
-            this.cbdtConciliacion.Size = new System.Drawing.Size(85, 20);
-            this.cbdtConciliacion.TabIndex = 8;
+            this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechadesde.Location = new System.Drawing.Point(11, 20);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
+            this.fechadesde.Name = "fechadesde";
+            this.fechadesde.Size = new System.Drawing.Size(85, 20);
+            this.fechadesde.TabIndex = 8;
             // 
             // label1
             // 
@@ -75,14 +76,14 @@
             this.label1.TabIndex = 11;
             this.label1.Text = "Hasta";
             // 
-            // dateTimePicker1
+            // fechahasta
             // 
-            this.dateTimePicker1.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.dateTimePicker1.Location = new System.Drawing.Point(105, 20);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(85, 20);
-            this.dateTimePicker1.TabIndex = 10;
+            this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.fechahasta.Location = new System.Drawing.Point(105, 20);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
+            this.fechahasta.Name = "fechahasta";
+            this.fechahasta.Size = new System.Drawing.Size(85, 20);
+            this.fechahasta.TabIndex = 10;
             // 
             // label2
             // 
@@ -111,43 +112,43 @@
             this.label4.TabIndex = 14;
             this.label4.Text = "Empresa";
             // 
-            // textBox1
+            // txtnrCuponPosnet
             // 
-            this.textBox1.Location = new System.Drawing.Point(322, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(78, 20);
-            this.textBox1.TabIndex = 15;
+            this.txtnrCuponPosnet.Location = new System.Drawing.Point(322, 19);
+            this.txtnrCuponPosnet.Name = "txtnrCuponPosnet";
+            this.txtnrCuponPosnet.Size = new System.Drawing.Size(78, 20);
+            this.txtnrCuponPosnet.TabIndex = 15;
             // 
-            // textBox2
+            // txtnrTarjeta
             // 
-            this.textBox2.Location = new System.Drawing.Point(409, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(78, 20);
-            this.textBox2.TabIndex = 16;
+            this.txtnrTarjeta.Location = new System.Drawing.Point(409, 19);
+            this.txtnrTarjeta.Name = "txtnrTarjeta";
+            this.txtnrTarjeta.Size = new System.Drawing.Size(78, 20);
+            this.txtnrTarjeta.TabIndex = 16;
             // 
-            // cbtipoConciliacion
+            // cbEmpresa
             // 
-            this.cbtipoConciliacion.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbtipoConciliacion.FlatStyle = System.Windows.Forms.FlatStyle.System;
-            this.cbtipoConciliacion.FormattingEnabled = true;
-            this.cbtipoConciliacion.Items.AddRange(new object[] {
+            this.cbEmpresa.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbEmpresa.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.cbEmpresa.FormattingEnabled = true;
+            this.cbEmpresa.Items.AddRange(new object[] {
             "VISA",
             "MASTER/Maestro",
             "AMEX",
             "CABAL",
             "OTRA"});
-            this.cbtipoConciliacion.Location = new System.Drawing.Point(198, 18);
-            this.cbtipoConciliacion.Margin = new System.Windows.Forms.Padding(2);
-            this.cbtipoConciliacion.Name = "cbtipoConciliacion";
-            this.cbtipoConciliacion.Size = new System.Drawing.Size(119, 21);
-            this.cbtipoConciliacion.TabIndex = 22;
+            this.cbEmpresa.Location = new System.Drawing.Point(198, 18);
+            this.cbEmpresa.Margin = new System.Windows.Forms.Padding(2);
+            this.cbEmpresa.Name = "cbEmpresa";
+            this.cbEmpresa.Size = new System.Drawing.Size(119, 21);
+            this.cbEmpresa.TabIndex = 22;
             // 
-            // textBox3
+            // txtnrLicencia
             // 
-            this.textBox3.Location = new System.Drawing.Point(490, 20);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(44, 20);
-            this.textBox3.TabIndex = 24;
+            this.txtnrLicencia.Location = new System.Drawing.Point(490, 20);
+            this.txtnrLicencia.Name = "txtnrLicencia";
+            this.txtnrLicencia.Size = new System.Drawing.Size(44, 20);
+            this.txtnrLicencia.TabIndex = 24;
             // 
             // label5
             // 
@@ -158,12 +159,12 @@
             this.label5.TabIndex = 23;
             this.label5.Text = "Licencia";
             // 
-            // textBox4
+            // txtFactura
             // 
-            this.textBox4.Location = new System.Drawing.Point(540, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(85, 20);
-            this.textBox4.TabIndex = 26;
+            this.txtFactura.Location = new System.Drawing.Point(540, 19);
+            this.txtFactura.Name = "txtFactura";
+            this.txtFactura.Size = new System.Drawing.Size(85, 20);
+            this.txtFactura.TabIndex = 26;
             // 
             // label6
             // 
@@ -195,26 +196,37 @@
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.TimeFilter = false;
             // 
+            // btnBuscar
+            // 
+            this.btnBuscar.Location = new System.Drawing.Point(632, 16);
+            this.btnBuscar.Name = "btnBuscar";
+            this.btnBuscar.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscar.TabIndex = 28;
+            this.btnBuscar.Text = "Buscar";
+            this.btnBuscar.UseVisualStyleBackColor = true;
+            this.btnBuscar.Click += new System.EventHandler(this.btnBuscar_Click);
+            // 
             // FrmBuscarComprobantes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(754, 379);
+            this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.textBox4);
+            this.Controls.Add(this.txtFactura);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.textBox3);
+            this.Controls.Add(this.txtnrLicencia);
             this.Controls.Add(this.label5);
-            this.Controls.Add(this.cbtipoConciliacion);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.cbEmpresa);
+            this.Controls.Add(this.txtnrTarjeta);
+            this.Controls.Add(this.txtnrCuponPosnet);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.dateTimePicker1);
+            this.Controls.Add(this.fechahasta);
             this.Controls.Add(this.label7);
-            this.Controls.Add(this.cbdtConciliacion);
+            this.Controls.Add(this.fechadesde);
             this.Name = "FrmBuscarComprobantes";
             this.Text = "FrmBuscarComprobantes";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -226,19 +238,20 @@
         #endregion
 
         private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.DateTimePicker cbdtConciliacion;
+        private System.Windows.Forms.DateTimePicker fechadesde;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.DateTimePicker fechahasta;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.ComboBox cbtipoConciliacion;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtnrCuponPosnet;
+        private System.Windows.Forms.TextBox txtnrTarjeta;
+        private System.Windows.Forms.ComboBox cbEmpresa;
+        private System.Windows.Forms.TextBox txtnrLicencia;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtFactura;
         private System.Windows.Forms.Label label6;
         private ADGV.AdvancedDataGridView dataGridView1;
+        private System.Windows.Forms.Button btnBuscar;
     }
 }

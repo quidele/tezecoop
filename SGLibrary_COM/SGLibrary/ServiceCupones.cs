@@ -92,8 +92,8 @@ namespace SGLibrary
         } // CIERRA GrabarCupon
 
 
-        public IEnumerable<Object> obtenerViajes(DateTime pfechadesde, DateTime pfechaHasta, String pEmpresa,
-                                                 String pnrCuponPosnet, String  pnrTajeta , int pnrLicencia,
+        public IEnumerable<Object> BuscarViajes(DateTime pfechadesde, DateTime pfechaHasta, String pEmpresa,
+                                                 String pnrCuponPosnet, String  pnrTajeta , String pnrLicencia,
                                                  String Factura )
         {
             
@@ -101,7 +101,8 @@ namespace SGLibrary
             String comprobante="";
             String pdv = substrings[0];
             if (substrings.Count() == 2) { comprobante = substrings[1]; }
-
+            int nrLicencia =int.Parse (pnrLicencia); 
+ 
             using (var context = new dbSG2000Entities())
             {
                 // Falta agregar filtro de fechas
@@ -110,12 +111,26 @@ namespace SGLibrary
                                                       && c.dtCupon <= pfechaHasta
                                                       && c.nmEmpresaTarjeta == pEmpresa
                                                       && c.nrTarjeta == pnrTajeta
-                                                      && c.nrLicencia == pnrLicencia
+                                                      && c.nrLicencia == nrLicencia
+                                                      && c.nrComprabanteCliente.Contains(pdv)
+                                                      && c.nrComprabanteCliente.Contains(comprobante)
+                                                      && c.nrCuponPosnet.Contains(pnrCuponPosnet)
                                                 //&& (c.nm == usuario || usuario.Trim().Length == 0)
                                                 orderby c.IdConciliacion descending  // ordenamos desde mas reciente a mas vieja
                                                 select new
                                                 {
-                                                    ID = c.nrCupon 
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    LICENCIA = c.nrLicencia,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    COMPENSADO = c.flCompensado,
+                                                    CONCILIACION = c.IdConciliacion, 
+                                                    EMPRESA = c.nmEmpresaTarjeta, 
+                                                    NRO_TARJETA =c.nrTarjeta,
+                                                    CUPON = c.nrCuponPosnet
                                                 });
                 return listadeViajes.ToList();
                 //return listadeViajesaConciliar.ToList();
