@@ -50,7 +50,7 @@
             // label7
             // 
             this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(11, 5);
+            this.label7.Location = new System.Drawing.Point(11, 4);
             this.label7.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(37, 13);
@@ -60,16 +60,17 @@
             // fechadesde
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechadesde.Location = new System.Drawing.Point(11, 20);
+            this.fechadesde.Location = new System.Drawing.Point(11, 21);
             this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 8;
+            this.fechadesde.ValueChanged += new System.EventHandler(this.fechadesde_ValueChanged);
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(102, 5);
+            this.label1.Location = new System.Drawing.Point(102, 4);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(35, 13);
@@ -79,11 +80,12 @@
             // fechahasta
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechahasta.Location = new System.Drawing.Point(105, 20);
+            this.fechahasta.Location = new System.Drawing.Point(105, 21);
             this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(85, 20);
             this.fechahasta.TabIndex = 10;
+            this.fechahasta.ValueChanged += new System.EventHandler(this.fechahasta_ValueChanged);
             // 
             // label2
             // 
@@ -114,17 +116,19 @@
             // 
             // txtnrCuponPosnet
             // 
-            this.txtnrCuponPosnet.Location = new System.Drawing.Point(322, 19);
+            this.txtnrCuponPosnet.Location = new System.Drawing.Point(322, 20);
             this.txtnrCuponPosnet.Name = "txtnrCuponPosnet";
             this.txtnrCuponPosnet.Size = new System.Drawing.Size(78, 20);
             this.txtnrCuponPosnet.TabIndex = 15;
+            this.txtnrCuponPosnet.TextChanged += new System.EventHandler(this.txtnrCuponPosnet_TextChanged);
             // 
             // txtnrTarjeta
             // 
-            this.txtnrTarjeta.Location = new System.Drawing.Point(409, 19);
+            this.txtnrTarjeta.Location = new System.Drawing.Point(409, 20);
             this.txtnrTarjeta.Name = "txtnrTarjeta";
             this.txtnrTarjeta.Size = new System.Drawing.Size(78, 20);
             this.txtnrTarjeta.TabIndex = 16;
+            this.txtnrTarjeta.TextChanged += new System.EventHandler(this.txtnrTarjeta_TextChanged);
             // 
             // cbEmpresa
             // 
@@ -137,23 +141,25 @@
             "AMEX",
             "CABAL",
             "OTRA"});
-            this.cbEmpresa.Location = new System.Drawing.Point(198, 18);
+            this.cbEmpresa.Location = new System.Drawing.Point(198, 19);
             this.cbEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(119, 21);
             this.cbEmpresa.TabIndex = 22;
+            this.cbEmpresa.SelectedIndexChanged += new System.EventHandler(this.cbEmpresa_SelectedIndexChanged);
             // 
             // txtnrLicencia
             // 
-            this.txtnrLicencia.Location = new System.Drawing.Point(490, 20);
+            this.txtnrLicencia.Location = new System.Drawing.Point(490, 21);
             this.txtnrLicencia.Name = "txtnrLicencia";
             this.txtnrLicencia.Size = new System.Drawing.Size(44, 20);
             this.txtnrLicencia.TabIndex = 24;
+            this.txtnrLicencia.TextChanged += new System.EventHandler(this.txtnrLicencia_TextChanged);
             // 
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(487, 5);
+            this.label5.Location = new System.Drawing.Point(487, 4);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(47, 13);
             this.label5.TabIndex = 23;
@@ -161,10 +167,11 @@
             // 
             // txtFactura
             // 
-            this.txtFactura.Location = new System.Drawing.Point(540, 19);
+            this.txtFactura.Location = new System.Drawing.Point(540, 20);
             this.txtFactura.Name = "txtFactura";
             this.txtFactura.Size = new System.Drawing.Size(85, 20);
             this.txtFactura.TabIndex = 26;
+            this.txtFactura.TextChanged += new System.EventHandler(this.txtFactura_TextChanged);
             // 
             // label6
             // 
@@ -198,7 +205,7 @@
             // 
             // btnBuscar
             // 
-            this.btnBuscar.Location = new System.Drawing.Point(632, 16);
+            this.btnBuscar.Location = new System.Drawing.Point(632, 17);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(75, 23);
             this.btnBuscar.TabIndex = 28;

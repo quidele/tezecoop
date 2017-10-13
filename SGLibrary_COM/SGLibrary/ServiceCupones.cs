@@ -101,7 +101,10 @@ namespace SGLibrary
             String comprobante="";
             String pdv = substrings[0];
             if (substrings.Count() == 2) { comprobante = substrings[1]; }
-            int nrLicencia =int.Parse (pnrLicencia); 
+            int nrLicencia = 0;
+            if (pnrLicencia.Trim().Length> 0)
+                nrLicencia =int.Parse (pnrLicencia); 
+
  
             using (var context = new dbSG2000Entities())
             {
@@ -109,9 +112,9 @@ namespace SGLibrary
                 var listadeViajes = (from c in context.TB_Cupones 
                                                 where c.dtCupon  >= pfechadesde
                                                       && c.dtCupon <= pfechaHasta
-                                                      && c.nmEmpresaTarjeta == pEmpresa
-                                                      && c.nrTarjeta == pnrTajeta
-                                                      && c.nrLicencia == nrLicencia
+                                                      && (c.nmEmpresaTarjeta.Contains (pEmpresa) ||  pEmpresa == "" || c.nmEmpresaTarjeta == null) 
+                                                      && c.nrTarjeta.Contains (pnrTajeta)
+                                                      && (c.nrLicencia == nrLicencia || nrLicencia == 0 )
                                                       && c.nrComprabanteCliente.Contains(pdv)
                                                       && c.nrComprabanteCliente.Contains(comprobante)
                                                       && c.nrCuponPosnet.Contains(pnrCuponPosnet)
@@ -132,6 +135,8 @@ namespace SGLibrary
                                                     NRO_TARJETA =c.nrTarjeta,
                                                     CUPON = c.nrCuponPosnet
                                                 });
+
+                if (listadeViajes == null) return null;
                 return listadeViajes.ToList();
                 //return listadeViajesaConciliar.ToList();
             }

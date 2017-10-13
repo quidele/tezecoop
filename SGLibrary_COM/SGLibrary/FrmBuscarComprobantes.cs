@@ -19,6 +19,15 @@ namespace SGLibrary
 
         private void btnBuscar_Click(object sender, EventArgs e)
         {
+
+            var txtBuscar = this.txtnrCuponPosnet.Text.Trim() + this.txtnrTarjeta.Text.Trim() + this.txtnrLicencia.Text.Trim() + this.txtFactura.Text.Trim();
+            if (txtBuscar.Trim().Length == 0)
+            {
+                MessageBox.Show(this, "Debe ingresar algún campo de búsqueda", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.txtnrCuponPosnet.Focus();
+                return;
+            }
+
             ServiceCupones miServiceCupones = new ServiceCupones ();
             var listaViajes = miServiceCupones.BuscarViajes(this.fechadesde.Value, this.fechahasta.Value, this.cbEmpresa.Text,
                                           this.txtnrCuponPosnet.Text, this.txtnrTarjeta.Text, this.txtnrLicencia.Text , this.txtFactura.Text );
@@ -71,6 +80,41 @@ namespace SGLibrary
                 item.HeaderText = item.HeaderText.Replace("_", " ");
             }
 
+
+        }
+
+        private void txtFactura_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnrLicencia_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnrTarjeta_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnrCuponPosnet_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEmpresa_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fechahasta_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fechadesde_ValueChanged(object sender, EventArgs e)
+        {
 
         }
     }

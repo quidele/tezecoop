@@ -229,7 +229,7 @@ namespace SGLibrary
             worksheet = workbook.Sheets[1];
             worksheet = workbook.ActiveSheet;
             // changing the name of active sheet  
-            worksheet.Name = "Exported from gridview";
+            worksheet.Name = "Hoja1";
             // storing header part in Excel  
             for (int i = 1; i < dataGridView1.Columns.Count + 1; i++)
             {

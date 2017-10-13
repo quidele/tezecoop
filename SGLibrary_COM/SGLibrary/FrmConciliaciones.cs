@@ -90,8 +90,7 @@ namespace SGLibrary
                     
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
-                    
-              
+
                     foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                     {
                         this.modoEdicion.Text = "SI";
@@ -275,9 +274,7 @@ namespace SGLibrary
         public void exportaraExcel()
         {
             // Deshabilitamos el Evento que realizar el formateo
-            dataGridView1.CellFormatting -=
-            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-            this.dataGridView1_CellFormatting);
+            
 
             String nombreArchivo;
             OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
@@ -293,14 +290,24 @@ namespace SGLibrary
                 /* MessageBox.Show ( openFileDialog1.FileName); */
                 nombreArchivo = openFileDialog1.FileName;
                 ServiceExcel miServiceExcel = new ServiceExcel();
-                miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
+                if (this.panelcarga.Visible)
+                {
+                    dataGridView1.CellFormatting -=
+                        new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                        this.dataGridView1_CellFormatting);
+                    miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
+                    // Habilitamos el Evento que realizar el formateo
+                    dataGridView1.CellFormatting +=
+                    new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                    this.dataGridView1_CellFormatting);
+                }
+                else
+                    miServiceExcel.ExportarAExcel(this.dataGridView2, nombreArchivo);
+                
                 MessageBox.Show("El archivo se ha generado con exito", "Exportar", MessageBoxButtons.OK);
             }
 
-            // Habilitamos el Evento que realizar el formateo
-            dataGridView1.CellFormatting +=
-            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-            this.dataGridView1_CellFormatting);
+            
 
         }
 
