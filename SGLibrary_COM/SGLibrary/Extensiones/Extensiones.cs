@@ -109,14 +109,16 @@ namespace SGLibrary.Extensiones
             {
                 t1 = item.GetType();
                 pi = t1.GetProperties();
-
                 DataRow row = t.NewRow();
 
                 row["Nº"] = i.ToString(); 
 
                 foreach (PropertyInfo p in pi)
                 {
-                    Console.WriteLine("DATO1: " + p.Name + " "  +  p.GetValue(item, null).ToString());
+                    var dato = p.GetValue(item, null);
+                    if (dato!=null)
+                        Console.WriteLine("DATO1: " + p.Name + " "  +  p.GetValue(item, null).ToString());
+                    
                     Console.WriteLine("DATO2: " + p.PropertyType.Name);
                     Console.WriteLine("EULISES.................." + i.ToString());
 
@@ -124,19 +126,10 @@ namespace SGLibrary.Extensiones
                     {
                         Console.WriteLine("para : " );
                     }
-                    switch (p.PropertyType.Name)
+                    if ((dato != null) && dato.ToString()!="")
                     {
-                        case "Nullable`1":
-                            row[p.Name] = p.GetValue(item, null);
-                            break;
-                        default:
-                            if (p.GetValue(item, null).ToString() != "")
-                            {
-                                row[p.Name] = p.GetValue(item, null); 
-                            }                                
-                            break;
+                        row[p.Name] = dato;    
                     }
-                   
                 }
                 t.Rows.Add(row);
                 i++;

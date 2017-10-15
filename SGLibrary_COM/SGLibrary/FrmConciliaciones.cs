@@ -280,7 +280,7 @@ namespace SGLibrary
             OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             openFileDialog1.Title = "Excel Spreadsheet";
             openFileDialog1.FileName = "";
-            openFileDialog1.DefaultExt = ".xls";
+            openFileDialog1.DefaultExt = ".xlsx";
             openFileDialog1.AddExtension = true;
             openFileDialog1.Filter = "Excel Worksheets|*.xls; *.xlsx";
             openFileDialog1.CheckFileExists = false;
@@ -289,22 +289,24 @@ namespace SGLibrary
             {
                 /* MessageBox.Show ( openFileDialog1.FileName); */
                 nombreArchivo = openFileDialog1.FileName;
+                nombreArchivo = (nombreArchivo + "x").Replace(".xlsxx", ".xlsx");
                 ServiceExcel miServiceExcel = new ServiceExcel();
                 if (this.panelcarga.Visible)
                 {
                     dataGridView1.CellFormatting -=
                         new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                        this.dataGridView1_CellFormatting);
+                        this.dataGridView1_CellFormatting);  
                     miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
                     // Habilitamos el Evento que realizar el formateo
                     dataGridView1.CellFormatting +=
                     new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                    this.dataGridView1_CellFormatting);
+                    this.dataGridView1_CellFormatting); 
                 }
                 else
                     miServiceExcel.ExportarAExcel(this.dataGridView2, nombreArchivo);
-                
-                MessageBox.Show("El archivo se ha generado con exito", "Exportar", MessageBoxButtons.OK);
+
+                MessageBox.Show(this, "El archivo se ha generado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+          
             }
 
             
@@ -723,65 +725,10 @@ namespace SGLibrary
                    item.HeaderText = item.HeaderText.Replace("_", " ");
             }
             dgv.DataSource = p_BindingSource;
-
-
-            /*
-            
-            var i=0;
-            foreach (object item in lista)
-            {
-                this.progressBar1.BringToFront();
-                dgv.Refresh();
-                //System.Threading.Thread.Sleep(10);
-                Application.DoEvents();
-        
-                this.progressBar1.Increment(i++);
-                var row = dgv.Rows.Add();
-
-                dgv.Rows[row].HeaderCell.Value  = i.ToString();
-
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-                foreach (PropertyInfo p in pi)
-                {
-                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
-                }
-
-                if (p_modoEdicion == "SI")
-                {
-                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
-                }
-
-                switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
-                {
-                    case "-1": dgv.Rows[row].Cells["CONCILIAR"].Value = false;
-                               dgv.Rows[row].ReadOnly = true;
-                               dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
-                               dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
-                               break;
-                    case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
-                              dgv.Rows[row].DefaultCellStyle.ForeColor = Color.White;
-                              dgv.Rows[row].Cells["CONCILIAR"].Value = true;
-                        break;
-                    case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
-                    case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
-                    case "4": dgv.Rows[row].DefaultCellStyle.BackColor = Color.OrangeRed; break;
-                    default: 
-                              dgv.Rows[row].Cells["CONCILIAR"].Value = false;
-                              dgv.Rows[row].ReadOnly = true;
-                              dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
-                              dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
-                 break;
-	            }
-
-                dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value .ToString().Remove(10);
-       
-            }  // cierra el foreach
-             */
-
-
             dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+
+
+
             }
             catch (Exception ex)
             {
@@ -948,9 +895,8 @@ namespace SGLibrary
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
 
-            this.dataSet1.Clear();
-            this.bindingSource1.Clear();
-            this.dataGridView1.Rows.Clear();
+            this.dataGridView1.DataSource = "";
+            this.lblDgv1Registros.Text = "Registros: " + this.dataGridView1.Rows.Count;
 
             switch (cbtipoConciliacion.Text )
             {
@@ -973,6 +919,9 @@ namespace SGLibrary
                     this.btnSelecccionarArchivoTarjeta.PerformClick();
                     break;
             }
+
+
+            this.lblDgv1Registros.Text = "Registros: " + this.dataGridView1.Rows.Count;
         }
 
 
@@ -1074,14 +1023,36 @@ namespace SGLibrary
 
         private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
         {
+
+            dataGridView1.CellFormatting -=
+                        new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                        this.dataGridView1_CellFormatting);
+
             this.bindingSource1.Filter = this.dataGridView1.FilterString;
             this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString(); 
+
+            // Habilitamos el Evento que realizar el formateo
+            dataGridView1.CellFormatting +=
+            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+            this.dataGridView1_CellFormatting); 
+
+          
 
         }
 
         private void dataGridView1_SortStringChanged(object sender, EventArgs e)
         {
+            dataGridView1.CellFormatting -=
+                 new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                 this.dataGridView1_CellFormatting);
+
             this.bindingSource1.Sort = this.dataGridView1.SortString;
+
+            // Habilitamos el Evento que realizar el formateo
+            dataGridView1.CellFormatting +=
+            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+            this.dataGridView1_CellFormatting); 
+
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -1089,5 +1060,9 @@ namespace SGLibrary
             FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes();
             miFrmBuscarComprobantes.Show ();
         }
+
+
+
+   
     }
 }

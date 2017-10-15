@@ -112,7 +112,7 @@ namespace SGLibrary
                 var listadeViajes = (from c in context.TB_Cupones 
                                                 where c.dtCupon  >= pfechadesde
                                                       && c.dtCupon <= pfechaHasta
-                                                      && (c.nmEmpresaTarjeta.Contains (pEmpresa) ||  pEmpresa == "" || c.nmEmpresaTarjeta == null) 
+                                                      && c.nmEmpresaTarjeta.Contains (pEmpresa)  
                                                       && c.nrTarjeta.Contains (pnrTajeta)
                                                       && (c.nrLicencia == nrLicencia || nrLicencia == 0 )
                                                       && c.nrComprabanteCliente.Contains(pdv)
@@ -129,11 +129,13 @@ namespace SGLibrary
                                                     LETRA = c.tpLetraCliente,
                                                     PDV = c.nrTalonarioCliente,
                                                     NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon,
                                                     COMPENSADO = c.flCompensado,
                                                     CONCILIACION = c.IdConciliacion, 
                                                     EMPRESA = c.nmEmpresaTarjeta, 
-                                                    NRO_TARJETA =c.nrTarjeta,
-                                                    CUPON = c.nrCuponPosnet
+                                                    TARJETA =c.nrTarjeta,
+                                                    CUPON = c.nrCuponPosnet,
+                                                    FECHA_PAGO = c.dtCobradoalCliente
                                                 });
 
                 if (listadeViajes == null) return null;

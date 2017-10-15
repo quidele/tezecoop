@@ -223,7 +223,7 @@ namespace SGLibrary
             // creating new Excelsheet in workbook  
             Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
             // see the excel sheet behind the program  
-            app.Visible = true;
+            app.Visible = false;
             // get the reference of first sheet. By default its name is Sheet1.  
             // store its reference to worksheet  
             worksheet = workbook.Sheets[1];
