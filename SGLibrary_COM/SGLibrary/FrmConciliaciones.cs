@@ -633,6 +633,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("NRO", "System.String");
             lista_campo_tipo.Add("MONTO", "System.Double");
             lista_campo_tipo.Add("MONTO_ARCHI", "System.Double");
+            lista_campo_tipo.Add("EMPRESA", "System.String");
             lista_campo_tipo.Add("TARJETA", "System.String");
             lista_campo_tipo.Add("TARJETA_ARCHI", "System.String");
             lista_campo_tipo.Add("CUPON", "System.String");
@@ -942,7 +943,7 @@ namespace SGLibrary
             {
                 case "Amca Amex": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaAmex(), cbtipoConciliacion.Text); break;
                 case "Amca Visa": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaVisa(), cbtipoConciliacion.Text); break;
-                case "Amca Master": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaVisa(), cbtipoConciliacion.Text); break;
+                case "Amca Master": miArchivo = new ArchivoTarjetaAMCA(new ArchivoTarjetaMaster(), cbtipoConciliacion.Text); break;
                 case "Visa":
                     miArchivo = new ArchivoTarjetaVisa();
                     break;

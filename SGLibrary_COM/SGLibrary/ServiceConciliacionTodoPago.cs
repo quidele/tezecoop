@@ -315,6 +315,7 @@ namespace SGLibrary
                                                     PDV = c.nrTalonarioCliente,
                                                     NRO = c.nrComprabanteCliente,
                                                     MONTO = c.vlMontoCupon,
+                                                    EMPRESA = c.nmEmpresaTarjeta, 
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,
                                                     DOCU_NRO = c.nrDocTarjeta,

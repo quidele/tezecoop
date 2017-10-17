@@ -53,7 +53,7 @@ namespace SGLibrary.ArchivoTarjetas
                 if  (item.IndexOf(';') > 0)   separador = ';';
 
                 string[] columnas= item.Split(separador);
-                if ((columnas.Count() == Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
+                if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
                 {
                     TB_ArchivoTarjetaDetalle unTB_ArchivoTarjetaDetalle = new TB_ArchivoTarjetaDetalle();
                     for (int i = 0; i < columnas.Count(); i++)

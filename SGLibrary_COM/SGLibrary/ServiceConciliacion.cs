@@ -484,6 +484,7 @@ namespace SGLibrary
                                                     LETRA = c.tpLetraCliente,
                                                     PDV = c.nrTalonarioCliente,
                                                     NRO = c.nrComprabanteCliente,
+                                                    EMPRESA = c.nmEmpresaTarjeta, 
                                                     MONTO = c.vlMontoCupon,
                                                     TARJETA = c.nrTarjeta,
                                                     DOCU = c.tpDocTarjeta,

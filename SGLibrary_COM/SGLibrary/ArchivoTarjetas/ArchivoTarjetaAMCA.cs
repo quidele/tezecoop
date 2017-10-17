@@ -28,7 +28,9 @@ namespace SGLibrary.ArchivoTarjetas
 
         public override void  AbrirArchivo(string pNombreArchivo, string pUsuario)
         {
-            this._archivoTarjeta.AbrirArchivo(pNombreArchivo, pUsuario ); 
+            this._archivoTarjeta.AbrirArchivo(pNombreArchivo, pUsuario );
+            this._archivoTarjeta.miArchivoTarjeta.formato = this._formato;
+            base.miArchivoTarjeta = this._archivoTarjeta.miArchivoTarjeta;
         }
 
 
@@ -37,6 +39,7 @@ namespace SGLibrary.ArchivoTarjetas
 
             this._archivoTarjeta.ProcesarArchivo();
             this._archivoTarjeta.miArchivoTarjeta.formato = this._formato; 
+            
 
             //throw new System.InvalidOperationException("Debe implementar este metodo clase ArchivoTarjeta");    
         }
