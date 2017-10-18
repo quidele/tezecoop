@@ -45,40 +45,50 @@ namespace SGLibrary.ArchivoTarjetas
         public  override void ProcesarArchivo()
         {
             char separador ='\0';
+            int posi = 1; 
 
             foreach (var item in this.Contenido)
             {
 
-                if  (item.IndexOf(',') > 0)   separador = ',';
-                if  (item.IndexOf(';') > 0)   separador = ';';
+                try{
 
-                string[] columnas= item.Split(separador);
-                if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
-                {
-                    TB_ArchivoTarjetaDetalle unTB_ArchivoTarjetaDetalle = new TB_ArchivoTarjetaDetalle();
-                    for (int i = 0; i < columnas.Count(); i++)
+                    if  (item.IndexOf(',') > 0)   separador = ',';
+                    if  (item.IndexOf(';') > 0)   separador = ';';
+
+                    string[] columnas= item.Split(separador);
+                    if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
                     {
-                        switch (i)
+                        TB_ArchivoTarjetaDetalle unTB_ArchivoTarjetaDetalle = new TB_ArchivoTarjetaDetalle();
+                        for (int i = 0; i < columnas.Count(); i++)
                         {
-                            case 0: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]).Date; break; // Fecha Presentacion
-                            case 1: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100; break; // Importe
-                            case 2: unTB_ArchivoTarjetaDetalle.comprobante = columnas[i]; break; // Comprobante
-                            case 3: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Replace('X', ' ').Trim(); break;  // Tarjeta
-                            case 5: break;
-                            case 6: break;
-                            case 7: break; 
-                            case 8: break;
-                            case 9: break;  
-                            case 10:  break;  
-                            default:
-                                break;
+                            switch (i)
+                            {
+                                case 0: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]).Date; break; // Fecha Presentacion
+                                case 1: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100; break; // Importe
+                                case 2: unTB_ArchivoTarjetaDetalle.comprobante = columnas[i]; break; // Comprobante
+                                case 3: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Replace('X', ' ').Trim(); break;  // Tarjeta
+                                case 5: break;
+                                case 6: break;
+                                case 7: break; 
+                                case 8: break;
+                                case 9: break;  
+                                case 10:  break;  
+                                default:
+                                    break;
+                            }
                         }
-                    }
-                    unTB_ArchivoTarjetaDetalle.contenido = item;
-                   this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
-                }
+                        unTB_ArchivoTarjetaDetalle.contenido = item;
+                       this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
+                    } // Cierra el IF
               
-            }
+                }
+                catch (Exception)
+                {
+                    Trace.TraceInformation("Linea" + posi.ToString() + " - No procesada, Contenido: " + item.ToString());
+                }
+                posi++;
+
+            } //cierra el for
 
             this.miArchivoTarjeta.formato = "Amex";
 
