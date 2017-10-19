@@ -59,6 +59,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Form1.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmBuscarComprobantes.resources

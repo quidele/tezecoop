@@ -11,6 +11,7 @@ using System.Reflection;
 using SGLibrary.ArchivoTarjetas;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using SGLibrary.Exceptions;
 
 namespace SGLibrary
 {
@@ -274,6 +275,10 @@ namespace SGLibrary
         public void exportaraExcel()
         {
             // Deshabilitamos el Evento que realizar el formateo
+
+            try
+            {
+
             
 
             String nombreArchivo;
@@ -309,7 +314,11 @@ namespace SGLibrary
           
             }
 
-            
+            }
+            catch (ExcelAppException e)
+            {
+                MessageBox.Show( e.Message ,"Atención" , MessageBoxButtons.OK, MessageBoxIcon.Warning  );
+            }
 
         }
 
@@ -527,6 +536,111 @@ namespace SGLibrary
 
 
         }
+
+
+        public void cargarDataGridViewCupones_ADGV(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion, DataSet p_DataSet, BindingSource p_BindingSource)
+        {
+            Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
+            lista_campo_tipo.Add("Nº", "System.Decimal");
+            lista_campo_tipo.Add("ID", "System.Decimal");
+            lista_campo_tipo.Add("FECHA", "System.DateTime");
+            lista_campo_tipo.Add("LICENCIA", "System.Int32");
+            lista_campo_tipo.Add("DOC", "System.String");
+            lista_campo_tipo.Add("LETRA", "System.String");
+            lista_campo_tipo.Add("PDV", "System.String");
+            lista_campo_tipo.Add("NRO", "System.String");
+            lista_campo_tipo.Add("MONTO", "System.Double");
+            lista_campo_tipo.Add("EMPRESA", "System.String");
+            lista_campo_tipo.Add("TARJETA", "System.String");
+            lista_campo_tipo.Add("DOCU", "System.String");
+            lista_campo_tipo.Add("DOCU_NRO", "System.String");
+            lista_campo_tipo.Add("CUPON", "System.String");
+            lista_campo_tipo.Add("CONCILIAR", "System.Boolean");
+            lista_campo_tipo.Add("FECHA_ACREDITACION", "System.DateTime");
+
+            // A la lista la transfiere al DATASET
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista, lista_campo_tipo);
+            //Al binding source le configuramos el dataset
+            p_BindingSource.DataSource = p_DataSet;
+            // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
+            p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
+
+            
+            //dgv.Rows.Clear();
+            dgv.Columns.Clear();
+            dgv.AutoGenerateColumns = false;
+
+            foreach (var item in lista)
+            {
+
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+
+                DataGridViewColumn columna1 = new DataGridViewColumn();
+                DataGridViewCell cell1 = new DataGridViewTextBoxCell();
+                columna1.CellTemplate = cell1;
+                columna1.Name = "Nº";
+                columna1.HeaderText = "Nº";
+                columna1.ReadOnly = true;
+                columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                dgv.Columns.Add(columna1);
+                columna1.DataPropertyName = "Nº";  
+
+                foreach (PropertyInfo p in pi)
+                {
+
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = p.Name;
+                    columna.HeaderText = p.Name;
+                    columna.ReadOnly = true;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                }
+                break;
+            }
+
+            DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+            doWork.Name = "CONCILIAR";
+            doWork.HeaderText = "CONCILIAR";
+            doWork.FalseValue = "0";
+            doWork.TrueValue = "1";
+
+            dgv.Columns.Add(doWork);
+
+            if (p_modoEdicion != "SI")
+            {
+                CalendarColumn doWork1 = new CalendarColumn();
+                doWork1.Name = "FECHA_ACREDITACION";
+                doWork1.HeaderText = "FECHA DE ACREDITACION";
+                doWork1.DefaultCellStyle.Format = "d";
+                dgv.Columns.Add(doWork1);
+            }
+
+
+            foreach (object item in lista)
+            {
+                var row = dgv.Rows.Add();
+                Type t = item.GetType();
+                PropertyInfo[] pi = t.GetProperties();
+                foreach (PropertyInfo p in pi)
+                {
+                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
+                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+                }
+
+                if (p_modoEdicion == "SI")
+                {
+                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
+                    dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                }
+
+            }
+
+
+        }
+
 
         public void cargarDataGridViewCuponesTodoPago(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
         {

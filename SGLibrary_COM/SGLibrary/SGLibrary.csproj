@@ -121,6 +121,7 @@
     <Compile Include="EXCELNuke\Workbooks.cs" />
     <Compile Include="EXCELNuke\Worksheet.cs" />
     <Compile Include="Exceptions\DAOEntityException.cs" />
+    <Compile Include="Exceptions\ExcelAppException.cs" />
     <Compile Include="Extensiones\CalendarColumn.cs">
       <SubType>Component</SubType>
     </Compile>
