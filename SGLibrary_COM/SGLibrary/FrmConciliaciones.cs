@@ -51,6 +51,9 @@ namespace SGLibrary
             this.fechadesde.Value = DateTime.Now.AddDays(-30).Date;
             this.fechahasta.Value = DateTime.Now.Date;
             this.botonesForm1.InicializarFindBoton();
+
+            this.lblDgv1Registros.Text = "Registros: 0";
+
         }
 
 
@@ -623,7 +626,8 @@ namespace SGLibrary
 
                     foreach (PropertyInfo p in pi)
                     {
-
+                        if (p.Name.CompareTo("CONCILIAR") == 0) continue;
+                        if (p.Name.CompareTo("FECHA_ACREDITACION") == 0) continue;
                         DataGridViewColumn columna = new DataGridViewColumn();
                         DataGridViewCell cell = new DataGridViewTextBoxCell();
                         columna.CellTemplate = cell;
@@ -640,8 +644,8 @@ namespace SGLibrary
                 DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
                 doWork.Name = "CONCILIAR";
                 doWork.HeaderText = "CONCILIAR";
-                doWork.FalseValue = "0";
-                doWork.TrueValue = "1";
+                doWork.FalseValue = false;
+                doWork.TrueValue = true;
                 doWork.DataPropertyName = "CONCILIAR";
                 dgv.Columns.Add(doWork);
 
@@ -1320,34 +1324,21 @@ namespace SGLibrary
         private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
         {
 
-            dataGridView1.CellFormatting -=
-                        new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                        this.dataGridView1_CellFormatting);
-
+            deshabilitarDGV1_Handlers();
             this.bindingSource1.Filter = this.dataGridView1.FilterString;
-            this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString(); 
-
+            this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
             // Habilitamos el Evento que realizar el formateo
-            dataGridView1.CellFormatting +=
-            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-            this.dataGridView1_CellFormatting); 
-
+            habilitarDGV1_Handlers();
           
 
         }
 
         private void dataGridView1_SortStringChanged(object sender, EventArgs e)
         {
-            dataGridView1.CellFormatting -=
-                 new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                 this.dataGridView1_CellFormatting);
-
+            deshabilitarDGV1_Handlers();
             this.bindingSource1.Sort = this.dataGridView1.SortString;
-
             // Habilitamos el Evento que realizar el formateo
-            dataGridView1.CellFormatting +=
-            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-            this.dataGridView1_CellFormatting); 
+            habilitarDGV1_Handlers();
 
         }
 
@@ -1358,6 +1349,53 @@ namespace SGLibrary
         }
 
 
+
+        private void deshabilitarDGV1_Handlers()
+        {
+
+            if (this.txtFormato.Text == "")
+                this.txtFormato.Text = this.cbtipoConciliacion.Text ;
+
+            switch (this.txtFormato.Text)
+            {
+                case "Manual":
+                    dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                                this.dataGridView1_ConciliacionManual_CellFormatting);
+                    break;
+                case "Todo Pago":
+                    dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                                this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
+                    break;
+                default:
+                    dataGridView1.CellFormatting -=
+                    new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                    this.dataGridView1_CellFormatting);
+                    break;
+            }
+        
+        }
+
+        private void habilitarDGV1_Handlers()
+        {
+
+            switch (this.txtFormato.Text)
+            {
+                case "Manual":
+                    dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                                this.dataGridView1_ConciliacionManual_CellFormatting);
+                    break;
+                case "Todo Pago":
+                    dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                                this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
+                    break;
+                default:
+                    dataGridView1.CellFormatting +=
+                    new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
+                    this.dataGridView1_CellFormatting);
+                    break;
+            }
+
+        }
 
    
     }

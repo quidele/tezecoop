@@ -318,7 +318,43 @@ namespace SGLibrary
 
 
         }  // FIN anularConciliacionAutomatica
-       
+
+
+
+        public virtual IEnumerable<Object> ObtenerViajesaConciliar()
+        {
+
+            using (var context = new dbSG2000Entities())
+            {
+                var listadeViajesaConciliar1 = (from c in context.TB_Cupones
+                                                where (c.flCobradoalCliente == false) && (c.flCompensado == false)
+                                                && (c.flAnulado == false)
+                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito" }.Contains(c.tpCupon))
+                                                select new
+                                                {
+                                                    ID = c.nrCupon,
+                                                    FECHA = c.dtCupon,
+                                                    LICENCIA = c.nrLicencia,
+                                                    DOC = c.tpComprobanteCliente,
+                                                    LETRA = c.tpLetraCliente,
+                                                    PDV = c.nrTalonarioCliente,
+                                                    NRO = c.nrComprabanteCliente,
+                                                    MONTO = c.vlMontoCupon,
+                                                    TARJETA = c.nrTarjeta,
+                                                    DOCU = c.tpDocTarjeta,
+                                                    DOCU_NRO = c.nrDocTarjeta,
+                                                    CUPON = c.nrCuponPosnet
+                                                }).OrderBy(c => c.FECHA);
+
+                // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 
+                Trace.TraceInformation(listadeViajesaConciliar1.ToString());
+                return listadeViajesaConciliar1.ToList();
+                //return listadeViajesaConciliar.ToList();
+
+            }
+
+
+        }
 
     } // fin de la clase
 } // fin del namespace

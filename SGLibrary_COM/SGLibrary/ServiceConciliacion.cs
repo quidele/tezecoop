@@ -92,7 +92,8 @@ namespace SGLibrary
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
                                                              TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
                                                              DOCU_NRO = c.nrDocTarjeta,
-                                                             CUPON = c.nrCuponPosnet
+                                                             CUPON = c.nrCuponPosnet,
+                                                             CONCILIAR = false  // Agregado para ADGV 
                                                 }).OrderBy(c =>  c.FECHA );
 
                 // 'nrDocTarjeta' , 'nrTarjeta' , 'tpDocTarjeta' 

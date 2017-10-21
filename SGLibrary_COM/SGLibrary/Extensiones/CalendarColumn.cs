@@ -45,10 +45,30 @@ namespace SGLibrary.Extensiones
         public override void InitializeEditingControl(int rowIndex, object
             initialFormattedValue, DataGridViewCellStyle dataGridViewCellStyle)
         {
+
             // Set the value of the editing control to the current cell value.
             base.InitializeEditingControl(rowIndex, initialFormattedValue, dataGridViewCellStyle);
             var ctl = DataGridView.EditingControl as CalendarEditingControl;
             // Use the default row value when Value property is null.
+
+            // Agregado por eulises 
+            try
+            {
+                var valor = this.Value;
+                if (valor.ToString() == "")
+                {
+                    var defaultNewRowValue = DefaultNewRowValue;
+                    if (defaultNewRowValue != null) ctl.Value = (DateTime)defaultNewRowValue;
+                    return;
+                }
+            }
+            catch (Exception)
+            {
+                var defaultNewRowValue = DefaultNewRowValue;
+                if (defaultNewRowValue != null) ctl.Value = (DateTime)defaultNewRowValue;
+                return;
+            }
+
             if (this.Value == null)
             {
                 var defaultNewRowValue = DefaultNewRowValue;
