@@ -89,9 +89,10 @@ namespace SGLibrary
 
 
 
+
             switch (miboton.Tag.ToString ()){
                 case "EDIT" : {
-                    
+                    deshabilitarDGV1_HandlersCellFormating(dataGridView1);
                     this.panelcarga.Visible = true;
                     this.panelbusqueda.Visible  = false;
 
@@ -139,26 +140,18 @@ namespace SGLibrary
                                 var listaResultados = un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion);
                                 this.progressBar1.Maximum = listaResultados.Count();
                                 this.progressBar1.Visible = true;
-                                cargarDataGridViewCuponesTodoPago(dataGridView1, listaResultados , this.modoEdicion.Text);
+                                //cargarDataGridViewCuponesTodoPago(dataGridView1, listaResultados , this.modoEdicion.Text);
+                                cargarDataGridViewCuponesTodoPago_ADGV(dataGridView1, listaResultados, modoEdicion.Text, this.dataSet1, this.bindingSource1);
                                 this.progressBar1.Visible = false;
                                 break;
                             case "Manual":
-                                cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
+                                cargarDataGridViewCupones_ADGV(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text,dataSet1,bindingSource1);
                                 break;
                             default:
                                 cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true,this.dataSet1 , this.bindingSource1);
                                 break;
                         }
 
-                        //if (una_conciliacion.idArchivo.ToString() != "")
-                        //{
-                        //    cargarDataGridViewConciliacionAutomatica(dataGridView1, serviceConciliacionesAutomaticas.ObtenerDetalleConciliacionAutomatica(una_conciliacion.IdConciliacion), this.modoEdicion.Text, true);
-                        //}
-                        //else
-                        //{
-
-                        //    cargarDataGridViewCupones(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text);
-                        //}
 
                     }
 
@@ -167,8 +160,8 @@ namespace SGLibrary
                 }
                 case "ADD":
                     {
+                        deshabilitarDGV1_HandlersCellFormating(dataGridView1);
                         this.modoEdicion.Text = "NO";
-
                         this.cbtipoConciliacion.Visible = true;
                         this.cbtipoConciliacion.Enabled = true;
                         this.txtdsUsuario.Text = serviceConciliaciones.Usuario ;
@@ -274,6 +267,18 @@ namespace SGLibrary
 
         }
 
+        private void deshabilitarDGV1_HandlersCellFormating(DataGridView dgv)
+        {
+            FieldInfo f1 = typeof(Control).GetField("CellFormatting",
+            BindingFlags.Static | BindingFlags.NonPublic);
+            if (f1 == null) return;
+            object obj = f1.GetValue(dgv);
+            PropertyInfo pi = dgv.GetType().GetProperty("Events",
+                BindingFlags.NonPublic | BindingFlags.Instance);
+            EventHandlerList list = (EventHandlerList)pi.GetValue(dgv, null);
+            list.RemoveHandler(obj, list[obj]);
+        }
+
 
         public void exportaraExcel()
         {
@@ -301,45 +306,8 @@ namespace SGLibrary
                 ServiceExcel miServiceExcel = new ServiceExcel();
                 if (this.panelcarga.Visible)
                 {
-
-                    switch (this.txtFormato.Text)
-	                {   
-                        case "Manual":
-                            dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                        this.dataGridView1_ConciliacionManual_CellFormatting);
-                            break;
-                        case "Todo Pago":
-                            dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                        this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
-                            break; 
-		                default:
-                            dataGridView1.CellFormatting -=
-                            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                            this.dataGridView1_CellFormatting);
-                            break; 
-	                }
-         
-                    
                     miServiceExcel.ExportarAExcel(this.dataGridView1, nombreArchivo);
                     // Habilitamos el Evento que realizar el formateo
-
-                    switch (this.txtFormato.Text)
-                    {
-                        case "Manual":
-                            dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                        this.dataGridView1_ConciliacionManual_CellFormatting);
-                            break;
-                        case "Todo Pago":
-                            dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                        this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
-                            break;
-                        default:
-                            dataGridView1.CellFormatting +=
-                            new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                            this.dataGridView1_CellFormatting);
-                            break;
-                    }
-
                 }
                 else
                     miServiceExcel.ExportarAExcel(this.dataGridView2, nombreArchivo);
@@ -660,10 +628,6 @@ namespace SGLibrary
                 }
 
 
-                //-------- Agregamos el 
-                dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                            this.dataGridView1_ConciliacionManual_CellFormatting);
-
 
                 // Modificamos los Encabezados de las columnas
                 foreach (DataGridViewColumn item in dgv.Columns)
@@ -672,6 +636,9 @@ namespace SGLibrary
                 }
                 dgv.DataSource = p_BindingSource;
                 dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+
+                //-------- Agregamos el 
+                dataGridView1_ConciliacionManual_Inicilizacion();
 
             }
             catch (Exception ex)
@@ -685,16 +652,19 @@ namespace SGLibrary
 
         } // Cierra  cargarDataGridViewCupones_ADGV
 
-        private void dataGridView1_ConciliacionManual_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridView1_ConciliacionManual_Inicilizacion()
         {
 
-            if (e.ColumnIndex != dataGridView1.Columns.Count - 1) return;
-            var dgv = dataGridView1;
-            var row = e.RowIndex;
-            if (this.modoEdicion.Text == "SI")  // Si es estado de Edición
+
+
+            foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                dgv.Rows[row].Cells["CONCILIAR"].Value = true;
-                dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                var row = item;
+                if (this.modoEdicion.Text == "SI")  // Si es estado de Edición
+                {
+                    row.Cells["CONCILIAR"].Value = true;
+                    row.Cells["FECHA_ACREDITACION"].Value = row.Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                }
             }
 
         }
@@ -820,101 +790,118 @@ namespace SGLibrary
             // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
             p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
 
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
-
-
-            foreach (var item in lista)
+            try
             {
+                Trace.TraceInformation(dgv.ToString());
+                Trace.TraceInformation(lista.ToString());
 
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
 
-                DataGridViewColumn columna1 = new DataGridViewColumn();
-                DataGridViewCell cell1 = new DataGridViewTextBoxCell();
-                columna1.CellTemplate = cell1;
-                columna1.Name = "Nº";
-                columna1.HeaderText = "Nº";
-                columna1.ReadOnly = true;
-                columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                dgv.Columns.Add(columna1);
-                columna1.DataPropertyName = "Nº";  
+                //dgv.Rows.Clear();
+                dgv.Columns.Clear();
+                dgv.AutoGenerateColumns = false;
 
-                foreach (PropertyInfo p in pi)
+                foreach (var item in lista)
                 {
 
-                    if (p_modoEdicion != "SI")
+                    Type t = item.GetType();
+                    PropertyInfo[] pi = t.GetProperties();
+
+                    DataGridViewColumn columna1 = new DataGridViewColumn();
+                    DataGridViewCell cell1 = new DataGridViewTextBoxCell();
+                    columna1.CellTemplate = cell1;
+                    columna1.Name = "Nº";
+                    columna1.HeaderText = "Nº";
+                    columna1.ReadOnly = true;
+                    columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna1);
+                    columna1.DataPropertyName = "Nº";
+
+                    foreach (PropertyInfo p in pi)
                     {
-                        if (p.Name == "FECHA_ACREDITACION") continue;
+                        if (p.Name.CompareTo("CONCILIAR") == 0) continue;
+                        if (p.Name.CompareTo("FECHA_ACREDITACION") == 0) continue;
+                        DataGridViewColumn columna = new DataGridViewColumn();
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        columna.CellTemplate = cell;
+                        columna.Name = p.Name;
+                        columna.HeaderText = p.Name;
+                        columna.ReadOnly = true;
+                        columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        columna.DataPropertyName = p.Name;
+                        dgv.Columns.Add(columna);
                     }
-
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    columna.DataPropertyName = p.Name;
-                    dgv.Columns.Add(columna);
+                    break;
                 }
-                break;
+
+                DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+                doWork.Name = "CONCILIAR";
+                doWork.HeaderText = "CONCILIAR";
+                doWork.FalseValue = false;
+                doWork.TrueValue = true;
+                doWork.DataPropertyName = "CONCILIAR";
+                dgv.Columns.Add(doWork);
+
+                if (p_modoEdicion != "SI")
+                {
+                    CalendarColumn doWork1 = new CalendarColumn();
+                    doWork1.Name = "FECHA_ACREDITACION";
+                    doWork1.HeaderText = "FECHA DE ACREDITACION";
+                    doWork1.DefaultCellStyle.Format = "d";
+                    doWork1.DataPropertyName = "FECHA_ACREDITACION";
+                    dgv.Columns.Add(doWork1);
+                }
+
+
+
+                // Modificamos los Encabezados de las columnas
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    item.HeaderText = item.HeaderText.Replace("_", " ");
+                }
+
+                dgv.DataSource = p_BindingSource;
+                dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+                dataGridView1_ConciliacionManualTodoPago_Inicializacion();
+
             }
-
-            DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
-            doWork.Name = "CONCILIAR";
-            doWork.HeaderText = "CONCILIAR";
-            doWork.FalseValue = "0";
-            doWork.DataPropertyName = "CONCILIAR";
-            doWork.TrueValue = "1";
-
-            dgv.Columns.Add(doWork);
-
-            if (p_modoEdicion != "SI")
+            catch (Exception ex)
             {
-                CalendarColumn doWork1 = new CalendarColumn();
-                doWork1.Name = "FECHA_ACREDITACION";
-                doWork1.HeaderText = "FECHA DE ACREDITACION";
-                doWork1.DefaultCellStyle.Format = "d";
-                doWork1.DataPropertyName = "FECHA_ACREDITACION";
-                dgv.Columns.Add(doWork1);
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                Trace.TraceError("Error Linea " + frame.GetFileLineNumber().ToString() + " columna " + frame.GetFileColumnNumber().ToString());
+                Trace.TraceError(ex.ToString());
+                throw;
             }
-
-            
-            this.progressBar1.BringToFront();
-            dgv.Refresh();
-            
-            //-------- Agregamos el 
-            dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                        this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
-
-            dgv.BringToFront();
-            dgv.Refresh();
 
 
         }
 
-        private void dataGridView1_ConciliacionManualTodoPago_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridView1_ConciliacionManualTodoPago_Inicializacion()
         {
 
-            if (e.ColumnIndex != dataGridView1.Columns.Count - 1) return;
-            var dgv = dataGridView1;
-            var row = e.RowIndex;
 
-            if (this.modoEdicion.Text == "SI")
+            foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                dgv.Rows[row].Cells["CONCILIAR"].Value = true;
-                dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                var row = item;
+                if (this.modoEdicion.Text == "SI")
+                {
+                    row.Cells["CONCILIAR"].Value = true;
+                    row.Cells["FECHA_ACREDITACION"].Value = row.Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                }
+                else
+                {
+                    row.Cells["FECHA_ACREDITACION"].Value = row.Cells["FECHA_ACREDITACION"].Value.ToString();
+                    DateTime dt;
+                    DateTime.TryParse(row.Cells["FECHA_ACREDITACION"].Value.ToString(), out dt);
+                    row.Cells["FECHA_ACREDITACION"].Value = dt.AddDays(10);
+                }
             }
-            else
-            {
-                dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString();
-                DateTime dt;
-                DateTime.TryParse(dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value.ToString(), out dt);
-                dgv.Rows[row].Cells["FECHA_ACREDITACION"].Value = dt.AddDays(10);
-            }
+
 
         }
+
+
+
 
 
         public void cargarDataGridViewConciliacionAutomatica(DataGridView dgv, IEnumerable<Object> lista_datos, String p_modoEdicion, bool crea_encabezados, DataSet p_DataSet, BindingSource p_BindingSource)
@@ -1012,11 +999,6 @@ namespace SGLibrary
 
             } //crea_encabezados
 
-
-            dataGridView1.CellFormatting +=
-        new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-        this.dataGridView1_CellFormatting);
-  
             // Modificamos los Encabezados de las columnas
             foreach (DataGridViewColumn item in dgv.Columns)
             {
@@ -1025,6 +1007,7 @@ namespace SGLibrary
             dgv.DataSource = p_BindingSource;
             dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
 
+            dataGridView1_ConciliacionAutomatica_Inicilizacion();
 
 
             }
@@ -1039,39 +1022,36 @@ namespace SGLibrary
            
         }
 
-        private void dataGridView1_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dataGridView1_ConciliacionAutomatica_Inicilizacion()
         {
 
-            if (e.ColumnIndex != dataGridView1.Columns.Count  -1 ) return;
 
-            var dgv = dataGridView1;
-            var row = e.RowIndex;
-
-     
-            
-            switch (dgv.Rows[row].Cells["NIVEL"].Value.ToString())
+            foreach (DataGridViewRow item in dataGridView1.Rows)
             {
-                case "-1": dgv.Rows[row].Cells["CONCILIAR"].Value = false;
-                    dgv.Rows[row].ReadOnly = true;
-                    dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
-                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
-                    break;
-                case "1": dgv.Rows[row].DefaultCellStyle.BackColor = Color.DarkGreen;
-                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.White;
-                    dgv.Rows[row].Cells["CONCILIAR"].Value = true;
-                    break;
-                case "2": dgv.Rows[row].DefaultCellStyle.BackColor = Color.LightBlue; break;
-                case "3": dgv.Rows[row].DefaultCellStyle.BackColor = Color.Orange; break;
-                case "4": dgv.Rows[row].DefaultCellStyle.BackColor = Color.OrangeRed; break;
-                default:
-                    dgv.Rows[row].Cells["CONCILIAR"].Value = false;
-                    dgv.Rows[row].ReadOnly = true;
-                    dgv.Rows[row].DefaultCellStyle.BackColor = Color.White;
-                    dgv.Rows[row].DefaultCellStyle.ForeColor = Color.Black;
-                    break;
+                var row = item;
+                switch (row.Cells["NIVEL"].Value.ToString())
+                {
+                    case "-1": row.Cells["CONCILIAR"].Value = false;
+                        row.ReadOnly = true;
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                        break;
+                    case "1": row.DefaultCellStyle.BackColor = Color.DarkGreen;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                        row.Cells["CONCILIAR"].Value = true;
+                        break;
+                    case "2": row.DefaultCellStyle.BackColor = Color.LightBlue; break;
+                    case "3": row.DefaultCellStyle.BackColor = Color.Orange; break;
+                    case "4": row.DefaultCellStyle.BackColor = Color.OrangeRed; break;
+                    default:
+                        row.Cells["CONCILIAR"].Value = false;
+                        row.ReadOnly = true;
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                        break;
+                }
+                row.Cells["FECHA_PAGO"].Value = row.Cells["FECHA_PAGO"].Value.ToString().Remove(10);
             }
-            dgv.Rows[row].Cells["FECHA_PAGO"].Value = dgv.Rows[row].Cells["FECHA_PAGO"].Value.ToString().Remove(10);
-
         }
 
         public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
@@ -1195,7 +1175,7 @@ namespace SGLibrary
 
             this.dataGridView1.DataSource = "";
             this.lblDgv1Registros.Text = "Registros: " + this.dataGridView1.Rows.Count;
-
+            this.txtFormato.Text = this.cbtipoConciliacion.Text; 
             switch (cbtipoConciliacion.Text )
             {
                 case "Manual":
@@ -1324,21 +1304,20 @@ namespace SGLibrary
         private void dataGridView1_FilterStringChanged(object sender, EventArgs e)
         {
 
-            deshabilitarDGV1_Handlers();
             this.bindingSource1.Filter = this.dataGridView1.FilterString;
             this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
             // Habilitamos el Evento que realizar el formateo
-            habilitarDGV1_Handlers();
+
           
 
         }
 
         private void dataGridView1_SortStringChanged(object sender, EventArgs e)
         {
-            deshabilitarDGV1_Handlers();
+
             this.bindingSource1.Sort = this.dataGridView1.SortString;
             // Habilitamos el Evento que realizar el formateo
-            habilitarDGV1_Handlers();
+
 
         }
 
@@ -1349,53 +1328,6 @@ namespace SGLibrary
         }
 
 
-
-        private void deshabilitarDGV1_Handlers()
-        {
-
-            if (this.txtFormato.Text == "")
-                this.txtFormato.Text = this.cbtipoConciliacion.Text ;
-
-            switch (this.txtFormato.Text)
-            {
-                case "Manual":
-                    dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                this.dataGridView1_ConciliacionManual_CellFormatting);
-                    break;
-                case "Todo Pago":
-                    dataGridView1.CellFormatting -= new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
-                    break;
-                default:
-                    dataGridView1.CellFormatting -=
-                    new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                    this.dataGridView1_CellFormatting);
-                    break;
-            }
-        
-        }
-
-        private void habilitarDGV1_Handlers()
-        {
-
-            switch (this.txtFormato.Text)
-            {
-                case "Manual":
-                    dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                this.dataGridView1_ConciliacionManual_CellFormatting);
-                    break;
-                case "Todo Pago":
-                    dataGridView1.CellFormatting += new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                                this.dataGridView1_ConciliacionManualTodoPago_CellFormatting);
-                    break;
-                default:
-                    dataGridView1.CellFormatting +=
-                    new System.Windows.Forms.DataGridViewCellFormattingEventHandler(
-                    this.dataGridView1_CellFormatting);
-                    break;
-            }
-
-        }
 
    
     }
