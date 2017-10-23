@@ -557,6 +557,10 @@ namespace SGLibrary
             lista_campo_tipo.Add("DOCU_NRO", "System.String");
             lista_campo_tipo.Add("CUPON", "System.String");
             lista_campo_tipo.Add("CONCILIAR", "System.Boolean");
+            if (p_modoEdicion == "SI")
+            {
+                lista_campo_tipo.Add("COMPENSADO", "System.String");
+            }
             lista_campo_tipo.Add("FECHA_ACREDITACION", "System.DateTime");
 
             // A la lista la transfiere al DATASET
@@ -617,15 +621,15 @@ namespace SGLibrary
                 doWork.DataPropertyName = "CONCILIAR";
                 dgv.Columns.Add(doWork);
 
-                if (p_modoEdicion != "SI")
-                {
+               /* if (p_modoEdicion != "SI")
+                {*/
                     CalendarColumn doWork1 = new CalendarColumn();
                     doWork1.Name = "FECHA_ACREDITACION";
                     doWork1.HeaderText = "FECHA DE ACREDITACION";
                     doWork1.DefaultCellStyle.Format = "d";
                     doWork1.DataPropertyName = "FECHA_ACREDITACION"; 
                     dgv.Columns.Add(doWork1);
-                }
+                /*}*/
 
 
 
@@ -664,6 +668,7 @@ namespace SGLibrary
                 {
                     row.Cells["CONCILIAR"].Value = true;
                     row.Cells["FECHA_ACREDITACION"].Value = row.Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
+                    row.Cells["FECHA_ACREDITACION"].ReadOnly = true; 
                 }
             }
 
@@ -781,6 +786,10 @@ namespace SGLibrary
             lista_campo_tipo.Add("DOCU_NRO", "System.String");
             lista_campo_tipo.Add("CUPON", "System.String");
             lista_campo_tipo.Add("CONCILIAR", "System.Boolean");
+            if (p_modoEdicion == "SI")
+            {
+                lista_campo_tipo.Add("COMPENSADO", "System.String");
+            }
             lista_campo_tipo.Add("FECHA_ACREDITACION", "System.DateTime");
 
             // A la lista la transfiere al DATASET
@@ -841,15 +850,15 @@ namespace SGLibrary
                 doWork.DataPropertyName = "CONCILIAR";
                 dgv.Columns.Add(doWork);
 
-                if (p_modoEdicion != "SI")
-                {
+                /*if (p_modoEdicion != "SI")
+                {*/
                     CalendarColumn doWork1 = new CalendarColumn();
                     doWork1.Name = "FECHA_ACREDITACION";
                     doWork1.HeaderText = "FECHA DE ACREDITACION";
                     doWork1.DefaultCellStyle.Format = "d";
                     doWork1.DataPropertyName = "FECHA_ACREDITACION";
                     dgv.Columns.Add(doWork1);
-                }
+                /*}*/
 
 
 
