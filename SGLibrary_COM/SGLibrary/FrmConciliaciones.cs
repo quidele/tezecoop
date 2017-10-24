@@ -668,7 +668,7 @@ namespace SGLibrary
                 {
                     row.Cells["CONCILIAR"].Value = true;
                     row.Cells["FECHA_ACREDITACION"].Value = row.Cells["FECHA_ACREDITACION"].Value.ToString().Remove(10);
-                    row.Cells["FECHA_ACREDITACION"].ReadOnly = true; 
+                    row.Cells["FECHA_ACREDITACION"].ReadOnly = false; 
                 }
             }
 
@@ -904,6 +904,7 @@ namespace SGLibrary
                     DateTime.TryParse(row.Cells["FECHA_ACREDITACION"].Value.ToString(), out dt);
                     row.Cells["FECHA_ACREDITACION"].Value = dt.AddDays(10);
                 }
+                row.Cells["FECHA_ACREDITACION"].ReadOnly = true;
             }
 
 
@@ -1334,6 +1335,11 @@ namespace SGLibrary
         {
             FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes();
             miFrmBuscarComprobantes.Show ();
+        }
+
+        private void panelcarga_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 

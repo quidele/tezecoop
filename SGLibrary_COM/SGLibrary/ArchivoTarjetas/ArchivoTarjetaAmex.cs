@@ -12,7 +12,7 @@ namespace SGLibrary.ArchivoTarjetas
     public class ArchivoTarjetaAmex : ArchivoTarjeta 
     {
         const int Cantidad_Columas = 12;
-
+        
 
         public override void AbrirArchivo(string pNombreArchivo, string pUsuario)
         {
@@ -56,7 +56,7 @@ namespace SGLibrary.ArchivoTarjetas
                     if  (item.IndexOf(';') > 0)   separador = ';';
 
                     string[] columnas= item.Split(separador);
-                    if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
+                    if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha de la venta") != 0))
                     {
                         TB_ArchivoTarjetaDetalle unTB_ArchivoTarjetaDetalle = new TB_ArchivoTarjetaDetalle();
                         for (int i = 0; i < columnas.Count(); i++)
@@ -64,9 +64,17 @@ namespace SGLibrary.ArchivoTarjetas
                             switch (i)
                             {
                                 case 0: unTB_ArchivoTarjetaDetalle.fechaPresentacion = DateTime.Parse(columnas[i]).Date; break; // Fecha Presentacion
-                                case 1: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100; break; // Importe
+                                case 1:
+                                    {   
+                                        if (columnas[i].IndexOf (',')==-1)
+                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture); 
+                                        else
+                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100; 
+
+                                        break; // Importe
+                                    }
                                 case 2: unTB_ArchivoTarjetaDetalle.comprobante = columnas[i]; break; // Comprobante
-                                case 3: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Replace('X', ' ').Trim(); break;  // Tarjeta
+                                case 3: unTB_ArchivoTarjetaDetalle.tarjeta = columnas[i].Substring(11).Trim(); break;  // Tarjeta
                                 case 5: break;
                                 case 6: break;
                                 case 7: break; 
@@ -75,7 +83,20 @@ namespace SGLibrary.ArchivoTarjetas
                                 case 10:  break;  
                                 default:
                                     break;
-                            }
+                            }/*
+                                0	Fecha de la venta
+                                1	Importe
+                                2	NÃºmero de referencia de cargo
+                                3	NÃºmero de Tarjeta
+                                4	NÃºmero de Establecimiento de la sucursal
+                                5	NÃºmero del Establecimiento
+                                6	Tipo
+                                7	NÃºmero de boleto de aerolÃ­nea
+                                8	NÃºmero de acuerdo de alquiler
+                                9	Motivo de rechazo
+                                10	NÃºmero de Terminal
+                                11	NÃºmero de referencia */
+
                         }
                         unTB_ArchivoTarjetaDetalle.contenido = item;
                        this.miArchivoTarjeta.TB_ArchivoTarjetaDetalle.Add(unTB_ArchivoTarjetaDetalle);
