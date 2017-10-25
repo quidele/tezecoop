@@ -1258,8 +1258,6 @@ namespace SGLibrary
             this.progressBar1.Maximum = listadeViajesaConciliar3.Count();  //  listadeViajesaConciliar1.Count()  +  listadeViajesaConciliar2.Count();  
             this.progressBar1.Visible = true;
 
-                                                                                                                                  
-            
             cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true
                 , this.dataSet1, this.bindingSource1);
                 

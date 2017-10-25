@@ -23,7 +23,6 @@
       <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
       <End Role="TB_MovimientosContablesPosdatados" EntitySet="TB_MovimientosContablesPosdatados" />
     </AssociationSet>
-    <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
     <FunctionImport Name="spu_procesarMovimientosPosdatados" ReturnType="Collection(dbSG2000Model.spu_procesarMovimientosPosdatados_Result)">
       <Parameter Name="nrCaja" Mode="In" Type="Decimal" />
       <Parameter Name="dsUsuario" Mode="In" Type="String" />
@@ -42,12 +41,6 @@
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
       <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
     </AssociationSet>
-    <EntitySet Name="TB_PresentacionesCAI" EntityType="dbSG2000Model.TB_PresentacionesCAI" />
-    <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" />
-    <AssociationSet Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
-      <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
-      <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
-    </AssociationSet>
     <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
       <Parameter Name="mes" Mode="In" Type="Int32" />
       <Parameter Name="anio" Mode="In" Type="Int32" />
@@ -56,6 +49,19 @@
       <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
       <Parameter Name="realizarLOG" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spu_obtenerDeudoresaFecha" ReturnType="Collection(dbSG2000Model.spu_obtenerDeudoresaFecha_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="TB_PresentacionesCAI" EntityType="dbSG2000Model.TB_PresentacionesCAI" />
+    <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" />
+    <AssociationSet Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+      <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
+      <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
+    </AssociationSet>
+    <FunctionImport Name="spu_conciliarAutomaticamente_v4_9_900" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result)">
+      <Parameter Name="idArchivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -267,6 +273,132 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <ComplexType Name="spu_procesarMovimientosPosdatados_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="TB_ArchivoTarjeta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtproceso" Precision="3" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
+    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
+  </EntityType>
+  <EntityType Name="TB_Conciliacion">
+    <Key>
+      <PropertyRef Name="IdConciliacion" />
+    </Key>
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="idArchivo" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_Conciliacion" ToRole="TB_ArchivoTarjeta" />
+    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
+  </EntityType>
+  <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_Conciliacion">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Conciliacion">
+        <PropertyRef Name="IdConciliacion" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdConciliacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+    <Property Type="Int32" Name="AÑO" Nullable="true" />
+    <Property Type="Int32" Name="MES" Nullable="true" />
+    <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="spu_obtenerDeudoresaFecha_Result">
+    <Property Type="String" Name="tpCupon" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="cantidad" Nullable="true" />
+    <Property Type="Double" Name="sumavlMontoCupon" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="TB_PresentacionesCAI">
+    <Key>
+      <PropertyRef Name="IdPresentacion" />
+    </Key>
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nrAnio" Type="Int32" />
+    <Property Name="nrMes" Type="Int32" />
+    <Property Name="dtPresentacion" Type="DateTime" Precision="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAIDetalle" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAI" ToRole="TB_PresentacionesCAIDetalle" />
+  </EntityType>
+  <EntityType Name="TB_PresentacionesCAIDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
+    <Property Name="tpComprobante" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PDV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="nrUltNroComprobante" Type="Int32" />
+    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAI" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAIDetalle" ToRole="TB_PresentacionesCAI" />
+  </EntityType>
+  <Association Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+    <End Type="dbSG2000Model.TB_PresentacionesCAI" Role="TB_PresentacionesCAI" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_PresentacionesCAIDetalle" Role="TB_PresentacionesCAIDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PresentacionesCAI">
+        <PropertyRef Name="IdPresentacion" />
+      </Principal>
+      <Dependent Role="TB_PresentacionesCAIDetalle">
+        <PropertyRef Name="IdPresentacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spu_conciliarAutomaticamente_v4_9_900_Result" />
   <EntityType Name="TB_Cupones">
     <Key>
       <PropertyRef Name="nrCupon" />
@@ -335,125 +467,6 @@
     <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
     <Property Name="vlMontoAcreditacion" Type="Double" />
     <Property Name="IdConciliacion" Type="Int32" />
+    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
   </EntityType>
-  <ComplexType Name="spu_procesarMovimientosPosdatados_Result">
-    <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
-    <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="1" />
-  </ComplexType>
-  <EntityType Name="TB_ArchivoTarjeta">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
-    <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
-    <Property Type="DateTime" Name="dtproceso" Precision="3" />
-    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
-    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
-    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
-  </EntityType>
-  <EntityType Name="TB_Conciliacion">
-    <Key>
-      <PropertyRef Name="IdConciliacion" />
-    </Key>
-    <Property Type="Int32" Name="IdConciliacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
-    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
-    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
-    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Type="Int32" Name="idArchivo" />
-    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
-    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_Conciliacion" ToRole="TB_ArchivoTarjeta" />
-    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
-  </EntityType>
-  <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
-    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
-    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjeta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="TB_ArchivoTarjetaDetalle">
-        <PropertyRef Name="idarchivo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
-    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjeta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="TB_Conciliacion">
-        <PropertyRef Name="idArchivo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
-    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
-    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_Conciliacion">
-        <PropertyRef Name="IdConciliacion" />
-      </Principal>
-      <Dependent Role="TB_ConciliacionDetalle">
-        <PropertyRef Name="IdConciliacion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <EntityType Name="TB_PresentacionesCAI">
-    <Key>
-      <PropertyRef Name="IdPresentacion" />
-    </Key>
-    <Property Name="IdPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nrAnio" Type="Int32" />
-    <Property Name="nrMes" Type="Int32" />
-    <Property Name="dtPresentacion" Type="DateTime" Precision="0" />
-    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="TB_PresentacionesCAIDetalle" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAI" ToRole="TB_PresentacionesCAIDetalle" />
-  </EntityType>
-  <EntityType Name="TB_PresentacionesCAIDetalle">
-    <Key>
-      <PropertyRef Name="Id" />
-    </Key>
-    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
-    <Property Name="tpComprobante" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
-    <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
-    <Property Name="PDV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-    <Property Name="nrUltNroComprobante" Type="Int32" />
-    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
-    <NavigationProperty Name="TB_PresentacionesCAI" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAIDetalle" ToRole="TB_PresentacionesCAI" />
-  </EntityType>
-  <Association Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
-    <End Type="dbSG2000Model.TB_PresentacionesCAI" Role="TB_PresentacionesCAI" Multiplicity="1" />
-    <End Type="dbSG2000Model.TB_PresentacionesCAIDetalle" Role="TB_PresentacionesCAIDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_PresentacionesCAI">
-        <PropertyRef Name="IdPresentacion" />
-      </Principal>
-      <Dependent Role="TB_PresentacionesCAIDetalle">
-        <PropertyRef Name="IdPresentacion" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
-    <Property Type="Int32" Name="AÑO" Nullable="true" />
-    <Property Type="Int32" Name="MES" Nullable="true" />
-    <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
-    <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
-    <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
-    <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
-    <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
-  </ComplexType>
-  <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
-    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
-    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
-  </ComplexType>
 </Schema>
