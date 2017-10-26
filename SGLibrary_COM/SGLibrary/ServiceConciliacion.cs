@@ -64,6 +64,9 @@ namespace SGLibrary
                 f.un_ServiceConciliacionTodoPago  = new ServiceConciliacionTodoPago();
                 f.un_ServiceConciliacionTodoPago.CajaActiva(this.CajaAdm);
                 f.un_ServiceConciliacionTodoPago.UsuarioActivo(this.Usuario);
+                f.serviceConciliacionesAutomaticasAMCA = new ServiceConciliacionAutomaticaAMCA();
+                f.serviceConciliacionesAutomaticasAMCA.CajaActiva(this.CajaAdm);
+                f.serviceConciliacionesAutomaticasAMCA.UsuarioActivo(this.Usuario);
                 f.ShowDialog();
             }
             catch (Exception ex)

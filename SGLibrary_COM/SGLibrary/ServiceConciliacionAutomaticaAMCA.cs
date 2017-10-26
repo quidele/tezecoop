@@ -77,10 +77,12 @@ namespace SGLibrary
 
                         un_Cupon.IdConciliacion = detalleConciliacion.IdConciliacion; // Asociamos la conciliacion al cupon
 
-                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + ExtensionString.EmptyIfNull( un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim() ;
-
+                        /*  NO GRABAMOS MOVIMIENTOS POSTADATOS - PORQUE EL PAGO ES EN EFECTIVO
+                         * var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + ExtensionString.EmptyIfNull( un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim() ;
                         unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoAcreditacion.Value, objConciliacion.nrCajaAdm.Value,
                             objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon, un_TB_ArchivoTarjeta.formato);
+                         * 
+                         */
 
                     }
 
@@ -161,15 +163,19 @@ namespace SGLibrary
 
                         context.SaveChanges();
 
-                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" + un_Cupon.tpLetraCliente + "-" + un_Cupon.nrTalonarioCliente + "-" + un_Cupon.nrComprabanteCliente.Trim() + "/ Cupon: " + ExtensionString.EmptyIfNull(un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim();
 
+                        /*  NO GRABAMOS MOVIMIENTOS POSTADATOS - PORQUE EL PAGO ES EN EFECTIVO
+                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" + un_Cupon.tpLetraCliente + "-" + un_Cupon.nrTalonarioCliente + "-" + un_Cupon.nrComprabanteCliente.Trim() + "/ Cupon: " + ExtensionString.EmptyIfNull(un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim();
                         // GrabarAsientoContable(TotalConciliacionAnulado, Decimal.Parse(this._cajactiva), this._usuarioActivo, 
                         // objConciliacion, context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes);
 
                         unSMC.GrabarAsientoContablePosdatados(vlMontoAcreditacion, objConciliacion.nrCajaAdm.Value,
                             objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon, un_TB_ArchivoTarjeta.formato);
-
+                         * /
+                         */
+ 
                         context.TB_ConciliacionDetalle.Remove (detalleConciliacion);
+                        
                     }
 
                     context.SaveChanges();
@@ -231,6 +237,7 @@ namespace SGLibrary
                         objCupon.vlMontoAcreditacion = null;
                         objCupon.dtFechaAcreditacion = null;
 
+                        /*  NO GRABAMOS MOVIMIENTOS POSTADATOS - PORQUE EL PAGO ES EN EFECTIVO
                         var nrFactura = objCupon.tpComprobanteCliente + "-" + objCupon.tpLetraCliente + "-" +
                                         objCupon.nrTalonarioCliente + "-" + objCupon.nrComprabanteCliente.Trim() + "/ Cupon: " +
                                         ExtensionString.EmptyIfNull(objCupon.nrCuponPosnet).Trim() + "/ Tarjeta: "
@@ -240,6 +247,8 @@ namespace SGLibrary
                                 objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context,
                                 Anula_Viajes_con_Tarjeta_a_Bancos, Anula_conciliacion_de_Viajes, objCupon.nrLicencia.ToString(),
                                 nrFactura, item.fechaPago.Value, objCupon.nrCupon, un_TB_ArchivoTarjeta.formato);
+                         */ 
+ 
 
                     }
                     // Eliminamos el detalle de la conciliacion

@@ -23,6 +23,7 @@ namespace SGLibrary
         public ServiceConciliacionAutomatica serviceConciliacionesAutomaticas { get; set; }
         public ServiceConciliacionManual un_ServiceConciliacionManual { get; set; }
         public ServiceConciliacionTodoPago un_ServiceConciliacionTodoPago { get; set; }
+        public ServiceConciliacionAutomaticaAMCA serviceConciliacionesAutomaticasAMCA { get; set; }
         
 
         public FrmConciliaciones()
@@ -237,9 +238,16 @@ namespace SGLibrary
                               if (una_conciliacion.idArchivo.ToString() == "") 
                                  this.un_ServiceConciliacionManual.anularConciliacion (una_conciliacion);
                                  //serviceConciliaciones.anularConciliacion(una_conciliacion); // conciliacion manual
-                             else
-                                 serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion); // conciliacion automatica 
-                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              else
+                              {
+                                  ServiceConciliacionAutomatica  un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticas;
+                                  if ((una_conciliacion.formato.IndexOf("Amca", StringComparison.OrdinalIgnoreCase)) == 0)
+                                      un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticasAMCA;
+                                  serviceConciliacionesAutomaticas.anularConciliacionAutomatica(una_conciliacion); // onciliacion automatica 
+
+                                  MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                              }
+                                 
                         
                         }
 
@@ -406,6 +414,9 @@ namespace SGLibrary
                              // si estamos en una conciliacion automatica
                             una_conciliacion.idArchivo = int.Parse(this.txtIdArchivo.Text); // Asignamos el idArchivo de la conciliacion automatica
                             una_conciliacion.formato = this.cbtipoConciliacion.Text;
+                            ServiceConciliacionAutomatica  un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticas;
+                            if ((una_conciliacion.formato.IndexOf("Amca", StringComparison.OrdinalIgnoreCase)) == 0)
+                                un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticasAMCA;
                             serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
                             break;
                             
@@ -448,7 +459,7 @@ namespace SGLibrary
             var una_conciliacion = new TB_Conciliacion();
             una_conciliacion.dtConciliacion = this.cbdtConciliacion.Value;
             una_conciliacion.IdConciliacion = int.Parse  ( this.txtIdConciliacion.Text);
-
+            una_conciliacion.formato = this.txtFormato.Text;
 
             try {
                  switch (this.txtFormato.Text)
@@ -460,6 +471,9 @@ namespace SGLibrary
                             this.un_ServiceConciliacionManual.modificarConciliacion(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
                             break;
                         default:
+                            ServiceConciliacionAutomatica  un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticas;
+                            if ((una_conciliacion.formato.IndexOf("Amca", StringComparison.OrdinalIgnoreCase)) == 0)
+                                un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticasAMCA;
                             serviceConciliacionesAutomaticas.modificarConciliacionAutomatica(listaCuponesDesconciliados, listaCuponesConciliados, una_conciliacion);
                             break;
                             
