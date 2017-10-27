@@ -485,7 +485,7 @@ namespace SGLibrary
             return true;
         }
 
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , String p_modoEdicion  )
+        /* public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , String p_modoEdicion  )
         {
 
             //dgv.Rows.Clear();
@@ -549,7 +549,7 @@ namespace SGLibrary
             }
 
 
-        }
+        }*/
 
 
         public void cargarDataGridViewCupones_ADGV(DataGridView dgv, IEnumerable<Object> lista, 
@@ -689,7 +689,7 @@ namespace SGLibrary
         }
 
 
-        public void cargarDataGridViewCuponesTodoPago(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
+      /*  public void cargarDataGridViewCuponesTodoPago(DataGridView dgv, IEnumerable<Object> lista, String p_modoEdicion)
         {
 
             //dgv.Rows.Clear();
@@ -778,7 +778,7 @@ namespace SGLibrary
             dgv.Refresh();
 
 
-        }
+        } */
 
 
         public void cargarDataGridViewCuponesTodoPago_ADGV(DataGridView dgv, IEnumerable<Object> lista,

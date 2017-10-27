@@ -7,9 +7,13 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizabl
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\AdvancedDataGridView.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\AdvancedDataGridView.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\AdvancedDataGridView.xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ru\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache

@@ -93,6 +93,7 @@ namespace SGLibrary
                                                              DOC = c.tpComprobanteCliente, 
                                                              LETRA = c.tpLetraCliente , PDV = c.nrTalonarioCliente ,
                                                              NRO = c.nrComprabanteCliente  , MONTO = c.vlMontoCupon ,
+                                                             EMPRESA = c.nmEmpresaTarjeta, 
                                                              TARJETA = c.nrTarjeta, DOCU = c.tpDocTarjeta, 
                                                              DOCU_NRO = c.nrDocTarjeta,
                                                              CUPON = c.nrCuponPosnet,
