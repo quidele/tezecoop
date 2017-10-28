@@ -37,6 +37,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Advanced
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\AdvancedDataGridView.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ES-ES\SGLibrary.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\es\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ru\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
