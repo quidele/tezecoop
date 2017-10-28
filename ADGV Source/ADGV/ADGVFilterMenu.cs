@@ -1,9 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Drawing;
+using System.Globalization;
 using System.Linq;
 using System.Resources;
 using System.Text;
+using System.Threading;
 using System.Windows.Forms;
 
 namespace ADGV
@@ -122,6 +124,9 @@ namespace ADGV
             this.DataType = DataType;
             this.DateWithTime = true;
             this.TimeFilter = false;
+
+
+            Thread.CurrentThread.CurrentUICulture = new CultureInfo("ES-ES");
 
             this.RM = new System.Resources.ResourceManager("ADGV.Localization.ADGVStrings", typeof(ADGV.ADGVFilterMenu).Assembly);
             this.months = new Dictionary<Int32, String>();
