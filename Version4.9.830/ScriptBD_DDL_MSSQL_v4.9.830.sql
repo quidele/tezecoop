@@ -182,7 +182,7 @@ DECLARE @formato VARCHAR(10)
 	-- para AMEX asignamos la fecha de pago como fecha de cupon mas 10 dias
 	update x set  x.fechaPago = y.dtCupon + 10  from TB_ArchivoTarjetaDetalle   x  inner join tb_cupones  y 
 										ON  x.nrCupon = y.nrCupon 
-					where x.idarchivo = @idArchivo and  @formato = 'Amca Amex' 
+					where x.idarchivo = @idArchivo and  @formato like  '%Amca%' 
 
 	update x set  x.fechaPago = x.fechaPresentacion FROM TB_ArchivoTarjetaDetalle   x  
 					where x.idarchivo = @idArchivo and  x.fechaPago is null

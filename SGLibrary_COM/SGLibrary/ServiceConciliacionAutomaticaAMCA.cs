@@ -55,14 +55,9 @@ namespace SGLibrary
                                                                          where c.id == objConciliacion.idArchivo
                                                                                 select c).First();
 
-                        if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= 20)
-                        {
-                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(30);
-                        }
-                        else
-                        {
-                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(5);
-                        }
+
+
+                        detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(10);
                         
                         un_Cupon.dtCobradoalCliente = detalleConciliacion.FechaPagoLicenciatario; // muy importante para habilitar el pago al licenciatario
                         un_Cupon.flCobradoalCliente = true; // Marca de cociliacion
