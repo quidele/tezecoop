@@ -949,6 +949,10 @@ namespace SGLibrary
             lista_campo_tipo.Add("NIVEL", "System.Int32");
             lista_campo_tipo.Add("IdArchivoTarjetaDetalle", "System.Decimal");
             lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");
+            if (p_modoEdicion == "SI")
+            {
+                lista_campo_tipo.Add("COMPENSADO", "System.String");
+            }
             lista_campo_tipo.Add("CONCILIAR", "System.Boolean");
      
 
@@ -1016,8 +1020,8 @@ namespace SGLibrary
                 DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
                 doWork.Name = "CONCILIAR";
                 doWork.HeaderText = "CONCILIAR";
-                doWork.FalseValue = "0";
-                doWork.TrueValue = "1";
+                doWork.FalseValue = false;
+                doWork.TrueValue = true;
                 doWork.DataPropertyName = "CONCILIAR";  
                 dgv.Columns.Add(doWork);
 

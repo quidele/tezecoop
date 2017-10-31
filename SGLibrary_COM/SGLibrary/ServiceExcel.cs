@@ -245,7 +245,21 @@ namespace SGLibrary
                 {
                     for (int j = 0; j < dataGridView1.Columns.Count; j++)
                     {
-                        worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                        switch (dataGridView1.Rows[i].Cells[j].Value.GetType().FullName)
+                        {
+                            case "System.Date":
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/yyyy";
+                                worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
+                                break;
+                            case "System.DateTime":
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/yyyy HH:mm:ss";
+                                worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
+                                break;
+                            default:
+                             worksheet.Cells[i + 2, j + 1] = dataGridView1.Rows[i].Cells[j].Value.ToString();
+                                break;
+                        }
+     
                     }
                 }
                 // save the application  
