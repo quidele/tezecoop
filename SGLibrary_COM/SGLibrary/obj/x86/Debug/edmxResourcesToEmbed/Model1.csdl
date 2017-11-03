@@ -467,6 +467,6 @@
     <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
     <Property Name="vlMontoAcreditacion" Type="Double" />
     <Property Name="IdConciliacion" Type="Int32" />
-    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

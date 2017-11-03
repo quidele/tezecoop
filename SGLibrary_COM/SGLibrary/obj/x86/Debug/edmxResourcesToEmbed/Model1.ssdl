@@ -140,7 +140,7 @@
     <Property Name="dtFechaAcreditacion" Type="date" />
     <Property Name="vlMontoAcreditacion" Type="float" />
     <Property Name="IdConciliacion" Type="int" />
-    <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
+    <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
   </EntityType>
   <EntityType Name="TB_MovimientosContables">
     <Key>
