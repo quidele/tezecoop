@@ -193,78 +193,100 @@ namespace SGLibrary
         {
             ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 
-            using (var context = new dbSG2000Entities())
-            {
 
-                using (TransactionScope transaction = new TransactionScope())
+            try
+            {
+                using (var context = new dbSG2000Entities())
                 {
 
-                    objConciliacion.dsUsuario = this.Usuario ;
-                    objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm );
-                    objConciliacion.flestado = "A";
-                    objConciliacion.dtModificacion = DateTime.Now;
-
-                    context.TB_Conciliacion.Add(objConciliacion);
-                    context.SaveChanges();
-
-                    foreach (var detalleConciliacion in plistaDetalleConciliacion)
+                    using (TransactionScope transaction = new TransactionScope())
                     {
-                        TB_Cupones un_Cupon = (from c in context.TB_Cupones
-                                               where c.nrCupon == detalleConciliacion.nrCupon
-                                               select c).First();
 
-                        TB_ArchivoTarjetaDetalle un_TB_ArchivoTarjetaDetalle = (from c in context.TB_ArchivoTarjetaDetalle
-                                                                                where c.Id == detalleConciliacion.IdArchivoTarjetaDetalle
-                                               select c).First();
+                        objConciliacion.dsUsuario = this.Usuario;
+                        objConciliacion.nrCajaAdm = Decimal.Parse(this.CajaAdm);
+                        objConciliacion.flestado = "A";
+                        objConciliacion.dtModificacion = DateTime.Now;
 
-                        TB_ArchivoTarjeta un_TB_ArchivoTarjeta = (from c in context.TB_ArchivoTarjeta
-                                                                         where c.id == objConciliacion.idArchivo
-                                                                                select c).First();
-
-                        if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= 20)
-                        {
-                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(30);
-                        }
-                        else
-                        {
-                            detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(5);
-                        }
-                        
-                        un_Cupon.dtCobradoalCliente = detalleConciliacion.FechaPagoLicenciatario; // muy importante para habilitar el pago al licenciatario
-                        un_Cupon.flCobradoalCliente = true; // Marca de cociliacion
-                        un_Cupon.dtFechaAcreditacion = detalleConciliacion.fechaPago;  // Fecha en que visa o master pagan al banco
-
-                        un_Cupon.vlMontoAcreditacion = System.Convert.ToDouble(un_TB_ArchivoTarjetaDetalle.importe);  // importe enviado por la Tarjeta
-                       
-                       
-                        detalleConciliacion.IdConciliacion = objConciliacion.IdConciliacion;
-                        context.TB_ConciliacionDetalle.Add(detalleConciliacion.ToTB_ConciliacionDetalle());
+                        context.TB_Conciliacion.Add(objConciliacion);
                         context.SaveChanges();
 
-                        un_Cupon.IdConciliacion = detalleConciliacion.IdConciliacion; // Asociamos la conciliacion al cupon
+                        foreach (var detalleConciliacion in plistaDetalleConciliacion)
+                        {
+                            TB_Cupones un_Cupon = (from c in context.TB_Cupones
+                                                   where c.nrCupon == detalleConciliacion.nrCupon
+                                                   select c).First();
 
-                        var nrFactura = un_Cupon.tpComprobanteCliente + "-" +  un_Cupon.tpLetraCliente +"-" + un_Cupon.nrTalonarioCliente + "-"  + un_Cupon.nrComprabanteCliente.Trim () + "/ Cupon: " + ExtensionString.EmptyIfNull( un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim() ;
+                            TB_ArchivoTarjetaDetalle un_TB_ArchivoTarjetaDetalle = (from c in context.TB_ArchivoTarjetaDetalle
+                                                                                    where c.Id == detalleConciliacion.IdArchivoTarjetaDetalle
+                                                                                    select c).First();
 
-                        unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoAcreditacion.Value, objConciliacion.nrCajaAdm.Value,
-                            objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon, un_TB_ArchivoTarjeta.formato);
+                            TB_ArchivoTarjeta un_TB_ArchivoTarjeta = (from c in context.TB_ArchivoTarjeta
+                                                                      where c.id == objConciliacion.idArchivo
+                                                                      select c).First();
+
+                            if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= 20)
+                            {
+                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(30);
+                            }
+                            else
+                            {
+                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(5);
+                            }
+
+                            un_Cupon.dtCobradoalCliente = detalleConciliacion.FechaPagoLicenciatario; // muy importante para habilitar el pago al licenciatario
+                            un_Cupon.flCobradoalCliente = true; // Marca de cociliacion
+                            un_Cupon.dtFechaAcreditacion = detalleConciliacion.fechaPago;  // Fecha en que visa o master pagan al banco
+
+                            un_Cupon.vlMontoAcreditacion = System.Convert.ToDouble(un_TB_ArchivoTarjetaDetalle.importe);  // importe enviado por la Tarjeta
+
+
+                            detalleConciliacion.IdConciliacion = objConciliacion.IdConciliacion;
+                            context.TB_ConciliacionDetalle.Add(detalleConciliacion.ToTB_ConciliacionDetalle());
+
+                            context.SaveChanges();
+
+                            un_Cupon.IdConciliacion = detalleConciliacion.IdConciliacion; // Asociamos la conciliacion al cupon
+
+                            var nrFactura = un_Cupon.tpComprobanteCliente + "-" + un_Cupon.tpLetraCliente + "-" + un_Cupon.nrTalonarioCliente + "-" + un_Cupon.nrComprabanteCliente.Trim() + "/ Cupon: " + ExtensionString.EmptyIfNull(un_Cupon.nrCuponPosnet).Trim() + "/ Tarjeta: " + ExtensionString.EmptyIfNull(un_Cupon.nrTarjeta).Trim();
+
+                            unSMC.GrabarAsientoContablePosdatados(un_Cupon.vlMontoAcreditacion.Value, objConciliacion.nrCajaAdm.Value,
+                                objConciliacion.dsUsuario, objConciliacion.IdConciliacion.ToString(), context, Conciliacion_de_Viajes, Viajes_con_Tarjeta_a_Bancos, un_Cupon.nrLicencia.ToString(), nrFactura, detalleConciliacion.fechaPago.Value, un_Cupon.nrCupon, un_TB_ArchivoTarjeta.formato);
+
+                        }
+
+                        context.SaveChanges();
+
+
+                        // Procesamos el Movimientos posdatados
+                        unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+
+
+                        transaction.Complete();
+
+
+                        return;
+
+                        //return listadeViajesaConciliar.ToList();
 
                     }
+                } // Cierre using 
+            }
+            catch (DbEntityValidationException e)
+            {
+                Console.WriteLine(e);
+                Trace.TraceError(e.Message);
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Trace.TraceError("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
 
-                    context.SaveChanges();
-
-
-                    // Procesamos el Movimientos posdatados
-                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
-
-
-                    transaction.Complete();
-     
-
-                    return;
-
-                    //return listadeViajesaConciliar.ToList();
-
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Trace.TraceError("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
                 }
+                throw;
             }
 
 

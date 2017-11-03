@@ -1,46 +1,3 @@
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD_FON.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD_CASA.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD.Xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\Recursos Localizables\StringResources.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\Recursos Localizables\StringResources.EN-US.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\Recursos Localizables\StringResources.ES-ES.resx
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.dll.config
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.tlb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.xml
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\fr\AdvancedDataGridView.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ru\AdvancedDataGridView.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Form1.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmBuscarComprobantes.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmCargaTarifas.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmCargaTarifasEjemploADGV.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Frm_GroupByGrid.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmXLSSelect.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FormularioBase.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPresentacionesCAI.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmABMBase.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmConciliaciones.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmResumenNrosCAIs.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmSeleccionarImpresora.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Properties.Resources.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Reportes.rpt_AnalisisDeudores.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csproj.GenerateResource.Cache
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\EN-US\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ConfigBD.Xml
@@ -82,4 +39,3 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\EN-US\SGLibrary.resources.d
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\es\AdvancedDataGridView.resources.dll
