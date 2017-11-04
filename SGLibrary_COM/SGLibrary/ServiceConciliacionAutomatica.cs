@@ -99,7 +99,7 @@ namespace SGLibrary
                                                     on c.nrCupon  equals x.nrCupon // Join entre las dos tablas
                                                 where (c.flCobradoalCliente == false) && (c.flCompensado == false)
                                                 && (c.flAnulado == false)
-                                                && (new[] { "Tarjeta de Crédito", "Tarjeta de Débito"}.Contains(c.tpCupon))
+                                                //&& (new[] { "Tarjeta de Crédito", "Tarjeta de Débito"}.Contains(c.tpCupon))
                                                 && (x.idarchivo == pIdArchivo) // filtramos por un archivo
                                                 select new
                                                 {
