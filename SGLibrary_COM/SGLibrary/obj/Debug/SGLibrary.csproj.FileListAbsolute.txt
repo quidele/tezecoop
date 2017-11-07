@@ -14,6 +14,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.tlb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\es\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ru\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources

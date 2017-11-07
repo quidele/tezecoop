@@ -108,19 +108,6 @@ namespace SGLibrary
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_procesarMovimientosPosdatados_Result>("spu_procesarMovimientosPosdatados", nrCajaParameter, dsUsuarioParameter);
         }
     
-        public virtual ObjectResult<spu_obtenerUltNroCAIsUsados_Result> spu_obtenerUltNroCAIsUsados(Nullable<int> mes, Nullable<int> anio)
-        {
-            var mesParameter = mes.HasValue ?
-                new ObjectParameter("mes", mes) :
-                new ObjectParameter("mes", typeof(int));
-    
-            var anioParameter = anio.HasValue ?
-                new ObjectParameter("anio", anio) :
-                new ObjectParameter("anio", typeof(int));
-    
-            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerUltNroCAIsUsados_Result>("spu_obtenerUltNroCAIsUsados", mesParameter, anioParameter);
-        }
-    
         public virtual ObjectResult<spu_generarPresentacionCAI_v4_9_4_Result> spu_generarPresentacionCAI_v4_9_4(Nullable<int> idPresentacion, string realizarLOG)
         {
             var idPresentacionParameter = idPresentacion.HasValue ?
@@ -150,6 +137,32 @@ namespace SGLibrary
                 new ObjectParameter("idArchivo", typeof(int));
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_conciliarAutomaticamente_v4_9_900_Result>("spu_conciliarAutomaticamente_v4_9_900", idArchivoParameter);
+        }
+    
+        public virtual int spu_obtenerPresentacionCAIs(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction("spu_obtenerPresentacionCAIs", mesParameter, anioParameter);
+        }
+    
+        public virtual ObjectResult<spu_obtenerUltNroCAIsUsados_Result> spu_obtenerUltNroCAIsUsados(Nullable<int> mes, Nullable<int> anio)
+        {
+            var mesParameter = mes.HasValue ?
+                new ObjectParameter("mes", mes) :
+                new ObjectParameter("mes", typeof(int));
+    
+            var anioParameter = anio.HasValue ?
+                new ObjectParameter("anio", anio) :
+                new ObjectParameter("anio", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerUltNroCAIsUsados_Result>("spu_obtenerUltNroCAIsUsados", mesParameter, anioParameter);
         }
     }
 }

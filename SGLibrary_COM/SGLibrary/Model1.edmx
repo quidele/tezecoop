@@ -145,7 +145,7 @@
           <Property Name="dtFechaAcreditacion" Type="date" />
           <Property Name="vlMontoAcreditacion" Type="float" />
           <Property Name="IdConciliacion" Type="int" />
-          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
+          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
@@ -355,6 +355,14 @@
         <Function Name="spu_obtenerDeudoresaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="fecha" Type="date" Mode="In" />
         </Function>
+        <Function Name="spu_obtenerPresentacionCAIs" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
+        </Function>
+        <Function Name="spu_obtenerUltNroCAIsUsados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="mes" Type="int" Mode="In" />
+          <Parameter Name="anio" Type="int" Mode="In" />
+        </Function>
         <Function Name="spu_procesarMovimientosPosdatados" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="nrCaja" Type="decimal" Mode="In" />
           <Parameter Name="dsUsuario" Type="varchar" Mode="In" />
@@ -438,10 +446,6 @@
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
-          <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
-            <Parameter Name="mes" Mode="In" Type="Int32" />
-            <Parameter Name="anio" Mode="In" Type="Int32" />
-          </FunctionImport>
           <FunctionImport Name="spu_generarPresentacionCAI_v4_9_4" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result)">
             <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
             <Parameter Name="realizarLOG" Mode="In" Type="String" />
@@ -459,6 +463,14 @@
           <Parameter Name="idArchivo" Mode="In" Type="Int32" />
           </FunctionImport>
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
+          <FunctionImport Name="spu_obtenerPresentacionCAIs">
+            <Parameter Name="mes" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
+            <Parameter Name="mes" Mode="In" Type="Int32" />
+            <Parameter Name="anio" Mode="In" Type="Int32" />
+          </FunctionImport>
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -738,15 +750,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
-          <Property Type="Int32" Name="AÑO" Nullable="true" />
-          <Property Type="Int32" Name="MES" Nullable="true" />
-          <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
-          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
-        </ComplexType>
         <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
           <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
@@ -865,8 +868,17 @@
           <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
           <Property Name="vlMontoAcreditacion" Type="Double" />
           <Property Name="IdConciliacion" Type="Int32" />
-          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
+        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+          <Property Type="Int32" Name="AÑO" Nullable="true" />
+          <Property Type="Int32" Name="MES" Nullable="true" />
+          <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+        </ComplexType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1195,6 +1207,20 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_obtenerPresentacionCAIs" FunctionName="dbSG2000Model.Store.spu_obtenerPresentacionCAIs" />
+          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="MES" ColumnName="MES" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="PDV" ColumnName="PDV" />
+                <ScalarProperty Name="LETRA" ColumnName="LETRA" />
+                <ScalarProperty Name="CAI" ColumnName="CAI" />
+                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>

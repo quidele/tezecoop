@@ -1334,7 +1334,16 @@ namespace SGLibrary
             this.lblDgv1Registros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
             // Habilitamos el Evento que realizar el formateo
 
-          
+
+            switch (cbtipoConciliacion.Text)
+            {
+                case "Amca Amex" : case "Amca Visa":  case  "Amca Master" : case   "Visa" : case "Master":
+                    dataGridView1_ConciliacionAutomatica_Inicilizacion();        
+                    break;
+                default:
+                    break;
+            }
+            
 
         }
 

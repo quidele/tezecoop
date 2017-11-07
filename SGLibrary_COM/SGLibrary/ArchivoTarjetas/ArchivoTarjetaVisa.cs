@@ -70,7 +70,18 @@ namespace SGLibrary.ArchivoTarjetas
                                 case 7: break; // Plan
                                 case 8: break; // Cuota
                                 case 9: unTB_ArchivoTarjetaDetalle.moneda = columnas[i].Replace("pesos", "PES").Trim(); break;  // Moneda
-                                case 10: unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".",""), CultureInfo.InvariantCulture ) / 100 ; break;  // Importe
+                                case 10:
+                                    {
+                                        if (columnas[i].IndexOf(".") == 0)  // si tiene un punto
+                                        {   // dividimos el valor resultante por 100
+                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100;
+                                        }
+                                        else
+                                        {   // no dividimos el valor resultante por 100
+                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture);
+                                        }
+                                        break;  // Importe
+                                    }
                                 default:
                                     break;
                             }
