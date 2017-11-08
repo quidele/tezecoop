@@ -145,7 +145,7 @@
           <Property Name="dtFechaAcreditacion" Type="date" />
           <Property Name="vlMontoAcreditacion" Type="float" />
           <Property Name="IdConciliacion" Type="int" />
-          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
+          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
@@ -868,7 +868,7 @@
           <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
           <Property Name="vlMontoAcreditacion" Type="Double" />
           <Property Name="IdConciliacion" Type="Int32" />
-          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
           <Property Type="Int32" Name="AÑO" Nullable="true" />
