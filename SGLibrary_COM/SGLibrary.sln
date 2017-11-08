@@ -9,8 +9,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGLibrary_Pruebas", "SGLibr
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SGLibrary_Pruebas_UI", "ConsoleApplication1\SGLibrary_Pruebas_UI.csproj", "{2992C322-0DE8-4372-8EFF-92549BB5A13B}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestEntity", "TestEntity\TestEntity.csproj", "{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -55,16 +53,6 @@ Global
 		{2992C322-0DE8-4372-8EFF-92549BB5A13B}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
 		{2992C322-0DE8-4372-8EFF-92549BB5A13B}.Release|Mixed Platforms.Build.0 = Release|Any CPU
 		{2992C322-0DE8-4372-8EFF-92549BB5A13B}.Release|x86.ActiveCfg = Release|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Release|Any CPU.Build.0 = Release|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Release|Mixed Platforms.ActiveCfg = Release|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Release|Mixed Platforms.Build.0 = Release|Any CPU
-		{BCAD04C8-4708-4F25-AFC0-065A5D12D43E}.Release|x86.ActiveCfg = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
