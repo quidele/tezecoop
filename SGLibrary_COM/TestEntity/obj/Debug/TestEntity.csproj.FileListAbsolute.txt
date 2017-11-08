@@ -3,6 +3,11 @@ C:\github\tezecoop_git\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe
 C:\github\tezecoop_git\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.pdb
 C:\github\tezecoop_git\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
 C:\github\tezecoop_git\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe.config
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe
+C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.pdb
+C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
+C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe.config
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.pdb
@@ -11,9 +16,12 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\EntityFramework
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb
+<<<<<<< HEAD
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe.config
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\bin\Debug\TestEntity.pdb
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.exe
 C:\github\tezecoop\SGLibrary_COM\TestEntity\obj\Debug\TestEntity.pdb
+=======
+>>>>>>> bfc227ae70890bfe544545dff9d3a891cc09c6be

@@ -36,6 +36,48 @@ C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.res
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll.config
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\es\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\fr\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ru\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarComprobantes.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifasEjemploADGV.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Frm_GroupByGrid.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmXLSSelect.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FormularioBase.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPresentacionesCAI.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMBase.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmResumenNrosCAIs.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmSeleccionarImpresora.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Properties.Resources.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Reportes.rpt_AnalisisDeudores.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
@@ -57,6 +99,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EntityFramew
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\es\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ru\AdvancedDataGridView.resources.dll
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Form1.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarComprobantes.resources
@@ -80,6 +123,7 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibr
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+<<<<<<< HEAD
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
@@ -123,3 +167,5 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resourc
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+=======
+>>>>>>> bfc227ae70890bfe544545dff9d3a891cc09c6be
