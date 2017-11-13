@@ -146,7 +146,10 @@ namespace SGLibrary
                         FrmCargaTarifasEjemploADGV f6 = new FrmCargaTarifasEjemploADGV();
                         f = (Form)f6;
                         break;
-
+                    case "Form1":
+                        Form1 f7 = new Form1();
+                        f = (Form)f7;
+                        break;
                 }
 
                 Form objForm = (Form) f;

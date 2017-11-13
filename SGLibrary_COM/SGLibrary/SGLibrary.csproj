@@ -113,6 +113,9 @@
     <Compile Include="BotonesForm.Designer.cs">
       <DependentUpon>BotonesForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="CircularProgressBar.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ConfigBD.cs" />
     <Compile Include="Enums\BotonesABMForm.cs" />
     <Compile Include="EXCELNuke\Application.cs" />
@@ -311,6 +314,12 @@
     <Compile Include="TB_Usuarios.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="UCCircularProgressBar.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UCCircularProgressBar.Designer.cs">
+      <DependentUpon>UCCircularProgressBar.cs</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model1.edmx">
@@ -396,6 +405,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Reportes\rpt_AnalisisDeudores.resx">
       <DependentUpon>rpt_AnalisisDeudores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UCCircularProgressBar.resx">
+      <DependentUpon>UCCircularProgressBar.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
