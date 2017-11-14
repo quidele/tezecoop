@@ -141,9 +141,9 @@ namespace SGLibrary
                         MessageBox.Show("La presetanción se ha guardado con éxito, se procedera a generar el archivo.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
 
-                        Thread t = iniciarHiloProgressBar();
+
                         spu_generarPresentacionCAI_v4_9_4_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
-                        t.Suspend();
+
                         this.progressBar1.Visible = false;
                         if (resultado.resultado.CompareTo ( "OK")==0)
                             MessageBox.Show(resultado.Descrip, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);

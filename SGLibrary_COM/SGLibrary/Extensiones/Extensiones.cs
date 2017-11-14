@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Reflection;
 using System.Text;
+using System.Windows.Forms;
 
 namespace SGLibrary.Extensiones
 {
@@ -131,6 +132,7 @@ namespace SGLibrary.Extensiones
                         row[p.Name] = dato;    
                     }
                 }
+                Application.DoEvents();
                 t.Rows.Add(row);
                 i++;
 

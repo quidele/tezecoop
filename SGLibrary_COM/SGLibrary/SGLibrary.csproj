@@ -132,11 +132,11 @@
     <Compile Include="Extensiones\GroupByGrid.cs">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Form1.cs">
+    <Compile Include="FrmCircularProgressBar.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="FrmCircularProgressBar.Designer.cs">
+      <DependentUpon>FrmCircularProgressBar.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmBuscarComprobantes.cs">
       <SubType>Form</SubType>
@@ -320,6 +320,7 @@
     <Compile Include="UCCircularProgressBar.Designer.cs">
       <DependentUpon>UCCircularProgressBar.cs</DependentUpon>
     </Compile>
+    <Compile Include="WinAPI.cs" />
   </ItemGroup>
   <ItemGroup>
     <EntityDeploy Include="Model1.edmx">
@@ -350,8 +351,8 @@
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <EmbeddedResource Include="FrmCircularProgressBar.resx">
+      <DependentUpon>FrmCircularProgressBar.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBuscarComprobantes.resx">
       <DependentUpon>FrmBuscarComprobantes.cs</DependentUpon>

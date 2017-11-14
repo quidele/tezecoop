@@ -147,7 +147,7 @@ namespace SGLibrary
                         f = (Form)f6;
                         break;
                     case "Form1":
-                        Form1 f7 = new Form1();
+                        FrmCircularProgressBar f7 = new FrmCircularProgressBar();
                         f = (Form)f7;
                         break;
                 }

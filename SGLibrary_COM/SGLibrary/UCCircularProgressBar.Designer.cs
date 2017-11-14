@@ -48,7 +48,8 @@
             this.circularProgressBar1.Size = new System.Drawing.Size(112, 112);
             this.circularProgressBar1.TabIndex = 0;
             this.circularProgressBar1.Text = "circularProgressBar1";
-            this.circularProgressBar1.Value = ((long)(57));
+            this.circularProgressBar1.Value = ((long)(10));
+            this.circularProgressBar1.Click += new System.EventHandler(this.circularProgressBar1_Click);
             // 
             // timer1
             // 
@@ -60,7 +61,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.Controls.Add(this.circularProgressBar1);
             this.Name = "UCCircularProgressBar";
-            this.Size = new System.Drawing.Size(196, 117);
+            this.Size = new System.Drawing.Size(115, 117);
             this.Load += new System.EventHandler(this.UCCircularProgressBar_Load);
             this.ResumeLayout(false);
 

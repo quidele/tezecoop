@@ -21,13 +21,13 @@ namespace SGLibrary
         private void UCCircularProgressBar_Load(object sender, EventArgs e)
         {
             circularProgressBar1.Value = 0;
-            circularProgressBar1.Maximum = 20; 
+            circularProgressBar1.Maximum = 10; 
         
         }
 
         private void timer1_Tick(object sender, EventArgs e)
         {
-            if ( i >= 20 ){
+            if ( i >= 10 ){
                 i= 1;
                 circularProgressBar1.Value = 1;
                 
@@ -41,16 +41,21 @@ namespace SGLibrary
 
         public void Start()
         {
-            
-            timer1.Enabled = true;    
-            circularProgressBar1.Show();
+            timer1.Enabled = true;
             this.Visible = true;
+            circularProgressBar1.Show();
+            
         }
 
         public void Stop()
         {
             timer1.Enabled = false;
             this.Visible = false;
+        }
+
+        private void circularProgressBar1_Click(object sender, EventArgs e)
+        {
+
         }
 
     }

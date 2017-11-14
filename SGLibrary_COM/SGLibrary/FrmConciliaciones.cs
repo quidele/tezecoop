@@ -12,6 +12,7 @@ using SGLibrary.ArchivoTarjetas;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
 using SGLibrary.Exceptions;
+using System.Threading;
 
 namespace SGLibrary
 {
@@ -137,13 +138,9 @@ namespace SGLibrary
                         {
                             case "Todo Pago":
                                 // probar este código
-                                this.progressBar1.Minimum = 0;
                                 var listaResultados = un_ServiceConciliacionTodoPago.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion);
-                                this.progressBar1.Maximum = listaResultados.Count();
-                                this.progressBar1.Visible = true;
                                 //cargarDataGridViewCuponesTodoPago(dataGridView1, listaResultados , this.modoEdicion.Text);
                                 cargarDataGridViewCuponesTodoPago_ADGV(dataGridView1, listaResultados, modoEdicion.Text, this.dataSet1, this.bindingSource1);
-                                this.progressBar1.Visible = false;
                                 break;
                             case "Manual":
                                 cargarDataGridViewCupones_ADGV(dataGridView1, un_ServiceConciliacionManual.ObtenerDetalleConciliacion(una_conciliacion.IdConciliacion), this.modoEdicion.Text,dataSet1,bindingSource1);
@@ -1032,11 +1029,11 @@ namespace SGLibrary
             {
                    item.HeaderText = item.HeaderText.Replace("_", " ");
             }
+
+            Application.DoEvents();
             dgv.DataSource = p_BindingSource;
             dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
-
             dataGridView1_ConciliacionAutomatica_Inicilizacion();
-
 
             }
             catch (Exception ex)
@@ -1053,9 +1050,9 @@ namespace SGLibrary
         private void dataGridView1_ConciliacionAutomatica_Inicilizacion()
         {
 
-
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
+                //Application.DoEvents();
                 var row = item;
                 switch (row.Cells["NIVEL"].Value.ToString())
                 {
@@ -1262,6 +1259,11 @@ namespace SGLibrary
                     return; 
             }
 
+            FrmCircularProgressBar f1 = new FrmCircularProgressBar();
+            f1.Show();
+            WinAPI.SiempreEncima(f1.Handle); 
+            
+           
             // realizar apertura del archivo lectura del contenido en forma generica
             miArchivo.AbrirArchivo(pNombreArchivo, this.txtdsUsuario.Text);
             Console.WriteLine(miArchivo.miArchivoTarjeta.formato  +" " +  miArchivo.miArchivoTarjeta.nombrearchivo);
@@ -1272,19 +1274,22 @@ namespace SGLibrary
             var listadeViajesaConciliar2 = this.serviceConciliacionesAutomaticas.ObtenerViajesConciliadosAutomaticamente(miArchivo.miArchivoTarjeta.id);
             var  listadeViajesaConciliar3 = listadeViajesaConciliar1.Concat(listadeViajesaConciliar2);
 
-            this.progressBar1.Minimum = 0;
-            this.progressBar1.Maximum = listadeViajesaConciliar3.Count();  //  listadeViajesaConciliar1.Count()  +  listadeViajesaConciliar2.Count();  
-            this.progressBar1.Visible = true;
+            
+            //this.progressBar1.Maximum = listadeViajesaConciliar3.Count();  //  listadeViajesaConciliar1.Count()  +  listadeViajesaConciliar2.Count();  
+            
 
             cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar3, modoEdicion.Text, true
                 , this.dataSet1, this.bindingSource1);
                 
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar1, modoEdicion.Text, true);
             //cargarDataGridViewConciliacionAutomatica(dataGridView1, listadeViajesaConciliar2, modoEdicion.Text, false);
-            this.progressBar1.Visible = false;
+            //this.progressBar1.Visible = false;
+
+            /* newThread.Interrupt(); */
+
             this.txtIdArchivo.Text = miArchivo.miArchivoTarjeta.id.ToString();
             // obtener los viajes conciliados automaticamente mas  
-
+            f1.Close();
         }
 
         private void statusStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
