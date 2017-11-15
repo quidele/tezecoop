@@ -12,8 +12,10 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EN-US\SGLibrary.resources.d
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.tlb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.xml
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\es\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ru\AdvancedDataGridView.resources.dll

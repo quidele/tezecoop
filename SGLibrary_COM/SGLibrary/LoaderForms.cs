@@ -92,6 +92,10 @@ namespace SGLibrary
 
         public void execFormulario(string value)
         {
+
+            // Implmentar en proximas version en la proximas versiones
+            // var paramLog = new SGLibrary.Utility.ParamLogUtility(() => value).GetLog();
+
             try
             {
                 Object  f = new Form ();

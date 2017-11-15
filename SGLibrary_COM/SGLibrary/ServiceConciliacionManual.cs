@@ -19,6 +19,11 @@ namespace SGLibrary
 
         public void agregarConciliacion(List<TB_ConciliacionDetalleEx> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
         {
+
+            
+
+            
+
             ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 
             using (var context = new dbSG2000Entities())
@@ -71,13 +76,10 @@ namespace SGLibrary
                     }
 
                     context.SaveChanges();
-
+                    transaction.Complete();
 
                     // Procesamos el Movimientos posdatados
                     unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
-
-
-                    transaction.Complete();
 
 
                     return;

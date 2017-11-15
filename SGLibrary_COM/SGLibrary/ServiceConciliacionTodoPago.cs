@@ -67,13 +67,10 @@ namespace SGLibrary
                     }
 
                     context.SaveChanges();
-
+                    transaction.Complete();
 
                     // Procesamos el Movimientos posdatados
                     unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
-
-
-                    transaction.Complete();
 
 
                     return;
@@ -207,11 +204,10 @@ namespace SGLibrary
                     }
 
                     context.SaveChanges();
+                    transaction.Complete();
 
                     // Procesamos el Movimientos posdatados
                     unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
-
-                    transaction.Complete();
 
 
                     return;
