@@ -115,6 +115,9 @@ namespace SGLibrary
                         f1.un_ServiceConciliacionTodoPago = new ServiceConciliacionTodoPago();
                         f1.un_ServiceConciliacionTodoPago.CajaActiva(this.CajaAdm);
                         f1.un_ServiceConciliacionTodoPago.UsuarioActivo(this.Usuario);
+                        f1.serviceConciliacionesAutomaticasAMCA = new ServiceConciliacionAutomaticaAMCA();
+                        f1.serviceConciliacionesAutomaticasAMCA.CajaActiva(this.CajaAdm);
+                        f1.serviceConciliacionesAutomaticasAMCA.UsuarioActivo(this.Usuario);
                         f1.ShowDialog();
                         f = (Form)f1;
                         break;

@@ -78,6 +78,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resourc
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
@@ -123,6 +124,4 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Re
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache

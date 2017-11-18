@@ -86,7 +86,7 @@ namespace SGLibrary
 
 
                     // Procesamos el Movimientos posdatados
-                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+                    // unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
 
 
                     return;
@@ -174,7 +174,7 @@ namespace SGLibrary
                     context.SaveChanges();
 
                     // Procesamos el Movimientos posdatados
-                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+                    // unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
 
                     transaction.Complete();
 
@@ -255,7 +255,7 @@ namespace SGLibrary
 
 
                     // Procesamos el Movimientos posdatados
-                    unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
+                    // unSMC.procesarMovimientosPosdatados(Decimal.Parse(this.CajaAdm), this.Usuario);
 
 
                     transaction.Complete();

@@ -414,7 +414,7 @@ namespace SGLibrary
                             ServiceConciliacionAutomatica  un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticas;
                             if ((una_conciliacion.formato.IndexOf("Amca", StringComparison.OrdinalIgnoreCase)) == 0)
                                 un_serviceConciliacionesAutomaticas = this.serviceConciliacionesAutomaticasAMCA;
-                            serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
+                            un_serviceConciliacionesAutomaticas.agregarConciliacion(listaAutomatica, una_conciliacion);
                             break;
                             
                     }
