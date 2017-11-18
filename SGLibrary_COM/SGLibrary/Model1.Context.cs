@@ -164,5 +164,31 @@ namespace SGLibrary
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_obtenerUltNroCAIsUsados_Result>("spu_obtenerUltNroCAIsUsados", mesParameter, anioParameter);
         }
+    
+        public virtual ObjectResult<spu_generarPresentacionCAI_v4_9_41_Result> spu_generarPresentacionCAI_v4_9_41(Nullable<int> idPresentacion, string realizarLOG)
+        {
+            var idPresentacionParameter = idPresentacion.HasValue ?
+                new ObjectParameter("IdPresentacion", idPresentacion) :
+                new ObjectParameter("IdPresentacion", typeof(int));
+    
+            var realizarLOGParameter = realizarLOG != null ?
+                new ObjectParameter("realizarLOG", realizarLOG) :
+                new ObjectParameter("realizarLOG", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_generarPresentacionCAI_v4_9_41_Result>("spu_generarPresentacionCAI_v4_9_41", idPresentacionParameter, realizarLOGParameter);
+        }
+    
+        public virtual ObjectResult<spu_generarPresentacionCAI_v4_9_830_Result> spu_generarPresentacionCAI_v4_9_830(Nullable<int> idPresentacion, string realizarLOG)
+        {
+            var idPresentacionParameter = idPresentacion.HasValue ?
+                new ObjectParameter("IdPresentacion", idPresentacion) :
+                new ObjectParameter("IdPresentacion", typeof(int));
+    
+            var realizarLOGParameter = realizarLOG != null ?
+                new ObjectParameter("realizarLOG", realizarLOG) :
+                new ObjectParameter("realizarLOG", typeof(string));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<spu_generarPresentacionCAI_v4_9_830_Result>("spu_generarPresentacionCAI_v4_9_830", idPresentacionParameter, realizarLOGParameter);
+        }
     }
 }

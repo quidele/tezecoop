@@ -268,7 +268,13 @@
     <Compile Include="spu_conciliarAutomaticamente_v4_9_900_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="spu_generarPresentacionCAI_v4_9_41_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="spu_generarPresentacionCAI_v4_9_4_Result.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="spu_generarPresentacionCAI_v4_9_830_Result.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="spu_obtenerDeudoresaFecha_Result.cs">

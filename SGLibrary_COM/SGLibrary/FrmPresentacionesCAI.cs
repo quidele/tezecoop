@@ -142,7 +142,7 @@ namespace SGLibrary
 
 
 
-                        spu_generarPresentacionCAI_v4_9_4_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
+                        spu_generarPresentacionCAI_v4_9_830_Result resultado = serviceModel.generarPresentacionCAI(una_presentacion_actual.IdPresentacion);
 
                         this.progressBar1.Visible = false;
                         if (resultado.resultado.CompareTo ( "OK")==0)

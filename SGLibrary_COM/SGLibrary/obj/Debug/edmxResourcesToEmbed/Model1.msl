@@ -247,11 +247,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <FunctionImportMapping FunctionImportName="spu_conciliarAutomaticamente_v4_9_900" FunctionName="dbSG2000Model.Store.spu_conciliarAutomaticamente_v4_9_900">
-      <ResultMapping>
-        <ComplexTypeMapping TypeName="dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result" />
-      </ResultMapping>
-    </FunctionImportMapping>
     <EntitySetMapping Name="TB_Cupones">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
         <MappingFragment StoreEntitySet="TB_Cupones">
@@ -334,6 +329,22 @@
           <ScalarProperty Name="LETRA" ColumnName="LETRA" />
           <ScalarProperty Name="CAI" ColumnName="CAI" />
           <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_41" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_41_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="Descrip" ColumnName="Descrip" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_830" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_830">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_830_Result">
+          <ScalarProperty Name="resultado" ColumnName="resultado" />
+          <ScalarProperty Name="Descrip" ColumnName="Descrip" />
         </ComplexTypeMapping>
       </ResultMapping>
     </FunctionImportMapping>

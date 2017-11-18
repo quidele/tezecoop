@@ -22,11 +22,11 @@ namespace SGLibrary
         }
 
 
-        public spu_generarPresentacionCAI_v4_9_4_Result generarPresentacionCAI(int idPresetancion)
+        public spu_generarPresentacionCAI_v4_9_830_Result generarPresentacionCAI(int idPresetancion)
         {
             using (var context = new dbSG2000Entities())
             {
-                spu_generarPresentacionCAI_v4_9_4_Result resultado = context.spu_generarPresentacionCAI_v4_9_4
+                spu_generarPresentacionCAI_v4_9_830_Result resultado = context.spu_generarPresentacionCAI_v4_9_830
                     (idPresetancion, "N").First();
                 Trace.TraceInformation(resultado.resultado + " "  + resultado.Descrip);
                 return resultado;
