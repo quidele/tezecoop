@@ -70,6 +70,10 @@
       <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
       <Parameter Name="realizarLOG" Mode="In" Type="String" />
     </FunctionImport>
+    <FunctionImport Name="spu_generarPresentacionCAI_v4_9_830" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_830_Result)">
+      <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+      <Parameter Name="realizarLOG" Mode="In" Type="String" />
+    </FunctionImport>
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -478,6 +482,10 @@
     <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
   </ComplexType>
   <ComplexType Name="spu_generarPresentacionCAI_v4_9_41_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_830_Result">
     <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
     <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
   </ComplexType>

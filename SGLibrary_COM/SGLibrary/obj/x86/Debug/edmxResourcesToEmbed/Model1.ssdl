@@ -372,6 +372,10 @@
     <Parameter Name="IdPresentacion" Type="int" Mode="In" />
     <Parameter Name="realizarLOG" Type="char" Mode="In" />
   </Function>
+  <Function Name="spu_generarPresentacionCAI_v4_9_830" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="IdPresentacion" Type="int" Mode="In" />
+    <Parameter Name="realizarLOG" Type="char" Mode="In" />
+  </Function>
   <Function Name="spu_obtenerDeudoresaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
     <Parameter Name="fecha" Type="date" Mode="In" />
   </Function>
