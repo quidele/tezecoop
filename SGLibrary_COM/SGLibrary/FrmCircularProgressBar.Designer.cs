@@ -33,21 +33,27 @@
             // 
             // ucCircularProgressBar1
             // 
-            this.ucCircularProgressBar1.Location = new System.Drawing.Point(1, 3);
+            this.ucCircularProgressBar1.Location = new System.Drawing.Point(13, 13);
+            this.ucCircularProgressBar1.Margin = new System.Windows.Forms.Padding(4);
             this.ucCircularProgressBar1.Name = "ucCircularProgressBar1";
-            this.ucCircularProgressBar1.Size = new System.Drawing.Size(108, 117);
+            this.ucCircularProgressBar1.Size = new System.Drawing.Size(345, 333);
             this.ucCircularProgressBar1.TabIndex = 0;
             // 
             // FrmCircularProgressBar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(121, 120);
+            this.ClientSize = new System.Drawing.Size(357, 352);
+            this.ControlBox = false;
             this.Controls.Add(this.ucCircularProgressBar1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "FrmCircularProgressBar";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Form1";
+            this.Text = "Procesando....";
+            this.UseWaitCursor = true;
             this.Load += new System.EventHandler(this.FrmCircularProgressBar_Load);
             this.ResumeLayout(false);
 
@@ -56,6 +62,8 @@
         #endregion
 
         private UCCircularProgressBar ucCircularProgressBar1;
+
+
 
 
 

@@ -1049,6 +1049,8 @@ namespace SGLibrary
 
         private void dataGridView1_ConciliacionAutomatica_Inicilizacion()
         {
+            int i = 1;
+
 
             foreach (DataGridViewRow item in dataGridView1.Rows)
             {
@@ -1076,7 +1078,19 @@ namespace SGLibrary
                         break;
                 }
                 row.Cells["FECHA_PAGO"].Value = row.Cells["FECHA_PAGO"].Value.ToString().Remove(10);
+
+                if (i == 50)
+                {
+                    Application.DoEvents ();
+                    i = 1;
+                }
+                else
+                {
+                    i++;
+                }
+
             }
+
         }
 
         public void cargarDataGridViewConciliaciones(DataGridView dgv, IEnumerable<Object> lista)
@@ -1370,6 +1384,11 @@ namespace SGLibrary
         private void panelcarga_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            Application.DoEvents();
         }
 
 

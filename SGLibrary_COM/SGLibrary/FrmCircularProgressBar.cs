@@ -24,6 +24,11 @@ namespace SGLibrary
            Application.DoEvents(); 
         }
 
+        private void ucCircularProgressBar1_Load(object sender, EventArgs e)
+        {
+
+        }
+
 
 
     }
