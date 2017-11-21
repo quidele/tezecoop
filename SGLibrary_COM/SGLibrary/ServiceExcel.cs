@@ -248,11 +248,11 @@ namespace SGLibrary
                         switch (dataGridView1.Rows[i].Cells[j].Value.GetType().FullName)
                         {
                             case "System.Date":
-                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/yyyy";
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/YYYY";
                                 worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
                                 break;
                             case "System.DateTime":
-                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/yyyy HH:mm:ss";
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/YYYY HH:mm:ss";
                                 worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
                                 break;
                             default:
