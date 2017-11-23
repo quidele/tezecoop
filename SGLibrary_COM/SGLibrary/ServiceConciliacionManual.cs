@@ -20,9 +20,10 @@ namespace SGLibrary
         public void agregarConciliacion(List<TB_ConciliacionDetalleEx> plistaDetalleConciliacion, TB_Conciliacion objConciliacion)
         {
 
-            
 
-            
+
+            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => plistaDetalleConciliacion, () => objConciliacion).GetLog();
+            Trace.TraceInformation(paramLog); 
 
             ServiceMovimientoContable unSMC = new ServiceMovimientoContable();
 

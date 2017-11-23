@@ -590,6 +590,8 @@ namespace SGLibrary
                 //dgv.Rows.Clear();
                 dgv.Columns.Clear();
                 dgv.AutoGenerateColumns = false;
+                dgv.AllowUserToResizeColumns = true;
+                dgv.AllowUserToOrderColumns = true;
 
                 foreach (var item in lista)
                 {
@@ -819,6 +821,8 @@ namespace SGLibrary
                 //dgv.Rows.Clear();
                 dgv.Columns.Clear();
                 dgv.AutoGenerateColumns = false;
+                dgv.AllowUserToResizeColumns = true;
+                dgv.AllowUserToOrderColumns = true;
 
                 foreach (var item in lista)
                 {
@@ -972,6 +976,8 @@ namespace SGLibrary
                 dgv.AutoGenerateColumns = false;
                 //dgv.Rows.Clear();
                 dgv.Columns.Clear();
+                dgv.AllowUserToResizeColumns = true;
+                dgv.AllowUserToOrderColumns  = true;
 
                 foreach (var item in lista_datos)
                 {
