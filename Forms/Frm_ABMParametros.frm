@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMParametros 
    Caption         =   "Parametros"
    ClientHeight    =   7230
@@ -980,10 +980,6 @@ Private Sub Form_Resize()
     
 End Sub
 
-Private Sub fraABMParametros_DragDrop(Source As Control, X As Single, Y As Single)
-
-End Sub
-
 Private Sub lstBusqueda_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
 
     If lstBusqueda.SortKey = ColumnHeader.Index - 1 Then
@@ -1106,7 +1102,7 @@ Dim strValor    As String
                 Exit Sub
            End If
            If Guardarregistro(EstadoABM) Then
-                Me.cbParametro.Text = "(Todos)"
+                ' Me.cbParametro.Text = "(Todos)"
                 tlb_ABM_ButtonClick tlb_ABM.Buttons("Buscar")
                 EstadoABM = Consulta
            End If

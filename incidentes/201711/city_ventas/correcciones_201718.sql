@@ -208,3 +208,36 @@ SOLANES GUSTAVO JAVIER (20-18479275-4 ... - Cuit Online
   update x set x.nrDOC = '30-52745070-1'   from TB_Comprobantes x   where  nrTalonario = '0001'
   and nrComprobante = '00000930    '   and tpLetra ='M' and tpComprobante = 'FA'
 
+
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 8 , @anio = 2017, @renglon = 10720
+  
+  select * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00000930    '   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30-52745070-1'   from TB_Comprobantes x   where  nrTalonario = '0001'
+  and nrComprobante = '00000930    '   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+
+  
+
+	
+  exec  [dbo].[spu_obtieneDatosCITIVentas_v4_9_4] @mes = 8 , @anio = 2017
+
+  exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes =8 , @anio = 2017
+
+
+
+  
+  
+  
+
+  
+  select * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00000933    '   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = null  , x.dsRazonSocial  = null  , tpIVA = 'CF'  from TB_Comprobantes x  where  nrTalonario = '0001'
+  and nrComprobante = '00000933    '   and tpLetra ='M' and tpComprobante = 'FA'
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 8 , @anio = 2017, @renglon = 10720

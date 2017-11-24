@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_ResumenLicenciatario 
    AutoRedraw      =   -1  'True
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   103415809
+            Format          =   110034945
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   104005633
+            Format          =   110034945
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -835,7 +835,6 @@ Begin VB.Form frm_ResumenLicenciatario
          _ExtentY        =   14314
          View            =   3
          LabelEdit       =   1
-         Sorted          =   -1  'True
          MultiSelect     =   -1  'True
          LabelWrap       =   -1  'True
          HideSelection   =   -1  'True
