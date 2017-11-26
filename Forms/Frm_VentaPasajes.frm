@@ -602,7 +602,7 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   285
          Index           =   2
-         Left            =   135
+         Left            =   120
          TabIndex        =   22
          Tag             =   "dsProductoBuscado"
          Top             =   1650
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   276430849
+         Format          =   213516289
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2624,8 +2624,8 @@ On Error Resume Next
     ObtenerCampo("vlSaldoReales").Text = "0,00"
     ObtenerCampo("vlRecargoTarjeta").Text = vlRecargoTarjeta
     
-    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
-                        ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
+    'Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
+    '                    ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
     If ObtenerCampo("cdCondVenta").Text = "Tarjeta de Débito" Or ObtenerCampo("cdCondVenta").Text = "Tarjeta de Crédito" Or _
        ObtenerCampo("cdCondVenta").Text = "Todo Pago" Then
@@ -3280,7 +3280,7 @@ Dim strValor  As String
     End Select
 
     ' llamada 1
-    Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
+    ' Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(CSng(ObtenerCampo("vlTotalGeneral")), ObtenerCampo("cdCondVenta").Text, ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
     
 End Sub
 
@@ -5738,6 +5738,10 @@ End Sub
 
 
 
+
+Private Sub txtItemFactura_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
+
+End Sub
 
 Private Sub txtItemFactura_GotFocus(Index As Integer)
     

@@ -149,7 +149,7 @@ Dim strDato                 As String
             strDato = pLista.ListItems.Item(cantidadItems).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "@"
         Case Else
-            Debug.Assert "Falta el TIPO"
+            ' Debug.Assert "Falta el TIPO"
             strDato = pLista.ListItems.Item(cantidadItems).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "@"
             
