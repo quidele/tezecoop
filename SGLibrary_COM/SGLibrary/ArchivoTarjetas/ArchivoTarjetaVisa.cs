@@ -45,8 +45,11 @@ namespace SGLibrary.ArchivoTarjetas
         public  override void ProcesarArchivo()
         {
             char separador ='\0';
-            int  posi=1; 
-            
+            int  posi=1;
+
+            var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
+            Trace.TraceInformation(paramLog); 
+
             foreach (var item in this.Contenido)
             {
                 try
@@ -54,6 +57,11 @@ namespace SGLibrary.ArchivoTarjetas
                     if  (item.IndexOf(',') > 0)   separador = ',';
                     if  (item.IndexOf(';') > 0)   separador = ';';
                     string[] columnas= item.Split(separador);
+
+                    if (columnas.Count() != 11){
+                        Console.WriteLine("ESTA LINEA NO ES DE 11 ");
+                    }
+
                     if ((columnas.Count() >= Cantidad_Columas) && (columnas[0].CompareTo("Fecha Presentacion")!=0))
                     {
                         TB_ArchivoTarjetaDetalle unTB_ArchivoTarjetaDetalle = new TB_ArchivoTarjetaDetalle();
@@ -72,6 +80,12 @@ namespace SGLibrary.ArchivoTarjetas
                                 case 9: unTB_ArchivoTarjetaDetalle.moneda = columnas[i].Replace("pesos", "PES").Trim(); break;  // Moneda
                                 case 10:
                                     {
+                                        columnas[i] = columnas[i].Trim();
+                                        if (columnas[i].Substring (columnas[i].Length - 3)==".00")
+                                            columnas[i] = columnas[i].Remove(columnas[i].Length - 3);
+
+                                        
+                                        
                                         if (columnas[i].IndexOf(".") == 0)  // si tiene un punto
                                         {   // dividimos el valor resultante por 100
                                             unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100;

@@ -22,6 +22,12 @@ namespace SGLibrary
         public ServiceConciliacionAutomatica()
         {
 
+            var un_ServiceParametros = new ServiceParametros ();
+            var CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO  = un_ServiceParametros.ObtenerParametro ("CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO"); 
+            var CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO  = un_ServiceParametros.ObtenerParametro ("CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO");
+            var CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON  = Int32.Parse ( un_ServiceParametros.ObtenerParametro ("CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON"));
+
+            
         }
 
 

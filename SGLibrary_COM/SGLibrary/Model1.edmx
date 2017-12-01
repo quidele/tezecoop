@@ -14,7 +14,7 @@
           <Property Name="nombrearchivo" Type="varchar" MaxLength="50" />
           <Property Name="dtproceso" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
-          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="400" />
+          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="500" />
         </EntityType>
         <EntityType Name="TB_ArchivoTarjetaDetalle">
           <Key>
@@ -145,7 +145,7 @@
           <Property Name="dtFechaAcreditacion" Type="date" />
           <Property Name="vlMontoAcreditacion" Type="float" />
           <Property Name="IdConciliacion" Type="int" />
-          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
+          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
@@ -214,8 +214,21 @@
           <Property Name="flProcesado" Type="bit" />
           <Property Name="dtProcesado" Type="datetime" />
           <Property Name="IdMovimiento_Procesado" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="nro_trans" Type="int" />
           <Property Name="Error_Procesado" Type="varchar" MaxLength="400" />
+          <Property Name="nro_trans" Type="int" />
+        </EntityType>
+        <EntityType Name="TB_Parametros">
+          <Key>
+            <PropertyRef Name="dsParametro" />
+          </Key>
+          <Property Name="dsParametro" Type="varchar" MaxLength="70" Nullable="false" />
+          <Property Name="vlParametro" Type="varchar" MaxLength="50" />
+          <Property Name="tpParametro" Type="varchar" MaxLength="50" />
+          <Property Name="nrTamanio" Type="int" />
+          <Property Name="dtActualizacion" Type="datetime" />
+          <Property Name="grupo_parametro" Type="char" MaxLength="40" />
+          <Property Name="observacion" Type="varchar" MaxLength="500" />
+          <Property Name="flEditable" Type="bit" />
         </EntityType>
         <EntityType Name="TB_PresentacionesCAI">
           <Key>
@@ -298,30 +311,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
-          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_ArchivoTarjeta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TB_Conciliacion">
-              <PropertyRef Name="idArchivo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
-          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_ArchivoTarjetaDetalle">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TB_ConciliacionDetalle">
-              <PropertyRef Name="IdArchivoTarjetaDetalle" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
           <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
           <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -377,10 +366,6 @@
           <Parameter Name="IdPresentacion" Type="int" Mode="In" />
           <Parameter Name="realizarLOG" Type="char" Mode="In" />
         </Function>
-        <Function Name="spu_generarPresentacionCAI_v4_9_830" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
-          <Parameter Name="IdPresentacion" Type="int" Mode="In" />
-          <Parameter Name="realizarLOG" Type="char" Mode="In" />
-        </Function>
         <Function Name="spu_obtenerDeudoresaFecha" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="fecha" Type="date" Mode="In" />
         </Function>
@@ -405,6 +390,7 @@
           <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_MovimientosContables" EntityType="Self.TB_MovimientosContables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_MovimientosContablesPosdatados" EntityType="Self.TB_MovimientosContablesPosdatados" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_Parametros" EntityType="Self.TB_Parametros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PresentacionesCAI" EntityType="Self.TB_PresentacionesCAI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="Self.TB_PresentacionesCAIDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
@@ -412,14 +398,6 @@
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
-            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
@@ -516,6 +494,7 @@
             <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
             <Parameter Name="realizarLOG" Mode="In" Type="String" />
           </FunctionImport>
+          <EntitySet Name="TB_Parametros" EntityType="dbSG2000Model.TB_Parametros" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -740,7 +719,7 @@
           <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="dtproceso" Precision="3" />
           <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
           <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
         </EntityType>
@@ -913,7 +892,7 @@
           <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
           <Property Name="vlMontoAcreditacion" Type="Double" />
           <Property Name="IdConciliacion" Type="Int32" />
-          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
         </EntityType>
         <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
           <Property Type="Int32" Name="AÑO" Nullable="true" />
@@ -932,6 +911,19 @@
           <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
           <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
         </ComplexType>
+        <EntityType Name="TB_Parametros">
+          <Key>
+            <PropertyRef Name="dsParametro" />
+          </Key>
+          <Property Name="dsParametro" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="vlParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tpParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrTamanio" Type="Int32" />
+          <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="grupo_parametro" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="flEditable" Type="Boolean" />
+        </EntityType>
         </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1277,14 +1269,20 @@
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_830" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_830">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_830_Result">
-                <ScalarProperty Name="resultado" ColumnName="resultado" />
-                <ScalarProperty Name="Descrip" ColumnName="Descrip" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
+          <EntitySetMapping Name="TB_Parametros">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Parametros">
+              <MappingFragment StoreEntitySet="TB_Parametros">
+                <ScalarProperty Name="flEditable" ColumnName="flEditable" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="grupo_parametro" ColumnName="grupo_parametro" />
+                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+                <ScalarProperty Name="nrTamanio" ColumnName="nrTamanio" />
+                <ScalarProperty Name="tpParametro" ColumnName="tpParametro" />
+                <ScalarProperty Name="vlParametro" ColumnName="vlParametro" />
+                <ScalarProperty Name="dsParametro" ColumnName="dsParametro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           </EntityContainerMapping>
       </Mapping>
     </edmx:Mappings>
