@@ -10,6 +10,7 @@ using System.Data.Entity.Validation;
 using System.Data;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using System.Globalization;
 
 namespace SGLibrary
 {
@@ -18,8 +19,13 @@ namespace SGLibrary
     public class ServiceConciliacionAutomaticaAMCA : ServiceConciliacionAutomatica 
     {
 
+        private Int32 CONCILIACION_CANT_DIAS_COBRO_AMCA = 0;
+
         public ServiceConciliacionAutomaticaAMCA()
         {
+            var un_ServiceParametros = new ServiceParametros();
+            CONCILIACION_CANT_DIAS_COBRO_AMCA = Int32.Parse(un_ServiceParametros.ObtenerParametro("CONCILIACION_CANT_DIAS_COBRO_AMCA"), CultureInfo.InvariantCulture); 
+
         }
 
 

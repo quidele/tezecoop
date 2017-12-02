@@ -12,7 +12,7 @@ namespace SGLibrary
 {
     public class ServiceParametros : ServiceModel
     {
-        public TB_Parametros ObtenerParametro(String nombre)
+        public String ObtenerParametro(String nombre)
         {
 
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => nombre ).GetLog();
@@ -25,7 +25,7 @@ namespace SGLibrary
                              select c).First();
 
                 Trace.TraceInformation(un_TB_Parametros.ToString());
-                return un_TB_Parametros;
+                return un_TB_Parametros.vlParametro;
 
             }
         }

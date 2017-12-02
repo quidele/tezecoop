@@ -10,6 +10,7 @@ using System.Data.Entity.Validation;
 using System.Data;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using System.Globalization;
 
 namespace SGLibrary
 {
@@ -19,13 +20,18 @@ namespace SGLibrary
     public class ServiceConciliacionAutomatica : ServiceConciliacion 
     {
 
+        private Int32 CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO = 0;
+        private Int32 CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO = 0;
+        private Int32 CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON = 0;
+
+
         public ServiceConciliacionAutomatica()
         {
 
             var un_ServiceParametros = new ServiceParametros ();
-            var CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO  = un_ServiceParametros.ObtenerParametro ("CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO"); 
-            var CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO  = un_ServiceParametros.ObtenerParametro ("CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO");
-            var CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON  = Int32.Parse ( un_ServiceParametros.ObtenerParametro ("CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON"));
+            CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO  =  Int32.Parse(un_ServiceParametros.ObtenerParametro ("CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO"), CultureInfo.InvariantCulture) ;
+            CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO = Int32.Parse(un_ServiceParametros.ObtenerParametro("CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO"), CultureInfo.InvariantCulture);
+            CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON = Int32.Parse(un_ServiceParametros.ObtenerParametro("CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON"), CultureInfo.InvariantCulture); 
 
             
         }
@@ -230,13 +236,13 @@ namespace SGLibrary
                                                                       where c.id == objConciliacion.idArchivo
                                                                       select c).First();
 
-                            if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= 20)
+                            if (detalleConciliacion.fechaPago.Value.Subtract(detalleConciliacion.dtCupon).TotalDays >= this.CONCILIACION_DIF_DIAS_FECHA_PAGO_Y_CUPON)
                             {
-                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(30);
+                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(this.CONCILIACION_CANT_DIAS_COBRO_TARJETA_CREDITO);
                             }
                             else
                             {
-                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(5);
+                                detalleConciliacion.FechaPagoLicenciatario = detalleConciliacion.dtCupon.AddDays(this.CONCILIACION_CANT_DIAS_COBRO_TARJETA_DEBITO);
                             }
 
                             un_Cupon.dtCobradoalCliente = detalleConciliacion.FechaPagoLicenciatario; // muy importante para habilitar el pago al licenciatario
