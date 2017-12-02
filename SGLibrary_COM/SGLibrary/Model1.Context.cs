@@ -84,8 +84,8 @@ namespace SGLibrary
         public DbSet<TB_Conciliacion> TB_Conciliacion { get; set; }
         public DbSet<TB_PresentacionesCAI> TB_PresentacionesCAI { get; set; }
         public DbSet<TB_PresentacionesCAIDetalle> TB_PresentacionesCAIDetalle { get; set; }
-        public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Parametros> TB_Parametros { get; set; }
+        public DbSet<TB_Cupones> TB_Cupones { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

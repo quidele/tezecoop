@@ -14,7 +14,7 @@
           <Property Name="nombrearchivo" Type="varchar" MaxLength="50" />
           <Property Name="dtproceso" Type="datetime" />
           <Property Name="dsUsuario" Type="varchar" MaxLength="20" />
-          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="500" />
+          <Property Name="nombreArchivoCompleto" Type="varchar" MaxLength="400" />
         </EntityType>
         <EntityType Name="TB_ArchivoTarjetaDetalle">
           <Key>
@@ -145,7 +145,7 @@
           <Property Name="dtFechaAcreditacion" Type="date" />
           <Property Name="vlMontoAcreditacion" Type="float" />
           <Property Name="IdConciliacion" Type="int" />
-          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
+          <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
         </EntityType>
         <EntityType Name="TB_MovimientosContables">
           <Key>
@@ -214,8 +214,8 @@
           <Property Name="flProcesado" Type="bit" />
           <Property Name="dtProcesado" Type="datetime" />
           <Property Name="IdMovimiento_Procesado" Type="numeric" Precision="18" Scale="0" />
-          <Property Name="Error_Procesado" Type="varchar" MaxLength="400" />
           <Property Name="nro_trans" Type="int" />
+          <Property Name="Error_Procesado" Type="varchar" MaxLength="400" />
         </EntityType>
         <EntityType Name="TB_Parametros">
           <Key>
@@ -311,6 +311,30 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
           <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
           <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -399,6 +423,14 @@
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
           </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+          </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
             <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
@@ -477,7 +509,6 @@
           <FunctionImport Name="spu_conciliarAutomaticamente_v4_9_900" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result)">
           <Parameter Name="idArchivo" Mode="In" Type="Int32" />
           </FunctionImport>
-          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <FunctionImport Name="spu_obtenerPresentacionCAIs">
             <Parameter Name="mes" Mode="In" Type="Int32" />
             <Parameter Name="anio" Mode="In" Type="Int32" />
@@ -495,6 +526,7 @@
             <Parameter Name="realizarLOG" Mode="In" Type="String" />
           </FunctionImport>
           <EntitySet Name="TB_Parametros" EntityType="dbSG2000Model.TB_Parametros" />
+          <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -719,7 +751,7 @@
           <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Type="DateTime" Name="dtproceso" Precision="3" />
           <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
           <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
           <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
         </EntityType>
@@ -824,6 +856,36 @@
         </Association>
         <ComplexType Name="spu_conciliarAutomaticamente_v4_9_900_Result">
           </ComplexType>
+        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+          <Property Type="Int32" Name="AÑO" Nullable="true" />
+          <Property Type="Int32" Name="MES" Nullable="true" />
+          <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
+          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+          <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
+          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+        </ComplexType>
+        <ComplexType Name="spu_generarPresentacionCAI_v4_9_41_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+        </ComplexType>
+        <ComplexType Name="spu_generarPresentacionCAI_v4_9_830_Result">
+          <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+          <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+        </ComplexType>
+        <EntityType Name="TB_Parametros">
+          <Key>
+            <PropertyRef Name="dsParametro" />
+          </Key>
+          <Property Name="dsParametro" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+          <Property Name="vlParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="tpParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nrTamanio" Type="Int32" />
+          <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+          <Property Name="grupo_parametro" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+          <Property Name="flEditable" Type="Boolean" />
+        </EntityType>
         <EntityType Name="TB_Cupones">
           <Key>
             <PropertyRef Name="nrCupon" />
@@ -892,37 +954,7 @@
           <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
           <Property Name="vlMontoAcreditacion" Type="Double" />
           <Property Name="IdConciliacion" Type="Int32" />
-          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
-        </EntityType>
-        <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
-          <Property Type="Int32" Name="AÑO" Nullable="true" />
-          <Property Type="Int32" Name="MES" Nullable="true" />
-          <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
-          <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
-          <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
-          <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
-          <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
-        </ComplexType>
-        <ComplexType Name="spu_generarPresentacionCAI_v4_9_41_Result">
-          <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
-          <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
-        </ComplexType>
-        <ComplexType Name="spu_generarPresentacionCAI_v4_9_830_Result">
-          <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
-          <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
-        </ComplexType>
-        <EntityType Name="TB_Parametros">
-          <Key>
-            <PropertyRef Name="dsParametro" />
-          </Key>
-          <Property Name="dsParametro" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
-          <Property Name="vlParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="tpParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nrTamanio" Type="Int32" />
-          <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
-          <Property Name="grupo_parametro" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
-          <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
-          <Property Name="flEditable" Type="Boolean" />
+          <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1176,6 +1208,42 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <FunctionImportMapping FunctionImportName="spu_obtenerPresentacionCAIs" FunctionName="dbSG2000Model.Store.spu_obtenerPresentacionCAIs" />
+          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
+                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
+                <ScalarProperty Name="MES" ColumnName="MES" />
+                <ScalarProperty Name="DOC" ColumnName="DOC" />
+                <ScalarProperty Name="PDV" ColumnName="PDV" />
+                <ScalarProperty Name="LETRA" ColumnName="LETRA" />
+                <ScalarProperty Name="CAI" ColumnName="CAI" />
+                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_41" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_41_Result">
+                <ScalarProperty Name="resultado" ColumnName="resultado" />
+                <ScalarProperty Name="Descrip" ColumnName="Descrip" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <EntitySetMapping Name="TB_Parametros">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_Parametros">
+              <MappingFragment StoreEntitySet="TB_Parametros">
+                <ScalarProperty Name="flEditable" ColumnName="flEditable" />
+                <ScalarProperty Name="observacion" ColumnName="observacion" />
+                <ScalarProperty Name="grupo_parametro" ColumnName="grupo_parametro" />
+                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
+                <ScalarProperty Name="nrTamanio" ColumnName="nrTamanio" />
+                <ScalarProperty Name="tpParametro" ColumnName="tpParametro" />
+                <ScalarProperty Name="vlParametro" ColumnName="vlParametro" />
+                <ScalarProperty Name="dsParametro" ColumnName="dsParametro" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="TB_Cupones">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
               <MappingFragment StoreEntitySet="TB_Cupones">
@@ -1244,42 +1312,6 @@
                 <ScalarProperty Name="nrPuesto" ColumnName="nrPuesto" />
                 <ScalarProperty Name="cdCliente" ColumnName="cdCliente" />
                 <ScalarProperty Name="nrCupon" ColumnName="nrCupon" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <FunctionImportMapping FunctionImportName="spu_obtenerPresentacionCAIs" FunctionName="dbSG2000Model.Store.spu_obtenerPresentacionCAIs" />
-          <FunctionImportMapping FunctionImportName="spu_obtenerUltNroCAIsUsados" FunctionName="dbSG2000Model.Store.spu_obtenerUltNroCAIsUsados">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result">
-                <ScalarProperty Name="AÑO" ColumnName="AÑO" />
-                <ScalarProperty Name="MES" ColumnName="MES" />
-                <ScalarProperty Name="DOC" ColumnName="DOC" />
-                <ScalarProperty Name="PDV" ColumnName="PDV" />
-                <ScalarProperty Name="LETRA" ColumnName="LETRA" />
-                <ScalarProperty Name="CAI" ColumnName="CAI" />
-                <ScalarProperty Name="UltNroComprobante" ColumnName="UltNroComprobante" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <FunctionImportMapping FunctionImportName="spu_generarPresentacionCAI_v4_9_41" FunctionName="dbSG2000Model.Store.spu_generarPresentacionCAI_v4_9_4">
-            <ResultMapping>
-              <ComplexTypeMapping TypeName="dbSG2000Model.spu_generarPresentacionCAI_v4_9_41_Result">
-                <ScalarProperty Name="resultado" ColumnName="resultado" />
-                <ScalarProperty Name="Descrip" ColumnName="Descrip" />
-              </ComplexTypeMapping>
-            </ResultMapping>
-          </FunctionImportMapping>
-          <EntitySetMapping Name="TB_Parametros">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_Parametros">
-              <MappingFragment StoreEntitySet="TB_Parametros">
-                <ScalarProperty Name="flEditable" ColumnName="flEditable" />
-                <ScalarProperty Name="observacion" ColumnName="observacion" />
-                <ScalarProperty Name="grupo_parametro" ColumnName="grupo_parametro" />
-                <ScalarProperty Name="dtActualizacion" ColumnName="dtActualizacion" />
-                <ScalarProperty Name="nrTamanio" ColumnName="nrTamanio" />
-                <ScalarProperty Name="tpParametro" ColumnName="tpParametro" />
-                <ScalarProperty Name="vlParametro" ColumnName="vlParametro" />
-                <ScalarProperty Name="dsParametro" ColumnName="dsParametro" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
