@@ -81,18 +81,21 @@ namespace SGLibrary.ArchivoTarjetas
                                 case 10:
                                     {
                                         columnas[i] = columnas[i].Trim();
-                                        if (columnas[i].Substring (columnas[i].Length - 3)==".00")
+                                        if (columnas[i].Substring(columnas[i].Length - 3) == ".00")
+                                        {
                                             columnas[i] = columnas[i].Remove(columnas[i].Length - 3);
-
-                                        
-                                        
-                                        if (columnas[i].IndexOf(".") == 0)  // si tiene un punto
-                                        {   // dividimos el valor resultante por 100
-                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100;
+                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) ;
                                         }
                                         else
-                                        {   // no dividimos el valor resultante por 100
-                                            unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture);
+                                        {
+                                            if (columnas[i].IndexOf(".") == 0)  // si tiene un punto
+                                            {   // dividimos el valor resultante por 100
+                                                unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i].Replace(".", ""), CultureInfo.InvariantCulture) / 100;
+                                            }
+                                            else
+                                            {   // no dividimos el valor resultante por 100
+                                                unTB_ArchivoTarjetaDetalle.importe = Decimal.Parse(columnas[i], CultureInfo.InvariantCulture);
+                                            }
                                         }
                                         break;  // Importe
                                     }

@@ -22,8 +22,18 @@ namespace WindowsFormsApplication1
         {
             Service1Client client = new Service1Client();
 
+
+            var resultado = client.obtenerRegistros();
+
+            MessageBox.Show(resultado.valor.ToString());
+
+            foreach (var item in resultado.Registros )
+	        {
+                MessageBox.Show(item); 
+	        }
+
             // Use the 'client' variable to call operations on the service.
-            MessageBox.Show ( client.obtenerRegistros().valor.ToString()  ) ;
+            
             // Always close the client.
             client.Close();
 
