@@ -139,7 +139,7 @@ namespace SGLibrary
             }
 
 
-        } // FIN DE ConcilialiarAutomaticaticamente
+        } // FIN DE clase ServiceMovimientoContable
     
     }
 }

@@ -1,0 +1,10 @@
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\obj\Debug\WcfServices.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\WcfServices.dll.config
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\WcfServices.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\WcfServices.pdb
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\EntityFramework.SqlServer.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\bin\EntityFramework.SqlServer.xml
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\obj\Debug\WcfServices.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WcfServices\obj\Debug\WcfServices.pdb
