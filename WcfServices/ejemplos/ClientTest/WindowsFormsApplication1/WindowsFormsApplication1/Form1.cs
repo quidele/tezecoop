@@ -22,7 +22,7 @@ namespace WindowsFormsApplication1
         {
             Service1Client client = new Service1Client();
 
-
+          
             var resultado = client.obtenerRegistros();
 
             MessageBox.Show(resultado.valor.ToString());
