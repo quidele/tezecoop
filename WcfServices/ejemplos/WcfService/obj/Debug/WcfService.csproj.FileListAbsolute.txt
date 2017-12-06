@@ -16,3 +16,9 @@ C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WcfService.pdb
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.dll
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.pdb
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WcfService.dll.config
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WcfService.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WcfService.pdb
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WcfService.pdb

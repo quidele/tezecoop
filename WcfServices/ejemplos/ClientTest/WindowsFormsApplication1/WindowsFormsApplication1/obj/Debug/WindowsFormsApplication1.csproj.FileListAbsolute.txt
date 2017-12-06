@@ -23,3 +23,12 @@ C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplic
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
 C:\Users\Euli\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe.config
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.exe
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.pdb
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.exe
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\bin\Debug\WindowsFormsApplication1.pdb
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Form1.resources
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.Properties.Resources.resources
+C:\github\tezecoop\WcfServices\ejemplos\ClientTest\WindowsFormsApplication1\WindowsFormsApplication1\obj\Debug\WindowsFormsApplication1.csproj.GenerateResource.Cache
