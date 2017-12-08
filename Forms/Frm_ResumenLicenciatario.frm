@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_ResumenLicenciatario 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
@@ -234,7 +234,7 @@ Begin VB.Form frm_ResumenLicenciatario
       Height          =   10200
       Left            =   75
       TabIndex        =   19
-      Top             =   675
+      Top             =   690
       Width           =   20205
       Begin MSComctlLib.ListView lstExcelIVA 
          Height          =   2400
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   110034945
+            Format          =   180486145
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   110034945
+            Format          =   180486145
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -1381,6 +1381,8 @@ Const grilla_columna_datotellic = 22
 Const grilla_columna_nrCupon = 19
 Const grilla_columna_dsObservacion = 20
 Const grilla_columna_flmanual = 21
+Const grilla_columna_tpCupon = 5
+
 
 
 
@@ -1564,6 +1566,16 @@ Dim ItemList  As ListItem
         
         End If
     
+
+        ' marcamos los viajes con factura manual
+        If Me.lstBusqueda.ListItems(i).SubItems(grilla_columna_tpCupon) = "Cuenta Corriente" Then
+           Me.lstBusqueda.ListItems(i).ForeColor = Gris
+            For j = 1 To Me.lstBusqueda.ListItems(i).ListSubItems.Count
+                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Gris
+                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ToolTipText = ""
+            Next
+        End If
+        
     Next i
     
     objGUI.refrescarGrilla Me.lstBusqueda

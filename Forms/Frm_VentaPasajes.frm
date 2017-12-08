@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   213516289
+         Format          =   308150273
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5738,10 +5738,6 @@ End Sub
 
 
 
-
-Private Sub txtItemFactura_DragOver(Index As Integer, Source As Control, X As Single, Y As Single, State As Integer)
-
-End Sub
 
 Private Sub txtItemFactura_GotFocus(Index As Integer)
     
