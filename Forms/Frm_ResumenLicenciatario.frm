@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   180486145
+            Format          =   159711233
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   180486145
+            Format          =   159711233
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -1569,9 +1569,9 @@ Dim ItemList  As ListItem
 
         ' marcamos los viajes con factura manual
         If Me.lstBusqueda.ListItems(i).SubItems(grilla_columna_tpCupon) = "Cuenta Corriente" Then
-           Me.lstBusqueda.ListItems(i).ForeColor = Gris
+           Me.lstBusqueda.ListItems(i).ForeColor = Verde
             For j = 1 To Me.lstBusqueda.ListItems(i).ListSubItems.Count
-                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Gris
+                Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Verde
                     Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ToolTipText = ""
             Next
         End If

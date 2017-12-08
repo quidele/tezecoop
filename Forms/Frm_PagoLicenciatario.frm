@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_PagoLicenciatario 
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   7995
@@ -1229,9 +1229,9 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(13) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   12
-            Object.Tag             =   "nrTalonarioCliente"
-            Text            =   "Talonario"
-            Object.Width           =   1764
+            Object.Tag             =   "cdCliente"
+            Text            =   "Cod. Cliente"
+            Object.Width           =   2117
          EndProperty
          BeginProperty ColumnHeader(14) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   13
@@ -1265,8 +1265,8 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(19) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   18
-            Object.Tag             =   "cdCliente"
-            Text            =   "Cod. Cliente"
+            Object.Tag             =   "dtCobradoalCliente"
+            Text            =   "Fecha Cobro"
             Object.Width           =   2540
          EndProperty
          BeginProperty ColumnHeader(20) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
@@ -1296,9 +1296,9 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          BeginProperty ColumnHeader(24) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
             SubItemIndex    =   23
-            Key             =   "dtCobradoalCliente"
-            Object.Tag             =   "dtCobradoalCliente"
-            Text            =   "Fecha Cobro"
+            Key             =   "cdCliente"
+            Object.Tag             =   "cdCliente"
+            Text            =   "Cod. Cliente"
             Object.Width           =   2540
          EndProperty
       End
@@ -1324,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   119865345
+         Format          =   179044353
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   119865345
+         Format          =   179044353
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
