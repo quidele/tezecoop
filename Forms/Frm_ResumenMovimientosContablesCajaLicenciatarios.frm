@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ResumenMovimientosContablesCajaLicenciatarios 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Resumen Caja de los Licenciatarios"
@@ -303,6 +303,7 @@ Begin VB.Form Frm_ResumenMovimientosContablesCajaLicenciatarios
       _ExtentY        =   10213
       View            =   3
       LabelEdit       =   1
+      Sorted          =   -1  'True
       LabelWrap       =   -1  'True
       HideSelection   =   -1  'True
       OLEDragMode     =   1
@@ -373,7 +374,7 @@ Begin VB.Form Frm_ResumenMovimientosContablesCajaLicenciatarios
       _ExtentX        =   2990
       _ExtentY        =   635
       _Version        =   393216
-      Format          =   174456833
+      Format          =   180748289
       CurrentDate     =   38267
    End
    Begin MSComCtl2.DTPicker DTPicker1 
@@ -387,7 +388,7 @@ Begin VB.Form Frm_ResumenMovimientosContablesCajaLicenciatarios
       _ExtentX        =   2990
       _ExtentY        =   609
       _Version        =   393216
-      Format          =   174456833
+      Format          =   180748289
       CurrentDate     =   38267
    End
    Begin MSComctlLib.ImageList ImgOperadores 

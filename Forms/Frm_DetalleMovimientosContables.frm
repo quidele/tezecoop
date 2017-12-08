@@ -385,13 +385,14 @@ Begin VB.Form Frm_DetalleMovimientosContables
       EndProperty
    End
    Begin MSComctlLib.ListView lstBusqueda 
-      Height          =   6228
-      Left            =   156
+      Height          =   6225
+      Left            =   135
       TabIndex        =   1
-      Top             =   1356
+      Top             =   1350
       Width           =   10140
       _ExtentX        =   17886
       _ExtentY        =   10980
+      SortKey         =   1
       View            =   3
       LabelEdit       =   1
       Sorted          =   -1  'True
@@ -399,6 +400,7 @@ Begin VB.Form Frm_DetalleMovimientosContables
       HideSelection   =   -1  'True
       OLEDragMode     =   1
       OLEDropMode     =   1
+      AllowReorder    =   -1  'True
       FullRowSelect   =   -1  'True
       GridLines       =   -1  'True
       _Version        =   393217
@@ -498,6 +500,7 @@ Begin VB.Form Frm_DetalleMovimientosContables
       HideSelection   =   -1  'True
       OLEDragMode     =   1
       OLEDropMode     =   1
+      AllowReorder    =   -1  'True
       FullRowSelect   =   -1  'True
       GridLines       =   -1  'True
       _Version        =   393217
@@ -757,6 +760,8 @@ Private Sub Form_Load()
     EstadoABM = Consulta
     limpiarControles
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Buscar")
+    Me.lstBusquedaDetalle.AllowColumnReorder = True
+    Me.lstBusqueda.AllowColumnReorder = True
     
 End Sub
 
@@ -807,6 +812,24 @@ Private Sub lstBusqueda_DblClick()
         imprimirPagoLicenciatario Me.lstBusqueda.SelectedItem.SubItems(6)
     End Select
     
+End Sub
+
+Private Sub lstBusquedaDetalle_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)
+
+    If lstBusquedaDetalle.SortKey = ColumnHeader.Index - 1 Then
+        If lstBusquedaDetalle.SortOrder = lvwAscending And lstBusquedaDetalle.Sorted Then
+            lstBusquedaDetalle.SortOrder = lvwDescending
+        Else
+            lstBusquedaDetalle.SortOrder = lvwAscending
+        End If
+        lstBusquedaDetalle.SortKey = ColumnHeader.Index - 1
+    Else
+       lstBusquedaDetalle.SortOrder = lvwAscending
+       lstBusquedaDetalle.SortKey = ColumnHeader.Index - 1
+    End If
+    ' lstBusqueda.Refresh
+    lstBusquedaDetalle.Sorted = True
+
 End Sub
 
 Private Sub lstBusquedaDetalle_DblClick()
@@ -941,6 +964,8 @@ Dim resp        As Byte
            HabilitarCampos "nrCajaVista", False
            HabilitarCampos "dsConcepto", False
            HabilitarCampos "dsUsuarioCaja", False
+           Me.lstBusqueda.Enabled = True
+           Me.lstBusqueda.Sorted = True
     Case "Exportar"
           ExportaraExcel
           EstadoABM = Consulta
