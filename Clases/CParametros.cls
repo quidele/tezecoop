@@ -36,6 +36,27 @@ Property Get Error() As String
     Error = lerror
 End Property
 
+Property Get Count() As String
+     Count = UBound(lmParametros)
+End Property
+
+Property Get miLBound() As String
+     miLBound = LBound(lmParametros)
+End Property
+
+Property Get miUBound() As String
+     miUBound = UBound(lmParametros)
+End Property
+
+
+Public Function ObtenerNombreCampo(pIndex As Integer) As String
+    ObtenerNombreCampo = lmParametros(pIndex).nmCampo
+End Function
+
+Public Function ObtenerValorxIndice(pIndex As Integer) As String
+    ObtenerValorxIndice = lmParametros(pIndex).Valor
+End Function
+
 Public Function ObtenerValor(pnmCampo As String) As String
 Dim nI As Integer
 
@@ -54,7 +75,7 @@ Dim nI As Integer
 End Function
 
 Public Sub GrabarValor(pnmCampo As String _
-                            , pValor As String)
+                            , ByVal pValor As String)
     Dim nI As Integer
 
     For nI = LBound(lmParametros) To UBound(lmParametros)

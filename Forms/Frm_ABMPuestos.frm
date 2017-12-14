@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMPuestos 
    Caption         =   "Maestro de Puestos"
    ClientHeight    =   7110
@@ -906,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   111935489
+               Format          =   162594817
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   111935489
+               Format          =   114032641
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -1448,6 +1448,10 @@ Dim nrTalonario_manual_ctacte_anterior  As String
 Dim tpLetraRecibo_manual_anterior   As String
 
  
+Dim objDicCampoValorOriginal As New CParametros
+Dim objDicCampoValorFormulario As New CParametros
+Dim objDicCampoValorModificado As New CParametros
+
 
 Public Sub RefrescarProgressbar(pAvance As Long)
 
@@ -1851,12 +1855,16 @@ Dim strSQL  As String
                             
                     Control.Text = Valor
                     
+                    ' grabamos los valores original
+                    objDicCampoValorOriginal.GrabarValor Control.Tag, Valor
+                    
                     If Not Control.Tag = "flRespeta_secuencia_carga_manual" Then
                         AvisarError Control.Tag, False
                     End If
                     
                     If Err Then
                         Control.value = AdaptarTrueFalse(Control, Valor)
+                        objDicCampoValorOriginal.GrabarValor Control.Tag, AdaptarTrueFalse(Control, Valor)
                     Else
                         If Trim(ObtenerCampo(Control.Tag).Text) = "99999999" Then
                             AvisarError Control.Tag, True
@@ -2211,15 +2219,29 @@ Dim strSQL      As String
                             ObjTablasIO.setearCampoOperadorValor _
                             Control.Tag, _
                             "<-", Control.value
+                            objDicCampoValorFormulario.GrabarValor Control.Tag, Control.value
                         Else
                             ObjTablasIO.setearCampoOperadorValor _
                             Control.Tag, _
                             "<-", Trim(Control.Text)
+                            objDicCampoValorFormulario.GrabarValor Control.Tag, Control.Text
                         End If
                 End If
              End If
         End If
     Next
+    
+    Dim Clave As String
+    Dim Valor As Variant
+    Dim i As Integer
+    
+    For i = 0 To objDicCampoValorOriginal.Count - 1
+        If objDicCampoValorOriginal.ObtenerValorxIndice(i) <> objDicCampoValorFormulario.ObtenerValorxIndice(i) Then
+                objDicCampoValorModificado.GrabarValor objDicCampoValorOriginal.ObtenerNombreCampo(i), Valor
+            
+        End If
+    Next i
+    
     
     Select Case EstadoABM
     Case modificacion

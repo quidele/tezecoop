@@ -264,7 +264,7 @@ namespace SGLibrary
 
         }
 
-
+        // Tipar para crear WEB SERVICE
         public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde , DateTime fechaHasta , String usuario )
         {
 
@@ -291,6 +291,7 @@ namespace SGLibrary
             }
         }
 
+        // Tipar para crear WEB SERVICE
         // agregado en la version 4.9.2 , agregamos el parametro tipo
         public IEnumerable<Object> obtenerConciliaciones(DateTime fechadesde, DateTime fechaHasta, String usuario, String tipo)
         {
@@ -304,7 +305,7 @@ namespace SGLibrary
                                                 && (c.dsUsuario == usuario || usuario.Trim().Length == 0)
                                                  && (c.formato == tipo || tipo.Trim().Length == 0)
                                                 orderby c.IdConciliacion descending  // ordenamos desde mas reciente a mas vieja
-                                                select new
+                                                select new 
                                                 {
                                                     ID = c.IdConciliacion,
                                                     FECHA = c.dtConciliacion,
@@ -454,7 +455,7 @@ namespace SGLibrary
             }
         }
 
-
+        // Tipar para crear WEB SERVICE
         /// <summary>
         /// 
         /// </summary>

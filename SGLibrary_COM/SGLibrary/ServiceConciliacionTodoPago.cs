@@ -86,6 +86,7 @@ namespace SGLibrary
         }
         //// fin agregar conciliacion
 
+        // Tipar para crear WEB SERVICE
         /// <summary>
         /// 
         /// </summary>
@@ -294,7 +295,7 @@ namespace SGLibrary
 
         }  // FIN anularConciliacionAutomatica
 
-
+        // Tipar para crear WEB SERVICE
         public override IEnumerable<Object> ObtenerViajesaConciliar()
         {
 
