@@ -134,6 +134,142 @@ update x set  x.dsRazonSocial = 'Consumidor Final' , x.nrDoc =  null
   where  nrTalonario = '0001'
   and nrComprobante = '00001090'   and tpLetra ='M' and tpComprobante = 'FA'
 
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 7703
+
+  
+  
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 7703
+
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00001062'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  /* Salta Una Rana S.r.l. - CUIT 30-71217962-3 | Dateas.com
+https://www.dateas.com/es/empresa/salta-una-rana-srl-30712179623 */
+
+    
+  update x set x.nrDOC = '30-71217962-3'    , tpIVA = 'RI'  from TB_Comprobantes x 
+  where  nrTalonario = '0001'
+  and nrComprobante = '00001062'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  -------------------------------------
+
+  
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 8115
+
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00001061'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  /* Dalde Blindajes Electromagneticos S.r.l. - CUIT 30-71113646-7 ...
+
+	*/
+  
+  update x set x.nrDOC = '30-71113646-7'    , tpIVA = 'RI'  from TB_Comprobantes x 
+  where  nrTalonario = '0001'
+  and nrComprobante = '00001061'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  -------------------------------------------------------------------------------
+  -------------------------------------------------------------------------------
+
+   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 8249
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes  where  nrTalonario = '0006'
+  and nrComprobante = '00008700'   and tpLetra ='A' and tpComprobante = 'FA'
+
+  /* Dalde Blindajes Electromagneticos S.r.l. - CUIT 30-71113646-7 ...
+
+	*/
+  
+  update x set x.nrDOC = '30652621151'   from TB_Comprobantes x 
+  where  nrTalonario = '0006'
+  and nrComprobante = '00008700'   and tpLetra ='A' and tpComprobante = 'FA'
+
+
+  
+
+
+   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 8250
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00001058'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  /* GEOCONSULT SA - Cuit Online
+https://www.cuitonline.com/detalle/30652621151/geoconsult-sa.html
+
+	*/
+  
+  update x set x.nrDOC = '30652621151'   from TB_Comprobantes x 
+  where  nrTalonario = '0001'
+  and nrComprobante = '00001058'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  10676
+
+
+  
+   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 10676
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes  where  nrTalonario = '0001'
+  and nrComprobante = '00001041'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  /* GEOCONSULT SA - Cuit Online
+https://www.cuitonline.com/detalle/30652621151/geoconsult-sa.html
+
+	*/
+  
+  update x set x.nrDOC = '30652621151'   from TB_Comprobantes x 
+  where  nrTalonario = '0001'
+  and nrComprobante = '00001058'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  10676
+
+
+  
+   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 10769
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes   where  nrTalonario = '0006'
+  and nrComprobante = '00768734'   and tpLetra ='B' and tpComprobante = 'FA'
+
+  /* GEOCONSULT SA - Cuit Online
+https://www.cuitonline.com/detalle/30652621151/geoconsult-sa.html
+
+	*/
+  
+  update x set x.nrDOC = null  , x.dsRazonSocial  = null    from TB_Comprobantes x 
+  where  nrTalonario = '0006'
+  and nrComprobante = '00768734'   and tpLetra ='B' and tpComprobante = 'FA'
+
+  
+
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 9 , @anio = 2017, @renglon = 13241
+  
+  -- 0001	00001090    	M	FA
+   select  dsRazonSocial ,  nrDOC  , flAnulado , * from TB_Comprobantes   where  nrTalonario = '0001'
+  and nrComprobante = '00001027'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  /* JUNAR ARGENTINA SRL - Cuit Online
+https://www.cuitonline.com/detalle/33715222049/junar-argentina-s.r.l.html
+
+
+	*/
+  
+  update x set x.nrDOC = '33715222049'     from TB_Comprobantes x 
+where  nrTalonario = '0001'
+  and nrComprobante = '00001027'   and tpLetra ='M' and tpComprobante = 'FA'
+
   
 
 
