@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_ResumenLicenciatario 
    AutoRedraw      =   -1  'True
    BackColor       =   &H00FFFFFF&
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   159711233
+            Format          =   122093569
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   159711233
+            Format          =   122093569
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -1740,7 +1740,7 @@ End Sub
 
 
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1757,7 +1757,7 @@ End Sub
 
 
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1899,7 +1899,7 @@ Private Sub lstBusqueda_LostFocus()
         
 End Sub
 
-Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
    ' comentado en la version 3.5
    ' objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
@@ -2251,7 +2251,7 @@ End Sub
 
 
 
-Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     ' comentado en la version 3.5
     'objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda

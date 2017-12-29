@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Begin VB.Form frm_ModifComprobante 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Modificación de Comprobantes"
@@ -106,7 +106,7 @@ Begin VB.Form frm_ModifComprobante
          _ExtentX        =   3307
          _ExtentY        =   582
          _Version        =   393216
-         Format          =   132513793
+         Format          =   253231105
          CurrentDate     =   42882
       End
       Begin VB.TextBox txtFields 
@@ -523,6 +523,9 @@ Private Sub Form_Load()
                 ObtenerCampo("@cdCondVenta_new_param").AddItem "Tarjeta de Crédito"
                 ObtenerCampo("@cdCondVenta_new_param").AddItem "Todo Pago"
                 ObtenerCampo("@cdCondVenta_new_param").AddItem "Retorno"
+                
+                ObtenerCampo("@dtComprobante_new_param").value = Date
+                    
                 
                 
 End Sub
