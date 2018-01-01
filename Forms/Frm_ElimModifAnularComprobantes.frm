@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   121438209
+         Format          =   306970625
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   121438209
+         Format          =   306970625
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3122,6 +3122,26 @@ Dim strMotivo As String
     resp = MsgBox("Esta seguro que desea eliminar el registro", vbQuestion + vbYesNo, "Atención")
         
     If resp = vbNo Then Exit Function
+    
+    ' Agregar verificacion de eliminacion nos veces
+    objCtaCteLic.nrTalonario = ObtenerCampo("nrTalonario").Text
+    objCtaCteLic.nrComprobante = ObtenerCampo("nrComprobante").Text
+    objCtaCteLic.tpComprobante = ObtenerCampo("tpComprobante").Text
+    objCtaCteLic.tpLetra = ObtenerCampo("tpLetra").Text
+        
+    ' verificar si el comprobate a sido compensado
+    If objCtaCteLic.esComprobanteCompensado() Then
+        EliminarRegistro = False
+        MsgBox "Error: " + objCtaCteLic.Error, vbCritical + vbDefaultButton1, "Atención"
+        Exit Function
+    End If
+
+    ' verificar si el comprobate a sido compensado
+    If objCtaCteLic.esComprobanteConciliado() Then
+        EliminarRegistro = False
+        MsgBox "Error: " + objCtaCteLic.Error, vbCritical + vbDefaultButton1, "Atención"
+        Exit Function
+    End If
     
     EliminarRegistro = False
     

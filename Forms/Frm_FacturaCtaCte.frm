@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_FacturaCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte."
@@ -1614,7 +1614,8 @@ Dim lnrCaja As String
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante").Text, " AND "
         ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante").Text, " AND "
-        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "flEliminar", "=", "0"
         ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrTalonario", "->", ""
         ObjTablasIO.setearCampoOperadorValor "nrComprobante", "->", ""

@@ -69,7 +69,7 @@ Public Function esComprobanteCompensado() As Boolean
     ObjTablasIO.Seleccionar
     If Not ObjTablasIO.rs_resultados.EOF Then
         esComprobanteCompensado = True
-        lerror = "el comprobante no puede 'Anularse' porque ya fue compensado."
+        lerror = "el comprobante ya fue compensado."
         Exit Function
     Else
         esComprobanteCompensado = False
@@ -78,6 +78,29 @@ Public Function esComprobanteCompensado() As Boolean
 
 End Function
 
+
+
+Public Function esComprobanteConciliado() As Boolean
+
+
+    ObjTablasIO.nmTabla = "TB_Cupones"
+    ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "=", Me.nrComprobante, " AND "
+    ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "=", Me.nrTalonario, " AND "
+    ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "=", Me.tpComprobante, " AND"
+    ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "=", Me.tpLetra, " AND"
+    ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "=", "1"
+    ObjTablasIO.setearCampoOperadorValor "flCobradoalCliente", "->", ""
+    ObjTablasIO.Seleccionar
+    If Not ObjTablasIO.rs_resultados.EOF Then
+        esComprobanteConciliado = True
+        lerror = "el comprobante ya fue conciliado."
+        Exit Function
+    Else
+        esComprobanteConciliado = False
+    End If
+    
+
+End Function
 
 ' Desanular Comprobante
 Public Function DesanularCupon() As Boolean
