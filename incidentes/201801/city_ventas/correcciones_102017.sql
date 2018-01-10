@@ -117,7 +117,7 @@ exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 6913
     exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 8157
 
 	
-	0001	00001168    	M	FA
+ -- 0001	00001168    	M	FA
 	  
   select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
    where  nrTalonario = '0001'
@@ -126,20 +126,87 @@ exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 6913
   update x set x.nrDOC = '30710635974' from TB_Comprobantes x     where  nrTalonario = '0001'
   and nrComprobante = '00001168'   and tpLetra ='M' and tpComprobante = 'FA'
   
+exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 8995
+  -- 0001	00001161    	M	FA
+
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+  where  nrTalonario = '0001'   and nrComprobante = '00001161'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30710635974' , dsRazonSocial = 'GRUPO DAFING SRL' from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001161'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 11044
+
+  -- 0001	00001150    	M	FA
+  
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+  where  nrTalonario = '0001'   and nrComprobante = '00001150'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '20-18815577-5'  from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001150'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 11681
+
+  -- 0001	00001145    	M	FA
+  -- Ccic South America S.r.l - CUIT 30-71032033-7 | Dateas.com
+    
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+  where  nrTalonario = '0001'   and nrComprobante = '00001145'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30-71032033-7'  from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001145'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 11682
+
+  -- 0001	00001146    	M	FA
+  -- Ccic South America S.r.l - CUIT 30-71032033-7 | Dateas.com
+    
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+  where  nrTalonario = '0001'   and nrComprobante = '00001146'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30-71032033-7' , dsRazonSocial = 'Ccic South America S.r.l'  from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001146'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  
+
+
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 13805
+
+  -- 0001	00001130    	M	FA
+  -- Ccic South America S.r.l - CUIT 30-71032033-7 | Dateas.com
+    
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+  where  nrTalonario = '0001'   and nrComprobante = '00001130'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30710440413'   from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001130'   and tpLetra ='M' and tpComprobante = 'FA'
+
+
+  
+	exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 10 , @anio = 2017, @renglon = 1650
+
+	-- 0001	00001209    	M	FA
+
+  select nrDoc , dsRazonSocial , tpIVA , vlTotalGeneral, flAnulado,   * from TB_Comprobantes 
+   where  nrTalonario = '0001'
+  and nrComprobante = '00001209'   and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set x.nrDOC = '30612865333' , dsRazonSocial = 'MAYCAR SA' from TB_Comprobantes x     where  nrTalonario = '0001'
+  and nrComprobante = '00001209'   and tpLetra ='M' and tpComprobante = 'FA'
 
 
 
 
 
-
-
-
-
-
-
-
-
-
+  ---------------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------
+  ---------------------------------------------------------------------------------------------------
   
   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 8 , @anio = 2017, @renglon = 2301
 

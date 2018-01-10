@@ -1,6 +1,5 @@
--- Cambios de DDL version 4.9.830
-use dbSG2000
-go
+-- Cambios de DDL version 4.9.831
+USE dbSG2000
 
 
 GO
@@ -359,23 +358,23 @@ CREATE procedure [dbo].[sup_Puestos_v4_9_831]
 @dsPuesto_param 	                varchar(50),
 @dsIP_param     	                varchar(50)=null,
 @dtActualizado_param                    datetime,
-@nrTalonario_manual_param               int,
-@nrTalonario_automatico_param           int,
-@nrComprobante_manual_ult_param         int,
-@nrComprobante_automatico_ult_param     int,
-@flRespeta_secuencia_carga_manual_param int,
-@tpLetra_param							char(1),
+@nrTalonario_manual_param               int=null,
+@nrTalonario_automatico_param           int=null,
+@nrComprobante_manual_ult_param         int=null,
+@nrComprobante_automatico_ult_param     int=null,
+@flRespeta_secuencia_carga_manual_param int=null,
+@tpLetra_param							char(1)=null,
 -- nuevos parametros
 @nrTalonario_manual_empresa_param	int,
 @nrTalonario_manual_ctacte_param	int,
-@nrComprobante_manual_empresa_ult_param int,
-@nrComprobante_manual_ctacte_ult_param	int,
+@nrComprobante_manual_empresa_ult_param int=null,
+@nrComprobante_manual_ctacte_ult_param	int=null,
 @tpLetraEmpresa_param				char(10),
 @tpLetraRecibo_param				char(10),
 @nrTalonario_auto_empresa_param		int,
 @nrTalonario_auto_ctacte_param	        int,
-@nrComprobante_auto_ctacte_ult_param	int,
-@nrComprobante_auto_empresa_ult_param	int,
+@nrComprobante_auto_ctacte_ult_param	int=null,
+@nrComprobante_auto_empresa_ult_param	int=null,
 @tpletra_manual_param	                char(10),
 @tpLetraEmpresa_manual_param	        char(10),
 @tpLetraRecibo_manual_param       	char(10),
@@ -384,18 +383,18 @@ CREATE procedure [dbo].[sup_Puestos_v4_9_831]
 @nrCAI_Talonario_auto_empresa_param 	decimal(18,0),
 @dtCAI_Talonario_auto_empresa_param     datetime,
 @flFacturaCtacte					     bit,
-@nrComprobante_automatico_nd_ult	as int,
-@nrComprobante_auto_empresa_nd_ult	as int,
-@nrComprobante_auto_ctacte_nd_ult	as int,
-@nrComprobante_manual_nd_ult		as int,
-@nrComprobante_manual_empresa_nd_ult	as int,
-@nrComprobante_manual_ctacte_nd_ult	as int,
-@nrComprobante_automatico_nc_ult	as int,
-@nrComprobante_auto_empresa_nc_ult	as int,
-@nrComprobante_auto_ctacte_nc_ult	as int,
-@nrComprobante_manual_nc_ult		as int,
-@nrComprobante_manual_empresa_nc_ult	as int,
-@nrComprobante_manual_ctacte_nc_ult	as int
+@nrComprobante_automatico_nd_ult	as int=null,
+@nrComprobante_auto_empresa_nd_ult	as int=null,
+@nrComprobante_auto_ctacte_nd_ult	as int=null,
+@nrComprobante_manual_nd_ult		as int=null,
+@nrComprobante_manual_empresa_nd_ult	as int=null,
+@nrComprobante_manual_ctacte_nd_ult	as int=null,
+@nrComprobante_automatico_nc_ult	as int=null,
+@nrComprobante_auto_empresa_nc_ult	as int=null,
+@nrComprobante_auto_ctacte_nc_ult	as int=null,
+@nrComprobante_manual_nc_ult		as int=null,
+@nrComprobante_manual_empresa_nc_ult	as int=null,
+@nrComprobante_manual_ctacte_nc_ult	as int=null
 as
 begin
 

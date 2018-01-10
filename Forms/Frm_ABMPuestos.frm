@@ -906,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   162594817
+               Format          =   114819073
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   114032641
+               Format          =   114819073
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -2204,7 +2204,7 @@ Dim strSQL      As String
 
     Select Case EstadoABM
     Case modificacion
-        determinarAsignarValoresCamposModificados
+        ' determinarAsignarValoresCamposModificados
     End Select
     'FIN version 4.6
     
@@ -2249,24 +2249,25 @@ Dim strSQL      As String
             strSQL = strSQL + " @nrPuesto_param=" + ObtenerCampo("nrPuesto") + " , "
             strSQL = strSQL + " @dsPuesto_param='" + ObtenerCampo("dsPuesto") + "' , "
             strSQL = strSQL + " @dtActualizado_param='" + CStr(Now()) + "',  "
-            strSQL = strSQL + " @nrTalonario_manual_param=" + ObtenerCampo("nrTalonario_Manual") + " , "
-            strSQL = strSQL + " @nrTalonario_automatico_param=" + ObtenerCampo("nrTalonario_automatico") + " , "
-            strSQL = strSQL + " @nrComprobante_manual_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_manual_ult_modificado, "NUMERIC") + " , "
-            strSQL = strSQL + " @nrComprobante_automatico_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_automatico_ult_modificado, "NUMERIC") + ", "
+            
+            strSQL = strSQL + " @nrTalonario_manual_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrTalonario_Manual"), "NUMERIC") + " , "
+            strSQL = strSQL + " @nrTalonario_automatico_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrTalonario_automatico"), "NUMERIC") + " , "
+            strSQL = strSQL + " @nrComprobante_manual_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_ult"), "NUMERIC") + " , "
+            strSQL = strSQL + " @nrComprobante_automatico_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_automatico_ult"), "NUMERIC") + ", "
             strSQL = strSQL + " @flRespeta_secuencia_carga_manual_param=" + CStr(ObtenerCampo("flRespeta_secuencia_carga_manual")) + ","
             strSQL = strSQL + " @tpLetra_param='" + ObtenerCampo("tpLetra").Text + "',"
                     
             ' Paramtros de la version de la version 1.4
-            strSQL = strSQL + "@nrTalonario_manual_empresa_param=" + ObtenerCampo("nrTalonario_manual_empresa") + ", "
-            strSQL = strSQL + "@nrTalonario_manual_ctacte_param=" + ObtenerCampo("nrTalonario_manual_ctacte") + ", "
-            strSQL = strSQL + "@nrComprobante_manual_empresa_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_manual_empresa_ult_modificado, "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_manual_ctacte_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_manual_ctacte_ult_modificado, "NUMERIC") + ", "
+            strSQL = strSQL + "@nrTalonario_manual_empresa_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrTalonario_manual_empresa"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrTalonario_manual_ctacte_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrTalonario_manual_ctacte"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_empresa_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_empresa_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_ctacte_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_ctacte_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@tpLetraEmpresa_param='" + ObtenerCampo("tpLetraEmpresa") + "', "
             strSQL = strSQL + "@tpLetraRecibo_param='" + ObtenerCampo("tpLetraRecibo") + "', "
             strSQL = strSQL + "@nrTalonario_auto_empresa_param=" + ObtenerCampo("nrTalonario_auto_empresa") + ", "
             strSQL = strSQL + "@nrTalonario_auto_ctacte_param=" + ObtenerCampo("nrTalonario_auto_ctacte") + ", "
-            strSQL = strSQL + "@nrComprobante_auto_ctacte_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_auto_ctacte_ult_modificado, "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_auto_empresa_ult_param=" + objbasededatos.FormatearValorSQL(nrComprobante_auto_empresa_ult_modificado, "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_auto_ctacte_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_auto_ctacte_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_auto_empresa_ult_param=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_auto_empresa_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@tpletra_manual_param='" + ObtenerCampo("tpletra_manual") + "', "
             strSQL = strSQL + "@tpLetraEmpresa_manual_param='" + ObtenerCampo("tpLetraEmpresa_manual") + "', "
             strSQL = strSQL + "@tpLetraRecibo_manual_param='" + ObtenerCampo("tpLetraRecibo_manual") + "',"
@@ -2278,20 +2279,20 @@ Dim strSQL      As String
             strSQL = strSQL + "@dtCAI_Talonario_auto_empresa_param=" + objbasededatos.FormatearValorSQL(ObtenerCampo("dtCAI_Talonario_auto_empresa"), "SMALLDATETIME", "dtCAI_Talonario_auto_empresa") + ", "
             
             '-- ADD Version 4.7
-            strSQL = strSQL + "@nrComprobante_automatico_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_automatico_nd_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_auto_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_automatico_nd_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_automatico_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_auto_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
             
             '-- MODIFY Version 4.7
-            strSQL = strSQL + "@nrComprobante_auto_ctacte_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_manual_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_nd_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_manual_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_empresa_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_auto_ctacte_nd_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_auto_empresa_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_nd_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_nd_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_empresa_nd_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_empresa_nd_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_manual_ctacte_nd_ult=null, "
             
-            strSQL = strSQL + "@nrComprobante_automatico_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_automatico_nc_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_auto_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_auto_empresa_nc_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_automatico_nc_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_automatico_nc_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_auto_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_auto_empresa_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_auto_ctacte_nc_ult=null, "
-            strSQL = strSQL + "@nrComprobante_manual_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_nc_ult"), "NUMERIC") + ", "
-            strSQL = strSQL + "@nrComprobante_manual_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(ObtenerCampo("nrComprobante_manual_empresa_nc_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_nc_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_nc_ult"), "NUMERIC") + ", "
+            strSQL = strSQL + "@nrComprobante_manual_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_empresa_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_manual_ctacte_nc_ult=null, "
             
             strSQL = strSQL + "@flFacturaCtacte=" + objbasededatos.FormatearValorSQL(ObtenerCampo("flFacturaCtacte"), "BIT", "flFacturaCtacte")

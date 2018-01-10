@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   308150273
+         Format          =   293863425
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3989,8 +3989,33 @@ Private Function validarEntradadedatos() As Boolean
             validarEntradadedatos = False
             Exit Function
         End If
+        
+        ' Agregado en la version 4.9.831
+        Dim strSQL  As String
+                
+        strSQL = " select dbo.ufn_ValidarCUIT_v4_9_4('" + ObtenerCampo("nrDoc").Text + "')  as   resultado "
+        
+        objbasededatos.ExecuteSQL strSQL
+        
+        If objbasededatos.rs_resultados.EOF Then
+                MsgBox "Error al intentar validar la CUIT", vbInformation + vbDefaultButton1, "Atención"
+                AvisarError "nrDoc", True
+                ObtenerCampo("nrDoc").SetFocus
+                validarEntradadedatos = False
+                Exit Function
+        End If
+        
+        If objbasededatos.rs_resultados("resultado") <> 1 Then
+                MsgBox "Debe ingresar el CUIT válido", vbInformation + vbDefaultButton1, "Atención"
+                AvisarError "nrDoc", True
+                ObtenerCampo("nrDoc").SetFocus
+                validarEntradadedatos = False
+                Exit Function
+        End If
+        
+     End If  ' CIERRE IF "RI"
             
-    End If
+    
     
     If Me.flClienteNuevo.value = vbChecked Then
     
@@ -4034,11 +4059,7 @@ Private Function validarEntradadedatos() As Boolean
             Exit Function
         End If
     End If
-    
-    
-    Dim strSQL As String
-     
-    
+
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "administracion.cajapuesto"
         '/************************************************************************/
