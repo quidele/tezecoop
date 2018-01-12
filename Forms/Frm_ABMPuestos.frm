@@ -906,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   114819073
+               Format          =   115277825
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   114819073
+               Format          =   115277825
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -2245,7 +2245,7 @@ Dim strSQL      As String
     
     Select Case EstadoABM
     Case modificacion
-            strSQL = "  sup_Puestos_v4_7 "
+            strSQL = "  sup_Puestos_v4_9_831 "
             strSQL = strSQL + " @nrPuesto_param=" + ObtenerCampo("nrPuesto") + " , "
             strSQL = strSQL + " @dsPuesto_param='" + ObtenerCampo("dsPuesto") + "' , "
             strSQL = strSQL + " @dtActualizado_param='" + CStr(Now()) + "',  "
