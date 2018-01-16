@@ -294,6 +294,12 @@
     <Compile Include="TB_ArchivoTarjetaDetalle.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_Comprobantes.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ComprobantesDetalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_Conceptos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>

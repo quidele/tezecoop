@@ -18,6 +18,7 @@ namespace SGLibrary
         {
             this.TB_MovimientosContables = new HashSet<TB_MovimientosContables>();
             this.TB_MovimientosContablesPosdatados = new HashSet<TB_MovimientosContablesPosdatados>();
+            this.TB_Comprobantes = new HashSet<TB_Comprobantes>();
         }
     
         public string dsUsuario { get; set; }
@@ -39,5 +40,6 @@ namespace SGLibrary
     
         public virtual ICollection<TB_MovimientosContables> TB_MovimientosContables { get; set; }
         public virtual ICollection<TB_MovimientosContablesPosdatados> TB_MovimientosContablesPosdatados { get; set; }
+        public virtual ICollection<TB_Comprobantes> TB_Comprobantes { get; set; }
     }
 }
