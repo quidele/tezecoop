@@ -105,7 +105,6 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\JDO.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\es\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\fr\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ru\AdvancedDataGridView.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCircularProgressBar.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarComprobantes.resources

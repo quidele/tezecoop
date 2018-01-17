@@ -13,13 +13,13 @@ using SGLibrary.Extensiones;
 
 namespace SGLibrary
 {
-    public partial class FrmABMBase : Form
+    public partial class FrmABMDocumentos : Form
     {
 
 
         public ServiceModel serviceModel { get; set; }
 
-        public FrmABMBase()
+        public FrmABMDocumentos()
         {
             InitializeComponent();
         }
@@ -84,7 +84,7 @@ namespace SGLibrary
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
                         IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
 
-                        this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
+                        this.cargarDataGridViewBusqueda_ADGV(dataGridView2, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
 
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
@@ -125,7 +125,7 @@ namespace SGLibrary
                 case "DELETE":
                     {
                         this.modoEdicion.Text = "NO";
-                        foreach (DataGridViewRow row in ADGVBusqueda.SelectedRows)
+                        foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
                             Object unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -300,40 +300,7 @@ namespace SGLibrary
 
         private void cargarDataGridViewCupones_ADGV_Inicilizacion()
         {
-            
-            
             throw new NotImplementedException();
-            /*
-             
-             //Application.DoEvents();
-                var row = item;
-                switch (row.Cells["NIVEL"].Value.ToString())
-                {
-                    case "-1": row.Cells["CONCILIAR"].Value = false;
-                        row.ReadOnly = true;
-                        row.DefaultCellStyle.BackColor = Color.White;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                        break;
-                    case "1": row.DefaultCellStyle.BackColor = Color.DarkGreen;
-                        row.DefaultCellStyle.ForeColor = Color.White;
-                        row.Cells["CONCILIAR"].Value = true;
-                        break;
-                    case "2": row.DefaultCellStyle.BackColor = Color.LightBlue; break;
-                    case "3": row.DefaultCellStyle.BackColor = Color.Orange; break;
-                    case "4": row.DefaultCellStyle.BackColor = Color.OrangeRed; break;
-                    default:
-                        row.Cells["CONCILIAR"].Value = false;
-                        row.ReadOnly = true;
-                        row.DefaultCellStyle.BackColor = Color.White;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                        break;
-                }
-                row.Cells["FECHA_PAGO"].Value = row.Cells["FECHA_PAGO"].Value.ToString().Remove(10);
-             * 
-             * 
-             */
-
-
         } // Cierra  cargarDataGridViewCupones_ADGV
 
         private void botonesForm1_Load(object sender, EventArgs e)
@@ -345,7 +312,9 @@ namespace SGLibrary
         public void cargarCombo(ComboBox cb, IEnumerable<Object> lista)
         {
 
+
             cb.Items.Clear();
+
             foreach (object item in lista)
             {
                 Type t = item.GetType();
@@ -386,10 +355,14 @@ namespace SGLibrary
 
         private void dataGridView2_FilterStringChanged(object sender, EventArgs e)
         {
-            this.bindingSource1.Filter = this.ADGVBusqueda.FilterString;
+            this.bindingSource1.Filter = this.dataGridView2.FilterString;
             this.lblDgvBusquedaRegistros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
         }
 
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
 
 
     }

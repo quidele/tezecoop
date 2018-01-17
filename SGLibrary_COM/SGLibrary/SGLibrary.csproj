@@ -135,6 +135,12 @@
     <Compile Include="Extensiones\GroupByGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmABMDocumentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmABMDocumentos.Designer.cs">
+      <DependentUpon>FrmABMDocumentos.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCircularProgressBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -371,6 +377,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmABMDocumentos.resx">
+      <DependentUpon>FrmABMDocumentos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCircularProgressBar.resx">
       <DependentUpon>FrmCircularProgressBar.cs</DependentUpon>

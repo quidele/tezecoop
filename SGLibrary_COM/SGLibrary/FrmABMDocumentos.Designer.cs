@@ -1,6 +1,6 @@
 ﻿namespace SGLibrary
 {
-    partial class FrmABMBase
+    partial class FrmABMDocumentos
     {
         /// <summary>
         /// Required designer variable.
@@ -35,7 +35,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.lblDgvBusquedaRegistros = new System.Windows.Forms.Label();
-            this.ADGVBusqueda = new ADGV.AdvancedDataGridView();
+            this.dataGridView2 = new ADGV.AdvancedDataGridView();
             this.cbUsuariosConciliaciones = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -43,6 +43,7 @@
             this.fechahasta = new System.Windows.Forms.DateTimePicker();
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
+            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.status_bar_usuario = new System.Windows.Forms.StatusStrip();
             this.statusbar_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_nrocaja = new System.Windows.Forms.ToolStripStatusLabel();
@@ -51,10 +52,9 @@
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
-            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.panelcarga.SuspendLayout();
             this.panelbusqueda.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVBusqueda)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             this.status_bar_usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
@@ -108,7 +108,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelbusqueda.BackColor = System.Drawing.Color.LightBlue;
             this.panelbusqueda.Controls.Add(this.lblDgvBusquedaRegistros);
-            this.panelbusqueda.Controls.Add(this.ADGVBusqueda);
+            this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Controls.Add(this.cbUsuariosConciliaciones);
             this.panelbusqueda.Controls.Add(this.label5);
             this.panelbusqueda.Controls.Add(this.label4);
@@ -132,18 +132,18 @@
             this.lblDgvBusquedaRegistros.TabIndex = 8;
             this.lblDgvBusquedaRegistros.Text = "label6";
             // 
-            // ADGVBusqueda
+            // dataGridView2
             // 
-            this.ADGVBusqueda.AutoGenerateContextFilters = true;
-            this.ADGVBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ADGVBusqueda.DateWithTime = false;
-            this.ADGVBusqueda.Location = new System.Drawing.Point(17, 74);
-            this.ADGVBusqueda.Name = "ADGVBusqueda";
-            this.ADGVBusqueda.RowTemplate.Height = 24;
-            this.ADGVBusqueda.Size = new System.Drawing.Size(947, 293);
-            this.ADGVBusqueda.TabIndex = 7;
-            this.ADGVBusqueda.TimeFilter = false;
-            this.ADGVBusqueda.FilterStringChanged += new System.EventHandler(this.dataGridView2_FilterStringChanged);
+            this.dataGridView2.AutoGenerateContextFilters = true;
+            this.dataGridView2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView2.DateWithTime = false;
+            this.dataGridView2.Location = new System.Drawing.Point(17, 74);
+            this.dataGridView2.Name = "dataGridView2";
+            this.dataGridView2.RowTemplate.Height = 24;
+            this.dataGridView2.Size = new System.Drawing.Size(947, 293);
+            this.dataGridView2.TabIndex = 7;
+            this.dataGridView2.TimeFilter = false;
+            this.dataGridView2.FilterStringChanged += new System.EventHandler(this.dataGridView2_FilterStringChanged);
             // 
             // cbUsuariosConciliaciones
             // 
@@ -153,7 +153,7 @@
             this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(487, 29);
             this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
-            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(163, 24);
+            this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(208, 24);
             this.cbUsuariosConciliaciones.TabIndex = 6;
             this.cbUsuariosConciliaciones.SelectedIndexChanged += new System.EventHandler(this.cbUsuariosConciliaciones_SelectedIndexChanged);
             // 
@@ -211,6 +211,18 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
             // 
+            // botonesForm1
+            // 
+            this.botonesForm1.AutoSize = true;
+            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
+            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
+            this.botonesForm1.Name = "botonesForm1";
+            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
+            this.botonesForm1.TabIndex = 3;
+            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
+            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
+            // 
             // status_bar_usuario
             // 
             this.status_bar_usuario.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -263,19 +275,7 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
-            // botonesForm1
-            // 
-            this.botonesForm1.AutoSize = true;
-            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
-            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
-            this.botonesForm1.Name = "botonesForm1";
-            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
-            this.botonesForm1.TabIndex = 3;
-            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
-            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
-            // 
-            // FrmABMBase
+            // FrmABMDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -285,16 +285,16 @@
             this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.Name = "FrmABMBase";
+            this.Name = "FrmABMDocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Formulario ABM Base";
+            this.Text = "Documentos";
             this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.FrmABMBase_Load);
             this.panelcarga.ResumeLayout(false);
             this.panelcarga.PerformLayout();
             this.panelbusqueda.ResumeLayout(false);
             this.panelbusqueda.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGVBusqueda)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             this.status_bar_usuario.ResumeLayout(false);
             this.status_bar_usuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -319,7 +319,7 @@
         private System.Windows.Forms.Label label5;
         private ControlesdeUsuario.BotonesForm botonesForm1;
         private System.Windows.Forms.TextBox modoEdicion;
-        private ADGV.AdvancedDataGridView ADGVBusqueda;
+        private ADGV.AdvancedDataGridView dataGridView2;
         private System.Windows.Forms.StatusStrip status_bar_usuario;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_usuario;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_nrocaja;
