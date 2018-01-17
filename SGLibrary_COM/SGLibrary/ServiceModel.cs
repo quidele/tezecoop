@@ -67,5 +67,10 @@ namespace SGLibrary
         public virtual string Usuario { get; set; }
 
         public virtual string CajaAdm { get; set; }
+
+        public virtual string Basededatos { get; set; }
+
+        public virtual string Servidor { get; set; }
+
     }
 }

@@ -38,7 +38,7 @@ namespace SGLibrary
             using (var context = new dbSG2000Entities())
             {
                 this.statusbar_bd.Text = "Base de datos: " + context.Database.Connection.Database ;
-                this.statusbar_servidor.Text = "Base de datos: " + context.Database.Connection.DataSource;
+                this.statusbar_servidor.Text = "Servidor: " + context.Database.Connection.DataSource;
                 this.statusbar_usuario.Text = "usuario: " + serviceConciliaciones.Usuario;
                 this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm;
                 this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();

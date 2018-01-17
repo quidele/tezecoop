@@ -8,6 +8,8 @@ using System.Text;
 using System.Windows.Forms;
 using ControlesdeUsuario;
 using System.Reflection;
+using System.Diagnostics;
+using SGLibrary.Extensiones;
 
 namespace SGLibrary
 {
@@ -25,18 +27,23 @@ namespace SGLibrary
         private void FrmABMBase_Load(object sender, EventArgs e)
         {
 
-            botonesForm1.configMododeEdicion( ABMBotonesForm.FIND);
+            botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
             this.panelcarga.Visible = false;
             this.panelbusqueda.Visible = true;
             this.fechadesde.Value = DateTime.Now.AddDays(-30).Date;
             this.fechahasta.Value = DateTime.Now.Date;
             this.botonesForm1.InicializarFindBoton();
 
+            this.statusbar_bd.Text = "Base de datos: " + serviceModel.Basededatos;
+            this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;
+            this.statusbar_usuario.Text = "Usuario: " + serviceModel.Usuario;
+            this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
+
+
         }
 
 
 
-       
 
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
@@ -45,18 +52,20 @@ namespace SGLibrary
 
 
 
-            switch (miboton.Tag.ToString ()){
-                case "EDIT" : {
-                    this.panelcarga.Visible = true;
-                    this.panelbusqueda.Visible  = false;
+            switch (miboton.Tag.ToString())
+            {
+                case "EDIT":
+                    {
+                        this.panelcarga.Visible = true;
+                        this.panelbusqueda.Visible = false;
 
-                    // INSERTE SU CODIGO
+                        // INSERTE SU CODIGO
 
-                    //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
-                    // botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+                        //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
+                        // botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
 
-                    break;
-                }
+                        break;
+                    }
                 case "ADD":
                     {
                         this.modoEdicion.Text = "NO";
@@ -71,24 +80,23 @@ namespace SGLibrary
                     }
                 case "FIND":
                     {
-        
-                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        IEnumerable<Object> listadeConciliaciones = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
-                        
-                        this.cargarDataGridViewBusqueda (dataGridView2, listadeConciliaciones);
-
                         this.modoEdicion.Text = "NO";
+                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
+                        IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
+
+                        this.cargarDataGridViewBusqueda_ADGV(dataGridView2, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
+
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
-                        
+
                     }
-                
+
                 case "OK":
                     {
 
-                        if (this.modoEdicion.Text  =="NO") 
+                        if (this.modoEdicion.Text == "NO")
                         {
                             if (!altaRegistro()) break;
                         }
@@ -120,17 +128,17 @@ namespace SGLibrary
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
                             Object unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
-                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo ,MessageBoxIcon.Question);
-                             if(dialogResult == DialogResult.No ) break; 
-                            // COMLETAR ELIMINACION
-                             serviceModel.AnularRegistro(unRegistro);
-                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        
+                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            if (dialogResult == DialogResult.No) break;
+                            // COMPLETAR ELIMINACION
+                            serviceModel.AnularRegistro(unRegistro);
+                            MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
                         }
 
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
-                        botonesForm1_ClickEventDelegateHandler(btnFind, null);                        
+                        botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
                 case "EXIT":
@@ -138,15 +146,15 @@ namespace SGLibrary
                         this.Close();
                         break;
                     }
-            } 
+            }
 
         }
 
 
-        public Boolean  altaRegistro()
+        public Boolean altaRegistro()
         {
 
-            
+
             return true;
         }
 
@@ -154,9 +162,12 @@ namespace SGLibrary
         public Boolean ediciondeRegistro()
         {
 
-            try {
+            try
+            {
                 serviceModel.ModificarRegistro();
-            } catch (Exception ex ){
+            }
+            catch (Exception ex)
+            {
 
                 MessageBox.Show(ex.Message + serviceModel.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
@@ -165,99 +176,132 @@ namespace SGLibrary
 
         }
 
-        public void cargarDataGridViewCupones(DataGridView dgv, IEnumerable<Object> lista , String p_modoEdicion  )
+
+
+        public void cargarDataGridViewBusqueda_ADGV(DataGridView dgv, IEnumerable<Object> lista,
+                                           String p_modoEdicion, DataSet p_DataSet, BindingSource p_BindingSource)
         {
+            Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
+            lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
 
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
-
-            foreach (var item in lista)
+            /* lista_campo_tipo.Add("ID", "System.Decimal");
+            lista_campo_tipo.Add("FECHA", "System.DateTime");
+            lista_campo_tipo.Add("LICENCIA", "System.Int32");
+            lista_campo_tipo.Add("DOC", "System.String");
+            lista_campo_tipo.Add("LETRA", "System.String");
+            lista_campo_tipo.Add("PDV", "System.String");
+            lista_campo_tipo.Add("NRO", "System.String");
+            lista_campo_tipo.Add("MONTO", "System.Double");
+            lista_campo_tipo.Add("EMPRESA", "System.String");
+            lista_campo_tipo.Add("TARJETA", "System.String");
+            lista_campo_tipo.Add("DOCU", "System.String");
+            lista_campo_tipo.Add("DOCU_NRO", "System.String");
+            lista_campo_tipo.Add("CUPON", "System.String");
+            lista_campo_tipo.Add("CONCILIAR", "System.Boolean"); 
+            if (p_modoEdicion == "SI")
             {
-
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-
-                foreach (PropertyInfo p in pi)
-                {
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dgv.Columns.Add(columna);
-                }
-                break;
+                lista_campo_tipo.Add("COMPENSADO", "System.String");
             }
+            lista_campo_tipo.Add("FECHA_ACREDITACION", "System.DateTime"); **/
 
 
+            // A la lista la transfiere al DATASET
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista, lista_campo_tipo);
+            //Al binding source le configuramos el dataset
+            p_BindingSource.DataSource = p_DataSet;
+            // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
+            p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
 
-
-            foreach (object item in lista)
+            try
             {
-                var row = dgv.Rows.Add();
-                Type t =item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-                foreach (PropertyInfo p in pi)
+                Trace.TraceInformation(dgv.ToString());
+                Trace.TraceInformation(lista.ToString());
+
+
+                //dgv.Rows.Clear();
+                dgv.Columns.Clear();
+                dgv.AutoGenerateColumns = false;
+                dgv.AllowUserToResizeColumns = true;
+                dgv.AllowUserToOrderColumns = true;
+
+                foreach (var item in lista)
                 {
-                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
+
+                    Type t = item.GetType();
+                    PropertyInfo[] pi = t.GetProperties();
+
+                    DataGridViewColumn columna1 = new DataGridViewColumn();
+                    DataGridViewCell cell1 = new DataGridViewTextBoxCell();
+                    columna1.CellTemplate = cell1;
+                    columna1.Name = "Nº";
+                    columna1.HeaderText = "Nº";
+                    columna1.ReadOnly = true;
+                    columna1.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna1);
+                    columna1.DataPropertyName = "Nº";
+
+                    foreach (PropertyInfo p in pi)
+                    {
+                        /* 
+                         * if (p.Name.CompareTo("CONCILIAR") == 0) continue;
+                        if (p.Name.CompareTo("FECHA_ACREDITACION") == 0) continue;*/
+
+                        DataGridViewColumn columna = new DataGridViewColumn();
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        columna.CellTemplate = cell;
+                        columna.Name = p.Name;
+                        columna.HeaderText = p.Name;
+                        columna.ReadOnly = true;
+                        columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        columna.DataPropertyName = p.Name;
+                        dgv.Columns.Add(columna);
+                    }
+                    break;
                 }
 
-            }
+                /* DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
+                doWork.Name = "CONCILIAR";
+                doWork.HeaderText = "CONCILIAR";
+                doWork.FalseValue = false;
+                doWork.TrueValue = true;
+                doWork.DataPropertyName = "CONCILIAR";
+                dgv.Columns.Add(doWork);
 
+ 
+                CalendarColumn doWork1 = new CalendarColumn();
+                doWork1.Name = "FECHA_ACREDITACION";
+                doWork1.HeaderText = "FECHA DE ACREDITACION";
+                doWork1.DefaultCellStyle.Format = "d";
+                doWork1.DataPropertyName = "FECHA_ACREDITACION";
+                dgv.Columns.Add(doWork1);*/
+
+                // Modificamos los Encabezados de las columnas
+                foreach (DataGridViewColumn item in dgv.Columns)
+                {
+                    item.HeaderText = item.HeaderText.Replace("_", " ");
+                }
+                dgv.DataSource = p_BindingSource;
+                dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+
+                //-------- Agregamos el 
+                cargarDataGridViewCupones_ADGV_Inicilizacion();
+
+            }
+            catch (Exception ex)
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                Trace.TraceError("Error Linea " + frame.GetFileLineNumber().ToString() + " columna " + frame.GetFileColumnNumber().ToString());
+                Trace.TraceError(ex.ToString());
+                throw;
+            }
 
         }
 
-        public void cargarDataGridViewBusqueda(DataGridView dgv, IEnumerable<Object> lista)
+        private void cargarDataGridViewCupones_ADGV_Inicilizacion()
         {
-
-            //dgv.Rows.Clear();
-            dgv.Columns.Clear();
-
-            foreach (var item in lista)
-            {
-
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-
-                foreach (PropertyInfo p in pi)
-                {
-                    DataGridViewColumn columna = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    columna.CellTemplate = cell;
-                    columna.Name = p.Name;
-                    columna.HeaderText = p.Name;
-                    columna.ReadOnly = true;
-                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                    dgv.Columns.Add(columna);
-                }
-                break;
-            }
-
-
-
-            foreach (object item in lista)
-            {
-                var row = dgv.Rows.Add();
-                Type t = item.GetType();
-                PropertyInfo[] pi = t.GetProperties();
-                foreach (PropertyInfo p in pi)
-                {
-                    Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    dgv.Rows[row].Cells[p.Name].Value = p.GetValue(item, null);
-                }
-            }
-
-            // Modificamos los Encabezados de las columnas
-            foreach (DataGridViewColumn item in dgv.Columns)
-            {
-                item.HeaderText = item.HeaderText.Replace("_", " ");
-            }
-                
-
-        }
+            throw new NotImplementedException();
+        } // Cierra  cargarDataGridViewCupones_ADGV
 
         private void botonesForm1_Load(object sender, EventArgs e)
         {
@@ -272,21 +316,16 @@ namespace SGLibrary
             cb.Items.Clear();
 
             foreach (object item in lista)
-            {                
+            {
                 Type t = item.GetType();
                 PropertyInfo[] pi = t.GetProperties();
                 foreach (PropertyInfo p in pi)
                 {
                     Console.WriteLine(p.Name + " " + p.GetValue(item, null));
-                    cb.Items.Add ( p.GetValue(item, null));
+                    cb.Items.Add(p.GetValue(item, null));
                 }
             }
 
-        }
-
-        private void dataGridView2_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-    
         }
 
 
@@ -307,6 +346,22 @@ namespace SGLibrary
         private void cbUsuariosConciliaciones_SelectedIndexChanged(object sender, EventArgs e)
         {
             //MessageBox.Show(cbUsuariosConciliaciones.Text);
+        }
+
+        private void panelbusqueda_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void dataGridView2_FilterStringChanged(object sender, EventArgs e)
+        {
+            this.bindingSource1.Filter = this.dataGridView2.FilterString;
+            this.lblDgvBusquedaRegistros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
 
