@@ -85,6 +85,8 @@
       <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
       <End Role="TB_Comprobantes" EntitySet="TB_Comprobantes" />
     </AssociationSet>
+    <EntitySet Name="TB_documentos" EntityType="dbSG2000Model.TB_documentos" />
+    <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -310,7 +312,7 @@
     <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Type="DateTime" Name="dtproceso" Precision="3" />
     <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
-    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
     <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
   </EntityType>
@@ -512,7 +514,7 @@
     <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
     <Property Name="vlMontoAcreditacion" Type="Double" />
     <Property Name="IdConciliacion" Type="Int32" />
-    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="TB_Comprobantes">
     <Key>
@@ -589,6 +591,8 @@
     <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
     <NavigationProperty Name="TB_ComprobantesDetalle" Relationship="dbSG2000Model.FK__TB_ComprobantesD__07E124C1" FromRole="TB_Comprobantes" ToRole="TB_ComprobantesDetalle" />
     <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_Comprobantes_TB_Usuarios" FromRole="TB_Comprobantes" ToRole="TB_Usuarios" />
+    <Property Name="dsRazonSocial_original" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nrDoc_original" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
   </EntityType>
   <EntityType Name="TB_ComprobantesDetalle">
     <Key>
@@ -656,4 +660,35 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="TB_documentos">
+    <Key>
+      <PropertyRef Name="cod_doc" />
+    </Key>
+    <Property Name="cod_doc" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nom_doc" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="usuario_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TB_numeradores">
+    <Key>
+      <PropertyRef Name="numerador" />
+    </Key>
+    <Property Name="numerador" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="notas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="valor_asignado" Type="Int32" Nullable="false" />
+    <Property Name="valor_defecto" Type="Int32" />
+    <Property Name="incremento" Type="Int16" Nullable="false" />
+    <Property Name="consecutivos" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modificable" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="formulario" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="seccion" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="linea" Type="Int16" Nullable="false" />
+  </EntityType>
 </Schema>

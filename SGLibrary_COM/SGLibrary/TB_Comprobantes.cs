@@ -85,6 +85,8 @@ namespace SGLibrary
         public Nullable<double> vlRecargoTarjeta { get; set; }
         public string nrCuponPosnet { get; set; }
         public string nmEmpresaTarjeta { get; set; }
+        public string dsRazonSocial_original { get; set; }
+        public string nrDoc_original { get; set; }
     
         public virtual ICollection<TB_ComprobantesDetalle> TB_ComprobantesDetalle { get; set; }
         public virtual TB_Usuarios TB_Usuarios { get; set; }

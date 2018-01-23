@@ -88,6 +88,8 @@ namespace SGLibrary
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Comprobantes> TB_Comprobantes { get; set; }
         public DbSet<TB_ComprobantesDetalle> TB_ComprobantesDetalle { get; set; }
+        public DbSet<TB_documentos> TB_documentos { get; set; }
+        public DbSet<TB_numeradores> TB_numeradores { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

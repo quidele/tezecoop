@@ -7,7 +7,7 @@ using System.Diagnostics;
 
 namespace SGLibrary
 {
-    public class ServiceModel
+    public abstract class ServiceModel
     {
         public ServiceModel()
         {
@@ -72,5 +72,10 @@ namespace SGLibrary
 
         public virtual string Servidor { get; set; }
 
+
+
+        public virtual IEnumerable<object> ObtenerTodosLosRegistros() { 
+                     throw new NotImplementedException();
+        }
     }
 }

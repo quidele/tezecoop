@@ -217,8 +217,6 @@ namespace SGLibrary
                 Trace.TraceInformation(dgv.ToString());
                 Trace.TraceInformation(lista.ToString());
 
-
-                //dgv.Rows.Clear();
                 dgv.Columns.Clear();
                 dgv.AutoGenerateColumns = false;
                 dgv.AllowUserToResizeColumns = true;
@@ -226,10 +224,8 @@ namespace SGLibrary
 
                 foreach (var item in lista)
                 {
-
                     Type t = item.GetType();
                     PropertyInfo[] pi = t.GetProperties();
-
                     DataGridViewColumn columna1 = new DataGridViewColumn();
                     DataGridViewCell cell1 = new DataGridViewTextBoxCell();
                     columna1.CellTemplate = cell1;
@@ -260,20 +256,21 @@ namespace SGLibrary
                 }
 
                 /* DataGridViewCheckBoxColumn doWork = new DataGridViewCheckBoxColumn();
-                doWork.Name = "CONCILIAR";
-                doWork.HeaderText = "CONCILIAR";
+                doWork.Name = "Name";
+                doWork.HeaderText = "HeaderText";
                 doWork.FalseValue = false;
                 doWork.TrueValue = true;
-                doWork.DataPropertyName = "CONCILIAR";
+                doWork.DataPropertyName = "DataPropertyName";
                 dgv.Columns.Add(doWork);
 
  
                 CalendarColumn doWork1 = new CalendarColumn();
-                doWork1.Name = "FECHA_ACREDITACION";
-                doWork1.HeaderText = "FECHA DE ACREDITACION";
+                doWork1.Name = "CalendarColumn_Name";
+                doWork1.HeaderText = "HeaderText";
                 doWork1.DefaultCellStyle.Format = "d";
-                doWork1.DataPropertyName = "FECHA_ACREDITACION";
-                dgv.Columns.Add(doWork1);*/
+                doWork1.DataPropertyName = "DataPropertyName";
+                dgv.Columns.Add(doWork1);
+                 */
 
                 // Modificamos los Encabezados de las columnas
                 foreach (DataGridViewColumn item in dgv.Columns)
@@ -284,7 +281,7 @@ namespace SGLibrary
                 dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
 
                 //-------- Agregamos el 
-                cargarDataGridViewCupones_ADGV_Inicilizacion();
+                cargarDataGridViewBusqueda_ADGV_Inicilizacion();
 
             }
             catch (Exception ex)
@@ -298,7 +295,7 @@ namespace SGLibrary
 
         }
 
-        private void cargarDataGridViewCupones_ADGV_Inicilizacion()
+        private void cargarDataGridViewBusqueda_ADGV_Inicilizacion()
         {
             
             
