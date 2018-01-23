@@ -267,8 +267,10 @@
     <Compile Include="ServiceModel.cs" />
     <Compile Include="ServiceMovimientoContable.cs" />
     <Compile Include="ServicePrinter.cs" />
+    <Compile Include="Services\Auditoria.cs" />
     <Compile Include="Services\ServiceDocumentos.cs" />
-    <Compile Include="Services\IServiceModelGenerico.cs" />
+    <Compile Include="Services\ServiceModelGenerico.cs" />
+    <Compile Include="Services\ServiceNumeradores.cs" />
     <Compile Include="ServiceTarifas.cs" />
     <Compile Include="ServiceParametros.cs" />
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">

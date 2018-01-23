@@ -10,6 +10,7 @@ using ControlesdeUsuario;
 using System.Reflection;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using SGLibrary.Services;
 
 namespace SGLibrary
 {
@@ -17,7 +18,7 @@ namespace SGLibrary
     {
 
 
-        public ServiceModel serviceModel { get; set; }
+        public ServiceModelGenerico<Object> serviceModel { get; set; }
 
         public FrmABMDocumentos()
         {
@@ -127,7 +128,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
-                            Object unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            Object  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMPLETAR ELIMINACION
@@ -164,11 +165,10 @@ namespace SGLibrary
 
             try
             {
-                serviceModel.ModificarRegistro();
+                serviceModel.ModificarRegistro(new Object ());
             }
             catch (Exception ex)
             {
-
                 MessageBox.Show(ex.Message + serviceModel.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
