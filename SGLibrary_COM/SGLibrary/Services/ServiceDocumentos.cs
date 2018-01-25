@@ -41,7 +41,7 @@ namespace SGLibrary.Services
                     ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores();
                     TB_numeradores un_TB_numeradores = new TB_numeradores();
                     un_TB_numeradores.numerador = unRegistro.cod_doc + "0" + new ServiceParametros().ObtenerParametro("Empresa");
-                    this.CompletarAuditoria(un_TB_numeradores);
+                    this.CompletarAuditoria(un_TB_numeradores, "seccion" , "bloque" , "A" , "Nuevo");
                     un_TB_numeradores.valor_asignado = 0;
                     un_ServiceNumeradores.AgregarRegistro(un_TB_numeradores);
 
@@ -99,7 +99,8 @@ namespace SGLibrary.Services
 
                     objDocumentoBD.fecha_mod = DateTime.Now;
                     objDocumentoBD.usuario_mod = this.usuario_mod ;
-                    objDocumentoBD.nom_doc = unRegistro.nom_doc; 
+                    objDocumentoBD.nom_doc = unRegistro.nom_doc;
+                    this.CompletarAuditoria(objDocumentoBD, "seccion", "bloque", "M", "Editar");
                     context.SaveChanges();
                     transaction.Complete();
                 }
@@ -107,6 +108,46 @@ namespace SGLibrary.Services
             } // using context
         }
 
+         
+        public override TB_documentos ObtenerRegistroxId(String pId){
+
+            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pId).GetLog();
+            Trace.TraceInformation(paramLog);
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Agregar la validaciones necesarias previas a la eliminación
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    var objDocumentoBD = (from c in context.TB_documentos
+                                          where c.cod_doc == pId
+                                          select c).First<TB_documentos>();
+                    return objDocumentoBD;
+                }
+
+            } // using context
+        }
+
+
+        public override TB_documentos ObtenerRegistro(String pId)
+        {
+
+            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pId).GetLog();
+            Trace.TraceInformation(paramLog);
+
+            using (var context = new dbSG2000Entities())
+            {
+                // Agregar la validaciones necesarias previas a la eliminación
+                using (TransactionScope transaction = new TransactionScope())
+                {
+                    var objDocumentoBD = (from c in context.TB_documentos
+                                          where c.cod_doc == pId
+                                          select c).First<TB_documentos>();
+                    return objDocumentoBD;
+                }
+
+            } // using context
+        }
     }
 }
 

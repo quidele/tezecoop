@@ -58,24 +58,25 @@ namespace SGLibrary.Services
             throw new NotImplementedException();
         }
 
-        public object CompletarAuditoria(object obj){
+        public object CompletarAuditoria(object obj, String p_seccion, String p_bloque, String p_estado_registro, String p_operacion_mod)
+        {
 
-            var objAuditoria =(Auditoria) obj;
+            var objAuditoria = (Auditoria) obj;
 
             objAuditoria.usuario_mod = this.usuario_mod;
-            objAuditoria.fecha_mod = this.fecha_mod;
+            objAuditoria.fecha_mod = DateTime.Now;
             objAuditoria.terminal_mod = this.terminal_mod;
-            objAuditoria.operacion_mod = this.operacion_mod;
-            objAuditoria.estado_registro = this.estado_registro;
+            objAuditoria.operacion_mod = p_operacion_mod;
+            objAuditoria.estado_registro = p_estado_registro;
             objAuditoria.formulario = this.formulario;
-            objAuditoria.seccion = this.seccion;
-            objAuditoria.bloque = this.bloque;
-            objAuditoria.linea = this.linea;
+            objAuditoria.seccion = p_seccion ;
+            objAuditoria.bloque = p_bloque ;
+            objAuditoria.linea = 1;
             
             return objAuditoria;
         }
 
-        internal T ObtenerRegistro(string p)
+        public virtual  T ObtenerRegistro(string p)
         {
             throw new NotImplementedException();
         }

@@ -127,7 +127,6 @@ namespace SGLibrary
                         f = (Form)f2;
                         break;
                     case "FrmPresentacionesCAI":
-
                         FrmPresentacionesCAI f3 = new FrmPresentacionesCAI();
                         ServiceCAI serviceCAI = new ServiceCAI();
                         serviceCAI.Usuario = this.Usuario;
@@ -156,6 +155,14 @@ namespace SGLibrary
                     case "Form1":
                         FrmCircularProgressBar f7 = new FrmCircularProgressBar();
                         f = (Form)f7;
+                        break;
+                    case "FrmABMDocumentos":
+                        FrmABMDocumentos f8 = new FrmABMDocumentos();
+                        f8.serviceModel = new Services.ServiceDocumentos();
+                        f8.serviceModel.usuario_mod = this.Usuario;
+                        f8.serviceModel.terminal_mod = "PC01";
+                        f8.serviceModel.formulario = "FrmABMDocumentos";
+                        f = (Form)f8;
                         break;
                 }
 

@@ -18,7 +18,7 @@ namespace SGLibrary
     {
 
 
-        public ServiceModelGenerico<Object> serviceModel { get; set; }
+        public ServiceModelGenerico<TB_documentos> serviceModel { get; set; }
 
         public FrmABMDocumentos()
         {
@@ -83,7 +83,11 @@ namespace SGLibrary
                     {
                         this.modoEdicion.Text = "NO";
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
+
+                        /* IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text); */
+
+                        IEnumerable<Object> listadeRegistros = serviceModel.ObtenerTodosLosRegistros();
+                        
 
                         this.cargarDataGridViewBusqueda_ADGV(dataGridView2, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
 
@@ -128,7 +132,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in dataGridView2.SelectedRows)
                         {
-                            Object  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            TB_documentos  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMPLETAR ELIMINACION
@@ -165,7 +169,7 @@ namespace SGLibrary
 
             try
             {
-                serviceModel.ModificarRegistro(new Object ());
+                serviceModel.ModificarRegistro(new TB_documentos());
             }
             catch (Exception ex)
             {

@@ -127,10 +127,10 @@ namespace ConsoleApplication1
              * */
 
 
-            LoaderForms l = new LoaderForms();
+            /*LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
-            l.execFormulario("FrmConciliaciones");
+            l.execFormulario("FrmConciliaciones");*/
 
             //LoaderForms l = new LoaderForms();
             //l.CajaActiva("1");
@@ -161,6 +161,12 @@ namespace ConsoleApplication1
             l.UsuarioActivo("camilap");
             l.execFormulario("Form1");
              * */
+
+
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmABMDocumentos");
             
         }
     }
