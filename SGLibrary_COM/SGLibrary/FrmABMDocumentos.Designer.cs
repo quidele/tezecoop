@@ -43,7 +43,6 @@
             this.fechahasta = new System.Windows.Forms.DateTimePicker();
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label1 = new System.Windows.Forms.Label();
-            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.status_bar_usuario = new System.Windows.Forms.StatusStrip();
             this.statusbar_usuario = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_nrocaja = new System.Windows.Forms.ToolStripStatusLabel();
@@ -52,6 +51,11 @@
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
+            this.label6 = new System.Windows.Forms.Label();
+            this.txtCoddoc = new System.Windows.Forms.TextBox();
+            this.txtNomDoc = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.panelcarga.SuspendLayout();
             this.panelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
@@ -72,6 +76,10 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.panelcarga.Controls.Add(this.txtNomDoc);
+            this.panelcarga.Controls.Add(this.label7);
+            this.panelcarga.Controls.Add(this.txtCoddoc);
+            this.panelcarga.Controls.Add(this.label6);
             this.panelcarga.Controls.Add(this.modoEdicion);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
@@ -88,7 +96,7 @@
             this.modoEdicion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
-            this.modoEdicion.Size = new System.Drawing.Size(163, 22);
+            this.modoEdicion.Size = new System.Drawing.Size(57, 22);
             this.modoEdicion.TabIndex = 18;
             this.modoEdicion.Visible = false;
             // 
@@ -97,9 +105,9 @@
             this.label2.AutoSize = true;
             this.label2.Location = new System.Drawing.Point(9, 11);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(125, 17);
+            this.label2.Size = new System.Drawing.Size(127, 17);
             this.label2.TabIndex = 0;
-            this.label2.Text = "carga de los datos";
+            this.label2.Text = "Carga de los datos";
             // 
             // panelbusqueda
             // 
@@ -211,18 +219,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Lista de Busqueda";
             // 
-            // botonesForm1
-            // 
-            this.botonesForm1.AutoSize = true;
-            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
-            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
-            this.botonesForm1.Name = "botonesForm1";
-            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
-            this.botonesForm1.TabIndex = 3;
-            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
-            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
-            // 
             // status_bar_usuario
             // 
             this.status_bar_usuario.ImageScalingSize = new System.Drawing.Size(20, 20);
@@ -275,15 +271,62 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(87, 53);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(56, 17);
+            this.label6.TabIndex = 19;
+            this.label6.Text = "Codigo:";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // txtCoddoc
+            // 
+            this.txtCoddoc.Location = new System.Drawing.Point(149, 46);
+            this.txtCoddoc.MaxLength = 4;
+            this.txtCoddoc.Name = "txtCoddoc";
+            this.txtCoddoc.Size = new System.Drawing.Size(126, 22);
+            this.txtCoddoc.TabIndex = 1;
+            // 
+            // txtNomDoc
+            // 
+            this.txtNomDoc.Location = new System.Drawing.Point(149, 79);
+            this.txtNomDoc.MaxLength = 40;
+            this.txtNomDoc.Name = "txtNomDoc";
+            this.txtNomDoc.Size = new System.Drawing.Size(454, 22);
+            this.txtNomDoc.TabIndex = 2;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(57, 82);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(86, 17);
+            this.label7.TabIndex = 21;
+            this.label7.Text = "Descripcion:";
+            // 
+            // botonesForm1
+            // 
+            this.botonesForm1.AutoSize = true;
+            this.botonesForm1.Location = new System.Drawing.Point(0, 5);
+            this.botonesForm1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.FIND;
+            this.botonesForm1.Name = "botonesForm1";
+            this.botonesForm1.Size = new System.Drawing.Size(817, 36);
+            this.botonesForm1.TabIndex = 3;
+            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
+            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
+            // 
             // FrmABMDocumentos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1013, 473);
-            this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
+            this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmABMDocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
@@ -329,5 +372,9 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Data.DataSet dataSet1;
         private System.Windows.Forms.Label lblDgvBusquedaRegistros;
+        private System.Windows.Forms.TextBox txtNomDoc;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox txtCoddoc;
+        private System.Windows.Forms.Label label6;
     }
 }

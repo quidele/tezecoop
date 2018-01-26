@@ -35,16 +35,21 @@ namespace SGLibrary.Services
             {
                 using (TransactionScope transaction = new TransactionScope())
                 {
-                    
+                    unRegistro.fecha_mod = DateTime.Now;
+                    unRegistro.usuario_mod = this.usuario_mod; 
                     context.TB_documentos.Add(unRegistro);
                     // agregamos un numerador asociado al documento
                     ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores();
                     TB_numeradores un_TB_numeradores = new TB_numeradores();
                     un_TB_numeradores.numerador = unRegistro.cod_doc + "0" + new ServiceParametros().ObtenerParametro("Empresa");
-                    this.CompletarAuditoria(un_TB_numeradores, "seccion" , "bloque" , "A" , "Nuevo");
+                    un_TB_numeradores.nombre = unRegistro.cod_doc + "0" + new ServiceParametros().ObtenerParametro("Empresa");
+                    un_TB_numeradores.formulario = this.formulario;
+                    un_TB_numeradores.usuario_mod = this.usuario_mod;
+                    un_TB_numeradores.consecutivos = "S";
+                    un_TB_numeradores.incremento = 1;
+                    un_TB_numeradores = un_ServiceNumeradores.CompletarAuditoria(un_TB_numeradores, "seccion", "bloque", "A", "Nuevo");
                     un_TB_numeradores.valor_asignado = 0;
                     un_ServiceNumeradores.AgregarRegistro(un_TB_numeradores);
-
                     context.SaveChanges();
                     transaction.Complete();
                     return;
@@ -147,7 +152,10 @@ namespace SGLibrary.Services
                 }
 
             } // using context
-        }
+        }// Cierre ObtenerRegistro
+
+
+
     }
 }
 

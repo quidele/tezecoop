@@ -72,7 +72,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-                        var registroBlanco = serviceModel.ObtenerRegistroBlanco();
+                        //var registroBlanco = serviceModel.ObtenerRegistroBlanco();
 
                         // INSERTE SU CODIGO
 
@@ -84,7 +84,9 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
 
-                        /* IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text); */
+                        /* 
+                         * IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text); 
+                         */
 
                         IEnumerable<Object> listadeRegistros = serviceModel.ObtenerTodosLosRegistros();
                         
@@ -160,6 +162,30 @@ namespace SGLibrary
         {
 
 
+            try
+            {
+                TB_documentos objDocumento = new TB_documentos();
+                if (this.txtCoddoc.Text.Trim () == "")
+                {
+                    MessageBox.Show("Debe ingresar el campo Codigo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.txtCoddoc.Focus();
+                    return false;
+                }
+                if (this.txtNomDoc.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar el campo Nombre", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.txtNomDoc.Focus();
+                    return false;
+                }
+                objDocumento.cod_doc = this.txtCoddoc.Text;
+                objDocumento.nom_doc = this.txtNomDoc.Text; 
+                serviceModel.AgregarRegistro(objDocumento);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message + serviceModel.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
+            }
             return true;
         }
 
@@ -185,8 +211,17 @@ namespace SGLibrary
         public void cargarDataGridViewBusqueda_ADGV(DataGridView dgv, IEnumerable<Object> lista,
                                            String p_modoEdicion, DataSet p_DataSet, BindingSource p_BindingSource)
         {
+
+
+            if ( lista.Count() == 0 )   return;
+
             Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
-            lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+
+            lista_campo_tipo.Add("Nº", "System.String");
+            lista_campo_tipo.Add("cod_doc", "System.String");
+            lista_campo_tipo.Add("nom_doc", "System.String");
+            lista_campo_tipo.Add("usuario_mod", "System.String");
+            lista_campo_tipo.Add("fecha_mod", "System.DateTime");
 
             /* lista_campo_tipo.Add("ID", "System.Decimal");
             lista_campo_tipo.Add("FECHA", "System.DateTime");
@@ -304,7 +339,7 @@ namespace SGLibrary
 
         private void cargarDataGridViewCupones_ADGV_Inicilizacion()
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
         } // Cierra  cargarDataGridViewCupones_ADGV
 
         private void botonesForm1_Load(object sender, EventArgs e)
@@ -364,6 +399,11 @@ namespace SGLibrary
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
         {
 
         }
