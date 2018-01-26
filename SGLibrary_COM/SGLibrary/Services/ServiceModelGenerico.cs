@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 
@@ -7,6 +8,17 @@ namespace SGLibrary.Services
 {
     public  class ServiceModelGenerico<T>
     {
+        public ServiceModelGenerico()
+        {
+            string subPath = "Logs2"; // your code goes here
+            bool exists = System.IO.Directory.Exists(subPath);
+            if (!exists)
+                System.IO.Directory.CreateDirectory(subPath);
+
+            Trace.Listeners.Add(new TextWriterTraceListener("Logs2\\LOG_" + DateTime.Now.ToString().Replace("/", "").Replace(":", "") + ".log"));
+            Trace.AutoFlush = true;
+            Trace.TraceInformation("inicializando el logger desde ServiceModelGenerico");
+        }
 
 
         public virtual string Usuario { get; set; }
@@ -24,6 +36,15 @@ namespace SGLibrary.Services
         public String bloque { get; set; }
         public int linea { get; set; }
 
+        
+
+        protected String _lista_errores;
+
+        public String ListaErrores()
+        {
+            return this._lista_errores;
+        }
+        
 
         public virtual IEnumerable<T> ObtenerTodosLosRegistros()
         {
@@ -53,16 +74,11 @@ namespace SGLibrary.Services
         {
             throw new NotImplementedException();
         }
-        public virtual string ListaErrores()
-        {
-            throw new NotImplementedException();
-        }
+
 
         public virtual T CompletarAuditoria(T obj, String p_seccion, String p_bloque, String p_estado_registro, String p_operacion_mod)
         {
-
             throw new NotImplementedException();
-
         }
 
         public virtual  T ObtenerRegistro(string p)

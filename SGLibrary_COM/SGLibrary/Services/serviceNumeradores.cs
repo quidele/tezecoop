@@ -10,20 +10,24 @@ namespace SGLibrary.Services
 {
     public class ServiceNumeradores : ServiceModelGenerico<TB_numeradores>
     {
+        dbSG2000Entities context;
+
+        public ServiceNumeradores(dbSG2000Entities pdbSG2000Entities)
+        {
+            context = pdbSG2000Entities;
+        }
 
         public override IEnumerable<TB_numeradores> ObtenerTodosLosRegistros()
         {
             var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
             Trace.TraceInformation(paramLog);
 
-            using (var context = new dbSG2000Entities())
-            {
-                // Falta agregar filtro de fechas
-                var listadeRegistros = (from c in context.TB_numeradores
-                                        orderby c.numerador  ascending
-                                        select c);
-                return listadeRegistros.ToList();
-            }
+            // Falta agregar filtro de fechas
+            var listadeRegistros = (from c in context.TB_numeradores
+                                    orderby c.numerador  ascending
+                                    select c);
+            return listadeRegistros.ToList();
+            
         } // Fin ObtenerTodosLosRegistros 
 
         public override void AgregarRegistro(TB_numeradores unRegistro)
@@ -34,7 +38,7 @@ namespace SGLibrary.Services
 
             try
             {
-            using (var context = new dbSG2000Entities()){
+            
                 using (TransactionScope transaction = new TransactionScope())
                 {
                     context.TB_numeradores.Add(unRegistro);
@@ -43,9 +47,7 @@ namespace SGLibrary.Services
                     return;
 
                 } //  TransactionScope
-            } // Cierra using Context 
-
-
+            
             }  catch (DbEntityValidationException e)
             {
                 Console.WriteLine(e);
@@ -61,6 +63,8 @@ namespace SGLibrary.Services
                             ve.PropertyName, ve.ErrorMessage);
                     }
                 }
+
+                this._lista_errores = "";
                 throw;
             }
         }
@@ -70,23 +74,21 @@ namespace SGLibrary.Services
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
             Trace.TraceInformation(paramLog);
 
-            using (var context = new dbSG2000Entities())
+            // Agregar la validaciones necesarias previas a la eliminación
+
+            using (TransactionScope transaction = new TransactionScope())
             {
-                // Agregar la validaciones necesarias previas a la eliminación
+                var objNumeradorBD = (from c in context.TB_numeradores
+                                        where c.numerador  == unRegistro.numerador 
+                                        select c).First<TB_numeradores>();
 
-                using (TransactionScope transaction = new TransactionScope())
-                {
-                    var objNumeradorBD = (from c in context.TB_numeradores
-                                          where c.numerador  == unRegistro.numerador 
-                                          select c).First<TB_numeradores>();
+                /* objNumeradorBD.fecha_mod = DateTime.Now;
+                objNumeradorBD.usuario_mod = this.usuario_mod; */
+                context.TB_numeradores.Remove(objNumeradorBD);
+                transaction.Complete();
+            }
 
-                    objNumeradorBD.fecha_mod = DateTime.Now;
-                    objNumeradorBD.usuario_mod = this.usuario_mod ;
-                    context.TB_numeradores.Remove(objNumeradorBD);
-                    transaction.Complete();
-                }
-
-            } // using context
+            
         }
 
         public override void ModificarRegistro(TB_numeradores unRegistro)
@@ -94,8 +96,7 @@ namespace SGLibrary.Services
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
             Trace.TraceInformation(paramLog);
 
-            using (var context = new dbSG2000Entities())
-            {
+            
                 // Agregar la validaciones necesarias previas a la eliminación
 
                 using (TransactionScope transaction = new TransactionScope())
@@ -111,7 +112,6 @@ namespace SGLibrary.Services
                     transaction.Complete();
                 }
 
-            } // using context
         }
 
         public int ObtenerValor(String p_numerador)
@@ -121,23 +121,18 @@ namespace SGLibrary.Services
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => p_numerador).GetLog();
             Trace.TraceInformation(paramLog);
 
-            using (var context = new dbSG2000Entities())
+            // Agregar la validaciones necesarias previas a la eliminación
+            using (TransactionScope transaction = new TransactionScope())
             {
-                // Agregar la validaciones necesarias previas a la eliminación
+                var objNumeradorBD = (from c in context.TB_numeradores
+                                        where c.numerador == p_numerador
+                                        select c).First<TB_numeradores>();
 
-                using (TransactionScope transaction = new TransactionScope())
-                {
-                    var objNumeradorBD = (from c in context.TB_numeradores
-                                          where c.numerador == p_numerador
-                                          select c).First<TB_numeradores>();
-
-                    aux_valor = objNumeradorBD.valor_asignado;
-                    objNumeradorBD.valor_asignado = objNumeradorBD.valor_asignado + 1;
-                    context.SaveChanges();
-                    transaction.Complete();
-                }
-
-            } // using context
+                aux_valor = objNumeradorBD.valor_asignado;
+                objNumeradorBD.valor_asignado = objNumeradorBD.valor_asignado + 1;
+                context.SaveChanges();
+                transaction.Complete();
+            }
 
             paramLog = new SGLibrary.Utility.ParamLogUtility(() => aux_valor).GetLog();
             Trace.TraceInformation(paramLog);
@@ -161,5 +156,10 @@ namespace SGLibrary.Services
 
             return obj;
         }
+
+
+            
+        
+
     }// Cierra Clase 
 } // Cierra namespace

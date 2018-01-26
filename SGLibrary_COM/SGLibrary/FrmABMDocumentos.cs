@@ -59,12 +59,19 @@ namespace SGLibrary
                     {
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
+                        this.modoEdicion.Text = "SI";
 
+                        if (this.DGV_Busqueda.SelectedRows.Count == 0 ) return; 
+                        foreach (DataGridViewRow row in this.DGV_Busqueda.SelectedRows)
+                        {
+                            TB_documentos un_TB_documento = serviceModel.ObtenerRegistroxId(row.Cells["ID"].Value.ToString());
+                            this.txtCoddoc.Text = un_TB_documento.cod_doc;
+                            this.txtNomDoc.Text = un_TB_documento.nom_doc;
+                        }
                         // INSERTE SU CODIGO
-
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
-                        // botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
-
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
+                        this.txtCoddoc.ReadOnly = true; 
                         break;
                     }
                 case "ADD":
@@ -75,26 +82,20 @@ namespace SGLibrary
                         //var registroBlanco = serviceModel.ObtenerRegistroBlanco();
 
                         // INSERTE SU CODIGO
-
+                        this.txtCoddoc.Text = "";
+                        this.txtNomDoc.Text = "";
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
                 case "FIND":
                     {
                         this.modoEdicion.Text = "NO";
-                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
-
-                        /* 
-                         * IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text); 
-                         */
-
                         IEnumerable<Object> listadeRegistros = serviceModel.ObtenerTodosLosRegistros();
-                        
-
-                        this.cargarDataGridViewBusqueda_ADGV(dataGridView2, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
-
+                        this.cargarDataGridViewBusqueda_ADGV(DGV_Busqueda, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
+
+                        ActualizarCantidadRegistros(listadeRegistros.Count());
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
 
@@ -102,7 +103,6 @@ namespace SGLibrary
 
                 case "OK":
                     {
-
                         if (this.modoEdicion.Text == "NO")
                         {
                             if (!altaRegistro()) break;
@@ -111,7 +111,6 @@ namespace SGLibrary
                         {
                             if (!ediciondeRegistro()) break;
                         }
-
                         //cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
                         this.modoEdicion.Text = "NO";
                         var btnFind = new ToolStripButton();
@@ -132,7 +131,7 @@ namespace SGLibrary
                 case "DELETE":
                     {
                         this.modoEdicion.Text = "NO";
-                        foreach (DataGridViewRow row in dataGridView2.SelectedRows)
+                        foreach (DataGridViewRow row in DGV_Busqueda.SelectedRows)
                         {
                             TB_documentos  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
@@ -157,6 +156,10 @@ namespace SGLibrary
 
         }
 
+
+        private void ActualizarCantidadRegistros(int registros){
+            this.lblDgvBusquedaRegistros.Text  = registros.ToString () + " - Registros"; 
+        }
 
         public Boolean altaRegistro()
         {
@@ -195,7 +198,22 @@ namespace SGLibrary
 
             try
             {
-                serviceModel.ModificarRegistro(new TB_documentos());
+                TB_documentos objDocumento = new TB_documentos();
+                if (this.txtCoddoc.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar el campo Codigo", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.txtCoddoc.Focus();
+                    return false;
+                }
+                if (this.txtNomDoc.Text.Trim() == "")
+                {
+                    MessageBox.Show("Debe ingresar el campo Nombre", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    this.txtNomDoc.Focus();
+                    return false;
+                }
+                objDocumento.cod_doc = this.txtCoddoc.Text;
+                objDocumento.nom_doc = this.txtNomDoc.Text;
+                serviceModel.ModificarRegistro(objDocumento);
             }
             catch (Exception ex)
             {
@@ -394,7 +412,7 @@ namespace SGLibrary
 
         private void dataGridView2_FilterStringChanged(object sender, EventArgs e)
         {
-            this.bindingSource1.Filter = this.dataGridView2.FilterString;
+            this.bindingSource1.Filter = this.DGV_Busqueda.FilterString;
             this.lblDgvBusquedaRegistros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
         }
 

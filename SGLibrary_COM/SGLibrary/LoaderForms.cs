@@ -158,7 +158,7 @@ namespace SGLibrary
                         break;
                     case "FrmABMDocumentos":
                         FrmABMDocumentos f8 = new FrmABMDocumentos();
-                        f8.serviceModel = new Services.ServiceDocumentos();
+                        f8.serviceModel = new Services.ServiceDocumentos(new dbSG2000Entities ());
                         f8.serviceModel.usuario_mod = this.Usuario;
                         f8.serviceModel.terminal_mod = "PC01";
                         f8.serviceModel.formulario = "FrmABMDocumentos";
