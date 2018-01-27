@@ -64,7 +64,7 @@ namespace SGLibrary
                         if (this.DGV_Busqueda.SelectedRows.Count == 0 ) return; 
                         foreach (DataGridViewRow row in this.DGV_Busqueda.SelectedRows)
                         {
-                            TB_documentos un_TB_documento = serviceModel.ObtenerRegistroxId(row.Cells["ID"].Value.ToString());
+                            TB_documentos un_TB_documento = serviceModel.ObtenerRegistroxId(row.Cells["cod_doc"].Value.ToString());
                             this.txtCoddoc.Text = un_TB_documento.cod_doc;
                             this.txtNomDoc.Text = un_TB_documento.nom_doc;
                         }
@@ -94,11 +94,9 @@ namespace SGLibrary
                         this.cargarDataGridViewBusqueda_ADGV(DGV_Busqueda, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
-
                         ActualizarCantidadRegistros(listadeRegistros.Count());
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
-
                     }
 
                 case "OK":
@@ -133,8 +131,8 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in DGV_Busqueda.SelectedRows)
                         {
-                            TB_documentos  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
-                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                            TB_documentos  unRegistro = serviceModel.ObtenerRegistro(row.Cells["cod_doc"].Value.ToString());
+                            DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro " + unRegistro.cod_doc, "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMPLETAR ELIMINACION
                             serviceModel.AnularRegistro(unRegistro);
@@ -231,8 +229,13 @@ namespace SGLibrary
         {
 
 
-            if ( lista.Count() == 0 )   return;
 
+            if (lista.Count() == 0) { 
+                p_DataSet.Clear(); 
+                dgv.DataBindings.Clear ()  ;
+                dgv.Columns.Clear();
+                return; 
+            }
             Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
 
             lista_campo_tipo.Add("Nº", "System.String");

@@ -81,9 +81,10 @@ namespace SGLibrary.Services
                 /* objDocumentoBD.fecha_mod  = DateTime.Now;
                 objDocumentoBD.usuario_mod = this.usuario_mod; */
                 context.TB_documentos.Remove(objDocumentoBD);
+                context.SaveChanges();
                 transaction.Complete();
             }
-
+           
             
         }
 
@@ -104,7 +105,7 @@ namespace SGLibrary.Services
                 objDocumentoBD.fecha_mod = DateTime.Now;
                 objDocumentoBD.usuario_mod = this.usuario_mod ;
                 objDocumentoBD.nom_doc = unRegistro.nom_doc;
-                this.CompletarAuditoria(objDocumentoBD, "seccion", "bloque", "M", "Editar");
+                //this.CompletarAuditoria(objDocumentoBD, "seccion", "bloque", "M", "Editar");
                 context.SaveChanges();
                 transaction.Complete();
             }

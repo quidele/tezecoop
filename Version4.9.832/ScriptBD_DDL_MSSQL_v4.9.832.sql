@@ -18,7 +18,9 @@ SET ANSI_PADDING ON
 GO
 
 
-select * from [dbo].[TB_documentos]
+-- select * from [dbo].[TB_documentos]
+
+
 --- Nueva tabla de documento
 CREATE TABLE [dbo].[TB_documentos](
 	[cod_doc] [char](4) NOT NULL,
