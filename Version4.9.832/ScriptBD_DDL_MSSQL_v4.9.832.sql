@@ -39,6 +39,8 @@ SET ANSI_PADDING OFF
 GO
 
 
+-- select * from [dbo].[TB_numeradores]
+
 if  exists (SELECT * FROM sys.tables where name ='TB_numeradores' )
 	DROP TABLE  [dbo].[TB_numeradores]
 GO
