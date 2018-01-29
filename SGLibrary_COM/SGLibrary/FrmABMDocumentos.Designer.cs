@@ -90,7 +90,7 @@
             // txtNomDoc
             // 
             this.txtNomDoc.Location = new System.Drawing.Point(112, 64);
-            this.txtNomDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNomDoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtNomDoc.MaxLength = 40;
             this.txtNomDoc.Name = "txtNomDoc";
             this.txtNomDoc.Size = new System.Drawing.Size(342, 20);
@@ -109,7 +109,7 @@
             // txtCoddoc
             // 
             this.txtCoddoc.Location = new System.Drawing.Point(112, 37);
-            this.txtCoddoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCoddoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtCoddoc.MaxLength = 4;
             this.txtCoddoc.Name = "txtCoddoc";
             this.txtCoddoc.Size = new System.Drawing.Size(96, 20);
@@ -131,7 +131,7 @@
             this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.modoEdicion.Location = new System.Drawing.Point(112, 7);
-            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
             this.modoEdicion.Size = new System.Drawing.Size(43, 20);
@@ -186,7 +186,7 @@
             this.DGV_Busqueda.DateWithTime = false;
             this.DGV_Busqueda.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.DGV_Busqueda.Location = new System.Drawing.Point(13, 60);
-            this.DGV_Busqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.DGV_Busqueda.Margin = new System.Windows.Forms.Padding(2);
             this.DGV_Busqueda.Name = "DGV_Busqueda";
             this.DGV_Busqueda.RowTemplate.Height = 24;
             this.DGV_Busqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -201,7 +201,7 @@
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
             this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(365, 24);
-            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
             this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(157, 21);
             this.cbUsuariosConciliaciones.TabIndex = 6;
@@ -241,7 +241,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(204, 25);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(101, 20);
             this.fechahasta.TabIndex = 2;
@@ -250,7 +250,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(91, 25);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 1;
@@ -333,11 +333,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 384);
-            this.Controls.Add(this.status_bar_usuario);
-            this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Controls.Add(this.status_bar_usuario);
+            this.Controls.Add(this.botonesForm1);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmABMDocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Documentos";

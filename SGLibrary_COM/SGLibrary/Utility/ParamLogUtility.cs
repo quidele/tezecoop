@@ -18,6 +18,7 @@ namespace SGLibrary.Utility
         private readonly Dictionary<String, Type> _methodParamaters;
         private readonly List<Tuple<String, Type, object>> _providedParametars;
 
+        [DebuggerHidden]
         public ParamLogUtility(params Expression<Func<object>>[] providedParameters)
         {
             try
@@ -95,6 +96,7 @@ namespace SGLibrary.Utility
             _providedParametars.Add(new Tuple<string, Type, object>(name, type, value));
         }
 
+        [DebuggerHidden]
         public String GetLog()
         {
             return String.Format("{0}({1})", _methodName, _paramaterLog);
