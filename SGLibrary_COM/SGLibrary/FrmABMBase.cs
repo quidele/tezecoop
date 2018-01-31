@@ -10,6 +10,7 @@ using ControlesdeUsuario;
 using System.Reflection;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
+using SGLibrary.Services;
 
 namespace SGLibrary
 {
@@ -17,7 +18,7 @@ namespace SGLibrary
     {
 
 
-        public ServiceModel serviceModel { get; set; }
+        public ServiceModelGenerico<Object> serviceModel { get; set; }
 
         public FrmABMBase()
         {
@@ -58,12 +59,14 @@ namespace SGLibrary
                     {
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-
-                        // INSERTE SU CODIGO
-
+                        if (this.ADGVBusqueda.SelectedRows.Count == 0) return;
+                        foreach (DataGridViewRow row in this.ADGVBusqueda.SelectedRows)
+                        {
+                            // INSERTE SU CODIGO
+                            Object un_TB_documento = serviceModel.ObtenerRegistroxId("Clave");   
+                        }
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
-                        // botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
-
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         break;
                     }
                 case "ADD":
@@ -71,10 +74,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
-                        var registroBlanco = serviceModel.ObtenerRegistroBlanco();
-
                         // INSERTE SU CODIGO
-
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -83,11 +83,10 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
                         IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
-
                         this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
-
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
+                        ActualizarCantidadRegistros(listadeRegistros.Count());
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         break;
 
@@ -133,9 +132,7 @@ namespace SGLibrary
                             // COMPLETAR ELIMINACION
                             serviceModel.AnularRegistro(unRegistro);
                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
                         }
-
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
                         botonesForm1_ClickEventDelegateHandler(btnFind, null);
@@ -151,6 +148,11 @@ namespace SGLibrary
         }
 
 
+        private void ActualizarCantidadRegistros(int registros)
+        {
+            this.lblDgvBusquedaRegistros.Text = registros.ToString() + " - Registros";
+        }
+
         public Boolean altaRegistro()
         {
 
@@ -164,7 +166,7 @@ namespace SGLibrary
 
             try
             {
-                serviceModel.ModificarRegistro();
+                serviceModel.ModificarRegistro(new Object());
             }
             catch (Exception ex)
             {
