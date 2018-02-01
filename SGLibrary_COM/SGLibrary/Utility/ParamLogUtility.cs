@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Diagnostics;
 using System.Linq;
 using System.Linq.Expressions;
@@ -18,7 +19,8 @@ namespace SGLibrary.Utility
         private readonly Dictionary<String, Type> _methodParamaters;
         private readonly List<Tuple<String, Type, object>> _providedParametars;
 
-        [DebuggerHidden]
+
+        /*[DebuggerHidden]*/
         public ParamLogUtility(params Expression<Func<object>>[] providedParameters)
         {
             try
@@ -77,13 +79,21 @@ namespace SGLibrary.Utility
                         _providedParametars.Where(
                             obj => obj.Item1.Equals(aMethodParamater.Key) && obj.Item2 == aMethodParamater.Value).Single();
                     _paramaterLog += String.Format(@" ""{0}"":{1},", aParameter.Item1, aParameter.Item3.ToString() );
+                    // Agregado por EULISES
+                    foreach (PropertyDescriptor descriptor in TypeDescriptor.GetProperties(aParameter.Item3))
+                    {
+                        string name = descriptor.Name;
+                        object value = descriptor.GetValue(aParameter.Item3);
+                        Console.WriteLine("{0}={1}", name, value);
+                        _paramaterLog += String.Format("{0}={1},", name, value);
+                    }
                 }
                 _paramaterLog = (_paramaterLog != null) ? _paramaterLog.Trim(' ', ',') : string.Empty;
 
             }
             catch (Exception exception)
             {
-                throw new Exception("MathodParamater is not found in providedParameters.");
+                throw new Exception("MathodParamater is not found in providedParameters." + exception);
             }
         }
 
@@ -96,7 +106,7 @@ namespace SGLibrary.Utility
             _providedParametars.Add(new Tuple<string, Type, object>(name, type, value));
         }
 
-        [DebuggerHidden]
+        /*[DebuggerHidden]*/
         public String GetLog()
         {
             return String.Format("{0}({1})", _methodName, _paramaterLog);

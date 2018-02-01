@@ -93,6 +93,18 @@ namespace SGLibrary
         public void execFormulario(string value)
         {
 
+
+            /* 
+                TB_documentos un_docu = new TB_documentos();
+                un_docu.cod_doc = "OBAE";
+                un_docu.nom_doc = "Nombre de Documento OBAE";
+                un_docu.usuario_mod = "quidele";
+                un_docu.fecha_mod = DateTime.Now;
+             */
+
+            // MetodoEulises(un_docu); 
+
+            
             // Implmentar en proximas version en la proximas versiones
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => value).GetLog();
 
@@ -176,6 +188,13 @@ namespace SGLibrary
                 Trace.TraceError(ex.Message);
                 System.Windows.Forms.MessageBox.Show(ex.Message, "ERROR ");
             }
+        }
+
+        public void MetodoEulises(TB_documentos un_docu)
+        {
+
+            // Implmentar en proximas version en la proximas versiones
+            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => un_docu).GetLog();
         }
     }
 }
