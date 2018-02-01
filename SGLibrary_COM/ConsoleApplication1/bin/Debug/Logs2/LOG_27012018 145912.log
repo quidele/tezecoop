@@ -1,0 +1,23 @@
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = ObtenerTodosLosRegistros()
+ConsoleApplication1.vshost.exe Information: 0 : ADGV.AdvancedDataGridView
+ConsoleApplication1.vshost.exe Information: 0 : System.Collections.Generic.List`1[SGLibrary.TB_documentos]
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = ObtenerRegistro("pId":OBAP)
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = AnularRegistro("unRegistro":SGLibrary.TB_documentos)
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.ServiceParametros, Method = ObtenerParametro("nombre":Empresa)
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SGLibrary.TB_Parametros
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceNumeradores, Method = AnularRegistro("unRegistro":SGLibrary.TB_numeradores)
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = ObtenerTodosLosRegistros()
+ConsoleApplication1.vshost.exe Information: 0 : ADGV.AdvancedDataGridView
+ConsoleApplication1.vshost.exe Information: 0 : System.Collections.Generic.List`1[SGLibrary.TB_documentos]
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = ObtenerRegistro("pId":OBAP)
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceDocumentos, Method = AnularRegistro("unRegistro":SGLibrary.TB_documentos)
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.ServiceParametros, Method = ObtenerParametro("nombre":Empresa)
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SGLibrary.TB_Parametros
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceNumeradores, Method = AnularRegistro("unRegistro":SGLibrary.TB_numeradores)
