@@ -333,10 +333,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 384);
-            this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
+            this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmABMDocumentos";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

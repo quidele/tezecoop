@@ -85,6 +85,15 @@ namespace SGLibrary.Services
         {
             throw new NotImplementedException();
         }
-    }
 
-}
+
+        public void TraceInformation(String paramLog) 
+        {
+            /* crear pattern de grabacion */
+            Trace.TraceInformation(paramLog);
+        }
+
+
+    }// Cierra Clase
+
+} // Cierra NameSpace

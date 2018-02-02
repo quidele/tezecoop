@@ -108,6 +108,7 @@ namespace SGLibrary
             // Implmentar en proximas version en la proximas versiones
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => value).GetLog();
 
+
             try
             {
                 Object  f = new Form ();
@@ -175,6 +176,14 @@ namespace SGLibrary
                         f8.serviceModel.terminal_mod = "PC01";
                         f8.serviceModel.formulario = "FrmABMDocumentos";
                         f = (Form)f8;
+                        break;
+                    case "FrmObligaciones":
+                        FrmObligaciones f9 = new FrmObligaciones();
+                        f9.serviceModel = new Services.ServiceDocumentos(new dbSG2000Entities());
+                        f9.serviceModel.usuario_mod = this.Usuario;
+                        f9.serviceModel.terminal_mod = "PC01";
+                        f9.serviceModel.formulario = "FrmObligaciones";
+                        f = (Form)f9;
                         break;
                 }
 

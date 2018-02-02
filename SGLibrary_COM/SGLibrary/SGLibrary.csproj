@@ -165,6 +165,12 @@
     <Compile Include="FrmCargaTarifasEjemploADGV.Designer.cs">
       <DependentUpon>FrmCargaTarifasEjemploADGV.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmObligaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmObligaciones.Designer.cs">
+      <DependentUpon>FrmObligaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Frm_GroupByGrid.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -402,6 +408,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCargaTarifasEjemploADGV.resx">
       <DependentUpon>FrmCargaTarifasEjemploADGV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmObligaciones.resx">
+      <DependentUpon>FrmObligaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Frm_GroupByGrid.resx">
       <DependentUpon>Frm_GroupByGrid.cs</DependentUpon>

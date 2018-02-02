@@ -166,7 +166,7 @@ namespace ConsoleApplication1
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
-            l.execFormulario("FrmABMDocumentos");
+            l.execFormulario("FrmObligaciones");
             
         }
     }
