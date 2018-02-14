@@ -138,16 +138,18 @@ GO
 ------------------------ ATENCION  ---------------------
 ----- EN DESARROLLO LA OPERACION DEMORA 1,43 MINUTOS  ----
 
-DROP INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
-
-ALTER TABLE [dbo].[TB_Cupones] DROP CONSTRAINT [FK__TB_Cupones__05F8DC4F]
+if EXISTS (select * from sys.indexes  where name ='TB_ComprobantesTB_Licenciatari')
+	DROP INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
 
 --- SOLO CORRER EN SERVIDOR
+if EXISTS (select * from sys.objects    where name ='FK__TB_Cupones__05F8DC4F')
+	ALTER TABLE [dbo].[TB_Cupones] DROP CONSTRAINT [FK__TB_Cupones__05F8DC4F]
 
-select  host_name()
 
-IF host_name()
+
+-- PRIMERO CORRER EN PRUEBAS - REALIZAR BACKUP DE LA BD 
 ALTER TABLE TB_CUPONES ALTER COLUMN tpComprobanteCliente CHAR(4);
+
 
 CREATE NONCLUSTERED INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
 	(
@@ -159,11 +161,6 @@ CREATE NONCLUSTERED INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
 
 
 
---- LA FOREIGN KEY NO PODRA VOLVER A CREARSE	
-/* 
-    ALTER TABLE [dbo].[TB_Cupones]  WITH NOCHECK ADD  CONSTRAINT [FK__TB_Cupones__05F8DC4F] FOREIGN KEY([nrTalonarioCliente], [nrComprabanteCliente], [tpComprobanteCliente], [tpLetraCliente])
-	REFERENCES [dbo].[TB_Comprobantes] ([nrTalonario], [nrComprobante], [tpComprobante], [tpLetra])
-*/
 
 GO
 
