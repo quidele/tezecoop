@@ -205,7 +205,7 @@
     <Property Name="dtCupon" Type="datetime" />
     <Property Name="nrTalonarioCliente" Type="char" MaxLength="4" />
     <Property Name="nrComprabanteCliente" Type="char" MaxLength="12" />
-    <Property Name="tpComprobanteCliente" Type="varchar" MaxLength="2" />
+    <Property Name="tpComprobanteCliente" Type="char" MaxLength="4" />
     <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
     <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
     <Property Name="dtCobradoalCliente" Type="datetime" />
@@ -415,6 +415,36 @@
     <Property Name="tpDestino" Type="varchar" MaxLength="20" />
     <Property Name="cdComision" Type="int" />
   </EntityType>
+  <EntityType Name="TB_transCab">
+    <Key>
+      <PropertyRef Name="nro_trans" />
+    </Key>
+    <Property Name="cod_emp" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="cod_tit" Type="int" Nullable="false" />
+    <Property Name="letra_doc" Type="char" MaxLength="1" />
+    <Property Name="fec_valor" Type="datetime" Nullable="false" />
+    <Property Name="com_mov" Type="varchar" MaxLength="400" />
+    <Property Name="cod_moneda_ing" Type="char" MaxLength="4" />
+    <Property Name="tc_ing" Type="decimal" Precision="12" Scale="6" />
+    <Property Name="imp_subtot_ing" Type="decimal" Precision="14" Scale="2" />
+    <Property Name="imp_ivatot_ing" Type="decimal" Precision="14" Scale="2" />
+    <Property Name="imp_tot_ing" Type="decimal" Precision="14" Scale="2" />
+    <Property Name="nro_int" Type="int" />
+    <Property Name="nro_trans" Type="int" Nullable="false" />
+    <Property Name="cod_doc" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nro_doc" Type="int" Nullable="false" />
+    <Property Name="fec_doc" Type="datetime" Nullable="false" />
+    <Property Name="serie_doc" Type="smallint" Nullable="false" />
+    <Property Name="formulario" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="seccion" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="bloque" Type="char" MaxLength="16" Nullable="false" />
+    <Property Name="linea" Type="smallint" Nullable="false" />
+    <Property Name="usuario_mod" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="fecha_mod" Type="datetime" Nullable="false" />
+    <Property Name="terminal_mod" Type="char" MaxLength="20" Nullable="false" />
+    <Property Name="operacion_mod" Type="char" MaxLength="10" Nullable="false" />
+    <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
+  </EntityType>
   <EntityType Name="TB_Usuarios">
     <Key>
       <PropertyRef Name="dsUsuario" />
@@ -445,30 +475,6 @@
       </Principal>
       <Dependent Role="TB_ArchivoTarjetaDetalle">
         <PropertyRef Name="idarchivo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-    <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
-    <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjeta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="TB_Conciliacion">
-        <PropertyRef Name="idArchivo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-    <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
-    <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjetaDetalle">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="TB_ConciliacionDetalle">
-        <PropertyRef Name="IdArchivoTarjetaDetalle" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -559,18 +565,11 @@
     <EntitySet Name="TB_PresentacionesCAI" EntityType="Self.TB_PresentacionesCAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="Self.TB_PresentacionesCAIDetalle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_transCab" EntityType="Self.TB_transCab" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Usuarios" EntityType="Self.TB_Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
       <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
       <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
-      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />

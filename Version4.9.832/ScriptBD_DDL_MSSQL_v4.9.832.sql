@@ -15,8 +15,7 @@ GO
 SET ANSI_PADDING ON
 GO
 
-
--- select * from [dbo].[TB_documentos]
+-- SELECT * FROM [dbo].[TB_documentos]
 
 
 --- Nueva tabla de documento
@@ -123,6 +122,8 @@ CREATE TABLE [dbo].[TB_transCab](
 	[terminal_mod] [char](20) NOT NULL,
 	[operacion_mod] [char](10) NOT NULL,
 	[estado_registro] [char](1) NOT NULL,
+	[cuotas] [smallint] NULL,
+	[periodo] [char](20) NULL,
  CONSTRAINT [TB_transCab_1] PRIMARY KEY NONCLUSTERED 
 (
 	[nro_trans] ASC
@@ -160,7 +161,39 @@ CREATE NONCLUSTERED INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
 	) WITH( PAD_INDEX = OFF, FILLFACTOR = 90, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 
 
+GO
 
+
+IF  EXISTS  (SELECT * FROM sys.tables where name ='TB_ObligacionesTitulares' )
+	DROP TABLE [dbo].TB_ObligacionesTitulares
+
+/****** Object:  Table [dbo].[TB_ObligacionesTitulares]    Script Date: 15/02/2018 17:07:55 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+SET ANSI_PADDING ON
+GO
+
+CREATE TABLE [dbo].[TB_ObligacionesTitulares](
+	[nro_trans] [int] NOT NULL,
+	[cod_tit] [int] NOT NULL,
+	[nrLicencia] [char](3) NULL,
+	[nrTelefono] [varchar](50) NULL,
+ CONSTRAINT [PK_TB_ObligacionesTitulares] PRIMARY KEY CLUSTERED 
+(
+	[nro_trans] ASC,
+	[cod_tit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
 
 GO
+
+SET ANSI_PADDING OFF
+GO
+
+
+
 
