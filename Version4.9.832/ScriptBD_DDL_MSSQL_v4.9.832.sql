@@ -195,5 +195,33 @@ SET ANSI_PADDING OFF
 GO
 
 
+IF  EXISTS  (SELECT * FROM sys.tables where name ='TB_ObligacionesCuotas' )
+	DROP TABLE [dbo].TB_ObligacionesCuotas
+
+GO 
+
+
+
+/****** Object:  Table [dbo].[TB_ObligacionesCuotas]    Script Date: 17/02/2018 15:52:18 ******/
+SET ANSI_NULLS ON
+GO
+
+SET QUOTED_IDENTIFIER ON
+GO
+
+CREATE TABLE [dbo].[TB_ObligacionesCuotas](
+	[nro_trans] [int] NOT NULL,
+	[cod_tit] [int] NOT NULL,
+	[nro_cuota] [int] NULL,
+	[fecha_vencimiento] [date] NULL,
+	[importe] [decimal](18, 2) NULL,
+ CONSTRAINT [PK_TB_ObligacionesCuotas] PRIMARY KEY CLUSTERED 
+(
+	[nro_trans] ASC,
+	[cod_tit] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
 
 

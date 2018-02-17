@@ -359,6 +359,27 @@
           <Property Name="bloque" Type="varchar" MaxLength="16" Nullable="false" />
           <Property Name="linea" Type="smallint" Nullable="false" />
         </EntityType>
+        <EntityType Name="TB_ObligacionesCuotas">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+          </Key>
+          <Property Name="nro_trans" Type="int" Nullable="false" />
+          <Property Name="cod_tit" Type="int" Nullable="false" />
+          <Property Name="nro_cuota" Type="int" />
+          <Property Name="fecha_vencimiento" Type="date" />
+          <Property Name="importe" Type="decimal" Precision="18" Scale="2" />
+        </EntityType>
+        <EntityType Name="TB_ObligacionesTitulares">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+          </Key>
+          <Property Name="nro_trans" Type="int" Nullable="false" />
+          <Property Name="cod_tit" Type="int" Nullable="false" />
+          <Property Name="nrLicencia" Type="char" MaxLength="3" />
+          <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
+        </EntityType>
         <EntityType Name="TB_Parametros">
           <Key>
             <PropertyRef Name="dsParametro" />
@@ -449,6 +470,8 @@
           <Property Name="terminal_mod" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="operacion_mod" Type="char" MaxLength="10" Nullable="false" />
           <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="cuotas" Type="smallint" />
+          <Property Name="periodo" Type="char" MaxLength="20" />
         </EntityType>
         <EntityType Name="TB_Usuarios">
           <Key>
@@ -480,6 +503,30 @@
             </Principal>
             <Dependent Role="TB_ArchivoTarjetaDetalle">
               <PropertyRef Name="idarchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -566,6 +613,8 @@
           <EntitySet Name="TB_MovimientosContables" EntityType="Self.TB_MovimientosContables" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_MovimientosContablesPosdatados" EntityType="Self.TB_MovimientosContablesPosdatados" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_numeradores" EntityType="Self.TB_numeradores" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_ObligacionesCuotas" EntityType="Self.TB_ObligacionesCuotas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_ObligacionesTitulares" EntityType="Self.TB_ObligacionesTitulares" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Parametros" EntityType="Self.TB_Parametros" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PresentacionesCAI" EntityType="Self.TB_PresentacionesCAI" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="Self.TB_PresentacionesCAIDetalle" Schema="dbo" store:Type="Tables" />
@@ -575,6 +624,14 @@
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
@@ -685,6 +742,8 @@
           <EntitySet Name="TB_documentos" EntityType="dbSG2000Model.TB_documentos" />
           <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
           <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
+          <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
+          <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -1319,6 +1378,29 @@
           <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
           <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cuotas" Type="Int16" />
+          <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_ObligacionesTitulares">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+          </Key>
+          <Property Name="nro_trans" Type="Int32" Nullable="false" />
+          <Property Name="cod_tit" Type="Int32" Nullable="false" />
+          <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
+          <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_ObligacionesCuotas">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+          </Key>
+          <Property Name="nro_trans" Type="Int32" Nullable="false" />
+          <Property Name="cod_tit" Type="Int32" Nullable="false" />
+          <Property Name="nro_cuota" Type="Int32" />
+          <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
+          <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1821,6 +1903,8 @@
           <EntitySetMapping Name="TB_transCab">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
               <MappingFragment StoreEntitySet="TB_transCab">
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="cuotas" ColumnName="cuotas" />
                 <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
                 <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
                 <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
@@ -1846,6 +1930,27 @@
                 <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
                 <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
                 <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ObligacionesTitulares">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
+              <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+                <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
+                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ObligacionesCuotas">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
+              <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+                <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
+                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

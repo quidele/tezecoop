@@ -496,6 +496,8 @@
     <EntitySetMapping Name="TB_transCab">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
         <MappingFragment StoreEntitySet="TB_transCab">
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="cuotas" ColumnName="cuotas" />
           <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
           <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
           <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
@@ -521,6 +523,27 @@
           <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
           <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
           <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ObligacionesTitulares">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
+        <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+          <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
+          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ObligacionesCuotas">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
+        <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

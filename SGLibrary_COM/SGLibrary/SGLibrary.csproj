@@ -275,10 +275,10 @@
     <Compile Include="ServicePrinter.cs" />
     <Compile Include="Services\Auditoria.cs" />
     <Compile Include="Services\Obligaciones.cs" />
-    <Compile Include="Services\ServiceObligaciones.cs" />
     <Compile Include="Services\ServiceDocumentos.cs" />
     <Compile Include="Services\ServiceModelGenerico.cs" />
     <Compile Include="Services\ServiceNumeradores.cs" />
+    <Compile Include="Services\ServiceObligaciones.cs" />
     <Compile Include="ServiceTarifas.cs" />
     <Compile Include="ServiceParametros.cs" />
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">
@@ -340,6 +340,12 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_numeradores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ObligacionesCuotas.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_ObligacionesTitulares.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_Parametros.cs">
