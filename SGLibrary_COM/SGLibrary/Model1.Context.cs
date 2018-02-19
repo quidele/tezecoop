@@ -85,7 +85,6 @@ namespace SGLibrary
         public DbSet<TB_PresentacionesCAI> TB_PresentacionesCAI { get; set; }
         public DbSet<TB_PresentacionesCAIDetalle> TB_PresentacionesCAIDetalle { get; set; }
         public DbSet<TB_Parametros> TB_Parametros { get; set; }
-        public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Comprobantes> TB_Comprobantes { get; set; }
         public DbSet<TB_ComprobantesDetalle> TB_ComprobantesDetalle { get; set; }
         public DbSet<TB_documentos> TB_documentos { get; set; }
@@ -93,6 +92,7 @@ namespace SGLibrary
         public DbSet<TB_transCab> TB_transCab { get; set; }
         public DbSet<TB_ObligacionesTitulares> TB_ObligacionesTitulares { get; set; }
         public DbSet<TB_ObligacionesCuotas> TB_ObligacionesCuotas { get; set; }
+        public DbSet<TB_Cupones> TB_Cupones { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

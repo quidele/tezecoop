@@ -7,7 +7,7 @@
       <Diagram DiagramId="0fa0810c25474f56983d002b19a9da29" Name="Diagrama1" ZoomLevel="64">
         <EntityTypeShape EntityType="dbSG2000Model.TB_Productos" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Usuarios" Width="1.5" PointX="4.75" PointY="3.875" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="2.875" PointX="6.25" PointY="0.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_MovimientosContables" Width="2.875" PointX="6.625" PointY="0.875" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Conceptos" Width="2.125" PointX="3.625" PointY="8.625" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" Width="1.5" PointX="10" PointY="1.125" />
@@ -24,7 +24,6 @@
         <EntityTypeShape EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" Width="1.5" PointX="12.625" PointY="10" />
         <AssociationConnector Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Parametros" Width="1.5" PointX="3.375" PointY="13.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.75" PointY="6.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Comprobantes" Width="1.5" PointX="7" PointY="17.5" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_ComprobantesDetalle" Width="1.5" PointX="9.25" PointY="21.5" />
         <AssociationConnector Association="dbSG2000Model.FK__TB_ComprobantesD__07E124C1" />
@@ -32,8 +31,9 @@
         <EntityTypeShape EntityType="dbSG2000Model.TB_documentos" Width="1.5" PointX="13.375" PointY="4.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_numeradores" Width="1.5" PointX="10.375" PointY="13.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_transCab" Width="1.5" PointX="12.375" PointY="13.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesTitulares" Width="1.5" PointX="14.375" PointY="13.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesCuotas" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesTitulares" Width="2" PointX="14.375" PointY="13.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesCuotas" Width="2.75" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.75" PointY="7.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -259,6 +259,7 @@
     <Compile Include="ServiceConciliacionAutomatica.cs" />
     <Compile Include="ServiceConciliacionManual.cs" />
     <Compile Include="ServiceConciliacionTodoPago.cs" />
+    <Compile Include="ServiceCuponesTransaccion.cs" />
     <Compile Include="ServiceCupones.cs" />
     <Compile Include="ServiceDestinos.cs" />
     <Compile Include="DBCOM_Class.cs" />

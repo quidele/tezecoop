@@ -225,3 +225,11 @@ CREATE TABLE [dbo].[TB_ObligacionesCuotas](
 GO
 
 
+-- Agregamos el campo nro_trans 
+IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
+								WHERE    o.type = 'U'   and o.Name = 'TB_Cupones'  and  c.Name = 'nro_trans' )
+	ALTER TABLE dbo.TB_Cupones ADD 	nro_trans int NULL
+
+GO
+
+

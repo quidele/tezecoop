@@ -10,7 +10,8 @@ namespace SGLibrary.Services
 {
     public class ServiceNumeradores : ServiceModelGenerico<TB_numeradores>
     {
-        dbSG2000Entities context;
+
+        dbSG2000Entities context; 
 
         public ServiceNumeradores(dbSG2000Entities pdbSG2000Entities)
         {

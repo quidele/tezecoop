@@ -79,5 +79,6 @@ namespace SGLibrary
         public Nullable<double> vlMontoAcreditacion { get; set; }
         public Nullable<int> IdConciliacion { get; set; }
         public string nmEmpresaTarjeta { get; set; }
+        public Nullable<int> nro_trans { get; set; }
     }
 }
