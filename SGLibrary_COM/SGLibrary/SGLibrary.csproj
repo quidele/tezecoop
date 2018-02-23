@@ -69,6 +69,9 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\..\ADGV Source\ADGV\bin\Debug\AdvancedDataGridView.dll</HintPath>
     </Reference>
+    <Reference Include="CommonServiceLocator">
+      <HintPath>..\packages\Unity.5.6.0\lib\net40\CommonServiceLocator.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\lib\EntityFramework.dll</HintPath>
@@ -280,6 +283,7 @@
     <Compile Include="Services\ServiceModelGenerico.cs" />
     <Compile Include="Services\ServiceNumeradores.cs" />
     <Compile Include="Services\ServiceObligaciones.cs" />
+    <Compile Include="Services\ServiceObligacionesException.cs" />
     <Compile Include="ServiceTarifas.cs" />
     <Compile Include="ServiceParametros.cs" />
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">

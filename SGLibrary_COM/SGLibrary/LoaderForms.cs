@@ -179,7 +179,7 @@ namespace SGLibrary
                         break;
                     case "FrmObligaciones":
                         FrmObligaciones f9 = new FrmObligaciones();
-                        f9.serviceModel = new Services.ServiceDocumentos(new dbSG2000Entities());
+                        f9.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());
                         f9.serviceModel.usuario_mod = this.Usuario;
                         f9.serviceModel.terminal_mod = "PC01";
                         f9.serviceModel.formulario = "FrmObligaciones";

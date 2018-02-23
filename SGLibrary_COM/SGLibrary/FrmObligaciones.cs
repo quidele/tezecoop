@@ -18,7 +18,7 @@ namespace SGLibrary
     {
 
 
-        public ServiceModelGenerico<TB_documentos> serviceModel { get; set; }
+        public ServiceModelGenerico<Obligaciones> serviceModel { get; set; }
 
         public FrmObligaciones()
         {
@@ -39,7 +39,6 @@ namespace SGLibrary
             this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;
             this.statusbar_usuario.Text = "Usuario: " + serviceModel.Usuario;
             this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
-
 
         }
 
@@ -63,7 +62,7 @@ namespace SGLibrary
                         foreach (DataGridViewRow row in this.ADGVBusqueda.SelectedRows)
                         {
                             // INSERTE SU CODIGO
-                            Object un_TB_documento = serviceModel.ObtenerRegistroxId("Clave");
+                            Obligaciones  una_Obligacion = serviceModel.ObtenerRegistroxId("Clave");
                         }
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
                         botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
@@ -75,6 +74,17 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         // INSERTE SU CODIGO
+                        // Recuperar el documento OBAP con el numerador correspondiente  
+                        ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities ());
+
+                        this.txtCoddoc.Text =  "OBAP";
+                        this.txtSerieDoc.Text = "0";
+                        var txtnumerador = this.txtCoddoc.Text + this.txtSerieDoc.Text + (new ServiceParametros()).ObtenerParametro("empresa");
+                        this.txtNroDoc.Text = un_ServiceNumeradores.ObtenerValor(txtnumerador).ToString();
+                        
+                        
+
+
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -82,7 +92,7 @@ namespace SGLibrary
                     {
                         this.modoEdicion.Text = "NO";
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        IEnumerable<Object> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
+                        IEnumerable<Obligaciones> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuariosConciliaciones.Text);
                         this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listadeRegistros, "NO", this.dataSet1, this.bindingSource1);
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
@@ -126,7 +136,7 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in ADGVBusqueda.SelectedRows)
                         {
-                            Object unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            Obligaciones  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMPLETAR ELIMINACION
@@ -155,8 +165,6 @@ namespace SGLibrary
 
         public Boolean altaRegistro()
         {
-
-
             return true;
         }
 

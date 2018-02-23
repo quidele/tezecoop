@@ -7,8 +7,10 @@ using SGLibrary;
 using System.Management;
 using System.Windows;
 using System.Diagnostics;
-using SGLibrary.ArchivoTarjetas; 
-
+using SGLibrary.ArchivoTarjetas;
+using Unity;
+using Microsoft.Practices.Unity.Configuration;
+using System.Configuration;
 
 namespace ConsoleApplication1
 {
@@ -163,19 +165,31 @@ namespace ConsoleApplication1
              * */
 
 
-            /* LoaderForms l = new LoaderForms();
+            /*
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmConciliaciones");
+             */
+
+
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmABMDocumentos");
+
+
+            /*
+            LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.execFormulario("FrmObligaciones");
              */
 
-            LoaderForms l = new LoaderForms();
-            l.CajaActiva("1");
-            l.UsuarioActivo("camilap");
-            l.execFormulario("FrmConciliaciones");
-             
-            
-        }
-    }
-}
+       
+
+        } // Cierre metodo
+    } // Cierra Clase  
+} // Cierre namespace 
+
 

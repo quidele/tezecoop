@@ -98,6 +98,15 @@ namespace SGLibrary
         } // CIERRA GrabarCupon
 
 
+
+        public List<TB_Cupones> existenComprobantesCompensados(dbSG2000Entities pdbSG2000Entities, int nro_trans)
+        {
+            var lista  = (from p in pdbSG2000Entities.TB_Cupones where  p.nro_trans ==  nro_trans &&
+                                                                     p.flCompensado == true
+                          select p).OrderByDescending(p => p.nrCupon).ToList<TB_Cupones>();
+
+            return lista ;
+        }    
         
 
     } // CIERRA CLASE 

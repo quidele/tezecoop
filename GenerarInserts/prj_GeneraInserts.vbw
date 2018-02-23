@@ -1,6 +1,6 @@
-FrmAdmMetadata = 132, 132, 764, 444, , 44, 44, 676, 356, C
-CBasededatos = 88, 88, 720, 400, 
-Mod_General = 0, 0, 632, 312, 
+FrmAdmMetadata = 132, 132, 764, 444, C, 44, 44, 676, 356, C
+CBasededatos = 88, 88, 720, 400, C
+Mod_General = 0, 0, 632, 312, C
 CArchivo = 0, 0, 0, 0, C
 CDiccionariodeDatos = 108, 108, 725, 551, C
 CConfigRegional = 27, 27, 847, 371, C

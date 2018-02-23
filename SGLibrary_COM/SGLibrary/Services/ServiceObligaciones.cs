@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Transactions;
+using SGLibrary.Exceptions; 
 
 namespace SGLibrary.Services
 {
@@ -11,7 +12,7 @@ namespace SGLibrary.Services
     {
          dbSG2000Entities context;
 
-         public ServiceObligaciones(dbSG2000Entities pdbSG2000Entities, TransactionScope ptransacion)
+         public ServiceObligaciones(dbSG2000Entities pdbSG2000Entities)
         {
             context = pdbSG2000Entities;            
         }
@@ -30,13 +31,10 @@ namespace SGLibrary.Services
              listadeRegistros.ToList();
 
              List<Obligaciones> listadeObligaciones = new List<Obligaciones>(); 
-
-             
              foreach (var item in listadeRegistros)
              {
                  listadeObligaciones.Add (new Obligaciones (item, null , null) );
              }
-
              return listadeObligaciones; 
 
          } // Fin ObtenerTodosLosRegistros 
@@ -84,7 +82,17 @@ namespace SGLibrary.Services
              var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
              Trace.TraceInformation(paramLog);
 
+             // Agregar la validaciones necesarias previas a la eliminación
              /* VALIDAR QUE NO SE ALLA COMPENSADO NINGUNA CUOTA */
+             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion();
+
+             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados(context, unRegistro.TB_transCab.nro_trans);
+             if (listaCuponesCompensados.Count() != 0)
+             {
+                 // avisar mediante excepcion 
+                 throw new ServiceObligacionesException("No se puede modificar el registrio ya que existen Comprobantes compensados", listaCuponesCompensados);
+             }  
+
 
              // Agregar la validaciones necesarias previas a la eliminación
              using (TransactionScope transaction = new TransactionScope())
@@ -117,30 +125,27 @@ namespace SGLibrary.Services
 
          }
 
-         public override void ModificarRegistro(Obligaciones unRegistro)
+         
+
+         public override  void ModificarRegistro(Obligaciones unRegistro)
          {
              var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
              Trace.TraceInformation(paramLog);
 
              // Agregar la validaciones necesarias previas a la eliminación
              /* VALIDAR QUE NO SE ALLA COMPENSADO NINGUNA CUOTA */
+             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion ();
+
+             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados(context, unRegistro.TB_transCab.nro_trans);
+             if (listaCuponesCompensados.Count() != 0  ) {
+                  // avisar mediante excepcion 
+                 throw new ServiceObligacionesException("No se puede modificar el registrio ya que existen Comprobantes compensados", listaCuponesCompensados); 
+             }  
+
 
              using (TransactionScope transaction = new TransactionScope())
              {
-                 /*
-                  * var objDocumentoBD = (from c in context.TB_documentos
-                                       where c.cod_doc == unRegistro.cod_doc
-                                       select c).First<TB_documentos>();
-
-                 objDocumentoBD.fecha_mod = DateTime.Now;
-                 objDocumentoBD.usuario_mod = this.usuario_mod;
-                 objDocumentoBD.nom_doc = unRegistro.nom_doc;
-                 //this.CompletarAuditoria(objDocumentoBD, "seccion", "bloque", "M", "Editar");
-                 context.SaveChanges();
-                 transaction.Complete();
-                  *
-                  */
-
+                 
                  var objTB_transCab = (from c in context.TB_transCab
                                        where c.nro_trans == unRegistro.TB_transCab.nro_trans
                                        select c).First<TB_transCab>();
@@ -178,8 +183,8 @@ namespace SGLibrary.Services
 
              }
 
-
-         }
+             
+         } // Cierra Metodo ModificarRegistro 
 
 
          public override Obligaciones ObtenerRegistroxId(String pId)
