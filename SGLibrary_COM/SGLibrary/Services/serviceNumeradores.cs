@@ -135,9 +135,7 @@ namespace SGLibrary.Services
                 transaction.Complete();
             }
 
-            paramLog = new SGLibrary.Utility.ParamLogUtility(() => aux_valor).GetLog();
-            Trace.TraceInformation(paramLog);
-
+            Trace.TraceInformation(paramLog + " aux_valor " + aux_valor.ToString () );
             return aux_valor; 
         }
 

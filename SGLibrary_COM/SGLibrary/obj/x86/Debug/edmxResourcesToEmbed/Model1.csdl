@@ -90,6 +90,8 @@
     <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
     <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
+    <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
+    <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -747,5 +749,79 @@
     <Property Name="IdConciliacion" Type="Int32" />
     <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="nro_trans" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TB_Clientes">
+    <Key>
+      <PropertyRef Name="cdCliente" />
+    </Key>
+    <Property Name="cdCliente" Type="Int32" Nullable="false" />
+    <Property Name="tpCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsRazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsDomicilio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cdPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="nmLocalidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrFax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="dtAlta" Type="DateTime" Precision="0" />
+    <Property Name="dtBaja" Type="DateTime" Precision="0" />
+    <Property Name="tpDoc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="nrDoc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpIIBB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nrIIBB" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dsLetraII" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="vlOrdenanza3337" Type="Double" />
+    <Property Name="dtFinOrdenanza" Type="DateTime" Precision="3" />
+    <Property Name="flBloqueado" Type="Boolean" Nullable="false" />
+    <Property Name="tpEstado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="vlTopeCredito" Type="Double" />
+    <Property Name="vlSaldo" Type="Double" />
+    <Property Name="tpIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="tpFormadePago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nrPuesto" Type="Int16" />
+  </EntityType>
+  <EntityType Name="TB_Proveedores">
+    <Key>
+      <PropertyRef Name="cdProveedor" />
+    </Key>
+    <Property Name="cdProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nrSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsRazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsDomicilio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cdPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="nmLocalidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrFax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="dtAlta" Type="DateTime" Precision="3" />
+    <Property Name="dtBaja" Type="DateTime" Precision="3" />
+    <Property Name="tpIVA" Type="Int16" />
+    <Property Name="nrCUIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpIIBB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nrIIBB" Type="Double" />
+    <Property Name="vlOrdenanza3337" Type="Double" />
+    <Property Name="dtFinOrdenanza" Type="DateTime" Precision="3" />
+    <Property Name="flBloqueado" Type="Boolean" Nullable="false" />
+    <Property Name="tpEstado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="tpmodeloauto" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="flcongas" Type="Boolean" />
+    <Property Name="chofer1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chofer2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chofer3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

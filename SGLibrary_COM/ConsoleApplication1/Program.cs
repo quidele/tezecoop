@@ -172,21 +172,19 @@ namespace ConsoleApplication1
             l.execFormulario("FrmConciliaciones");
              */
 
-
-            LoaderForms l = new LoaderForms();
-            l.CajaActiva("1");
-            l.UsuarioActivo("camilap");
-            l.execFormulario("FrmABMDocumentos");
-
-
             /*
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
-            l.execFormulario("FrmObligaciones");
-             */
+            l.execFormulario("FrmABMDocumentos");
+            */
 
-       
+            
+            LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.execFormulario("FrmObligaciones");
+           
 
         } // Cierre metodo
     } // Cierra Clase  

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGLibrary.GUIUtilities;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -141,6 +142,61 @@ namespace SGLibrary.Extensiones
           
             return ds;
         }
-    }
+
+
+        public static DataSet ToDataSet<T>(this IEnumerable<T> lista, Dictionary<string, ADGVFieldAdapter> campo_tipo)
+        {
+            Type elementType = typeof(T);
+            DataSet ds = new DataSet();
+            DataTable t = new DataTable();
+            ds.Tables.Add(t);
+
+
+            Type t1;
+            PropertyInfo[] pi = new PropertyInfo[0];
+            var i = 1;
+            ADGVFieldAdapter value;
+
+            foreach (var p in campo_tipo)
+            {
+                Console.WriteLine("CAMPO: " + p.Key + "  TIPO " + p.Value);
+                t.Columns.Add(p.Key, Type.GetType(p.Value.Type));
+            }
+
+            foreach (var item in lista)
+            {
+                
+                t1 = item.GetType();
+                pi = t1.GetProperties();
+                DataRow row = t.NewRow();
+
+                row["Nº"] = i.ToString();
+
+                foreach (PropertyInfo p1 in pi)
+                {
+                    if (!campo_tipo.TryGetValue (p1.Name, out value)) continue; 
+                    var dato = p1.GetValue(item, null);
+                    if (dato != null)
+                        Console.WriteLine("DATO1: " + p1.Name + " " + p1.GetValue(item, null).ToString());
+
+                    Console.WriteLine("DATO2: " + p1.PropertyType.Name);
+                    Console.WriteLine("EULISES.................." + i.ToString());
+
+                    if ((dato != null) && dato.ToString() != "")
+                    {
+                        row[p1.Name] = dato;
+                    }
+                }
+                Application.DoEvents();
+                t.Rows.Add(row);
+                i++;
+
+            } // Cierra el foreach (object item in lista)
+
+
+            return ds;
+        } // cierra metodo 
+
+    }// cierra clase 
 
 }

@@ -144,6 +144,12 @@
     <Compile Include="FrmABMDocumentos.Designer.cs">
       <DependentUpon>FrmABMDocumentos.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmBuscarTitulares.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBuscarTitulares.Designer.cs">
+      <DependentUpon>FrmBuscarTitulares.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmCircularProgressBar.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -216,6 +222,7 @@
     <Compile Include="FrmSeleccionarImpresora.Designer.cs">
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
     </Compile>
+    <Compile Include="GUIUtilities\ADGVFieldAdapter.cs" />
     <Compile Include="LoaderForms.cs" />
     <Compile Include="ODBCManager.cs" />
     <Compile Include="Model1.Context.cs">
@@ -280,6 +287,7 @@
     <Compile Include="Services\Auditoria.cs" />
     <Compile Include="Services\Obligaciones.cs" />
     <Compile Include="Services\ServiceDocumentos.cs" />
+    <Compile Include="Services\ServiceLicenciatarios.cs" />
     <Compile Include="Services\ServiceModelGenerico.cs" />
     <Compile Include="Services\ServiceNumeradores.cs" />
     <Compile Include="Services\ServiceObligaciones.cs" />
@@ -315,6 +323,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_ArchivoTarjetaDetalle.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="TB_Clientes.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="TB_Comprobantes.cs">
@@ -365,6 +376,9 @@
     <Compile Include="TB_Productos.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="TB_Proveedores.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
     <Compile Include="TB_transCab.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
@@ -412,6 +426,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMDocumentos.resx">
       <DependentUpon>FrmABMDocumentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBuscarTitulares.resx">
+      <DependentUpon>FrmBuscarTitulares.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmCircularProgressBar.resx">
       <DependentUpon>FrmCircularProgressBar.cs</DependentUpon>

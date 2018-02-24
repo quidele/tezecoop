@@ -28,6 +28,41 @@
     <Property Name="nrCupon" Type="decimal" Precision="18" Scale="0" />
     <Property Name="nrNivelConciliacion" Type="smallint" />
   </EntityType>
+  <EntityType Name="TB_Clientes">
+    <Key>
+      <PropertyRef Name="cdCliente" />
+    </Key>
+    <Property Name="cdCliente" Type="int" Nullable="false" />
+    <Property Name="tpCliente" Type="varchar" MaxLength="50" />
+    <Property Name="nmNombre" Type="varchar" MaxLength="50" />
+    <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+    <Property Name="dsRazonSocial" Type="varchar" MaxLength="100" />
+    <Property Name="dsDomicilio" Type="varchar" MaxLength="30" />
+    <Property Name="cdPostal" Type="varchar" MaxLength="8" />
+    <Property Name="nmLocalidad" Type="varchar" MaxLength="30" />
+    <Property Name="nrTel" Type="varchar" MaxLength="30" />
+    <Property Name="nrFax" Type="varchar" MaxLength="30" />
+    <Property Name="dsCargo" Type="varchar" MaxLength="30" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="60" />
+    <Property Name="dtAlta" Type="smalldatetime" />
+    <Property Name="dtBaja" Type="smalldatetime" />
+    <Property Name="tpDoc" Type="varchar" MaxLength="4" />
+    <Property Name="nrDoc" Type="varchar" MaxLength="20" />
+    <Property Name="tpIIBB" Type="varchar" MaxLength="1" />
+    <Property Name="nrIIBB" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="dsLetraII" Type="varchar" MaxLength="3" />
+    <Property Name="vlOrdenanza3337" Type="float" />
+    <Property Name="dtFinOrdenanza" Type="datetime" />
+    <Property Name="flBloqueado" Type="bit" Nullable="false" />
+    <Property Name="tpEstado" Type="varchar" MaxLength="3" />
+    <Property Name="vlTopeCredito" Type="float" />
+    <Property Name="vlSaldo" Type="float" />
+    <Property Name="tpIVA" Type="varchar" MaxLength="50" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="tpFormadePago" Type="varchar" MaxLength="20" />
+    <Property Name="nrPuesto" Type="smallint" />
+  </EntityType>
   <EntityType Name="TB_Comprobantes">
     <Key>
       <PropertyRef Name="nrTalonario" />
@@ -437,6 +472,45 @@
     <Property Name="tpDestino" Type="varchar" MaxLength="20" />
     <Property Name="cdComision" Type="int" />
   </EntityType>
+  <EntityType Name="TB_Proveedores">
+    <Key>
+      <PropertyRef Name="cdProveedor" />
+    </Key>
+    <Property Name="cdProveedor" Type="int" Nullable="false" />
+    <Property Name="nrSocio" Type="varchar" MaxLength="10" />
+    <Property Name="tpCategoria" Type="varchar" MaxLength="50" />
+    <Property Name="nmNombre" Type="varchar" MaxLength="50" />
+    <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+    <Property Name="dsRazonSocial" Type="varchar" MaxLength="100" />
+    <Property Name="dsDomicilio" Type="varchar" MaxLength="30" />
+    <Property Name="cdPostal" Type="varchar" MaxLength="8" />
+    <Property Name="nmLocalidad" Type="varchar" MaxLength="30" />
+    <Property Name="nrTel" Type="varchar" MaxLength="30" />
+    <Property Name="nrFax" Type="varchar" MaxLength="30" />
+    <Property Name="dsCargo" Type="varchar" MaxLength="30" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="60" />
+    <Property Name="dtAlta" Type="datetime" />
+    <Property Name="dtBaja" Type="datetime" />
+    <Property Name="tpIVA" Type="smallint" />
+    <Property Name="nrCUIT" Type="varchar" MaxLength="20" />
+    <Property Name="tpIIBB" Type="varchar" MaxLength="1" />
+    <Property Name="nrIIBB" Type="float" />
+    <Property Name="vlOrdenanza3337" Type="float" />
+    <Property Name="dtFinOrdenanza" Type="datetime" />
+    <Property Name="flBloqueado" Type="bit" Nullable="false" />
+    <Property Name="tpEstado" Type="varchar" MaxLength="3" />
+    <Property Name="nrLicencia" Type="varchar" MaxLength="3" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="tpmodeloauto" Type="char" MaxLength="20" />
+    <Property Name="flcongas" Type="bit" />
+    <Property Name="chofer1" Type="varchar" MaxLength="100" />
+    <Property Name="chofer2" Type="varchar" MaxLength="100" />
+    <Property Name="chofer3" Type="varchar" MaxLength="100" />
+    <Property Name="telchofer1" Type="varchar" MaxLength="100" />
+    <Property Name="telchofer2" Type="varchar" MaxLength="100" />
+    <Property Name="telchofer3" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="TB_transCab">
     <Key>
       <PropertyRef Name="nro_trans" />
@@ -499,6 +573,30 @@
       </Principal>
       <Dependent Role="TB_ArchivoTarjetaDetalle">
         <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+    <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_Conciliacion">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+    <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+    <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdArchivoTarjetaDetalle" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -575,6 +673,7 @@
   <EntityContainer Name="dbSG2000ModelStoreContainer">
     <EntitySet Name="TB_ArchivoTarjeta" EntityType="Self.TB_ArchivoTarjeta" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="Self.TB_ArchivoTarjetaDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Clientes" EntityType="Self.TB_Clientes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Comprobantes" EntityType="Self.TB_Comprobantes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_ComprobantesDetalle" EntityType="Self.TB_ComprobantesDetalle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Conceptos" EntityType="Self.TB_Conceptos" Schema="dbo" store:Type="Tables" />
@@ -591,11 +690,20 @@
     <EntitySet Name="TB_PresentacionesCAI" EntityType="Self.TB_PresentacionesCAI" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="Self.TB_PresentacionesCAIDetalle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Productos" EntityType="Self.TB_Productos" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Proveedores" EntityType="Self.TB_Proveedores" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_transCab" EntityType="Self.TB_transCab" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="TB_Usuarios" EntityType="Self.TB_Usuarios" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
       <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
       <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />

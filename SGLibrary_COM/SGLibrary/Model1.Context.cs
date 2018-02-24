@@ -93,6 +93,8 @@ namespace SGLibrary
         public DbSet<TB_ObligacionesTitulares> TB_ObligacionesTitulares { get; set; }
         public DbSet<TB_ObligacionesCuotas> TB_ObligacionesCuotas { get; set; }
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
+        public DbSet<TB_Clientes> TB_Clientes { get; set; }
+        public DbSet<TB_Proveedores> TB_Proveedores { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

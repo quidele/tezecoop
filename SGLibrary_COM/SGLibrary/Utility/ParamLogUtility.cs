@@ -20,7 +20,7 @@ namespace SGLibrary.Utility
         private readonly List<Tuple<String, Type, object>> _providedParametars;
 
 
-        /*[DebuggerHidden]*/
+        [DebuggerHidden]
         public ParamLogUtility(params Expression<Func<object>>[] providedParameters)
         {
             try
@@ -69,6 +69,7 @@ namespace SGLibrary.Utility
             }
         }
 
+        [DebuggerHidden]
         private void ProcessLog()
         {
             try
@@ -97,6 +98,7 @@ namespace SGLibrary.Utility
             }
         }
 
+        [DebuggerHidden]
         private void AddProvidedParamaterDetail(MemberExpression memberExpression)
         {
             ConstantExpression constantExpression = (ConstantExpression)memberExpression.Expression;

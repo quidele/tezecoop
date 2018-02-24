@@ -11,6 +11,7 @@ using System.Reflection;
 using System.Diagnostics;
 using SGLibrary.Extensiones;
 using SGLibrary.Services;
+using SGLibrary.GUIUtilities;
 
 namespace SGLibrary
 {
@@ -81,10 +82,8 @@ namespace SGLibrary
                         this.txtSerieDoc.Text = "0";
                         var txtnumerador = this.txtCoddoc.Text + this.txtSerieDoc.Text + (new ServiceParametros()).ObtenerParametro("empresa");
                         this.txtNroDoc.Text = un_ServiceNumeradores.ObtenerValor(txtnumerador).ToString();
-                        
-                        
-
-
+                        this.cbFecdoc.Value = DateTime.UtcNow;
+                        this.cbFecValor.Value = DateTime.UtcNow;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -188,11 +187,15 @@ namespace SGLibrary
 
 
 
-        public void cargarDataGridViewBusqueda_ADGV(DataGridView dgv, IEnumerable<Object> lista,
+        public void cargarDataGridViewBusqueda_ADGV(DataGridView dgv, IEnumerable<Obligaciones> lista,
                                            String p_modoEdicion, DataSet p_DataSet, BindingSource p_BindingSource)
         {
-            Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
-            lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+            Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+
+            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal"));
+            lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32"));
+            lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime"));
 
             /* lista_campo_tipo.Add("ID", "System.Decimal");
             lista_campo_tipo.Add("FECHA", "System.DateTime");
@@ -259,7 +262,7 @@ namespace SGLibrary
                         columna.HeaderText = p.Name;
                         columna.ReadOnly = true;
                         columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
-                        columna.DataPropertyName = p.Name;
+                        columna.DataPropertyName = p.Name; 
                         dgv.Columns.Add(columna);
                     }
                     break;
@@ -309,7 +312,7 @@ namespace SGLibrary
         {
 
 
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
             /*
              
              //Application.DoEvents();
@@ -397,7 +400,41 @@ namespace SGLibrary
             this.lblDgvBusquedaRegistros.Text = "Registros: " + this.bindingSource1.List.Count.ToString();
         }
 
+        private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = soloNumerosDecimales(e.KeyChar);
+        }
 
+        private void txtMonto_TextChanged(object sender, EventArgs e)
+        {
 
-    }
-}
+        }
+
+        private void txtCuotas_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtCuotas_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            e.Handled = soloEnteros(e.KeyChar);
+        }
+
+        public bool soloEnteros(Char caracter){
+            return !char.IsDigit(caracter) && !char.IsControl(caracter);
+        }
+
+        public bool soloNumerosDecimales(Char caracter)
+        {
+            return !char.IsDigit(caracter) && !char.IsControl(caracter) && (caracter != '.');
+        }
+
+        private void agregarLicenciaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmBuscarTitulares un_FrmBuscarTitulares = new FrmBuscarTitulares();
+            un_FrmBuscarTitulares.ShowDialog();
+        }
+
+    } // Cierra la clase 
+       
+} // cierra el namespace

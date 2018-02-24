@@ -234,7 +234,28 @@ namespace SGLibrary.Services
 
          }// Cierre ObtenerRegistro
 
-         
+
+         public override IEnumerable<Obligaciones> ObtenerRegistros(DateTime fechadesde, DateTime fechaHasta, string usuario)
+         {
+             List<Obligaciones> un_lista_obligaciones = new  List<Obligaciones> () ;
+             using (var context = new dbSG2000Entities())
+             {
+                 // Falta agregar filtro de fechas
+                 IEnumerable<TB_transCab> listadeRegistros = (from c in context.TB_transCab
+                                                 where c.fec_doc >= fechadesde
+                                                 && c.fec_doc <= fechaHasta
+                                                 && (c.usuario_mod == usuario || usuario.Trim().Length == 0)
+                                                 orderby c.nro_trans descending  // ordenamos desde mas reciente a mas vieja
+                                                 select c);
+                foreach (var item in listadeRegistros.ToList<TB_transCab>())
+	            {
+                    un_lista_obligaciones.Add(new Obligaciones(item, null, null));
+	            }
+
+                 return un_lista_obligaciones;
+             } // cierre using
+
+         } // cierra metodo ObtenerRegistros
 
     } // Cierra la clase 
 } // Cierra el namespace 
