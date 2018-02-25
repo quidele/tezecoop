@@ -292,6 +292,7 @@
     <Compile Include="Services\ServiceNumeradores.cs" />
     <Compile Include="Services\ServiceObligaciones.cs" />
     <Compile Include="Services\ServiceObligacionesException.cs" />
+    <Compile Include="Services\TB_ProveedoresExt.cs" />
     <Compile Include="ServiceTarifas.cs" />
     <Compile Include="ServiceParametros.cs" />
     <Compile Include="spu_conciliarAutomaticamente_Result.cs">

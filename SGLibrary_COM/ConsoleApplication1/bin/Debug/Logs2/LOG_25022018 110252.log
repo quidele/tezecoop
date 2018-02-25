@@ -1,0 +1,18 @@
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : ADGV.AdvancedDataGridView
+ConsoleApplication1.vshost.exe Information: 0 : System.Collections.Generic.List`1[SGLibrary.Services.Obligaciones]
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.ServiceParametros, Method = ObtenerParametro("nombre":empresa,Length=7)
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : SGLibrary.TB_Parametros
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceNumeradores, Method = ObtenerValor("p_numerador":OBAP0TAEZE,Length=10)
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceNumeradores, Method = ObtenerValor("p_numerador":OBAP0TAEZE,Length=10) aux_valor 19
+ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
+ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
+ConsoleApplication1.vshost.exe Information: 0 : Class = SGLibrary.Services.ServiceLicenciatarios, Method = ObtenerTodosLosRegistros()
+ConsoleApplication1.vshost.exe Information: 0 : ADGV.AdvancedDataGridView
+ConsoleApplication1.vshost.exe Information: 0 : System.Collections.Generic.List`1[SGLibrary.TB_Proveedores]
+ConsoleApplication1.vshost.exe Error: 0 : Referencia a objeto no establecida como instancia de un objeto.

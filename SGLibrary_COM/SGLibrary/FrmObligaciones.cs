@@ -193,9 +193,9 @@ namespace SGLibrary
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
 
-            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal"));
-            lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32"));
-            lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime"));
+            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal",true,true));
+            lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32", true, true));
+            lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime", true, true));
 
             /* lista_campo_tipo.Add("ID", "System.Decimal");
             lista_campo_tipo.Add("FECHA", "System.DateTime");
@@ -433,6 +433,7 @@ namespace SGLibrary
         {
             FrmBuscarTitulares un_FrmBuscarTitulares = new FrmBuscarTitulares();
             un_FrmBuscarTitulares.ShowDialog();
+            var listaTitulares = un_FrmBuscarTitulares.Titulares;
         }
 
     } // Cierra la clase 
