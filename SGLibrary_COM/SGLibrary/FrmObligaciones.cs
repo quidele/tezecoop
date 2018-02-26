@@ -20,6 +20,7 @@ namespace SGLibrary
 
 
         public ServiceModelGenerico<Obligaciones> serviceModel { get; set; }
+        private List<TB_ProveedoresExt>  Titulares  { get; set; }
 
         public FrmObligaciones()
         {
@@ -432,9 +433,95 @@ namespace SGLibrary
         private void agregarLicenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
             FrmBuscarTitulares un_FrmBuscarTitulares = new FrmBuscarTitulares();
+            // Enviamos la lista que ya se encuentra en el formulario 
+            un_FrmBuscarTitulares.TitularesaExcluir = this.Titulares; 
+            // excluir a los titulares que ya existen en la grilla
             un_FrmBuscarTitulares.ShowDialog();
-            var listaTitulares = un_FrmBuscarTitulares.Titulares;
+            // antes de realizar estos validar que no agregar 
+            if (this.Titulares == null)
+                this.Titulares = un_FrmBuscarTitulares.Titulares;
+            else
+                this.Titulares.AddRange (un_FrmBuscarTitulares.Titulares) ;
+            // cargamos nuevamente la lista 
+            cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1);
+
         }
+
+        // Agregar a datagridview de titulares
+        public void cargarDataGridViewTitulares_ADGV(DataGridView dgv, IEnumerable<TB_ProveedoresExt> lista,
+                                        DataSet p_DataSet, BindingSource p_BindingSource)
+        {
+
+            /*
+             this.dataSet1.Clear();
+             this.bindingSource1.Clear();
+             this.dataGridView1.Rows.Clear(); 
+            **/
+
+            Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+            lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
+            lista_campo_tipo.Add("cdProveedor", new ADGVFieldAdapter("cdProveedor", "COD.TITU", "cdProveedor", "System.Decimal", true, false));
+            lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
+            lista_campo_tipo.Add("nmNombre", new ADGVFieldAdapter("nmNombre", "NOMBRE", "nmNombre", "System.String", true, true));
+            lista_campo_tipo.Add("nmApellido", new ADGVFieldAdapter("nmApellido", "APELLIDO", "nmApellido", "System.String", true, true));
+
+            // A la lista la transfiere al DATASET
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista, lista_campo_tipo);
+            //Al binding source le configuramos el dataset
+            p_BindingSource.DataSource = p_DataSet;
+            // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
+            p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
+
+            try
+            {
+                Trace.TraceInformation(dgv.ToString());
+                Trace.TraceInformation(lista.ToString());
+
+
+                    dgv.AutoGenerateColumns = false;
+                    //dgv.Rows.Clear();
+                    dgv.Columns.Clear();
+
+                    foreach (var item in lista_campo_tipo)
+                    {
+                        DataGridViewColumn columna = new DataGridViewColumn();
+                        DataGridViewCell cell = new DataGridViewTextBoxCell();
+                        columna.CellTemplate = cell;
+                        columna.Name = item.Value.Name;
+                        columna.HeaderText = item.Value.HeaderText;
+                        columna.ReadOnly = item.Value.ReadOnly;
+                        columna.Visible = item.Value.Visible;
+                        columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                        dgv.Columns.Add(columna);
+                        columna.DataPropertyName = item.Value.DataPropertyName;
+                    }
+
+                dgv.DataSource = p_BindingSource;
+                dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+            }
+            catch (Exception ex)
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                Trace.TraceError("Error Linea " + frame.GetFileLineNumber().ToString() + " columna " + frame.GetFileColumnNumber().ToString());
+                Trace.TraceError(ex.ToString());
+                throw;
+            }
+
+        }
+
+        private void eliminarTitularToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
+            {
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString());
+                un_titu_nuevo  = Titulares.Find(x => x.cdProveedor == un_titu_nuevo.cdProveedor);
+                Titulares.Remove(un_titu_nuevo);
+            }
+            // volvemos a cargarCombo la lista
+            cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1);
+        }// cierra metodo
 
     } // Cierra la clase 
        

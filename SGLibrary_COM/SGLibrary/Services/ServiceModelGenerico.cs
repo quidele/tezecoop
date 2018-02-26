@@ -94,6 +94,12 @@ namespace SGLibrary.Services
         }
 
 
+        public virtual IEnumerable<T> ObtenerTodosLosRegistrosConExclusion(List<T> lista_a_excluir)
+        {
+            throw new NotImplementedException();
+        }
+
+
     }// Cierra Clase
 
 } // Cierra NameSpace

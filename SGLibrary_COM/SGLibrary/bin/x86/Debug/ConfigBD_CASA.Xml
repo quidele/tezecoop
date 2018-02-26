@@ -2,7 +2,7 @@
 <!-- This file represents a fragment of a book store inventory database -->
 <ConfigBD>
   <ConnectionString DbContext="dbSG2000Entities">
-    <DataSource>MSI\SQLEXPRESS</DataSource>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000</InitialCatalog>
   </ConnectionString>
 </ConfigBD>

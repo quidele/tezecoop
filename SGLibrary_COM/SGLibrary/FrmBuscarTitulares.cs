@@ -17,6 +17,8 @@ namespace SGLibrary
     {
 
         public List<TB_ProveedoresExt> Titulares { get; set; }
+        public List<TB_ProveedoresExt> TitularesaExcluir { get; set; }
+
         public FrmBuscarTitulares()
         {
             InitializeComponent();
@@ -188,12 +190,16 @@ namespace SGLibrary
         {
             Titulares = new List<TB_ProveedoresExt>();
             ServiceLicenciatarios miServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
-            var lista = miServiceLicenciatarios.ObtenerTodosLosRegistros();
+
+            var listaaexcluir = TitularesaExcluir.ToList<TB_Proveedores>(); // casteamos la lista
+
+            var lista = miServiceLicenciatarios.ObtenerTodosLosRegistrosConExclusion(listaaexcluir);
             if (lista.Count() == 0)
             {
                 MessageBox.Show(this, "No hay registros que cumplan la condición", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
+            
             cargarDataGridView(this.dataGridView1, lista, true, this.dataSet1, this.bindingSource1);
             this.lblDgv1Registros.Text = "Registros: " + lista.Count().ToString();
 
@@ -222,7 +228,13 @@ namespace SGLibrary
 
             foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
             {
-                Titulares.Add(new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["cdProveedor"].Value.ToString(), row.Cells["cdProveedor"].Value.ToString(), row.Cells["cdProveedor"].Value.ToString()));  
+                TB_ProveedoresExt  un_titu_buscado=null;
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString());
+                if (TitularesaExcluir !=null)
+                    un_titu_buscado = TitularesaExcluir.Find (x => x.cdProveedor == un_titu_nuevo.cdProveedor  );
+
+                if (un_titu_buscado==null)
+                    Titulares.Add(un_titu_nuevo);  
             }
             this.Hide();
         }
