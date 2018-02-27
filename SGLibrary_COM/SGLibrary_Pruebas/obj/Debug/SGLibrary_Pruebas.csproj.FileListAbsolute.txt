@@ -38,7 +38,6 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ru\Advan
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ConfigBD.Xml
@@ -74,5 +73,6 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ES-ES\SGLibrary.res
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\es\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.pdb

@@ -72,7 +72,6 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ru\Adv
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb
-C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_FON.Xml
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD_CASA.Xml
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ConfigBD.Xml
@@ -109,5 +108,6 @@ C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ES-ES\SGLibrary.r
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\es\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\fr\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\bin\Debug\ru\AdvancedDataGridView.resources.dll
+C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\SGLibrary_Pruebas_UI.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.exe
 C:\github\tezecoop\SGLibrary_COM\ConsoleApplication1\obj\Debug\ConsoleApplication1.pdb

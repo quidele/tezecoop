@@ -190,16 +190,20 @@ namespace SGLibrary
         {
             Titulares = new List<TB_ProveedoresExt>();
             ServiceLicenciatarios miServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
-
-            var listaaexcluir = TitularesaExcluir.ToList<TB_Proveedores>(); // casteamos la lista
-
-            var lista = miServiceLicenciatarios.ObtenerTodosLosRegistrosConExclusion(listaaexcluir);
+            IEnumerable<TB_Proveedores> lista;
+            if (TitularesaExcluir == null)
+                lista = miServiceLicenciatarios.ObtenerTodosLosRegistros(); 
+            else
+            {
+                //var listaaexcluir = TitularesaExcluir.ToList<TB_Proveedores>(); // casteamos la lista
+                var listaaexcluir = TitularesaExcluir.Select(x => x.cdProveedor).ToList<int>();
+                lista = miServiceLicenciatarios.ObtenerTodosLosRegistrosConExclusion(listaaexcluir);
+            }
             if (lista.Count() == 0)
             {
                 MessageBox.Show(this, "No hay registros que cumplan la condición", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 return;
             }
-            
             cargarDataGridView(this.dataGridView1, lista, true, this.dataSet1, this.bindingSource1);
             this.lblDgv1Registros.Text = "Registros: " + lista.Count().ToString();
 

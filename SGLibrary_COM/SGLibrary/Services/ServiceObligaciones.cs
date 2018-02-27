@@ -257,5 +257,15 @@ namespace SGLibrary.Services
 
          } // cierra metodo ObtenerRegistros
 
+
+         public List<TB_ObligacionesCuotasExt> calcularVencimientos(List<TB_ProveedoresExt> pListaTitulares, 
+                                                                    int p_nro_trans, int p_cod_tit,
+                                                                    System.DateTime p_fecha_vencimiento, decimal p_importe)
+         {
+
+             return null; 
+
+         }
+
     } // Cierra la clase 
 } // Cierra el namespace 

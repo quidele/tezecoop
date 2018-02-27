@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.agregarLicenciaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarTitularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelcarga = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
             this.cbFecValor = new System.Windows.Forms.DateTimePicker();
@@ -38,7 +39,7 @@
             this.label15 = new System.Windows.Forms.Label();
             this.txtComMov = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
-            this.ADGV_Cuotas = new ADGV.AdvancedDataGridView();
+            this.ADGV_TitularesCuotas = new ADGV.AdvancedDataGridView();
             this.ADGV_Titulares = new ADGV.AdvancedDataGridView();
             this.cbTipoArchivo = new System.Windows.Forms.ComboBox();
             this.label13 = new System.Windows.Forms.Label();
@@ -77,17 +78,20 @@
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
+            this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSet2 = new System.Data.DataSet();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.eliminarTitularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panelcarga.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGV_Cuotas)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ADGV_TitularesCuotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_Titulares)).BeginInit();
             this.panelbusqueda.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGVBusqueda)).BeginInit();
             this.status_bar_usuario.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -97,7 +101,7 @@
             this.agregarLicenciaToolStripMenuItem,
             this.eliminarTitularToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 70);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 48);
             // 
             // agregarLicenciaToolStripMenuItem
             // 
@@ -105,6 +109,13 @@
             this.agregarLicenciaToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
             this.agregarLicenciaToolStripMenuItem.Text = "Agregar Titulares";
             this.agregarLicenciaToolStripMenuItem.Click += new System.EventHandler(this.agregarLicenciaToolStripMenuItem_Click);
+            // 
+            // eliminarTitularToolStripMenuItem
+            // 
+            this.eliminarTitularToolStripMenuItem.Name = "eliminarTitularToolStripMenuItem";
+            this.eliminarTitularToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.eliminarTitularToolStripMenuItem.Text = "Eliminar Titular";
+            this.eliminarTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarTitularToolStripMenuItem_Click);
             // 
             // panelcarga
             // 
@@ -118,7 +129,7 @@
             this.panelcarga.Controls.Add(this.label15);
             this.panelcarga.Controls.Add(this.txtComMov);
             this.panelcarga.Controls.Add(this.label14);
-            this.panelcarga.Controls.Add(this.ADGV_Cuotas);
+            this.panelcarga.Controls.Add(this.ADGV_TitularesCuotas);
             this.panelcarga.Controls.Add(this.ADGV_Titulares);
             this.panelcarga.Controls.Add(this.cbTipoArchivo);
             this.panelcarga.Controls.Add(this.label13);
@@ -158,7 +169,7 @@
             // 
             this.cbFecValor.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.cbFecValor.Location = new System.Drawing.Point(592, 68);
-            this.cbFecValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFecValor.Margin = new System.Windows.Forms.Padding(2);
             this.cbFecValor.Name = "cbFecValor";
             this.cbFecValor.Size = new System.Drawing.Size(85, 20);
             this.cbFecValor.TabIndex = 44;
@@ -189,7 +200,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtComMov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtComMov.Location = new System.Drawing.Point(6, 409);
-            this.txtComMov.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtComMov.Margin = new System.Windows.Forms.Padding(2);
             this.txtComMov.MaxLength = 40;
             this.txtComMov.Name = "txtComMov";
             this.txtComMov.Size = new System.Drawing.Size(681, 20);
@@ -206,21 +217,22 @@
             this.label14.TabIndex = 41;
             this.label14.Text = "Observaciones:";
             // 
-            // ADGV_Cuotas
+            // ADGV_TitularesCuotas
             // 
-            this.ADGV_Cuotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            this.ADGV_TitularesCuotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
-            this.ADGV_Cuotas.AutoGenerateContextFilters = true;
-            this.ADGV_Cuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.ADGV_Cuotas.DateWithTime = false;
-            this.ADGV_Cuotas.Location = new System.Drawing.Point(7, 336);
-            this.ADGV_Cuotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.ADGV_Cuotas.Name = "ADGV_Cuotas";
-            this.ADGV_Cuotas.RowTemplate.Height = 24;
-            this.ADGV_Cuotas.Size = new System.Drawing.Size(680, 48);
-            this.ADGV_Cuotas.TabIndex = 39;
-            this.ADGV_Cuotas.TimeFilter = false;
+            this.ADGV_TitularesCuotas.AutoGenerateContextFilters = true;
+            this.ADGV_TitularesCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ADGV_TitularesCuotas.DateWithTime = false;
+            this.ADGV_TitularesCuotas.Location = new System.Drawing.Point(7, 336);
+            this.ADGV_TitularesCuotas.Margin = new System.Windows.Forms.Padding(2);
+            this.ADGV_TitularesCuotas.Name = "ADGV_TitularesCuotas";
+            this.ADGV_TitularesCuotas.RowTemplate.Height = 24;
+            this.ADGV_TitularesCuotas.Size = new System.Drawing.Size(680, 48);
+            this.ADGV_TitularesCuotas.TabIndex = 39;
+            this.ADGV_TitularesCuotas.TimeFilter = false;
+            this.ADGV_TitularesCuotas.FilterStringChanged += new System.EventHandler(this.ADGV_TitularesCuotas_FilterStringChanged);
             // 
             // ADGV_Titulares
             // 
@@ -231,12 +243,13 @@
             this.ADGV_Titulares.ContextMenuStrip = this.contextMenuStrip1;
             this.ADGV_Titulares.DateWithTime = false;
             this.ADGV_Titulares.Location = new System.Drawing.Point(7, 154);
-            this.ADGV_Titulares.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADGV_Titulares.Margin = new System.Windows.Forms.Padding(2);
             this.ADGV_Titulares.Name = "ADGV_Titulares";
             this.ADGV_Titulares.RowTemplate.Height = 24;
             this.ADGV_Titulares.Size = new System.Drawing.Size(680, 157);
             this.ADGV_Titulares.TabIndex = 38;
             this.ADGV_Titulares.TimeFilter = false;
+            this.ADGV_Titulares.FilterStringChanged += new System.EventHandler(this.ADGV_Titulares_FilterStringChanged);
             // 
             // cbTipoArchivo
             // 
@@ -246,7 +259,7 @@
             this.cbTipoArchivo.Items.AddRange(new object[] {
             "Movistar"});
             this.cbTipoArchivo.Location = new System.Drawing.Point(7, 110);
-            this.cbTipoArchivo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbTipoArchivo.Margin = new System.Windows.Forms.Padding(2);
             this.cbTipoArchivo.Name = "cbTipoArchivo";
             this.cbTipoArchivo.Size = new System.Drawing.Size(182, 21);
             this.cbTipoArchivo.TabIndex = 37;
@@ -272,7 +285,7 @@
             "Semestral",
             "Anual"});
             this.cbPeriodo.Location = new System.Drawing.Point(491, 67);
-            this.cbPeriodo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbPeriodo.Margin = new System.Windows.Forms.Padding(2);
             this.cbPeriodo.Name = "cbPeriodo";
             this.cbPeriodo.Size = new System.Drawing.Size(97, 21);
             this.cbPeriodo.TabIndex = 35;
@@ -291,7 +304,7 @@
             // 
             this.txtCuotas.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCuotas.Location = new System.Drawing.Point(423, 68);
-            this.txtCuotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCuotas.Margin = new System.Windows.Forms.Padding(2);
             this.txtCuotas.MaxLength = 2;
             this.txtCuotas.Name = "txtCuotas";
             this.txtCuotas.Size = new System.Drawing.Size(66, 20);
@@ -313,7 +326,7 @@
             // 
             this.txtMonto.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtMonto.Location = new System.Drawing.Point(353, 68);
-            this.txtMonto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtMonto.Margin = new System.Windows.Forms.Padding(2);
             this.txtMonto.MaxLength = 40;
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(66, 20);
@@ -335,7 +348,7 @@
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Location = new System.Drawing.Point(7, 68);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
             this.txtDescripcion.MaxLength = 40;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(342, 20);
@@ -365,7 +378,7 @@
             // 
             this.cbFecdoc.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.cbFecdoc.Location = new System.Drawing.Point(167, 28);
-            this.cbFecdoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbFecdoc.Margin = new System.Windows.Forms.Padding(2);
             this.cbFecdoc.Name = "cbFecdoc";
             this.cbFecdoc.Size = new System.Drawing.Size(85, 20);
             this.cbFecdoc.TabIndex = 26;
@@ -385,7 +398,7 @@
             this.txtNroDoc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtNroDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNroDoc.Location = new System.Drawing.Point(96, 28);
-            this.txtNroDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNroDoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtNroDoc.MaxLength = 4;
             this.txtNroDoc.Name = "txtNroDoc";
             this.txtNroDoc.ReadOnly = true;
@@ -397,7 +410,7 @@
             this.txtSerieDoc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtSerieDoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtSerieDoc.Location = new System.Drawing.Point(61, 28);
-            this.txtSerieDoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSerieDoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtSerieDoc.MaxLength = 4;
             this.txtSerieDoc.Name = "txtSerieDoc";
             this.txtSerieDoc.ReadOnly = true;
@@ -419,7 +432,7 @@
             this.txtCoddoc.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtCoddoc.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtCoddoc.Location = new System.Drawing.Point(7, 28);
-            this.txtCoddoc.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtCoddoc.Margin = new System.Windows.Forms.Padding(2);
             this.txtCoddoc.MaxLength = 4;
             this.txtCoddoc.Name = "txtCoddoc";
             this.txtCoddoc.ReadOnly = true;
@@ -431,7 +444,7 @@
             this.modoEdicion.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.modoEdicion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.modoEdicion.Location = new System.Drawing.Point(564, 9);
-            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.modoEdicion.Margin = new System.Windows.Forms.Padding(2);
             this.modoEdicion.Name = "modoEdicion";
             this.modoEdicion.ReadOnly = true;
             this.modoEdicion.Size = new System.Drawing.Size(123, 20);
@@ -485,7 +498,7 @@
             this.ADGVBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGVBusqueda.DateWithTime = false;
             this.ADGVBusqueda.Location = new System.Drawing.Point(13, 60);
-            this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.ADGVBusqueda.Name = "ADGVBusqueda";
             this.ADGVBusqueda.RowTemplate.Height = 24;
             this.ADGVBusqueda.Size = new System.Drawing.Size(710, 238);
@@ -499,7 +512,7 @@
             this.cbUsuariosConciliaciones.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuariosConciliaciones.FormattingEnabled = true;
             this.cbUsuariosConciliaciones.Location = new System.Drawing.Point(365, 24);
-            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUsuariosConciliaciones.Margin = new System.Windows.Forms.Padding(2);
             this.cbUsuariosConciliaciones.Name = "cbUsuariosConciliaciones";
             this.cbUsuariosConciliaciones.Size = new System.Drawing.Size(123, 21);
             this.cbUsuariosConciliaciones.TabIndex = 6;
@@ -539,7 +552,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(204, 25);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(101, 20);
             this.fechahasta.TabIndex = 2;
@@ -548,7 +561,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(91, 25);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 1;
@@ -614,6 +627,10 @@
             // 
             this.dataSet1.DataSetName = "NewDataSet";
             // 
+            // dataSet2
+            // 
+            this.dataSet2.DataSetName = "NewDataSet";
+            // 
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
@@ -626,13 +643,6 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // eliminarTitularToolStripMenuItem
-            // 
-            this.eliminarTitularToolStripMenuItem.Name = "eliminarTitularToolStripMenuItem";
-            this.eliminarTitularToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
-            this.eliminarTitularToolStripMenuItem.Text = "Eliminar Titular";
-            this.eliminarTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarTitularToolStripMenuItem_Click);
-            // 
             // FrmObligaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -642,7 +652,7 @@
             this.Controls.Add(this.botonesForm1);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmObligaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Obligaciones";
@@ -651,7 +661,7 @@
             this.contextMenuStrip1.ResumeLayout(false);
             this.panelcarga.ResumeLayout(false);
             this.panelcarga.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.ADGV_Cuotas)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.ADGV_TitularesCuotas)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_Titulares)).EndInit();
             this.panelbusqueda.ResumeLayout(false);
             this.panelbusqueda.PerformLayout();
@@ -660,6 +670,8 @@
             this.status_bar_usuario.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -708,7 +720,7 @@
         private System.Windows.Forms.ComboBox cbTipoArchivo;
         private System.Windows.Forms.Label label13;
         private ADGV.AdvancedDataGridView ADGV_Titulares;
-        private ADGV.AdvancedDataGridView ADGV_Cuotas;
+        private ADGV.AdvancedDataGridView ADGV_TitularesCuotas;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.TextBox txtComMov;
@@ -717,5 +729,7 @@
         private System.Windows.Forms.DateTimePicker cbFecValor;
         private System.Windows.Forms.ToolStripMenuItem agregarLicenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarTitularToolStripMenuItem;
+        private System.Windows.Forms.BindingSource bindingSource2;
+        private System.Data.DataSet dataSet2;
     }
 }

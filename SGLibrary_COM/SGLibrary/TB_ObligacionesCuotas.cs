@@ -20,4 +20,6 @@ namespace SGLibrary
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
         public Nullable<decimal> importe { get; set; }
     }
+
+
 }

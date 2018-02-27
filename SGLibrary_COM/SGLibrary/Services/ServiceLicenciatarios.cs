@@ -33,8 +33,8 @@ namespace SGLibrary.Services
 
         public override IEnumerable<TB_Proveedores> ObtenerTodosLosRegistrosConExclusion(List<TB_Proveedores> lista_a_excluir)
         {
-            var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
-            Trace.TraceInformation(paramLog);
+            //var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
+            //Trace.TraceInformation(paramLog);
             // Falta agregar filtro de fechas
             var listadeRegistros = (from c in context.TB_Proveedores
                                     where (c.nrLicencia != "") &&  (!lista_a_excluir.Exists (x => x.cdProveedor == c.cdProveedor ))
@@ -42,6 +42,20 @@ namespace SGLibrary.Services
                                     select c);
             return listadeRegistros.ToList();
         }
+
+
+        public  IEnumerable<TB_Proveedores> ObtenerTodosLosRegistrosConExclusion(List<int> lista_a_excluir)
+        {
+            //var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
+            //Trace.TraceInformation(paramLog);
+            // Falta agregar filtro de fechas
+            var listadeRegistros = (from c in context.TB_Proveedores
+                                    where (c.nrLicencia != "") && (!lista_a_excluir.Contains  (c.cdProveedor))
+                                    orderby c.nrLicencia ascending
+                                    select c);
+            return listadeRegistros.ToList();
+        }
+
 
     }
 }
