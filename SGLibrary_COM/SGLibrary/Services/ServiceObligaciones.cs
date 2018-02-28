@@ -258,14 +258,49 @@ namespace SGLibrary.Services
          } // cierra metodo ObtenerRegistros
 
 
-         public List<TB_ObligacionesCuotasExt> calcularVencimientos(List<TB_ProveedoresExt> pListaTitulares, 
-                                                                    int p_nro_trans, int p_cod_tit,
-                                                                    System.DateTime p_fecha_vencimiento, decimal p_importe)
+         public  IEnumerable<TB_ObligacionesCuotasExt> calcularVencimientos(List<TB_ProveedoresExt> p_listaTitulares,  decimal p_total, 
+                                                                    decimal p_cuotas,  DateTime  p_fecha_inicio , string p_periodo )
          {
+             List<TB_ObligacionesCuotasExt> lista_resultado = new List<TB_ObligacionesCuotasExt>();
 
-             return null; 
+             var monto_cuota = p_total / p_cuotas; 
+             System.DateTime  fecha_vencimiento;
 
-         }
+             foreach (var item in p_listaTitulares)
+             {
+                 for (int i = 1; i <= p_cuotas; i++)
+                 {
+                     switch (p_periodo)
+	                    {
+                         case "Semanal": 
+                             fecha_vencimiento =  p_fecha_inicio.AddDays(i * 7);   
+                             break;
+                         case "Mensual": 
+                             fecha_vencimiento = p_fecha_inicio.AddMonths (i);
+                             break;
+                         case "Trimestral":
+                             fecha_vencimiento = p_fecha_inicio.AddMonths(i * 3 ); 
+                             break;
+                         case "Semestral":
+                             fecha_vencimiento = p_fecha_inicio.AddMonths(i * 6);
+                             break;
+                         case "Anual":
+                             fecha_vencimiento = p_fecha_inicio.AddYears(i);
+                             break;
+                             
+                         default:
+                             fecha_vencimiento = p_fecha_inicio; 
+                             break;
+	                    }
+                     
+                     // Armar TB_ObligacionesCuotasExt
+                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i, fecha_vencimiento, monto_cuota));
+                 }
+             }
+             return lista_resultado;
+         } // cierre metodo calcularVencimientos
 
+
+         
     } // Cierra la clase 
 } // Cierra el namespace 

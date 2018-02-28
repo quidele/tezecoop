@@ -13,6 +13,7 @@ using SGLibrary.Extensiones;
 using SGLibrary.Services;
 using SGLibrary.GUIUtilities;
 using System.Globalization;
+using Microsoft.VisualBasic;
 
 namespace SGLibrary
 {
@@ -21,9 +22,9 @@ namespace SGLibrary
 
 
         public ServiceModelGenerico<Obligaciones> serviceModel { get; set; }
-        private List<TB_ProveedoresExt>  Titulares  { get; set; }
+        public List<TB_ProveedoresExt> Titulares { get; set; }
+        public IEnumerable<TB_ObligacionesCuotasExt> Lista_Vencimientos { get; set; }
         
-
 
         public FrmObligaciones()
         {
@@ -87,7 +88,7 @@ namespace SGLibrary
                         var txtnumerador = this.txtCoddoc.Text + this.txtSerieDoc.Text + (new ServiceParametros()).ObtenerParametro("empresa");
                         this.txtNroDoc.Text = un_ServiceNumeradores.ObtenerValor(txtnumerador).ToString();
                         this.cbFecdoc.Value = DateTime.UtcNow;
-                        this.cbFecValor.Value = DateTime.UtcNow;
+                        this.dtpFecValor.Value = DateTime.UtcNow;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -433,8 +434,43 @@ namespace SGLibrary
             return !char.IsDigit(caracter) && !char.IsControl(caracter) && (caracter.ToString()  !=  CultureInfo.CurrentUICulture.NumberFormat.NumberDecimalSeparator);
         }
 
+        private bool validarIngresodeDatosCabecera()
+        {
+            // situacion sin archivo            
+            if (this.cbTipoArchivo.Text.Trim().CompareTo ("") ==0){
+                if ((this.txtDescripcion.Text.Trim().CompareTo ("")==0 ))
+                {
+                    MessageBox.Show(string.Format("la cuota ingresada no es válido {0}", this.txtCuotas.Text), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtCuotas.Focus();
+                    return false;
+                }
+                if (!Information.IsNumeric(this.txtMonto.Text))
+                {
+                    MessageBox.Show(string.Format("El monto ingresada no es válido {0}", this.txtMonto.Text), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtMonto.Focus();
+                    return false;
+                }
+                if (!Information.IsNumeric(this.txtCuotas.Text))
+                {
+                    MessageBox.Show(string.Format ( "la cuota ingresada no es válido {0}",this.txtCuotas.Text ), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtCuotas.Focus();
+                    return false;
+                }
+            }
+            
+            // situacion con archivo
+            if (this.cbTipoArchivo.Text !=""){
+
+            }            
+            return true;
+        }
+
+
         private void agregarLicenciaToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // si no cumple las validaciones nos vamos
+            if (!validarIngresodeDatosCabecera()) return;
+
             FrmBuscarTitulares un_FrmBuscarTitulares = new FrmBuscarTitulares();
             // Enviamos la lista que ya se encuentra en el formulario 
             un_FrmBuscarTitulares.TitularesaExcluir = this.Titulares; 
@@ -457,12 +493,29 @@ namespace SGLibrary
 
             cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
-            cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Titulares, this.dataSet2, this.bindingSource2, lista_campo_tipo);
+            ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
+
+            this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
+                decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
+
+            
+                // cargamos nuevamente la lista
+            lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+            lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
+            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "nro_trans", "nro_trans", "System.Int32", true, false));
+            lista_campo_tipo.Add("cod_tit", new ADGVFieldAdapter("cod_tit", "COD.TITU", "cod_tit", "System.Decimal", true, false));
+            // lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
+            lista_campo_tipo.Add("nro_cuota", new ADGVFieldAdapter("nro_cuota", "NRO.CUOTA", "nro_cuota", "System.String", true, true));
+            lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
+            lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
+
+            cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
 
         }
 
         // Agregar a datagridview de titulares
-        public void cargarDataGridViewTitulares_ADGV(DataGridView dgv, IEnumerable<TB_ProveedoresExt> lista,
+        public void cargarDataGridViewTitulares_ADGV(DataGridView dgv, IEnumerable<Object> lista,
                                         DataSet p_DataSet, BindingSource p_BindingSource, 
                                         Dictionary<string, ADGVFieldAdapter> p_lista_campo_tipo)
         {
@@ -537,7 +590,26 @@ namespace SGLibrary
             // volvemos a cargarCombo la lista
             cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
-            // cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Titulares, this.dataSet2, this.bindingSource2);
+
+            ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
+
+            this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
+                decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
+
+
+            // cargamos nuevamente la lista
+            lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+            lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
+            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "nro_trans", "nro_trans", "System.Int32", true, false));
+            lista_campo_tipo.Add("cod_tit", new ADGVFieldAdapter("cod_tit", "COD.TITU", "cod_tit", "System.Decimal", true, false));
+            // lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
+            lista_campo_tipo.Add("nro_cuota", new ADGVFieldAdapter("nro_cuota", "NRO.CUOTA", "nro_cuota", "System.String", true, true));
+            lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
+            lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
+
+            cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
+
 
         }
 

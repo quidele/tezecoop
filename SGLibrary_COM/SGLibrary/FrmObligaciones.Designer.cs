@@ -34,7 +34,7 @@
             this.eliminarTitularToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panelcarga = new System.Windows.Forms.Panel();
             this.label17 = new System.Windows.Forms.Label();
-            this.cbFecValor = new System.Windows.Forms.DateTimePicker();
+            this.dtpFecValor = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
             this.txtComMov = new System.Windows.Forms.TextBox();
@@ -124,7 +124,7 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.panelcarga.Controls.Add(this.label17);
-            this.panelcarga.Controls.Add(this.cbFecValor);
+            this.panelcarga.Controls.Add(this.dtpFecValor);
             this.panelcarga.Controls.Add(this.label16);
             this.panelcarga.Controls.Add(this.label15);
             this.panelcarga.Controls.Add(this.txtComMov);
@@ -165,14 +165,14 @@
             this.label17.TabIndex = 45;
             this.label17.Text = "Fecha de Inicio";
             // 
-            // cbFecValor
+            // dtpFecValor
             // 
-            this.cbFecValor.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.cbFecValor.Location = new System.Drawing.Point(592, 68);
-            this.cbFecValor.Margin = new System.Windows.Forms.Padding(2);
-            this.cbFecValor.Name = "cbFecValor";
-            this.cbFecValor.Size = new System.Drawing.Size(85, 20);
-            this.cbFecValor.TabIndex = 44;
+            this.dtpFecValor.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.dtpFecValor.Location = new System.Drawing.Point(592, 68);
+            this.dtpFecValor.Margin = new System.Windows.Forms.Padding(2);
+            this.dtpFecValor.Name = "dtpFecValor";
+            this.dtpFecValor.Size = new System.Drawing.Size(85, 20);
+            this.dtpFecValor.TabIndex = 44;
             // 
             // label16
             // 
@@ -280,8 +280,9 @@
             this.cbPeriodo.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbPeriodo.FormattingEnabled = true;
             this.cbPeriodo.Items.AddRange(new object[] {
-            "Mensual",
             "Semanal",
+            "Mensual",
+            "Trimestral",
             "Semestral",
             "Anual"});
             this.cbPeriodo.Location = new System.Drawing.Point(491, 67);
@@ -726,7 +727,7 @@
         private System.Windows.Forms.TextBox txtComMov;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label17;
-        private System.Windows.Forms.DateTimePicker cbFecValor;
+        private System.Windows.Forms.DateTimePicker dtpFecValor;
         private System.Windows.Forms.ToolStripMenuItem agregarLicenciaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarTitularToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource2;
