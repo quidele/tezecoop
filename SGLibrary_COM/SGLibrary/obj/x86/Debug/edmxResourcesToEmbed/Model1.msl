@@ -465,17 +465,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_ObligacionesCuotas">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
-        <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
-          <ScalarProperty Name="importe" ColumnName="importe" />
-          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
-          <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
-          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Cupones">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Cupones">
         <MappingFragment StoreEntitySet="TB_Cupones">
@@ -621,6 +610,19 @@
           <ScalarProperty Name="tpCategoria" ColumnName="tpCategoria" />
           <ScalarProperty Name="nrSocio" ColumnName="nrSocio" />
           <ScalarProperty Name="cdProveedor" ColumnName="cdProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ObligacionesCuotas">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
+        <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
+          <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

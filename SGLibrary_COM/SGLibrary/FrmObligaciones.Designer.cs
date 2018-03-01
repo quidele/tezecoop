@@ -250,6 +250,7 @@
             this.ADGV_Titulares.TabIndex = 38;
             this.ADGV_Titulares.TimeFilter = false;
             this.ADGV_Titulares.FilterStringChanged += new System.EventHandler(this.ADGV_Titulares_FilterStringChanged);
+            this.ADGV_Titulares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGV_Titulares_CellContentClick);
             // 
             // cbTipoArchivo
             // 

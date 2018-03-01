@@ -209,12 +209,15 @@ GO
 SET QUOTED_IDENTIFIER ON
 GO
 
+
 CREATE TABLE [dbo].[TB_ObligacionesCuotas](
 	[nro_trans] [int] NOT NULL,
 	[cod_tit] [int] NOT NULL,
 	[nro_cuota] [int] NULL,
 	[fecha_vencimiento] [date] NULL,
 	[importe] [decimal](18, 2) NULL,
+	[nrLicencia] char(3),
+	[comentarios] varchar(200)
  CONSTRAINT [PK_TB_ObligacionesCuotas] PRIMARY KEY CLUSTERED 
 (
 	[nro_trans] ASC,

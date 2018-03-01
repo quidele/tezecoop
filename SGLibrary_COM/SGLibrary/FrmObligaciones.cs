@@ -440,8 +440,8 @@ namespace SGLibrary
             if (this.cbTipoArchivo.Text.Trim().CompareTo ("") ==0){
                 if ((this.txtDescripcion.Text.Trim().CompareTo ("")==0 ))
                 {
-                    MessageBox.Show(string.Format("la cuota ingresada no es válido {0}", this.txtCuotas.Text), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    this.txtCuotas.Focus();
+                    MessageBox.Show("Debe ingresar descripción", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.txtDescripcion.Focus();
                     return false;
                 }
                 if (!Information.IsNumeric(this.txtMonto.Text))
@@ -452,7 +452,7 @@ namespace SGLibrary
                 }
                 if (!Information.IsNumeric(this.txtCuotas.Text))
                 {
-                    MessageBox.Show(string.Format ( "la cuota ingresada no es válido {0}",this.txtCuotas.Text ), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    MessageBox.Show(string.Format ("la cuota ingresada no es válido {0}",this.txtCuotas.Text ), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     this.txtCuotas.Focus();
                     return false;
                 }
@@ -491,7 +491,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("nmNombre", new ADGVFieldAdapter("nmNombre", "NOMBRE", "nmNombre", "System.String", true, true));
             lista_campo_tipo.Add("nmApellido", new ADGVFieldAdapter("nmApellido", "APELLIDO", "nmApellido", "System.String", true, true));
 
-            cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
+            cargarDataGridView_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
@@ -510,12 +510,55 @@ namespace SGLibrary
             lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
             lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
 
-            cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
+            cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
 
         }
 
+
+        private void ADGV_TitularesCuotas_Inicilizacion()
+        {
+
+            // Coloreamos cortando por licencia 
+            //  para asignar colores tenemos que realuizar un corte de control 
+            // por licencia
+
+            foreach (DataGridViewRow item in ADGV_TitularesCuotas.Rows)
+            {
+               
+                var row = item;
+                switch (row.Cells["NIVEL"].Value.ToString())
+                {
+                    case "-1": row.Cells["CONCILIAR"].Value = false;
+                        row.ReadOnly = true;
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                        break;
+                    case "1": row.DefaultCellStyle.BackColor = Color.DarkGreen;
+                        row.DefaultCellStyle.ForeColor = Color.White;
+                        row.Cells["CONCILIAR"].Value = true;
+                        break;
+                    case "2": row.DefaultCellStyle.BackColor = Color.LightBlue; break;
+                    case "3": row.DefaultCellStyle.BackColor = Color.Orange; break;
+                    case "4": row.DefaultCellStyle.BackColor = Color.OrangeRed; break;
+                    default:
+                        row.Cells["CONCILIAR"].Value = false;
+                        row.ReadOnly = true;
+                        row.DefaultCellStyle.BackColor = Color.White;
+                        row.DefaultCellStyle.ForeColor = Color.Black;
+                        break;
+                }
+                // row.Cells["fecha_vencimiento"].Value = row.Cells["fecha_vencimiento"].Value.ToString().Remove(10);
+             
+            }
+
+             
+             
+
+
+        } // Cierra  ADGV_TitularesCuotas_Inicilizacion
+
         // Agregar a datagridview de titulares
-        public void cargarDataGridViewTitulares_ADGV(DataGridView dgv, IEnumerable<Object> lista,
+        public void cargarDataGridView_ADGV(DataGridView dgv, IEnumerable<Object> lista,
                                         DataSet p_DataSet, BindingSource p_BindingSource, 
                                         Dictionary<string, ADGVFieldAdapter> p_lista_campo_tipo)
         {
@@ -572,12 +615,16 @@ namespace SGLibrary
 
         private void eliminarTitularToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            if (this.ADGV_Titulares.SelectedRows.Count == 0) return;
+
             foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
             {
                 TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString());
                 un_titu_nuevo  = Titulares.Find(x => x.cdProveedor == un_titu_nuevo.cdProveedor);
                 Titulares.Remove(un_titu_nuevo);
             }
+
 
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
@@ -588,7 +635,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("nmApellido", new ADGVFieldAdapter("nmApellido", "APELLIDO", "nmApellido", "System.String", true, true));
 
             // volvemos a cargarCombo la lista
-            cargarDataGridViewTitulares_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
+            cargarDataGridView_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
 
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
@@ -608,7 +655,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
             lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
 
-            cargarDataGridViewTitulares_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
+            cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
 
 
         }
@@ -625,6 +672,11 @@ namespace SGLibrary
             this.bindingSource2.Filter = this.ADGV_TitularesCuotas.FilterString;
             //this.lblDgv1Registros1.Text = "Registros: " + this.bindingSource2.List.Count.ToString(); 
 
+        }
+
+        private void ADGV_Titulares_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+                
         }// cierra metodo
 
 

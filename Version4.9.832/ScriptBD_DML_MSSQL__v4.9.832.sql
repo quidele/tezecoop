@@ -27,3 +27,6 @@ delete from TB_documentos
 INSERT INTO TB_documentos (cod_doc,nom_doc,usuario_mod,fecha_mod)  VALUES ('OBAP','Oblidaciones a Pagar','quidele','23/02/2018 16:55:45');
 
 
+
+
+
