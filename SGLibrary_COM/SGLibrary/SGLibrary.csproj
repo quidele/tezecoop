@@ -223,6 +223,7 @@
       <DependentUpon>FrmSeleccionarImpresora.cs</DependentUpon>
     </Compile>
     <Compile Include="GUIUtilities\ADGVFieldAdapter.cs" />
+    <Compile Include="GUIUtilities\ADGVInicilizations.cs" />
     <Compile Include="LoaderForms.cs" />
     <Compile Include="ODBCManager.cs" />
     <Compile Include="Model1.Context.cs">

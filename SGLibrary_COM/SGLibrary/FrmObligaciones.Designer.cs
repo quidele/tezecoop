@@ -81,6 +81,8 @@
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new System.Data.DataSet();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
+            this.agregarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.eliminarTodosToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_TitularesCuotas)).BeginInit();
@@ -99,9 +101,11 @@
             this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.agregarLicenciaToolStripMenuItem,
-            this.eliminarTitularToolStripMenuItem});
+            this.eliminarTitularToolStripMenuItem,
+            this.agregarTodosToolStripMenuItem,
+            this.eliminarTodosToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 48);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(165, 114);
             // 
             // agregarLicenciaToolStripMenuItem
             // 
@@ -219,6 +223,8 @@
             // 
             // ADGV_TitularesCuotas
             // 
+            this.ADGV_TitularesCuotas.AllowUserToAddRows = false;
+            this.ADGV_TitularesCuotas.AllowUserToDeleteRows = false;
             this.ADGV_TitularesCuotas.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -236,6 +242,7 @@
             // 
             // ADGV_Titulares
             // 
+            this.ADGV_Titulares.AllowUserToAddRows = false;
             this.ADGV_Titulares.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.ADGV_Titulares.AutoGenerateContextFilters = true;
@@ -246,6 +253,7 @@
             this.ADGV_Titulares.Margin = new System.Windows.Forms.Padding(2);
             this.ADGV_Titulares.Name = "ADGV_Titulares";
             this.ADGV_Titulares.RowTemplate.Height = 24;
+            this.ADGV_Titulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGV_Titulares.Size = new System.Drawing.Size(680, 157);
             this.ADGV_Titulares.TabIndex = 38;
             this.ADGV_Titulares.TimeFilter = false;
@@ -311,7 +319,6 @@
             this.txtCuotas.Name = "txtCuotas";
             this.txtCuotas.Size = new System.Drawing.Size(66, 20);
             this.txtCuotas.TabIndex = 32;
-            this.txtCuotas.TextChanged += new System.EventHandler(this.txtCuotas_TextChanged);
             this.txtCuotas.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCuotas_KeyPress);
             // 
             // label11
@@ -333,7 +340,6 @@
             this.txtMonto.Name = "txtMonto";
             this.txtMonto.Size = new System.Drawing.Size(66, 20);
             this.txtMonto.TabIndex = 30;
-            this.txtMonto.TextChanged += new System.EventHandler(this.txtMonto_TextChanged);
             this.txtMonto.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
             // 
             // label10
@@ -645,6 +651,20 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
+            // agregarTodosToolStripMenuItem
+            // 
+            this.agregarTodosToolStripMenuItem.Name = "agregarTodosToolStripMenuItem";
+            this.agregarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.agregarTodosToolStripMenuItem.Text = "Agregar Todos";
+            this.agregarTodosToolStripMenuItem.Click += new System.EventHandler(this.agregarTodosToolStripMenuItem_Click);
+            // 
+            // eliminarTodosToolStripMenuItem
+            // 
+            this.eliminarTodosToolStripMenuItem.Name = "eliminarTodosToolStripMenuItem";
+            this.eliminarTodosToolStripMenuItem.Size = new System.Drawing.Size(164, 22);
+            this.eliminarTodosToolStripMenuItem.Text = "Eliminar Todos";
+            this.eliminarTodosToolStripMenuItem.Click += new System.EventHandler(this.eliminarTodosToolStripMenuItem_Click);
+            // 
             // FrmObligaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -733,5 +753,7 @@
         private System.Windows.Forms.ToolStripMenuItem eliminarTitularToolStripMenuItem;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Data.DataSet dataSet2;
+        private System.Windows.Forms.ToolStripMenuItem agregarTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem eliminarTodosToolStripMenuItem;
     }
 }

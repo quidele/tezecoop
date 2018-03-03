@@ -15,6 +15,7 @@ using SGLibrary.GUIUtilities;
 using System.Globalization;
 using Microsoft.VisualBasic;
 
+
 namespace SGLibrary
 {
     public partial class FrmObligaciones : Form
@@ -45,7 +46,7 @@ namespace SGLibrary
             this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;
             this.statusbar_usuario.Text = "Usuario: " + serviceModel.Usuario;
             this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
-
+            this.Titulares = new List<TB_ProveedoresExt>();
         }
 
 
@@ -412,12 +413,12 @@ namespace SGLibrary
 
         private void txtMonto_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtCuotas_TextChanged(object sender, EventArgs e)
         {
-
+            
         }
 
         private void txtCuotas_KeyPress(object sender, KeyPressEventArgs e)
@@ -481,7 +482,14 @@ namespace SGLibrary
                 this.Titulares = un_FrmBuscarTitulares.Titulares;
             else
                 this.Titulares.AddRange (un_FrmBuscarTitulares.Titulares) ;
-            
+
+            CargaGrillasTitularesCuotas();
+        }
+
+        private void CargaGrillasTitularesCuotas()
+        {
+
+
             // cargamos nuevamente la lista
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
@@ -493,69 +501,32 @@ namespace SGLibrary
 
             cargarDataGridView_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
+            if (this.ADGV_Titulares.Rows.Count == 0) return;
+
+            ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
             this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
                 decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
 
-            
-                // cargamos nuevamente la lista
+
+            // cargamos nuevamente la lista
             lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
             lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
             lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "nro_trans", "nro_trans", "System.Int32", true, false));
             lista_campo_tipo.Add("cod_tit", new ADGVFieldAdapter("cod_tit", "COD.TITU", "cod_tit", "System.Decimal", true, false));
-            // lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
+            lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
             lista_campo_tipo.Add("nro_cuota", new ADGVFieldAdapter("nro_cuota", "NRO.CUOTA", "nro_cuota", "System.String", true, true));
             lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
             lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
 
             cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
-
+            ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
         }
 
 
-        private void ADGV_TitularesCuotas_Inicilizacion()
-        {
-
-            // Coloreamos cortando por licencia 
-            //  para asignar colores tenemos que realuizar un corte de control 
-            // por licencia
-
-            foreach (DataGridViewRow item in ADGV_TitularesCuotas.Rows)
-            {
-               
-                var row = item;
-                switch (row.Cells["NIVEL"].Value.ToString())
-                {
-                    case "-1": row.Cells["CONCILIAR"].Value = false;
-                        row.ReadOnly = true;
-                        row.DefaultCellStyle.BackColor = Color.White;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                        break;
-                    case "1": row.DefaultCellStyle.BackColor = Color.DarkGreen;
-                        row.DefaultCellStyle.ForeColor = Color.White;
-                        row.Cells["CONCILIAR"].Value = true;
-                        break;
-                    case "2": row.DefaultCellStyle.BackColor = Color.LightBlue; break;
-                    case "3": row.DefaultCellStyle.BackColor = Color.Orange; break;
-                    case "4": row.DefaultCellStyle.BackColor = Color.OrangeRed; break;
-                    default:
-                        row.Cells["CONCILIAR"].Value = false;
-                        row.ReadOnly = true;
-                        row.DefaultCellStyle.BackColor = Color.White;
-                        row.DefaultCellStyle.ForeColor = Color.Black;
-                        break;
-                }
-                // row.Cells["fecha_vencimiento"].Value = row.Cells["fecha_vencimiento"].Value.ToString().Remove(10);
-             
-            }
-
-             
-             
-
-
-        } // Cierra  ADGV_TitularesCuotas_Inicilizacion
+        
 
         // Agregar a datagridview de titulares
         public void cargarDataGridView_ADGV(DataGridView dgv, IEnumerable<Object> lista,
@@ -624,40 +595,8 @@ namespace SGLibrary
                 un_titu_nuevo  = Titulares.Find(x => x.cdProveedor == un_titu_nuevo.cdProveedor);
                 Titulares.Remove(un_titu_nuevo);
             }
-
-
-            Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
-            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
-            lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
-            lista_campo_tipo.Add("cdProveedor", new ADGVFieldAdapter("cdProveedor", "COD.TITU", "cdProveedor", "System.Decimal", true, false));
-            lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
-            lista_campo_tipo.Add("nmNombre", new ADGVFieldAdapter("nmNombre", "NOMBRE", "nmNombre", "System.String", true, true));
-            lista_campo_tipo.Add("nmApellido", new ADGVFieldAdapter("nmApellido", "APELLIDO", "nmApellido", "System.String", true, true));
-
-            // volvemos a cargarCombo la lista
-            cargarDataGridView_ADGV(this.ADGV_Titulares, this.Titulares, this.dataSet1, this.bindingSource1, lista_campo_tipo);
-
-
-            ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
-
-            this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
-                decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
-
-
-            // cargamos nuevamente la lista
-            lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
-            //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
-            lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
-            lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "nro_trans", "nro_trans", "System.Int32", true, false));
-            lista_campo_tipo.Add("cod_tit", new ADGVFieldAdapter("cod_tit", "COD.TITU", "cod_tit", "System.Decimal", true, false));
-            // lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
-            lista_campo_tipo.Add("nro_cuota", new ADGVFieldAdapter("nro_cuota", "NRO.CUOTA", "nro_cuota", "System.String", true, true));
-            lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
-            lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
-
-            cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
-
-
+            CargaGrillasTitularesCuotas();
+             
         }
 
         private void ADGV_Titulares_FilterStringChanged(object sender, EventArgs e)
@@ -677,7 +616,47 @@ namespace SGLibrary
         private void ADGV_Titulares_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
                 
-        }// cierra metodo
+        }
+
+        private void txtDescripcion_TextChanged(object sender, EventArgs e)
+        {
+            CargaGrillasTitularesCuotas();
+        }
+
+        private void eliminarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (this.ADGV_Titulares.SelectedRows.Count == 0) return;
+
+            this.Titulares.Clear();
+            this.ADGV_Titulares.DataSource = "";
+            this.Lista_Vencimientos = null;
+            this.ADGV_TitularesCuotas.DataSource = "";
+
+        }
+
+        private void agregarTodosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            this.Titulares.Clear();
+            this.ADGV_Titulares.DataSource = "";
+            this.Lista_Vencimientos = null;
+            this.ADGV_TitularesCuotas.DataSource = "";
+            
+
+            ServiceLicenciatarios miServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
+            IEnumerable<TB_Proveedores> lista;
+            lista = miServiceLicenciatarios.ObtenerTodosLosRegistros();
+
+            foreach (var item in lista)
+            {
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor , item.nrLicencia,  item.nmNombre, item.nmApellido);
+                this.Titulares.Add(un_titu_nuevo);
+            }
+            CargaGrillasTitularesCuotas();
+
+        }
+
+        
 
 
     } // Cierra la clase 

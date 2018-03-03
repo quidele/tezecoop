@@ -205,6 +205,8 @@ namespace SGLibrary
                 return;
             }
             cargarDataGridView(this.dataGridView1, lista, true, this.dataSet1, this.bindingSource1);
+            ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.dataGridView1, "nrLicencia", "");
+
             this.lblDgv1Registros.Text = "Registros: " + lista.Count().ToString();
 
         }

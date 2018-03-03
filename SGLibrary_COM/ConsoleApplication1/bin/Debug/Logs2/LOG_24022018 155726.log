@@ -1,9 +1,0 @@
-ConsoleApplication1.vshost.exe Information: 0 : inicializando el logger desde ServiceModelGenerico
-ConsoleApplication1.vshost.exe Information: 0 : metadata=res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl;provider=System.Data.SqlClient;provider connection string="Data Source=MSI\SQLEXPRESS;Initial Catalog=dbSG2000;Integrated Security=False;Persist Security Info=False;User ID=USRSG2006;Password=sonrisa14;MultipleActiveResultSets=True;Application Name=SGLibrary"
-ConsoleApplication1.vshost.exe Information: 0 : ADGV.AdvancedDataGridView
-ConsoleApplication1.vshost.exe Information: 0 : System.Collections.Generic.List`1[SGLibrary.Services.Obligaciones]
-ConsoleApplication1.vshost.exe Error: 0 : Error Linea 317 columna 13
-ConsoleApplication1.vshost.exe Error: 0 : System.NotImplementedException: No se puede implementar el método o la operación.
-   en SGLibrary.FrmObligaciones.cargarDataGridViewBusqueda_ADGV_Inicilizacion() en c:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\FrmObligaciones.cs:línea 317
-   en SGLibrary.FrmObligaciones.cargarDataGridViewBusqueda_ADGV(DataGridView dgv, IEnumerable`1 lista, String p_modoEdicion, DataSet p_DataSet, BindingSource p_BindingSource) en c:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\FrmObligaciones.cs:línea 299
-ConsoleApplication1.vshost.exe Error: 0 : No se puede implementar el método o la operación.
