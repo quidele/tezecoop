@@ -12,15 +12,21 @@ namespace SGLibrary
     public class ServiceCuponesTransaccion : ServiceCupones  
     {
 
+        dbSG2000Entities context;
+
+        public ServiceCuponesTransaccion(dbSG2000Entities pdbSG2000Entities)
+        {
+            context = pdbSG2000Entities;
+        }
+
+
         /// <summary>
         /// grabar movimientos contables para reflejar la salida del dinero
         /// </summary>
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
-        public void GrabarCuponTransaccion(Double pvlPesos, decimal pnrCaja, String pdsUsuario, int pnro_trans,
-                                                    dbSG2000Entities pdbSG2000Entities, int pnrLicencia,
-                                                    String pnrFactura, DateTime pdtFecha,
-                                                    Decimal pnrCupon, String pdsObservaccion,
+        public void GrabarCuponTransaccion(Double pvlPesos, decimal pnrCaja, String pdsUsuario, int pnro_trans, int pnrLicencia,
+                                                    String pnrFactura, DateTime pdtFecha, String pdsObservaccion,
                                                     int  pcdCliente , String ptpComprobanteCliente ,
                                                     String pnrComprabanteCliente, String pnrTalonarioCliente,
                                                     String ptpLetraCliente, double pvlMontoCupon,
@@ -28,8 +34,8 @@ namespace SGLibrary
         {
 
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pvlPesos, () => pnrCaja,
-                                    () => pnro_trans, () => pdbSG2000Entities, () => pnrLicencia, () => pnrFactura,
-                                    () => pdtFecha, () => pnrCupon, () => pdsObservaccion, () => pcdCliente,
+                                    () => pnro_trans, () => pnrLicencia, () => pnrFactura,
+                                    () => pdtFecha,  () => pdsObservaccion, () => pcdCliente,
                                     () => ptpComprobanteCliente, () => pnrComprabanteCliente,
                                     () => pnrTalonarioCliente, () => ptpLetraCliente, () => pvlMontoCupon, () => pvlComision
                 ).GetLog();
@@ -40,8 +46,8 @@ namespace SGLibrary
                 //  Setear conceptos y caja
                 //  Obtener la entidad Usuario
                 TB_Cupones unCupon = new TB_Cupones();
-                
-                var max = (from p in pdbSG2000Entities.TB_Cupones 
+
+                var max = (from p in context.TB_Cupones 
                            select p).OrderByDescending(p => p.nrCupon ).FirstOrDefault();
 
                 if (max == null)
@@ -59,7 +65,7 @@ namespace SGLibrary
                     unCupon.nrComprabanteCliente = pnrComprabanteCliente;
                     unCupon.nrTalonarioCliente = pnrTalonarioCliente;
                     unCupon.tpLetraCliente = ptpLetraCliente;
-                    unCupon.vlMontoCupon = pvlMontoCupon;
+                    unCupon.vlMontoCupon = pvlMontoCupon; // aqui debemos 
                     unCupon.vlComision = pvlComision;
                     unCupon.vlPagoPesos = 0;
                     unCupon.vlPagoReales  = 0;
@@ -71,9 +77,10 @@ namespace SGLibrary
                     unCupon.flAnulado = false;
                     unCupon.nrCajaCliente = pnrCaja;
                     unCupon.vlIVA = 0;
-                    unCupon.vlSubtotal = 0; 
-                    pdbSG2000Entities.TB_Cupones.Add(unCupon);
-                    pdbSG2000Entities.SaveChanges();
+                    unCupon.vlSubtotal = 0;
+                    unCupon.nro_trans = pnro_trans;  // referencia muy importante
+                    context.TB_Cupones.Add(unCupon);
+                    context.SaveChanges();
 
                 }
 
@@ -99,14 +106,14 @@ namespace SGLibrary
 
 
 
-        public List<TB_Cupones> existenComprobantesCompensados(dbSG2000Entities pdbSG2000Entities, int nro_trans)
+        public List<TB_Cupones> existenComprobantesCompensados( int nro_trans)
         {
-            var lista  = (from p in pdbSG2000Entities.TB_Cupones where  p.nro_trans ==  nro_trans &&
+            var lista  = (from p in context.TB_Cupones where  p.nro_trans ==  nro_trans &&
                                                                      p.flCompensado == true
                           select p).OrderByDescending(p => p.nrCupon).ToList<TB_Cupones>();
 
             return lista ;
-        }    
+        }  // cierra metodo existenComprobantesCompensados
         
 
     } // CIERRA CLASE 

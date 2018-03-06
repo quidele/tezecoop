@@ -109,9 +109,11 @@ namespace SGLibrary
 
                 case "OK":
                     {
-
                         if (this.modoEdicion.Text == "NO")
                         {
+                            // Realizar validaciones 
+                            if (!(validarIngresodeDatosCabecera())) return;
+                            if (!(validarIngresodeGrilla())) return; 
                             if (!altaRegistro()) break;
                         }
                         else
@@ -162,6 +164,23 @@ namespace SGLibrary
 
         }
 
+        private bool validarIngresodeGrilla()
+        {
+            if (this.ADGV_Titulares.RowCount==0) 
+            {
+                MessageBox.Show(string.Format("Debe agregar el/los titulares.", this.txtMonto.Text), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.ADGV_Titulares.Focus();
+                return false;
+            }
+            if (this.ADGV_TitularesCuotas.RowCount == 0)
+            {
+                MessageBox.Show("Debe ingresar los vencimientos.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                this.ADGV_Titulares.Focus();
+                return false;
+            } 
+            return true;
+        }
+
 
         private void ActualizarCantidadRegistros(int registros)
         {
@@ -170,6 +189,47 @@ namespace SGLibrary
 
         public Boolean altaRegistro()
         {
+
+            Obligaciones una_Obligacion = new Obligaciones();
+            
+            ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities());
+
+            TB_transCab una_TB_transCab =  new TB_transCab (); 
+            una_TB_transCab.cod_doc =    this.txtCoddoc.Text;
+            una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
+            una_TB_transCab.linea = 1;
+            una_TB_transCab.nro_trans = un_ServiceNumeradores.ObtenerValor("nro_trans");
+            una_TB_transCab.com_mov = this.txtComMov.Text; 
+            una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod;
+            una_TB_transCab.cod_tit = 0;
+            una_TB_transCab.formulario = this.Name;
+            una_TB_transCab.bloque = "cabecera";
+            una_TB_transCab.seccion = "General";
+            una_TB_transCab.fec_doc = this.cbFecdoc.Value;
+            una_TB_transCab.fec_valor = this.dtpFecValor.Value;
+            una_Obligacion.TB_transCab = una_TB_transCab;
+
+            this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
+                                               una_TB_transCab.bloque, "A", "Nuevo");
+
+            List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
+            foreach (TB_ProveedoresExt item in this.Titulares )
+            {
+                una_Lista_TB_ObligacionesTitulares.Add(item.ToTB_ObligacionesTitulares(una_TB_transCab.nro_trans)); 
+            }
+            una_Obligacion.TB_ObligacionesTitulares = una_Lista_TB_ObligacionesTitulares;
+
+
+            List<TB_ObligacionesCuotas> una_Lista_TB_ObligacionesCuotas = new List<TB_ObligacionesCuotas>();
+            foreach (TB_ObligacionesCuotasExt item in Lista_Vencimientos)
+            {
+                una_Lista_TB_ObligacionesCuotas.Add ( item.ToTB_ObligacionesCuotas(una_TB_transCab.nro_trans));
+            }
+            una_Obligacion.TB_ObligacionesCuotas = una_Lista_TB_ObligacionesCuotas; 
+
+            // Deberia emitar excepciones para determinar el comportamiento de la grabacion
+            this.serviceModel.AgregarRegistro(una_Obligacion);
+
             return true;
         }
 
@@ -488,7 +548,6 @@ namespace SGLibrary
 
         private void CargaGrillasTitularesCuotas()
         {
-
 
             // cargamos nuevamente la lista
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();

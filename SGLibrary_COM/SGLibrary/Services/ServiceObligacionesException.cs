@@ -32,5 +32,7 @@ namespace SGLibrary.Services
             ListaCuponesCompensados = listaCuponesCompensados;
         }
 
+        
+
     }
 }

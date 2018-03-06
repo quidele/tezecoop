@@ -4,7 +4,8 @@ using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Transactions;
-using SGLibrary.Exceptions; 
+using SGLibrary.Exceptions;
+using System.Data.Entity.Validation; 
 
 namespace SGLibrary.Services
 {
@@ -41,39 +42,61 @@ namespace SGLibrary.Services
 
          public override void AgregarRegistro(Obligaciones unRegistro)
          {
-
              var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
              Trace.TraceInformation(paramLog);
 
-             using (TransactionScope transaction = new TransactionScope())
+             try
              {
-   
-                 //context.TB_documentos.Add(unRegistro);
-                 // agregamos un numerador asociado al documento
-                 //ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(context);
-                 TB_numeradores un_TB_numeradores = new TB_numeradores();
-                 un_TB_numeradores.formulario = this.formulario;
-                 un_TB_numeradores.usuario_mod = this.usuario_mod;
-                 un_TB_numeradores.consecutivos = "S";
-                 un_TB_numeradores.incremento = 1;
-                 un_TB_numeradores.valor_asignado = 0;
+                     using (TransactionScope transaction = new TransactionScope())
+                     {
+                         // Verificar la grabacion de los numeros nro_trans y nor_doc
+                         context.TB_transCab.Add(unRegistro.TB_transCab);
+                         foreach (var item in unRegistro.TB_ObligacionesTitulares )
+	                     {
+                             context.TB_ObligacionesTitulares.Add(item);
+	                     }
+                         foreach (var item in unRegistro.TB_ObligacionesCuotas  )
+                         {
+                             context.TB_ObligacionesCuotas.Add(item);
+                         }
 
+                         // Hacemos un Guardado parcial de la transaccion
+                         context.SaveChanges();
 
-                 // Verificar la grabacion de los numeros nro_trans y nor_doc
-                 context.TB_transCab.Add(unRegistro.TB_transCab);
-                 foreach (var item in unRegistro.TB_ObligacionesTitulares )
-	             {
-                     context.TB_ObligacionesTitulares.Add(item);
-	             }
-                 foreach (var item in unRegistro.TB_ObligacionesCuotas  )
+                         ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion(context);
+
+                         foreach (var item in unRegistro.TB_ObligacionesCuotas)
+                         {
+                             un_ServiceCuponesTransaccion.GrabarCuponTransaccion (0, decimal.Parse ( this.CajaAdm)  , this.Usuario , item.nro_trans ,
+                                                                                   int.Parse ( item.nrLicencia)  , null, unRegistro.TB_transCab.fec_doc ,
+                                                                                    unRegistro.TB_transCab.com_mov , 0 , unRegistro.TB_transCab.cod_doc ,
+                                                                                    unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
+                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble (item.importe));
+                         }
+
+                         context.SaveChanges();
+                         transaction.Complete();
+                         return;
+                     } //  TransactionScope
+
+             }
+             catch (DbEntityValidationException e)
+             {
+                 Console.WriteLine(e);
+                 Trace.TraceError(e.Message);
+                 foreach (var eve in e.EntityValidationErrors)
                  {
-                     context.TB_ObligacionesCuotas.Add(item);
-                 }
-                 context.SaveChanges();
-                 transaction.Complete();
-                 return;
+                     Trace.TraceError("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                         eve.Entry.Entity.GetType().Name, eve.Entry.State);
 
-             } //  TransactionScope
+                     foreach (var ve in eve.ValidationErrors)
+                     {
+                         Trace.TraceError("- Property: \"{0}\", Error: \"{1}\"",
+                             ve.PropertyName, ve.ErrorMessage);
+                     }
+                 }
+                 throw new ServiceObligacionesException("No se puede grabar el registro existen errores ", e);
+             }
 
          }
 
@@ -84,9 +107,9 @@ namespace SGLibrary.Services
 
              // Agregar la validaciones necesarias previas a la eliminación
              /* VALIDAR QUE NO SE ALLA COMPENSADO NINGUNA CUOTA */
-             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion();
+             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion(context);
 
-             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados(context, unRegistro.TB_transCab.nro_trans);
+             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados( unRegistro.TB_transCab.nro_trans);
              if (listaCuponesCompensados.Count() != 0)
              {
                  // avisar mediante excepcion 
@@ -134,9 +157,9 @@ namespace SGLibrary.Services
 
              // Agregar la validaciones necesarias previas a la eliminación
              /* VALIDAR QUE NO SE ALLA COMPENSADO NINGUNA CUOTA */
-             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion ();
+             ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion (context);
 
-             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados(context, unRegistro.TB_transCab.nro_trans);
+             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados( unRegistro.TB_transCab.nro_trans);
              if (listaCuponesCompensados.Count() != 0  ) {
                   // avisar mediante excepcion 
                  throw new ServiceObligacionesException("No se puede modificar el registrio ya que existen Comprobantes compensados", listaCuponesCompensados); 
@@ -301,6 +324,16 @@ namespace SGLibrary.Services
          } // cierre metodo calcularVencimientos
 
 
+
+         public override Obligaciones CompletarAuditoria(Obligaciones obj, string p_seccion, string p_bloque, string p_estado_registro, string p_operacion_mod)
+         {
+             obj.TB_transCab.estado_registro = p_estado_registro;
+             obj.TB_transCab.seccion = p_seccion;
+             obj.TB_transCab.bloque = p_bloque;
+             obj.TB_transCab.operacion_mod = p_operacion_mod;
+
+             return obj;
+         }
          
     } // Cierra la clase 
 } // Cierra el namespace 

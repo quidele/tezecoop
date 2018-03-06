@@ -24,5 +24,21 @@ namespace SGLibrary.Services
             this.nrLicencia = p_nrLicencia;
             this.comentarios = p_comentarios;
         }
+
+
+        public TB_ObligacionesCuotas ToTB_ObligacionesCuotas(int pnro_trans)
+        {
+            TB_ObligacionesCuotas aux = new TB_ObligacionesCuotas();
+
+            aux.nro_trans = pnro_trans ;
+            aux.cod_tit = this.cod_tit;
+            aux.nro_cuota = this.nro_cuota;
+            aux.fecha_vencimiento = this.fecha_vencimiento;
+            aux.importe = this.importe;
+            aux.nrLicencia = this.nrLicencia;
+            aux.comentarios = this.comentarios;
+           
+            return aux; 
+        }
     }
 }

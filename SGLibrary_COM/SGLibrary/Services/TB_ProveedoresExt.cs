@@ -16,7 +16,16 @@ namespace SGLibrary.Services
 
         }
 
+        public TB_ObligacionesTitulares ToTB_ObligacionesTitulares(int pnro_trans) 
+        {
 
+            TB_ObligacionesTitulares aux = new TB_ObligacionesTitulares();
+            aux.cod_tit = this.cdProveedor;
+            aux.nrLicencia = this.nrLicencia;
+            aux.nrTelefono = this.nrTel;
+
+            return aux; 
+        }
 
     }
 
