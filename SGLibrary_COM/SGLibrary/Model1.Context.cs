@@ -26,9 +26,9 @@ namespace SGLibrary
     
     	private static string ConnectionString()
     	{
-    
-    
-    		ConfigBD objConfig = new ConfigBD();
+
+
+            ConfigBD objConfig = ConfigBD.Instance("PRODUCCION");
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
     		// obtenemos el datasource desde el archivo  ConfigBD.Xml
     		sqlBuilder.DataSource = objConfig.DataSource;
@@ -43,7 +43,7 @@ namespace SGLibrary
     
     		EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
     		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
-        	 entityBuilder.Metadata = "res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl";
+        	entityBuilder.Metadata = "res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl";
     			
             //res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl
     

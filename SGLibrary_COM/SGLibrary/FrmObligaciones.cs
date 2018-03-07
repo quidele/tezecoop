@@ -207,6 +207,10 @@ namespace SGLibrary
             una_TB_transCab.seccion = "General";
             una_TB_transCab.fec_doc = this.cbFecdoc.Value;
             una_TB_transCab.fec_valor = this.dtpFecValor.Value;
+            una_TB_transCab.terminal_mod = "PC01";
+            una_TB_transCab.serie_doc = 0;
+            una_TB_transCab.letra_doc = "O";
+            una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
             una_Obligacion.TB_transCab = una_TB_transCab;
 
             this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,

@@ -72,7 +72,7 @@ namespace SGLibrary
 
         public virtual string Servidor { get; set; }
 
-
+        public virtual string Ambiente { get; set; }
 
         public virtual IEnumerable<object> ObtenerTodosLosRegistros() { 
                      throw new NotImplementedException();

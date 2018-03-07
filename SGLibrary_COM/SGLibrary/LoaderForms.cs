@@ -19,7 +19,8 @@ namespace SGLibrary
         void UsuarioActivo(string usuario);
         [DispId(3)]
         void CajaActiva(string caja);
-        
+        [DispId(4)]
+        void AmbienteActivo(string ambiente);
     }
 
     // Events interface para LoaderForms 
@@ -39,6 +40,7 @@ namespace SGLibrary
         private String _usuarioActivo;
         private String _cajactiva;
         private List<String> _listado_Errores=new List<String>();
+        private String _ambiente;
 
 
         public override string Usuario
@@ -66,6 +68,19 @@ namespace SGLibrary
             }
         }
 
+
+        public override string Ambiente
+        {
+            get
+            {
+                return this._ambiente ;
+            }
+            set
+            {
+                this._ambiente = value;
+            }
+        }
+
         public override String ListaErrores()
         {
             String lista_errores = "";
@@ -89,6 +104,8 @@ namespace SGLibrary
             this._cajactiva = value;
 
         }
+
+
 
         public void execFormulario(string value)
         {
@@ -204,6 +221,12 @@ namespace SGLibrary
 
             // Implmentar en proximas version en la proximas versiones
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => un_docu).GetLog();
+        }
+
+
+        public  void AmbienteActivo(string ambiente)
+        {
+            this._ambiente = ambiente; 
         }
     }
 }

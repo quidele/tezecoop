@@ -179,11 +179,15 @@ namespace ConsoleApplication1
             l.execFormulario("FrmABMDocumentos");
             */
 
-            
+            /*
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.execFormulario("FrmObligaciones");
+             */
+
+            ConfigBD miConfig = ConfigBD.Instance("PRODUCCION") ;
+            miConfig.cargarArchivo(); 
            
 
         } // Cierre metodo
