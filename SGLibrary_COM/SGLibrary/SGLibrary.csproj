@@ -123,6 +123,7 @@
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ConfigBD.cs" />
+    <Compile Include="Entities\Ambiente.cs" />
     <Compile Include="Enums\BotonesABMForm.cs" />
     <Compile Include="EXCELNuke\Application.cs" />
     <Compile Include="EXCELNuke\Cells.cs" />

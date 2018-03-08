@@ -2,13 +2,13 @@
 <!-- This file represents a fragment of a book store inventory database -->
 <ConfigBD>
   <AMBIENTE>
-    <Ambiente>PRODUCCION</Ambiente>
+    <Ambiente>SQL_Remoto</Ambiente>
     <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000</InitialCatalog>
   </AMBIENTE>
   <AMBIENTE>
-    <Ambiente>DESARROLLO</Ambiente>
-    <DataSource>PC0157_PRUEBA</DataSource>
+    <Ambiente>SQL_Remoto_Desa</Ambiente>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000_Prueba</InitialCatalog>
    </AMBIENTE>
 </ConfigBD>

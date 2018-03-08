@@ -126,6 +126,8 @@ namespace SGLibrary
             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => value).GetLog();
 
 
+            var configBD_Ambiente = ConfigBD.Instance(this._ambiente); 
+
             try
             {
                 Object  f = new Form ();

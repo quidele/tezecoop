@@ -51,10 +51,15 @@ namespace SGLibrary.Services
                      {
                          // Verificar la grabacion de los numeros nro_trans y nor_doc
                          context.TB_transCab.Add(unRegistro.TB_transCab);
+                         context.SaveChanges();
+
                          foreach (var item in unRegistro.TB_ObligacionesTitulares )
 	                     {
                              context.TB_ObligacionesTitulares.Add(item);
 	                     }
+
+                         context.SaveChanges();
+
                          foreach (var item in unRegistro.TB_ObligacionesCuotas  )
                          {
                              context.TB_ObligacionesCuotas.Add(item);

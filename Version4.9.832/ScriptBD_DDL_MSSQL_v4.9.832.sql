@@ -213,7 +213,7 @@ GO
 CREATE TABLE [dbo].[TB_ObligacionesCuotas](
 	[nro_trans] [int] NOT NULL,
 	[cod_tit] [int] NOT NULL,
-	[nro_cuota] [int] NULL,
+	[nro_cuota] [int] NOT NULL,
 	[fecha_vencimiento] [date] NULL,
 	[importe] [decimal](18, 2) NULL,
 	[nrLicencia] char(3),
@@ -221,7 +221,8 @@ CREATE TABLE [dbo].[TB_ObligacionesCuotas](
  CONSTRAINT [PK_TB_ObligacionesCuotas] PRIMARY KEY CLUSTERED 
 (
 	[nro_trans] ASC,
-	[cod_tit] ASC
+	[cod_tit] ASC,
+	[nro_cuota] ASC
 )WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
 ) ON [PRIMARY]
 

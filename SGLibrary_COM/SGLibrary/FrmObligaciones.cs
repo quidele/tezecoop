@@ -212,7 +212,7 @@ namespace SGLibrary
             una_TB_transCab.letra_doc = "O";
             una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
             una_Obligacion.TB_transCab = una_TB_transCab;
-
+            una_TB_transCab.fecha_mod = DateTime.Now;
             this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
                                                una_TB_transCab.bloque, "A", "Nuevo");
 

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SGLibrary.Entities;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,6 +13,7 @@ namespace SGLibrary
         public String _ambiente;
         public String _dataSource;
         public String _initialCatalog;
+        public List<Ambientes> listaAmbientes = new List<Ambientes>();
 
         private static ConfigBD _instance;
 
@@ -39,8 +41,13 @@ namespace SGLibrary
 
         private ConfigBD(String pAmbiente)
         {
+            if (pAmbiente == "") this._ambiente = "SQL_Remoto";
             this._ambiente = pAmbiente;
-            cargarArchivo(); 
+            cargarArchivo();
+            var ambiente_usuario = listaAmbientes.Where (c => c.Ambiente == pAmbiente).First ();
+            this._initialCatalog  = ambiente_usuario.InitialCatalog;
+            this._dataSource  = ambiente_usuario.DataSource;
+
         }
 
         public  static ConfigBD Instance(String pAmbiente)
@@ -54,7 +61,7 @@ namespace SGLibrary
         public void cargarArchivo()
         {
 
-         
+            var un_ambiente = new Ambientes();
             String _nombreelemento="";
             XmlTextReader reader = new XmlTextReader("ConfigBD.xml");
 					        
@@ -71,13 +78,18 @@ namespace SGLibrary
                         Console.WriteLine (reader.Value);
                         switch (_nombreelemento){
                             case "Ambiente":
-                                this._ambiente   = reader.Value;
+                                un_ambiente = new Ambientes();
+                                listaAmbientes.Add(un_ambiente);
+                                un_ambiente.Ambiente = reader.Value;
+                                // this._ambiente   = reader.Value;
                                 break;
                             case "DataSource":  
-                                this._dataSource =reader.Value;  
+                                // this._dataSource =reader.Value;
+                                un_ambiente.DataSource  = reader.Value;
                                 break;
                             case   "InitialCatalog": 
-                                this._initialCatalog  = reader.Value;
+                                // this._initialCatalog  = reader.Value;
+                                un_ambiente.InitialCatalog  = reader.Value;
                                 break;
                         }
                         break;
