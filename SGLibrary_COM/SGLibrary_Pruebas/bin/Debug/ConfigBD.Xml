@@ -9,6 +9,6 @@
   <AMBIENTE>
     <Ambiente>SQL_Remoto_Desa</Ambiente>
     <DataSource>PC0157</DataSource>
-    <InitialCatalog>dbSG2000_Prueba</InitialCatalog>
+    <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
    </AMBIENTE>
 </ConfigBD>

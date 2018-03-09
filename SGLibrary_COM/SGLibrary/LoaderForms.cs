@@ -191,6 +191,8 @@ namespace SGLibrary
                     case "FrmABMDocumentos":
                         FrmABMDocumentos f8 = new FrmABMDocumentos();
                         f8.serviceModel = new Services.ServiceDocumentos(new dbSG2000Entities ());
+                        f8.serviceModel.CajaAdm  = this._cajactiva;
+                        f8.serviceModel.Usuario  = this._usuarioActivo;
                         f8.serviceModel.usuario_mod = this.Usuario;
                         f8.serviceModel.terminal_mod = "PC01";
                         f8.serviceModel.formulario = "FrmABMDocumentos";
@@ -199,6 +201,8 @@ namespace SGLibrary
                     case "FrmObligaciones":
                         FrmObligaciones f9 = new FrmObligaciones();
                         f9.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());
+                        f9.serviceModel.CajaAdm  = this._cajactiva;
+                        f9.serviceModel.Usuario  = this._usuarioActivo;
                         f9.serviceModel.usuario_mod = this.Usuario;
                         f9.serviceModel.terminal_mod = "PC01";
                         f9.serviceModel.formulario = "FrmObligaciones";

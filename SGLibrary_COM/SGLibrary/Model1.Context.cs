@@ -26,14 +26,15 @@ namespace SGLibrary
     
     	private static string ConnectionString()
     	{
-
-
-            ConfigBD objConfig = ConfigBD.Instance("PRODUCCION");
+    
+    
+    		
+    		var configBD_Ambiente = ConfigBD.Instance(""); 
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
     		// obtenemos el datasource desde el archivo  ConfigBD.Xml
-    		sqlBuilder.DataSource = objConfig.DataSource;
+    		sqlBuilder.DataSource = configBD_Ambiente.DataSource;
     		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
-    		sqlBuilder.InitialCatalog = objConfig._initialCatalog ;
+    		sqlBuilder.InitialCatalog = configBD_Ambiente._initialCatalog ;
     		sqlBuilder.PersistSecurityInfo = false;
     		sqlBuilder.IntegratedSecurity = false;
     		sqlBuilder.UserID ="USRSG2006";
@@ -43,7 +44,7 @@ namespace SGLibrary
     
     		EntityConnectionStringBuilder entityBuilder = new EntityConnectionStringBuilder();
     		entityBuilder.ProviderConnectionString = sqlBuilder.ToString();
-        	entityBuilder.Metadata = "res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl";
+        	 entityBuilder.Metadata = "res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl";
     			
             //res://*/Model1.csdl|res://*/Model1.ssdl|res://*/Model1.msl
     

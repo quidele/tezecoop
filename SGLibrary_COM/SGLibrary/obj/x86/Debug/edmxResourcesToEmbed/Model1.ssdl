@@ -394,10 +394,11 @@
     <Key>
       <PropertyRef Name="nro_trans" />
       <PropertyRef Name="cod_tit" />
+      <PropertyRef Name="nro_cuota" />
     </Key>
     <Property Name="nro_trans" Type="int" Nullable="false" />
     <Property Name="cod_tit" Type="int" Nullable="false" />
-    <Property Name="nro_cuota" Type="int" />
+    <Property Name="nro_cuota" Type="int" Nullable="false" />
     <Property Name="fecha_vencimiento" Type="date" />
     <Property Name="importe" Type="decimal" Precision="18" Scale="2" />
     <Property Name="nrLicencia" Type="char" MaxLength="3" />

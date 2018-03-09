@@ -1,8 +1,14 @@
 <?xml version='1.0'?>
 <!-- This file represents a fragment of a book store inventory database -->
 <ConfigBD>
-  <ConnectionString DbContext="dbSG2000Entities">
-    <DataSource>MSI\SQLEXPRESS</DataSource>
+  <AMBIENTE>
+    <Ambiente>SQL_Remoto</Ambiente>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000</InitialCatalog>
-  </ConnectionString>
+  </AMBIENTE>
+  <AMBIENTE>
+    <Ambiente>SQL_Remoto_Desa</Ambiente>
+    <DataSource>PC0157</DataSource>
+    <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
+   </AMBIENTE>
 </ConfigBD>

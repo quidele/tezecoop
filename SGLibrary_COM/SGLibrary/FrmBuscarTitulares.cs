@@ -244,5 +244,10 @@ namespace SGLibrary
             }
             this.Hide();
         }
+
+        private void dataGridView1_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            seleccionarToolStripMenuItem_Click(this.seleccionarToolStripMenuItem, e);
+        }
     }
 }

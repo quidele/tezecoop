@@ -26,6 +26,20 @@ delete from TB_documentos
 
 INSERT INTO TB_documentos (cod_doc,nom_doc,usuario_mod,fecha_mod)  VALUES ('OBAP','Oblidaciones a Pagar','quidele','23/02/2018 16:55:45');
 
+-- select * from TB_OpcionesMenues
+
+delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu in ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'optObligaciones')
+ 
+delete from TB_OpcionesMenues where nmOpcionMenu = 'optObligaciones'
+
+declare @IdOpcionMenu int
+
+select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+
+INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  VALUES (@IdOpcionMenu,'Carga de Obligaciones','optObligaciones','Empleado',219,1,1,0);
+
+exec SP_GenerarNuevasOpcionesdeMenues
+
 
 
 

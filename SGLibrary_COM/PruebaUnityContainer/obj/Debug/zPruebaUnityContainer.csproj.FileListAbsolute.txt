@@ -38,5 +38,6 @@ C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.Intercepti
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.Interception.Configuration.pdb
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.RegistrationByConvention.pdb
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.ServiceLocation.pdb
+C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\zPruebaUnityContainer.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.exe
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.pdb

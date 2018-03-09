@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   165
-   ClientTop       =   810
+   ClientLeft      =   225
+   ClientTop       =   855
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -297,6 +297,9 @@ Begin VB.MDIForm Frm_Principal
       End
       Begin VB.Menu optModifComprobante 
          Caption         =   "Modificar Datos del Comprobante"
+      End
+      Begin VB.Menu optObligaciones 
+         Caption         =   "Carga de Obligaciones"
       End
    End
 End
@@ -1174,6 +1177,41 @@ Private Sub optNotasDebito_Click()
   ' analisis version 4.7
   Frm_VentaPasajes.Show 1
   
+End Sub
+
+Private Sub optObligaciones_Click()
+Dim objServiceConciliacion As Object
+
+    If Not objCajas.ObtenerCajadeADMAbierta() Then
+        MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
+        Exit Sub
+    End If
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms"
+    Set objServiceConciliacion = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "Antes de  UsuarioActivo objUsuario.dsUsuario " + objUsuario.dsUsuario
+    objServiceConciliacion.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja " + CStr(objCajas.nrCaja)
+    objServiceConciliacion.CajaActiva CStr(objCajas.nrCaja)
+    
+    objLog.Grabar_Log "Configurando el ambiente  objConfig.dsDSN " + objConfig.dsDSN
+    objServiceConciliacion.AmbienteActivo objConfig.dsDSN
+
+    objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
+    objServiceConciliacion.execFormulario "FrmObligaciones"
+            
+            
 End Sub
 
 Private Sub optPagosdelaCajaActual_Click()

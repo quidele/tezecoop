@@ -1,0 +1,441 @@
+09/03/2018 16:00:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 16:00:24 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 16:44:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 16:44:25 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 16:44:25 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 16:44:30 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 16:44:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 16:44:33 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 16:44:37 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('CAMILA%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 16:44:37 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('CAMILc%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 16:44:38 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('CAMILa%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 16:44:38 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('CAMI%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 16:44:38 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('CA%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 16:44:38 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND  TB_Usuarios.flEliminar = 0
+09/03/2018 17:35:14 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 17:35:14 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 17:35:14 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 17:35:16 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 17:35:16 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 17:35:22 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('c%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 17:35:22 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('ca%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 17:35:26 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:35:26 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:35:26 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 17:35:26 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 17:35:26 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 17:35:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 17:35:26 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:35:26 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:35:26 | Exec SP_ValorPromoRetorno
+09/03/2018 17:35:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 17:35:26 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:35:26 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:35:26 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 17:35:26 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:35:27 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+09/03/2018 17:35:27 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:35:27 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_CalculaSaldoInicial_v2_9'
+09/03/2018 17:35:27 | Exec SP_CalculaSaldoInicial_v2_9 @tpCaja_param = null ,@tpCajaImputacion_param = null ,@nrCaja_param = null 
+09/03/2018 17:35:30 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_ObtenerMaxnrCaja_v2_8'
+09/03/2018 17:35:30 | Exec SP_ObtenerMaxnrCaja_v2_8 @nrPuesto = 9 
+09/03/2018 17:35:30 |  INSERT TB_Cajas (nrCaja ,vlTotalSaldoFinal ,nrPuesto ,dsUsuario ,vlSaldoInicialPesos ,dtApertura ,dtCierre ,vlDiaDolar ,vlDiaEuro ,vlSaldoInicialEuros ,vlSaldoInicialDolares ,vlSaldoFinalRealPesos ,vlTotalSaldoInicial ,dtObservacion ,vlCierrePesos ,vlSaldoFinalRealDolares ,vlSaldoFinalRealEuros ,vlTotalSaldoFinalReal ,vlCierreDolares ,vlCierreEuros ,dsObservacion ,vlDiaReal ,flCajaAdm )  VALUES (9000000012 ,null ,9 ,'CAMILAP' ,0.00 ,'09/03/2018 17:35:27' ,null ,9.10 ,10 ,0 ,0 ,0.00 ,0.00 ,'09/03/2018 17:35:30' ,null ,0 ,0 ,null ,null ,null ,null ,3.21 ,1 )
+09/03/2018 17:35:30 | Exec sco_DiccionariodeDatos @nmtabla_param='DiccionariodeDatos'
+09/03/2018 17:35:30 |  UPDATE DiccionariodeDatos SET DiccionariodeDatos.vlPuesto9  = '9000000012'   WHERE DiccionariodeDatos.nmTabla = 'TB_Cajas'  AND  DiccionariodeDatos.nmCampo = 'nrCaja'  
+09/03/2018 17:35:31 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 17:35:31 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:35:31 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:35:31 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 17:35:31 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:35:31 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:35:31 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 17:35:32 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:35:33 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:36:16 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Conceptos'
+09/03/2018 17:36:16 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 2032    
+09/03/2018 17:36:16 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_MovimientosContables'
+09/03/2018 17:36:16 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (200 ,'Cambio de Cotización en moneda  Dolar ' ,null ,2032 ,'Cajas' ,'Dif. por Cambio de Cotizacion(+)' ,'Entrada de Dinero' ,58.24 ,0 ,0 ,null ,null ,9000000012 ,'CAMILAP' ,'09/03/2018 17:36:15' ,'Automático Version3.9' ,null ,'Caja de la Cooperativa' ,null ,null )
+09/03/2018 17:36:16 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 2032    
+09/03/2018 17:36:16 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (201 ,'Cambio de Cotización en moneda  Euro ' ,null ,2032 ,'Cajas' ,'Dif. por Cambio de Cotizacion(+)' ,'Entrada de Dinero' ,65 ,0 ,0 ,null ,null ,9000000012 ,'CAMILAP' ,'09/03/2018 17:36:16' ,'Automático Version3.9' ,null ,'Caja de la Cooperativa' ,null ,null )
+09/03/2018 17:36:16 |  SELECT TB_Conceptos.tpConcepto ,TB_Conceptos.dsConcepto ,TB_Conceptos.tpOperacion ,TB_Conceptos.tpCajaImputacion ,TB_Conceptos.tpCreadoPor  FROM TB_Conceptos  WHERE TB_Conceptos.flEliminar = 0  AND  TB_Conceptos.cdConcepto = 2032    
+09/03/2018 17:36:16 |  INSERT TB_MovimientosContables (IdMovimiento ,dsMovimiento ,IdRecibo ,cdConcepto ,tpConcepto ,dsConcepto ,tpOperacion ,vlPesos ,vlDolares ,vlEuros ,nrRecibo ,nrFactura ,nrCaja ,dsUsuario ,dtMovimiento ,dsProveedor ,IdProveedor ,tpCajaImputacion ,dsUsuarioCajaPuesto ,nrCajaPuesto )  VALUES (202 ,'Cambio de Cotización en moneda  Real ' ,null ,2032 ,'Cajas' ,'Dif. por Cambio de Cotizacion(+)' ,'Entrada de Dinero' ,10.3 ,0 ,0 ,null ,null ,9000000012 ,'CAMILAP' ,'09/03/2018 17:36:16' ,'Automático Version3.9' ,null ,'Caja de la Cooperativa' ,null ,null )
+09/03/2018 17:36:16 |  UPDATE TB_Cajas SET TB_Cajas.vlDineroDolares  = 9.1 ,TB_Cajas.vlDineroEuros  = 10 ,TB_Cajas.vlDineroReales  = 3.21 ,TB_Cajas.dsObservacionCC  = null   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:36:17 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 17:36:19 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 17:36:19 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:36:19 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:36:37 |  select distinct grupo_parametro from TB_Parametros where grupo_parametro is not null union select '(Todos)' as grupo_parametro   
+09/03/2018 17:36:37 |  SELECT TB_Parametros.dsParametro ,TB_Parametros.vlParametro ,TB_Parametros.tpParametro ,TB_Parametros.flEditable ,TB_Parametros.flEditable ,TB_Parametros.grupo_parametro  FROM TB_Parametros  WHERE  vlParametro Like ('%%%')   Order by TB_Parametros.vlParametro ASC 
+09/03/2018 17:36:37 |  SELECT TB_Parametros.dsParametro ,TB_Parametros.vlParametro ,TB_Parametros.tpParametro ,TB_Parametros.flEditable ,TB_Parametros.flEditable ,TB_Parametros.grupo_parametro  FROM TB_Parametros  WHERE  vlParametro Like ('%%%')   Order by TB_Parametros.vlParametro ASC 
+09/03/2018 17:36:39 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:36:45 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('u%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 17:36:45 |  SELECT TOP 100 TB_Usuarios.dsUsuario  FROM TB_Usuarios  WHERE TB_Usuarios.tpAcceso <> 'Puestos'  AND  TB_Usuarios.flBloqueado = 0  AND   dsUsuario Like ('us%') AND TB_Usuarios.flEliminar = 0
+09/03/2018 17:36:48 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'USRPARAM'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:36:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:36:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:36:48 | Exec SP_ValorPromoRetorno
+09/03/2018 17:36:48 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:36:48 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:36:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+09/03/2018 17:36:48 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+09/03/2018 17:36:50 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAcceso'
+09/03/2018 17:36:52 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE  tpNivelAcceso Like ('%%%')   Order by TB_NivelAcceso.tpNivelAcceso ASC 
+09/03/2018 17:36:58 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'    
+09/03/2018 17:36:58 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' 
+09/03/2018 17:37:03 |  SELECT TB_NivelAcceso.tpNivelAcceso  FROM TB_NivelAcceso  WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'    
+09/03/2018 17:37:03 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' 
+09/03/2018 17:37:07 |  UPDATE TB_NivelAcceso SET TB_NivelAcceso.tpNivelAcceso  = 'Administración'   WHERE TB_NivelAcceso.tpNivelAcceso = 'Administración'  
+09/03/2018 17:37:07 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_NivelAccesoOpcionesMenu'
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 1  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 2  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 3  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 4  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 5  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 49  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 6  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 7  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 60  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 62  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 63  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 61  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 64  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 8  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 9  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 200  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 201  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 10  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = 0   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 11  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 12  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 13  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 14  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 15  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 16  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 17  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 50  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 18  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 19  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 21  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 217  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 218  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 23  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 24  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 25  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 26  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 27  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 29  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 30  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 35  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 37  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 40  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 68  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 41  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 44  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 45  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 65  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 46  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 47  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 48  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 212  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 221  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 219  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 220  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 222  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 223  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 224  
+09/03/2018 17:37:07 |  UPDATE TB_NivelAccesoOpcionesMenu SET TB_NivelAccesoOpcionesMenu.flAcceso  = -1   WHERE TB_NivelAccesoOpcionesMenu.tpNivelAcceso = 'Administración'  AND  TB_NivelAccesoOpcionesMenu.idOpcionMenu = 225  
+09/03/2018 17:37:11 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Parametrización' ,@p_operaconcaja = 1 
+09/03/2018 17:37:20 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:37:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:37:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:37:20 | Exec SP_ValorPromoRetorno
+09/03/2018 17:37:20 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:37:20 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:37:20 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:37:21 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 17:37:21 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 17:37:21 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 17:37:21 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:37:22 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 17:37:22' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:37:22 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:37:22 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:37:22 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:37:22 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:37:22 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:37:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:37:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:37:24 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:37:24 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:37:25 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:37:25 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:37:25 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:37:25 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:37:25 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:38:09 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:38:09 | Inicializando Servicio SGLibrary.ServiceConciliacion
+09/03/2018 17:38:09 | Inicializando Servicio SGLibrary.ServiceConciliacion OK 
+09/03/2018 17:38:09 | Antes de  UsuarioActivo objUsuario.dsUsuario 
+09/03/2018 17:38:09 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:38:09 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:38:13 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:38:13 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:38:13 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:38:13 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:38:13 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:38:13 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:38:13 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:43:24 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 17:43:24 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 17:43:24 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 17:43:27 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 17:43:27 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 17:43:30 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:43:30 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:43:30 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 17:43:30 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 17:43:30 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 17:43:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 17:43:30 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:43:30 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:43:30 | Exec SP_ValorPromoRetorno
+09/03/2018 17:43:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 17:43:30 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:43:30 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:43:30 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 17:43:30 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:43:31 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 17:43:31 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 17:43:31 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 17:43:31 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:43:32 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 17:43:32' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:43:32 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 17:43:32 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:43:32 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:43:32 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 17:43:32 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:43:32 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:43:32 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 17:43:32 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:43:32 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 17:43:34 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 17:43:34 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:43:34 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:43:37 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+09/03/2018 17:43:37 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:43:37 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:43:37 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:43:37 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:43:37 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:43:37 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:43:37 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:46:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 17:46:04 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 17:46:04 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 17:46:06 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 17:46:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 17:46:09 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:46:09 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:46:09 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 17:46:09 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 17:46:09 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 17:46:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 17:46:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:46:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:46:09 | Exec SP_ValorPromoRetorno
+09/03/2018 17:46:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 17:46:09 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:46:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:46:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 17:46:09 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:46:10 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 17:46:10 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 17:46:10 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 17:46:10 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:46:11 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 17:46:11' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:46:11 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 17:46:11 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:46:11 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:46:11 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 17:46:11 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:46:11 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:46:11 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 17:46:11 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:46:11 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 17:46:13 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 17:46:13 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:46:13 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:46:15 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+09/03/2018 17:46:15 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:46:15 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:46:15 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:46:15 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:46:15 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:46:15 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:46:15 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:46:21 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:46:21 | Inicializando Servicio SGLibrary.ServiceConciliacion
+09/03/2018 17:46:21 | Inicializando Servicio SGLibrary.ServiceConciliacion OK 
+09/03/2018 17:46:21 | Antes de  UsuarioActivo objUsuario.dsUsuario 
+09/03/2018 17:46:21 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:46:21 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:46:24 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:46:24 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:46:24 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:46:24 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:46:24 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:46:24 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:46:24 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:48:04 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 17:48:04 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 17:48:04 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 17:48:07 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 17:48:07 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 17:48:09 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:48:09 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:48:09 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 17:48:09 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 17:48:09 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 17:48:09 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 17:48:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:48:09 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:48:09 | Exec SP_ValorPromoRetorno
+09/03/2018 17:48:10 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 17:48:10 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:48:10 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:48:10 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 17:48:10 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:48:11 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 17:48:11 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 17:48:11 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 17:48:11 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:48:13 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 17:48:13' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:48:13 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 17:48:13 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:48:13 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:48:13 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 17:48:13 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:48:13 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:48:13 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 17:48:13 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:48:13 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 17:48:15 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 17:48:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:48:15 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:48:16 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+09/03/2018 17:48:16 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:48:16 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:48:16 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:48:16 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:48:17 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:48:17 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:48:17 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 17:51:55 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
+09/03/2018 17:51:55 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
+09/03/2018 17:51:55 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
+09/03/2018 17:51:58 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 17:51:58 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 17:52:06 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:52:06 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 17:52:06 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 17:52:06 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 17:52:06 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 17:52:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 17:52:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 17:52:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 17:52:06 | Exec SP_ValorPromoRetorno
+09/03/2018 17:52:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 17:52:06 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 17:52:06 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 17:52:06 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 17:52:06 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 17:52:07 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 17:52:07 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 17:52:07 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 17:52:07 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:52:08 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 17:52:08' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 17:52:08 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 17:52:08 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 17:52:08 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 17:52:08 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 17:52:08 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 17:52:08 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 17:52:08 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 17:52:08 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 17:52:08 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 17:52:09 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 17:52:09 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:52:09 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 17:52:11 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_CajadeADMAbierta'
+09/03/2018 17:52:11 |  SELECT VW_CajadeADMAbierta.nrCaja ,VW_CajadeADMAbierta.vlSaldoFinalRealPesos ,VW_CajadeADMAbierta.vlSaldoFinalRealEuros ,VW_CajadeADMAbierta.vlSaldoFinalRealDolares ,VW_CajadeADMAbierta.dsUsuario  FROM VW_CajadeADMAbierta   
+09/03/2018 17:52:11 | Inicializando Servicio SGLibrary.LoaderForms
+09/03/2018 17:52:11 | Inicializando Servicio SGLibrary.LoaderForms OK 
+09/03/2018 17:52:11 | Antes de  UsuarioActivo objUsuario.dsUsuario CAMILAP
+09/03/2018 17:52:11 | Antes de  CajaActiva objCajas.nrCaja 9000000012
+09/03/2018 17:52:11 | Configurando el ambiente  objConfig.dsDSN SQL_Remoto
+09/03/2018 17:52:11 | Antes de  CajaActiva objCajas.nrCaja 
+09/03/2018 18:09:37 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 18:09:38 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 18:09:40 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 18:09:40 |  SELECT TB_Usuarios.dsUsuario ,TB_Usuarios.dspassword ,TB_Usuarios.tpAcceso ,TB_Usuarios.nmNombre ,TB_Usuarios.nmApellido ,TB_Usuarios.flBloqueado ,TB_Usuarios.tpNivelJerarquico  FROM TB_Usuarios  WHERE TB_Usuarios.dsUsuario = 'CAMILAP'  AND  TB_Usuarios.flEliminar = 0    
+09/03/2018 18:09:40 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_obtenerCajasPendientesdeAprobacion_v2_5'
+09/03/2018 18:09:40 | Exec sp_obtenerCajasPendientesdeAprobacion_v2_5 @pdsUsuario_param = 'CAMILAP' 
+09/03/2018 18:09:40 | Exec sp_obtenerCajasRechazadas_v2_9 
+09/03/2018 18:09:40 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Parametros'
+09/03/2018 18:09:40 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR EURO'    
+09/03/2018 18:09:40 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR DOLAR'    
+09/03/2018 18:09:40 | Exec SP_ValorPromoRetorno
+09/03/2018 18:09:40 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Comisiones'
+09/03/2018 18:09:40 |  SELECT TB_Comisiones.vlMontoMinimo  FROM TB_Comisiones  WHERE TB_Comisiones.tpComision = 'Retorno'  AND  TB_Comisiones.flEliminar = 0    
+09/03/2018 18:09:40 |  SELECT TB_Parametros.vlParametro  FROM TB_Parametros  WHERE TB_Parametros.dsParametro = 'VALOR REAL'    
+09/03/2018 18:09:40 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cajas'
+09/03/2018 18:09:40 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.dsUsuario = 'CAMILAP'  and  TB_Cajas.flEstado = 0  and  TB_Cajas.tpEstadoAprobacion IS NULL  and  TB_Cajas.nrcaja > 0    
+09/03/2018 18:09:42 |  SELECT TB_Cajas.nrCaja ,TB_Cajas.vlTotalSaldoFinal ,TB_Cajas.nrPuesto ,TB_Cajas.dsUsuario ,TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoFinalRealPesos ,TB_Cajas.vlTotalSaldoInicial ,TB_Cajas.dtObservacion ,TB_Cajas.vlCierrePesos ,TB_Cajas.vlSaldoFinalRealDolares ,TB_Cajas.vlSaldoFinalRealEuros ,TB_Cajas.vlTotalSaldoFinalReal ,TB_Cajas.vlCierreDolares ,TB_Cajas.vlCierreEuros ,TB_Cajas.dsObservacion ,TB_Cajas.vlDiaReal ,TB_Cajas.flEstado  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 18:09:42 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_SumaCajaADM_v2_9'
+09/03/2018 18:09:42 | Exec SP_SumaCajaADM_v2_9 @nrCaja_param = 9000000012 ,@tpCaja_param = 'CA' ,@tpCajaImputacion_param = null 
+09/03/2018 18:09:42 |  UPDATE TB_Cajas SET TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 18:09:43 |  UPDATE TB_Cajas SET TB_Cajas.nrCaja  = 9000000012 ,TB_Cajas.vlTotalSaldoFinal  = 133.54 ,TB_Cajas.nrPuesto  = 9 ,TB_Cajas.dsUsuario  = 'CAMILAP' ,TB_Cajas.vlSaldoInicialPesos  = 0.00 ,TB_Cajas.dtApertura  = '09/03/2018 17:35:27' ,TB_Cajas.dtCierre  = null ,TB_Cajas.vlDiaDolar  = 9.10 ,TB_Cajas.vlDiaEuro  = 10.00 ,TB_Cajas.vlSaldoInicialEuros  = 0.00 ,TB_Cajas.vlSaldoInicialDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealPesos  = 133.54 ,TB_Cajas.vlTotalSaldoInicial  = 0.00 ,TB_Cajas.dtObservacion  = '09/03/2018 18:09:43' ,TB_Cajas.vlCierrePesos  = 133.54 ,TB_Cajas.vlSaldoFinalRealDolares  = 0.00 ,TB_Cajas.vlSaldoFinalRealEuros  = 0.00 ,TB_Cajas.vlTotalSaldoFinalReal  = 133.54 ,TB_Cajas.vlCierreDolares  = 0 ,TB_Cajas.vlCierreEuros  = 0 ,TB_Cajas.dsObservacion  = null ,TB_Cajas.vlDiaReal  = 3.21 ,TB_Cajas.flCajaAdm  = 1   WHERE TB_Cajas.nrCaja = 9000000012  
+09/03/2018 18:09:43 | Exec sco_DiccionariodeDatos @nmtabla_param='VW_UltimaCajaAdm'
+09/03/2018 18:09:43 |  SELECT VW_UltimaCajaAdm.nrCaja ,VW_UltimaCajaAdm.vlSaldoFinalRealPesos ,VW_UltimaCajaAdm.vlSaldoFinalRealEuros ,VW_UltimaCajaAdm.vlSaldoFinalRealDolares  FROM VW_UltimaCajaAdm   
+09/03/2018 18:09:43 |  SELECT TB_Cajas.nrCaja  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012  AND  TB_Cajas.flEstado = 0    
+09/03/2018 18:09:43 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_cajapuesto_v3_9'
+09/03/2018 18:09:43 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000011 
+09/03/2018 18:09:43 | Exec sco_cajapuesto_v3_9 @nrCaja_param = 9000000012 
+09/03/2018 18:09:43 | Exec sco_DiccionariodeDatos @nmtabla_param='spu_esdifporCotizacionImputadas_v3_9'
+09/03/2018 18:09:43 | Exec spu_esdifporCotizacionImputadas_v3_9 @nrCajaAdmActual = 9000000012 
+09/03/2018 18:09:43 | Exec sco_validarVencimientosCAI_v4_1
+09/03/2018 18:09:44 | Exec sco_DiccionariodeDatos @nmtabla_param='sco_AccesosOpcionesMenu'
+09/03/2018 18:09:44 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 18:09:44 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 18:09:47 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 18:09:47 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Cupones'
+09/03/2018 18:09:47 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'    
+09/03/2018 18:09:47 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'    
+09/03/2018 18:09:47 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'    
+09/03/2018 18:09:47 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'    
+09/03/2018 18:09:49 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:13 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:18 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:20 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:22 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 
+09/03/2018 18:10:26 |  SELECT TB_Cajas.vlSaldoInicialPesos ,TB_Cajas.vlSaldoInicialDolares ,TB_Cajas.vlSaldoInicialEuros ,TB_Cajas.vlSaldoInicialReales ,TB_Cajas.vlDiaEuro ,TB_Cajas.vlDiaDolar ,TB_Cajas.vlDiaReal ,TB_Cajas.dsUsuario ,TB_Cajas.dtApertura ,TB_Cajas.dtCierre  FROM TB_Cajas  WHERE TB_Cajas.nrCaja = 9000000012    
+09/03/2018 18:10:26 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CANT_VIAJES_A_COMP'    
+09/03/2018 18:10:26 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'CTROL_CANT_VIAJES'    
+09/03/2018 18:10:26 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'COBRO_COMISION_CD_RE_OBLIGATORIA'    
+09/03/2018 18:10:26 |  SELECT tb_parametros.dsParametro ,tb_parametros.vlParametro ,tb_parametros.tpParametro ,tb_parametros.flEditable ,tb_parametros.nrTamanio ,tb_parametros.dtActualizacion  FROM tb_parametros  WHERE tb_parametros.dsParametro = 'RESTRINGE_TARJETAS'    
+09/03/2018 18:10:29 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:35 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 010  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:10:38 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 124  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:11:14 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 34  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:13:40 | Exec  sco_TB_Productos_v4_1 
+09/03/2018 18:13:41 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Usuarios'
+09/03/2018 18:13:45 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:14:49 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:14:51 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 10  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:17:05 |  SELECT TB_Cupones.cdCodBar ,TB_Cupones.nrLicencia ,TB_Cupones.nmLicenciatario ,TB_Cupones.cdCliente ,TB_Cupones.nrCupon ,TB_Cupones.tpCupon ,TB_Cupones.vlMontoCupon ,TB_Cupones.vlPagoPesos ,TB_Cupones.vlPagoEuros ,TB_Cupones.vlPagoDolares ,TB_Cupones.vlPagoReales ,TB_Cupones.vlComision ,TB_Cupones.vlRecargoTarjeta ,TB_Cupones.nrTalonarioCliente ,TB_Cupones.tpComprobanteCliente ,TB_Cupones.nrComprabanteCliente ,TB_Cupones.tpLetraCliente ,TB_Cupones.flCobradoalCliente ,TB_Cupones.dtCobradoalCliente ,TB_Cupones.flCompensado ,TB_Cupones.cdCliente ,TB_Cupones.dsLeyenda ,TB_Cupones.vlaFavordelLicenciatario ,TB_Cupones.vlafavorAdmin ,TB_Cupones.dtCupon ,TB_Cupones.dsObservacion ,TB_Cupones.vlIVA ,TB_Cupones.flAnulado ,TB_Cupones.dsLeyenda  FROM TB_Cupones  WHERE TB_Cupones.flEliminar = 0  AND  TB_Cupones.nrLicencia = 99  AND  TB_Cupones.flCompensado = 0  AND  TB_Cupones.flAnulado = 0    AND (  CONVERT(DATE, dtCupon) >= '08/01/2018' AND CONVERT(DATE, dtCupon) <= '09/03/2018'    OR tpCupon in ('Retorno','Cobro en Destino'))  
+09/03/2018 18:17:05 | Exec sco_DiccionariodeDatos @nmtabla_param='sp_cuponesCompensadosdelDia_v3_3'
+09/03/2018 18:17:05 | Exec sp_cuponesCompensadosdelDia_v3_3 @pnrLicencia = '99' 
+09/03/2018 18:17:05 | Exec sco_DiccionariodeDatos @nmtabla_param='SP_sepuedecompensar_2_0'
+09/03/2018 18:17:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/03/2018 21:03:57' 
+09/03/2018 18:17:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/03/2018 21:05:15' 
+09/03/2018 18:17:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/03/2018 21:05:32' 
+09/03/2018 18:17:05 | Exec SP_sepuedecompensar_2_0 @dtcupon_param = '09/03/2018 21:05:47' 
+09/03/2018 18:17:19 | Exec sco_AccesosOpcionesMenu @p_tpNivelAcceso = 'Administración' ,@p_operaconcaja = 1 

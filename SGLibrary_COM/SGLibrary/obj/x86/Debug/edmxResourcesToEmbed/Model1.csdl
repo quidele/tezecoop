@@ -817,10 +817,11 @@
     <Key>
       <PropertyRef Name="nro_trans" />
       <PropertyRef Name="cod_tit" />
+      <PropertyRef Name="nro_cuota" />
     </Key>
     <Property Name="nro_trans" Type="Int32" Nullable="false" />
     <Property Name="cod_tit" Type="Int32" Nullable="false" />
-    <Property Name="nro_cuota" Type="Int32" />
+    <Property Name="nro_cuota" Type="Int32" Nullable="false" />
     <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
     <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
     <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />

@@ -33,13 +33,15 @@ namespace SGLibrary
                                                     double pvlComision ) 
         {
 
-            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pvlPesos, () => pnrCaja,
+            /* var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pvlPesos, () => pnrCaja,
                                     () => pnro_trans, () => pnrLicencia, () => pnrFactura,
                                     () => pdtFecha,  () => pdsObservaccion, () => pcdCliente,
                                     () => ptpComprobanteCliente, () => pnrComprabanteCliente,
                                     () => pnrTalonarioCliente, () => ptpLetraCliente, () => pvlMontoCupon, () => pvlComision
                 ).GetLog();
             Trace.TraceInformation(paramLog);
+             * 
+             */
 
             try
             {
@@ -89,16 +91,16 @@ namespace SGLibrary
             catch (Exception e)
             {
                 Console.WriteLine(e);
-                //foreach (var eve in e.EntityValidationErrors)
-                //{
-                //    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-                //        eve.Entry.Entity.GetType().Name, eve.Entry.State);
-                //    foreach (var ve in eve.ValidationErrors)
-                //    {
-                //        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-                //            ve.PropertyName, ve.ErrorMessage);
-                //    }
-                //}
+                /*foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }*/
                 throw;
             }
             return;

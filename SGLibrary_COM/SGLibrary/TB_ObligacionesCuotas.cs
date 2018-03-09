@@ -16,7 +16,7 @@ namespace SGLibrary
     {
         public int nro_trans { get; set; }
         public int cod_tit { get; set; }
-        public Nullable<int> nro_cuota { get; set; }
+        public int nro_cuota { get; set; }
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
         public Nullable<decimal> importe { get; set; }
         public string nrLicencia { get; set; }

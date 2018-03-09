@@ -101,16 +101,10 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\CommonServiceLocator.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\JDO.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\AdvancedDataGridView.xml
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\CommonServiceLocator.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\JDO.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\es\AdvancedDataGridView.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\fr\AdvancedDataGridView.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ru\AdvancedDataGridView.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMDocumentos.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarTitulares.resources
