@@ -826,5 +826,6 @@
     <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
     <Property Name="cuotas" Type="Int16" />
     <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

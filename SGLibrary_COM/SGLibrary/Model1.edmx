@@ -550,6 +550,7 @@
           <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
           <Property Name="cuotas" Type="smallint" />
           <Property Name="periodo" Type="char" MaxLength="20" />
+          <Property Name="descripcion" Type="varchar" MaxLength="50" />
         </EntityType>
         <EntityType Name="TB_Usuarios">
           <Key>
@@ -1561,6 +1562,7 @@
           <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
           <Property Name="cuotas" Type="Int16" />
           <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2163,6 +2165,7 @@
           <EntitySetMapping Name="TB_transCab">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
               <MappingFragment StoreEntitySet="TB_transCab">
+                <ScalarProperty Name="descripcion" ColumnName="descripcion" />
                 <ScalarProperty Name="periodo" ColumnName="periodo" />
                 <ScalarProperty Name="cuotas" ColumnName="cuotas" />
                 <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />

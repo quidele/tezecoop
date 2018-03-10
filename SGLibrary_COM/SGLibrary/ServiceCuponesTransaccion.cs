@@ -25,12 +25,12 @@ namespace SGLibrary
         /// </summary>
         /// <param name="una_conciliacion"></param>
         /// <returns></returns>
-        public void GrabarCuponTransaccion(Double pvlPesos, decimal pnrCaja, String pdsUsuario, int pnro_trans, int pnrLicencia,
-                                                    String pnrFactura, DateTime pdtFecha, String pdsObservaccion,
+        public void GrabarCuponTransaccion(Double pvlPesos, decimal pnrCajaCliente, String pdsUsuario, int pnro_trans, int pnrLicencia,
+                                                    String pnrFactura, DateTime pdtFecha, String pdsLeyenda,
                                                     int  pcdCliente , String ptpComprobanteCliente ,
                                                     String pnrComprabanteCliente, String pnrTalonarioCliente,
                                                     String ptpLetraCliente, double pvlMontoCupon,
-                                                    double pvlComision ) 
+                                                    double pvlComision , String pdsObservacion,String pdsDestino, string ptpCupon ) 
         {
 
             /* var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pvlPesos, () => pnrCaja,
@@ -63,7 +63,7 @@ namespace SGLibrary
                     unCupon.dtCupon = DateTime.Now.Date ;
                     unCupon.cdCliente = pcdCliente; 
                     unCupon.nrLicencia = pnrLicencia ; //  definir que licencia vamos a utilizar para el armado de estos recibos
-                    unCupon.tpCupon = "Cobro en Destino";
+                    unCupon.tpCupon = ptpCupon ;
                     unCupon.tpComprobanteCliente = ptpComprobanteCliente;
                     unCupon.nrComprabanteCliente = pnrComprabanteCliente;
                     unCupon.nrTalonarioCliente = pnrTalonarioCliente;
@@ -79,10 +79,15 @@ namespace SGLibrary
                     unCupon.flCompensado = false;
                     unCupon.flAnulado = false;
                     unCupon.flEliminar = false;
-                    unCupon.nrCajaCliente = pnrCaja;
                     unCupon.vlIVA = 0;
                     unCupon.vlSubtotal = 0;
                     unCupon.nro_trans = pnro_trans;  // referencia muy importante
+                    unCupon.dsDestino = pdsDestino;
+                    unCupon.dsObservacion = pdsObservacion;
+                    unCupon.dsLeyenda = pdsLeyenda;
+                    unCupon.dtCobradoalCliente = pdtFecha.Date;
+                    unCupon.dsUsuario = pdsUsuario;
+                    unCupon.nrCajaCliente = pnrCajaCliente;
                     context.TB_Cupones.Add(unCupon);
                     context.SaveChanges();
 

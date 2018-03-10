@@ -79,10 +79,10 @@ namespace SGLibrary.Services
                          foreach (var item in unRegistro.TB_ObligacionesCuotas)
                          {
                              un_ServiceCuponesTransaccion.GrabarCuponTransaccion (0, decimal.Parse ( this.CajaAdm)  , this.Usuario , item.nro_trans ,
-                                                                                   int.Parse ( item.nrLicencia)  , null, unRegistro.TB_transCab.fec_doc ,
-                                                                                    unRegistro.TB_transCab.com_mov , 0 , unRegistro.TB_transCab.cod_doc ,
+                                                                                   int.Parse ( item.nrLicencia)  , null, item.fecha_vencimiento.Value.Date ,
+                                                                                    unRegistro.TB_transCab.descripcion  , 0 , unRegistro.TB_transCab.cod_doc ,
                                                                                     unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
-                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble (item.importe));
+                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble(item.importe), unRegistro.TB_transCab.com_mov, item.comentarios ,"Débito");
                          }
 
                          context.SaveChanges();
@@ -227,25 +227,22 @@ namespace SGLibrary.Services
              var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pId).GetLog();
              Trace.TraceInformation(paramLog);
 
-             // Agregar la validaciones necesarias previas a la eliminación
-             using (TransactionScope transaction = new TransactionScope())
-             {
-                 var objTB_transCab = (from c in context.TB_transCab
-                                       where c.cod_doc == pId
-                                       select c).First<TB_transCab>();
+             int nro_trans = int.Parse(pId);
+            var objTB_transCab = (from c in context.TB_transCab
+                                  where c.nro_trans == nro_trans
+                            select c).First();
 
-                 var objTB_ObligacionesTitulares = (from c in context.TB_ObligacionesTitulares
-                                                    where c.nro_trans == int.Parse(pId)
-                                                    select c);
+            var objTB_ObligacionesTitulares = (from c in context.TB_ObligacionesTitulares
+                                               where c.nro_trans == nro_trans
+                                        select c);
 
-                 var objTB_ObligacionesCuotas = (from c in context.TB_ObligacionesCuotas
-                                                 where c.nro_trans == int.Parse(pId)
-                                                 select c);
+            var objTB_ObligacionesCuotas = (from c in context.TB_ObligacionesCuotas
+                                            where c.nro_trans == nro_trans
+                                        select c);
 
-                 var un_Obligaciones = new Obligaciones(objTB_transCab, objTB_ObligacionesTitulares.ToList(), objTB_ObligacionesCuotas.ToList());
+            var un_Obligaciones = new Obligaciones(objTB_transCab, objTB_ObligacionesTitulares.ToList(), objTB_ObligacionesCuotas.ToList());
 
-                 return un_Obligaciones;
-             }
+            return un_Obligaciones;
 
          }
 
@@ -302,7 +299,7 @@ namespace SGLibrary.Services
 
              foreach (var item in p_listaTitulares)
              {
-                 for (int i = 1; i <= p_cuotas; i++)
+                 for (int i = 0; i < p_cuotas; i++)
                  {
                      switch (p_periodo)
 	                    {
@@ -328,7 +325,7 @@ namespace SGLibrary.Services
 	                    }
                      
                      // Armar TB_ObligacionesCuotasExt
-                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i, fecha_vencimiento, monto_cuota,item.nrLicencia ,""));
+                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i +1 , fecha_vencimiento, monto_cuota,item.nrLicencia ,""));
                  }
              }
              return lista_resultado;

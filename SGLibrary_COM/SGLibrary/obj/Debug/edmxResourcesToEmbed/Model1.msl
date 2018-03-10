@@ -596,6 +596,7 @@
     <EntitySetMapping Name="TB_transCab">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
         <MappingFragment StoreEntitySet="TB_transCab">
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
           <ScalarProperty Name="periodo" ColumnName="periodo" />
           <ScalarProperty Name="cuotas" ColumnName="cuotas" />
           <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />

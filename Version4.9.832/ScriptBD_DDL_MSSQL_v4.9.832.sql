@@ -124,6 +124,7 @@ CREATE TABLE [dbo].[TB_transCab](
 	[estado_registro] [char](1) NOT NULL,
 	[cuotas] [smallint] NULL,
 	[periodo] [char](20) NULL,
+	[descripcion] [varchar](50) NULL,
  CONSTRAINT [TB_transCab_1] PRIMARY KEY NONCLUSTERED 
 (
 	[nro_trans] ASC

@@ -3,7 +3,7 @@
 use dbSG2000
 go 
 
-
+----- delete from tb_cupones where nro_trans is not null
 
 set dateformat dmy 
 
@@ -18,8 +18,8 @@ delete from TB_numeradores
 
 
 
-INSERT INTO TB_numeradores (numerador,nombre,notas,valor_asignado,valor_defecto,incremento,consecutivos,modificable,usuario_mod,fecha_mod,terminal_mod,operacion_mod,estado_registro,formulario,seccion,bloque,linea)  VALUES ('nro_trans','nro_trans','nro_trans',0,null,1,'S',null,'quidele','23/02/2018','Pc0157','Nuevo','A','FrmQuidele','seccion','bloque',1);
-INSERT INTO TB_numeradores (numerador,nombre,notas,valor_asignado,valor_defecto,incremento,consecutivos,modificable,usuario_mod,fecha_mod,terminal_mod,operacion_mod,estado_registro,formulario,seccion,bloque,linea)  VALUES ('OBAP0TAE','OBAP0TAEZE',null,0,null,1,'S',null,'camilap','23/02/2018 16:55:46','PC0157','Nuevo','A','FrmABMDocumentos','seccion','bloque',1);
+INSERT INTO TB_numeradores (numerador,nombre,notas,valor_asignado,valor_defecto,incremento,consecutivos,modificable,usuario_mod,fecha_mod,terminal_mod,operacion_mod,estado_registro,formulario,seccion,bloque,linea)  VALUES ('nro_trans','nro_trans','nro_trans',1,null,1,'S',null,'quidele','23/02/2018','Pc0157','Nuevo','A','FrmQuidele','seccion','bloque',1);
+INSERT INTO TB_numeradores (numerador,nombre,notas,valor_asignado,valor_defecto,incremento,consecutivos,modificable,usuario_mod,fecha_mod,terminal_mod,operacion_mod,estado_registro,formulario,seccion,bloque,linea)  VALUES ('OBAP0TAE','OBAP0TAEZE',null,1,null,1,'S',null,'camilap','23/02/2018 16:55:46','PC0157','Nuevo','A','FrmABMDocumentos','seccion','bloque',1);
 
 
 delete from TB_documentos 

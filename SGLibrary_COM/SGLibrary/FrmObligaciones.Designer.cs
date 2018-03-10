@@ -169,7 +169,7 @@
             this.panelcarga.Controls.Add(this.modoEdicion);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(933, 530);
             this.panelcarga.TabIndex = 2;
@@ -364,7 +364,7 @@
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtDescripcion.Location = new System.Drawing.Point(9, 84);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.txtDescripcion.MaxLength = 40;
+            this.txtDescripcion.MaxLength = 50;
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(455, 22);
             this.txtDescripcion.TabIndex = 28;
@@ -487,7 +487,7 @@
             this.panelbusqueda.Controls.Add(this.fechadesde);
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Location = new System.Drawing.Point(13, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(984, 526);
             this.panelbusqueda.TabIndex = 0;
@@ -515,10 +515,13 @@
             this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.ADGVBusqueda.Name = "ADGVBusqueda";
             this.ADGVBusqueda.RowTemplate.Height = 24;
+            this.ADGVBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.ADGVBusqueda.Size = new System.Drawing.Size(950, 271);
             this.ADGVBusqueda.TabIndex = 7;
             this.ADGVBusqueda.TimeFilter = false;
             this.ADGVBusqueda.FilterStringChanged += new System.EventHandler(this.dataGridView2_FilterStringChanged);
+            this.ADGVBusqueda.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGVBusqueda_CellContentClick);
+            this.ADGVBusqueda.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ADGVBusqueda_MouseDoubleClick);
             // 
             // cbUsuariosConciliaciones
             // 

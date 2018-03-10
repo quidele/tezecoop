@@ -74,14 +74,48 @@ namespace SGLibrary
             {
                 case "EDIT":
                     {
+                        Obligaciones una_Obligacion = new Obligaciones();
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         if (this.ADGVBusqueda.SelectedRows.Count == 0) return;
                         foreach (DataGridViewRow row in this.ADGVBusqueda.SelectedRows)
                         {
                             // INSERTE SU CODIGO
-                            Obligaciones  una_Obligacion = serviceModel.ObtenerRegistroxId("Clave");
+                            una_Obligacion = serviceModel.ObtenerRegistroxId(row.Cells["nro_trans"].Value.ToString());
+                            break;
                         }
+
+                        this.txtDescripcion.Text = una_Obligacion.TB_transCab.descripcion;
+                        this.txtComMov.Text = una_Obligacion.TB_transCab.com_mov;
+                        this.cbFecdoc.Value = una_Obligacion.TB_transCab.fec_doc;
+                        this.dtpFecValor.Value = una_Obligacion.TB_transCab.fec_valor;
+
+                        /*
+                            una_TB_transCab.cod_doc =    this.txtCoddoc.Text;
+                            una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
+                            una_TB_transCab.linea = 1;
+                            una_TB_transCab.nro_trans = un_ServiceNumeradores.ObtenerValor("nro_trans");
+                            una_TB_transCab.descripcion = this.txtDescripcion.Text;
+                            una_TB_transCab.com_mov = this.txtComMov.Text; 
+                            una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod;
+                            una_TB_transCab.cod_tit = 0;
+                            una_TB_transCab.formulario = this.Name;
+                            una_TB_transCab.bloque = "cabecera";
+                            una_TB_transCab.seccion = "General";
+                            una_TB_transCab.fec_doc = this.cbFecdoc.Value.Date;
+                            una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date; // fecha de inicio 
+                            una_TB_transCab.terminal_mod = "PC01";
+                            una_TB_transCab.serie_doc = 0;
+                            una_TB_transCab.letra_doc = "O";
+                            una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
+                            una_Obligacion.TB_transCab = una_TB_transCab;
+                            una_TB_transCab.fecha_mod = DateTime.Now;
+                            this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
+                                                una_TB_transCab.bloque, "A", "Nuevo"); 
+                        */
+                        // Debemos completar la grillas   Titulares y  Lista_Vencimientos
+
+
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
                         botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         break;
@@ -113,10 +147,14 @@ namespace SGLibrary
 
                         Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
                         //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
-                        lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
-                        lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal", true, true));
+                        lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", false, false));
+                        lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal", false, false));
                         lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32", true, true));
+                        lista_campo_tipo.Add("descripcion", new ADGVFieldAdapter("descripcion", "DESCRIPCION", "descripcion", "System.String", true, true));
                         lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime", true, true));
+                        lista_campo_tipo.Add("usuario_mod", new ADGVFieldAdapter("usuario_mod", "USUARIO", "usuario_mod", "System.String", true, true));
+                        lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
+
 
                         cargarDataGridView_ADGV(this.ADGVBusqueda, listaRegistrosTrans_Cab, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
@@ -221,6 +259,7 @@ namespace SGLibrary
             una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
             una_TB_transCab.linea = 1;
             una_TB_transCab.nro_trans = un_ServiceNumeradores.ObtenerValor("nro_trans");
+            una_TB_transCab.descripcion = this.txtDescripcion.Text;
             una_TB_transCab.com_mov = this.txtComMov.Text; 
             una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod;
             una_TB_transCab.cod_tit = 0;
@@ -228,7 +267,7 @@ namespace SGLibrary
             una_TB_transCab.bloque = "cabecera";
             una_TB_transCab.seccion = "General";
             una_TB_transCab.fec_doc = this.cbFecdoc.Value.Date;
-            una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date;
+            una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date; // fecha de inicio 
             una_TB_transCab.terminal_mod = "PC01";
             una_TB_transCab.serie_doc = 0;
             una_TB_transCab.letra_doc = "O";
@@ -579,6 +618,21 @@ namespace SGLibrary
             }
             CargaGrillasTitularesCuotas();
 
+        }
+
+        private void ADGVBusqueda_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            
+        }
+
+        private void ADGVBusqueda_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+
+            var btnFind = new ToolStripButton();
+            btnFind.Tag = "EDIT";
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+
+    
         }
 
         

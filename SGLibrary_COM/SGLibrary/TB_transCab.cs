@@ -41,5 +41,6 @@ namespace SGLibrary
         public string estado_registro { get; set; }
         public Nullable<short> cuotas { get; set; }
         public string periodo { get; set; }
+        public string descripcion { get; set; }
     }
 }

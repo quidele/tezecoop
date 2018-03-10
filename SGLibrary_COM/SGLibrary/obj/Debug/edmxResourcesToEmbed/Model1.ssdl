@@ -545,6 +545,7 @@
     <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
     <Property Name="cuotas" Type="smallint" />
     <Property Name="periodo" Type="char" MaxLength="20" />
+    <Property Name="descripcion" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TB_Usuarios">
     <Key>

@@ -108,7 +108,7 @@ namespace SGLibrary.Utility
             _providedParametars.Add(new Tuple<string, Type, object>(name, type, value));
         }
 
-        /*[DebuggerHidden]*/
+        [DebuggerHidden]
         public String GetLog()
         {
             return String.Format("{0}({1})", _methodName, _paramaterLog);
