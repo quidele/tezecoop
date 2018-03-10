@@ -44,7 +44,12 @@ namespace SGLibrary.Services
         {
             return this._lista_errores;
         }
-        
+
+
+        public virtual IEnumerable<Object> obtenerUsuarios()
+        {
+            throw new NotImplementedException();
+        }
 
         public virtual IEnumerable<T> ObtenerTodosLosRegistros()
         {

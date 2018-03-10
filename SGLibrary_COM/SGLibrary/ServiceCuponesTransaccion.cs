@@ -60,9 +60,10 @@ namespace SGLibrary
                 {
 
                     unCupon.nrCupon = max.nrCupon + 1;
-                    unCupon.dtCupon = DateTime.UtcNow ;
+                    unCupon.dtCupon = DateTime.Now.Date ;
                     unCupon.cdCliente = pcdCliente; 
-                    unCupon.nrLicencia = 99 ; //  definir que licencia vamos a utilizar para el armado de estos recibos
+                    unCupon.nrLicencia = pnrLicencia ; //  definir que licencia vamos a utilizar para el armado de estos recibos
+                    unCupon.tpCupon = "Cobro en Destino";
                     unCupon.tpComprobanteCliente = ptpComprobanteCliente;
                     unCupon.nrComprabanteCliente = pnrComprabanteCliente;
                     unCupon.nrTalonarioCliente = pnrTalonarioCliente;
@@ -77,6 +78,7 @@ namespace SGLibrary
                     unCupon.flCobradoalCliente = false;
                     unCupon.flCompensado = false;
                     unCupon.flAnulado = false;
+                    unCupon.flEliminar = false;
                     unCupon.nrCajaCliente = pnrCaja;
                     unCupon.vlIVA = 0;
                     unCupon.vlSubtotal = 0;

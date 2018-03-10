@@ -422,39 +422,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_transCab">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
-        <MappingFragment StoreEntitySet="TB_transCab">
-          <ScalarProperty Name="periodo" ColumnName="periodo" />
-          <ScalarProperty Name="cuotas" ColumnName="cuotas" />
-          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
-          <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
-          <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
-          <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
-          <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
-          <ScalarProperty Name="linea" ColumnName="linea" />
-          <ScalarProperty Name="bloque" ColumnName="bloque" />
-          <ScalarProperty Name="seccion" ColumnName="seccion" />
-          <ScalarProperty Name="formulario" ColumnName="formulario" />
-          <ScalarProperty Name="serie_doc" ColumnName="serie_doc" />
-          <ScalarProperty Name="fec_doc" ColumnName="fec_doc" />
-          <ScalarProperty Name="nro_doc" ColumnName="nro_doc" />
-          <ScalarProperty Name="cod_doc" ColumnName="cod_doc" />
-          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-          <ScalarProperty Name="nro_int" ColumnName="nro_int" />
-          <ScalarProperty Name="imp_tot_ing" ColumnName="imp_tot_ing" />
-          <ScalarProperty Name="imp_ivatot_ing" ColumnName="imp_ivatot_ing" />
-          <ScalarProperty Name="imp_subtot_ing" ColumnName="imp_subtot_ing" />
-          <ScalarProperty Name="tc_ing" ColumnName="tc_ing" />
-          <ScalarProperty Name="cod_moneda_ing" ColumnName="cod_moneda_ing" />
-          <ScalarProperty Name="com_mov" ColumnName="com_mov" />
-          <ScalarProperty Name="fec_valor" ColumnName="fec_valor" />
-          <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
-          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-          <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_ObligacionesTitulares">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
         <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
@@ -623,6 +590,39 @@
           <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
           <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
           <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_transCab">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
+        <MappingFragment StoreEntitySet="TB_transCab">
+          <ScalarProperty Name="periodo" ColumnName="periodo" />
+          <ScalarProperty Name="cuotas" ColumnName="cuotas" />
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
+          <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
+          <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+          <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+          <ScalarProperty Name="linea" ColumnName="linea" />
+          <ScalarProperty Name="bloque" ColumnName="bloque" />
+          <ScalarProperty Name="seccion" ColumnName="seccion" />
+          <ScalarProperty Name="formulario" ColumnName="formulario" />
+          <ScalarProperty Name="serie_doc" ColumnName="serie_doc" />
+          <ScalarProperty Name="fec_doc" ColumnName="fec_doc" />
+          <ScalarProperty Name="nro_doc" ColumnName="nro_doc" />
+          <ScalarProperty Name="cod_doc" ColumnName="cod_doc" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+          <ScalarProperty Name="nro_int" ColumnName="nro_int" />
+          <ScalarProperty Name="imp_tot_ing" ColumnName="imp_tot_ing" />
+          <ScalarProperty Name="imp_ivatot_ing" ColumnName="imp_ivatot_ing" />
+          <ScalarProperty Name="imp_subtot_ing" ColumnName="imp_subtot_ing" />
+          <ScalarProperty Name="tc_ing" ColumnName="tc_ing" />
+          <ScalarProperty Name="cod_moneda_ing" ColumnName="cod_moneda_ing" />
+          <ScalarProperty Name="com_mov" ColumnName="com_mov" />
+          <ScalarProperty Name="fec_valor" ColumnName="fec_valor" />
+          <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

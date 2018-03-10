@@ -19,6 +19,15 @@ namespace SGLibrary.Services
         }
 
 
+         public override IEnumerable<Object> obtenerUsuarios()
+         {
+                 // Falta agregar filtro de fechas
+                 var lista = (from c in context.TB_transCab
+                                                 select new { USUARIO = c.usuario_mod }).Distinct();
+                 return lista.ToList();
+         }
+
+
          public override IEnumerable<Obligaciones> ObtenerTodosLosRegistros()
          {
              var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();

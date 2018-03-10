@@ -526,7 +526,7 @@
           <Property Name="cod_emp" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="cod_tit" Type="int" Nullable="false" />
           <Property Name="letra_doc" Type="char" MaxLength="1" />
-          <Property Name="fec_valor" Type="datetime" Nullable="false" />
+          <Property Name="fec_valor" Type="date" Nullable="false" />
           <Property Name="com_mov" Type="varchar" MaxLength="400" />
           <Property Name="cod_moneda_ing" Type="char" MaxLength="4" />
           <Property Name="tc_ing" Type="decimal" Precision="12" Scale="6" />
@@ -537,7 +537,7 @@
           <Property Name="nro_trans" Type="int" Nullable="false" />
           <Property Name="cod_doc" Type="char" MaxLength="4" Nullable="false" />
           <Property Name="nro_doc" Type="int" Nullable="false" />
-          <Property Name="fec_doc" Type="datetime" Nullable="false" />
+          <Property Name="fec_doc" Type="date" Nullable="false" />
           <Property Name="serie_doc" Type="smallint" Nullable="false" />
           <Property Name="formulario" Type="char" MaxLength="16" Nullable="false" />
           <Property Name="seccion" Type="char" MaxLength="16" Nullable="false" />
@@ -581,6 +581,30 @@
             </Principal>
             <Dependent Role="TB_ArchivoTarjetaDetalle">
               <PropertyRef Name="idarchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
+          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjeta">
+              <PropertyRef Name="id" />
+            </Principal>
+            <Dependent Role="TB_Conciliacion">
+              <PropertyRef Name="idArchivo" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="TB_ArchivoTarjetaDetalle">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="TB_ConciliacionDetalle">
+              <PropertyRef Name="IdArchivoTarjetaDetalle" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -680,6 +704,14 @@
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+          </AssociationSet>
+          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
@@ -788,12 +820,12 @@
           </AssociationSet>
           <EntitySet Name="TB_documentos" EntityType="dbSG2000Model.TB_documentos" />
           <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
-          <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
           <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
           <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
           <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
+          <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -1329,38 +1361,6 @@
           <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
           <Property Name="linea" Type="Int16" Nullable="false" />
         </EntityType>
-        <EntityType Name="TB_transCab">
-          <Key>
-            <PropertyRef Name="nro_trans" />
-          </Key>
-          <Property Name="cod_emp" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
-          <Property Name="cod_tit" Type="Int32" Nullable="false" />
-          <Property Name="letra_doc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="fec_valor" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="com_mov" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
-          <Property Name="cod_moneda_ing" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
-          <Property Name="tc_ing" Type="Decimal" Precision="12" Scale="6" />
-          <Property Name="imp_subtot_ing" Type="Decimal" Precision="14" Scale="2" />
-          <Property Name="imp_ivatot_ing" Type="Decimal" Precision="14" Scale="2" />
-          <Property Name="imp_tot_ing" Type="Decimal" Precision="14" Scale="2" />
-          <Property Name="nro_int" Type="Int32" />
-          <Property Name="nro_trans" Type="Int32" Nullable="false" />
-          <Property Name="cod_doc" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
-          <Property Name="nro_doc" Type="Int32" Nullable="false" />
-          <Property Name="fec_doc" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="serie_doc" Type="Int16" Nullable="false" />
-          <Property Name="formulario" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
-          <Property Name="seccion" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
-          <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
-          <Property Name="linea" Type="Int16" Nullable="false" />
-          <Property Name="usuario_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
-          <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
-          <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
-          <Property Name="cuotas" Type="Int16" />
-          <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
-        </EntityType>
         <EntityType Name="TB_ObligacionesTitulares">
           <Key>
             <PropertyRef Name="nro_trans" />
@@ -1529,6 +1529,38 @@
           <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
           <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
           <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_transCab">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+          </Key>
+          <Property Name="cod_emp" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="cod_tit" Type="Int32" Nullable="false" />
+          <Property Name="letra_doc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="fec_valor" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="com_mov" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+          <Property Name="cod_moneda_ing" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="tc_ing" Type="Decimal" Precision="12" Scale="6" />
+          <Property Name="imp_subtot_ing" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="imp_ivatot_ing" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="imp_tot_ing" Type="Decimal" Precision="14" Scale="2" />
+          <Property Name="nro_int" Type="Int32" />
+          <Property Name="nro_trans" Type="Int32" Nullable="false" />
+          <Property Name="cod_doc" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="nro_doc" Type="Int32" Nullable="false" />
+          <Property Name="fec_doc" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="serie_doc" Type="Int16" Nullable="false" />
+          <Property Name="formulario" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="seccion" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+          <Property Name="linea" Type="Int16" Nullable="false" />
+          <Property Name="usuario_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+          <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+          <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="cuotas" Type="Int16" />
+          <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -1957,39 +1989,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_transCab">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
-              <MappingFragment StoreEntitySet="TB_transCab">
-                <ScalarProperty Name="periodo" ColumnName="periodo" />
-                <ScalarProperty Name="cuotas" ColumnName="cuotas" />
-                <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
-                <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
-                <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
-                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
-                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
-                <ScalarProperty Name="linea" ColumnName="linea" />
-                <ScalarProperty Name="bloque" ColumnName="bloque" />
-                <ScalarProperty Name="seccion" ColumnName="seccion" />
-                <ScalarProperty Name="formulario" ColumnName="formulario" />
-                <ScalarProperty Name="serie_doc" ColumnName="serie_doc" />
-                <ScalarProperty Name="fec_doc" ColumnName="fec_doc" />
-                <ScalarProperty Name="nro_doc" ColumnName="nro_doc" />
-                <ScalarProperty Name="cod_doc" ColumnName="cod_doc" />
-                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-                <ScalarProperty Name="nro_int" ColumnName="nro_int" />
-                <ScalarProperty Name="imp_tot_ing" ColumnName="imp_tot_ing" />
-                <ScalarProperty Name="imp_ivatot_ing" ColumnName="imp_ivatot_ing" />
-                <ScalarProperty Name="imp_subtot_ing" ColumnName="imp_subtot_ing" />
-                <ScalarProperty Name="tc_ing" ColumnName="tc_ing" />
-                <ScalarProperty Name="cod_moneda_ing" ColumnName="cod_moneda_ing" />
-                <ScalarProperty Name="com_mov" ColumnName="com_mov" />
-                <ScalarProperty Name="fec_valor" ColumnName="fec_valor" />
-                <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
-                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-                <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_ObligacionesTitulares">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
               <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
@@ -2158,6 +2157,39 @@
                 <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
                 <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
                 <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_transCab">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
+              <MappingFragment StoreEntitySet="TB_transCab">
+                <ScalarProperty Name="periodo" ColumnName="periodo" />
+                <ScalarProperty Name="cuotas" ColumnName="cuotas" />
+                <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+                <ScalarProperty Name="operacion_mod" ColumnName="operacion_mod" />
+                <ScalarProperty Name="terminal_mod" ColumnName="terminal_mod" />
+                <ScalarProperty Name="fecha_mod" ColumnName="fecha_mod" />
+                <ScalarProperty Name="usuario_mod" ColumnName="usuario_mod" />
+                <ScalarProperty Name="linea" ColumnName="linea" />
+                <ScalarProperty Name="bloque" ColumnName="bloque" />
+                <ScalarProperty Name="seccion" ColumnName="seccion" />
+                <ScalarProperty Name="formulario" ColumnName="formulario" />
+                <ScalarProperty Name="serie_doc" ColumnName="serie_doc" />
+                <ScalarProperty Name="fec_doc" ColumnName="fec_doc" />
+                <ScalarProperty Name="nro_doc" ColumnName="nro_doc" />
+                <ScalarProperty Name="cod_doc" ColumnName="cod_doc" />
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+                <ScalarProperty Name="nro_int" ColumnName="nro_int" />
+                <ScalarProperty Name="imp_tot_ing" ColumnName="imp_tot_ing" />
+                <ScalarProperty Name="imp_ivatot_ing" ColumnName="imp_ivatot_ing" />
+                <ScalarProperty Name="imp_subtot_ing" ColumnName="imp_subtot_ing" />
+                <ScalarProperty Name="tc_ing" ColumnName="tc_ing" />
+                <ScalarProperty Name="cod_moneda_ing" ColumnName="cod_moneda_ing" />
+                <ScalarProperty Name="com_mov" ColumnName="com_mov" />
+                <ScalarProperty Name="fec_valor" ColumnName="fec_valor" />
+                <ScalarProperty Name="letra_doc" ColumnName="letra_doc" />
+                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+                <ScalarProperty Name="cod_emp" ColumnName="cod_emp" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
