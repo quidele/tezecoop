@@ -23,13 +23,21 @@ namespace SGLibrary.Services
             Trace.TraceInformation(paramLog);
             // Falta agregar filtro de fechas
             var listadeRegistros = (from c in context.TB_Proveedores
-                                    where c.nrLicencia != ""
-                                    orderby c.nrLicencia ascending
-                                    select c);
-            return listadeRegistros.ToList();
+                                    where (c.nrLicencia != "" && c.nrLicencia != "990" && c.nrLicencia != "900" && c.nrLicencia != "999")
+                                    select c) ;
+            return listadeRegistros.ToList().OrderBy(c => decimal.Parse(c.nrLicencia));
         }
 
-
+        public  IEnumerable<TB_Proveedores> ObtenerTodosLosTitularesConGPS()
+        {
+            var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
+            Trace.TraceInformation(paramLog);
+            // Falta agregar filtro de fechas
+            var listadeRegistros = (from c in context.TB_Proveedores
+                                    where c.flGPS == true
+                                    select c);
+            return listadeRegistros.ToList().OrderBy(c => decimal.Parse(c.nrLicencia));
+        }
 
         public override IEnumerable<TB_Proveedores> ObtenerTodosLosRegistrosConExclusion(List<TB_Proveedores> lista_a_excluir)
         {
@@ -37,10 +45,9 @@ namespace SGLibrary.Services
             //Trace.TraceInformation(paramLog);
             // Falta agregar filtro de fechas
             var listadeRegistros = (from c in context.TB_Proveedores
-                                    where (c.nrLicencia != "") &&  (!lista_a_excluir.Exists (x => x.cdProveedor == c.cdProveedor ))
-                                    orderby c.nrLicencia ascending
+                                    where (c.nrLicencia != "" && c.nrLicencia != "990" && c.nrLicencia != "900" && c.nrLicencia != "999") && (!lista_a_excluir.Exists(x => x.cdProveedor == c.cdProveedor))
                                     select c);
-            return listadeRegistros.ToList();
+            return listadeRegistros.ToList().OrderBy(c => decimal.Parse(c.nrLicencia));
         }
 
 
@@ -50,10 +57,9 @@ namespace SGLibrary.Services
             //Trace.TraceInformation(paramLog);
             // Falta agregar filtro de fechas
             var listadeRegistros = (from c in context.TB_Proveedores
-                                    where (c.nrLicencia != "") && (!lista_a_excluir.Contains  (c.cdProveedor))
-                                    orderby c.nrLicencia ascending
+                                    where (c.nrLicencia != "" && c.nrLicencia != "990" && c.nrLicencia != "900" && c.nrLicencia != "999") && (!lista_a_excluir.Contains(c.cdProveedor))
                                     select c);
-            return listadeRegistros.ToList();
+            return listadeRegistros.ToList().OrderBy(c => decimal.Parse(c.nrLicencia));
         }
 
 

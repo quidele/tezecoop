@@ -48,5 +48,6 @@ namespace SGLibrary
         public string telchofer1 { get; set; }
         public string telchofer2 { get; set; }
         public string telchofer3 { get; set; }
+        public bool flGPS { get; set; }
     }
 }

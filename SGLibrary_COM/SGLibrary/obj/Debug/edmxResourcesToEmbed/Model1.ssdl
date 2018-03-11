@@ -413,6 +413,8 @@
     <Property Name="cod_tit" Type="int" Nullable="false" />
     <Property Name="nrLicencia" Type="char" MaxLength="3" />
     <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
+    <Property Name="nmNombre" Type="varchar" MaxLength="50" />
+    <Property Name="nmApellido" Type="varchar" MaxLength="50" />
   </EntityType>
   <EntityType Name="TB_Parametros">
     <Key>
@@ -513,6 +515,7 @@
     <Property Name="telchofer1" Type="varchar" MaxLength="100" />
     <Property Name="telchofer2" Type="varchar" MaxLength="100" />
     <Property Name="telchofer3" Type="varchar" MaxLength="100" />
+    <Property Name="flGPS" Type="bit" Nullable="false" />
   </EntityType>
   <EntityType Name="TB_transCab">
     <Key>

@@ -82,6 +82,7 @@
             this.dataSet1 = new System.Data.DataSet();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new System.Data.DataSet();
+            this.titularesConGPSToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
             this.contextMenuStrip1.SuspendLayout();
             this.panelcarga.SuspendLayout();
@@ -103,35 +104,36 @@
             this.agregarLicenciaToolStripMenuItem,
             this.eliminarTitularToolStripMenuItem,
             this.agregarTodosToolStripMenuItem,
-            this.eliminarTodosToolStripMenuItem});
+            this.eliminarTodosToolStripMenuItem,
+            this.titularesConGPSToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(193, 100);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(195, 124);
             // 
             // agregarLicenciaToolStripMenuItem
             // 
             this.agregarLicenciaToolStripMenuItem.Name = "agregarLicenciaToolStripMenuItem";
-            this.agregarLicenciaToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.agregarLicenciaToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.agregarLicenciaToolStripMenuItem.Text = "Agregar Titulares";
             this.agregarLicenciaToolStripMenuItem.Click += new System.EventHandler(this.agregarLicenciaToolStripMenuItem_Click);
             // 
             // eliminarTitularToolStripMenuItem
             // 
             this.eliminarTitularToolStripMenuItem.Name = "eliminarTitularToolStripMenuItem";
-            this.eliminarTitularToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.eliminarTitularToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.eliminarTitularToolStripMenuItem.Text = "Eliminar Titular";
             this.eliminarTitularToolStripMenuItem.Click += new System.EventHandler(this.eliminarTitularToolStripMenuItem_Click);
             // 
             // agregarTodosToolStripMenuItem
             // 
             this.agregarTodosToolStripMenuItem.Name = "agregarTodosToolStripMenuItem";
-            this.agregarTodosToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.agregarTodosToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.agregarTodosToolStripMenuItem.Text = "Agregar Todos";
             this.agregarTodosToolStripMenuItem.Click += new System.EventHandler(this.agregarTodosToolStripMenuItem_Click);
             // 
             // eliminarTodosToolStripMenuItem
             // 
             this.eliminarTodosToolStripMenuItem.Name = "eliminarTodosToolStripMenuItem";
-            this.eliminarTodosToolStripMenuItem.Size = new System.Drawing.Size(192, 24);
+            this.eliminarTodosToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
             this.eliminarTodosToolStripMenuItem.Text = "Eliminar Todos";
             this.eliminarTodosToolStripMenuItem.Click += new System.EventHandler(this.eliminarTodosToolStripMenuItem_Click);
             // 
@@ -173,6 +175,7 @@
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(933, 530);
             this.panelcarga.TabIndex = 2;
+            this.panelcarga.Paint += new System.Windows.Forms.PaintEventHandler(this.panelcarga_Paint);
             // 
             // label17
             // 
@@ -505,6 +508,8 @@
             // 
             // ADGVBusqueda
             // 
+            this.ADGVBusqueda.AllowUserToAddRows = false;
+            this.ADGVBusqueda.AllowUserToDeleteRows = false;
             this.ADGVBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
@@ -513,6 +518,7 @@
             this.ADGVBusqueda.DateWithTime = false;
             this.ADGVBusqueda.Location = new System.Drawing.Point(17, 74);
             this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.ADGVBusqueda.MultiSelect = false;
             this.ADGVBusqueda.Name = "ADGVBusqueda";
             this.ADGVBusqueda.RowTemplate.Height = 24;
             this.ADGVBusqueda.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -645,6 +651,13 @@
             // 
             this.dataSet2.DataSetName = "NewDataSet";
             // 
+            // titularesConGPSToolStripMenuItem
+            // 
+            this.titularesConGPSToolStripMenuItem.Name = "titularesConGPSToolStripMenuItem";
+            this.titularesConGPSToolStripMenuItem.Size = new System.Drawing.Size(194, 24);
+            this.titularesConGPSToolStripMenuItem.Text = "Titulares Con GPS";
+            this.titularesConGPSToolStripMenuItem.Click += new System.EventHandler(this.titularesConGPSToolStripMenuItem_Click);
+            // 
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
@@ -747,5 +760,6 @@
         private System.Data.DataSet dataSet2;
         private System.Windows.Forms.ToolStripMenuItem agregarTodosToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem eliminarTodosToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem titularesConGPSToolStripMenuItem;
     }
 }

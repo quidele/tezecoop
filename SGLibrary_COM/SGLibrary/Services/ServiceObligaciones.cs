@@ -294,7 +294,7 @@ namespace SGLibrary.Services
          {
              List<TB_ObligacionesCuotasExt> lista_resultado = new List<TB_ObligacionesCuotasExt>();
 
-             var monto_cuota = p_total / p_cuotas; 
+             var monto_cuota = Math.Round   (p_total / p_cuotas ,0); 
              System.DateTime  fecha_vencimiento;
 
              foreach (var item in p_listaTitulares)

@@ -183,6 +183,8 @@ CREATE TABLE [dbo].[TB_ObligacionesTitulares](
 	[cod_tit] [int] NOT NULL,
 	[nrLicencia] [char](3) NULL,
 	[nrTelefono] [varchar](50) NULL,
+	[nmNombre] [varchar](50) NULL,
+	[nmApellido] [varchar](50) NULL,
  CONSTRAINT [PK_TB_ObligacionesTitulares] PRIMARY KEY CLUSTERED 
 (
 	[nro_trans] ASC,
@@ -234,6 +236,15 @@ GO
 IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
 								WHERE    o.type = 'U'   and o.Name = 'TB_Cupones'  and  c.Name = 'nro_trans' )
 	ALTER TABLE dbo.TB_Cupones ADD 	nro_trans int NULL;
+
+GO
+
+
+
+-- Agregamos el campo flGPS para identificar los titulares que han instalado GPS en sus vehiculos  
+IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
+								WHERE    o.type = 'U'   and o.Name = 'TB_Proveedores'  and  c.Name = 'flGPS' )
+	ALTER TABLE dbo.TB_Proveedores ADD 	flGPS bit NOT NULL  DEFAULT 0;
 
 GO
 

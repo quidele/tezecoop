@@ -4,6 +4,8 @@ use dbSG2000
 go 
 
 ----- delete from tb_cupones where nro_trans is not null
+-- UPDATE  dbo.TB_Proveedores  SET flGPS = 1 WHERE nrLicencia in ('10','124','40')
+
 
 set dateformat dmy 
 

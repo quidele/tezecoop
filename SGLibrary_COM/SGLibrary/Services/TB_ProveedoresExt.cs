@@ -23,7 +23,9 @@ namespace SGLibrary.Services
             aux.cod_tit = this.cdProveedor;
             aux.nrLicencia = this.nrLicencia;
             aux.nrTelefono = this.nrTel;
-
+            aux.nmNombre = this.nmNombre;
+            aux.nmApellido = this.nmApellido;
+            aux.nro_trans = pnro_trans;
             return aux; 
         }
 

@@ -61,7 +61,27 @@ namespace SGLibrary
         }
 
 
+        private void HabilitarDeshabilitarCampos(Boolean pEdicion){
+            this.txtCoddoc.Enabled = (!pEdicion) ; 
+            this.txtNroDoc.Enabled =  (!pEdicion); 
+            this.txtCuotas.Enabled = (!pEdicion);  
+            this.cbPeriodo.Enabled = (!pEdicion); 
+            this.txtDescripcion.Enabled =  (!pEdicion);
+            this.txtComMov.Enabled = (!pEdicion);
+            this.cbFecdoc.Enabled = (!pEdicion);
+            this.dtpFecValor.Enabled = (!pEdicion);
+            this.txtMonto.Enabled = (!pEdicion);
+            this.cbTipoArchivo.Enabled = (!pEdicion);
 
+            
+            this.agregarLicenciaToolStripMenuItem.Enabled = true;
+            this.eliminarTitularToolStripMenuItem.Enabled = true;
+            this.agregarTodosToolStripMenuItem.Enabled = (!pEdicion);
+            this.eliminarTodosToolStripMenuItem.Enabled = (!pEdicion);
+            this.titularesConGPSToolStripMenuItem.Enabled = (!pEdicion);
+
+
+        }
 
         private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
@@ -85,11 +105,24 @@ namespace SGLibrary
                             break;
                         }
 
+                        this.txtCoddoc.Text = una_Obligacion.TB_transCab.cod_doc;
+                        this.txtNroDoc.Text = una_Obligacion.TB_transCab.nro_doc.ToString();
+                        this.txtCuotas.Text = una_Obligacion.TB_transCab.cuotas.ToString();
+                        this.cbPeriodo.Text = una_Obligacion.TB_transCab.periodo.Trim();
                         this.txtDescripcion.Text = una_Obligacion.TB_transCab.descripcion;
                         this.txtComMov.Text = una_Obligacion.TB_transCab.com_mov;
                         this.cbFecdoc.Value = una_Obligacion.TB_transCab.fec_doc;
                         this.dtpFecValor.Value = una_Obligacion.TB_transCab.fec_valor;
+                        this.txtMonto.Text = una_Obligacion.TB_transCab.imp_tot_ing.ToString();
+                        HabilitarDeshabilitarCampos(true);
+                        this.modoEdicion.Text = "SI";
 
+
+                        this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia, c.nmNombre, c.nmApellido)).ToList<TB_ProveedoresExt>();
+
+                        this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia, c.comentarios));
+
+                        CargarGrillasTitularesCuotas(true);
                         /*
                             una_TB_transCab.cod_doc =    this.txtCoddoc.Text;
                             una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
@@ -114,6 +147,7 @@ namespace SGLibrary
                                                 una_TB_transCab.bloque, "A", "Nuevo"); 
                         */
                         // Debemos completar la grillas   Titulares y  Lista_Vencimientos
+
 
 
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
@@ -274,6 +308,10 @@ namespace SGLibrary
             una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
             una_Obligacion.TB_transCab = una_TB_transCab;
             una_TB_transCab.fecha_mod = DateTime.Now;
+            una_TB_transCab.cuotas =  short.Parse(this.txtCuotas.Text);
+            una_TB_transCab.periodo = this.cbPeriodo.Text ;
+            una_TB_transCab.imp_tot_ing =  decimal.Parse( this.txtMonto.Text) ;
+         
             this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
                                                una_TB_transCab.bloque, "A", "Nuevo");
 
@@ -448,10 +486,10 @@ namespace SGLibrary
             else
                 this.Titulares.AddRange (un_FrmBuscarTitulares.Titulares) ;
 
-            CargaGrillasTitularesCuotas();
+            CargarGrillasTitularesCuotas();
         }
 
-        private void CargaGrillasTitularesCuotas()
+        private void CargarGrillasTitularesCuotas(Boolean pEdicion = false)
         {
 
             // cargamos nuevamente la lista
@@ -472,7 +510,6 @@ namespace SGLibrary
 
             this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
                 decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
-
 
             // cargamos nuevamente la lista
             lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
@@ -559,7 +596,7 @@ namespace SGLibrary
                 un_titu_nuevo  = Titulares.Find(x => x.cdProveedor == un_titu_nuevo.cdProveedor);
                 Titulares.Remove(un_titu_nuevo);
             }
-            CargaGrillasTitularesCuotas();
+            CargarGrillasTitularesCuotas();
              
         }
 
@@ -584,7 +621,7 @@ namespace SGLibrary
 
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
-            CargaGrillasTitularesCuotas();
+            CargarGrillasTitularesCuotas();
         }
 
         private void eliminarTodosToolStripMenuItem_Click(object sender, EventArgs e)
@@ -616,7 +653,7 @@ namespace SGLibrary
                 TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor , item.nrLicencia,  item.nmNombre, item.nmApellido);
                 this.Titulares.Add(un_titu_nuevo);
             }
-            CargaGrillasTitularesCuotas();
+            CargarGrillasTitularesCuotas();
 
         }
 
@@ -633,6 +670,32 @@ namespace SGLibrary
             botonesForm1_ClickEventDelegateHandler(btnFind, null);
 
     
+        }
+
+        private void titularesConGPSToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Titulares.Clear();
+            this.ADGV_Titulares.DataSource = "";
+            this.Lista_Vencimientos = null;
+            this.ADGV_TitularesCuotas.DataSource = "";
+
+
+            ServiceLicenciatarios miServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
+            IEnumerable<TB_Proveedores> lista;
+            lista = miServiceLicenciatarios.ObtenerTodosLosTitularesConGPS();
+
+            foreach (var item in lista)
+            {
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor, item.nrLicencia, item.nmNombre, item.nmApellido);
+                this.Titulares.Add(un_titu_nuevo);
+            }
+            CargarGrillasTitularesCuotas();
+
+        }
+
+        private void panelcarga_Paint(object sender, PaintEventArgs e)
+        {
+
         }
 
         

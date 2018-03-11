@@ -18,5 +18,7 @@ namespace SGLibrary
         public int cod_tit { get; set; }
         public string nrLicencia { get; set; }
         public string nrTelefono { get; set; }
+        public string nmNombre { get; set; }
+        public string nmApellido { get; set; }
     }
 }
