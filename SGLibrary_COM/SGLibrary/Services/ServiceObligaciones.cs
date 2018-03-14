@@ -127,7 +127,6 @@ namespace SGLibrary.Services
                  throw new ServiceObligacionesException("No se puede modificar el registrio ya que existen Comprobantes compensados", listaCuponesCompensados);
              }  
 
-
              // Agregar la validaciones necesarias previas a la eliminación
              using (TransactionScope transaction = new TransactionScope())
              {
@@ -153,11 +152,10 @@ namespace SGLibrary.Services
                  {
                      context.TB_ObligacionesCuotas.Remove  (item);
                  }
-
-             }
-
-
-         }
+                 context.SaveChanges();
+                 transaction.Complete();
+             }// Cierra el  TransactionScope
+         } // Cierra metodo AnularRegistro
 
          
 
@@ -170,52 +168,75 @@ namespace SGLibrary.Services
              /* VALIDAR QUE NO SE ALLA COMPENSADO NINGUNA CUOTA */
              ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion (context);
 
-             var listaCuponesCompensados = un_ServiceCuponesTransaccion.existenComprobantesCompensados( unRegistro.TB_transCab.nro_trans);
-             if (listaCuponesCompensados.Count() != 0  ) {
-                  // avisar mediante excepcion 
-                 throw new ServiceObligacionesException("No se puede modificar el registrio ya que existen Comprobantes compensados", listaCuponesCompensados); 
-             }  
-
-
              using (TransactionScope transaction = new TransactionScope())
              {
                  
-                 var objTB_transCab = (from c in context.TB_transCab
+                 var objTB_transCabBD = (from c in context.TB_transCab
                                        where c.nro_trans == unRegistro.TB_transCab.nro_trans
                                        select c).First<TB_transCab>();
 
-                 var objTB_ObligacionesTitulares = (from c in context.TB_ObligacionesTitulares
+                 var objTB_ObligacionesTitularesBD = (from c in context.TB_ObligacionesTitulares
                                                     where c.nro_trans == unRegistro.TB_transCab.nro_trans
-                                                    select c);
+                                                      select c).ToList<TB_ObligacionesTitulares>();
 
-                 var objTB_ObligacionesCuotas = (from c in context.TB_ObligacionesCuotas
-                                                 where c.nro_trans == unRegistro.TB_transCab.nro_trans
-                                                 select c);
 
-                 foreach (var item in objTB_ObligacionesTitulares)
-                 {
-                     context.TB_ObligacionesTitulares.Remove(item);
-                 }
-                 foreach (var item in objTB_ObligacionesCuotas)
-                 {
-                     context.TB_ObligacionesCuotas.Remove(item);
-                 }
+                 // Lista para realizar la bajas -- // para las licencias de la BD no incluidas en la IU hay que realizar una baja 
+                 var ListaBajasTB_ObligacionesTitularesBD = objTB_ObligacionesTitularesBD.Where(c => !unRegistro.TB_ObligacionesTitulares.Select(fc => fc.nrLicencia).Contains(c.nrLicencia));
 
-                 
-                 // Damos de alta los nuevas relaciones
-                 foreach (var item in unRegistro.TB_ObligacionesTitulares)
-                 {
-                     context.TB_ObligacionesTitulares.Add(item);
-                 }
-                 foreach (var item in unRegistro.TB_ObligacionesCuotas)
-                 {
-                     context.TB_ObligacionesCuotas.Add(item);
-                 }
+                 // Listas para realizar nueva altas    -- // para las licencias de la IU no incluidas en la BD hay que realizar una alta 
+                 var ListaAltasTB_ObligacionesTitularesIU = unRegistro.TB_ObligacionesTitulares.Where(c => !objTB_ObligacionesTitularesBD.Select(fc => fc.nrLicencia).Contains(c.nrLicencia));
 
-                 context.SaveChanges(); 
+                
+                 // Validaciones sobres las bajas 
+                 foreach (var item in ListaBajasTB_ObligacionesTitularesBD)
+                 {
+                     TB_Cupones un_TB_CuponesBD = (from c in context.TB_Cupones
+                                                        where c.nro_trans == item.nro_trans && c.nrLicencia ==  int.Parse(item.nrLicencia)
+                                                        select c).First<TB_Cupones>();
+
+                     if (un_TB_CuponesBD.flCompensado) // verificamos si 
+                     {
+                         throw new ServiceObligacionesException(string.Format("No se puede eliminar la licencia {0} porque ya que existen comprobantes compensados", item.nrLicencia)); 
+                     }
+
+                     var listaTB_ObligacionesCuotasBD = (from c in context.TB_ObligacionesCuotas
+                                                       where c.nro_trans == unRegistro.TB_transCab.nro_trans && c.nrLicencia == item.nrLicencia
+                                                       select c);
+
+                     foreach (var itemCuotas in listaTB_ObligacionesCuotasBD) 
+                     {
+                         context.TB_ObligacionesCuotas.Remove(itemCuotas);// Eliminamos la info de cuotas
+                     }
+                     context.TB_Cupones.Remove(un_TB_CuponesBD); // Eliminamos los cupones asociados
+                     context.TB_ObligacionesTitulares.Remove(item); // Eliminamos los titulares asociados
+                 }  // Fin de la Rutina de Eliminación
+
+                 // dar de alta la lista de ListaAltasTB_ObligacionesTitularesIU con sus respectivas vencimientos de cuotas
+                 // tambien realizar la grabacion de la tabla CUPONES
+                 foreach (var itemAlta in ListaAltasTB_ObligacionesTitularesIU)
+                 {
+                     context.TB_ObligacionesTitulares.Add(itemAlta);
+                     // obtenemos la lista de vencimientos / cuotas del titular
+                     var listaAltaCuotas = unRegistro.TB_ObligacionesCuotas.Where(c => c.nrLicencia == itemAlta.nrLicencia).ToList<TB_ObligacionesCuotas>();
+                     foreach (TB_ObligacionesCuotas itemAltaCuotas in listaAltaCuotas)  
+                     {
+                         context.TB_ObligacionesCuotas.Add(itemAltaCuotas);
+                         un_ServiceCuponesTransaccion.GrabarCuponTransaccion(0, decimal.Parse(this.CajaAdm), this.Usuario, itemAltaCuotas.nro_trans,
+                                                                           int.Parse(itemAltaCuotas.nrLicencia), null, itemAltaCuotas.fecha_vencimiento.Value.Date,
+                                                                            unRegistro.TB_transCab.descripcion, 0, unRegistro.TB_transCab.cod_doc,
+                                                                            unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
+                                                                            unRegistro.TB_transCab.letra_doc, Convert.ToDouble(itemAltaCuotas.importe),
+                                                                            Convert.ToDouble(itemAltaCuotas.importe), unRegistro.TB_transCab.com_mov,
+                                                                            itemAltaCuotas.comentarios, "Débito");
+                     }
+                     
+                 } // Fin Rutina de alta
+
+                 context.SaveChanges();
                  transaction.Complete();
+                 return;
 
-             }
+             } // transaction Scope
 
              
          } // Cierra Metodo ModificarRegistro 

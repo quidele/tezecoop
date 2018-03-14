@@ -45,4 +45,35 @@ exec SP_GenerarNuevasOpcionesdeMenues
 
 
 
+--------------------------------------
+--!! ALTA DE NUEVOS CONCEPTOS    !!---
+--------------------------------------
+
+
+delete from TB_Conceptos  where cdConcepto = 3000
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES (3000,'Cajas','Débito x Obligación',0,'Ingreso de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema',1,1,0,0,0,0,0);
+
+
+delete from TB_Conceptos  where cdConcepto = 3001
+
+INSERT INTO TB_Conceptos (cdConcepto,tpConcepto,dsConcepto,vlConcepto,tpOperacion,dtActualizacion,
+flEliminar,tpCajaImputacion,tpCreadoPor,
+flSumaenCajaAdm,
+flSumaenCajaCooperativa,
+flSumaenCajaLicenciatarios,
+flOcultadoenCajaAdm,
+flOcultadoCajaLicenciatario,
+flOcultadoCajaCooperativa,
+flOcultadoenRegistracion)  VALUES 
+(3001,'Cajas','Crédito x Obligación',0, 'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,0,0,0);
+
 

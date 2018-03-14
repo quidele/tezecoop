@@ -123,7 +123,17 @@ namespace SGLibrary
 
             return lista ;
         }  // cierra metodo existenComprobantesCompensados
-        
+
+        // tambien verificamos por trans y licencia
+        public List<TB_Cupones> existenComprobantesCompensados(int pnro_trans, int pnrLicencia)
+        {
+            var lista = (from p in context.TB_Cupones
+                         where (p.nro_trans == pnro_trans && p.nrLicencia == pnrLicencia && 
+                                       p.flCompensado == true)
+                         select p).OrderByDescending(p => p.nrCupon).ToList<TB_Cupones>();
+
+            return lista;
+        }  // cierra metodo existenComprobantesCompensados
 
     } // CIERRA CLASE 
 
