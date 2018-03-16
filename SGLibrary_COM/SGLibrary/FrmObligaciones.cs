@@ -94,6 +94,7 @@ namespace SGLibrary
             {
                 case "EDIT":
                     {
+                        // deberia llegar inyectado
                         Obligaciones una_Obligacion = new Obligaciones();
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
@@ -105,6 +106,7 @@ namespace SGLibrary
                             break;
                         }
 
+                        this.txtNroTrans.Text = una_Obligacion.TB_transCab.nro_trans.ToString(); 
                         this.txtCoddoc.Text = una_Obligacion.TB_transCab.cod_doc;
                         this.txtNroDoc.Text = una_Obligacion.TB_transCab.nro_doc.ToString();
                         this.txtCuotas.Text = una_Obligacion.TB_transCab.cuotas.ToString();
@@ -117,9 +119,7 @@ namespace SGLibrary
                         HabilitarDeshabilitarCampos(true);
                         this.modoEdicion.Text = "SI";
 
-
                         this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia, c.nmNombre, c.nmApellido)).ToList<TB_ProveedoresExt>();
-
                         this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia, c.comentarios));
 
                         CargarGrillasTitularesCuotas(true);
@@ -148,8 +148,6 @@ namespace SGLibrary
                         */
                         // Debemos completar la grillas   Titulares y  Lista_Vencimientos
 
-
-
                         //botonesForm1.configMododeEdicion(ABMBotonesForm.VIEW);
                         botonesForm1.configMododeEdicion(ABMBotonesForm.EDIT);
                         break;
@@ -160,15 +158,17 @@ namespace SGLibrary
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
                         // INSERTE SU CODIGO
-                        // Recuperar el documento OBAP con el numerador correspondiente  
+                        // Recuperar el documento OBAP con el numerador correspondiente  -- // deberia llegar inyectado Ioc
                         ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities ());
-
                         this.txtCoddoc.Text =  "OBAP";
-                        this.txtSerieDoc.Text = "0";
+                        this.txtSerieDoc.Text = "0";                                        // deberia llegar inyectado Ioc
                         var txtnumerador = this.txtCoddoc.Text + this.txtSerieDoc.Text + (new ServiceParametros()).ObtenerParametro("empresa");
                         this.txtNroDoc.Text = un_ServiceNumeradores.ObtenerValor(txtnumerador).ToString();
                         this.cbFecdoc.Value = DateTime.Now.Date;
                         this.dtpFecValor.Value = DateTime.Now.Date;
+                        HabilitarDeshabilitarCampos(false);
+                        this.ADGV_Titulares.Columns.Clear();
+                        this.ADGV_TitularesCuotas.Columns.Clear();
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
                         break;
                     }
@@ -207,12 +207,14 @@ namespace SGLibrary
                         {
                             // Realizar validaciones 
                             if (!(validarIngresodeDatosCabecera())) return;
-                            if (!(validarIngresodeGrilla())) return; 
-                            if (!altaRegistro()) break;
+                            if (!(validarIngresodeGrilla())) return;
+                            if (!altaRegistro()) return;
                         }
                         else
                         {
-                            if (!ediciondeRegistro()) break;
+                            if (!(validarIngresodeDatosCabecera())) return;
+                            if (!(validarIngresodeGrilla())) return;
+                            if (!ediciondeRegistro()) return;
                         }
 
                         //cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
@@ -220,6 +222,7 @@ namespace SGLibrary
                         var btnFind = new ToolStripButton();
                         btnFind.Tag = "FIND";
                         MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
                         botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
@@ -229,6 +232,9 @@ namespace SGLibrary
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
                         botonesForm1.configMododeEdicion(ABMBotonesForm.CANCEL);
+                        var btnFind = new ToolStripButton();
+                        btnFind.Tag = "FIND";
+                        botonesForm1_ClickEventDelegateHandler(btnFind, null);
                         break;
                     }
 
@@ -237,11 +243,19 @@ namespace SGLibrary
                         this.modoEdicion.Text = "NO";
                         foreach (DataGridViewRow row in ADGVBusqueda.SelectedRows)
                         {
-                            Obligaciones  unRegistro = serviceModel.ObtenerRegistro(row.Cells["ID"].Value.ToString());
+                            Obligaciones unRegistro = serviceModel.ObtenerRegistroxId(row.Cells["nro_trans"].Value.ToString());
                             DialogResult dialogResult = MessageBox.Show("Confirma la eliminación del registro ", "Atención", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                             if (dialogResult == DialogResult.No) break;
                             // COMPLETAR ELIMINACION
-                            //serviceModel.AnularRegistro(unRegistro);
+                            try
+                            {
+                                serviceModel.AnularRegistro(unRegistro);
+                            }
+                            catch (ServiceObligacionesException ex)
+                            {
+                                MessageBox.Show("Error: " + ex.Message , "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                return; 
+                            }
                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         }
                         var btnFind = new ToolStripButton();
@@ -283,56 +297,61 @@ namespace SGLibrary
 
         public Boolean altaRegistro()
         {
-
-            Obligaciones una_Obligacion = new Obligaciones();
-            
-            ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities());
-
-            TB_transCab una_TB_transCab =  new TB_transCab (); 
-            una_TB_transCab.cod_doc =    this.txtCoddoc.Text;
-            una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
-            una_TB_transCab.linea = 1;
-            una_TB_transCab.nro_trans = un_ServiceNumeradores.ObtenerValor("nro_trans");
-            una_TB_transCab.descripcion = this.txtDescripcion.Text;
-            una_TB_transCab.com_mov = this.txtComMov.Text; 
-            una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod;
-            una_TB_transCab.cod_tit = 0;
-            una_TB_transCab.formulario = this.Name;
-            una_TB_transCab.bloque = "cabecera";
-            una_TB_transCab.seccion = "General";
-            una_TB_transCab.fec_doc = this.cbFecdoc.Value.Date;
-            una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date; // fecha de inicio 
-            una_TB_transCab.terminal_mod = "PC01";
-            una_TB_transCab.serie_doc = 0;
-            una_TB_transCab.letra_doc = "O";
-            una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
-            una_Obligacion.TB_transCab = una_TB_transCab;
-            una_TB_transCab.fecha_mod = DateTime.Now;
-            una_TB_transCab.cuotas =  short.Parse(this.txtCuotas.Text);
-            una_TB_transCab.periodo = this.cbPeriodo.Text ;
-            una_TB_transCab.imp_tot_ing =  decimal.Parse( this.txtMonto.Text) ;
+            try
+            {
+                Obligaciones una_Obligacion = new Obligaciones();
+                // En realidad ServiceNumeradores deberia llegar inyectado
+                ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities());
+                TB_transCab una_TB_transCab =  new TB_transCab (); 
+                una_TB_transCab.cod_doc =    this.txtCoddoc.Text;
+                una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
+                una_TB_transCab.linea = 1;
+                una_TB_transCab.nro_trans = un_ServiceNumeradores.ObtenerValor("nro_trans");
+                una_TB_transCab.descripcion = this.txtDescripcion.Text;
+                una_TB_transCab.com_mov = this.txtComMov.Text; 
+                una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod;
+                una_TB_transCab.cod_tit = 0;
+                una_TB_transCab.formulario = this.Name;
+                una_TB_transCab.bloque = "cabecera";
+                una_TB_transCab.seccion = "General";
+                una_TB_transCab.fec_doc = this.cbFecdoc.Value.Date;
+                una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date; // fecha de inicio 
+                una_TB_transCab.terminal_mod = "PC01";
+                una_TB_transCab.serie_doc = 0;
+                una_TB_transCab.letra_doc = "O";
+                una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
+                una_Obligacion.TB_transCab = una_TB_transCab;
+                una_TB_transCab.fecha_mod = DateTime.Now;
+                una_TB_transCab.cuotas =  short.Parse(this.txtCuotas.Text);
+                una_TB_transCab.periodo = this.cbPeriodo.Text ;
+                una_TB_transCab.imp_tot_ing =  decimal.Parse( this.txtMonto.Text) ;
          
-            this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
-                                               una_TB_transCab.bloque, "A", "Nuevo");
+                this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
+                                                   una_TB_transCab.bloque, "A", "Nuevo");
 
-            List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
-            foreach (TB_ProveedoresExt item in this.Titulares )
-            {
-                una_Lista_TB_ObligacionesTitulares.Add(item.ToTB_ObligacionesTitulares(una_TB_transCab.nro_trans)); 
+                List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
+                foreach (TB_ProveedoresExt item in this.Titulares )
+                {
+                    una_Lista_TB_ObligacionesTitulares.Add(item.ToTB_ObligacionesTitulares(una_TB_transCab.nro_trans)); 
+                }
+                una_Obligacion.TB_ObligacionesTitulares = una_Lista_TB_ObligacionesTitulares;
+
+
+                List<TB_ObligacionesCuotas> una_Lista_TB_ObligacionesCuotas = new List<TB_ObligacionesCuotas>();
+                foreach (TB_ObligacionesCuotasExt item in Lista_Vencimientos)
+                {
+                    una_Lista_TB_ObligacionesCuotas.Add ( item.ToTB_ObligacionesCuotas(una_TB_transCab.nro_trans));
+                }
+                una_Obligacion.TB_ObligacionesCuotas = una_Lista_TB_ObligacionesCuotas; 
+
+                // Deberia emitar excepciones para determinar el comportamiento de la grabacion
+                this.serviceModel.AgregarRegistro(una_Obligacion);
             }
-            una_Obligacion.TB_ObligacionesTitulares = una_Lista_TB_ObligacionesTitulares;
-
-
-            List<TB_ObligacionesCuotas> una_Lista_TB_ObligacionesCuotas = new List<TB_ObligacionesCuotas>();
-            foreach (TB_ObligacionesCuotasExt item in Lista_Vencimientos)
+            catch (ServiceObligacionesException ex)
             {
-                una_Lista_TB_ObligacionesCuotas.Add ( item.ToTB_ObligacionesCuotas(una_TB_transCab.nro_trans));
+                MessageBox.Show(ex.Message , "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return false;
             }
-            una_Obligacion.TB_ObligacionesCuotas = una_Lista_TB_ObligacionesCuotas; 
-
-            // Deberia emitar excepciones para determinar el comportamiento de la grabacion
-            this.serviceModel.AgregarRegistro(una_Obligacion);
-
             return true;
         }
 
@@ -342,12 +361,56 @@ namespace SGLibrary
 
             try
             {
-                // serviceModel.ModificarRegistro(new Object());
-            }
-            catch (Exception ex)
-            {
+                Obligaciones una_Obligacion = new Obligaciones();
+                ServiceNumeradores un_ServiceNumeradores = new ServiceNumeradores(new dbSG2000Entities());
+                TB_transCab una_TB_transCab = new TB_transCab();
+                una_TB_transCab.cod_doc = this.txtCoddoc.Text;
+                una_TB_transCab.nro_doc = int.Parse(this.txtNroDoc.Text);
+                una_TB_transCab.linea = 1;
+                una_TB_transCab.nro_trans = int.Parse (this.txtNroTrans.Text);
+                una_TB_transCab.descripcion = this.txtDescripcion.Text;
+                una_TB_transCab.com_mov = this.txtComMov.Text;
+                una_TB_transCab.usuario_mod = this.serviceModel.usuario_mod; // este podriar ser distinto a de alta
+                una_TB_transCab.cod_tit = 0;
+                una_TB_transCab.formulario = this.Name;
+                una_TB_transCab.bloque = "cabecera";
+                una_TB_transCab.seccion = "General";
+                una_TB_transCab.fec_doc = this.cbFecdoc.Value.Date;
+                una_TB_transCab.fec_valor = this.dtpFecValor.Value.Date; // fecha de inicio 
+                una_TB_transCab.terminal_mod = "PC01";
+                una_TB_transCab.serie_doc = 0;
+                una_TB_transCab.letra_doc = "O";
+                una_TB_transCab.cod_emp = ServiceParametros.ObtenerParametroBD("empresa");
+                una_Obligacion.TB_transCab = una_TB_transCab;
+                una_TB_transCab.fecha_mod = DateTime.Now;
+                una_TB_transCab.cuotas = short.Parse(this.txtCuotas.Text);
+                una_TB_transCab.periodo = this.cbPeriodo.Text;
+                una_TB_transCab.imp_tot_ing = decimal.Parse(this.txtMonto.Text);
 
-                MessageBox.Show(ex.Message + serviceModel.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
+                                                   una_TB_transCab.bloque, "A", "Nuevo");
+
+                List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
+                foreach (TB_ProveedoresExt item in this.Titulares)
+                {
+                    una_Lista_TB_ObligacionesTitulares.Add(item.ToTB_ObligacionesTitulares(una_TB_transCab.nro_trans));
+                }
+                una_Obligacion.TB_ObligacionesTitulares = una_Lista_TB_ObligacionesTitulares;
+
+
+                List<TB_ObligacionesCuotas> una_Lista_TB_ObligacionesCuotas = new List<TB_ObligacionesCuotas>();
+                foreach (TB_ObligacionesCuotasExt item in Lista_Vencimientos)
+                {
+                    una_Lista_TB_ObligacionesCuotas.Add(item.ToTB_ObligacionesCuotas(una_TB_transCab.nro_trans));
+                }
+                una_Obligacion.TB_ObligacionesCuotas = una_Lista_TB_ObligacionesCuotas;
+
+                // Deberia emitar excepciones para determinar el comportamiento de la grabacion
+                this.serviceModel.ModificarRegistro (una_Obligacion);                                            
+            }
+            catch (ServiceObligacionesException ex)
+            {
+                MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
             return true;

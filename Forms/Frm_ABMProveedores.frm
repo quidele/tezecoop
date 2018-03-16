@@ -1,7 +1,7 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
-Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "tabctl32.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{BDC217C8-ED16-11CD-956C-0000C04E4C0A}#1.1#0"; "TABCTL32.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMProveedores 
    Caption         =   "Maestro de Proveedores"
    ClientHeight    =   7725
@@ -316,68 +316,113 @@ Begin VB.Form Frm_ABMProveedores
          Tab(0).Control(8).Enabled=   0   'False
          Tab(0).Control(9)=   "lblLabels(16)"
          Tab(0).Control(9).Enabled=   0   'False
-         Tab(0).Control(10)=   "DTPicker1(1)"
+         Tab(0).Control(10)=   "lblLabels(3)"
          Tab(0).Control(10).Enabled=   0   'False
-         Tab(0).Control(11)=   "txtFields(5)"
+         Tab(0).Control(11)=   "DTPicker1(1)"
          Tab(0).Control(11).Enabled=   0   'False
-         Tab(0).Control(12)=   "txtFields(6)"
+         Tab(0).Control(12)=   "txtFields(5)"
          Tab(0).Control(12).Enabled=   0   'False
-         Tab(0).Control(13)=   "txtFields(7)"
+         Tab(0).Control(13)=   "txtFields(6)"
          Tab(0).Control(13).Enabled=   0   'False
-         Tab(0).Control(14)=   "txtFields(10)"
+         Tab(0).Control(14)=   "txtFields(7)"
          Tab(0).Control(14).Enabled=   0   'False
-         Tab(0).Control(15)=   "txtFields(11)"
+         Tab(0).Control(15)=   "txtFields(10)"
          Tab(0).Control(15).Enabled=   0   'False
-         Tab(0).Control(16)=   "DTPicker1(0)"
+         Tab(0).Control(16)=   "txtFields(11)"
          Tab(0).Control(16).Enabled=   0   'False
-         Tab(0).Control(17)=   "txtFields(1)"
+         Tab(0).Control(17)=   "DTPicker1(0)"
          Tab(0).Control(17).Enabled=   0   'False
-         Tab(0).Control(18)=   "txtFields(8)"
+         Tab(0).Control(18)=   "txtFields(1)"
          Tab(0).Control(18).Enabled=   0   'False
-         Tab(0).Control(19)=   "txtFields(9)"
+         Tab(0).Control(19)=   "txtFields(8)"
          Tab(0).Control(19).Enabled=   0   'False
-         Tab(0).Control(20)=   "txtFields(18)"
+         Tab(0).Control(20)=   "txtFields(9)"
          Tab(0).Control(20).Enabled=   0   'False
-         Tab(0).Control(21)=   "txtFields(19)"
+         Tab(0).Control(21)=   "txtFields(18)"
          Tab(0).Control(21).Enabled=   0   'False
-         Tab(0).ControlCount=   22
+         Tab(0).Control(22)=   "txtFields(19)"
+         Tab(0).Control(22).Enabled=   0   'False
+         Tab(0).Control(23)=   "chkFields(1)"
+         Tab(0).Control(23).Enabled=   0   'False
+         Tab(0).ControlCount=   24
          TabCaption(1)   =   "Datos &Comerciales"
          TabPicture(1)   =   "Frm_ABMProveedores.frx":3642
          Tab(1).ControlEnabled=   0   'False
          Tab(1).Control(0)=   "lblLabels(20)"
+         Tab(1).Control(0).Enabled=   0   'False
          Tab(1).Control(1)=   "lblLabels(14)"
+         Tab(1).Control(1).Enabled=   0   'False
          Tab(1).Control(2)=   "lblLabels(17)"
+         Tab(1).Control(2).Enabled=   0   'False
          Tab(1).Control(3)=   "lblLabels(21)"
+         Tab(1).Control(3).Enabled=   0   'False
          Tab(1).Control(4)=   "lblLabels(23)"
+         Tab(1).Control(4).Enabled=   0   'False
          Tab(1).Control(5)=   "lblLabels(18)"
+         Tab(1).Control(5).Enabled=   0   'False
          Tab(1).Control(6)=   "lblLabels(22)"
+         Tab(1).Control(6).Enabled=   0   'False
          Tab(1).Control(7)=   "DTPicker1(2)"
+         Tab(1).Control(7).Enabled=   0   'False
          Tab(1).Control(8)=   "txtFields(14)"
+         Tab(1).Control(8).Enabled=   0   'False
          Tab(1).Control(9)=   "txtFields(15)"
+         Tab(1).Control(9).Enabled=   0   'False
          Tab(1).Control(10)=   "txtFields(17)"
+         Tab(1).Control(10).Enabled=   0   'False
          Tab(1).Control(11)=   "txtFields(24)"
+         Tab(1).Control(11).Enabled=   0   'False
          Tab(1).Control(12)=   "txtFields(12)"
+         Tab(1).Control(12).Enabled=   0   'False
          Tab(1).Control(13)=   "chkFields(25)"
+         Tab(1).Control(13).Enabled=   0   'False
          Tab(1).Control(14)=   "txtFields(20)"
+         Tab(1).Control(14).Enabled=   0   'False
          Tab(1).ControlCount=   15
          TabCaption(2)   =   "Teléfonos y Otros Datos"
          TabPicture(2)   =   "Frm_ABMProveedores.frx":37A0
          Tab(2).ControlEnabled=   0   'False
          Tab(2).Control(0)=   "Label5"
+         Tab(2).Control(0).Enabled=   0   'False
          Tab(2).Control(1)=   "Label6"
+         Tab(2).Control(1).Enabled=   0   'False
          Tab(2).Control(2)=   "Label7"
+         Tab(2).Control(2).Enabled=   0   'False
          Tab(2).Control(3)=   "Label8"
+         Tab(2).Control(3).Enabled=   0   'False
          Tab(2).Control(4)=   "Label9"
+         Tab(2).Control(4).Enabled=   0   'False
          Tab(2).Control(5)=   "lblLabels(2)"
+         Tab(2).Control(5).Enabled=   0   'False
          Tab(2).Control(6)=   "txtFields(21)"
+         Tab(2).Control(6).Enabled=   0   'False
          Tab(2).Control(7)=   "txtFields(22)"
+         Tab(2).Control(7).Enabled=   0   'False
          Tab(2).Control(8)=   "txtFields(23)"
+         Tab(2).Control(8).Enabled=   0   'False
          Tab(2).Control(9)=   "txtFields(25)"
+         Tab(2).Control(9).Enabled=   0   'False
          Tab(2).Control(10)=   "txtFields(26)"
+         Tab(2).Control(10).Enabled=   0   'False
          Tab(2).Control(11)=   "txtFields(27)"
+         Tab(2).Control(11).Enabled=   0   'False
          Tab(2).Control(12)=   "txtFields(28)"
+         Tab(2).Control(12).Enabled=   0   'False
          Tab(2).Control(13)=   "chkFields(0)"
+         Tab(2).Control(13).Enabled=   0   'False
          Tab(2).ControlCount=   14
+         Begin VB.CheckBox chkFields 
+            Appearance      =   0  'Flat
+            DataField       =   "flBloqueado"
+            ForeColor       =   &H80000008&
+            Height          =   285
+            Index           =   1
+            Left            =   3495
+            TabIndex        =   80
+            Tag             =   "flGPS"
+            Top             =   870
+            Width           =   285
+         End
          Begin VB.CheckBox chkFields 
             Appearance      =   0  'Flat
             DataField       =   "flBloqueado"
@@ -520,7 +565,7 @@ Begin VB.Form Frm_ABMProveedores
             Left            =   -71790
             TabIndex        =   23
             Tag             =   "flBloqueado"
-            Top             =   2400
+            Top             =   2385
             Width           =   285
          End
          Begin VB.TextBox txtFields 
@@ -579,7 +624,7 @@ Begin VB.Form Frm_ABMProveedores
             _ExtentX        =   556
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   105644033
+            Format          =   138608641
             CurrentDate     =   38267
          End
          Begin VB.TextBox txtFields 
@@ -700,7 +745,7 @@ Begin VB.Form Frm_ABMProveedores
             _ExtentX        =   556
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   105971713
+            Format          =   138608641
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -714,14 +759,32 @@ Begin VB.Form Frm_ABMProveedores
             _ExtentX        =   503
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   105971713
+            Format          =   138608641
             CurrentDate     =   38267
+         End
+         Begin VB.Label lblLabels 
+            Caption         =   "Con GPS"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Index           =   3
+            Left            =   3240
+            TabIndex        =   81
+            Top             =   645
+            Width           =   1815
          End
          Begin VB.Label lblLabels 
             Caption         =   "Gas"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -779,7 +842,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Bloqueado"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -797,7 +860,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Número de IIBB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -815,7 +878,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Nro. CUIT"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -833,7 +896,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Fecha de Baja"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -851,7 +914,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Fecha de Alta"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -869,7 +932,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Email"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -887,7 +950,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Cargo"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -905,7 +968,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Fax"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -923,7 +986,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Teléfono"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -941,7 +1004,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Localidad"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -959,7 +1022,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Cod. Postal"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -977,7 +1040,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Domicilio"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -995,7 +1058,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Estado "
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1013,7 +1076,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Fecha de Finalización"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1031,7 +1094,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "IIBB"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1049,7 +1112,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "IVA"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1067,7 +1130,7 @@ Begin VB.Form Frm_ABMProveedores
             Caption         =   "Ordenanza 3337"
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8,25
+               Size            =   8.25
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1097,7 +1160,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Nro. Socio"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1114,7 +1177,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Nombre"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1132,7 +1195,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Apellido"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1150,7 +1213,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Nro. de Proveedor"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1168,7 +1231,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Tipo"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1186,7 +1249,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Razón Social"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1203,7 +1266,7 @@ Begin VB.Form Frm_ABMProveedores
          Caption         =   "Nro. de Licencia"
          BeginProperty Font 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False
@@ -1368,7 +1431,7 @@ Begin VB.Form Frm_ABMProveedores
          Appearance      =   0
          BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
             Name            =   "Verdana"
-            Size            =   8,25
+            Size            =   8.25
             Charset         =   0
             Weight          =   400
             Underline       =   0   'False

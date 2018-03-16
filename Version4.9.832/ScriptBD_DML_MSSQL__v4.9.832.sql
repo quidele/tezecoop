@@ -77,3 +77,16 @@ flOcultadoenRegistracion)  VALUES
 (3001,'Cajas','Crédito x Obligación',0, 'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,0,0,0);
 
 
+DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Proveedores' and nmCampo = 'flGPS' 
+
+INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTamanio, flClave, flClaveForanea, flBusqueda, nrOrdenBusqueda, vlPuesto1, vlPuesto2, vlPuesto3, vlPuesto9, Actualizar, vlPuesto4, vlPuesto5) VALUES 
+  ('TB_Proveedores','flGPS','flGPS','BIT','1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+
+
+
+  select * from tb_cupones
+
+  vlRecargoTarjeta
+
+  select * from TB_Parametros 

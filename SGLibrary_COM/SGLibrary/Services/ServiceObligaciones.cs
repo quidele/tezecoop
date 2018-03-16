@@ -82,7 +82,7 @@ namespace SGLibrary.Services
                                                                                    int.Parse ( item.nrLicencia)  , null, item.fecha_vencimiento.Value.Date ,
                                                                                     unRegistro.TB_transCab.descripcion  , 0 , unRegistro.TB_transCab.cod_doc ,
                                                                                     unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
-                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble(item.importe), unRegistro.TB_transCab.com_mov, item.comentarios ,"Débito");
+                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble(item.importe), unRegistro.TB_transCab.com_mov, unRegistro.TB_transCab.descripcion  ,"Débito");
                          }
 
                          context.SaveChanges();
@@ -158,7 +158,6 @@ namespace SGLibrary.Services
          } // Cierra metodo AnularRegistro
 
          
-
          public override  void ModificarRegistro(Obligaciones unRegistro)
          {
              var paramLog = new SGLibrary.Utility.ParamLogUtility(() => unRegistro).GetLog();
@@ -190,8 +189,10 @@ namespace SGLibrary.Services
                  // Validaciones sobres las bajas 
                  foreach (var item in ListaBajasTB_ObligacionesTitularesBD)
                  {
+
+                     int nrLicenciaBuscada = int.Parse(item.nrLicencia);
                      TB_Cupones un_TB_CuponesBD = (from c in context.TB_Cupones
-                                                        where c.nro_trans == item.nro_trans && c.nrLicencia ==  int.Parse(item.nrLicencia)
+                                                   where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
                                                         select c).First<TB_Cupones>();
 
                      if (un_TB_CuponesBD.flCompensado) // verificamos si 
@@ -271,17 +272,7 @@ namespace SGLibrary.Services
          public override Obligaciones ObtenerRegistro(String pId)
          {
 
-             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pId).GetLog();
-             Trace.TraceInformation(paramLog);
-
-             // Agregar la validaciones necesarias previas a la eliminación
-             using (TransactionScope transaction = new TransactionScope())
-             {
-                 var objDocumentoBD = (from c in context.TB_documentos
-                                       where c.cod_doc == pId
-                                       select c).First<TB_documentos>();
-                 return new Obligaciones() ;
-             }
+             throw new NotImplementedException();
 
 
          }// Cierre ObtenerRegistro

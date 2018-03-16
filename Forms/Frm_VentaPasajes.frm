@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   293863425
+         Format          =   139526145
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3676,6 +3676,10 @@ Private Sub SelecionarItemCombo()
         End If
     Next i
     
+End Sub
+
+Private Sub fraVentaPasajes_DragDrop(Source As Control, X As Single, Y As Single)
+
 End Sub
 
 Private Sub lstBusquedaProductos_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)

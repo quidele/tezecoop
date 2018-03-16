@@ -852,6 +852,11 @@ Dim resp As Byte
                 End If
             
                 frm_ABMCajaADM.Show 1
+                
+                If objParametros.ObtenerValor("Cancela") = "NO" Then
+                    objParametros.GrabarValorBD "COBRO_COMISION_CD_RE_OBLIGATORIA", "S"
+                    objParametros.GrabarValorBD "CTROL_CANT_VIAJES", "S"
+                End If
             Case Else
                 MsgBox "Este perfil no puede realizar cierre de cajas", vbCritical, "Seguridad"
                 Exit Sub
@@ -873,6 +878,7 @@ Dim resp As Byte
                 ReabrirCaja
                 Me.Caption = "Sistema de Gestión - Taxis Aeropuerto Ezeiza - (" + objUsuario.dsUsuario + ") " + " Caja Nro: " + objParametros.ObtenerValor("nrCaja")
             End If
+            
         End If
     End If
     

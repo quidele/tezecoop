@@ -163,3 +163,26 @@ Private Sub Class_Initialize()
     ReDim lmParametros(0 To 0)
 End Sub
 
+' Creado para Obligaciones - Actualizar una parametro de la BD
+Public Function GrabarValorBD(pdsParametro As String, pValor As String) As Boolean
+Dim strMSG As String
+
+    GrabarValorBD = False
+
+    ObjTablasIO.nmTabla = "tb_parametros"
+    
+    ObjTablasIO.setearCampoOperadorValor "dsParametro", "=", pdsParametro
+    ObjTablasIO.setearCampoOperadorValor "vlParametro", "<-", pValor
+    ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "->", objbasededatos.getDateasString()
+    
+    If Not ObjTablasIO.Actualizar Then
+        GrabarValorBD = False
+        lerror = ObjTablasIO.Error
+        Exit Function
+    End If
+    
+    GrabarValorBD = True
+
+End Function
+
+
