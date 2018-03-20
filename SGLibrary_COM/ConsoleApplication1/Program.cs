@@ -179,11 +179,18 @@ namespace ConsoleApplication1
             l.execFormulario("FrmABMDocumentos");
             */
 
+            /*LoaderForms l = new LoaderForms();
+            l.CajaActiva("1");
+            l.UsuarioActivo("camilap");
+            l.AmbienteActivo("SQL_Remoto");
+            l.execFormulario("FrmObligaciones");*/
+
+
             LoaderForms l = new LoaderForms();
             l.CajaActiva("1");
             l.UsuarioActivo("camilap");
             l.AmbienteActivo("SQL_Remoto");
-            l.execFormulario("FrmObligaciones");
+            l.execFormulario("FrmPrincipal");
             
 
         } // Cierre metodo

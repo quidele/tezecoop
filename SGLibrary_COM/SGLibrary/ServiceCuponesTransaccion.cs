@@ -13,10 +13,22 @@ namespace SGLibrary
     {
 
         dbSG2000Entities context;
+        double _PORC_RECARGO_TC;
+        double _PORC_RECARGO_TD;
+        double _PORC_RECARGO_TP;
 
         public ServiceCuponesTransaccion(dbSG2000Entities pdbSG2000Entities)
         {
+
             context = pdbSG2000Entities;
+            // Modificar Condicion de ventas  (tpCupon)
+            // PORC_RECARGO_TC	8,7
+            // PORC_RECARGO_TD	8,6
+            // PORC_RECARGO_TP	8,7
+            this._PORC_RECARGO_TC = double.Parse( ServiceParametros.ObtenerParametroBD("PORC_RECARGO_TC"));
+            this._PORC_RECARGO_TD = double.Parse(ServiceParametros.ObtenerParametroBD("PORC_RECARGO_TD"));
+            this._PORC_RECARGO_TP = double.Parse(ServiceParametros.ObtenerParametroBD("PORC_RECARGO_TP"));
+            
         }
 
 
@@ -135,6 +147,54 @@ namespace SGLibrary
             return lista;
         }  // cierra metodo existenComprobantesCompensados
 
+
+        // Modificar Condicion de ventas  (tpCupon)
+        // PORC_RECARGO_TC	8,7
+        // PORC_RECARGO_TD	8,6
+        // PORC_RECARGO_TP	8,7
+        // Tarjeta de Crédito / Tarjeta de Débito  / Todo Pago
+        public bool modificarCondicionDeVenta(decimal pnrCupon, string ptpCuponOrigen, string ptpCuponDestino)
+        {
+
+            List<string> lista_tpCupon = new List<string> { "Tarjeta de Crédito", "Tarjeta de Débito", "Todo Pago" };
+
+            if (!lista_tpCupon.Exists(c => ptpCuponOrigen == c))
+            {
+                this._lista_errores  = "La condición de venta origen no es válida"; 
+                return false;
+            }
+
+            if (ptpCuponOrigen.CompareTo (ptpCuponOrigen)==0)
+            {
+                this._lista_errores = "La condición de venta origen y destino son iguales";
+                return false;
+            }
+
+            TB_Cupones un_TB_CuponesBD = (from p in context.TB_Cupones
+                                          where p.nrCupon == pnrCupon
+                                          select p).First<TB_Cupones>();
+
+            switch (ptpCuponDestino)
+            {
+                case "Tarjeta de Crédito":
+                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TC;  
+                    break;
+                case "Tarjeta de Débito":
+                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TD; 
+                    break;
+                case "Todo Pago":
+                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TP; 
+                    break;
+            }
+            un_TB_CuponesBD.tpCupon = ptpCuponDestino;
+
+            context.SaveChanges();
+
+            return true; 
+
+        }
+
+        
     } // CIERRA CLASE 
 
 

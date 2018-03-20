@@ -242,7 +242,8 @@ namespace SGLibrary
 
         private void FrmBuscarComprobantes_Load(object sender, EventArgs e)
         {
-
+            this.fechadesde.Value = DateTime.Now.Date;
+            this.fechahasta.Value = DateTime.Now; 
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)

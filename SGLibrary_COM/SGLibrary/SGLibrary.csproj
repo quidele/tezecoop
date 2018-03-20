@@ -139,6 +139,12 @@
     <Compile Include="Extensiones\GroupByGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPrincipal.Designer.cs">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmABMDocumentos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -427,6 +433,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPrincipal.resx">
+      <DependentUpon>FrmPrincipal.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmABMDocumentos.resx">
       <DependentUpon>FrmABMDocumentos.cs</DependentUpon>

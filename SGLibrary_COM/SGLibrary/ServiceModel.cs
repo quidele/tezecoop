@@ -9,6 +9,9 @@ namespace SGLibrary
 {
     public abstract class ServiceModel
     {
+
+        protected String _lista_errores = "";
+
         public ServiceModel()
         {
             string subPath = "Logs"; // your code goes here
@@ -61,7 +64,7 @@ namespace SGLibrary
 
         public  virtual  string ListaErrores()
         {
-            throw new NotImplementedException();
+            return _lista_errores;
         }
 
         public virtual string Usuario { get; set; }

@@ -208,6 +208,17 @@ namespace SGLibrary
                         f9.serviceModel.formulario = "FrmObligaciones";
                         f = (Form)f9;
                         break;
+                    case "FrmPrincipal":
+                        FrmPrincipal f10 = new FrmPrincipal();
+                        f10.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());
+                        f10.serviceModel.CajaAdm = this._cajactiva;
+                        f10.serviceModel.Usuario = this._usuarioActivo;
+                        f10.serviceModel.usuario_mod = this.Usuario;
+                        f10.serviceModel.terminal_mod = "PC01";
+                        f10.serviceModel.formulario = "FrmObligaciones";
+                        f = (Form)f10;
+                        break;
+
                 }
 
                 Form objForm = (Form) f;
