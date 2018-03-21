@@ -105,6 +105,7 @@ namespace SGLibrary
             Dictionary<string, string> lista_campo_tipo = new Dictionary<string, string>();
             lista_campo_tipo.Add("Nº", "System.Decimal");
             lista_campo_tipo.Add("ID", "System.Decimal");
+            lista_campo_tipo.Add("COND_VENTA", "System.String");
             lista_campo_tipo.Add("FECHA", "System.DateTime");
             lista_campo_tipo.Add("LICENCIA", "System.Int32");
             lista_campo_tipo.Add("DOC", "System.String");
@@ -118,6 +119,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("TARJETA", "System.String");
             lista_campo_tipo.Add("CUPON", "System.String");
             lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");
+            
 
 
             // A la lista la transfiere al DATASET
@@ -263,5 +265,46 @@ namespace SGLibrary
 
             this.bindingSource1.Sort = this.dataGridView1.SortString;
         }
+
+        private void cambiarATarjetaDeCréditoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modificarCondiciondeVenta(ServiceCuponesTransaccion.TARJETA_DE_CREDITO);
+        }
+
+        private void modificarCondiciondeVenta (string ptpCuponDestino){
+
+            foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
+            {
+                
+                decimal nrCupon = decimal.Parse(row.Cells["ID"].Value.ToString()); 
+                string tpCuponOrigen = row.Cells["COND_VENTA"].Value.ToString(); 
+
+                ServiceCuponesTransaccion un_ServiceCuponesTransaccion = new ServiceCuponesTransaccion (new dbSG2000Entities ()); 
+
+                if (un_ServiceCuponesTransaccion.ModificarCondicionDeVenta (nrCupon , tpCuponOrigen  ,  ptpCuponDestino   )){
+                    MessageBox.Show("La modificación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    btnBuscar_Click(this.btnBuscar, null); 
+                }
+                else
+                {
+                    MessageBox.Show("La modificación no se pudo realizar, se ha encontrado el siguiente error: " +
+                                    un_ServiceCuponesTransaccion.ListaErrores(), "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+        }
+
+        private void cambiarAToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modificarCondiciondeVenta(ServiceCuponesTransaccion.TARJETA_DE_DEBITO);
+        }
+
+        private void cambiarATodoPagoTodoPagoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            modificarCondiciondeVenta(ServiceCuponesTransaccion.TARJETA_DE_TODO_PAGO);
+        }
+        
+  
+
     }
 }

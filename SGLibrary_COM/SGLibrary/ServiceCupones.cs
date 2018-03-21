@@ -124,6 +124,7 @@ namespace SGLibrary
                                                 {
                                                     ID = c.nrCupon,
                                                     FECHA = c.dtCupon,
+                                                    COND_VENTA = c.tpCupon, 
                                                     LICENCIA = c.nrLicencia,
                                                     DOC = c.tpComprobanteCliente,
                                                     LETRA = c.tpLetraCliente,

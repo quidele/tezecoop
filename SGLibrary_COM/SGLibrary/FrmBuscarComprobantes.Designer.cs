@@ -44,18 +44,18 @@
             this.txtFactura = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.dataGridView1 = new ADGV.AdvancedDataGridView();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.cambiarATarjetaDeCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarATarjetadeDebitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
             this.lblDgv1Registros = new System.Windows.Forms.Label();
-            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
-            this.cambiarATarjetaDeCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarATodoPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarAToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            this.contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
-            this.contextMenuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label7
@@ -72,7 +72,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(11, 21);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 8;
@@ -92,7 +92,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(105, 21);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(85, 20);
             this.fechahasta.TabIndex = 10;
@@ -155,7 +155,7 @@
             "CABAL",
             "OTRA"});
             this.cbEmpresa.Location = new System.Drawing.Point(198, 19);
-            this.cbEmpresa.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEmpresa.Margin = new System.Windows.Forms.Padding(2);
             this.cbEmpresa.Name = "cbEmpresa";
             this.cbEmpresa.Size = new System.Drawing.Size(119, 21);
             this.cbEmpresa.TabIndex = 22;
@@ -211,7 +211,7 @@
             this.dataGridView1.DateWithTime = false;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
             this.dataGridView1.Location = new System.Drawing.Point(14, 49);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -221,6 +221,36 @@
             this.dataGridView1.SortStringChanged += new System.EventHandler(this.dataGridView1_SortStringChanged);
             this.dataGridView1.FilterStringChanged += new System.EventHandler(this.dataGridView1_FilterStringChanged);
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.cambiarATarjetaDeCréditoToolStripMenuItem,
+            this.cambiarATarjetadeDebitoToolStripMenuItem,
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem});
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 92);
+            // 
+            // cambiarATarjetaDeCréditoToolStripMenuItem
+            // 
+            this.cambiarATarjetaDeCréditoToolStripMenuItem.Name = "cambiarATarjetaDeCréditoToolStripMenuItem";
+            this.cambiarATarjetaDeCréditoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.cambiarATarjetaDeCréditoToolStripMenuItem.Text = "Cambiar a Tarjeta de Crédito";
+            this.cambiarATarjetaDeCréditoToolStripMenuItem.Click += new System.EventHandler(this.cambiarATarjetaDeCréditoToolStripMenuItem_Click);
+            // 
+            // cambiarATodoPagoTodoPagoToolStripMenuItem
+            // 
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Name = "cambiarATodoPagoTodoPagoToolStripMenuItem";
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Text = "Cambiar a Todo Pago";
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Click += new System.EventHandler(this.cambiarATodoPagoTodoPagoToolStripMenuItem_Click);
+            // 
+            // cambiarATarjetadeDebitoToolStripMenuItem
+            // 
+            this.cambiarATarjetadeDebitoToolStripMenuItem.Name = "cambiarATarjetadeDebitoToolStripMenuItem";
+            this.cambiarATarjetadeDebitoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.cambiarATarjetadeDebitoToolStripMenuItem.Text = "Cambiar a Tarjeta de Débito";
+            this.cambiarATarjetadeDebitoToolStripMenuItem.Click += new System.EventHandler(this.cambiarAToolStripMenuItem_Click);
             // 
             // btnBuscar
             // 
@@ -246,33 +276,6 @@
             this.lblDgv1Registros.Size = new System.Drawing.Size(63, 13);
             this.lblDgv1Registros.TabIndex = 29;
             this.lblDgv1Registros.Text = "Registros: 0";
-            // 
-            // contextMenuStrip1
-            // 
-            this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.cambiarATarjetaDeCréditoToolStripMenuItem,
-            this.cambiarATodoPagoToolStripMenuItem,
-            this.cambiarAToolStripMenuItem});
-            this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(226, 70);
-            // 
-            // cambiarATarjetaDeCréditoToolStripMenuItem
-            // 
-            this.cambiarATarjetaDeCréditoToolStripMenuItem.Name = "cambiarATarjetaDeCréditoToolStripMenuItem";
-            this.cambiarATarjetaDeCréditoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.cambiarATarjetaDeCréditoToolStripMenuItem.Text = "Cambiar a Tarjeta de Crédito";
-            // 
-            // cambiarATodoPagoToolStripMenuItem
-            // 
-            this.cambiarATodoPagoToolStripMenuItem.Name = "cambiarATodoPagoToolStripMenuItem";
-            this.cambiarATodoPagoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.cambiarATodoPagoToolStripMenuItem.Text = "Cambiar a Todo Pago";
-            // 
-            // cambiarAToolStripMenuItem
-            // 
-            this.cambiarAToolStripMenuItem.Name = "cambiarAToolStripMenuItem";
-            this.cambiarAToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.cambiarAToolStripMenuItem.Text = "Cambiar a tarjeta de Débito";
             // 
             // FrmBuscarComprobantes
             // 
@@ -300,9 +303,9 @@
             this.Text = "FrmBuscarComprobantes";
             this.Load += new System.EventHandler(this.FrmBuscarComprobantes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            this.contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
-            this.contextMenuStrip1.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -331,7 +334,7 @@
         private System.Windows.Forms.Label lblDgv1Registros;
         private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
         private System.Windows.Forms.ToolStripMenuItem cambiarATarjetaDeCréditoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cambiarATodoPagoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem cambiarAToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarATodoPagoTodoPagoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cambiarATarjetadeDebitoToolStripMenuItem;
     }
 }

@@ -12,6 +12,10 @@ namespace SGLibrary
     public class ServiceCuponesTransaccion : ServiceCupones  
     {
 
+        public static  string TARJETA_DE_CREDITO = "Tarjeta de Crédito";
+        public static  string TARJETA_DE_DEBITO = "Tarjeta de Débito";
+        public static  string TARJETA_DE_TODO_PAGO = "Todo Pago";
+
         dbSG2000Entities context;
         double _PORC_RECARGO_TC;
         double _PORC_RECARGO_TD;
@@ -153,7 +157,7 @@ namespace SGLibrary
         // PORC_RECARGO_TD	8,6
         // PORC_RECARGO_TP	8,7
         // Tarjeta de Crédito / Tarjeta de Débito  / Todo Pago
-        public bool modificarCondicionDeVenta(decimal pnrCupon, string ptpCuponOrigen, string ptpCuponDestino)
+        public bool ModificarCondicionDeVenta(decimal pnrCupon, string ptpCuponOrigen, string ptpCuponDestino)
         {
 
             List<string> lista_tpCupon = new List<string> { "Tarjeta de Crédito", "Tarjeta de Débito", "Todo Pago" };
@@ -164,7 +168,7 @@ namespace SGLibrary
                 return false;
             }
 
-            if (ptpCuponOrigen.CompareTo (ptpCuponOrigen)==0)
+            if (ptpCuponOrigen.CompareTo(ptpCuponDestino) == 0)
             {
                 this._lista_errores = "La condición de venta origen y destino son iguales";
                 return false;
