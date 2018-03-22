@@ -75,6 +75,7 @@
             this.obligacionesToolStripMenuItem.Name = "obligacionesToolStripMenuItem";
             this.obligacionesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.obligacionesToolStripMenuItem.Text = "Obligaciones";
+            this.obligacionesToolStripMenuItem.Click += new System.EventHandler(this.obligacionesToolStripMenuItem_Click);
             // 
             // conciliacionesToolStripMenuItem
             // 

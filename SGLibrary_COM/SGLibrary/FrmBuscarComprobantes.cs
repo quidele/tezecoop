@@ -119,9 +119,9 @@ namespace SGLibrary
             lista_campo_tipo.Add("TARJETA", "System.String");
             lista_campo_tipo.Add("CUPON", "System.String");
             lista_campo_tipo.Add("FECHA_PAGO", "System.DateTime");
+            lista_campo_tipo.Add("RECARGO_TARJETA", "System.String");
             
-
-
+           
             // A la lista la transfiere al DATASET
             p_DataSet = Extensiones.Extensions.ToDataSet(lista_datos, lista_campo_tipo);
             //Al binding source le configuramos el dataset

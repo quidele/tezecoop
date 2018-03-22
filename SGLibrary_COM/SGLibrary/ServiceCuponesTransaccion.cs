@@ -181,15 +181,16 @@ namespace SGLibrary
             switch (ptpCuponDestino)
             {
                 case "Tarjeta de Crédito":
-                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TC;  
+                    un_TB_CuponesBD.vlRecargoTarjeta =  un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TC / 100  ;  
                     break;
                 case "Tarjeta de Débito":
-                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TD; 
+                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TD / 100; 
                     break;
                 case "Todo Pago":
-                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TP; 
+                    un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TP / 100; 
                     break;
             }
+            un_TB_CuponesBD.vlRecargoTarjeta = Math.Round(un_TB_CuponesBD.vlRecargoTarjeta.Value , 2);
             un_TB_CuponesBD.tpCupon = ptpCuponDestino;
 
             context.SaveChanges();

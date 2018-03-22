@@ -136,7 +136,8 @@ namespace SGLibrary
                                                     EMPRESA = c.nmEmpresaTarjeta, 
                                                     TARJETA =c.nrTarjeta,
                                                     CUPON = c.nrCuponPosnet,
-                                                    FECHA_PAGO = c.dtCobradoalCliente
+                                                    FECHA_PAGO = c.dtCobradoalCliente,
+                                                    RECARGO_TARJETA = c.vlRecargoTarjeta 
                                                 });
 
                 if (listadeViajes == null) return null;

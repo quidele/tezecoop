@@ -30,5 +30,13 @@ namespace SGLibrary
             FrmBuscarComprobantes miFrmBuscarComprobantes = new FrmBuscarComprobantes();
             miFrmBuscarComprobantes.Show();
         }
+
+        private void obligacionesToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmObligaciones miFrmObligaciones = new FrmObligaciones ();
+            miFrmObligaciones.serviceModel = this.serviceModel; 
+            miFrmObligaciones.Show ();
+            
+        }
     }
 }
