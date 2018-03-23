@@ -1324,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   75563009
+         Format          =   136970241
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   75563009
+         Format          =   136970241
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
@@ -1901,14 +1901,23 @@ Dim i   As Integer
                        objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
                 Me.lstBusqueda.ListItems(i).Checked = False
             Else
-                'INCLUIMOS  Obligaciones de PAGO
-                If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
-                   (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Or _
-                      objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino" Or _
-                      objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Débito") Then  'INCLUIMOS  Obligaciones de PAGO
-                    Me.lstBusqueda.ListItems(i).Checked = True
-                 Else
-                    Me.lstBusqueda.ListItems(i).Checked = False
+                Me.lstBusqueda.ListItems(i).Checked = False  ' por defecto lo desmascarmos
+                If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" Then
+                    If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Or _
+                      objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino") Then
+                        Me.lstBusqueda.ListItems(i).Checked = True
+                    End If
+                    If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Débito") Then 'INCLUIMOS  Obligaciones de PAGO
+                        ' marcar que se debe compensar si o si porque se supera la fecha de vencimiento
+                        Dim fecha_del_dia As Date
+                        Dim pdtCobradoCliente As Date
+                        pdtCobradoCliente = Left(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i), 10)
+                        fecha_del_dia = CDate(Left(Now(), 10))
+                        If CDate(pdtCobradoCliente) <= fecha_del_dia Then
+                            Me.lstBusqueda.ListItems(i).Checked = True
+                        End If
+                        
+                    End If
                  End If
             End If
             ActualizarCantidadViajes
@@ -2723,13 +2732,24 @@ Dim Valor       As Single
                 False, False, objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "flCobradoalCliente", i), _
                        objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i)) Then
                 
-                        
-                 If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
-                   (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Or _
-                   objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino") Then
-                    Me.lstBusqueda.ListItems(i).Checked = True
-                 Else
-                    Me.lstBusqueda.ListItems(i).Checked = False
+                ' Modificado para oblifaciones
+                If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" Then
+                   Me.lstBusqueda.ListItems(i).Checked = False
+                    If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Or _
+                            objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino") Then
+                   ' OBLIGACIONES
+                        Me.lstBusqueda.ListItems(i).Checked = True
+                    End If
+                    If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Débito") Then 'INCLUIMOS  Obligaciones de PAGO
+                        ' marcar que se debe compensar si o si porque se supera la fecha de vencimiento
+                        Dim fecha_del_dia As Date
+                        Dim pdtCobradoCliente As Date
+                        pdtCobradoCliente = Left(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i), 10)
+                        fecha_del_dia = CDate(Left(Now(), 10))
+                        If CDate(pdtCobradoCliente) <= fecha_del_dia Then
+                            Me.lstBusqueda.ListItems(i).Checked = True
+                        End If
+                    End If
                  End If
 
         
@@ -2842,10 +2862,17 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
         pdtCobradoCliente = CDate(Now())
     End If
     
+    
     If flAnulado = "SI" Then
         sepuedeCompensar = False
         Exit Function
     End If
+    
+    If ptpCupon = "Débito" Then  ' Agregado para el modulo de obligaciones
+        sepuedeCompensar = True
+        Exit Function
+    End If
+    
     
     objSPs.nmStoredProcedure = "SP_sepuedecompensar_2_0"
     objSPs.setearCampoValor "@dtcupon_param", pdtCupon
@@ -2934,6 +2961,7 @@ Public Function sepuedeCompensar(pdtCupon As String, flAnulado As String, _
             End If
         End If
     End If
+    
     
      
 End Function
@@ -3413,7 +3441,7 @@ Private Function PintarTextodeCampos(cajatexto As TextBox)
 End Function
 
 
-' Programar
+' Programar - Modificado en la v4.9.832
 Private Sub ActualizarSaldo()
 Dim i As Integer
 Dim j As Integer
@@ -3461,7 +3489,7 @@ Dim vlRecargoTarjeta As String
                    vlAcumReales = 0
                 End Select
             Else
-            
+                ' LICENCIATARIO
                 Select Case objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i)
                 Case "Cobro en Destino"
                    vlAcumPesos = vlAcumPesos - 0
@@ -3493,7 +3521,6 @@ Dim vlRecargoTarjeta As String
                         vlAcumComision = vlAcumComision - objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
                         vlAcumReales = vlAcumReales - AdaptarNulos(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoReales", i), 0)
                    End If
-                   
                 Case "Cuenta Corriente"
                    vlAcumPesos = vlAcumPesos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlMontoCupon", i)
                    vlAcumDolares = vlAcumDolares + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlPagoDolares", i)
@@ -3510,6 +3537,12 @@ Dim vlRecargoTarjeta As String
                    vlRecargoTarjeta = objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlRecargoTarjeta", i)
                    vlRecargoTarjeta = IIf(vlRecargoTarjeta = "", "0", vlRecargoTarjeta)
                    vlAcumTarjeta = vlAcumTarjeta + vlRecargoTarjeta
+                Case "Débito"  ' Nuevo código para obligaciones
+                   vlAcumPesos = vlAcumPesos - 0
+                   vlAcumDolares = vlAcumDolares - 0
+                   vlAcumEuros = vlAcumEuros - 0
+                   vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                   vlAcumReales = vlAcumReales - 0
                 End Select
                 ' Sumamos los importes en IVA
                 vlAcumIVA = vlAcumIVA + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlIVA", i)

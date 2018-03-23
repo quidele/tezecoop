@@ -85,7 +85,7 @@ namespace SGLibrary
                     unCupon.nrTalonarioCliente = pnrTalonarioCliente;
                     unCupon.tpLetraCliente = ptpLetraCliente;
                     unCupon.vlMontoCupon = pvlMontoCupon; // aqui debemos 
-                    unCupon.vlComision = pvlComision;
+                    unCupon.vlComision = pvlComision; 
                     unCupon.vlPagoPesos = 0;
                     unCupon.vlPagoReales  = 0;
                     unCupon.vlPagoEuros = 0;

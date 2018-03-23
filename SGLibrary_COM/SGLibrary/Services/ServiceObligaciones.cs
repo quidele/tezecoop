@@ -82,7 +82,8 @@ namespace SGLibrary.Services
                                                                                    int.Parse ( item.nrLicencia)  , null, item.fecha_vencimiento.Value.Date ,
                                                                                     unRegistro.TB_transCab.descripcion  , 0 , unRegistro.TB_transCab.cod_doc ,
                                                                                     unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
-                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), Convert.ToDouble(item.importe), unRegistro.TB_transCab.com_mov, unRegistro.TB_transCab.descripcion  ,"Débito");
+                                                                                    unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), 
+                                                                                    Convert.ToDouble(item.importe), unRegistro.TB_transCab.com_mov, unRegistro.TB_transCab.descripcion  ,"Débito");
                          }
 
                          context.SaveChanges();
