@@ -249,3 +249,216 @@ IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.object
 GO
 
 
+-- PRIMERO CORRER EN PRUEBAS - REALIZAR BACKUP DE LA BD 
+ALTER TABLE TB_RecibosDetalle ALTER COLUMN tpComprobanteCliente CHAR(4);
+
+
+Go
+
+IF EXISTS (SELECT * FROM sys.procedures WHERE name = 'SP_AnularRecibo_v4_9_832')
+	DROP  PROCEDURE SP_AnularRecibo_v4_9_832
+GO
+
+/************************************************/
+/*      Modificado para la version 3.7          */
+create  procedure [dbo].SP_AnularRecibo_v4_9_832
+@idReciboParam       			as numeric,
+@dsUsuario_param     			as Varchar(50),
+@dsUsuario_Supervisor_param     as Varchar(50)=null
+as
+declare @nrCajaRecibo  numeric
+declare @strError      varchar(400)
+declare @tpRecibo      varchar(100)
+declare @flAnulado     bit 
+
+	select @flAnulado=0
+
+	select @nrCajaRecibo=nrCaja, @tpRecibo=tpRecibo, @flAnulado=flAnulado from TB_Recibos 
+	where IdRecibo=@IdReciboParam
+
+	if @flAnulado=1
+	begin
+		select @strError='El recibo '+ convert(varchar,@IdReciboParam)+' ya se encuentra anulado.'
+		raiserror (@strError,16,1)
+		return -1
+	end
+		
+	-- verificamos  que la caja no haya sido cerrada
+	--if not exists(select * from  TB_Cajas 
+	--	      where nrCaja=@nrCajaRecibo 
+	--		    and flCajaAdm=1 and flEstado=0) 
+	--begin
+	--	select @strError='El recibo '+ convert(varchar,@IdReciboParam)+' no puede anularse ya que la caja que lo creo está cerrada.'
+	--	raiserror (@strError,16,1)
+	--	return -1
+	--end 
+
+
+	if @tpRecibo='Detalle de Cobro a Cta. Cte.' 
+	begin
+		select @strError='No se puede anular un recibo de Detalle de Cobro a Cta. Cte. este recibo se anula en caso de que usted anule la factura que lo generó.'
+		raiserror (@strError,16,1)
+		return -1
+	end 
+
+	-- Solo anulamos recibos 'Detalle de Pago a Licenciatario' 
+
+	-- se copian los detalles
+	insert into TB_RecibosDetalle 
+		(nrCupon,
+		cdCliente,
+		nrPuesto,
+		nrLicencia,
+		nmLicenciatario,
+		tpCupon,
+		vlMontoCupon,
+		vlaFavordelLicenciatario,
+		vlafavorAdmin,
+		vlPagoPesos, 
+		vlPagoEuros,
+		vlPagoDolares, 
+		vlPagoReales,
+		vlComision,
+		nrCantidadBultos, 
+		nrPasajeros,
+		dtCupon,
+		nrTalonarioCliente,
+		nrComprabanteCliente,
+		tpComprobanteCliente, 
+		tpLetraCliente,
+		flCobradoalCliente, 
+		dtCobradoalCliente, 
+		nrCajaCliente, 
+		dtCajaCliente, 
+		nrTalonarioProveedor, 
+		nrComprabanteProveedor, 
+		tpComprobanteProveedor, 
+		tpLetraLetraProveedor, 
+		flCompensado, 
+		dtCompensado, 
+		nrCajaLicenciatario, 
+		dtCajaLicenciatario, 
+		dsUsuario, 
+		nrLiquidacionProveedores,
+		nrLiquidacionCliente,
+		cdCodBar, 
+		flAnulado, 
+		dtAnulado, 
+		IdRecibo, 
+		IdReciboCtaCte, 
+		dsObservacion, 
+		dsDestino, 
+		dsHoraViaje,
+		vlSubtotal,
+		vlIVA,
+		vlRecargoTarjeta )
+	select  nrCupon, 
+		cdCliente, 
+		nrPuesto, 
+		nrLicencia, 
+		nmLicenciatario, 
+		tpCupon, 
+		vlMontoCupon, 
+		vlaFavordelLicenciatario, 
+		vlafavorAdmin, 
+		vlPagoPesos, 
+		vlPagoEuros, 
+		vlPagoDolares,
+	    vlPagoReales, 
+		vlComision, 
+		nrCantidadBultos, 
+		nrPasajeros, 
+		dtCupon, 
+		nrTalonarioCliente, 
+		nrComprabanteCliente, 
+		tpComprobanteCliente, 
+		tpLetraCliente, 
+		flCobradoalCliente, 
+		dtCobradoalCliente, 
+		nrCajaCliente, 
+		dtCajaCliente, 
+		nrTalonarioProveedor, 
+		nrComprabanteProveedor,            
+		tpComprobanteProveedor, 
+		tpLetraLetraProveedor, 
+		flCompensado, 
+		dtCompensado, 
+		nrCajaLicenciatario, 
+		dtCajaLicenciatario, 
+		dsUsuario, 
+		nrLiquidacionProveedores, 
+		nrLiquidacionCliente, 
+		cdCodBar, 
+		flAnulado, 
+		dtAnulado, 
+		IdRecibo, 
+		IdReciboCtaCte, 
+		dsObservacion, 
+		dsDestino, 
+		dsHoraViaje,
+		vlSubtotal,
+		vlIVA,
+		vlRecargoTarjeta
+	from TB_Cupones 
+	where IdRecibo=@IdReciboParam
+
+	if @@rowcount=0 
+	begin
+		select @strError='El recibo '+ convert(varchar,@IdReciboParam)+' no puede anularse ya que presenta información inconsistente.'
+		raiserror (@strError,16,1)
+		return -1
+	end 
+	
+	-- se ponen a nulo los comprobantes o cupones compensados
+	update TB_Cupones
+	set idRecibo=null,
+	vlPagoDolares=0,
+	vlPagoEuros=0,
+	vlPagoPesos=0,
+	flCompensado=0,
+	flCobradoalCliente=0,
+	dtCobradoalCliente=null,
+	dtCompensado=null,
+	nrCajaLicenciatario=null,
+	dtCajaLicenciatario=null, 
+	dsUsuario=@dsUsuario_param
+	where IdRecibo=@IdReciboParam and 
+	      tpCupon in ('Cobro en Destino', 'Retorno')
+
+	-- se ponen a nulo los comprobantes o cupones compenados
+	update TB_Cupones
+	set idRecibo=null,
+	vlPagoDolares=0,
+	vlPagoEuros=0,
+	vlPagoPesos=0,
+	flCompensado=0,
+	dtCompensado=null,
+	nrCajaLicenciatario=null,
+	dtCajaLicenciatario=null, 
+	dsUsuario=@dsUsuario_param
+	where IdRecibo=@IdReciboParam and 
+	      tpCupon in ('Cuenta Corriente', 'Tarjeta de Crédito', 'Tarjeta de Débito','Todo Pago')
+
+	update TB_Cupones
+	set idRecibo=null,
+	flCompensado=0,
+	dtCompensado=null,
+	nrCajaLicenciatario=null,
+	dtCajaLicenciatario=null, 
+	dsUsuario=@dsUsuario_param
+	where IdRecibo=@IdReciboParam and 
+	      tpCupon in ('Contado', 'Débito','Crédito')
+
+	-- eliminar los movimentos contables en dicha caja
+	delete from TB_MovimientosContables
+	where IdRecibo=@IdReciboParam
+	
+	-- actualizar el flag anulado del recibo
+	update TB_Recibos
+	set flAnulado=1,
+	    dsUsuario=@dsUsuario_param,
+	    dsUsuario_Supervisor=@dsUsuario_Supervisor_param
+	where IdRecibo=@IdReciboParam
+
+
+

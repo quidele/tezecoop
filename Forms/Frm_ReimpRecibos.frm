@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ReimpRecibos 
    Caption         =   "Búsqueda y  Anulación de Recibos"
    ClientHeight    =   7800
@@ -164,7 +164,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   252641281
+         Format          =   187301889
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -178,7 +178,7 @@ Begin VB.Form Frm_ReimpRecibos
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   252641281
+         Format          =   157745153
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -930,7 +930,7 @@ Dim ELIMINA_RECIBO_DE_OTRA_CAJA As String
               
     objbasededatos.BeginTrans
     
-    strSQL = " SP_AnularRecibo_v4_9_1 @idReciboParam=" + Me.lstBusqueda.SelectedItem.Text + " , "
+    strSQL = " SP_AnularRecibo_v4_9_832 @idReciboParam=" + Me.lstBusqueda.SelectedItem.Text + " , "
     strSQL = strSQL + " @dsUsuario_param='" + objUsuario.dsUsuario + "',"
     strSQL = strSQL + " @dsUsuario_Supervisor_param='" + objParametros.ObtenerValor("dsUsuario_Acceso_Supervisor") + "'"
     

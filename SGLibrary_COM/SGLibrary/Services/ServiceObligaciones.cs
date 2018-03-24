@@ -200,13 +200,15 @@ namespace SGLibrary.Services
                  {
 
                      int nrLicenciaBuscada = int.Parse(item.nrLicencia);
-                     TB_Cupones un_TB_CuponesBD = (from c in context.TB_Cupones
-                                                   where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
-                                                        select c).First<TB_Cupones>();
+                     var lista_TB_CuponesBD = (from c in context.TB_Cupones
+                                               where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
+                                               select c).ToList<TB_Cupones>();
 
-                     if (un_TB_CuponesBD.flCompensado) // verificamos si 
+
+                     var listaCuponesCompensadosBD = lista_TB_CuponesBD.Where(c => c.flCompensado == true).ToList<TB_Cupones>();
+                     if (listaCuponesCompensadosBD.Count() > 0) // verificamos si 
                      {
-                         throw new ServiceObligacionesException(string.Format("No se puede eliminar la licencia {0} porque ya que existen comprobantes compensados", item.nrLicencia)); 
+                         throw new ServiceObligacionesException("Existen cupones compensados ", listaCuponesCompensadosBD); 
                      }
 
                      var listaTB_ObligacionesCuotasBD = (from c in context.TB_ObligacionesCuotas
@@ -217,7 +219,11 @@ namespace SGLibrary.Services
                      {
                          context.TB_ObligacionesCuotas.Remove(itemCuotas);// Eliminamos la info de cuotas
                      }
-                     context.TB_Cupones.Remove(un_TB_CuponesBD); // Eliminamos los cupones asociados
+                     foreach (var un_TB_CuponesBD in lista_TB_CuponesBD) 
+                     {
+                         context.TB_Cupones.Remove(un_TB_CuponesBD); // Eliminamos los cupones asociados
+                         
+                     }
                      context.SaveChanges();
                      context.TB_ObligacionesTitulares.Remove(item); // Eliminamos los titulares asociados
                  }  // Fin de la Rutina de Eliminación

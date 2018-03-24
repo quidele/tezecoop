@@ -257,7 +257,17 @@ namespace SGLibrary
                             }
                             catch (ServiceObligacionesException ex)
                             {
+                                var ObligacionesCompensados = "";
+                                foreach (var item in ex.ListaCuponesCompensados)
+	                            {
+                                    ObligacionesCompensados = ObligacionesCompensados + " -  Licencia: " + item.nrLicencia.ToString() + " Nro Cupón Compensación " + item.nrCupon.ToString() + "\n"; 
+	                            }
+                                if (ObligacionesCompensados !="") {
+                                    MessageBox.Show("Error: existen obligaciones compensadas\n" + ObligacionesCompensados, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return;
+                                }
                                 MessageBox.Show("Error: " + ex.Message , "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
                                 return; 
                             }
                             MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -414,6 +424,15 @@ namespace SGLibrary
             }
             catch (ServiceObligacionesException ex)
             {
+                var ObligacionesCompensados = "";
+                                foreach (var item in ex.ListaCuponesCompensados)
+	                            {
+                                    ObligacionesCompensados = ObligacionesCompensados + " -  Licencia: " + item.nrLicencia.ToString() + " Nro Cupón Compensación " + item.nrCupon.ToString() + "\n"; 
+	                            }
+                                if (ObligacionesCompensados !="") {
+                                    MessageBox.Show("Error: existen obligaciones compensadas\n" + ObligacionesCompensados, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                                    return false;
+                                }
                 MessageBox.Show(ex.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }

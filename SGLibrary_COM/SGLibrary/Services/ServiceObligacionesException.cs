@@ -10,20 +10,22 @@ namespace SGLibrary.Services
 
         public List<TB_Cupones> ListaCuponesCompensados { get; set; }
 
+
         public ServiceObligacionesException()
         {
-
+            this.ListaCuponesCompensados = new List<TB_Cupones>();
         }
 
         public ServiceObligacionesException(String message)
             : base(message)
         {
-
+            this.ListaCuponesCompensados = new List<TB_Cupones>();
         }
 
         public ServiceObligacionesException(string message, Exception inner) 
             : base(message, inner)
         {
+            this.ListaCuponesCompensados = new List<TB_Cupones>();
         }
 
 
