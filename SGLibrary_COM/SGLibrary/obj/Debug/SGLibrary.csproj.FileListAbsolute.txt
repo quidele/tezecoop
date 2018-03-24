@@ -95,3 +95,4 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ES-ES\SGLibrary.resources.d
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPrincipal.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPrincipal.resources

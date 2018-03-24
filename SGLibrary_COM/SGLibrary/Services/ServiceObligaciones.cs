@@ -151,6 +151,14 @@ namespace SGLibrary.Services
                  }
                  foreach (var item in objTB_ObligacionesCuotas)
                  {
+
+                     int nrLicenciaBuscada = int.Parse(item.nrLicencia);
+                     TB_Cupones un_TB_CuponesBD = (from c in context.TB_Cupones
+                                                   where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
+                                                   select c).First<TB_Cupones>();
+
+                     context.TB_Cupones.Remove(un_TB_CuponesBD);
+                     context.SaveChanges();
                      context.TB_ObligacionesCuotas.Remove  (item);
                  }
                  context.SaveChanges();
@@ -210,6 +218,7 @@ namespace SGLibrary.Services
                          context.TB_ObligacionesCuotas.Remove(itemCuotas);// Eliminamos la info de cuotas
                      }
                      context.TB_Cupones.Remove(un_TB_CuponesBD); // Eliminamos los cupones asociados
+                     context.SaveChanges();
                      context.TB_ObligacionesTitulares.Remove(item); // Eliminamos los titulares asociados
                  }  // Fin de la Rutina de Eliminación
 

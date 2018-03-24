@@ -167,6 +167,10 @@ namespace SGLibrary
                         this.cbFecdoc.Value = DateTime.Now.Date;
                         this.dtpFecValor.Value = DateTime.Now.Date;
                         HabilitarDeshabilitarCampos(false);
+                        this.txtDescripcion.Text = "";
+                        this.txtCuotas.Text = "";
+                        this.txtMonto.Text = "";
+                        this.cbPeriodo.SelectedIndex = -1;
                         this.ADGV_Titulares.Columns.Clear();
                         this.ADGV_TitularesCuotas.Columns.Clear();
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);

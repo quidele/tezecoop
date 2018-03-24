@@ -83,10 +83,12 @@ INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTama
   ('TB_Proveedores','flGPS','flGPS','BIT','1',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 
-
+/*
 
   select * from tb_cupones
 
   vlRecargoTarjeta
 
   select * from TB_Parametros 
+
+  */
