@@ -1324,7 +1324,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   136970241
+         Format          =   228720641
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1338,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   136970241
+         Format          =   228720641
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
@@ -2294,10 +2294,21 @@ Dim i  As Integer
                        objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", Item.Index)) Then
         Item.Checked = False
    Else
-        If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" And _
-              (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index) = "Retorno" Or _
+        If Me.COBRO_COMISION_CD_RE_OBLIGATORIA = "S" Then
+              If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index) = "Retorno" Or _
                   objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index) = "Cobro en Destino") Then
                Item.Checked = True
+              End If
+              If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", Item.Index) = "Débito") Then  'INCLUIMOS  Obligaciones de PAGO
+                        ' marcar que se debe compensar si o si porque se supera la fecha de vencimiento
+                        Dim fecha_del_dia As Date
+                        Dim pdtCobradoCliente As Date
+                        pdtCobradoCliente = Left(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", Item.Index), 10)
+                        fecha_del_dia = CDate(Left(Now(), 10))
+                        If CDate(pdtCobradoCliente) <= fecha_del_dia Then
+                            Item.Checked = True
+                        End If
+                    End If
         End If
    End If
     
@@ -2721,6 +2732,10 @@ Dim j As Integer
 Dim ItemList  As ListItem
 Dim vlRetencion As Single
 Dim Valor       As Single
+' PARA MODULO DE OBLIGACIONES
+Dim fecha_del_dia As Date
+Dim pdtCobradoCliente As Date
+
 
     For i = 1 To Me.lstBusqueda.ListItems.Count
     
@@ -2742,8 +2757,7 @@ Dim Valor       As Single
                     End If
                     If (objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Débito") Then 'INCLUIMOS  Obligaciones de PAGO
                         ' marcar que se debe compensar si o si porque se supera la fecha de vencimiento
-                        Dim fecha_del_dia As Date
-                        Dim pdtCobradoCliente As Date
+
                         pdtCobradoCliente = Left(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i), 10)
                         fecha_del_dia = CDate(Left(Now(), 10))
                         If CDate(pdtCobradoCliente) <= fecha_del_dia Then
@@ -2754,20 +2768,58 @@ Dim Valor       As Single
 
         
             For j = 1 To Me.lstBusqueda.ListItems(i).ListSubItems.Count
+            
+                ' MODIFICADO PARA LA IMPLEMENTACION DE OBLIGACIONES
                 ' Si la factura es de monto cero
-                If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino" Or _
-                   objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Then
-                     ' se trata de Cobro en destino o Retorno
+                Select Case objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i)
+                Case "Cobro en Destino":
+                    ' se trata de Cobro en destino o Retorno
                     Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Rojo
                     Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = True
                     Me.lstBusqueda.ListItems(i).ForeColor = Rojo
                     Me.lstBusqueda.ListItems(i).Bold = True
-                Else
+                Case "Retorno":
+                    ' se trata de Cobro en destino o Retorno
+                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Rojo
+                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = True
+                    Me.lstBusqueda.ListItems(i).ForeColor = Rojo
+                    Me.lstBusqueda.ListItems(i).Bold = True
+                Case "Débito":
+                    ' marcar que se debe compensar si o si porque se supera la fecha de vencimiento
+                    pdtCobradoCliente = Left(objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "dtCobradoalCliente", i), 10)
+                    fecha_del_dia = CDate(Left(Now(), 10))
+                    If CDate(pdtCobradoCliente) <= fecha_del_dia Then
+                        Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Rojo
+                        Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = True
+                        Me.lstBusqueda.ListItems(i).ForeColor = Rojo
+                        Me.lstBusqueda.ListItems(i).Bold = True
+                    Else
+                        ' viajes al contado y tarjeta
+                        Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Azul
+                        Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = False
+                        Me.lstBusqueda.ListItems(i).ForeColor = Azul
+                    End If
+                Case Else
                     ' viajes al contado y tarjeta
                     Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Azul
                     Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = False
                     Me.lstBusqueda.ListItems(i).ForeColor = Azul
-                End If
+                End Select
+                
+                
+'                If objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Cobro en Destino" Or _
+'                   objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "tpCupon", i) = "Retorno" Then
+'                     ' se trata de Cobro en destino o Retorno
+'                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Rojo
+'                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = True
+'                    Me.lstBusqueda.ListItems(i).ForeColor = Rojo
+'                    Me.lstBusqueda.ListItems(i).Bold = True
+'                Else
+'                    ' viajes al contado y tarjeta
+'                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).ForeColor = Azul
+'                    Me.lstBusqueda.ListItems(i).ListSubItems.Item(j).Bold = False
+'                    Me.lstBusqueda.ListItems(i).ForeColor = Azul
+'                End If
                 ActualizarCantidadViajes
             Next j
             

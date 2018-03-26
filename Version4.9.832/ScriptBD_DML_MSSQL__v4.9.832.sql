@@ -86,9 +86,7 @@ INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTama
 /*
 
   select * from tb_cupones
-
   vlRecargoTarjeta
-
   select * from TB_Parametros 
 
   */

@@ -265,7 +265,8 @@ create  procedure [dbo].SP_AnularRecibo_v4_9_832
 @idReciboParam       			as numeric,
 @dsUsuario_param     			as Varchar(50),
 @dsUsuario_Supervisor_param     as Varchar(50)=null
-as
+AS
+BEGIN
 declare @nrCajaRecibo  numeric
 declare @strError      varchar(400)
 declare @tpRecibo      varchar(100)
@@ -460,5 +461,6 @@ declare @flAnulado     bit
 	    dsUsuario_Supervisor=@dsUsuario_Supervisor_param
 	where IdRecibo=@IdReciboParam
 
+END
 
-
+GO

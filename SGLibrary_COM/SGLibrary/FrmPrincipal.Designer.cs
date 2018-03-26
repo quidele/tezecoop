@@ -82,6 +82,7 @@
             this.conciliacionesToolStripMenuItem.Name = "conciliacionesToolStripMenuItem";
             this.conciliacionesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
             this.conciliacionesToolStripMenuItem.Text = "Conciliaciones";
+            this.conciliacionesToolStripMenuItem.Click += new System.EventHandler(this.conciliacionesToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

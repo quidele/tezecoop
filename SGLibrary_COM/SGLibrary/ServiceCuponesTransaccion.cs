@@ -190,6 +190,7 @@ namespace SGLibrary
                     un_TB_CuponesBD.vlRecargoTarjeta = un_TB_CuponesBD.vlMontoCupon * this._PORC_RECARGO_TP / 100; 
                     break;
             }
+            // Redondeamos a 2 decimales para trabajar con numeros mas redondos
             un_TB_CuponesBD.vlRecargoTarjeta = Math.Round(un_TB_CuponesBD.vlRecargoTarjeta.Value , 2);
             un_TB_CuponesBD.tpCupon = ptpCuponDestino;
 
