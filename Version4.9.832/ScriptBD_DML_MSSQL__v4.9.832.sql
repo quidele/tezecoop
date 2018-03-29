@@ -48,7 +48,7 @@ exec SP_GenerarNuevasOpcionesdeMenues
 --------------------------------------
 --!! ALTA DE NUEVOS CONCEPTOS    !!---
 --------------------------------------
-
+select * from TB_Conceptos
 
 delete from TB_Conceptos  where cdConcepto = 3000
 
@@ -60,7 +60,7 @@ flSumaenCajaLicenciatarios,
 flOcultadoenCajaAdm,
 flOcultadoCajaLicenciatario,
 flOcultadoCajaCooperativa,
-flOcultadoenRegistracion)  VALUES (3000,'Cajas','Débito x Obligación',0,'Ingreso de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema',1,1,0,0,0,0,0);
+flOcultadoenRegistracion)  VALUES (3000,'Cajas','Débito x Obligación',0,'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema',1,1,0,0,0,0,0);
 
 
 delete from TB_Conceptos  where cdConcepto = 3001
@@ -74,7 +74,7 @@ flOcultadoenCajaAdm,
 flOcultadoCajaLicenciatario,
 flOcultadoCajaCooperativa,
 flOcultadoenRegistracion)  VALUES 
-(3001,'Cajas','Crédito x Obligación',0, 'Entrada de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,0,0,0);
+(3001,'Cajas','Crédito x Obligación',0, 'Salida de Dinero',getdate(),0,'Caja de la Cooperativa','Sistema', 1,1,0,0,0,0,0);
 
 
 DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Proveedores' and nmCampo = 'flGPS' 

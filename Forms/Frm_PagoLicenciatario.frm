@@ -231,6 +231,21 @@ Begin VB.Form frm_PagoLicenciatario
             BackColor       =   &H00E0E0E0&
             CausesValidation=   0   'False
             DataField       =   "nmNombre"
+            ForeColor       =   &H000000FF&
+            Height          =   375
+            Index           =   4
+            Left            =   8100
+            Locked          =   -1  'True
+            TabIndex        =   96
+            Tag             =   "vlAcumDebitos"
+            Top             =   1005
+            Width           =   855
+         End
+         Begin VB.TextBox txtSaldos 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            DataField       =   "nmNombre"
             ForeColor       =   &H00000000&
             Height          =   390
             Index           =   3
@@ -611,6 +626,26 @@ Begin VB.Form frm_PagoLicenciatario
             Tag             =   "vlAcumComision"
             Top             =   390
             Width           =   900
+         End
+         Begin VB.Label Label32 
+            Alignment       =   2  'Center
+            Caption         =   "Débitos"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   700
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H000000FF&
+            Height          =   255
+            Left            =   8070
+            TabIndex        =   95
+            Tag             =   "vlAcumTarjeta"
+            Top             =   810
+            Width           =   840
          End
          Begin VB.Label Label31 
             Alignment       =   2  'Center
@@ -1324,7 +1359,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2302
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   228720641
+         Format          =   119734273
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1338,7 +1373,7 @@ Begin VB.Form frm_PagoLicenciatario
          _ExtentX        =   2328
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   228720641
+         Format          =   119406593
          CurrentDate     =   38267
       End
       Begin VB.Label lblCantidaddeCD 
@@ -1777,6 +1812,8 @@ Const CONCEPTO_COBRO_A_CUENTA_CORRIENTE = "1063"
 Const CONCEPTO_COBRO_IVA_AL_LICENCIATARIO = "1064"
 Const CONCEPTO_PAGO_A_LOS_LICENCIATARIOS_EN_REAL = "2030"
 Const CONCEPTO_COBRO_A_CUENTA_CORRIENTE_990 = "2034"
+Const CONCEPTO_DEBITO_X_OBLIGACION = 3000 ' salida de dinero
+Const CONCEPTO_CREDITO_X_OBLIGACION = 3001 ' ingreso de dinero
 
 
 Public COBRO_COMISION_CD_RE_OBLIGATORIA As String
@@ -3390,6 +3427,7 @@ Dim cdCliente               As String
                                                          "Pago a Licenciatario", "Licencia Nro. " + Me.lstBusqueda.ListItems(1).Text, _
                                                          ObtenerCampo("vlSaldoDolares").Text, ObtenerCampo("vlSaldoPesos").Text, _
                                                          ObtenerCampo("vlSaldoEuros").Text, objUsuario.dsUsuario) Then
+                                                         
             If Not objCtaCteLic.grabarMovimientoContablePagoLicenciatarioenMonedaReal(IdRecibo, _
                                         CONCEPTO_PAGO_A_LOS_LICENCIATARIOS_EN_REAL, _
                                         objParametros.ObtenerValor("nrCaja"), _
@@ -3404,6 +3442,18 @@ Dim cdCliente               As String
                 CompensarCupones = False
                 Exit Function
             End If
+            
+            
+'            If Not objCtaCteLic.grabarMovimientoContablePagoLicenciatario(IdRecibo, CONCEPTO_DEBITO_X_OBLIGACION, objParametros.ObtenerValor("nrCaja"), _
+'                                                         "Débitos por Obligaciones", "Licencia Nro. " + Me.lstBusqueda.ListItems(1).Text, _
+'                                                         0, ObtenerCampo("vlAcumDebitos").Text, 0, objUsuario.dsUsuario) Then
+'                objbasededatos.RollBackTrans
+'                MsgBox "Se ha producido un error en grabarMovimientoContablePagoLicenciatarioenMonedaReal, por favor intente nuevamente", vbCritical + vbDefaultButton1, "Atención"
+'                CompensarCupones = False
+'                Exit Function
+'            End If
+            
+            
             ' Cierra la transaccion OK
             objbasededatos.CommitTrans
         Else
@@ -3510,6 +3560,7 @@ Dim iCantviajes     As Integer
 Dim iCantRetornos   As Integer
 Dim vlAcumTarjeta   As Single
 Dim vlRecargoTarjeta As String
+Dim vlAcumDebitos   As Single
 
     vlAcumPesos = 0
     vlAcumDolares = 0
@@ -3519,6 +3570,7 @@ Dim vlRecargoTarjeta As String
     vlSaldoDolares = 0
     vlSaldoEuros = 0
     vlAcumReales = 0
+    vlAcumDebitos = 0
 
     iCantviajes = 0
     For i = 1 To Me.lstBusqueda.ListItems.Count
@@ -3593,7 +3645,8 @@ Dim vlRecargoTarjeta As String
                    vlAcumPesos = vlAcumPesos - 0
                    vlAcumDolares = vlAcumDolares - 0
                    vlAcumEuros = vlAcumEuros - 0
-                   vlAcumComision = vlAcumComision + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
+                   vlAcumComision = vlAcumComision + 0
+                   vlAcumDebitos = vlAcumDebitos + objControl.buscarListviewValorColumnaIndice(Me.lstBusqueda, "vlComision", i)
                    vlAcumReales = vlAcumReales - 0
                 End Select
                 ' Sumamos los importes en IVA
@@ -3622,9 +3675,10 @@ Dim vlRecargoTarjeta As String
     ObtenerCampo("vlSaldoEuros").Text = FormatNumber(CStr(vlAcumEuros), 2)
     ObtenerCampo("vlSaldoReales").Text = FormatNumber(CStr(vlAcumReales), 2)
     
-    vlSaldoPesos = vlAcumPesos - (vlAcumComision + vlAcumIVA + vlAcumTarjeta)
+    vlSaldoPesos = vlAcumPesos - (vlAcumComision + vlAcumIVA + vlAcumTarjeta + vlAcumDebitos)
     ObtenerCampo("vlSaldoPesos").Text = FormatNumber(CStr(vlSaldoPesos), 2)
     
+    ObtenerCampo("vlAcumDebitos").Text = FormatNumber(CStr(vlAcumDebitos), 2)
     
     PintarTextodeCampos ObtenerCampo("vlSaldoDolares")
     PintarTextodeCampos ObtenerCampo("vlSaldoEuros")
@@ -3732,6 +3786,7 @@ End Sub
 
 Public Sub limpiarTotales()
 
+    ObtenerCampo("vlAcumDebitos").Text = FormatNumber(CStr(0), 2)
     ObtenerCampo("vlAcumPesos").Text = FormatNumber(CStr(0), 2)
     ObtenerCampo("vlAcumDolares").Text = FormatNumber(CStr(0), 2)
     ObtenerCampo("vlAcumEuros").Text = FormatNumber(CStr(0), 2)
@@ -3740,6 +3795,7 @@ Public Sub limpiarTotales()
     ObtenerCampo("vlSaldoDolares").Text = FormatNumber(CStr(0), 2)
     ObtenerCampo("vlSaldoEuros").Text = FormatNumber(CStr(0), 2)
     ObtenerCampo("vlSaldoPesos").Text = FormatNumber(CStr(0), 2)
+    
     PintarTextodeCampos ObtenerCampo("vlSaldoDolares")
     PintarTextodeCampos ObtenerCampo("vlSaldoEuros")
     PintarTextodeCampos ObtenerCampo("vlSaldoPesos")
