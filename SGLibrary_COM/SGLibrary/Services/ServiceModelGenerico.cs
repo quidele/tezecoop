@@ -25,6 +25,7 @@ namespace SGLibrary.Services
         public virtual string CajaAdm { get; set; }
         public virtual string Basededatos { get; set; }
         public virtual string Servidor { get; set; }
+        public virtual string Ambiente { get; set; }
 
         public String usuario_mod { get; set; }
         public DateTime fecha_mod { get; set; }

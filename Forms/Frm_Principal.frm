@@ -1,11 +1,11 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.MDIForm Frm_Principal 
    BackColor       =   &H8000000C&
    Caption         =   "Sistema de Gestión - Taxis Aeropuerto Ezeiza "
    ClientHeight    =   7365
-   ClientLeft      =   225
-   ClientTop       =   855
+   ClientLeft      =   165
+   ClientTop       =   810
    ClientWidth     =   9120
    Icon            =   "Frm_Principal.frx":0000
    LinkTopic       =   "MDIForm1"
@@ -978,7 +978,7 @@ End Sub
 
 ' -- Agregado en la version 4.9
 Private Sub optConciliarViajes_Click()
-Dim objServiceConciliacion As Object
+Dim objLoaderForms As Object
 
     If Not objCajas.ObtenerCajadeADMAbierta() Then
         MsgBox "Para acceder a esta opción debe existir una caja de la adm abierta", vbInformation, "Atención"
@@ -989,23 +989,26 @@ Dim objServiceConciliacion As Object
     On Error Resume Next
             
     ' v4.9
-    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion"
-    Set objServiceConciliacion = CreateObject("SGLibrary.ServiceConciliacion")
-    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceConciliacion OK "
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms"
+    Set objLoaderForms = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms OK "
 
     If Err <> 5 Then
         MsgBox Err.Description, vbCritical, "Atención"
     End If
     On Error GoTo 0
 
-objLog.Grabar_Log "Antes de  UsuarioActivo objUsuario.dsUsuario "
-    objServiceConciliacion.UsuarioActivo CStr(objUsuario.dsUsuario)
+    objLog.Grabar_Log "Antes de  UsuarioActivo objUsuario.dsUsuario "
+    objLoaderForms.UsuarioActivo CStr(objUsuario.dsUsuario)
 
-objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
-    objServiceConciliacion.CajaActiva CStr(objCajas.nrCaja)
+    objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
+    objLoaderForms.CajaActiva CStr(objCajas.nrCaja)
 
-objLog.Grabar_Log "Antes de  CajaActiva objCajas.nrCaja "
-    objServiceConciliacion.execFormulario
+    objLog.Grabar_Log "Antes de  AmbienteActivo objConfig.dsDSN "
+    
+    objLoaderForms.AmbienteActivo CStr(objConfig.dsDSN)
+
+    objLoaderForms.execFormulario "FrmConciliaciones"
             
 
 

@@ -204,6 +204,7 @@ namespace SGLibrary
                         f9.serviceModel.CajaAdm  = this._cajactiva;
                         f9.serviceModel.Usuario  = this._usuarioActivo;
                         f9.serviceModel.usuario_mod = this.Usuario;
+                        f9.serviceModel.Ambiente = this.Ambiente;
                         f9.serviceModel.terminal_mod = "PC01";
                         f9.serviceModel.formulario = "FrmObligaciones";
                         f = (Form)f9;

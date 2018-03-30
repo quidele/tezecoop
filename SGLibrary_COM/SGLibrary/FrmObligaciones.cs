@@ -52,7 +52,9 @@ namespace SGLibrary
             this.statusbar_bd.Text = "Base de datos: " + serviceModel.Basededatos;
             this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;
             this.statusbar_usuario.Text = "Usuario: " + serviceModel.Usuario;
+            this.statusbar_nrocaja.Text = "Caja: " + serviceModel.CajaAdm;
             this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
+            this.status_bar_ambiente.Text = "Ambiente: " + ConfigBD.Instance(this.serviceModel.Ambiente)._ambiente;
             this.Titulares = new List<TB_ProveedoresExt>();
 
             this.botonesForm1.InicializarFindBoton();

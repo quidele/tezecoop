@@ -22,7 +22,10 @@ namespace SGLibrary
         void UsuarioActivo(string usuario);
         [DispId(3)]
         void CajaActiva(string caja);
-        
+
+        [DispId(4)]
+        void Ambiente(string ambiente);
+
     }
 
       // Events interface para destinos 
@@ -46,6 +49,7 @@ namespace SGLibrary
 
         private String _usuarioActivo;
         private String _cajactiva;
+        private String _ambiente;
         private List<String> _listado_Errores;
 
         public void execFormulario()
@@ -58,15 +62,23 @@ namespace SGLibrary
                 f.serviceConciliacionesAutomaticas = new ServiceConciliacionAutomatica();
                 f.serviceConciliacionesAutomaticas.CajaActiva(this._cajactiva);
                 f.serviceConciliacionesAutomaticas.UsuarioActivo(this._usuarioActivo);
+                f.serviceConciliacionesAutomaticas.Ambiente = this.Ambiente ;
+                
                 f.un_ServiceConciliacionManual = new ServiceConciliacionManual();
                 f.un_ServiceConciliacionManual.CajaActiva(this.CajaAdm);
                 f.un_ServiceConciliacionManual.UsuarioActivo(this.Usuario);
+                f.un_ServiceConciliacionManual.Ambiente = this.Ambiente;
+
                 f.un_ServiceConciliacionTodoPago  = new ServiceConciliacionTodoPago();
                 f.un_ServiceConciliacionTodoPago.CajaActiva(this.CajaAdm);
                 f.un_ServiceConciliacionTodoPago.UsuarioActivo(this.Usuario);
+                f.un_ServiceConciliacionTodoPago.Ambiente = this.Ambiente;
+
                 f.serviceConciliacionesAutomaticasAMCA = new ServiceConciliacionAutomaticaAMCA();
                 f.serviceConciliacionesAutomaticasAMCA.CajaActiva(this.CajaAdm);
                 f.serviceConciliacionesAutomaticasAMCA.UsuarioActivo(this.Usuario);
+                f.serviceConciliacionesAutomaticasAMCA.Ambiente = this.Ambiente;
+
                 f.ShowDialog();
             }
             catch (Exception ex)
@@ -417,6 +429,19 @@ namespace SGLibrary
             }
         }
 
+
+        public override string Ambiente
+        {
+            get
+            {
+                return this._ambiente;
+            }
+            set
+            {
+                this._ambiente = value;
+            }
+        }
+
         public override String ListaErrores()
         {
             String lista_errores="";
@@ -570,8 +595,11 @@ namespace SGLibrary
             return;   
          }
 
-
-        
+        void Conciliacion_Interface.Ambiente(string ambiente)
+        {
+            this._ambiente = ambiente;
+            this.Ambiente = ambiente;
+        }
     }
 }
 

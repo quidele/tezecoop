@@ -48,7 +48,7 @@ exec SP_GenerarNuevasOpcionesdeMenues
 --------------------------------------
 --!! ALTA DE NUEVOS CONCEPTOS    !!---
 --------------------------------------
-select * from TB_Conceptos
+---select * from TB_Conceptos
 
 delete from TB_Conceptos  where cdConcepto = 3000
 

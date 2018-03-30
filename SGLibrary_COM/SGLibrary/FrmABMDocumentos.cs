@@ -39,7 +39,7 @@ namespace SGLibrary
             this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;
             this.statusbar_usuario.Text = "Usuario: " + serviceModel.Usuario;
             this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
-
+            this.status_bar_ambiente.Text = "Ambiente:" + ConfigBD.Instance("")._ambiente;
 
         }
 
@@ -425,6 +425,11 @@ namespace SGLibrary
         }
 
         private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void status_bar_ambiente_Click(object sender, EventArgs e)
         {
 
         }

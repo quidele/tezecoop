@@ -42,6 +42,8 @@ namespace SGLibrary
                 this.statusbar_usuario.Text = "usuario: " + serviceConciliaciones.Usuario;
                 this.statusbar_nrocaja.Text = "Caja Nro: " + serviceConciliaciones.CajaAdm;
                 this.statusbar_version.Text = "Versión: " + typeof(SGLibrary.ServiceModel).Assembly.GetName().Version.ToString();
+                this.status_bar_ambiente.Text = "Ambiente:" + ConfigBD.Instance(this.serviceConciliaciones.Ambiente)._ambiente;
+
                 //this.statusbar_version.Text = Application.
  
             }
