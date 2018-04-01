@@ -725,6 +725,8 @@ namespace SGLibrary
 
         private void agregarTodosToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            // si no cumple las validaciones nos vamos
+            if (!validarIngresodeDatosCabecera()) return;
 
             this.Titulares.Clear();
             this.ADGV_Titulares.DataSource = "";
@@ -762,6 +764,10 @@ namespace SGLibrary
 
         private void titularesConGPSToolStripMenuItem_Click(object sender, EventArgs e)
         {
+
+            // si no cumple las validaciones nos vamos
+            if (!validarIngresodeDatosCabecera()) return;
+
             this.Titulares.Clear();
             this.ADGV_Titulares.DataSource = "";
             this.Lista_Vencimientos = null;

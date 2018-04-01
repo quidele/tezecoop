@@ -57,18 +57,10 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EN-US\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\SGLibrary.tlb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\CommonServiceLocator.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\AdvancedDataGridView.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\CommonServiceLocator.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\EntityFramework.xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\es\AdvancedDataGridView.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\fr\AdvancedDataGridView.resources.dll
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\ru\AdvancedDataGridView.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPrincipal.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmABMDocumentos.resources
@@ -97,3 +89,4 @@ C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\EN-US\SGLibrary.
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ES-ES\SGLibrary.resources.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.dll
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csprojResolveAssemblyReference.cache
