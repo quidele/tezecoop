@@ -580,6 +580,10 @@ namespace SGLibrary
         private void CargarGrillasTitularesCuotas(Boolean pEdicion = false)
         {
 
+            FrmCircularProgressBar f1 = new FrmCircularProgressBar();
+            f1.Show();
+            WinAPI.SiempreEncima(f1.Handle); 
+
             // cargamos nuevamente la lista
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
@@ -612,6 +616,8 @@ namespace SGLibrary
 
             cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
             ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
+
+            f1.Close();
         }
 
 

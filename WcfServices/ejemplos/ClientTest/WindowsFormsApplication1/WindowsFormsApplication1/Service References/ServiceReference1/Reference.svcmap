@@ -19,15 +19,10 @@
     <ServiceContractMappings />
   </ClientOptions>
   <MetadataSources>
-    <MetadataSource Address="http://quidelsoftest.azurewebsites.net/Service1.svc" Protocol="http" SourceId="1" />
+    <MetadataSource Address="http://localhost:49351/Service1.svc?singleWsdl" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
-    <MetadataFile FileName="Service1.xsd" MetadataType="Schema" ID="2fd82d21-e168-4dc2-a448-ff698978dda4" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?xsd=xsd3" />
-    <MetadataFile FileName="Service11.xsd" MetadataType="Schema" ID="5acd421b-c5a5-4d8c-9a36-bf116236b741" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?xsd=xsd0" />
-    <MetadataFile FileName="Service1.disco" MetadataType="Disco" ID="1ca72c03-7545-4905-a0c9-e9f2df48e81f" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?disco" />
-    <MetadataFile FileName="Service1.wsdl" MetadataType="Wsdl" ID="ecc556a9-ecc6-4dd6-ae55-509f1e80b076" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?wsdl" />
-    <MetadataFile FileName="Service12.xsd" MetadataType="Schema" ID="28d9fd7f-ad67-4bb4-bf8d-fa9549edbe82" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?xsd=xsd2" />
-    <MetadataFile FileName="Service13.xsd" MetadataType="Schema" ID="493e53b2-5b7d-4ffb-88fd-60ca28567faf" SourceId="1" SourceUrl="http://quidelsoftest.azurewebsites.net/Service1.svc?xsd=xsd1" />
+    <MetadataFile FileName="Service111.wsdl" MetadataType="Wsdl" ID="b8306529-b489-41cd-8e59-811841252df8" SourceId="1" SourceUrl="http://localhost:49351/Service1.svc?singleWsdl" />
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />

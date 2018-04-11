@@ -71,10 +71,10 @@
             this.statusbar_bd = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
+            this.status_bar_ambiente = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.status_bar_ambiente = new System.Windows.Forms.ToolStripStatusLabel();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.panelbusqueda.SuspendLayout();
@@ -118,7 +118,7 @@
             this.panelcarga.Controls.Add(this.cbtipoConciliacion);
             this.panelcarga.Controls.Add(this.txtFormato);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(1303, 386);
             this.panelcarga.TabIndex = 2;
@@ -193,7 +193,7 @@
             // 
             this.btnSelecccionarArchivoTarjeta.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnSelecccionarArchivoTarjeta.Location = new System.Drawing.Point(1243, 80);
-            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSelecccionarArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.btnSelecccionarArchivoTarjeta.Name = "btnSelecccionarArchivoTarjeta";
             this.btnSelecccionarArchivoTarjeta.Size = new System.Drawing.Size(35, 27);
             this.btnSelecccionarArchivoTarjeta.TabIndex = 20;
@@ -208,7 +208,7 @@
             this.txtNombreArchivoTarjeta.BackColor = System.Drawing.SystemColors.ActiveCaption;
             this.txtNombreArchivoTarjeta.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtNombreArchivoTarjeta.Location = new System.Drawing.Point(331, 81);
-            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNombreArchivoTarjeta.Margin = new System.Windows.Forms.Padding(4);
             this.txtNombreArchivoTarjeta.Name = "txtNombreArchivoTarjeta";
             this.txtNombreArchivoTarjeta.ReadOnly = true;
             this.txtNombreArchivoTarjeta.Size = new System.Drawing.Size(910, 22);
@@ -381,7 +381,7 @@
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Controls.Add(this.dataGridView2);
             this.panelbusqueda.Location = new System.Drawing.Point(16, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(1340, 404);
             this.panelbusqueda.TabIndex = 0;
@@ -389,7 +389,7 @@
             // button1
             // 
             this.button1.Location = new System.Drawing.Point(619, 59);
-            this.button1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.button1.Margin = new System.Windows.Forms.Padding(4);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(183, 28);
             this.button1.TabIndex = 16;
@@ -566,6 +566,12 @@
             this.statusbar_version.Size = new System.Drawing.Size(57, 20);
             this.statusbar_version.Text = "Versión";
             // 
+            // status_bar_ambiente
+            // 
+            this.status_bar_ambiente.Name = "status_bar_ambiente";
+            this.status_bar_ambiente.Size = new System.Drawing.Size(151, 20);
+            this.status_bar_ambiente.Text = "toolStripStatusLabel1";
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "NewDataSet";
@@ -582,12 +588,6 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // status_bar_ambiente
-            // 
-            this.status_bar_ambiente.Name = "status_bar_ambiente";
-            this.status_bar_ambiente.Size = new System.Drawing.Size(151, 20);
-            this.status_bar_ambiente.Text = "toolStripStatusLabel1";
-            // 
             // FrmConciliaciones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -595,8 +595,8 @@
             this.ClientSize = new System.Drawing.Size(1372, 473);
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
-            this.Controls.Add(this.panelbusqueda);
             this.Controls.Add(this.panelcarga);
+            this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FrmConciliaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
