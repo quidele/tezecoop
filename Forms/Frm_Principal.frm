@@ -1005,8 +1005,8 @@ Dim objLoaderForms As Object
     objLoaderForms.CajaActiva CStr(objCajas.nrCaja)
 
     objLog.Grabar_Log "Antes de  AmbienteActivo objConfig.dsDSN "
-    
-    objLoaderForms.AmbienteActivo CStr(objConfig.dsDSN)
+    ' Comentado para implmentacion Camila Configuracion de tamanios
+    ' objLoaderForms.AmbienteActivo CStr(objConfig.dsDSN)
 
     objLoaderForms.execFormulario "FrmConciliaciones"
             
