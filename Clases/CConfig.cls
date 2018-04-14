@@ -81,6 +81,21 @@ Public Function ObtenerEntrada(strEntrada As String, strSeccion As String, bMens
     
 End Function
 
+Public Function ObtenerEntradaDefecto(strEntrada As String, strSeccion As String, bMensaje As Boolean, strDefault As String) As String
+    Dim iLen As Integer
+   
+    Dim arrCarpeta As String * 255
+    iLen = GetPrivateProfileString(strSeccion, strEntrada, strDefault, arrCarpeta, 255, App.Path & "\" & "Config.INI")
+    If (iLen = 0) Then
+        If bMensaje Then MsgBox "Falta la entrada '" & strEntrada & "'.", vbCritical, "Atención"
+        ObtenerEntradaDefecto = ""
+        Exit Function
+    End If
+    
+    ObtenerEntradaDefecto = Left(arrCarpeta, iLen)
+    
+End Function
+
 Public Sub GuardarEntrada(strEntrada As String, strSeccion As String, strDefault As String)
     Dim iLen As Integer
    
