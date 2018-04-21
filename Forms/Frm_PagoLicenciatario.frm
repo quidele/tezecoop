@@ -5,7 +5,7 @@ Begin VB.Form frm_PagoLicenciatario
    Caption         =   "Manejo de Pago a Licenciatario y Cobro a Cta. Cte."
    ClientHeight    =   10125
    ClientLeft      =   120
-   ClientTop       =   510
+   ClientTop       =   810
    ClientWidth     =   21540
    ClipControls    =   0   'False
    Icon            =   "Frm_PagoLicenciatario.frx":0000
@@ -236,7 +236,7 @@ Begin VB.Form frm_PagoLicenciatario
          ForeColor       =   &H80000008&
          Height          =   255
          Left            =   270
-         TabIndex        =   90
+         TabIndex        =   89
          Top             =   1020
          Width           =   1830
       End
@@ -255,17 +255,17 @@ Begin VB.Form frm_PagoLicenciatario
          ForeColor       =   &H80000008&
          Height          =   255
          Left            =   2160
-         TabIndex        =   89
+         TabIndex        =   88
          Top             =   1020
          Value           =   1  'Checked
          Width           =   1935
       End
       Begin VB.Frame fra_totales 
-         Height          =   1650
-         Left            =   210
+         Height          =   1695
+         Left            =   240
          TabIndex        =   44
-         Top             =   6150
-         Width           =   20880
+         Top             =   6120
+         Width           =   20895
          Begin VB.TextBox txtSaldos 
             Appearance      =   0  'Flat
             BackColor       =   &H00E0E0E0&
@@ -273,7 +273,31 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            ForeColor       =   &H00000000&
+            Height          =   420
+            Index           =   0
+            Left            =   3525
+            Locked          =   -1  'True
+            TabIndex        =   96
+            Tag             =   "vlAcumPesos"
+            Top             =   390
+            Width           =   1500
+         End
+         Begin VB.TextBox txtSaldos 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            DataField       =   "nmNombre"
+            BeginProperty Font 
+               Name            =   "MS Sans Serif"
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -282,10 +306,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H000000FF&
             Height          =   375
-            Index           =   4
+            Index           =   11
             Left            =   11205
             Locked          =   -1  'True
-            TabIndex        =   88
+            TabIndex        =   87
             Tag             =   "vlAcumDebitos"
             Top             =   1020
             Width           =   1500
@@ -297,7 +321,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -306,10 +330,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   390
-            Index           =   3
+            Index           =   5
             Left            =   11205
             Locked          =   -1  'True
-            TabIndex        =   81
+            TabIndex        =   80
             Tag             =   "vlAcumTarjeta"
             Top             =   390
             Width           =   1500
@@ -321,7 +345,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -330,10 +354,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   375
-            Index           =   2
+            Index           =   9
             Left            =   8145
             Locked          =   -1  'True
-            TabIndex        =   79
+            TabIndex        =   78
             Tag             =   "vlSaldoReales"
             Top             =   1020
             Width           =   1500
@@ -344,7 +368,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "cdCaja"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -353,10 +377,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   375
-            Index           =   13
+            Index           =   6
             Left            =   3555
             Locked          =   -1  'True
-            TabIndex        =   63
+            TabIndex        =   62
             TabStop         =   0   'False
             Tag             =   "vlSaldoPesos"
             Top             =   1020
@@ -375,9 +399,9 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             Height          =   780
             Left            =   90
-            TabIndex        =   62
+            TabIndex        =   61
             Tag             =   "cmdCompensar"
-            Top             =   420
+            Top             =   405
             Width           =   1650
          End
          Begin VB.TextBox txtSaldos 
@@ -387,7 +411,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -396,10 +420,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   375
-            Index           =   16
+            Index           =   7
             Left            =   5085
             Locked          =   -1  'True
-            TabIndex        =   61
+            TabIndex        =   60
             Tag             =   "vlSaldoDolares"
             Top             =   1020
             Width           =   1500
@@ -411,7 +435,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -420,10 +444,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   375
-            Index           =   17
+            Index           =   8
             Left            =   6615
             Locked          =   -1  'True
-            TabIndex        =   60
+            TabIndex        =   59
             Tag             =   "vlSaldoEuros"
             Top             =   1020
             Width           =   1500
@@ -435,7 +459,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -444,10 +468,10 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   405
-            Index           =   18
+            Index           =   3
             Left            =   8145
             Locked          =   -1  'True
-            TabIndex        =   59
+            TabIndex        =   58
             Tag             =   "vlAcumReales"
             Top             =   390
             Width           =   1500
@@ -459,7 +483,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -467,36 +491,12 @@ Begin VB.Form frm_PagoLicenciatario
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000000&
-            Height          =   390
-            Index           =   20
-            Left            =   6615
-            Locked          =   -1  'True
-            TabIndex        =   58
-            Tag             =   "vlAcumEuros"
-            Top             =   405
-            Width           =   1500
-         End
-         Begin VB.TextBox txtSaldos 
-            Appearance      =   0  'Flat
-            BackColor       =   &H00E0E0E0&
-            CausesValidation=   0   'False
-            DataField       =   "nmNombre"
-            BeginProperty Font 
-               Name            =   "MS Sans Serif"
-               Size            =   9.75
-               Charset         =   0
-               Weight          =   400
-               Underline       =   0   'False
-               Italic          =   0   'False
-               Strikethrough   =   0   'False
-            EndProperty
-            ForeColor       =   &H00000000&
-            Height          =   390
-            Index           =   21
-            Left            =   5085
+            Height          =   420
+            Index           =   2
+            Left            =   6600
             Locked          =   -1  'True
             TabIndex        =   57
-            Tag             =   "vlAcumDolares"
+            Tag             =   "vlAcumEuros"
             Top             =   390
             Width           =   1500
          End
@@ -507,7 +507,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -515,12 +515,12 @@ Begin VB.Form frm_PagoLicenciatario
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00000000&
-            Height          =   390
-            Index           =   22
-            Left            =   3555
+            Height          =   420
+            Index           =   1
+            Left            =   5055
             Locked          =   -1  'True
             TabIndex        =   56
-            Tag             =   "vlAcumPesos"
+            Tag             =   "vlAcumDolares"
             Top             =   390
             Width           =   1500
          End
@@ -558,7 +558,7 @@ Begin VB.Form frm_PagoLicenciatario
                Left            =   2175
                Locked          =   -1  'True
                TabIndex        =   48
-               Top             =   735
+               Top             =   720
                Width           =   3735
             End
             Begin VB.Label Label29 
@@ -575,7 +575,7 @@ Begin VB.Form frm_PagoLicenciatario
                ForeColor       =   &H00800000&
                Height          =   255
                Left            =   5940
-               TabIndex        =   78
+               TabIndex        =   77
                Top             =   225
                Width           =   195
             End
@@ -594,10 +594,10 @@ Begin VB.Form frm_PagoLicenciatario
                   Strikethrough   =   0   'False
                EndProperty
                ForeColor       =   &H00FF0000&
-               Height          =   315
+               Height          =   330
                Left            =   4305
-               TabIndex        =   77
-               Top             =   225
+               TabIndex        =   76
+               Top             =   240
                Width           =   1590
             End
             Begin VB.Label Label10 
@@ -678,8 +678,8 @@ Begin VB.Form frm_PagoLicenciatario
                   Strikethrough   =   0   'False
                EndProperty
                ForeColor       =   &H00FF0000&
-               Height          =   315
-               Left            =   210
+               Height          =   330
+               Left            =   195
                TabIndex        =   51
                Top             =   270
                Width           =   1590
@@ -699,7 +699,7 @@ Begin VB.Form frm_PagoLicenciatario
                   Strikethrough   =   0   'False
                EndProperty
                ForeColor       =   &H00FF0000&
-               Height          =   315
+               Height          =   345
                Left            =   2355
                TabIndex        =   50
                Top             =   225
@@ -720,7 +720,7 @@ Begin VB.Form frm_PagoLicenciatario
                   Strikethrough   =   0   'False
                EndProperty
                ForeColor       =   &H00FF0000&
-               Height          =   315
+               Height          =   330
                Left            =   6135
                TabIndex        =   49
                Top             =   225
@@ -734,7 +734,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -743,7 +743,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   375
-            Index           =   0
+            Index           =   10
             Left            =   9675
             Locked          =   -1  'True
             TabIndex        =   46
@@ -758,7 +758,7 @@ Begin VB.Form frm_PagoLicenciatario
             DataField       =   "nmNombre"
             BeginProperty Font 
                Name            =   "MS Sans Serif"
-               Size            =   9.75
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -767,13 +767,21 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             ForeColor       =   &H00000000&
             Height          =   390
-            Index           =   1
+            Index           =   4
             Left            =   9675
             Locked          =   -1  'True
             TabIndex        =   45
             Tag             =   "vlAcumComision"
             Top             =   390
             Width           =   1500
+         End
+         Begin VB.Label Label33 
+            Caption         =   "Saldo $"
+            Height          =   165
+            Left            =   3960
+            TabIndex        =   97
+            Top             =   825
+            Width           =   795
          End
          Begin VB.Label Label32 
             Alignment       =   2  'Center
@@ -790,7 +798,7 @@ Begin VB.Form frm_PagoLicenciatario
             ForeColor       =   &H000000FF&
             Height          =   255
             Left            =   11490
-            TabIndex        =   87
+            TabIndex        =   86
             Tag             =   "vlAcumTarjeta"
             Top             =   795
             Width           =   840
@@ -800,7 +808,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Tarjeta"
             Height          =   255
             Left            =   11445
-            TabIndex        =   82
+            TabIndex        =   81
             Tag             =   "vlAcumTarjeta"
             Top             =   165
             Width           =   840
@@ -810,7 +818,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Saldo R$"
             Height          =   255
             Left            =   8400
-            TabIndex        =   80
+            TabIndex        =   79
             Top             =   795
             Width           =   840
          End
@@ -827,7 +835,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             Height          =   225
             Left            =   1800
-            TabIndex        =   76
+            TabIndex        =   75
             Top             =   735
             Width           =   780
          End
@@ -845,7 +853,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             Height          =   255
             Left            =   1875
-            TabIndex        =   75
+            TabIndex        =   74
             Top             =   480
             Width           =   1560
          End
@@ -863,7 +871,7 @@ Begin VB.Form frm_PagoLicenciatario
             EndProperty
             Height          =   285
             Left            =   1740
-            TabIndex        =   74
+            TabIndex        =   73
             Top             =   990
             Width           =   1755
          End
@@ -881,23 +889,23 @@ Begin VB.Form frm_PagoLicenciatario
             ForeColor       =   &H000000FF&
             Height          =   240
             Left            =   2580
-            TabIndex        =   73
+            TabIndex        =   72
             Top             =   765
             Width           =   840
          End
          Begin VB.Label Label15 
             Caption         =   "Saldo $"
             Height          =   165
-            Left            =   4035
-            TabIndex        =   72
-            Top             =   810
+            Left            =   4080
+            TabIndex        =   71
+            Top             =   1110
             Width           =   795
          End
          Begin VB.Label Label16 
             Caption         =   "Saldo u$s"
             Height          =   165
             Left            =   5400
-            TabIndex        =   71
+            TabIndex        =   70
             Top             =   810
             Width           =   795
          End
@@ -905,7 +913,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Saldo €"
             Height          =   165
             Left            =   6945
-            TabIndex        =   70
+            TabIndex        =   69
             Top             =   825
             Width           =   795
          End
@@ -913,7 +921,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "IVA"
             Height          =   165
             Left            =   10200
-            TabIndex        =   69
+            TabIndex        =   68
             Top             =   795
             Width           =   420
          End
@@ -922,7 +930,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Pesos"
             Height          =   255
             Left            =   3855
-            TabIndex        =   68
+            TabIndex        =   67
             Top             =   180
             Width           =   930
          End
@@ -931,7 +939,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Dolares"
             Height          =   255
             Left            =   5310
-            TabIndex        =   67
+            TabIndex        =   66
             Top             =   165
             Width           =   900
          End
@@ -940,7 +948,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Euros"
             Height          =   255
             Left            =   6855
-            TabIndex        =   66
+            TabIndex        =   65
             Top             =   180
             Width           =   900
          End
@@ -949,7 +957,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Reales"
             Height          =   255
             Left            =   8490
-            TabIndex        =   65
+            TabIndex        =   64
             Top             =   165
             Width           =   840
          End
@@ -958,7 +966,7 @@ Begin VB.Form frm_PagoLicenciatario
             Caption         =   "Comisión"
             Height          =   255
             Left            =   9885
-            TabIndex        =   64
+            TabIndex        =   63
             Top             =   165
             Width           =   840
          End
@@ -1024,7 +1032,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1063,7 +1071,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1084,7 +1092,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1105,7 +1113,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1126,7 +1134,7 @@ Begin VB.Form frm_PagoLicenciatario
             BorderStyle     =   1  'Fixed Single
             BeginProperty Font 
                Name            =   "Verdana"
-               Size            =   8.25
+               Size            =   12
                Charset         =   0
                Weight          =   400
                Underline       =   0   'False
@@ -1134,10 +1142,10 @@ Begin VB.Form frm_PagoLicenciatario
                Strikethrough   =   0   'False
             EndProperty
             ForeColor       =   &H00FF0000&
-            Height          =   350
+            Height          =   345
             Left            =   270
             TabIndex        =   36
-            Top             =   315
+            Top             =   300
             Width           =   2220
          End
          Begin VB.Label Label18 
@@ -1560,7 +1568,7 @@ Begin VB.Form frm_PagoLicenciatario
          Height          =   405
          Index           =   0
          Left            =   6915
-         TabIndex        =   83
+         TabIndex        =   82
          Tag             =   "dtDesde"
          Top             =   315
          Width           =   1710
@@ -1576,14 +1584,14 @@ Begin VB.Form frm_PagoLicenciatario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   158072833
+         Format          =   219021313
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
          Height          =   375
          Index           =   1
          Left            =   8655
-         TabIndex        =   84
+         TabIndex        =   83
          Tag             =   "dtHasta"
          Top             =   315
          Width           =   1545
@@ -1599,7 +1607,7 @@ Begin VB.Form frm_PagoLicenciatario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   158072833
+         Format          =   219021313
          CurrentDate     =   38267
       End
       Begin VB.Label Label6 
@@ -1616,7 +1624,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          Height          =   255
          Left            =   4035
-         TabIndex        =   96
+         TabIndex        =   95
          Top             =   1035
          Width           =   945
       End
@@ -1629,7 +1637,7 @@ Begin VB.Form frm_PagoLicenciatario
          ForeColor       =   &H80000008&
          Height          =   225
          Left            =   5160
-         TabIndex        =   95
+         TabIndex        =   94
          Top             =   1035
          Width           =   300
       End
@@ -1642,7 +1650,7 @@ Begin VB.Form frm_PagoLicenciatario
          ForeColor       =   &H80000008&
          Height          =   225
          Left            =   6630
-         TabIndex        =   94
+         TabIndex        =   93
          Top             =   1020
          Width           =   285
       End
@@ -1660,7 +1668,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          Height          =   255
          Left            =   5460
-         TabIndex        =   93
+         TabIndex        =   92
          Top             =   1020
          Width           =   915
       End
@@ -1678,7 +1686,7 @@ Begin VB.Form frm_PagoLicenciatario
          EndProperty
          Height          =   255
          Left            =   7035
-         TabIndex        =   92
+         TabIndex        =   91
          Top             =   1020
          Width           =   420
       End
@@ -1691,7 +1699,7 @@ Begin VB.Form frm_PagoLicenciatario
          ForeColor       =   &H80000008&
          Height          =   225
          Left            =   7545
-         TabIndex        =   91
+         TabIndex        =   90
          Top             =   1005
          Width           =   405
       End
@@ -1757,7 +1765,7 @@ Begin VB.Form frm_PagoLicenciatario
             Locked          =   -1  'True
             MultiLine       =   -1  'True
             ScrollBars      =   2  'Vertical
-            TabIndex        =   85
+            TabIndex        =   84
             TabStop         =   0   'False
             Tag             =   "dsLeyenda"
             Top             =   1725
@@ -1882,7 +1890,7 @@ Begin VB.Form frm_PagoLicenciatario
             Height          =   255
             Index           =   8
             Left            =   315
-            TabIndex        =   86
+            TabIndex        =   85
             Top             =   1485
             Width           =   3810
          End
@@ -2058,7 +2066,6 @@ Begin VB.Form frm_PagoLicenciatario
    End
    Begin VB.Menu menu_tamanio 
       Caption         =   "Configurar Tamaños"
-      Visible         =   0   'False
       Begin VB.Menu optAgrandar 
          Caption         =   "Aumentar Letra"
       End
@@ -2070,6 +2077,12 @@ Begin VB.Form frm_PagoLicenciatario
       End
       Begin VB.Menu optReducirAC 
          Caption         =   "Reducir Ancho Columna"
+      End
+      Begin VB.Menu optAumentarLetraSaldos 
+         Caption         =   "Letra Saldos en Negrita"
+      End
+      Begin VB.Menu optReducirLetraSaldos 
+         Caption         =   "Letra Saldos Normal"
       End
       Begin VB.Menu optGuardarCA 
          Caption         =   "Guardar Configuración"
@@ -2702,12 +2715,26 @@ Dim i As Integer
     
 End Sub
 
+Private Sub optAumentarLetraSaldos_Click()
+Dim i As Integer
+
+    For i = Me.txtSaldos.LBound To Me.txtSaldos.UBound
+        Me.txtSaldos(i).Font.Bold = True
+           Me.txtSaldos(i).Font.Size = Me.txtSaldos(i).Font.Size + 1
+    Next i
+    
+End Sub
+
 Private Sub optGuardarCA_Click()
 Dim i As Integer
 
     objConfig.GuardarEntrada "Me.lstBusqueda.Font.Size", "frm_PagoLicenciatario", Me.lstBusqueda.Font.Size
     For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
         objConfig.GuardarEntrada CStr(i), "frm_PagoLicenciatario.Me.lstBusqueda.ColumnHeaders.Width", Me.lstBusqueda.ColumnHeaders.Item(i).Width
+    Next i
+    
+    For i = Me.txtSaldos.LBound To Me.txtSaldos.UBound
+        objConfig.GuardarEntrada CStr(i), "frm_PagoLicenciatario.Me.txtSaldos(i).Font.Bold", Me.txtSaldos(i).Font.Bold
     Next i
     
 End Sub
@@ -2721,6 +2748,12 @@ Dim i As Integer
     For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
        Me.lstBusqueda.ColumnHeaders.Item(i).Width = objConfig.ObtenerEntradaDefecto(CStr(i), _
        "frm_PagoLicenciatario.Me.lstBusqueda.ColumnHeaders.Width", False, Me.lstBusqueda.ColumnHeaders.Item(i).Width)
+    Next i
+    
+    
+    For i = Me.txtSaldos.LBound To Me.txtSaldos.UBound
+        Me.txtSaldos(i).Font.Bold = objConfig.ObtenerEntradaDefecto(CStr(i), _
+       "frm_PagoLicenciatario.Me.txtSaldos(i).Font.Bold", True, Me.txtSaldos(i).Font.Bold)
     Next i
     
 End Sub
@@ -2748,6 +2781,14 @@ Dim i As Integer
         End If
     Next i
     
+End Sub
+
+Private Sub optReducirLetraSaldos_Click()
+Dim i As Integer
+
+    For i = Me.txtSaldos.LBound To Me.txtSaldos.UBound
+        Me.txtSaldos(i).Font.Bold = False
+    Next i
 End Sub
 
 Private Sub tlb_ABM_ButtonClick(ByVal Button As MSComctlLib.Button)
