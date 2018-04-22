@@ -1584,7 +1584,7 @@ Begin VB.Form frm_PagoLicenciatario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   219021313
+         Format          =   158269441
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1607,7 +1607,7 @@ Begin VB.Form frm_PagoLicenciatario
             Italic          =   0   'False
             Strikethrough   =   0   'False
          EndProperty
-         Format          =   219021313
+         Format          =   158269441
          CurrentDate     =   38267
       End
       Begin VB.Label Label6 
@@ -3842,10 +3842,17 @@ Dim cdCliente               As String
         End If
     Case Else
     
+        Dim vlSaldoPesos As Single
+        Dim vlAcumDebitos As Single
+        
+        vlSaldoPesos = CSng(ObtenerCampo("vlSaldoPesos").Text)
+        vlAcumDebitos = CSng(ObtenerCampo("vlAcumDebitos").Text)
+        
+        vlSaldoPesos = vlSaldoPesos + vlAcumDebitos
         ' PAGO DE COMPROBANTES
         If objCtaCteLic.grabarMovimientoContablePagoLicenciatario(IdRecibo, CONCEPTO_PAGO_DE_COMPROBANTES, objParametros.ObtenerValor("nrCaja"), _
                                                          "Pago a Licenciatario", "Licencia Nro. " + Me.lstBusqueda.ListItems(1).Text, _
-                                                         ObtenerCampo("vlSaldoDolares").Text, ObtenerCampo("vlSaldoPesos").Text, _
+                                                         ObtenerCampo("vlSaldoDolares").Text, CSng(vlSaldoPesos), _
                                                          ObtenerCampo("vlSaldoEuros").Text, objUsuario.dsUsuario) Then
                                                          
             If Not objCtaCteLic.grabarMovimientoContablePagoLicenciatarioenMonedaReal(IdRecibo, _
@@ -3864,14 +3871,14 @@ Dim cdCliente               As String
             End If
             
             
-'            If Not objCtaCteLic.grabarMovimientoContablePagoLicenciatario(IdRecibo, CONCEPTO_DEBITO_X_OBLIGACION, objParametros.ObtenerValor("nrCaja"), _
-'                                                         "Débitos por Obligaciones", "Licencia Nro. " + Me.lstBusqueda.ListItems(1).Text, _
-'                                                         0, ObtenerCampo("vlAcumDebitos").Text, 0, objUsuario.dsUsuario) Then
-'                objbasededatos.RollBackTrans
-'                MsgBox "Se ha producido un error en grabarMovimientoContablePagoLicenciatarioenMonedaReal, por favor intente nuevamente", vbCritical + vbDefaultButton1, "Atención"
-'                CompensarCupones = False
-'                Exit Function
-'            End If
+            If Not objCtaCteLic.grabarMovimientoContablePagoLicenciatario(IdRecibo, CONCEPTO_DEBITO_X_OBLIGACION, objParametros.ObtenerValor("nrCaja"), _
+                                                         "Débitos por Obligaciones", "Licencia Nro. " + Me.lstBusqueda.ListItems(1).Text, _
+                                                         0, ObtenerCampo("vlAcumDebitos").Text, 0, objUsuario.dsUsuario) Then
+                objbasededatos.RollBackTrans
+                MsgBox "Se ha producido un error en grabarMovimientoContablePagoLicenciatarioenMonedaReal, por favor intente nuevamente", vbCritical + vbDefaultButton1, "Atención"
+                CompensarCupones = False
+                Exit Function
+            End If
             
             
             ' Cierra la transaccion OK

@@ -152,7 +152,8 @@ if EXISTS (select * from sys.objects    where name ='FK__TB_Cupones__05F8DC4F')
 -- PRIMERO CORRER EN PRUEBAS - REALIZAR BACKUP DE LA BD 
 ALTER TABLE TB_CUPONES ALTER COLUMN tpComprobanteCliente VARCHAR(4);
 
-UPDATE  TB_CUPONES SET  tpComprobanteCliente = RTRIM(tpComprobanteCliente) ;
+-- NO CORRER HASTA CORROBORAR SI ES NECESAERIO  EJECUCION Y CANCELACION 3 MINUTOS
+-- UPDATE  TB_CUPONES SET  tpComprobanteCliente = RTRIM(tpComprobanteCliente) ;
 
 
 CREATE NONCLUSTERED INDEX TB_ComprobantesTB_Licenciatari ON dbo.TB_Cupones
