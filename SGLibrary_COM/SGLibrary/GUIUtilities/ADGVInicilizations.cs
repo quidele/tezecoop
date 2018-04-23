@@ -1,6 +1,8 @@
 ﻿using ADGV;
 using System;
 using System.Collections.Generic;
+using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,7 +14,7 @@ namespace SGLibrary.GUIUtilities
     public class ADGVInicilizations
     {
 
-        public static void  ADGV_ColorearGrillaxCorteValorFormatearFecha(AdvancedDataGridView  dgv, string p_nombre_columna_corte, string p_nombre_columna_fecha)
+        public static void  ColorearGrillaxCorteValorFormatearFecha(AdvancedDataGridView  dgv, string p_nombre_columna_corte, string p_nombre_columna_fecha)
         {
 
             // Coloreamos cortando por licencia 
@@ -58,5 +60,64 @@ namespace SGLibrary.GUIUtilities
 
 
         } // Cierra  ADGV_TitularesCuotas_Inicilizacion
-    }
+
+        // Agregar a datagridview la lista de datos
+        public static void CargarDataGridView(DataGridView dgv, IEnumerable<Object> lista,
+                                        DataSet p_DataSet, BindingSource p_BindingSource,
+                                        Dictionary<string, ADGVFieldAdapter> p_lista_campo_tipo)
+        {
+
+            /*
+             this.dataSet1.Clear();
+             this.bindingSource1.Clear();
+             this.dataGridView1.Rows.Clear(); 
+            **/
+
+            // A la lista la transfiere al DATASET
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista, p_lista_campo_tipo);
+            //Al binding source le configuramos el dataset
+            p_BindingSource.DataSource = p_DataSet;
+            // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid
+            p_BindingSource.DataMember = p_DataSet.Tables[0].TableName;
+
+            try
+            {
+                Trace.TraceInformation(dgv.ToString());
+                Trace.TraceInformation(lista.ToString());
+
+                dgv.AutoGenerateColumns = false;
+                //dgv.Rows.Clear();
+                dgv.Columns.Clear();
+
+                foreach (var item in p_lista_campo_tipo)
+                {
+                    DataGridViewColumn columna = new DataGridViewColumn();
+                    DataGridViewCell cell = new DataGridViewTextBoxCell();
+                    columna.CellTemplate = cell;
+                    columna.Name = item.Value.Name;
+                    columna.HeaderText = item.Value.HeaderText;
+                    columna.ReadOnly = item.Value.ReadOnly;
+                    columna.Visible = item.Value.Visible;
+                    columna.AutoSizeMode = DataGridViewAutoSizeColumnMode.AllCells;
+                    dgv.Columns.Add(columna);
+                    columna.DataPropertyName = item.Value.DataPropertyName;
+                }
+
+                dgv.DataSource = p_BindingSource;
+                dgv.AutoResizeRowHeadersWidth(DataGridViewRowHeadersWidthSizeMode.AutoSizeToAllHeaders);
+            }
+            catch (Exception ex)
+            {
+                var st = new StackTrace(ex, true);
+                var frame = st.GetFrame(0);
+                Trace.TraceError("Error Linea " + frame.GetFileLineNumber().ToString() + " columna " + frame.GetFileColumnNumber().ToString());
+                Trace.TraceError(ex.ToString());
+                throw;
+            }
+
+        }
+
+    }// cierra clase 
+
+
 }

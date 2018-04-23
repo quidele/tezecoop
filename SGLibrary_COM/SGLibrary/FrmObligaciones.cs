@@ -597,7 +597,7 @@ namespace SGLibrary
 
             if (this.ADGV_Titulares.Rows.Count == 0) return;
 
-            ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
+            ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
             this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
@@ -615,7 +615,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
 
             cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
-            ADGVInicilizations.ADGV_ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
+            ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
 
             f1.Close();
         }
@@ -794,6 +794,25 @@ namespace SGLibrary
         }
 
         private void panelcarga_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void descripcionesAnterioresToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //this.serviceModel.O
+
+            ServiceObligaciones miServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
+        
+            Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+            lista_campo_tipo.Add("descripcion", new ADGVFieldAdapter("descripcion", "DESCRIPCION", "descripcion", "System.String", true, true));
+            FrmBusquedaGenerica unFrmBusquedaGenerica = new FrmBusquedaGenerica();
+            unFrmBusquedaGenerica.ListaSeleccion = miServiceObligaciones.ObtenerDescripciones();
+            unFrmBusquedaGenerica.ListaCampoTipo = lista_campo_tipo;
+            unFrmBusquedaGenerica.Show();
+        }
+
+        private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
 
         }

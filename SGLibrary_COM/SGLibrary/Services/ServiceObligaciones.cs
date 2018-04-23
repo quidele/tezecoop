@@ -21,12 +21,26 @@ namespace SGLibrary.Services
 
          public override IEnumerable<Object> obtenerUsuarios()
          {
+             
                  // Falta agregar filtro de fechas
                  var lista = (from c in context.TB_transCab
                                                  select new { USUARIO = c.usuario_mod }).Distinct();
                  return lista.ToList();
          }
 
+         public  IEnumerable<String> ObtenerDescripciones()
+         {
+             var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
+             Trace.TraceInformation(paramLog);
+
+             // Falta agregar filtro de fechas
+             var listadeRegistros = (from c in context.TB_transCab
+                                     where c.cod_doc == "OBAP"
+                                     orderby c.nro_trans ascending
+                                     select c.descripcion).Distinct<String>();
+             return listadeRegistros.ToList();
+
+         } // Fin ObtenerTodosLosRegistros
 
          public override IEnumerable<Obligaciones> ObtenerTodosLosRegistros()
          {

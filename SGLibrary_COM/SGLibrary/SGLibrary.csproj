@@ -139,6 +139,12 @@
     <Compile Include="Extensiones\GroupByGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FrmBusquedaGenerica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmBusquedaGenerica.Designer.cs">
+      <DependentUpon>FrmBusquedaGenerica.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -433,6 +439,9 @@
   <ItemGroup>
     <EmbeddedResource Include="BotonesForm.resx">
       <DependentUpon>BotonesForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmBusquedaGenerica.resx">
+      <DependentUpon>FrmBusquedaGenerica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

@@ -54,12 +54,12 @@
             this.dataGridView1.ContextMenuStrip = this.contextMenuStrip1;
             this.dataGridView1.DateWithTime = false;
             this.dataGridView1.EditMode = System.Windows.Forms.DataGridViewEditMode.EditOnF2;
-            this.dataGridView1.Location = new System.Drawing.Point(11, 20);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
+            this.dataGridView1.Location = new System.Drawing.Point(15, 25);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dataGridView1.Size = new System.Drawing.Size(729, 344);
+            this.dataGridView1.Size = new System.Drawing.Size(972, 423);
             this.dataGridView1.TabIndex = 27;
             this.dataGridView1.TimeFilter = false;
             this.dataGridView1.SortStringChanged += new System.EventHandler(this.dataGridView1_SortStringChanged);
@@ -73,12 +73,12 @@
             this.contextMenuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.seleccionarToolStripMenuItem});
             this.contextMenuStrip1.Name = "contextMenuStrip1";
-            this.contextMenuStrip1.Size = new System.Drawing.Size(135, 26);
+            this.contextMenuStrip1.Size = new System.Drawing.Size(155, 28);
             // 
             // seleccionarToolStripMenuItem
             // 
             this.seleccionarToolStripMenuItem.Name = "seleccionarToolStripMenuItem";
-            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(134, 22);
+            this.seleccionarToolStripMenuItem.Size = new System.Drawing.Size(154, 24);
             this.seleccionarToolStripMenuItem.Text = "Seleccionar";
             this.seleccionarToolStripMenuItem.Click += new System.EventHandler(this.seleccionarToolStripMenuItem_Click);
             // 
@@ -90,20 +90,20 @@
             // 
             this.lblDgv1Registros.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblDgv1Registros.AutoSize = true;
-            this.lblDgv1Registros.Location = new System.Drawing.Point(14, 366);
-            this.lblDgv1Registros.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblDgv1Registros.Location = new System.Drawing.Point(24, 450);
             this.lblDgv1Registros.Name = "lblDgv1Registros";
-            this.lblDgv1Registros.Size = new System.Drawing.Size(63, 13);
+            this.lblDgv1Registros.Size = new System.Drawing.Size(84, 17);
             this.lblDgv1Registros.TabIndex = 29;
             this.lblDgv1Registros.Text = "Registros: 0";
             // 
             // FrmBuscarTitulares
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(754, 382);
+            this.ClientSize = new System.Drawing.Size(1005, 470);
             this.Controls.Add(this.lblDgv1Registros);
             this.Controls.Add(this.dataGridView1);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "FrmBuscarTitulares";
             this.Text = "Buscar Titulares";
             this.Load += new System.EventHandler(this.FrmBuscarComprobantes_Load);

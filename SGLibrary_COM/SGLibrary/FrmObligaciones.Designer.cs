@@ -80,12 +80,14 @@
             this.statusbar_bd = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_servidor = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusbar_version = new System.Windows.Forms.ToolStripStatusLabel();
+            this.status_bar_ambiente = new System.Windows.Forms.ToolStripStatusLabel();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new System.Data.DataSet();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.status_bar_ambiente = new System.Windows.Forms.ToolStripStatusLabel();
+            this.contextMenuStrip2 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.descripcionesAnterioresToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.contextMenuStrip1.SuspendLayout();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_TitularesCuotas)).BeginInit();
@@ -97,6 +99,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).BeginInit();
+            this.contextMenuStrip2.SuspendLayout();
             this.SuspendLayout();
             // 
             // contextMenuStrip1
@@ -181,7 +184,7 @@
             this.panelcarga.Controls.Add(this.modoEdicion);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Location = new System.Drawing.Point(33, 54);
-            this.panelcarga.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelcarga.Margin = new System.Windows.Forms.Padding(4);
             this.panelcarga.Name = "panelcarga";
             this.panelcarga.Size = new System.Drawing.Size(933, 530);
             this.panelcarga.TabIndex = 2;
@@ -512,7 +515,7 @@
             this.panelbusqueda.Controls.Add(this.fechadesde);
             this.panelbusqueda.Controls.Add(this.label1);
             this.panelbusqueda.Location = new System.Drawing.Point(13, 54);
-            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panelbusqueda.Margin = new System.Windows.Forms.Padding(4);
             this.panelbusqueda.Name = "panelbusqueda";
             this.panelbusqueda.Size = new System.Drawing.Size(984, 526);
             this.panelbusqueda.TabIndex = 0;
@@ -666,6 +669,12 @@
             this.statusbar_version.Size = new System.Drawing.Size(57, 20);
             this.statusbar_version.Text = "Versión";
             // 
+            // status_bar_ambiente
+            // 
+            this.status_bar_ambiente.Name = "status_bar_ambiente";
+            this.status_bar_ambiente.Size = new System.Drawing.Size(74, 20);
+            this.status_bar_ambiente.Text = "Ambiente";
+            // 
             // dataSet1
             // 
             this.dataSet1.DataSetName = "NewDataSet";
@@ -686,11 +695,21 @@
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
             // 
-            // status_bar_ambiente
+            // contextMenuStrip2
             // 
-            this.status_bar_ambiente.Name = "status_bar_ambiente";
-            this.status_bar_ambiente.Size = new System.Drawing.Size(74, 20);
-            this.status_bar_ambiente.Text = "Ambiente";
+            this.contextMenuStrip2.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.descripcionesAnterioresToolStripMenuItem});
+            this.contextMenuStrip2.Name = "contextMenuStrip2";
+            this.contextMenuStrip2.Size = new System.Drawing.Size(243, 56);
+            this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
+            // 
+            // descripcionesAnterioresToolStripMenuItem
+            // 
+            this.descripcionesAnterioresToolStripMenuItem.Name = "descripcionesAnterioresToolStripMenuItem";
+            this.descripcionesAnterioresToolStripMenuItem.Size = new System.Drawing.Size(242, 24);
+            this.descripcionesAnterioresToolStripMenuItem.Text = "Descripciones Anteriores";
+            this.descripcionesAnterioresToolStripMenuItem.Click += new System.EventHandler(this.descripcionesAnterioresToolStripMenuItem_Click);
             // 
             // FrmObligaciones
             // 
@@ -721,6 +740,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet2)).EndInit();
+            this.contextMenuStrip2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -785,5 +805,7 @@
         private System.Windows.Forms.ToolStripMenuItem titularesConGPSToolStripMenuItem;
         private System.Windows.Forms.TextBox txtNroTrans;
         private System.Windows.Forms.ToolStripStatusLabel status_bar_ambiente;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip2;
+        private System.Windows.Forms.ToolStripMenuItem descripcionesAnterioresToolStripMenuItem;
     }
 }
