@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   186515457
+         Format          =   187367425
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5681,6 +5681,12 @@ Dim vlTotalGeneral    As Single
                      ObtenerCampo("vlPrecioViaje").Text = Abs(CSng(ObtenerValoresNumericos("vlPrecioViaje")))
                      ObtenerCampo("vlPrecioViaje").SetFocus
                      Me.cmdAgregarItemFactura.Enabled = True
+                Case "Servicio"
+                     HabilitarCampos "dsProducto", False
+                     HabilitarCampos "vlPrecioViaje", False
+                     HabilitarCampos "vlPorcentaje", False
+                     ObtenerCampo("vlPrecioViaje").Text = Abs(CSng(ObtenerValoresNumericos("vlPrecioViaje")))
+                     cmdAgregarItemFactura_Click
                 End Select
     Else
         Me.cmdAgregarItemFactura.Enabled = True

@@ -807,9 +807,15 @@ namespace SGLibrary
             Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
             lista_campo_tipo.Add("descripcion", new ADGVFieldAdapter("descripcion", "DESCRIPCION", "descripcion", "System.String", true, true));
             FrmBusquedaGenerica unFrmBusquedaGenerica = new FrmBusquedaGenerica();
-            unFrmBusquedaGenerica.ListaSeleccion = miServiceObligaciones.ObtenerDescripciones();
+            var listaSeleccion = miServiceObligaciones.ObtenerDescripciones();
+            if ( listaSeleccion.Count()<1 ) return;
+            unFrmBusquedaGenerica.ListaSeleccion = listaSeleccion;
             unFrmBusquedaGenerica.ListaCampoTipo = lista_campo_tipo;
-            unFrmBusquedaGenerica.Show();
+            unFrmBusquedaGenerica.ShowDialog();
+            if (unFrmBusquedaGenerica.ListaResultado.Count > 0)
+            {
+                this.txtDescripcion.Text = unFrmBusquedaGenerica.ListaResultado.First<String>();
+            }
         }
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)

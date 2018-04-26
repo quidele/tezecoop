@@ -28,7 +28,7 @@ namespace SGLibrary.Services
                  return lista.ToList();
          }
 
-         public  IEnumerable<String> ObtenerDescripciones()
+         public IEnumerable<Object> ObtenerDescripciones()
          {
              var paramLog = new SGLibrary.Utility.ParamLogUtility().GetLog();
              Trace.TraceInformation(paramLog);
@@ -37,7 +37,7 @@ namespace SGLibrary.Services
              var listadeRegistros = (from c in context.TB_transCab
                                      where c.cod_doc == "OBAP"
                                      orderby c.nro_trans ascending
-                                     select c.descripcion).Distinct<String>();
+                                     select new { descripcion = c.descripcion  }).Distinct();
              return listadeRegistros.ToList();
 
          } // Fin ObtenerTodosLosRegistros

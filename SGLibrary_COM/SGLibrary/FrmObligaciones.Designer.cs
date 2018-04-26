@@ -390,6 +390,7 @@
             // txtDescripcion
             // 
             this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.ContextMenuStrip = this.contextMenuStrip2;
             this.txtDescripcion.Location = new System.Drawing.Point(9, 84);
             this.txtDescripcion.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtDescripcion.MaxLength = 50;
@@ -701,7 +702,7 @@
             this.contextMenuStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.descripcionesAnterioresToolStripMenuItem});
             this.contextMenuStrip2.Name = "contextMenuStrip2";
-            this.contextMenuStrip2.Size = new System.Drawing.Size(243, 56);
+            this.contextMenuStrip2.Size = new System.Drawing.Size(243, 28);
             this.contextMenuStrip2.Opening += new System.ComponentModel.CancelEventHandler(this.contextMenuStrip2_Opening);
             // 
             // descripcionesAnterioresToolStripMenuItem

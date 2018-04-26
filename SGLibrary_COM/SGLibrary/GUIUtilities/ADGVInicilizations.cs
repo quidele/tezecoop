@@ -64,7 +64,8 @@ namespace SGLibrary.GUIUtilities
         // Agregar a datagridview la lista de datos
         public static void CargarDataGridView(DataGridView dgv, IEnumerable<Object> lista,
                                         DataSet p_DataSet, BindingSource p_BindingSource,
-                                        Dictionary<string, ADGVFieldAdapter> p_lista_campo_tipo)
+                                        Dictionary<string, ADGVFieldAdapter> p_lista_campo_tipo,
+                                        Boolean muestra_indice = true)
         {
 
             /*
@@ -74,7 +75,7 @@ namespace SGLibrary.GUIUtilities
             **/
 
             // A la lista la transfiere al DATASET
-            p_DataSet = Extensiones.Extensions.ToDataSet(lista, p_lista_campo_tipo);
+            p_DataSet = Extensiones.Extensions.ToDataSet(lista, p_lista_campo_tipo,muestra_indice);
             //Al binding source le configuramos el dataset
             p_BindingSource.DataSource = p_DataSet;
             // Al binding source le configuramos su datamenber , sino no transfiere los datos al datagrid

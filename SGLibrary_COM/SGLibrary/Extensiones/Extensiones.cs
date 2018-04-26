@@ -144,7 +144,7 @@ namespace SGLibrary.Extensiones
         }
 
 
-        public static DataSet ToDataSet<T>(this IEnumerable<T> lista, Dictionary<string, ADGVFieldAdapter> campo_tipo)
+        public static DataSet ToDataSet<T>(this IEnumerable<T> lista, Dictionary<string, ADGVFieldAdapter> campo_tipo, Boolean muestra_indice = true)
         {
             Type elementType = typeof(T);
             DataSet ds = new DataSet();
@@ -170,7 +170,9 @@ namespace SGLibrary.Extensiones
                 pi = t1.GetProperties();
                 DataRow row = t.NewRow();
 
+                if (muestra_indice) { 
                 row["Nº"] = i.ToString();
+                }
 
                 foreach (PropertyInfo p1 in pi)
                 {
