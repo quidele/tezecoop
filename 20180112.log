@@ -1,3 +1,0 @@
-12/01/2018 16:29:12 | Exec sco_DiccionariodeDatos @nmtabla_param='TB_Puestos'
-12/01/2018 16:29:12 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos   
-12/01/2018 16:29:12 |  SELECT TB_Puestos.nrPuesto ,TB_Puestos.dsPuesto  FROM TB_Puestos  WHERE TB_Puestos.nrPuesto = 9    
