@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMPuestos 
    Caption         =   "Maestro de Puestos"
    ClientHeight    =   7110
@@ -906,7 +906,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   115277825
+               Format          =   156631041
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +920,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   115277825
+               Format          =   281280513
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -2237,7 +2237,7 @@ Dim strSQL      As String
     
     For i = 0 To objDicCampoValorOriginal.Count - 1
         If objDicCampoValorOriginal.ObtenerValorxIndice(i) <> objDicCampoValorFormulario.ObtenerValorxIndice(i) Then
-                objDicCampoValorModificado.GrabarValor objDicCampoValorOriginal.ObtenerNombreCampo(i), Valor
+                objDicCampoValorModificado.GrabarValor objDicCampoValorOriginal.ObtenerNombreCampo(i), objDicCampoValorFormulario.ObtenerValorxIndice(i)
             
         End If
     Next i
