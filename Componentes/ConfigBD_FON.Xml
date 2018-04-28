@@ -11,9 +11,4 @@
     <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
   </AMBIENTE>
-    <AMBIENTE>
-    <Ambiente>SQL_Remoto_Pruebas</Ambiente>
-    <DataSource>PC0157</DataSource>
-    <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
-  </AMBIENTE>
 </ConfigBD>

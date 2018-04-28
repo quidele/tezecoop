@@ -176,6 +176,7 @@ namespace SGLibrary
                         this.ADGV_Titulares.Columns.Clear();
                         this.ADGV_TitularesCuotas.Columns.Clear();
                         botonesForm1.configMododeEdicion(ABMBotonesForm.ADD);
+                        ListarDescripcionesAnterioresEnMenuContextual();
                         break;
                     }
                 case "FIND":
@@ -816,13 +817,46 @@ namespace SGLibrary
             {
                 this.txtDescripcion.Text = unFrmBusquedaGenerica.ListaResultado.First<String>();
             }
+
         }
 
         private void contextMenuStrip2_Opening(object sender, CancelEventArgs e)
         {
-
+            ListarDescripcionesAnterioresEnMenuContextual();
         }
 
+        private void ListarDescripcionesAnterioresEnMenuContextual()
+        {
+            ServiceObligaciones miServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
+            var listaSeleccion = miServiceObligaciones.ObtenerDescripciones();
+            foreach (var item in listaSeleccion)
+            {
+                bool existeItem;
+                existeItem = false;
+                for (int i = 0; i < this.contextMenuStrip2.Items.Count; i++)
+                {
+                    if (this.contextMenuStrip2.Items[i].Text.CompareTo(item.ToString().Replace(" descripcion =", "").Replace("{","").Replace("}","").Trim()) == 0)
+                    {
+                        existeItem = true;
+                        break;
+                    }
+                } // Cierra segundo for
+                if (!existeItem)
+                {
+                    EventHandler handler = new EventHandler(HandleContextMenuClick);
+                    var unaMenuOpcion = this.contextMenuStrip2.Items.Add(item.ToString().Replace(" descripcion =", "").Replace("{", "").Replace("}", "").Trim(), null,
+                        handler);
+                    unaMenuOpcion.Visible = true;
+                }
+            }
+        }
+
+
+        void HandleContextMenuClick(object sender, EventArgs e)
+        {
+            ToolStripMenuItem menuItm = (ToolStripMenuItem)sender;
+            this.txtDescripcion.Text =  menuItm.Text;
+        }
         
 
 

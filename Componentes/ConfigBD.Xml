@@ -11,9 +11,4 @@
     <DataSource>MSI\SQLEXPRESS</DataSource>
     <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
   </AMBIENTE>
-  <AMBIENTE>
-    <Ambiente>SQL_Remoto_Pruebas</Ambiente>
-    <DataSource>MSI\SQLEXPRESS</DataSource>
-    <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
-  </AMBIENTE>
 </ConfigBD>
