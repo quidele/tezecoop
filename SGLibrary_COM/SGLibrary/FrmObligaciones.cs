@@ -96,6 +96,7 @@ namespace SGLibrary
             {
                 case "EDIT":
                     {
+                        LimpiarADGV_TitularesyCuotas();
                         // deberia llegar inyectado
                         Obligaciones una_Obligacion = new Obligaciones();
                         this.panelcarga.Visible = true;
@@ -156,6 +157,7 @@ namespace SGLibrary
                     }
                 case "ADD":
                     {
+                        LimpiarADGV_TitularesyCuotas();
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = true;
                         this.panelbusqueda.Visible = false;
@@ -235,6 +237,7 @@ namespace SGLibrary
                     }
                 case "CANCEL":
                     {
+                        LimpiarADGV_TitularesyCuotas();
                         this.modoEdicion.Text = "NO";
                         this.panelcarga.Visible = false;
                         this.panelbusqueda.Visible = true;
@@ -721,13 +724,18 @@ namespace SGLibrary
 
         private void eliminarTodosToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            if (this.ADGV_Titulares.SelectedRows.Count == 0) return;
+            if (this.ADGV_Titulares.Rows.Count == 0) return;
+            LimpiarADGV_TitularesyCuotas();
+
+        }
+
+        private void LimpiarADGV_TitularesyCuotas()
+        {
 
             this.Titulares.Clear();
             this.ADGV_Titulares.DataSource = "";
             this.Lista_Vencimientos = null;
             this.ADGV_TitularesCuotas.DataSource = "";
-
         }
 
         private void agregarTodosToolStripMenuItem_Click(object sender, EventArgs e)
