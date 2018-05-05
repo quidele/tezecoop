@@ -877,11 +877,11 @@ Private Sub imprimirPagoLicenciatario(IdRecibo As String)
     
     ' Frm_Principal.CrystalReport1.RetrieveDataFile
     ' Aparece la venta original
-    ' On Error Resume Next
+    On Error Resume Next
     Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
     Frm_Principal.CrystalReport1.Action = 1
     If Err Then
-            MsgBox "Error al generar el reporte: " + Err.Description, vbCritical, "Atención"
+            MsgBox "Error al generar el reporte: " + Err.Description + vbCrLf + "ARCHIVO: " + vbCrLf + Frm_Principal.CrystalReport1.ReportFileName, vbCritical, "Atención"
     End If
     On Error GoTo 0
     
