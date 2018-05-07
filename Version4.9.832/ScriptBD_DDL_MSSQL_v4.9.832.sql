@@ -148,6 +148,8 @@ if EXISTS (select * from sys.objects    where name ='FK__TB_Cupones__05F8DC4F')
 	ALTER TABLE [dbo].[TB_Cupones] DROP CONSTRAINT [FK__TB_Cupones__05F8DC4F]
 
 
+-- REALIZAMOS BACKUP DE LA TABLA DE CUPONES 
+SELECT * INTO BKP_TB_CUPONES_v4_9_832 FROM TB_CUPONES
 
 -- PRIMERO CORRER EN PRUEBAS - REALIZAR BACKUP DE LA BD 
 ALTER TABLE TB_CUPONES ALTER COLUMN tpComprobanteCliente VARCHAR(4);
@@ -234,6 +236,9 @@ CREATE TABLE [dbo].[TB_ObligacionesCuotas](
 GO
 
 
+
+
+
 -- Agregamos el campo nro_trans 
 IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
 								WHERE    o.type = 'U'   and o.Name = 'TB_Cupones'  and  c.Name = 'nro_trans' )
@@ -243,12 +248,19 @@ GO
 
 
 
+-- REALIZAMOS BACKUP DE LA TABLA DE CUPONES 
+SELECT * INTO BKP_TB_Proveedores_v4_9_832 FROM TB_Proveedores
+
 -- Agregamos el campo flGPS para identificar los titulares que han instalado GPS en sus vehiculos  
 IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
 								WHERE    o.type = 'U'   and o.Name = 'TB_Proveedores'  and  c.Name = 'flGPS' )
 	ALTER TABLE dbo.TB_Proveedores ADD 	flGPS bit NOT NULL  DEFAULT 0;
 
 GO
+
+
+-- REALIZAMOS BACKUP DE LA TABLA DE CUPONES 
+SELECT * INTO BKP_TB_RecibosDetalle_v4_9_832 FROM TB_RecibosDetalle
 
 
 -- PRIMERO CORRER EN PRUEBAS - REALIZAR BACKUP DE LA BD 
