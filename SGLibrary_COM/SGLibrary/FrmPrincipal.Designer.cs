@@ -34,6 +34,7 @@
             this.busquedaDeComprobantesToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.obligacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.obligacionesEstadoDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -58,7 +59,8 @@
             this.busquedaDeComprobantesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.busquedaDeComprobantesToolStripMenuItem1,
             this.obligacionesToolStripMenuItem,
-            this.conciliacionesToolStripMenuItem});
+            this.conciliacionesToolStripMenuItem,
+            this.obligacionesEstadoDeCuentaToolStripMenuItem});
             this.busquedaDeComprobantesToolStripMenuItem.Name = "busquedaDeComprobantesToolStripMenuItem";
             this.busquedaDeComprobantesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.busquedaDeComprobantesToolStripMenuItem.Text = "Programas";
@@ -66,23 +68,29 @@
             // busquedaDeComprobantesToolStripMenuItem1
             // 
             this.busquedaDeComprobantesToolStripMenuItem1.Name = "busquedaDeComprobantesToolStripMenuItem1";
-            this.busquedaDeComprobantesToolStripMenuItem1.Size = new System.Drawing.Size(224, 22);
+            this.busquedaDeComprobantesToolStripMenuItem1.Size = new System.Drawing.Size(246, 22);
             this.busquedaDeComprobantesToolStripMenuItem1.Text = "Busqueda de Comprobantes";
             this.busquedaDeComprobantesToolStripMenuItem1.Click += new System.EventHandler(this.busquedaDeComprobantesToolStripMenuItem1_Click);
             // 
             // obligacionesToolStripMenuItem
             // 
             this.obligacionesToolStripMenuItem.Name = "obligacionesToolStripMenuItem";
-            this.obligacionesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.obligacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.obligacionesToolStripMenuItem.Text = "Obligaciones";
             this.obligacionesToolStripMenuItem.Click += new System.EventHandler(this.obligacionesToolStripMenuItem_Click);
             // 
             // conciliacionesToolStripMenuItem
             // 
             this.conciliacionesToolStripMenuItem.Name = "conciliacionesToolStripMenuItem";
-            this.conciliacionesToolStripMenuItem.Size = new System.Drawing.Size(224, 22);
+            this.conciliacionesToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.conciliacionesToolStripMenuItem.Text = "Conciliaciones";
             this.conciliacionesToolStripMenuItem.Click += new System.EventHandler(this.conciliacionesToolStripMenuItem_Click);
+            // 
+            // obligacionesEstadoDeCuentaToolStripMenuItem
+            // 
+            this.obligacionesEstadoDeCuentaToolStripMenuItem.Name = "obligacionesEstadoDeCuentaToolStripMenuItem";
+            this.obligacionesEstadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.obligacionesEstadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta - Obligaciones";
             // 
             // FrmPrincipal
             // 
@@ -110,5 +118,6 @@
         private System.Windows.Forms.ToolStripMenuItem busquedaDeComprobantesToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem obligacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conciliacionesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem obligacionesEstadoDeCuentaToolStripMenuItem;
     }
 }
