@@ -61,5 +61,10 @@ namespace SGLibrary
             f1.serviceConciliacionesAutomaticasAMCA.UsuarioActivo(this.serviceModel.Usuario);
             f1.ShowDialog();
         }
+
+        private void obligacionesEstadoDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

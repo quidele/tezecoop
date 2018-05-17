@@ -91,6 +91,7 @@
             this.obligacionesEstadoDeCuentaToolStripMenuItem.Name = "obligacionesEstadoDeCuentaToolStripMenuItem";
             this.obligacionesEstadoDeCuentaToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
             this.obligacionesEstadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta - Obligaciones";
+            this.obligacionesEstadoDeCuentaToolStripMenuItem.Click += new System.EventHandler(this.obligacionesEstadoDeCuentaToolStripMenuItem_Click);
             // 
             // FrmPrincipal
             // 

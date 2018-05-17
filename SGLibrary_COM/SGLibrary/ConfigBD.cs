@@ -41,10 +41,13 @@ namespace SGLibrary
 
         private ConfigBD(String pAmbiente)
         {
+            
             if (pAmbiente == "") this._ambiente = "SQL_Remoto";
-            this._ambiente = pAmbiente;
+            else
+                this._ambiente = pAmbiente;
+
             cargarArchivo();
-            var ambiente_usuario = listaAmbientes.Where (c => c.Ambiente == pAmbiente).First ();
+            var ambiente_usuario = listaAmbientes.Where(c => c.Ambiente == this._ambiente).First();
             this._initialCatalog  = ambiente_usuario.InitialCatalog;
             this._dataSource  = ambiente_usuario.DataSource;
 

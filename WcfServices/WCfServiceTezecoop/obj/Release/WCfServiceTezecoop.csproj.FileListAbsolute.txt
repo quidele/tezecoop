@@ -1,0 +1,5 @@
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.dll.config
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Release\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Release\WCfServiceTezecoop.pdb

@@ -1,0 +1,15 @@
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WCfServiceTezecoop.dll.config
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\WCfServiceTezecoop.pdb
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\SGLibrary.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\SGLibrary.pdb
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\bin\ES-ES\SGLibrary.resources.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\ejemplos\WcfService\obj\Debug\WCfServiceTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.dll.config
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.dll
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.csprojResolveAssemblyReference.cache
