@@ -14,16 +14,35 @@
   <wsdl:message name="IWSObligaciones_obtenerObligacionxId_OutputMessage">
     <wsdl:part name="parameters" element="tns:obtenerObligacionxIdResponse" />
   </wsdl:message>
+  <wsdl:message name="IWSObligaciones_Saludar_InputMessage">
+    <wsdl:part name="parameters" element="tns:Saludar" />
+  </wsdl:message>
+  <wsdl:message name="IWSObligaciones_Saludar_OutputMessage">
+    <wsdl:part name="parameters" element="tns:SaludarResponse" />
+  </wsdl:message>
   <wsdl:portType name="IWSObligaciones">
     <wsdl:operation name="obtenerObligacionxId">
       <wsdl:input wsaw:Action="http://tempuri.org/IWSObligaciones/obtenerObligacionxId" message="tns:IWSObligaciones_obtenerObligacionxId_InputMessage" />
       <wsdl:output wsaw:Action="http://tempuri.org/IWSObligaciones/obtenerObligacionxIdResponse" message="tns:IWSObligaciones_obtenerObligacionxId_OutputMessage" />
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <wsdl:input wsaw:Action="http://tempuri.org/IWSObligaciones/Saludar" message="tns:IWSObligaciones_Saludar_InputMessage" />
+      <wsdl:output wsaw:Action="http://tempuri.org/IWSObligaciones/SaludarResponse" message="tns:IWSObligaciones_Saludar_OutputMessage" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="BasicHttpBinding_IWSObligaciones" type="tns:IWSObligaciones">
     <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
     <wsdl:operation name="obtenerObligacionxId">
       <soap:operation soapAction="http://tempuri.org/IWSObligaciones/obtenerObligacionxId" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Saludar">
+      <soap:operation soapAction="http://tempuri.org/IWSObligaciones/Saludar" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>

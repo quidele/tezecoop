@@ -7,8 +7,8 @@ Begin VB.Form frm_ResumenLicenciatario
    Caption         =   "Resumenes Licenciatarios"
    ClientHeight    =   7335
    ClientLeft      =   60
-   ClientTop       =   450
-   ClientWidth     =   16215
+   ClientTop       =   750
+   ClientWidth     =   16170
    ClipControls    =   0   'False
    DrawStyle       =   5  'Transparent
    Icon            =   "Frm_ResumenLicenciatario.frx":0000
@@ -17,7 +17,7 @@ Begin VB.Form frm_ResumenLicenciatario
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   7335
-   ScaleWidth      =   16215
+   ScaleWidth      =   16170
    StartUpPosition =   2  'CenterScreen
    WindowState     =   2  'Maximized
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -26,8 +26,8 @@ Begin VB.Form frm_ResumenLicenciatario
       Left            =   0
       TabIndex        =   0
       Top             =   0
-      Width           =   16215
-      _ExtentX        =   28601
+      Width           =   16170
+      _ExtentX        =   28522
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   122093569
+            Format          =   75759617
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   122093569
+            Format          =   75759617
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -1368,6 +1368,24 @@ Begin VB.Form frm_ResumenLicenciatario
          Width           =   915
       End
    End
+   Begin VB.Menu menu_Tamanios 
+      Caption         =   "Tamaños"
+      Begin VB.Menu optAumentarLetra 
+         Caption         =   "Aumentar Letra"
+      End
+      Begin VB.Menu optReducirLetra 
+         Caption         =   "Recudir Letra"
+      End
+      Begin VB.Menu optAumentarAC 
+         Caption         =   "Aumentar Ancho Columna"
+      End
+      Begin VB.Menu optReducirAC 
+         Caption         =   "Reducir Ancho Columna"
+      End
+      Begin VB.Menu optGuadarConfig 
+         Caption         =   "Guardar Configuración"
+      End
+   End
 End
 Attribute VB_Name = "frm_ResumenLicenciatario"
 Attribute VB_GlobalNameSpace = False
@@ -1612,7 +1630,29 @@ End Sub
 
 Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 
+    If KeyCode = 109 Then   ' tecla -
+        ' Reducir tamaño letra
+        Exit Sub
+    End If
 
+
+    If KeyCode = 107 Then   ' techa  +
+        ' aumentar tamaño letra
+        Exit Sub
+    End If
+    
+    
+    If KeyCode = 39 Then   ' fecha a derecha ->
+        ' Reducir tamaño letra
+        Exit Sub
+    End If
+
+
+    If KeyCode = 37 Then   ' fecha a izquierda <-
+        ' aumentar tamaño letra
+        Exit Sub
+    End If
+    
     Select Case KeyCode
     Case vbKeyEscape
             If EstadoABM = Consulta Then
@@ -1740,7 +1780,7 @@ End Sub
 
 
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1757,7 +1797,7 @@ End Sub
 
 
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1899,13 +1939,21 @@ Private Sub lstBusqueda_LostFocus()
         
 End Sub
 
-Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
    ' comentado en la version 3.5
    ' objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
    ' objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
+
     
+    'optAumentar.Caption = "Aumentar Letra (Actual " + CStr(Me.lstBusqueda.Font.Size) + " )"
+    'optAumentarAC.Caption = "Aumentar Ancho Columna (Actual " + CStr(Round(Me.lstBusqueda.ColumnHeaders.Item(1).Width, 0)) + " )"
     
+    If Button = 2 Then
+        PopupMenu Me.menu_Tamanios
+    End If
+
+
 End Sub
 
 
@@ -2251,7 +2299,7 @@ End Sub
 
 
 
-Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
+Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
 
     ' comentado en la version 3.5
     'objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda

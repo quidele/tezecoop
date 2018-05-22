@@ -15,5 +15,8 @@ namespace WCfServiceTezecoop
 
         [OperationContract]
         Obligaciones obtenerObligacionxId();
+
+        [OperationContract]
+        String Saludar(String nombre);
     }
 }

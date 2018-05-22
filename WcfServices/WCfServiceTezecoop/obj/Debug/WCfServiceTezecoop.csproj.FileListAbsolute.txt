@@ -12,4 +12,3 @@ C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.dll
 C:\github\tezecoop\WcfServices\WCfServiceTezecoop\bin\WCfServiceTezecoop.pdb
 C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.dll
 C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.pdb
-C:\github\tezecoop\WcfServices\WCfServiceTezecoop\obj\Debug\WCfServiceTezecoop.csprojResolveAssemblyReference.cache

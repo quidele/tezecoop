@@ -17,5 +17,10 @@ namespace WCfServiceTezecoop
             ServiceObligaciones una_ServiceObligaciones = new ServiceObligaciones(new SGLibrary.dbSG2000Entities());
             return una_ServiceObligaciones.ObtenerTodosLosRegistros().ToList().First<Obligaciones>();
         }
+
+        public String Saludar(String nombre)
+        {
+            return "HOLA ESTIMADO: " + nombre; 
+        }
     }
 }

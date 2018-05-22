@@ -24,6 +24,13 @@ namespace SGLibrary_WSTest
             var una_obligacion = client.obtenerObligacionxId();
             this.textBox1.Text  = una_obligacion.TB_transCab.descripcion;
         }
+
+        private void btnSaludar_Click(object sender, EventArgs e)
+        {
+            WSObligacionesClient client = new WSObligacionesClient();
+            MessageBox.Show  (client.Saludar(this.textBox1.Text));
+        }
+
     }
 }
 

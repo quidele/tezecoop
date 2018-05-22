@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Liquidar / Facturar / Adelantos  a Cuentas Corrientes"
@@ -741,6 +741,18 @@ Dim i             As Integer
         Exit Sub
     End If
     
+    If App.LogMode = MODO_DEBUG Then
+        MsgBox "Probar EULISES el mensaje de facturación manual"
+    End If
+    
+    
+    
+    If Me.cbTipoFacturacion.Text = "Manual" Then
+        resp = MsgBox("Esta seleccionado tipo de facturacion " + Me.cbTipoFacturacion.Text + " Desea continuar?", vbQuestion + vbYesNo + vbDefaultButton2, "Atención")
+        If resp = vbNo Then
+            Exit Sub
+        End If
+    End If
 
     ObjTablasIO.nmTabla = "TB_Clientes"
     ObjTablasIO.setearCampoOperadorValor "cdCliente", "->", ""

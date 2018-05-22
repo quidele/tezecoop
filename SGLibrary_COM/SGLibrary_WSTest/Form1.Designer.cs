@@ -30,6 +30,7 @@
         {
             this.button1 = new System.Windows.Forms.Button();
             this.textBox1 = new System.Windows.Forms.TextBox();
+            this.btnSaludar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -49,11 +50,22 @@
             this.textBox1.Size = new System.Drawing.Size(253, 20);
             this.textBox1.TabIndex = 1;
             // 
+            // btnSaludar
+            // 
+            this.btnSaludar.Location = new System.Drawing.Point(12, 53);
+            this.btnSaludar.Name = "btnSaludar";
+            this.btnSaludar.Size = new System.Drawing.Size(75, 23);
+            this.btnSaludar.TabIndex = 2;
+            this.btnSaludar.Text = "SALUDAR";
+            this.btnSaludar.UseVisualStyleBackColor = true;
+            this.btnSaludar.Click += new System.EventHandler(this.btnSaludar_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(416, 262);
+            this.Controls.Add(this.btnSaludar);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
@@ -67,6 +79,7 @@
 
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button btnSaludar;
     }
 }
 

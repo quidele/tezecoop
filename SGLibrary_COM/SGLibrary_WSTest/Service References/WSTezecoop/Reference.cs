@@ -842,6 +842,12 @@ namespace SGLibrary_WSTest.WSTezecoop {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/obtenerObligacionxId", ReplyAction="http://tempuri.org/IWSObligaciones/obtenerObligacionxIdResponse")]
         System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.Obligaciones> obtenerObligacionxIdAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/Saludar", ReplyAction="http://tempuri.org/IWSObligaciones/SaludarResponse")]
+        string Saludar(string nombre);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/Saludar", ReplyAction="http://tempuri.org/IWSObligaciones/SaludarResponse")]
+        System.Threading.Tasks.Task<string> SaludarAsync(string nombre);
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -877,6 +883,14 @@ namespace SGLibrary_WSTest.WSTezecoop {
         
         public System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.Obligaciones> obtenerObligacionxIdAsync() {
             return base.Channel.obtenerObligacionxIdAsync();
+        }
+        
+        public string Saludar(string nombre) {
+            return base.Channel.Saludar(nombre);
+        }
+        
+        public System.Threading.Tasks.Task<string> SaludarAsync(string nombre) {
+            return base.Channel.SaludarAsync(nombre);
         }
     }
 }
