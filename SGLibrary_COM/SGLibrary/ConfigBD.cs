@@ -42,7 +42,7 @@ namespace SGLibrary
         private ConfigBD(String pAmbiente)
         {
             
-            if (pAmbiente == "") this._ambiente = "SQL_Remoto";
+            if (pAmbiente == "") this._ambiente = "sql2018";
             else
                 this._ambiente = pAmbiente;
 
