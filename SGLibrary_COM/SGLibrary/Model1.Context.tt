@@ -67,12 +67,13 @@ using System.Linq;
 
 
 		
-		var configBD_Ambiente = ConfigBD.Instance(""); 
+		// var configBD_Ambiente = ConfigBD.Instance(""); 
 		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
 		// obtenemos el datasource desde el archivo  ConfigBD.Xml
-		sqlBuilder.DataSource = configBD_Ambiente.DataSource;
-		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
-		sqlBuilder.InitialCatalog = configBD_Ambiente._initialCatalog ;
+		//sqlBuilder.DataSource = configBD_Ambiente.DataSource;
+		sqlBuilder.DataSource = "SQLSERVER";
+		sqlBuilder.InitialCatalog = "dbSG2000"; 
+		// configBD_Ambiente._initialCatalog ;
 		sqlBuilder.PersistSecurityInfo = false;
 		sqlBuilder.IntegratedSecurity = false;
 		sqlBuilder.UserID ="USRSG2006";
