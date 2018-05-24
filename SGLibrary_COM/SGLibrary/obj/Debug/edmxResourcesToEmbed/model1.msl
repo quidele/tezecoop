@@ -577,18 +577,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_ObligacionesTitulares">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
-        <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
-          <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
-          <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
-          <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
-          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
-          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_Proveedores">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_Proveedores">
         <MappingFragment StoreEntitySet="TB_Proveedores">
@@ -627,6 +615,18 @@
           <ScalarProperty Name="tpCategoria" ColumnName="tpCategoria" />
           <ScalarProperty Name="nrSocio" ColumnName="nrSocio" />
           <ScalarProperty Name="cdProveedor" ColumnName="cdProveedor" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ObligacionesTitulares">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
+        <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+          <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
+          <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
+          <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
+          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

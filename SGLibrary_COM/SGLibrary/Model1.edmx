@@ -416,7 +416,7 @@
           </Key>
           <Property Name="nro_trans" Type="int" Nullable="false" />
           <Property Name="cod_tit" Type="int" Nullable="false" />
-          <Property Name="nrLicencia" Type="char" MaxLength="3" />
+          <Property Name="nrLicencia" Type="int" />
           <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
           <Property Name="nmNombre" Type="varchar" MaxLength="50" />
           <Property Name="nmApellido" Type="varchar" MaxLength="50" />
@@ -588,30 +588,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-          <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
-          <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_ArchivoTarjeta">
-              <PropertyRef Name="id" />
-            </Principal>
-            <Dependent Role="TB_Conciliacion">
-              <PropertyRef Name="idArchivo" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-          <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
-          <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="TB_ArchivoTarjetaDetalle">
-              <PropertyRef Name="Id" />
-            </Principal>
-            <Dependent Role="TB_ConciliacionDetalle">
-              <PropertyRef Name="IdArchivoTarjetaDetalle" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
           <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
           <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -708,14 +684,6 @@
           <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
             <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
             <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
-            <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-            <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-          </AssociationSet>
-          <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-            <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-            <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
           </AssociationSet>
           <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
             <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
@@ -828,8 +796,8 @@
           <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
           <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
           <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
-          <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
           <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
+          <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -1518,18 +1486,6 @@
           <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityType Name="TB_ObligacionesTitulares">
-          <Key>
-            <PropertyRef Name="nro_trans" />
-            <PropertyRef Name="cod_tit" />
-          </Key>
-          <Property Name="nro_trans" Type="Int32" Nullable="false" />
-          <Property Name="cod_tit" Type="Int32" Nullable="false" />
-          <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-          <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="TB_Proveedores">
           <Key>
             <PropertyRef Name="cdProveedor" />
@@ -1569,6 +1525,18 @@
           <Property Name="telchofer2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="telchofer3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="flGPS" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TB_ObligacionesTitulares">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+          </Key>
+          <Property Name="nro_trans" Type="Int32" Nullable="false" />
+          <Property Name="cod_tit" Type="Int32" Nullable="false" />
+          <Property Name="nrLicencia" Type="Int32" />
+          <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2152,18 +2120,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_ObligacionesTitulares">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
-              <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
-                <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
-                <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
-                <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
-                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
-                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_Proveedores">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_Proveedores">
               <MappingFragment StoreEntitySet="TB_Proveedores">
@@ -2202,6 +2158,18 @@
                 <ScalarProperty Name="tpCategoria" ColumnName="tpCategoria" />
                 <ScalarProperty Name="nrSocio" ColumnName="nrSocio" />
                 <ScalarProperty Name="cdProveedor" ColumnName="cdProveedor" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ObligacionesTitulares">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
+              <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+                <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
+                <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
+                <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
+                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ResumenCliente 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Resumenes Clientes"
@@ -98,7 +98,7 @@ Begin VB.Form Frm_ResumenCliente
       CausesValidation=   0   'False
       BeginProperty Font 
          Name            =   "MS Sans Serif"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   700
          Underline       =   0   'False
@@ -133,15 +133,15 @@ Begin VB.Form Frm_ResumenCliente
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
-      Height          =   630
+      Height          =   660
       Left            =   0
       TabIndex        =   0
       Top             =   0
       Width           =   10230
       _ExtentX        =   18045
-      _ExtentY        =   1111
-      ButtonWidth     =   2011
-      ButtonHeight    =   1058
+      _ExtentY        =   1164
+      ButtonWidth     =   2117
+      ButtonHeight    =   1111
       Appearance      =   1
       Style           =   1
       ImageList       =   "imgResumenClientes"
@@ -339,7 +339,7 @@ Begin VB.Form Frm_ResumenCliente
       _ExtentX        =   2990
       _ExtentY        =   635
       _Version        =   393216
-      Format          =   123338753
+      Format          =   149553153
       CurrentDate     =   38267
    End
    Begin MSComCtl2.DTPicker DTPicker1 
@@ -353,7 +353,7 @@ Begin VB.Form Frm_ResumenCliente
       _ExtentX        =   2990
       _ExtentY        =   609
       _Version        =   393216
-      Format          =   105906177
+      Format          =   149553153
       CurrentDate     =   38267
    End
    Begin MSComctlLib.ListView lstBusqueda 
@@ -381,7 +381,7 @@ Begin VB.Form Frm_ResumenCliente
       Appearance      =   0
       BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -467,7 +467,7 @@ Begin VB.Form Frm_ResumenCliente
       Caption         =   "Cliente"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -492,7 +492,7 @@ Begin VB.Form Frm_ResumenCliente
       Caption         =   "Hasta"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False
@@ -510,7 +510,7 @@ Begin VB.Form Frm_ResumenCliente
       Caption         =   "Fecha Desde"
       BeginProperty Font 
          Name            =   "Verdana"
-         Size            =   8,25
+         Size            =   8.25
          Charset         =   0
          Weight          =   400
          Underline       =   0   'False

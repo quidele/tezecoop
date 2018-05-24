@@ -411,7 +411,7 @@
     </Key>
     <Property Name="nro_trans" Type="int" Nullable="false" />
     <Property Name="cod_tit" Type="int" Nullable="false" />
-    <Property Name="nrLicencia" Type="char" MaxLength="3" />
+    <Property Name="nrLicencia" Type="int" />
     <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
     <Property Name="nmNombre" Type="varchar" MaxLength="50" />
     <Property Name="nmApellido" Type="varchar" MaxLength="50" />
@@ -583,30 +583,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
-    <End Role="TB_ArchivoTarjeta" Type="Self.TB_ArchivoTarjeta" Multiplicity="0..1" />
-    <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjeta">
-        <PropertyRef Name="id" />
-      </Principal>
-      <Dependent Role="TB_Conciliacion">
-        <PropertyRef Name="idArchivo" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-    <End Role="TB_ArchivoTarjetaDetalle" Type="Self.TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
-    <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="TB_ArchivoTarjetaDetalle">
-        <PropertyRef Name="Id" />
-      </Principal>
-      <Dependent Role="TB_ConciliacionDetalle">
-        <PropertyRef Name="IdArchivoTarjetaDetalle" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
     <End Role="TB_Conciliacion" Type="Self.TB_Conciliacion" Multiplicity="1" />
     <End Role="TB_ConciliacionDetalle" Type="Self.TB_ConciliacionDetalle" Multiplicity="*" />
@@ -703,14 +679,6 @@
     <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="Self.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
       <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
       <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="Self.FK_TB_Conciliacion_TB_ArchivoTarjeta">
-      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
-      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
-    </AssociationSet>
-    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="Self.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
-      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
-      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
     </AssociationSet>
     <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="Self.FK_TB_ConciliacionDetalle_TB_Conciliacion">
       <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />

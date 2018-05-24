@@ -380,7 +380,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2778
             _ExtentY        =   635
             _Version        =   393216
-            Format          =   75759617
+            Format          =   148766721
             CurrentDate     =   38267
          End
          Begin MSComCtl2.DTPicker DTPicker1 
@@ -394,7 +394,7 @@ Begin VB.Form frm_ResumenLicenciatario
             _ExtentX        =   2990
             _ExtentY        =   609
             _Version        =   393216
-            Format          =   75759617
+            Format          =   149553153
             CurrentDate     =   38267
          End
          Begin VB.Label lblLabels 
@@ -1632,24 +1632,28 @@ Private Sub Form_KeyDown(KeyCode As Integer, Shift As Integer)
 
     If KeyCode = 109 Then   ' tecla -
         ' Reducir tamaño letra
+        optReducirLetra_Click
         Exit Sub
     End If
 
 
     If KeyCode = 107 Then   ' techa  +
         ' aumentar tamaño letra
+        optAumentarLetra_Click
         Exit Sub
     End If
     
     
     If KeyCode = 39 Then   ' fecha a derecha ->
-        ' Reducir tamaño letra
+        ' Aumentar tamaño Ancho Columna
+        optAumentarAC_Click
         Exit Sub
     End If
 
 
     If KeyCode = 37 Then   ' fecha a izquierda <-
-        ' aumentar tamaño letra
+        ' reducir tamaño letra
+        optReducirAC_Click
         Exit Sub
     End If
     
@@ -1727,7 +1731,7 @@ Private Sub Form_Load()
         
     End If
     
-    
+    RecuperarConfigTamanios
    
 End Sub
 
@@ -1780,7 +1784,7 @@ End Sub
 
 
 
-Private Sub Form_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub Form_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1797,7 +1801,7 @@ End Sub
 
 
 
-Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub fraBusqCajas_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
     objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
@@ -1939,21 +1943,102 @@ Private Sub lstBusqueda_LostFocus()
         
 End Sub
 
-Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub lstBusqueda_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
    ' comentado en la version 3.5
    ' objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda
    ' objGUI.SizeControls Me, Me.fraPagoLicenciatarios, Me.lstBusqueda
 
     
-    'optAumentar.Caption = "Aumentar Letra (Actual " + CStr(Me.lstBusqueda.Font.Size) + " )"
-    'optAumentarAC.Caption = "Aumentar Ancho Columna (Actual " + CStr(Round(Me.lstBusqueda.ColumnHeaders.Item(1).Width, 0)) + " )"
+    Me.optAumentarLetra.Caption = "Aumentar Letra (Actual " + CStr(Me.lstBusqueda.Font.Size) + " )"
+    Me.optAumentarAC.Caption = "Aumentar Ancho Columna (Actual " + CStr(Round(Me.lstBusqueda.ColumnHeaders.Item(1).Width, 0)) + " )"
     
     If Button = 2 Then
         PopupMenu Me.menu_Tamanios
     End If
 
 
+End Sub
+
+
+
+Private Sub optAumentarAC_Click()
+Dim i As Integer
+    For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
+        If Me.lstBusqueda.ColumnHeaders.Item(i).Width > 1 Then
+               Me.lstBusqueda.ColumnHeaders.Item(i).Width = Me.lstBusqueda.ColumnHeaders.Item(i).Width + 15
+       End If
+    Next i
+    
+End Sub
+
+Private Sub optAumentarLetra_Click()
+Dim i As Integer
+
+
+    Me.lstBusqueda.Font.Size = Me.lstBusqueda.Font.Size + 0.5
+    
+    For i = 1 To Me.lstBusqueda.ListItems.Count
+        On Error Resume Next
+        Me.lstBusqueda.ListItems(i).Height = Me.lstBusqueda.ListItems(i).Height + 1
+        Me.lstBusqueda.ListItems(i).Width = Me.lstBusqueda.ListItems(i).Width + 1
+        On Error GoTo 0
+    Next i
+
+End Sub
+
+Private Sub optGuadarConfig_Click()
+Dim i As Integer
+
+    objConfig.GuardarEntrada Me.Name + ".Me.lstBusqueda.Font.Size", Me.Name, Me.lstBusqueda.Font.Size
+    For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
+        objConfig.GuardarEntrada CStr(i), Me.Name + ".Me.lstBusqueda.ColumnHeaders.Width", Me.lstBusqueda.ColumnHeaders.Item(i).Width
+    Next i
+    
+    
+    
+End Sub
+
+Private Sub optReducirAC_Click()
+Dim i As Integer
+    For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
+        If Me.lstBusqueda.ColumnHeaders.Item(i).Width > 1 Then
+                On Error Resume Next
+               Me.lstBusqueda.ColumnHeaders.Item(i).Width = Me.lstBusqueda.ColumnHeaders.Item(i).Width - 15
+               On Error GoTo 0
+        End If
+    Next i
+    
+
+End Sub
+
+Private Sub optReducirLetra_Click()
+Dim i As Integer
+
+    Me.lstBusqueda.Font.Size = Me.lstBusqueda.Font.Size - 0.5
+    For i = 1 To Me.lstBusqueda.ListItems.Count
+        On Error Resume Next
+        Me.lstBusqueda.ListItems(i).Height = Me.lstBusqueda.ListItems(i).Height - 1
+          Me.lstBusqueda.ListItems(i).Width = Me.lstBusqueda.ListItems(i).Width - 1
+        On Error GoTo 0
+    Next i
+
+End Sub
+
+
+
+Private Sub RecuperarConfigTamanios()
+Dim i As Integer
+
+    Me.lstBusqueda.Font.Size = objConfig.ObtenerEntradaDefecto(Me.Name + ".Me.lstBusqueda.Font.Size", Me.Name, False, Me.lstBusqueda.Font.Size)
+
+    For i = 1 To Me.lstBusqueda.ColumnHeaders.Count
+       Me.lstBusqueda.ColumnHeaders.Item(i).Width = objConfig.ObtenerEntradaDefecto(CStr(i), _
+       Me.Name + ".Me.lstBusqueda.ColumnHeaders.Width", False, Me.lstBusqueda.ColumnHeaders.Item(i).Width)
+    Next i
+    
+    
+    
 End Sub
 
 
@@ -2299,7 +2384,7 @@ End Sub
 
 
 
-Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, x As Single, y As Single)
+Private Sub tlb_ABM_MouseDown(Button As Integer, Shift As Integer, X As Single, Y As Single)
 
     ' comentado en la version 3.5
     'objGUI.SizeControls Me, Me.fraBusqCajas, Me.lstBusqueda

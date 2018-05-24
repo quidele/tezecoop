@@ -15,6 +15,7 @@ namespace WCfServiceTezecoop
         public Obligaciones obtenerObligacionxId()
         {
             ServiceObligaciones una_ServiceObligaciones = new ServiceObligaciones(new SGLibrary.dbSG2000Entities());
+            
             return una_ServiceObligaciones.ObtenerTodosLosRegistros().ToList().First<Obligaciones>();
         }
 
