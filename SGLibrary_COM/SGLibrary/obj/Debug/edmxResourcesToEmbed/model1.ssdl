@@ -401,8 +401,9 @@
     <Property Name="nro_cuota" Type="int" Nullable="false" />
     <Property Name="fecha_vencimiento" Type="date" />
     <Property Name="importe" Type="decimal" Precision="18" Scale="2" />
-    <Property Name="nrLicencia" Type="char" MaxLength="3" />
+    <Property Name="nrLicencia" Type="int" />
     <Property Name="comentarios" Type="varchar" MaxLength="200" />
+    <Property Name="estado_registro" Type="char" MaxLength="2" />
   </EntityType>
   <EntityType Name="TB_ObligacionesTitulares">
     <Key>
@@ -415,6 +416,7 @@
     <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
     <Property Name="nmNombre" Type="varchar" MaxLength="50" />
     <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+    <Property Name="estado_registro" Type="char" MaxLength="2" />
   </EntityType>
   <EntityType Name="TB_Parametros">
     <Key>
@@ -545,7 +547,7 @@
     <Property Name="fecha_mod" Type="datetime" Nullable="false" />
     <Property Name="terminal_mod" Type="char" MaxLength="20" Nullable="false" />
     <Property Name="operacion_mod" Type="char" MaxLength="10" Nullable="false" />
-    <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
+    <Property Name="estado_registro" Type="char" MaxLength="2" />
     <Property Name="cuotas" Type="smallint" />
     <Property Name="periodo" Type="char" MaxLength="20" />
     <Property Name="descripcion" Type="varchar" MaxLength="50" />

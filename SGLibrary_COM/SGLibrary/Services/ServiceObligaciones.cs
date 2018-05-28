@@ -93,7 +93,7 @@ namespace SGLibrary.Services
                          foreach (var item in unRegistro.TB_ObligacionesCuotas)
                          {
                              un_ServiceCuponesTransaccion.GrabarCuponTransaccion (0, decimal.Parse ( this.CajaAdm)  , this.Usuario , item.nro_trans ,
-                                                                                   int.Parse ( item.nrLicencia)  , null, item.fecha_vencimiento.Value.Date ,
+                                                                                    item.nrLicencia.GetValueOrDefault()  , null, item.fecha_vencimiento.Value.Date ,
                                                                                     unRegistro.TB_transCab.descripcion  , 0 , unRegistro.TB_transCab.cod_doc ,
                                                                                     unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
                                                                                     unRegistro.TB_transCab.letra_doc, Convert.ToDouble(item.importe), 
@@ -166,7 +166,7 @@ namespace SGLibrary.Services
                  foreach (var item in objTB_ObligacionesCuotas)
                  {
 
-                     int nrLicenciaBuscada = int.Parse(item.nrLicencia);
+                     int nrLicenciaBuscada = item.nrLicencia.GetValueOrDefault ();
                      TB_Cupones un_TB_CuponesBD = (from c in context.TB_Cupones
                                                    where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
                                                    select c).First<TB_Cupones>();
@@ -213,7 +213,7 @@ namespace SGLibrary.Services
                  foreach (var item in ListaBajasTB_ObligacionesTitularesBD)
                  {
 
-                     int nrLicenciaBuscada = int.Parse(item.nrLicencia);
+                     int nrLicenciaBuscada = item.nrLicencia.GetValueOrDefault() ; 
                      var lista_TB_CuponesBD = (from c in context.TB_Cupones
                                                where c.nro_trans == item.nro_trans && c.nrLicencia == nrLicenciaBuscada
                                                select c).ToList<TB_Cupones>();
@@ -226,7 +226,7 @@ namespace SGLibrary.Services
                      }
 
                      var listaTB_ObligacionesCuotasBD = (from c in context.TB_ObligacionesCuotas
-                                                       where c.nro_trans == unRegistro.TB_transCab.nro_trans && c.nrLicencia == item.nrLicencia
+                                                       where c.nro_trans == unRegistro.TB_transCab.nro_trans && c.nrLicencia == item.nrLicencia.GetValueOrDefault()
                                                        select c);
 
                      foreach (var itemCuotas in listaTB_ObligacionesCuotasBD) 
@@ -253,7 +253,7 @@ namespace SGLibrary.Services
                      {
                          context.TB_ObligacionesCuotas.Add(itemAltaCuotas);
                          un_ServiceCuponesTransaccion.GrabarCuponTransaccion(0, decimal.Parse(this.CajaAdm), this.Usuario, itemAltaCuotas.nro_trans,
-                                                                           int.Parse(itemAltaCuotas.nrLicencia), null, itemAltaCuotas.fecha_vencimiento.Value.Date,
+                                                                            itemAltaCuotas.nrLicencia.GetValueOrDefault(), null, itemAltaCuotas.fecha_vencimiento.Value.Date,
                                                                             unRegistro.TB_transCab.descripcion, 0, unRegistro.TB_transCab.cod_doc,
                                                                             unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
                                                                             unRegistro.TB_transCab.letra_doc, Convert.ToDouble(itemAltaCuotas.importe),
@@ -367,7 +367,7 @@ namespace SGLibrary.Services
 	                    }
                      
                      // Armar TB_ObligacionesCuotasExt
-                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i +1 , fecha_vencimiento, monto_cuota,item.nrLicencia ,""));
+                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i +1 , fecha_vencimiento, monto_cuota, int.Parse ( item.nrLicencia) ,""));
                  }
              }
              return lista_resultado;

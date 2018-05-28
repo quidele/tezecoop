@@ -16,9 +16,10 @@ namespace SGLibrary
     {
         public int nro_trans { get; set; }
         public int cod_tit { get; set; }
-        public string nrLicencia { get; set; }
+        public Nullable<int> nrLicencia { get; set; }
         public string nrTelefono { get; set; }
         public string nmNombre { get; set; }
         public string nmApellido { get; set; }
+        public string estado_registro { get; set; }
     }
 }

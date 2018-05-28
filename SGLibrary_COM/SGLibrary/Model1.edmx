@@ -406,8 +406,9 @@
           <Property Name="nro_cuota" Type="int" Nullable="false" />
           <Property Name="fecha_vencimiento" Type="date" />
           <Property Name="importe" Type="decimal" Precision="18" Scale="2" />
-          <Property Name="nrLicencia" Type="char" MaxLength="3" />
+          <Property Name="nrLicencia" Type="int" />
           <Property Name="comentarios" Type="varchar" MaxLength="200" />
+          <Property Name="estado_registro" Type="char" MaxLength="2" />
         </EntityType>
         <EntityType Name="TB_ObligacionesTitulares">
           <Key>
@@ -420,6 +421,7 @@
           <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
           <Property Name="nmNombre" Type="varchar" MaxLength="50" />
           <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+          <Property Name="estado_registro" Type="char" MaxLength="2" />
         </EntityType>
         <EntityType Name="TB_Parametros">
           <Key>
@@ -550,7 +552,7 @@
           <Property Name="fecha_mod" Type="datetime" Nullable="false" />
           <Property Name="terminal_mod" Type="char" MaxLength="20" Nullable="false" />
           <Property Name="operacion_mod" Type="char" MaxLength="10" Nullable="false" />
-          <Property Name="estado_registro" Type="char" MaxLength="1" Nullable="false" />
+          <Property Name="estado_registro" Type="char" MaxLength="2" />
           <Property Name="cuotas" Type="smallint" />
           <Property Name="periodo" Type="char" MaxLength="20" />
           <Property Name="descripcion" Type="varchar" MaxLength="50" />
@@ -794,10 +796,10 @@
           <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
           <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
           <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
-          <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
           <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
           <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
           <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
+          <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
           </EntityContainer>
         <EntityType Name="TB_Productos">
           <Key>
@@ -1439,20 +1441,6 @@
           <Property Name="tpFormadePago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
           <Property Name="nrPuesto" Type="Int16" />
         </EntityType>
-        <EntityType Name="TB_ObligacionesCuotas">
-          <Key>
-            <PropertyRef Name="nro_trans" />
-            <PropertyRef Name="cod_tit" />
-            <PropertyRef Name="nro_cuota" />
-          </Key>
-          <Property Name="nro_trans" Type="Int32" Nullable="false" />
-          <Property Name="cod_tit" Type="Int32" Nullable="false" />
-          <Property Name="nro_cuota" Type="Int32" Nullable="false" />
-          <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
-          <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
-          <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-          <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-        </EntityType>
         <EntityType Name="TB_transCab">
           <Key>
             <PropertyRef Name="nro_trans" />
@@ -1481,7 +1469,7 @@
           <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-          <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+          <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
           <Property Name="cuotas" Type="Int16" />
           <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
           <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -1537,6 +1525,22 @@
           <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
           <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="TB_ObligacionesCuotas">
+          <Key>
+            <PropertyRef Name="nro_trans" />
+            <PropertyRef Name="cod_tit" />
+            <PropertyRef Name="nro_cuota" />
+          </Key>
+          <Property Name="nro_trans" Type="Int32" Nullable="false" />
+          <Property Name="cod_tit" Type="Int32" Nullable="false" />
+          <Property Name="nro_cuota" Type="Int32" Nullable="false" />
+          <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
+          <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="nrLicencia" Type="Int32" />
+          <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
         </EntityType>
         </Schema>
     </edmx:ConceptualModels>
@@ -2073,19 +2077,6 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
-          <EntitySetMapping Name="TB_ObligacionesCuotas">
-            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
-              <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
-                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
-                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
-                <ScalarProperty Name="importe" ColumnName="importe" />
-                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
-                <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
-                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
           <EntitySetMapping Name="TB_transCab">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
               <MappingFragment StoreEntitySet="TB_transCab">
@@ -2164,10 +2155,25 @@
           <EntitySetMapping Name="TB_ObligacionesTitulares">
             <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
               <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+                <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
                 <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
                 <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
                 <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
                 <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+                <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+                <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_ObligacionesCuotas">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
+              <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
+                <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+                <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+                <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+                <ScalarProperty Name="importe" ColumnName="importe" />
+                <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+                <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
                 <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
                 <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
               </MappingFragment>

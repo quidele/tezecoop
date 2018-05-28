@@ -21,7 +21,7 @@ namespace SGLibrary.Services
 
             TB_ObligacionesTitulares aux = new TB_ObligacionesTitulares();
             aux.cod_tit = this.cdProveedor;
-            aux.nrLicencia = this.nrLicencia;
+            aux.nrLicencia = int.Parse( this.nrLicencia);
             aux.nrTelefono = this.nrTel;
             aux.nmNombre = this.nmNombre;
             aux.nmApellido = this.nmApellido;

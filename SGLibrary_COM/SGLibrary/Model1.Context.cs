@@ -29,13 +29,12 @@ namespace SGLibrary
     
     
     		
-    		// var configBD_Ambiente = ConfigBD.Instance(""); 
+    		var configBD_Ambiente = ConfigBD.Instance(""); 
     		SqlConnectionStringBuilder sqlBuilder = new SqlConnectionStringBuilder();
     		// obtenemos el datasource desde el archivo  ConfigBD.Xml
-    		//sqlBuilder.DataSource = configBD_Ambiente.DataSource;
-    		sqlBuilder.DataSource = "SQLSERVER";
-    		sqlBuilder.InitialCatalog = "dbSG2000"; 
-    		// configBD_Ambiente._initialCatalog ;
+    		sqlBuilder.DataSource = configBD_Ambiente.DataSource;
+    		//sqlBuilder.DataSource = "MSI\\SQLEXPRESS";
+    		sqlBuilder.InitialCatalog = configBD_Ambiente._initialCatalog ;
     		sqlBuilder.PersistSecurityInfo = false;
     		sqlBuilder.IntegratedSecurity = false;
     		sqlBuilder.UserID ="USRSG2006";
@@ -93,10 +92,10 @@ namespace SGLibrary
         public DbSet<TB_numeradores> TB_numeradores { get; set; }
         public DbSet<TB_Cupones> TB_Cupones { get; set; }
         public DbSet<TB_Clientes> TB_Clientes { get; set; }
-        public DbSet<TB_ObligacionesCuotas> TB_ObligacionesCuotas { get; set; }
         public DbSet<TB_transCab> TB_transCab { get; set; }
-        public DbSet<TB_ObligacionesTitulares> TB_ObligacionesTitulares { get; set; }
         public DbSet<TB_Proveedores> TB_Proveedores { get; set; }
+        public DbSet<TB_ObligacionesTitulares> TB_ObligacionesTitulares { get; set; }
+        public DbSet<TB_ObligacionesCuotas> TB_ObligacionesCuotas { get; set; }
     
         public virtual ObjectResult<spu_conciliarAutomaticamente_Result> spu_conciliarAutomaticamente(Nullable<int> idArchivo)
         {

@@ -122,8 +122,8 @@ namespace SGLibrary
                         HabilitarDeshabilitarCampos(true);
                         this.modoEdicion.Text = "SI";
 
-                        this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia, c.nmNombre, c.nmApellido)).ToList<TB_ProveedoresExt>();
-                        this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia, c.comentarios));
+                        this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia.ToString(), c.nmNombre, c.nmApellido)).ToList<TB_ProveedoresExt>();
+                        this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia.GetValueOrDefault(), c.comentarios));
 
                         CargarGrillasTitularesCuotas(true);
                         /*

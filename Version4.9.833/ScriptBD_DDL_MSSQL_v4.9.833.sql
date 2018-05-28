@@ -26,3 +26,6 @@ IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.object
 	ALTER TABLE dbo.TB_ObligacionesTitulares ADD 	estado_registro char(2) NULL
 
 
+-- Modificamos la definicion del campo  nrLicencia
+ALTER TABLE TB_ObligacionesCuotas ALTER COLUMN nrLicencia int;
+	

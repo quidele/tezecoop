@@ -16,7 +16,7 @@ namespace SGLibrary.Services
 
         public TB_ObligacionesCuotasExt(int p_nro_trans , int p_cod_tit, int  p_nro_cuota , 
                                         DateTime p_fecha_vencimiento , decimal p_importe, 
-                                        string p_nrLicencia, string p_comentarios )
+                                        int p_nrLicencia, string p_comentarios )
         {
             this.nro_trans = p_nro_trans; 
             this.cod_tit = p_cod_tit; 

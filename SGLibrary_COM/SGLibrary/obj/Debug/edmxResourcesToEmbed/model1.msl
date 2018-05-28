@@ -530,19 +530,6 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="TB_ObligacionesCuotas">
-      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
-        <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
-          <ScalarProperty Name="comentarios" ColumnName="comentarios" />
-          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
-          <ScalarProperty Name="importe" ColumnName="importe" />
-          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
-          <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
-          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
-          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
     <EntitySetMapping Name="TB_transCab">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_transCab">
         <MappingFragment StoreEntitySet="TB_transCab">
@@ -621,10 +608,25 @@
     <EntitySetMapping Name="TB_ObligacionesTitulares">
       <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesTitulares">
         <MappingFragment StoreEntitySet="TB_ObligacionesTitulares">
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
           <ScalarProperty Name="nmApellido" ColumnName="nmApellido" />
           <ScalarProperty Name="nmNombre" ColumnName="nmNombre" />
           <ScalarProperty Name="nrTelefono" ColumnName="nrTelefono" />
           <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+          <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
+          <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TB_ObligacionesCuotas">
+      <EntityTypeMapping TypeName="dbSG2000Model.TB_ObligacionesCuotas">
+        <MappingFragment StoreEntitySet="TB_ObligacionesCuotas">
+          <ScalarProperty Name="estado_registro" ColumnName="estado_registro" />
+          <ScalarProperty Name="comentarios" ColumnName="comentarios" />
+          <ScalarProperty Name="nrLicencia" ColumnName="nrLicencia" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+          <ScalarProperty Name="fecha_vencimiento" ColumnName="fecha_vencimiento" />
+          <ScalarProperty Name="nro_cuota" ColumnName="nro_cuota" />
           <ScalarProperty Name="cod_tit" ColumnName="cod_tit" />
           <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
         </MappingFragment>

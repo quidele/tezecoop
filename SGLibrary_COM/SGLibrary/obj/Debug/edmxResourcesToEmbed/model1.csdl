@@ -88,10 +88,10 @@
     <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
     <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
     <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
-    <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
     <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
     <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
     <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
+    <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
   </EntityContainer>
   <EntityType Name="TB_Productos">
     <Key>
@@ -732,20 +732,6 @@
     <Property Name="tpFormadePago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
     <Property Name="nrPuesto" Type="Int16" />
   </EntityType>
-  <EntityType Name="TB_ObligacionesCuotas">
-    <Key>
-      <PropertyRef Name="nro_trans" />
-      <PropertyRef Name="cod_tit" />
-      <PropertyRef Name="nro_cuota" />
-    </Key>
-    <Property Name="nro_trans" Type="Int32" Nullable="false" />
-    <Property Name="cod_tit" Type="Int32" Nullable="false" />
-    <Property Name="nro_cuota" Type="Int32" Nullable="false" />
-    <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
-    <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
-    <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="true" Unicode="false" />
-    <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
-  </EntityType>
   <EntityType Name="TB_transCab">
     <Key>
       <PropertyRef Name="nro_trans" />
@@ -774,7 +760,7 @@
     <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
     <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
-    <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
     <Property Name="cuotas" Type="Int16" />
     <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
     <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
@@ -830,5 +816,21 @@
     <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
     <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_ObligacionesCuotas">
+    <Key>
+      <PropertyRef Name="nro_trans" />
+      <PropertyRef Name="cod_tit" />
+      <PropertyRef Name="nro_cuota" />
+    </Key>
+    <Property Name="nro_trans" Type="Int32" Nullable="false" />
+    <Property Name="cod_tit" Type="Int32" Nullable="false" />
+    <Property Name="nro_cuota" Type="Int32" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
+    <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nrLicencia" Type="Int32" />
+    <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
   </EntityType>
 </Schema>

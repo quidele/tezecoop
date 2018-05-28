@@ -19,7 +19,8 @@ namespace SGLibrary
         public int nro_cuota { get; set; }
         public Nullable<System.DateTime> fecha_vencimiento { get; set; }
         public Nullable<decimal> importe { get; set; }
-        public string nrLicencia { get; set; }
+        public Nullable<int> nrLicencia { get; set; }
         public string comentarios { get; set; }
+        public string estado_registro { get; set; }
     }
 }
