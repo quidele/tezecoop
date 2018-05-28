@@ -13,10 +13,13 @@ editando este archivo MSBuild. Para conocer más acerca de esto, visite http://g
       <publishTime>05/17/2018 16:54:32</publishTime>
     </File>
     <File Include="bin/WCfServiceTezecoop.dll">
-      <publishTime>05/22/2018 16:14:28</publishTime>
+      <publishTime>05/28/2018 17:13:52</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>05/17/2018 17:52:49</publishTime>
+      <publishTime>05/28/2018 17:13:53</publishTime>
+    </File>
+    <File Include="WSObligacion.cs">
+      <publishTime>05/28/2018 17:08:47</publishTime>
     </File>
     <File Include="WSObligaciones.svc">
       <publishTime>05/17/2018 17:33:03</publishTime>

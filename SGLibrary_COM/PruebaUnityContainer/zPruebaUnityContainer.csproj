@@ -68,6 +68,8 @@
     <Compile Include="IPrueba.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="PruebaTuri.cs" />
+    <Compile Include="PruebaMiti.cs" />
     <Compile Include="Prueba.cs" />
   </ItemGroup>
   <ItemGroup>

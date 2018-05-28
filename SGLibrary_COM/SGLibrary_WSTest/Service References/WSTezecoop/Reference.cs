@@ -15,6 +15,144 @@ namespace SGLibrary_WSTest.WSTezecoop {
     
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WSObligacion", Namespace="http://schemas.datacontract.org/2004/07/WCfServiceTezecoop")]
+    [System.SerializableAttribute()]
+    public partial class WSObligacion : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SGLibrary_WSTest.WSTezecoop.WSError ErrorField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private SGLibrary_WSTest.WSTezecoop.Obligaciones ObligacionField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SGLibrary_WSTest.WSTezecoop.WSError Error {
+            get {
+                return this.ErrorField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ErrorField, value) != true)) {
+                    this.ErrorField = value;
+                    this.RaisePropertyChanged("Error");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public SGLibrary_WSTest.WSTezecoop.Obligaciones Obligacion {
+            get {
+                return this.ObligacionField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.ObligacionField, value) != true)) {
+                    this.ObligacionField = value;
+                    this.RaisePropertyChanged("Obligacion");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
+    [System.Runtime.Serialization.DataContractAttribute(Name="WSError", Namespace="http://schemas.datacontract.org/2004/07/WCfServiceTezecoop")]
+    [System.SerializableAttribute()]
+    public partial class WSError : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+        
+        [System.NonSerializedAttribute()]
+        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MensajeField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private string MensajeExtendidoField;
+        
+        [System.Runtime.Serialization.OptionalFieldAttribute()]
+        private int NroErrorField;
+        
+        [global::System.ComponentModel.BrowsableAttribute(false)]
+        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
+            get {
+                return this.extensionDataField;
+            }
+            set {
+                this.extensionDataField = value;
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string Mensaje {
+            get {
+                return this.MensajeField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MensajeField, value) != true)) {
+                    this.MensajeField = value;
+                    this.RaisePropertyChanged("Mensaje");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public string MensajeExtendido {
+            get {
+                return this.MensajeExtendidoField;
+            }
+            set {
+                if ((object.ReferenceEquals(this.MensajeExtendidoField, value) != true)) {
+                    this.MensajeExtendidoField = value;
+                    this.RaisePropertyChanged("MensajeExtendido");
+                }
+            }
+        }
+        
+        [System.Runtime.Serialization.DataMemberAttribute()]
+        public int NroError {
+            get {
+                return this.NroErrorField;
+            }
+            set {
+                if ((this.NroErrorField.Equals(value) != true)) {
+                    this.NroErrorField = value;
+                    this.RaisePropertyChanged("NroError");
+                }
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
     [System.Runtime.Serialization.DataContractAttribute(Name="Obligaciones", Namespace="http://schemas.datacontract.org/2004/07/SGLibrary.Services")]
     [System.SerializableAttribute()]
     public partial class Obligaciones : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
@@ -838,10 +976,10 @@ namespace SGLibrary_WSTest.WSTezecoop {
     public interface IWSObligaciones {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/obtenerObligacionxId", ReplyAction="http://tempuri.org/IWSObligaciones/obtenerObligacionxIdResponse")]
-        SGLibrary_WSTest.WSTezecoop.Obligaciones obtenerObligacionxId();
+        SGLibrary_WSTest.WSTezecoop.WSObligacion obtenerObligacionxId();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/obtenerObligacionxId", ReplyAction="http://tempuri.org/IWSObligaciones/obtenerObligacionxIdResponse")]
-        System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.Obligaciones> obtenerObligacionxIdAsync();
+        System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.WSObligacion> obtenerObligacionxIdAsync();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/IWSObligaciones/Saludar", ReplyAction="http://tempuri.org/IWSObligaciones/SaludarResponse")]
         string Saludar(string nombre);
@@ -877,11 +1015,11 @@ namespace SGLibrary_WSTest.WSTezecoop {
                 base(binding, remoteAddress) {
         }
         
-        public SGLibrary_WSTest.WSTezecoop.Obligaciones obtenerObligacionxId() {
+        public SGLibrary_WSTest.WSTezecoop.WSObligacion obtenerObligacionxId() {
             return base.Channel.obtenerObligacionxId();
         }
         
-        public System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.Obligaciones> obtenerObligacionxIdAsync() {
+        public System.Threading.Tasks.Task<SGLibrary_WSTest.WSTezecoop.WSObligacion> obtenerObligacionxIdAsync() {
             return base.Channel.obtenerObligacionxIdAsync();
         }
         

@@ -7,7 +7,7 @@ using System.Xml;
 
 namespace SGLibrary
 {
-    public class ConfigBD
+    public class ConfigBD  
     {
 
         public String _ambiente;

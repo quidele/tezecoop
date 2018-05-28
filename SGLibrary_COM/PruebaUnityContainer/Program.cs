@@ -7,7 +7,6 @@ using System.Management;
 using System.Windows;
 using System.Diagnostics;
 using Unity;
-using Microsoft.Practices.Unity.Configuration;
 using System.Configuration;
 
 namespace ConsoleApplication1
@@ -20,9 +19,14 @@ namespace ConsoleApplication1
         {
 
             IUnityContainer container = new UnityContainer();
-            container.RegisterType<IPrueba, Prueba>(); 
+
+            // container.RegisterType<IPrueba, Prueba>(); 
+            container.RegisterType<IPrueba, PruebaMiti>();
+            container.RegisterType<IPrueba, PruebaTuri>(); 
+            // New 
             IPrueba una_Prueba = container.Resolve<IPrueba>();
-            una_Prueba.quiensoy(); 
+            una_Prueba.quiensoy();
+            Console.ReadKey(); 
         }
     }
 }

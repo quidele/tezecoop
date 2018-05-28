@@ -1,71 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
-<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SGLibrary" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SGLibrary" xmlns:xs="http://www.w3.org/2001/XMLSchema">
-  <xs:complexType name="ArrayOfTB_ObligacionesCuotas">
+<xs:schema xmlns:tns="http://schemas.datacontract.org/2004/07/SGLibrary.Services" elementFormDefault="qualified" targetNamespace="http://schemas.datacontract.org/2004/07/SGLibrary.Services" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:import schemaLocation="http://localhost:49352/WSObligaciones.svc?xsd=xsd4" namespace="http://schemas.datacontract.org/2004/07/SGLibrary" />
+  <xs:complexType name="Obligaciones">
     <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_ObligacionesCuotas" nillable="true" type="tns:TB_ObligacionesCuotas" />
+      <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/SGLibrary" minOccurs="0" name="TB_ObligacionesCuotas" nillable="true" type="q1:ArrayOfTB_ObligacionesCuotas" />
+      <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/SGLibrary" minOccurs="0" name="TB_ObligacionesTitulares" nillable="true" type="q2:ArrayOfTB_ObligacionesTitulares" />
+      <xs:element xmlns:q3="http://schemas.datacontract.org/2004/07/SGLibrary" minOccurs="0" name="TB_transCab" nillable="true" type="q3:TB_transCab" />
     </xs:sequence>
   </xs:complexType>
-  <xs:element name="ArrayOfTB_ObligacionesCuotas" nillable="true" type="tns:ArrayOfTB_ObligacionesCuotas" />
-  <xs:complexType name="TB_ObligacionesCuotas">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cod_tit" type="xs:int" />
-      <xs:element minOccurs="0" name="comentarios" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="fecha_vencimiento" nillable="true" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="importe" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="nrLicencia" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nro_cuota" type="xs:int" />
-      <xs:element minOccurs="0" name="nro_trans" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TB_ObligacionesCuotas" nillable="true" type="tns:TB_ObligacionesCuotas" />
-  <xs:complexType name="ArrayOfTB_ObligacionesTitulares">
-    <xs:sequence>
-      <xs:element minOccurs="0" maxOccurs="unbounded" name="TB_ObligacionesTitulares" nillable="true" type="tns:TB_ObligacionesTitulares" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="ArrayOfTB_ObligacionesTitulares" nillable="true" type="tns:ArrayOfTB_ObligacionesTitulares" />
-  <xs:complexType name="TB_ObligacionesTitulares">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="cod_tit" type="xs:int" />
-      <xs:element minOccurs="0" name="nmApellido" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nmNombre" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nrLicencia" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nrTelefono" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="nro_trans" type="xs:int" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TB_ObligacionesTitulares" nillable="true" type="tns:TB_ObligacionesTitulares" />
-  <xs:complexType name="TB_transCab">
-    <xs:sequence>
-      <xs:element minOccurs="0" name="bloque" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cod_doc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cod_emp" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cod_moneda_ing" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cod_tit" type="xs:int" />
-      <xs:element minOccurs="0" name="com_mov" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="cuotas" nillable="true" type="xs:short" />
-      <xs:element minOccurs="0" name="descripcion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="estado_registro" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="fec_doc" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="fec_valor" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="fecha_mod" type="xs:dateTime" />
-      <xs:element minOccurs="0" name="formulario" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="imp_ivatot_ing" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="imp_subtot_ing" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="imp_tot_ing" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="letra_doc" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="linea" type="xs:short" />
-      <xs:element minOccurs="0" name="nro_doc" type="xs:int" />
-      <xs:element minOccurs="0" name="nro_int" nillable="true" type="xs:int" />
-      <xs:element minOccurs="0" name="nro_trans" type="xs:int" />
-      <xs:element minOccurs="0" name="operacion_mod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="periodo" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="seccion" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="serie_doc" type="xs:short" />
-      <xs:element minOccurs="0" name="tc_ing" nillable="true" type="xs:decimal" />
-      <xs:element minOccurs="0" name="terminal_mod" nillable="true" type="xs:string" />
-      <xs:element minOccurs="0" name="usuario_mod" nillable="true" type="xs:string" />
-    </xs:sequence>
-  </xs:complexType>
-  <xs:element name="TB_transCab" nillable="true" type="tns:TB_transCab" />
+  <xs:element name="Obligaciones" nillable="true" type="tns:Obligaciones" />
 </xs:schema>

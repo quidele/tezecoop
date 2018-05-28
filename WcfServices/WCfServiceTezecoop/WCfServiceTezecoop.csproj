@@ -79,6 +79,8 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="WSError.cs" />
+    <Compile Include="WSObligacion.cs" />
     <Compile Include="WSObligaciones.svc.cs">
       <DependentUpon>WSObligaciones.svc</DependentUpon>
     </Compile>

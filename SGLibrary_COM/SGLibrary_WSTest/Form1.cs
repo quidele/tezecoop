@@ -21,8 +21,8 @@ namespace SGLibrary_WSTest
         private void button1_Click(object sender, EventArgs e)
         {
             WSObligacionesClient client = new WSObligacionesClient();
-            var una_obligacion = client.obtenerObligacionxId();
-            this.textBox1.Text  = una_obligacion.TB_transCab.descripcion;
+            var una_wsobligacion = client.obtenerObligacionxId();
+            this.textBox1.Text = una_wsobligacion.Error.Mensaje; 
         }
 
         private void btnSaludar_Click(object sender, EventArgs e)

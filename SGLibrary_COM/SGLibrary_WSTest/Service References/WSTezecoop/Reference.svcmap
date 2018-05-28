@@ -23,6 +23,7 @@
   </MetadataSources>
   <Metadata>
     <MetadataFile FileName="WSObligaciones.wsdl" MetadataType="Wsdl" ID="719fc54c-899c-48c9-a4ac-aca8a66b96c1" SourceId="1" SourceUrl="http://localhost:49352/WSObligaciones.svc?wsdl" />
+    <MetadataFile FileName="WSObligaciones4.xsd" MetadataType="Schema" ID="876a5bc1-e034-4410-9db8-4595d3cf2d16" SourceId="1" SourceUrl="http://localhost:49352/WSObligaciones.svc?xsd=xsd4" />
     <MetadataFile FileName="WSObligaciones.xsd" MetadataType="Schema" ID="98548294-3986-4738-9d30-9c7726b664a9" SourceId="1" SourceUrl="http://localhost:49352/WSObligaciones.svc?xsd=xsd0" />
     <MetadataFile FileName="WSObligaciones1.xsd" MetadataType="Schema" ID="5f4ca8bc-8506-404f-99ea-79b094da1c8e" SourceId="1" SourceUrl="http://localhost:49352/WSObligaciones.svc?xsd=xsd1" />
     <MetadataFile FileName="WSObligaciones2.xsd" MetadataType="Schema" ID="a20cb689-f773-4090-92f2-209236557328" SourceId="1" SourceUrl="http://localhost:49352/WSObligaciones.svc?xsd=xsd2" />

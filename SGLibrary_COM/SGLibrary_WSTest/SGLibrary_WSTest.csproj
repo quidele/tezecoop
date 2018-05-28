@@ -80,7 +80,7 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
-    <None Include="Service References\WSTezecoop\SGLibrary_WSTest.WSTezecoop.Obligaciones.datasource">
+    <None Include="Service References\WSTezecoop\SGLibrary_WSTest.WSTezecoop.WSObligacion.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Service References\WSTezecoop\WSObligaciones.wsdl" />
@@ -88,6 +88,7 @@
     <None Include="Service References\WSTezecoop\WSObligaciones1.xsd" />
     <None Include="Service References\WSTezecoop\WSObligaciones2.xsd" />
     <None Include="Service References\WSTezecoop\WSObligaciones3.xsd" />
+    <None Include="Service References\WSTezecoop\WSObligaciones4.xsd" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
