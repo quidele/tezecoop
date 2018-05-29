@@ -1,4 +1,4 @@
-CBasededatos = 106, 149, 1069, 679, 
+CBasededatos = 106, 149, 1069, 679, Z
 CTablasIO = 44, 46, 1096, 512, 
 CDiccionariodeDatos = 44, 45, 809, 426, 
 Global = 33, 264, 1085, 730, 
@@ -49,7 +49,7 @@ Frm_ABMUsuarios = 78, 78, 1119, 341, C, 220, 230, 1183, 760, C
 Frm_Busquedas = 182, 182, 1099, 687, C, 242, 253, 1205, 783, C
 frm_PagoLicenciatario = -5, 51, 958, 574, C, 0, 0, 963, 530, C
 Frm_ReimpComprobantes = 132, 138, 1095, 668, C, 22, 23, 985, 553, C
-frm_ResumenLicenciatario = 3, 231, 966, 761, Z, 44, 46, 1007, 576, C
+frm_ResumenLicenciatario = 3, 231, 966, 761, , 44, 46, 1007, 576, C
 frm_Splash = -10, 159, 965, 692, C, 66, 69, 1029, 599, C
 Frm_ABMComisiones = 0, 0, 916, 517, C, 88, 92, 1051, 622, C
 Frm_ABMConceptos = 0, 0, 0, 0, C, 50, 50, 603, 501, C
