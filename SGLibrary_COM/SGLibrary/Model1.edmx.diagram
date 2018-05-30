@@ -32,10 +32,10 @@
         <EntityTypeShape EntityType="dbSG2000Model.TB_numeradores" Width="1.5" PointX="10.375" PointY="13.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="0.75" PointY="7.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Clientes" Width="1.5" PointX="14.375" PointY="16.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_transCab" Width="1.5" PointX="3.375" PointY="17.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_Proveedores" Width="1.5" PointX="16.375" PointY="8.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesTitulares" Width="1.5" PointX="12.375" PointY="13.75" />
         <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesCuotas" Width="1.5" PointX="15.375" PointY="4.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ObligacionesTitulares" Width="1.5" PointX="17.375" PointY="0.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_transCab" Width="1.5" PointX="3.375" PointY="17.75" />
         </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

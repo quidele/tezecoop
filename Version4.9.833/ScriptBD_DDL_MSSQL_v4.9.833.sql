@@ -10,7 +10,7 @@ ALTER TABLE TB_ObligacionesTitulares ALTER COLUMN nrLicencia int;
 GO
 
 -- Corregimos la definicion del campo 
-ALTER TABLE TB_transCab ALTER COLUMN estado_registro char(2);
+ALTER TABLE TB_transCab ALTER COLUMN estado_registro char(20);
 
 /*
 
@@ -23,7 +23,7 @@ CP = COBRO PARCIAL
 -- Agregamos el campo estado_registro en  TB_ObligacionesCuotas
 IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
 								WHERE    o.type = 'U'   and o.Name = 'TB_ObligacionesCuotas'  and  c.Name = 'estado_registro' )
-	ALTER TABLE dbo.TB_ObligacionesCuotas ADD 	estado_registro char(2) NULL
+	ALTER TABLE dbo.TB_ObligacionesCuotas ADD 	estado_registro char(20) NULL
 
 GO
 
@@ -31,7 +31,7 @@ GO
 -- Agregamos el campo nro_trans 
 IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
 								WHERE    o.type = 'U'   and o.Name = 'TB_ObligacionesTitulares'  and  c.Name = 'estado_registro' )
-	ALTER TABLE dbo.TB_ObligacionesTitulares ADD 	estado_registro char(2) NULL
+	ALTER TABLE dbo.TB_ObligacionesTitulares ADD 	estado_registro char(20) NULL
 
 GO
 -- Modificamos la definicion del campo  nrLicencia
@@ -79,14 +79,14 @@ BEGIN
 	end 
 	
 
-	UPDATE x SET x.estado_registro =  CASE flCompensado  WHEN 1 THEN 'CO' ELSE 'PE' END  FROM TB_ObligacionesCuotas x inner join #tmp_registros_modif Y
+	UPDATE x SET x.estado_registro =  CASE flCompensado  WHEN 1 THEN 'COBRADO' ELSE 'PENDIENTE' END  FROM TB_ObligacionesCuotas x inner join #tmp_registros_modif Y
 						ON x.nrLicencia = y.nrLicencia AND
 							x.nro_trans = y.nro_trans AND
 							 convert(date , x.fecha_vencimiento)  = convert(date ,y.fecha_vencimiento)
 
 
 
-	SELECT y.nro_trans , y.nrLicencia  , count(*) as total , 'XX' as estado_registro
+	SELECT y.nro_trans , y.nrLicencia  , count(*) as total , replicate ('X', 20)  as estado_registro
 	INTO #TMP_estado_vencimiento_x_obligacion_licencia_totales
 	FROM TB_ObligacionesCuotas x inner join #tmp_registros_modif Y
 						ON x.nrLicencia = y.nrLicencia AND
@@ -100,26 +100,26 @@ BEGIN
 							x.nro_trans = y.nro_trans 
 
 	-- PARA UNA OBLIGACION / LICENCIA : TODOS LOS VENCIMIENTO ESTAN COBRADOS  
-	UPDATE x SET x.estado_registro = 'CO'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
+	UPDATE x SET x.estado_registro = 'COBRADO'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion  y
 							 ON x.nro_trans = y.nro_trans AND x.nrLicencia = x.nrLicencia  AND x.total = y.cantidad 
-								WHERE y.estado_registro = 'CO'
+								WHERE y.estado_registro = 'COBRADO'
 
 	-- PARA UNA OBLIGACION / LICENCIA : TODOS LOS VENCIMIENTO ESTAN PENDIENTES
-	UPDATE x SET x.estado_registro = 'PE'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
+	UPDATE x SET x.estado_registro = 'PENDIENTE'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion  y
 							 ON x.nro_trans = y.nro_trans AND x.nrLicencia = x.nrLicencia  AND x.total = y.cantidad 
-								WHERE y.estado_registro = 'PE'
+								WHERE y.estado_registro = 'PENDIENTE'
 
 	-- SINO ACTUALIZADO POR LOS CASOS ANTERIORES
-	UPDATE x SET x.estado_registro = 'CP'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
+	UPDATE x SET x.estado_registro = 'COBRADO PARCIAL'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion  y
 							 ON x.nro_trans = y.nro_trans AND x.nrLicencia = x.nrLicencia  AND x.total = y.cantidad 
-								WHERE x.estado_registro = 'XX'
+								WHERE x.estado_registro = replicate ('X', 20) 
 
 
 	
-	SELECT nro_trans ,  sum(total) as total_obligacion , 'XX' as estado_registro
+	SELECT nro_trans ,  sum(total) as total_obligacion ,replicate ('X', 20)  as estado_registro
 	INTO #TMP_estado_vencimiento_x_obligacion_licencia_totales_general
 	FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales
 
@@ -130,22 +130,22 @@ BEGIN
 
 
 	-- PARA UNA OBLIGACION / LICENCIA : TODOS LOS VENCIMIENTO ESTAN COBRADOS  
-	UPDATE x SET x.estado_registro = 'CO'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
+	UPDATE x SET x.estado_registro = 'COBRADO'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion_general  y
 							 ON x.nro_trans = y.nro_trans AND   x.total_obligacion = y.cantidad 
-								WHERE y.estado_registro = 'CO'
+								WHERE y.estado_registro = 'COBRADO'
 
 	-- PARA UNA OBLIGACION / LICENCIA : TODOS LOS VENCIMIENTO ESTAN PENDIENTES
-	UPDATE x SET x.estado_registro = 'PE'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
+	UPDATE x SET x.estado_registro = 'PENDIENTE'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion_general  y
 							 ON x.nro_trans = y.nro_trans  AND x.total_obligacion = y.cantidad 
-								WHERE y.estado_registro = 'PE'
+								WHERE y.estado_registro = 'PENDIENTE'
 
 	-- SINO FUE ACTUALIZADO POR LOS CASOS ANTERIORES ENTONCES ES COBRO PARCIAL
-	UPDATE x SET x.estado_registro = 'CP'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
+	UPDATE x SET x.estado_registro = 'COBRADO PARCIAL'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion_general  y
 							 ON x.nro_trans = y.nro_trans AND  x.total_obligacion = y.cantidad 
-								WHERE x.estado_registro = 'XX'
+								WHERE x.estado_registro = replicate ('X', 20) 
 										
 
 END

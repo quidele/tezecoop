@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1115,7 +1115,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   187367425
+         Format          =   134086657
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2203,7 +2203,7 @@ Dim flFacturaCtacte   As Boolean
 Dim PORC_RECARGO_TD As Single
 Dim PORC_RECARGO_TC As Single
 Dim PORC_RECARGO_TP As Single
-
+Dim PORC_IVA As Single
 
 
 
@@ -2603,7 +2603,19 @@ On Error Resume Next
         End If
     End If
     
+    ' AGREGAR LOGICA DEL COEFICIENTE
+    MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
+    
+    Select Case ObtenerCampo("cdCondVenta").Text
+    Case "Tarjeta de Débito"
+        vlTotalPesos = vlTotalPesos + objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TD)
+    Case "Tarjeta de Crédito"
+        vlTotalPesos = vlTotalPesos + objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TC)
+    Case "Todo Pago"
+        vlTotalPesos = vlTotalPesos + objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TP)
+    End Select
+        
 
     ObtenerCampo("vlIVA").Text = FormatNumber(vlIVA, "2")
     ObtenerCampo("vlSubtotal").Text = FormatNumber(vlSubtotal, "2")
@@ -3544,6 +3556,8 @@ Dim strSQL_Params As String
     PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
     PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
     PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
+    PORC_IVA = objParametros.ObtenerValorBD("PORC_IVA")
+    
         
     objProductos.PORC_RECARGO_TC = PORC_RECARGO_TC
     objProductos.PORC_RECARGO_TD = PORC_RECARGO_TD

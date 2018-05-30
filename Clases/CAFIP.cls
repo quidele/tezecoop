@@ -278,3 +278,12 @@ Dim strMSG As String
         
 End Sub
 
+
+
+Public Function CalcularCoeficienteTarjeta(ByVal vlPorcentajeIVA As Double, ByVal vlPorcentajeTarjeta As Double) As Double
+Dim resultado As Double
+    
+    resultado = 1 / ((2 + vlPorcentajeIVA / 100) + (vlPorcentajeTarjeta / 100) - (1 + vlPorcentajeIVA / 100) * (1 + vlPorcentajeTarjeta / 100))
+    CalcularCoeficienteTarjeta = resultado
+
+End Function
