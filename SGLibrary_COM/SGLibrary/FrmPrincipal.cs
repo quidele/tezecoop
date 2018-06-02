@@ -64,7 +64,9 @@ namespace SGLibrary
 
         private void obligacionesEstadoDeCuentaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            FrmEstadoDeCuenta f1 = new FrmEstadoDeCuenta();
+            f1.serviceModel = this.serviceModel;  
+            f1.ShowDialog();
         }
     }
 }

@@ -145,6 +145,12 @@
     <Compile Include="FrmBusquedaGenerica.Designer.cs">
       <DependentUpon>FrmBusquedaGenerica.cs</DependentUpon>
     </Compile>
+    <Compile Include="FrmEstadoDeCuenta.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmEstadoDeCuenta.Designer.cs">
+      <DependentUpon>FrmEstadoDeCuenta.cs</DependentUpon>
+    </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -442,6 +448,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmBusquedaGenerica.resx">
       <DependentUpon>FrmBusquedaGenerica.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmEstadoDeCuenta.resx">
+      <DependentUpon>FrmEstadoDeCuenta.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>

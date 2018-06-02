@@ -367,7 +367,7 @@ namespace SGLibrary.Services
 	                    }
                      
                      // Armar TB_ObligacionesCuotasExt
-                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i +1 , fecha_vencimiento, monto_cuota, int.Parse ( item.nrLicencia) ,""));
+                     lista_resultado.Add(new TB_ObligacionesCuotasExt(1, item.cdProveedor, i +1 , fecha_vencimiento, monto_cuota, int.Parse ( item.nrLicencia) ,"",""));
                  }
              }
              return lista_resultado;

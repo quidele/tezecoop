@@ -122,8 +122,8 @@ namespace SGLibrary
                         HabilitarDeshabilitarCampos(true);
                         this.modoEdicion.Text = "SI";
 
-                        this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia.ToString(), c.nmNombre, c.nmApellido)).ToList<TB_ProveedoresExt>();
-                        this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia.GetValueOrDefault(), c.comentarios));
+                        this.Titulares = una_Obligacion.TB_ObligacionesTitulares.Select(c => new TB_ProveedoresExt(c.cod_tit, c.nrLicencia.ToString(), c.nmNombre, c.nmApellido, c.estado_registro)).ToList<TB_ProveedoresExt>();
+                        this.Lista_Vencimientos = una_Obligacion.TB_ObligacionesCuotas.Select(c => new TB_ObligacionesCuotasExt(c.nro_trans, c.cod_tit, c.nro_cuota, c.fecha_vencimiento.Value, c.importe.Value, c.nrLicencia.GetValueOrDefault(), c.comentarios, c.estado_registro ));
 
                         CargarGrillasTitularesCuotas(true);
                         /*
@@ -605,8 +605,10 @@ namespace SGLibrary
             ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
-            this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
+            MessageBox.Show (  "VOLVER HA HABILITAR CODIGO "); 
+          /*  this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
                 decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
+            */
 
             // cargamos nuevamente la lista
             lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
@@ -619,7 +621,7 @@ namespace SGLibrary
             lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
             lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
             lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
-
+          
             cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, this.Lista_Vencimientos, this.dataSet2, this.bindingSource2, lista_campo_tipo);
             ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
 
@@ -692,7 +694,7 @@ namespace SGLibrary
 
             foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
             {
-                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString());
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString(), row.Cells["estado_registro"].Value.ToString());
                 un_titu_nuevo  = Titulares.Find(x => x.cdProveedor == un_titu_nuevo.cdProveedor);
                 Titulares.Remove(un_titu_nuevo);
             }
@@ -757,7 +759,7 @@ namespace SGLibrary
 
             foreach (var item in lista)
             {
-                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor , item.nrLicencia,  item.nmNombre, item.nmApellido);
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor , item.nrLicencia,  item.nmNombre, item.nmApellido , "");
                 this.Titulares.Add(un_titu_nuevo);
             }
             CargarGrillasTitularesCuotas();
@@ -797,7 +799,7 @@ namespace SGLibrary
 
             foreach (var item in lista)
             {
-                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor, item.nrLicencia, item.nmNombre, item.nmApellido);
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(item.cdProveedor, item.nrLicencia, item.nmNombre, item.nmApellido, "");
                 this.Titulares.Add(un_titu_nuevo);
             }
             CargarGrillasTitularesCuotas();

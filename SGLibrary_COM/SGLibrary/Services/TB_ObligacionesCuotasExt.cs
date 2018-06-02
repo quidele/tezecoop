@@ -7,6 +7,9 @@ namespace SGLibrary.Services
 {
     public class TB_ObligacionesCuotasExt : TB_ObligacionesCuotas
     {
+
+        
+
         public TB_ObligacionesCuotasExt()
         {
 
@@ -16,7 +19,7 @@ namespace SGLibrary.Services
 
         public TB_ObligacionesCuotasExt(int p_nro_trans , int p_cod_tit, int  p_nro_cuota , 
                                         DateTime p_fecha_vencimiento , decimal p_importe, 
-                                        int p_nrLicencia, string p_comentarios )
+                                        int p_nrLicencia, string p_comentarios , string p_estado_registro )
         {
             this.nro_trans = p_nro_trans; 
             this.cod_tit = p_cod_tit; 
@@ -25,6 +28,7 @@ namespace SGLibrary.Services
             this.importe = p_importe; 
             this.nrLicencia = p_nrLicencia;
             this.comentarios = p_comentarios;
+            this.estado_registro = p_estado_registro;
         }
 
 
@@ -39,7 +43,7 @@ namespace SGLibrary.Services
             aux.importe = this.importe;
             aux.nrLicencia = this.nrLicencia;
             aux.comentarios = this.comentarios;
-           
+            aux.estado_registro = this.estado_registro; 
             return aux; 
         }
     }

@@ -7,12 +7,17 @@ namespace SGLibrary.Services
 {
     public class TB_ProveedoresExt : TB_Proveedores
     {
-        public TB_ProveedoresExt(int pcdProveedor, string pnrLicencia ,string  pnmNombre , string pnmApellido )
+
+        public string estado_registro { get; set; }
+
+        public TB_ProveedoresExt(int pcdProveedor, string pnrLicencia ,string  pnmNombre , string pnmApellido , string pestado_registro )
         {
             this.cdProveedor = pcdProveedor;
             this.nrLicencia = pnrLicencia;
             this.nmNombre = pnmNombre;
             this.nmApellido = pnmApellido;
+            this.estado_registro = pestado_registro; 
+            
 
         }
 
@@ -26,6 +31,7 @@ namespace SGLibrary.Services
             aux.nmNombre = this.nmNombre;
             aux.nmApellido = this.nmApellido;
             aux.nro_trans = pnro_trans;
+            aux.estado_registro = this.estado_registro; 
             return aux; 
         }
 

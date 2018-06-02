@@ -56,7 +56,10 @@ namespace ControlesdeUsuario
         VIEW,
 
         [Description("EXCEL")]
-        EXCEL
+        EXCEL, 
+
+        [Description("REPORT")]
+        REPORT
     }
 
     
