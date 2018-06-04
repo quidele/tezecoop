@@ -75,48 +75,6 @@ namespace SGLibrary
 
         }
 
-        private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
-        {
-            ToolStripItem miboton = (ToolStripItem)sender;
-            //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
-
-
-
-            switch (miboton.Tag.ToString())
-            {
-                case "FIND":
-                    {
-                        
-                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
-                        /*IEnumerable<Obligaciones> listadeRegistros = serviceModel.ObtenerRegistros(this.fechadesde.Value, this.fechahasta.Value, this.cbUsuarios.Text);
-                        var listaRegistrosTrans_Cab =  listadeRegistros.Select(c => c.TB_transCab).ToList<TB_transCab>();
-
-                        Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
-                        //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
-                        lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", false, false));
-                        lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal", false, false));
-                        lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32", true, true));
-                        lista_campo_tipo.Add("descripcion", new ADGVFieldAdapter("descripcion", "DESCRIPCION", "descripcion", "System.String", true, true));
-                        lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime", true, true));
-                        lista_campo_tipo.Add("usuario_mod", new ADGVFieldAdapter("usuario_mod", "USUARIO", "usuario_mod", "System.String", true, true));
-                        lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
-                        cargarDataGridView_ADGV(this.ADGVBusqueda, listaRegistrosTrans_Cab, this.dataSet1, this.bindingSource1, lista_campo_tipo);
-                        */
-                        // this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listaRegistrosTrans_Cab, "NO", this.dataSet1, this.bindingSource1);
-                        this.panelcarga.Visible = true;
-                        this.panelbusqueda.Visible = false;
-                        /*ActualizarCantidadRegistros(listadeRegistros.Count());*/
-                        botonesForm1.configMododeEdicion(ABMBotonesForm.REPORT);
-                        break;
-                    }
-                case "EXIT":
-                    {
-                        this.Close();
-                        break;
-                    }
-            }
-
-        }
 
         private bool validarIngresodeGrilla()
         {
@@ -171,14 +129,14 @@ namespace SGLibrary
         {
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
         }
 
         private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
         }
 
         private void cbUsuariosConciliaciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -403,7 +361,7 @@ namespace SGLibrary
 
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
 
         }
 
@@ -417,6 +375,62 @@ namespace SGLibrary
         {
             ToolStripMenuItem menuItm = (ToolStripMenuItem)sender;
             this.txtDescripcion.Text =  menuItm.Text;
+        }
+
+        private void botonesForm1_ClickEventDelegateHandler_1(object sender, EventArgs e)
+        {
+            ToolStripItem miboton = (ToolStripItem)sender;
+            //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
+
+
+
+            switch (miboton.Tag.ToString())
+            {
+                case "FIND":
+                    {
+
+                        //serviceConciliaciones.obtenerUsuariosConciliaciones();
+                        ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
+
+                        int nrLicencia;
+
+                        if (!int.TryParse(this.txtnrLicencia.Text, out nrLicencia))
+                        {
+                            MessageBox.Show("La licencia ingresada no es válida", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
+
+                        IEnumerable<Obligaciones> listadeRegistros = un_ServiceObligaciones.ObtenerObligaciones(this.fechadesde.Value,
+                                    this.fechahasta.Value, this.cbUsuarios.Text, nrLicencia, this.cbEstado.Text);
+
+
+                        var listaRegistrosTrans_Cab = listadeRegistros.Select(c => c.TB_transCab).ToList<TB_transCab>();
+
+                        Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+                        //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+                        lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", false, false));
+                        lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "NRO.TRANS", "nro_trans", "System.Decimal", false, false));
+                        lista_campo_tipo.Add("nro_doc", new ADGVFieldAdapter("nro_doc", "NRO.DOC", "nro_doc", "System.Int32", true, true));
+                        lista_campo_tipo.Add("descripcion", new ADGVFieldAdapter("descripcion", "DESCRIPCION", "descripcion", "System.String", true, true));
+                        lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime", true, true));
+                        lista_campo_tipo.Add("usuario_mod", new ADGVFieldAdapter("usuario_mod", "USUARIO", "usuario_mod", "System.String", true, true));
+                        lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
+                        cargarDataGridView_ADGV(this.ADGVBusqueda, listaRegistrosTrans_Cab, this.dataSet1, this.bindingSource1, lista_campo_tipo);
+
+                        // this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listaRegistrosTrans_Cab, "NO", this.dataSet1, this.bindingSource1);
+                        this.panelcarga.Visible = true;
+                        this.panelbusqueda.Visible = false;
+                        /*ActualizarCantidadRegistros(listadeRegistros.Count());*/
+                        botonesForm1.configMododeEdicion(ABMBotonesForm.REPORT);
+                        break;
+                    }
+                case "EXIT":
+                    {
+                        this.Close();
+                        break;
+                    }
+            }
         }
         
 

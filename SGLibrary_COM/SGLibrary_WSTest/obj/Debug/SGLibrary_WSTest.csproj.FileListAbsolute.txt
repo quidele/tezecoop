@@ -6,3 +6,4 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Pro
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csproj.GenerateResource.Cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.exe
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csprojResolveAssemblyReference.cache

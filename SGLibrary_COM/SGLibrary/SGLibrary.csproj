@@ -244,6 +244,7 @@
     <Compile Include="GUIUtilities\ADGVFieldAdapter.cs" />
     <Compile Include="GUIUtilities\ADGVInicilizations.cs" />
     <Compile Include="LoaderForms.cs" />
+    <Compile Include="Mocks\dbSG2000EntitiesMocks.cs" />
     <Compile Include="ODBCManager.cs" />
     <Compile Include="Model1.Context.cs">
       <AutoGen>True</AutoGen>

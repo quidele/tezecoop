@@ -5,6 +5,7 @@ using System.Text;
 using System.Runtime.InteropServices;
 using System.Diagnostics;
 using System.Windows.Forms;
+using SGLibrary.Mocks;
 
 namespace SGLibrary
 {
@@ -200,7 +201,10 @@ namespace SGLibrary
                         break;
                     case "FrmObligaciones":
                         FrmObligaciones f9 = new FrmObligaciones();
-                        f9.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());
+
+                        // dbSG2000EntitiesMocks
+                        // f9.serviceModel = new Services.ServiceObligaciones(new dbSG2000EntitiesMocks());  // Probar MOCKS
+                        f9.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());  // Probar MOCKS
                         f9.serviceModel.CajaAdm  = this._cajactiva;
                         f9.serviceModel.Usuario  = this._usuarioActivo;
                         f9.serviceModel.usuario_mod = this.Usuario;

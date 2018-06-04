@@ -605,10 +605,14 @@ namespace SGLibrary
             ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
-            MessageBox.Show (  "VOLVER HA HABILITAR CODIGO "); 
-          /*  this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
+            MessageBox.Show (" VOLVER HA HABILITAR CODIGO ");
+
+            if (!pEdicion) 
+            {
+                this.Lista_Vencimientos = un_ServiceObligaciones.calcularVencimientos(this.Titulares, decimal.Parse(this.txtMonto.Text),
                 decimal.Parse(this.txtCuotas.Text), this.dtpFecValor.Value, this.cbPeriodo.Text);
-            */
+            }
+            
 
             // cargamos nuevamente la lista
             lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();

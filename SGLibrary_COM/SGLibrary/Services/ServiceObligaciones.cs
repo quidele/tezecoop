@@ -373,8 +373,48 @@ namespace SGLibrary.Services
              return lista_resultado;
          } // cierre metodo calcularVencimientos
 
+         
+        // Obtener Obligaciones de un titular
+         public  IEnumerable<Obligaciones> ObtenerObligaciones(
+             DateTime p_fechadesde, DateTime p_fechaHasta, string p_usuario,
+             int p_nrLicencia , String p_estado = null)
+         {
 
+             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => p_nrLicencia, () => p_estado).GetLog();
+             Trace.TraceInformation(paramLog);
 
+             IEnumerable<TB_transCab> listadeRegistrosTB_transCab = (from c in context.TB_transCab
+                                                                        where c.fec_doc >= p_fechadesde
+                                                                        && c.fec_doc <= p_fechaHasta
+                                                                        && (c.usuario_mod == p_usuario || p_usuario.ToUpper () == "Todos".ToUpper())
+                                                                        && (c.estado_registro == p_estado || p_estado.ToUpper() == "Todos".ToUpper())
+                                                                        orderby c.nro_trans descending  // ordenamos desde mas reciente a mas vieja
+                                                                        select c);
+
+             List<int> lista_nro_trans = listadeRegistrosTB_transCab.Select(c => c.nro_trans).ToList<int>();
+
+             List<Obligaciones> lista_resultado = new List<Obligaciones>(); 
+
+             foreach (TB_transCab unTB_transCab  in listadeRegistrosTB_transCab)
+             {
+
+                var objTB_ObligacionesTitulares = (from c in context.TB_ObligacionesTitulares
+                                    where  c.nro_trans == unTB_transCab.nro_trans 
+                                    select c);
+
+                var objTB_ObligacionesCuotas = (from c in context.TB_ObligacionesCuotas
+                                    where  c.nro_trans == unTB_transCab.nro_trans
+                                    select c);
+
+                lista_resultado.Add(new Obligaciones(unTB_transCab, objTB_ObligacionesTitulares.ToList(), objTB_ObligacionesCuotas.ToList())); 
+                    
+             }
+
+             return lista_resultado;
+
+         }
+
+       
          public override Obligaciones CompletarAuditoria(Obligaciones obj, string p_seccion, string p_bloque, string p_estado_registro, string p_operacion_mod)
          {
              obj.TB_transCab.estado_registro = p_estado_registro;

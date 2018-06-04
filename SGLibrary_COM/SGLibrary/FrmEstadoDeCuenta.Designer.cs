@@ -445,8 +445,7 @@
             this.botonesForm1.Name = "botonesForm1";
             this.botonesForm1.Size = new System.Drawing.Size(613, 29);
             this.botonesForm1.TabIndex = 3;
-            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
-            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load);
+            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler_1);
             // 
             // FrmEstadoDeCuenta
             // 
