@@ -245,6 +245,7 @@
             this.ADGV_Titulares.TimeFilter = false;
             this.ADGV_Titulares.FilterStringChanged += new System.EventHandler(this.ADGV_Titulares_FilterStringChanged);
             this.ADGV_Titulares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGV_Titulares_CellContentClick);
+            this.ADGV_Titulares.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ADGV_Titulares_MouseDoubleClick);
             // 
             // cbEstado
             // 
@@ -281,7 +282,11 @@
             this.txtnrLicencia.Name = "txtnrLicencia";
             this.txtnrLicencia.Size = new System.Drawing.Size(66, 20);
             this.txtnrLicencia.TabIndex = 30;
+            this.txtnrLicencia.TextChanged += new System.EventHandler(this.txtnrLicencia_TextChanged);
+            this.txtnrLicencia.Enter += new System.EventHandler(this.txtnrLicencia_Enter);
+            this.txtnrLicencia.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtnrLicencia_KeyDown);
             this.txtnrLicencia.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtMonto_KeyPress);
+            this.txtnrLicencia.Leave += new System.EventHandler(this.txtnrLicencia_Leave);
             // 
             // label10
             // 
@@ -439,21 +444,21 @@
             // botonesForm1
             // 
             this.botonesForm1.AutoSize = true;
-            this.botonesForm1.Location = new System.Drawing.Point(0, 4);
+            this.botonesForm1.Location = new System.Drawing.Point(0, -2);
             this.botonesForm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.REPORT;
             this.botonesForm1.Name = "botonesForm1";
-            this.botonesForm1.Size = new System.Drawing.Size(613, 29);
-            this.botonesForm1.TabIndex = 3;
-            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler_1);
+            this.botonesForm1.Size = new System.Drawing.Size(533, 27);
+            this.botonesForm1.TabIndex = 6;
+            this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
+            this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load_1);
             // 
             // FrmEstadoDeCuenta
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(760, 501);
-            this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.botonesForm1);
+            this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
             this.Margin = new System.Windows.Forms.Padding(2);
@@ -485,7 +490,6 @@
         private System.Windows.Forms.Panel panelcarga;
         private System.Windows.Forms.Panel panelbusqueda;
         private System.Windows.Forms.Label label1;
-        private ControlesdeUsuario.BotonesForm botonesForm1;
         private ADGV.AdvancedDataGridView ADGVBusqueda;
         private System.Windows.Forms.StatusStrip status_bar_usuario;
         private System.Windows.Forms.ToolStripStatusLabel statusbar_usuario;
@@ -517,5 +521,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.DateTimePicker fechahasta;
         private System.Windows.Forms.DateTimePicker fechadesde;
+        private ControlesdeUsuario.BotonesForm botonesForm1;
     }
 }

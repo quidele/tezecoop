@@ -380,7 +380,8 @@ namespace SGLibrary.Services
              int p_nrLicencia , String p_estado = null)
          {
 
-             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => p_nrLicencia, () => p_estado).GetLog();
+             var paramLog = new SGLibrary.Utility.ParamLogUtility(() => p_fechadesde, ()=> p_fechaHasta,
+             () =>p_usuario  , () => p_nrLicencia, () => p_estado).GetLog();
              Trace.TraceInformation(paramLog);
 
              IEnumerable<TB_transCab> listadeRegistrosTB_transCab = (from c in context.TB_transCab
@@ -388,7 +389,7 @@ namespace SGLibrary.Services
                                                                         && c.fec_doc <= p_fechaHasta
                                                                         && (c.usuario_mod == p_usuario || p_usuario.ToUpper () == "Todos".ToUpper())
                                                                         && (c.estado_registro == p_estado || p_estado.ToUpper() == "Todos".ToUpper())
-                                                                        orderby c.nro_trans descending  // ordenamos desde mas reciente a mas vieja
+                                                                        orderby c.nro_trans ascending   // ordenamos desde mas reciente a mas vieja
                                                                         select c);
 
              List<int> lista_nro_trans = listadeRegistrosTB_transCab.Select(c => c.nro_trans).ToList<int>();

@@ -62,6 +62,17 @@ namespace SGLibrary.Services
             return listadeRegistros.ToList().OrderBy(c => decimal.Parse(c.nrLicencia));
         }
 
+        public TB_Proveedores ObtenerRegistroxLicencia(string pnrLicencia)
+        {
 
+            var paramLog = new SGLibrary.Utility.ParamLogUtility(() => pnrLicencia).GetLog();
+            Trace.TraceInformation(paramLog);
+            // Falta agregar filtro de fechas
+            var registroLicencia = (from c in context.TB_Proveedores
+                                    where (c.nrLicencia == pnrLicencia)
+                                    select c).ToList<TB_Proveedores>().First();
+            return registroLicencia;
+
+        }
     }
 }

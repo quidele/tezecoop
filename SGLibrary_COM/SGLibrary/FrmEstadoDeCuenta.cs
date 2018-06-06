@@ -26,6 +26,7 @@ namespace SGLibrary
         public List<TB_ProveedoresExt> Titulares { get; set; }
         public IEnumerable<TB_ObligacionesCuotasExt> Lista_Vencimientos { get; set; }
 
+        private IEnumerable<Obligaciones> ListaRegistrosObligaciones;
 
         public FrmEstadoDeCuenta()
         {
@@ -59,9 +60,8 @@ namespace SGLibrary
             this.status_bar_ambiente.Text = "Ambiente: " + ConfigBD.Instance(this.serviceModel.Ambiente)._ambiente;
             this.Titulares = new List<TB_ProveedoresExt>();
 
-            
-            this.botonesForm1.InicializarFindBoton();
-
+            //this.botonesForm1.InicializarFindBoton();
+            this.txtnrLicencia.Focus(); 
 
         }
 
@@ -129,14 +129,14 @@ namespace SGLibrary
         {
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
         }
 
         private void dataGridView2_RowHeaderMouseDoubleClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
         }
 
         private void cbUsuariosConciliaciones_SelectedIndexChanged(object sender, EventArgs e)
@@ -158,6 +158,7 @@ namespace SGLibrary
         private void txtMonto_KeyPress(object sender, KeyPressEventArgs e)
         {
             e.Handled = soloNumerosDecimales(e.KeyChar);
+
         }
 
         private void txtMonto_TextChanged(object sender, EventArgs e)
@@ -361,7 +362,7 @@ namespace SGLibrary
 
             var btnFind = new ToolStripButton();
             btnFind.Tag = "EDIT";
-            botonesForm1_ClickEventDelegateHandler_1(btnFind, null);
+            botonesForm1_ClickEventDelegateHandler(btnFind, null);
 
         }
 
@@ -377,12 +378,12 @@ namespace SGLibrary
             this.txtDescripcion.Text =  menuItm.Text;
         }
 
-        private void botonesForm1_ClickEventDelegateHandler_1(object sender, EventArgs e)
+
+
+        private void botonesForm1_ClickEventDelegateHandler(object sender, EventArgs e)
         {
             ToolStripItem miboton = (ToolStripItem)sender;
             //MessageBox.Show("tocaste un boton, boton " + miboton.Name + " TAB " + miboton.Tag); 
-
-
 
             switch (miboton.Tag.ToString())
             {
@@ -400,12 +401,21 @@ namespace SGLibrary
                             return;
                         }
 
+                        if (this.cbUsuarios.Text.Trim() == "")
+                        {
+                            this.cbUsuarios.Text = "Todos";
+                        }
 
-                        IEnumerable<Obligaciones> listadeRegistros = un_ServiceObligaciones.ObtenerObligaciones(this.fechadesde.Value,
+                        if (this.cbEstado.Text.Trim() == "")
+                        {
+                            this.cbEstado.Text = "Todos";
+                        }
+
+                        ListaRegistrosObligaciones = un_ServiceObligaciones.ObtenerObligaciones(this.fechadesde.Value,
                                     this.fechahasta.Value, this.cbUsuarios.Text, nrLicencia, this.cbEstado.Text);
 
 
-                        var listaRegistrosTrans_Cab = listadeRegistros.Select(c => c.TB_transCab).ToList<TB_transCab>();
+                        var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>();
 
                         Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
                         //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
@@ -416,7 +426,7 @@ namespace SGLibrary
                         lista_campo_tipo.Add("fec_doc", new ADGVFieldAdapter("fec_doc", "FECHA", "fec_doc", "System.DateTime", true, true));
                         lista_campo_tipo.Add("usuario_mod", new ADGVFieldAdapter("usuario_mod", "USUARIO", "usuario_mod", "System.String", true, true));
                         lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
-                        cargarDataGridView_ADGV(this.ADGVBusqueda, listaRegistrosTrans_Cab, this.dataSet1, this.bindingSource1, lista_campo_tipo);
+                        cargarDataGridView_ADGV(this.ADGV_Titulares, listaRegistrosTrans_Cab, this.dataSet1, this.bindingSource1, lista_campo_tipo);
 
                         // this.cargarDataGridViewBusqueda_ADGV(ADGVBusqueda, listaRegistrosTrans_Cab, "NO", this.dataSet1, this.bindingSource1);
                         this.panelcarga.Visible = true;
@@ -430,6 +440,80 @@ namespace SGLibrary
                         this.Close();
                         break;
                     }
+            }
+        }
+
+        private void botonesForm1_Load_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtnrLicencia_TextChanged(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void txtnrLicencia_Leave(object sender, EventArgs e)
+        {
+
+            ObtenerNombreLicencia();
+
+        }
+
+        private void ObtenerNombreLicencia()
+        {
+            int nrLicencia;
+
+            if (!int.TryParse(this.txtnrLicencia.Text, out nrLicencia))
+            {
+                return;
+            }
+
+            // obtener el nombre de la licencia
+            ServiceLicenciatarios un_ServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
+            var un_licenciatario = un_ServiceLicenciatarios.ObtenerRegistroxLicencia(this.txtnrLicencia.Text);
+
+            this.txtDescripcion.Text = un_licenciatario.nmNombre + " " + un_licenciatario.nmApellido;
+        }
+
+        private void txtnrLicencia_Enter(object sender, EventArgs e)
+        {
+            ObtenerNombreLicencia();
+        }
+
+        private void ADGV_Titulares_MouseDoubleClick(object sender, MouseEventArgs e)
+        {
+            foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
+            {
+                // INSERTE SU CODIGO
+                int nro_trans = int.Parse ( row.Cells["nro_trans"].Value.ToString()) ;
+                var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
+                IEnumerable<TB_ObligacionesCuotas> lista_TB_ObligacionesCuotas = una_TB_ObligacionesCuotas.Where(c1 => c1.nro_trans   == nro_trans); 
+
+                
+                Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+                // cargamos nuevamente la lista
+                lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
+                //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
+                lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", true, true));
+                lista_campo_tipo.Add("nro_trans", new ADGVFieldAdapter("nro_trans", "nro_trans", "nro_trans", "System.Int32", true, false));
+                lista_campo_tipo.Add("cod_tit", new ADGVFieldAdapter("cod_tit", "COD.TITU", "cod_tit", "System.Decimal", true, false));
+                lista_campo_tipo.Add("nrLicencia", new ADGVFieldAdapter("nrLicencia", "LICENCIA", "nrLicencia", "System.Int32", true, true));
+                lista_campo_tipo.Add("nro_cuota", new ADGVFieldAdapter("nro_cuota", "NRO.CUOTA", "nro_cuota", "System.String", true, true));
+                lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
+                lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
+                lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
+
+                cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, una_TB_ObligacionesCuotas, this.dataSet2, this.bindingSource2, lista_campo_tipo);
+                //ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
+
+            }
+        }
+
+        private void txtnrLicencia_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode   == Keys.Enter) {
+                ObtenerNombreLicencia();
             }
         }
         

@@ -21,6 +21,7 @@ namespace SGLibrary
     public partial class FrmObligaciones : Form
     {
 
+        private string PENDIENTE = "PENDIENTE";
 
         public ServiceModelGenerico<Obligaciones> serviceModel { get; set; }
         public List<TB_ProveedoresExt> Titulares { get; set; }
@@ -345,6 +346,7 @@ namespace SGLibrary
                 una_TB_transCab.cuotas =  short.Parse(this.txtCuotas.Text);
                 una_TB_transCab.periodo = this.cbPeriodo.Text ;
                 una_TB_transCab.imp_tot_ing =  decimal.Parse( this.txtMonto.Text) ;
+                una_TB_transCab.estado_registro = this.PENDIENTE ;
          
                 this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
                                                    una_TB_transCab.bloque, "A", "Nuevo");
@@ -352,7 +354,9 @@ namespace SGLibrary
                 List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
                 foreach (TB_ProveedoresExt item in this.Titulares )
                 {
+                    item.estado_registro = this.PENDIENTE;
                     una_Lista_TB_ObligacionesTitulares.Add(item.ToTB_ObligacionesTitulares(una_TB_transCab.nro_trans)); 
+                    
                 }
                 una_Obligacion.TB_ObligacionesTitulares = una_Lista_TB_ObligacionesTitulares;
 
@@ -360,6 +364,7 @@ namespace SGLibrary
                 List<TB_ObligacionesCuotas> una_Lista_TB_ObligacionesCuotas = new List<TB_ObligacionesCuotas>();
                 foreach (TB_ObligacionesCuotasExt item in Lista_Vencimientos)
                 {
+                    item.estado_registro = this.PENDIENTE; 
                     una_Lista_TB_ObligacionesCuotas.Add ( item.ToTB_ObligacionesCuotas(una_TB_transCab.nro_trans));
                 }
                 una_Obligacion.TB_ObligacionesCuotas = una_Lista_TB_ObligacionesCuotas; 

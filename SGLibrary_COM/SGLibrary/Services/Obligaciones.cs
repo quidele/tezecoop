@@ -7,7 +7,8 @@ namespace SGLibrary.Services
 {
     public class Obligaciones 
     {
-  
+
+
         private TB_transCab _un_TB_transCab;
 
         public TB_transCab TB_transCab
