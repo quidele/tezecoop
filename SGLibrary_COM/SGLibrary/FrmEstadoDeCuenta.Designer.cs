@@ -111,7 +111,7 @@
             this.cbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuarios.FormattingEnabled = true;
-            this.cbUsuarios.Location = new System.Drawing.Point(523, 22);
+            this.cbUsuarios.Location = new System.Drawing.Point(570, 22);
             this.cbUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.cbUsuarios.Name = "cbUsuarios";
             this.cbUsuarios.Size = new System.Drawing.Size(123, 21);
@@ -120,7 +120,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(519, 4);
+            this.label5.Location = new System.Drawing.Point(566, 4);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(43, 13);
@@ -260,8 +260,10 @@
             this.cbEstado.Location = new System.Drawing.Point(422, 21);
             this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(97, 21);
+            this.cbEstado.Size = new System.Drawing.Size(144, 21);
             this.cbEstado.TabIndex = 35;
+            this.cbEstado.SelectedIndexChanged += new System.EventHandler(this.cbEstado_SelectedIndexChanged);
+            this.cbEstado.TextChanged += new System.EventHandler(this.cbEstado_TextChanged);
             // 
             // label12
             // 

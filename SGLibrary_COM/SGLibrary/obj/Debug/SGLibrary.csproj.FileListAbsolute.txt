@@ -61,7 +61,6 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\CommonServiceLocator.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\CommonServiceLocator.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmBusquedaGenerica.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmEstadoDeCuenta.resources
@@ -92,3 +91,4 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\EN-US\SGLibrary.resources.d
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.csprojResolveAssemblyReference.cache

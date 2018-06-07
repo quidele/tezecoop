@@ -460,13 +460,13 @@ namespace SGLibrary
 
         }
 
-        private void ObtenerNombreLicencia()
+        private bool ObtenerNombreLicencia()
         {
             int nrLicencia;
 
             if (!int.TryParse(this.txtnrLicencia.Text, out nrLicencia))
             {
-                return;
+                return false;
             }
 
             // obtener el nombre de la licencia
@@ -474,11 +474,15 @@ namespace SGLibrary
             var un_licenciatario = un_ServiceLicenciatarios.ObtenerRegistroxLicencia(this.txtnrLicencia.Text);
 
             this.txtDescripcion.Text = un_licenciatario.nmNombre + " " + un_licenciatario.nmApellido;
+            return false;
         }
 
         private void txtnrLicencia_Enter(object sender, EventArgs e)
         {
-            ObtenerNombreLicencia();
+            if (ObtenerNombreLicencia())
+            {
+                this.cbEstado.Focus();
+            }
         }
 
         private void ADGV_Titulares_MouseDoubleClick(object sender, MouseEventArgs e)
@@ -487,8 +491,12 @@ namespace SGLibrary
             {
                 // INSERTE SU CODIGO
                 int nro_trans = int.Parse ( row.Cells["nro_trans"].Value.ToString()) ;
-                var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
-                IEnumerable<TB_ObligacionesCuotas> lista_TB_ObligacionesCuotas = una_TB_ObligacionesCuotas.Where(c1 => c1.nro_trans   == nro_trans); 
+
+                Obligaciones una_obligacion = ListaRegistrosObligaciones.Where(c => c.TB_transCab.nro_trans == nro_trans).First();
+                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas ;
+
+                /*var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
+                IEnumerable<Obligaciones> lista_Obligaciones = una_TB_ObligacionesCuotas.Where( c=> c.); */
 
                 
                 Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
@@ -505,7 +513,14 @@ namespace SGLibrary
                 lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
 
                 cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, una_TB_ObligacionesCuotas, this.dataSet2, this.bindingSource2, lista_campo_tipo);
-                //ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_TitularesCuotas, "nrLicencia", "fecha_vencimiento");
+
+                Dictionary<string, Color> estados_color = new Dictionary<string, Color>();
+
+                estados_color.Add("COBRADO", Color.Green);
+                estados_color.Add("COBRADO PARCIAL", Color.Orange);
+                estados_color.Add("PENDIENTE", Color.White );
+
+                ADGVInicilizations.ColorearGrillaxEstadoVencimiento(this.ADGV_TitularesCuotas, "estado_registro", "fecha_vencimiento",estados_color , "PENDIENTE");
 
             }
         }
@@ -515,6 +530,16 @@ namespace SGLibrary
             if (e.KeyCode   == Keys.Enter) {
                 ObtenerNombreLicencia();
             }
+        }
+
+        private void cbEstado_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void cbEstado_TextChanged(object sender, EventArgs e)
+        {
+            
         }
         
 

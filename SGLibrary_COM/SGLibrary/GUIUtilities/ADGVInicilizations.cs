@@ -118,6 +118,28 @@ namespace SGLibrary.GUIUtilities
 
         }
 
+
+
+        public static void ColorearGrillaxEstadoVencimiento(AdvancedDataGridView dgv, string p_nombre_columna_estado,
+             string p_nombre_columna_fecha_vencimiento, Dictionary<string, Color> estados_color, string estado_fecha_vencida)
+        {
+
+            foreach (DataGridViewRow item in dgv.Rows)
+            {
+                var row = item;
+                var estado_color = estados_color.Where(c => c.Key.CompareTo(p_nombre_columna_estado)==0).First();
+                var fecha_vencimiento = DateTime.Parse(row.Cells[p_nombre_columna_fecha_vencimiento].Value.ToString().Remove(10));
+                if ((estado_color.Key.CompareTo(estado_fecha_vencida)==0) &&  ( fecha_vencimiento < DateTime.Now  )) {
+                    row.DefaultCellStyle.BackColor = Color.Red;
+                } else{
+                    row.DefaultCellStyle.BackColor = estado_color.Value;
+                }
+                
+
+            }
+
+
+        } // Cierra  ADGV_TitularesCuotas_Inicilizacion
     }// cierra clase 
 
 
