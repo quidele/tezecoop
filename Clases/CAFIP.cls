@@ -280,8 +280,14 @@ End Sub
 
 
 
-Public Function CalcularCoeficienteTarjeta(ByVal vlPorcentajeIVA As Double, ByVal vlPorcentajeTarjeta As Double) As Double
+Public Function CalcularCoeficienteTarjeta(ByVal vlIVA As Double, ByVal vlPorcentajeIVA As Double, ByVal vlPorcentajeTarjeta As Double) As Double
 Dim resultado As Double
+    
+    If vlIVA = 0 Then
+        CalcularCoeficienteTarjeta = 1
+        Return
+    End If
+    
     
     resultado = 1 / ((2 + vlPorcentajeIVA / 100) + (vlPorcentajeTarjeta / 100) - (1 + vlPorcentajeIVA / 100) * (1 + vlPorcentajeTarjeta / 100))
     CalcularCoeficienteTarjeta = resultado

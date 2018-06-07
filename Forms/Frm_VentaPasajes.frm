@@ -40,6 +40,14 @@ Begin VB.Form Frm_VentaPasajes
       TabIndex        =   2
       Top             =   630
       Width           =   11790
+      Begin VB.TextBox txtPreguntaIVA 
+         Height          =   780
+         Left            =   10830
+         TabIndex        =   108
+         Tag             =   "PreguntaIVA"
+         Top             =   6045
+         Width           =   765
+      End
       Begin VB.ComboBox cbTipoFacturacion 
          BackColor       =   &H00C0FFFF&
          Height          =   315
@@ -86,7 +94,7 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
          Height          =   255
-         Left            =   9660
+         Left            =   9555
          Locked          =   -1  'True
          TabIndex        =   102
          Tag             =   "nrCupon"
@@ -1115,7 +1123,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   135200769
+         Format          =   143720449
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1987,6 +1995,7 @@ Begin VB.Form Frm_VentaPasajes
       Height          =   660
       Left            =   0
       TabIndex        =   1
+      Tag             =   "PreguntaIVA"
       Top             =   0
       Width           =   11985
       _ExtentX        =   21140
@@ -2585,10 +2594,16 @@ On Error Resume Next
     If objAFIP.Supera_KM_IVA_segunMonto(ObtenerCampo("tpIVA"), vlKilometros, vlTotalPesos, ObtenerCampo("tpComprobante")) Then
         ' obtenemos los valores del IVA
         If objAFIP.preguntaOperadora(ObtenerCampo("tpIVA"), vlKilometros, vlTotalPesos) Then
-            objParametros.GrabarValor "frm_MsgSinBotonporDefecto.mensaje", "¿La distancia del viaje es igual o superior a los " + CStr(objParametros.ObtenerValorBD("KM_IVA")) + " kilometros?"
-            frm_MsgSinBotonporDefecto.Show 1
             Dim respuesta As String
-            respuesta = objParametros.ObtenerValor("frm_MsgSinBotonporDefecto.respuesta")
+            If ObtenerCampo("PreguntaIVA") <> "" Then
+                respuesta = ObtenerCampo("PreguntaIVA")
+            Else
+                objParametros.GrabarValor "frm_MsgSinBotonporDefecto.mensaje", "¿La distancia del viaje es igual o superior a los " + CStr(objParametros.ObtenerValorBD("KM_IVA")) + " kilometros?"
+                frm_MsgSinBotonporDefecto.Show 1
+                
+                ObtenerCampo("PreguntaIVA") = objParametros.ObtenerValor("frm_MsgSinBotonporDefecto.respuesta")
+                respuesta = objParametros.ObtenerValor("frm_MsgSinBotonporDefecto.respuesta")
+            End If
             If respuesta = "SI" Then
                 vlIVA = objAFIP.CalcularIVA(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
                 vlSubtotal = objAFIP.CalcularSubtotal(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
@@ -2600,7 +2615,7 @@ On Error Resume Next
     End If
     
     ' AGREGAR LOGICA DEL COEFICIENTE
-    MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
+    ' MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
     Dim coeficiente As Double
     
@@ -2608,16 +2623,16 @@ On Error Resume Next
     
     Select Case ObtenerCampo("cdCondVenta").Text
     Case "Tarjeta de Débito"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TD)
-        vlTotalPesos = vlTotalPesos * objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TD)
+        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TD)
+        vlTotalPesos = vlTotalPesos * coeficiente
         vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TD / 100))
     Case "Tarjeta de Crédito"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TC)
-        vlTotalPesos = vlTotalPesos * objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TC)
+        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TC)
+        vlTotalPesos = vlTotalPesos * coeficiente
         vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TC / 100))
     Case "Todo Pago"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TP)
-        vlTotalPesos = vlTotalPesos * objAFIP.CalcularCoeficienteTarjeta(PORC_IVA, PORC_RECARGO_TP)
+        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TP)
+        vlTotalPesos = vlTotalPesos * coeficiente
         vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TP / 100))
     End Select
         
