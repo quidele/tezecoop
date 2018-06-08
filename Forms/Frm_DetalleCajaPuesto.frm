@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_DetalleCajaPuesto 
    Caption         =   "Detalle Movimientos Caja Puesto"
    ClientHeight    =   9030
@@ -1556,8 +1556,11 @@ Dim resp As Byte
         If objCajas.realizarCierreCajaPuesto(ObtenerCampo("nrCaja"), objUsuario.dsUsuario, "USRPARAM") Then
             objParametros.GrabarValor "Frm_DetalleCajaPuesto.Aprobacion.Usuario", "SI"
             cmdCargarDatosCajaPuesto
-            MsgBox "El cierre se ha realizado con éxito. Verifique la alimentación de hojas de papel de la impresora.", vbInformation + vbDefaultButton1, "Atención"
-            imprimirCaja False
+            resp = MsgBox("Desea IMPRIMIR la caja.", vbQuestion + vbYesNo + vbDefaultButton2, "Impresión del cierre de caja")
+            If resp = vbYes Then
+                MsgBox "El cierre se ha realizado con éxito. Verifique la alimentación de hojas de papel de la impresora.", vbInformation + vbDefaultButton1, "Atención"
+                imprimirCaja False
+            End If
             objParametros.GrabarValor "Frm_DetalleCajaPuesto.Aprobacion.Usuario", "NO"
             resp = MsgBox("Desea realizar la imputación.", vbQuestion + vbYesNo + vbDefaultButton2, "Impresión del cierre de caja")
             If resp = vbNo Then Exit Sub
@@ -2438,6 +2441,7 @@ Private Sub imprimirCaja(porpantalla As Boolean)
         MsgBox "Error: " + objSPs.Error + ", función:rpt_cierredecaja_v3_7", vbCritical, "Atención"
         Exit Sub
     End If
+    
     
     If porpantalla Then
         Frm_Principal.CrystalReport1.Destination = crptToWindow

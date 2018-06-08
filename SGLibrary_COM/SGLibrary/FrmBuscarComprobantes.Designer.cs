@@ -46,8 +46,8 @@
             this.dataGridView1 = new ADGV.AdvancedDataGridView();
             this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.cambiarATarjetaDeCréditoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.cambiarATodoPagoTodoPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cambiarATarjetadeDebitoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet1 = new System.Data.DataSet();
@@ -238,19 +238,19 @@
             this.cambiarATarjetaDeCréditoToolStripMenuItem.Text = "Cambiar a Tarjeta de Crédito";
             this.cambiarATarjetaDeCréditoToolStripMenuItem.Click += new System.EventHandler(this.cambiarATarjetaDeCréditoToolStripMenuItem_Click);
             // 
-            // cambiarATodoPagoTodoPagoToolStripMenuItem
-            // 
-            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Name = "cambiarATodoPagoTodoPagoToolStripMenuItem";
-            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
-            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Text = "Cambiar a Todo Pago";
-            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Click += new System.EventHandler(this.cambiarATodoPagoTodoPagoToolStripMenuItem_Click);
-            // 
             // cambiarATarjetadeDebitoToolStripMenuItem
             // 
             this.cambiarATarjetadeDebitoToolStripMenuItem.Name = "cambiarATarjetadeDebitoToolStripMenuItem";
             this.cambiarATarjetadeDebitoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
             this.cambiarATarjetadeDebitoToolStripMenuItem.Text = "Cambiar a Tarjeta de Débito";
             this.cambiarATarjetadeDebitoToolStripMenuItem.Click += new System.EventHandler(this.cambiarAToolStripMenuItem_Click);
+            // 
+            // cambiarATodoPagoTodoPagoToolStripMenuItem
+            // 
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Name = "cambiarATodoPagoTodoPagoToolStripMenuItem";
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Size = new System.Drawing.Size(225, 22);
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Text = "Cambiar a Todo Pago";
+            this.cambiarATodoPagoTodoPagoToolStripMenuItem.Click += new System.EventHandler(this.cambiarATodoPagoTodoPagoToolStripMenuItem_Click);
             // 
             // btnBuscar
             // 

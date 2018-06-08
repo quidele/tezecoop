@@ -46,6 +46,7 @@ Begin VB.Form Frm_VentaPasajes
          TabIndex        =   108
          Tag             =   "PreguntaIVA"
          Top             =   6045
+         Visible         =   0   'False
          Width           =   765
       End
       Begin VB.ComboBox cbTipoFacturacion 
@@ -1123,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   143720449
+         Format          =   254803969
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2617,31 +2618,37 @@ On Error Resume Next
     ' AGREGAR LOGICA DEL COEFICIENTE
     ' MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
-    Dim coeficiente As Double
-    
-    coeficiente = 1
-    
-    Select Case ObtenerCampo("cdCondVenta").Text
-    Case "Tarjeta de Débito"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TD)
-        vlTotalPesos = vlTotalPesos * coeficiente
-        vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TD / 100))
-    Case "Tarjeta de Crédito"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TC)
-        vlTotalPesos = vlTotalPesos * coeficiente
-        vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TC / 100))
-    Case "Todo Pago"
-        coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TP)
-        vlTotalPesos = vlTotalPesos * coeficiente
-        vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TP / 100))
-    End Select
+    If App.LogMode = MODO_DEBUG Then
+        ' Solicitamos Puesto
         
-    If coeficiente <> 1 Then
-        'recalcular IVA y Regardo de la tarjeta
-         vlIVA = objAFIP.CalcularIVA(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
-         vlSubtotal = objAFIP.CalcularSubtotal(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
+        Dim coeficiente As Double
+            
+        coeficiente = 1
+        
+        Select Case ObtenerCampo("cdCondVenta").Text
+        Case "Tarjeta de Débito"
+            coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TD)
+            vlTotalPesos = vlTotalPesos * coeficiente
+            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TD / 100))
+        Case "Tarjeta de Crédito"
+            coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TC)
+            vlTotalPesos = vlTotalPesos * coeficiente
+            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TC / 100))
+        Case "Todo Pago"
+            coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TP)
+            vlTotalPesos = vlTotalPesos * coeficiente
+            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TP / 100))
+        End Select
+            
+        If coeficiente <> 1 Then
+            'recalcular IVA y Regardo de la tarjeta
+             vlIVA = objAFIP.CalcularIVA(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
+             vlSubtotal = objAFIP.CalcularSubtotal(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
+        End If
+               
     End If
-
+    
+    
     ObtenerCampo("vlIVA").Text = FormatNumber(vlIVA, "2")
     ObtenerCampo("vlSubtotal").Text = FormatNumber(vlSubtotal, "2")
     

@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ElimModifAnularComprobantes 
    Caption         =   "Corregir o Eliminar un Comprobante mal Cargado"
    ClientHeight    =   7740
@@ -1610,7 +1610,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   635
          _Version        =   393216
-         Format          =   306970625
+         Format          =   131203073
          CurrentDate     =   38267
       End
       Begin MSComCtl2.DTPicker DTPicker1 
@@ -1624,7 +1624,7 @@ Begin VB.Form Frm_ElimModifAnularComprobantes
          _ExtentX        =   2990
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   306970625
+         Format          =   131268609
          CurrentDate     =   38267
       End
       Begin MSComctlLib.ListView lstBusqueda 
@@ -3136,11 +3136,18 @@ Dim strMotivo As String
         Exit Function
     End If
 
-    ' verificar si el comprobate a sido compensado
-    If objCtaCteLic.esComprobanteConciliado() Then
-        EliminarRegistro = False
-        MsgBox "Error: " + objCtaCteLic.Error, vbCritical + vbDefaultButton1, "Atención"
-        Exit Function
+
+    If ObtenerCampo("tpLetra").Text = "Tarjeta de Crédito" Or _
+        ObtenerCampo("tpLetra").Text = "Tarjeta de Débito" Or _
+            ObtenerCampo("tpLetra").Text = "Todo Pago" Then
+            
+        ' verificar si el comprobate a sido compensado
+        If objCtaCteLic.esComprobanteConciliado() Then
+            EliminarRegistro = False
+            MsgBox "Error: " + objCtaCteLic.Error, vbCritical + vbDefaultButton1, "Atención"
+            Exit Function
+        End If
+        
     End If
     
     EliminarRegistro = False
