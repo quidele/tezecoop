@@ -487,18 +487,23 @@ namespace SGLibrary
 
         private void ADGV_Titulares_MouseDoubleClick(object sender, MouseEventArgs e)
         {
+            VisualizarDetalledeCuotas();
+        }
+
+        private void VisualizarDetalledeCuotas()
+        {
             foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
             {
                 // INSERTE SU CODIGO
-                int nro_trans = int.Parse ( row.Cells["nro_trans"].Value.ToString()) ;
+                int nro_trans = int.Parse(row.Cells["nro_trans"].Value.ToString());
 
                 Obligaciones una_obligacion = ListaRegistrosObligaciones.Where(c => c.TB_transCab.nro_trans == nro_trans).First();
-                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas ;
+                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas;
 
                 /*var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
                 IEnumerable<Obligaciones> lista_Obligaciones = una_TB_ObligacionesCuotas.Where( c=> c.); */
 
-                
+
                 Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
                 // cargamos nuevamente la lista
                 lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
@@ -518,9 +523,9 @@ namespace SGLibrary
 
                 estados_color.Add("COBRADO", Color.Green);
                 estados_color.Add("COBRADO PARCIAL", Color.Orange);
-                estados_color.Add("PENDIENTE", Color.White );
+                estados_color.Add("PENDIENTE", Color.White);
 
-                ADGVInicilizations.ColorearGrillaxEstadoVencimiento(this.ADGV_TitularesCuotas, "estado_registro", "fecha_vencimiento",estados_color , "PENDIENTE");
+                ADGVInicilizations.ColorearGrillaxEstadoVencimiento(this.ADGV_TitularesCuotas, "estado_registro", "fecha_vencimiento", estados_color, "PENDIENTE");
 
             }
         }
@@ -540,6 +545,16 @@ namespace SGLibrary
         private void cbEstado_TextChanged(object sender, EventArgs e)
         {
             
+        }
+
+        private void ADGV_Titulares_SelectionChanged(object sender, EventArgs e)
+        {
+            VisualizarDetalledeCuotas();
+        }
+
+        private void ADGV_Titulares_RowEnter(object sender, DataGridViewCellEventArgs e)
+        {
+            VisualizarDetalledeCuotas();
         }
         
 

@@ -127,7 +127,10 @@ namespace SGLibrary.GUIUtilities
             foreach (DataGridViewRow item in dgv.Rows)
             {
                 var row = item;
-                var estado_color = estados_color.Where(c => c.Key.CompareTo(p_nombre_columna_estado)==0).First();
+                var estado = row.Cells[p_nombre_columna_estado].Value.ToString().Trim();
+
+                if (estado.CompareTo("") == 0) continue;
+                var estado_color = estados_color.Where(c => c.Key.CompareTo(estado) == 0).First();
                 var fecha_vencimiento = DateTime.Parse(row.Cells[p_nombre_columna_fecha_vencimiento].Value.ToString().Remove(10));
                 if ((estado_color.Key.CompareTo(estado_fecha_vencida)==0) &&  ( fecha_vencimiento < DateTime.Now  )) {
                     row.DefaultCellStyle.BackColor = Color.Red;

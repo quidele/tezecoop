@@ -245,6 +245,8 @@
             this.ADGV_Titulares.TimeFilter = false;
             this.ADGV_Titulares.FilterStringChanged += new System.EventHandler(this.ADGV_Titulares_FilterStringChanged);
             this.ADGV_Titulares.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGV_Titulares_CellContentClick);
+            this.ADGV_Titulares.RowEnter += new System.Windows.Forms.DataGridViewCellEventHandler(this.ADGV_Titulares_RowEnter);
+            this.ADGV_Titulares.SelectionChanged += new System.EventHandler(this.ADGV_Titulares_SelectionChanged);
             this.ADGV_Titulares.MouseDoubleClick += new System.Windows.Forms.MouseEventHandler(this.ADGV_Titulares_MouseDoubleClick);
             // 
             // cbEstado
