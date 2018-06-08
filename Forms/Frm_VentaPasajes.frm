@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   254803969
+         Format          =   143065089
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2618,7 +2618,7 @@ On Error Resume Next
     ' AGREGAR LOGICA DEL COEFICIENTE
     ' MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
-    If App.LogMode = MODO_DEBUG Then
+    If objConfig.dsDSN = "SQL_Rempto_Pruebas" Then
         ' Solicitamos Puesto
         
         Dim coeficiente As Double
