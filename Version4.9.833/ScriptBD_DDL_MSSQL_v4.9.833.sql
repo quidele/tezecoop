@@ -34,8 +34,21 @@ IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.object
 	ALTER TABLE dbo.TB_ObligacionesTitulares ADD 	estado_registro char(20) NULL
 	-- ALTER TABLE dbo.TB_ObligacionesTitulares ALTER COLUMN 	estado_registro char(20) NULL
 GO
+
+--- Select * from TB_ObligacionesCuotas
 -- Modificamos la definicion del campo  nrLicencia
 ALTER TABLE TB_ObligacionesCuotas ALTER COLUMN nrLicencia int;
+
+
+
+
+IF NOT  EXISTS  (SELECT   o.Name, c.Name FROM     sys.columns c  JOIN sys.objects o ON o.object_id = c.object_id 
+								WHERE    o.type = 'U'   and o.Name = 'TB_ObligacionesCuotas'  and  c.Name = 'fecha_cobrado' )
+	ALTER TABLE dbo.TB_ObligacionesCuotas ADD 	fecha_cobrado date
+	-- ALTER TABLE dbo.TB_ObligacionesTitulares ALTER COLUMN 	estado_registro char(20) NULL
+GO
+
+
 	
 Go
 
@@ -79,7 +92,9 @@ BEGIN
 	end 
 	
 
-	UPDATE x SET x.estado_registro =  CASE flCompensado  WHEN 1 THEN 'COBRADO' ELSE 'PENDIENTE' END  FROM TB_ObligacionesCuotas x inner join #tmp_registros_modif Y
+	UPDATE x SET x.estado_registro =  CASE flCompensado  WHEN 1 THEN 'COBRADO' ELSE 'PENDIENTE' END , 
+				 x.fecha_cobrado =  CASE flCompensado  WHEN 1 THEN GETDATE() ELSE null END 
+					FROM TB_ObligacionesCuotas x inner join #tmp_registros_modif Y
 						ON x.nrLicencia = y.nrLicencia AND
 							x.nro_trans = y.nro_trans AND
 							 convert(date , x.fecha_vencimiento)  = convert(date ,y.fecha_vencimiento)
@@ -154,8 +169,8 @@ BEGIN
 								WHERE x.estado_registro = replicate ('X', 20) 
 										
 
-update x set x.estado_registro = y.estado_registro   FROM TB_transCab  x inner join  #TMP_estado_vencimiento_x_obligacion_licencia_totales_general y
-								on y.nro_trans = x.nro_trans 
+	UPDATE x set x.estado_registro = y.estado_registro   FROM TB_transCab  x inner join  #TMP_estado_vencimiento_x_obligacion_licencia_totales_general y
+									on y.nro_trans = x.nro_trans 
 
 END
 

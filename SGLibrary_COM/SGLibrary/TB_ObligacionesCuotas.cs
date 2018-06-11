@@ -22,5 +22,6 @@ namespace SGLibrary
         public Nullable<int> nrLicencia { get; set; }
         public string comentarios { get; set; }
         public string estado_registro { get; set; }
+        public Nullable<System.DateTime> fecha_cobrado { get; set; }
     }
 }

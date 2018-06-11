@@ -403,7 +403,8 @@
     <Property Name="importe" Type="decimal" Precision="18" Scale="2" />
     <Property Name="nrLicencia" Type="int" />
     <Property Name="comentarios" Type="varchar" MaxLength="200" />
-    <Property Name="estado_registro" Type="char" MaxLength="2" />
+    <Property Name="estado_registro" Type="char" MaxLength="20" />
+    <Property Name="fecha_cobrado" Type="date" />
   </EntityType>
   <EntityType Name="TB_ObligacionesTitulares">
     <Key>
@@ -416,7 +417,7 @@
     <Property Name="nrTelefono" Type="varchar" MaxLength="50" />
     <Property Name="nmNombre" Type="varchar" MaxLength="50" />
     <Property Name="nmApellido" Type="varchar" MaxLength="50" />
-    <Property Name="estado_registro" Type="char" MaxLength="2" />
+    <Property Name="estado_registro" Type="char" MaxLength="20" />
   </EntityType>
   <EntityType Name="TB_Parametros">
     <Key>

@@ -516,6 +516,7 @@ namespace SGLibrary
                 lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
                 lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
                 lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
+                lista_campo_tipo.Add("fecha_cobrado", new ADGVFieldAdapter("fecha_cobrado", "FECHA", "fecha_cobrado", "System.String", true, true));
 
                 cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, una_TB_ObligacionesCuotas, this.dataSet2, this.bindingSource2, lista_campo_tipo);
 
