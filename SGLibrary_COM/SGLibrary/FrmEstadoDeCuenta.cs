@@ -417,6 +417,9 @@ namespace SGLibrary
 
                         var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>();
 
+                        this.Titulares.Clear();
+                        this.ADGV_Titulares.DataSource = "";                        
+
                         Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
                         //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
                         lista_campo_tipo.Add("Nº", new ADGVFieldAdapter("Nº", "Nº", "Nº", "System.Int32", false, false));
@@ -492,6 +495,9 @@ namespace SGLibrary
 
         private void VisualizarDetalledeCuotas()
         {
+
+            this.ADGV_TitularesCuotas.DataSource = "";
+
             foreach (DataGridViewRow row in this.ADGV_Titulares.SelectedRows)
             {
                 // INSERTE SU CODIGO

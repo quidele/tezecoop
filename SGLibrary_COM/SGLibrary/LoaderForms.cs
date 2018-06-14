@@ -213,6 +213,16 @@ namespace SGLibrary
                         f9.serviceModel.formulario = "FrmObligaciones";
                         f = (Form)f9;
                         break;
+                    case "FrmEstadoDeCuenta": 
+                        FrmEstadoDeCuenta f11 = new FrmEstadoDeCuenta();
+                        f11.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities()); 
+                        f11.serviceModel.CajaAdm  = "0";
+                        f11.serviceModel.Usuario  = this._usuarioActivo;
+                        f11.serviceModel.usuario_mod = this.Usuario;
+                        f11.serviceModel.Ambiente = this.Ambiente;
+                        f11.serviceModel.terminal_mod = "PC01";
+                        f = (Form)f11;
+                        break;
                     case "FrmPrincipal":
                         FrmPrincipal f10 = new FrmPrincipal();
                         f10.serviceModel = new Services.ServiceObligaciones(new dbSG2000Entities());

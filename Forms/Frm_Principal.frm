@@ -301,6 +301,9 @@ Begin VB.MDIForm Frm_Principal
       Begin VB.Menu optObligaciones 
          Caption         =   "Carga de Obligaciones"
       End
+      Begin VB.Menu opt_estadodecuenta 
+         Caption         =   "Estado de Cuenta - Obligaciones"
+      End
    End
 End
 Attribute VB_Name = "Frm_Principal"
@@ -533,6 +536,35 @@ Private Sub opt_cambiarClave_Click()
    
    frm_CambiarPassword.Show vbModal
    
+End Sub
+
+Private Sub opt_estadodecuenta_Click()
+Dim objServiceLoaderForms As Object
+
+
+    On Error Resume Next
+            
+    ' v4.9
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms"
+    Set objServiceLoaderForms = CreateObject("SGLibrary.LoaderForms")
+    objLog.Grabar_Log "Inicializando Servicio SGLibrary.LoaderForms OK "
+
+    If Err <> 5 Then
+        MsgBox Err.Description, vbCritical, "Atención"
+    End If
+    On Error GoTo 0
+
+    objLog.Grabar_Log "Antes de  UsuarioActivo objUsuario.dsUsuario " + objUsuario.dsUsuario
+    objServiceLoaderForms.UsuarioActivo CStr(objUsuario.dsUsuario)
+
+    objLog.Grabar_Log "Configurando el ambiente  objConfig.dsDSN " + objConfig.dsDSN
+    objServiceLoaderForms.AmbienteActivo objConfig.dsDSN
+
+    
+    objServiceLoaderForms.execFormulario "FrmEstadoDeCuenta"
+    
+    
+    
 End Sub
 
 Private Sub opt_imprime_factura_Click(Index As Integer)

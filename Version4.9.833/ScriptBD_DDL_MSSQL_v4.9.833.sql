@@ -132,7 +132,7 @@ BEGIN
 	-- SINO ACTUALIZADO POR LOS CASOS ANTERIORES
 	UPDATE x SET x.estado_registro = 'COBRADO PARCIAL'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion  y
-							 ON x.nro_trans = y.nro_trans AND x.nrLicencia = x.nrLicencia  AND x.total = y.cantidad 
+							 ON x.nro_trans = y.nro_trans AND x.nrLicencia = x.nrLicencia  /* AND x.total = y.cantidad */
 								WHERE x.estado_registro = replicate ('X', 20) 
 
 
@@ -165,7 +165,7 @@ BEGIN
 	-- SINO FUE ACTUALIZADO POR LOS CASOS ANTERIORES ENTONCES ES COBRO PARCIAL
 	UPDATE x SET x.estado_registro = 'COBRADO PARCIAL'   FROM #TMP_estado_vencimiento_x_obligacion_licencia_totales_general x INNER JOIN
 							 #TMP_estado_vencimiento_x_obligacion_general  y
-							 ON x.nro_trans = y.nro_trans AND  x.total_obligacion = y.cantidad 
+							 ON x.nro_trans = y.nro_trans /* AND  x.total_obligacion = y.cantidad  */
 								WHERE x.estado_registro = replicate ('X', 20) 
 										
 

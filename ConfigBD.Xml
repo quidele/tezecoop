@@ -3,17 +3,17 @@
 <ConfigBD>
   <AMBIENTE>
     <Ambiente>SQL_Remoto</Ambiente>
-    <DataSource>MSI\SQLEXPRESS</DataSource>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000</InitialCatalog>
   </AMBIENTE>
   <AMBIENTE>
     <Ambiente>SQL_Remoto_Desa</Ambiente>
-    <DataSource>MSI\SQLEXPRESS</DataSource>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
   </AMBIENTE>
-  <AMBIENTE>
+    <AMBIENTE>
     <Ambiente>SQL_Remoto_Pruebas</Ambiente>
-    <DataSource>MSI\SQLEXPRESS</DataSource>
+    <DataSource>PC0157</DataSource>
     <InitialCatalog>dbSG2000_Pruebas</InitialCatalog>
   </AMBIENTE>
 </ConfigBD>
