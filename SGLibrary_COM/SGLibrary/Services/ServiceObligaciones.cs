@@ -208,6 +208,7 @@ namespace SGLibrary.Services
                  // Listas para realizar nueva altas    -- // para las licencias de la IU no incluidas en la BD hay que realizar una alta 
                  var ListaAltasTB_ObligacionesTitularesIU = unRegistro.TB_ObligacionesTitulares.Where(c => !objTB_ObligacionesTitularesBD.Select(fc => fc.nrLicencia).Contains(c.nrLicencia));
 
+                 
                 
                  // Validaciones sobres las bajas 
                  foreach (var item in ListaBajasTB_ObligacionesTitularesBD)
@@ -246,6 +247,7 @@ namespace SGLibrary.Services
                  // tambien realizar la grabacion de la tabla CUPONES
                  foreach (var itemAlta in ListaAltasTB_ObligacionesTitularesIU)
                  {
+                     itemAlta.estado_registro = "PENDIENTE";
                      context.TB_ObligacionesTitulares.Add(itemAlta);
                      // obtenemos la lista de vencimientos / cuotas del titular
                      var listaAltaCuotas = unRegistro.TB_ObligacionesCuotas.Where(c => c.nrLicencia == itemAlta.nrLicencia).ToList<TB_ObligacionesCuotas>();

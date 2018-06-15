@@ -235,7 +235,7 @@ namespace SGLibrary
             foreach (DataGridViewRow row in this.dataGridView1.SelectedRows)
             {
                 TB_ProveedoresExt  un_titu_buscado=null;
-                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString(), row.Cells["estado_registro"].Value.ToString());
+                TB_ProveedoresExt un_titu_nuevo = new TB_ProveedoresExt(int.Parse(row.Cells["cdProveedor"].Value.ToString()), row.Cells["nrLicencia"].Value.ToString(), row.Cells["nmNombre"].Value.ToString(), row.Cells["nmApellido"].Value.ToString(), "");
                 if (TitularesaExcluir !=null)
                     un_titu_buscado = TitularesaExcluir.Find (x => x.cdProveedor == un_titu_nuevo.cdProveedor  );
 

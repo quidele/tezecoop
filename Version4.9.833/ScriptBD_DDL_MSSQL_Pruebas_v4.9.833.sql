@@ -1,6 +1,6 @@
 
 -- Cambios de DDL version 4.9.832
-use dbSG2000
+use dbSG2000_Pruebas
 go
 
 

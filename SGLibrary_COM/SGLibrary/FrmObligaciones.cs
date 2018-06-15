@@ -349,7 +349,7 @@ namespace SGLibrary
                 una_TB_transCab.estado_registro = this.PENDIENTE ;
          
                 this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
-                                                   una_TB_transCab.bloque, "A", "Nuevo");
+                                                   una_TB_transCab.bloque, this.PENDIENTE, "Nuevo");
 
                 List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
                 foreach (TB_ProveedoresExt item in this.Titulares )
@@ -413,7 +413,7 @@ namespace SGLibrary
                 una_TB_transCab.imp_tot_ing = decimal.Parse(this.txtMonto.Text);
 
                 this.serviceModel.CompletarAuditoria(una_Obligacion, una_TB_transCab.seccion,
-                                                   una_TB_transCab.bloque, "A", "Nuevo");
+                                                   una_TB_transCab.bloque, "PENDIENTE", "Nuevo");
 
                 List<TB_ObligacionesTitulares> una_Lista_TB_ObligacionesTitulares = new List<TB_ObligacionesTitulares>();
                 foreach (TB_ProveedoresExt item in this.Titulares)
@@ -610,7 +610,7 @@ namespace SGLibrary
             ADGVInicilizations.ColorearGrillaxCorteValorFormatearFecha(this.ADGV_Titulares, "nrLicencia", "");
             ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
-            MessageBox.Show (" VOLVER HA HABILITAR CODIGO ");
+            //MessageBox.Show (" VOLVER HA HABILITAR CODIGO ");
 
             if (!pEdicion) 
             {

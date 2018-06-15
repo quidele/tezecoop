@@ -40,6 +40,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Recursos Localizabl
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary_Pruebas.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\CommonServiceLocator.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Abstractions.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Configuration.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Container.dll
@@ -47,6 +48,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Interception.
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Interception.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.RegistrationByConvention.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.ServiceLocation.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\CommonServiceLocator.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Abstractions.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Configuration.pdb
@@ -55,6 +57,8 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Interception.
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.Interception.Configuration.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.RegistrationByConvention.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\Unity.ServiceLocation.pdb
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\EN-US\SGLibrary.resources.dll
+C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\bin\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_Pruebas\obj\Debug\SGLibrary_Pruebas.pdb
