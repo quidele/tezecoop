@@ -41,3 +41,4 @@ C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.ServiceLoc
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\zPruebaUnityContainer.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.exe
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\zPruebaUnityContainer.csprojResolveAssemblyReference.cache

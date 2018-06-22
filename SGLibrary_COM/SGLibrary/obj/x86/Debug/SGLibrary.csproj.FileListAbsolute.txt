@@ -130,3 +130,5 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBusquedaGe
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPrincipal.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmEstadoDeCuenta.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmEstadoDeCuenta.resources
