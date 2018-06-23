@@ -49,8 +49,10 @@ namespace SGLibrary
             if (lista.Count() > 0)
             {
                 cargarCombo(this.cbUsuarios, lista);
-                this.cbUsuarios.SelectedIndex = 0;
+   
             }
+            this.cbUsuarios.Text = "Todos";
+            this.cbEstado.Text = "TODOS";  
 
             this.statusbar_bd.Text = "Base de datos: " + serviceModel.Basededatos;
             this.statusbar_servidor.Text = "Base de datos: " + serviceModel.Servidor;

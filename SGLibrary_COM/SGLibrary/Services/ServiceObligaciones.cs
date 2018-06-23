@@ -261,7 +261,7 @@ namespace SGLibrary.Services
                                                                             unRegistro.TB_transCab.nro_doc.ToString(), unRegistro.TB_transCab.serie_doc.ToString(),
                                                                             unRegistro.TB_transCab.letra_doc, Convert.ToDouble(itemAltaCuotas.importe),
                                                                             Convert.ToDouble(itemAltaCuotas.importe), unRegistro.TB_transCab.com_mov,
-                                                                            itemAltaCuotas.comentarios, "Débito");
+                                                                            unRegistro.TB_transCab.descripcion, "Débito");
                      }
                      
                  } // Fin Rutina de alta
@@ -388,7 +388,11 @@ namespace SGLibrary.Services
              Trace.TraceInformation(paramLog);
 
              IEnumerable<TB_transCab> listadeRegistrosTB_transCab = (from c in context.TB_transCab
-                                                                        where c.fec_doc >= p_fechadesde
+                                                                        join t in context.TB_ObligacionesTitulares
+                                                                        on c.nro_trans equals t.nro_trans
+                                                                        where 
+                                                                        t.nrLicencia == p_nrLicencia
+                                                                        && c.fec_doc >= p_fechadesde
                                                                         && c.fec_doc <= p_fechaHasta
                                                                         && (c.usuario_mod == p_usuario || p_usuario.ToUpper () == "Todos".ToUpper())
                                                                         && (c.estado_registro == p_estado || p_estado.ToUpper() == "Todos".ToUpper())

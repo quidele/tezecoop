@@ -230,6 +230,7 @@ namespace SGLibrary
                         //cargarCombo(this.cbUsuariosConciliaciones, serviceConciliaciones.obtenerUsuariosConciliaciones());
                         this.modoEdicion.Text = "NO";
                         var btnFind = new ToolStripButton();
+                        this.cbUsuariosConciliaciones.SelectedIndex = -1;
                         btnFind.Tag = "FIND";
                         MessageBox.Show("La operación se ha realizado con éxito.", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         botonesForm1.configMododeEdicion(ABMBotonesForm.FIND);
