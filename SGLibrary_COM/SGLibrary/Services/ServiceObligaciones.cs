@@ -253,6 +253,7 @@ namespace SGLibrary.Services
                      var listaAltaCuotas = unRegistro.TB_ObligacionesCuotas.Where(c => c.nrLicencia == itemAlta.nrLicencia).ToList<TB_ObligacionesCuotas>();
                      foreach (TB_ObligacionesCuotas itemAltaCuotas in listaAltaCuotas)  
                      {
+                         itemAltaCuotas.estado_registro = "PENDIENTE";
                          context.TB_ObligacionesCuotas.Add(itemAltaCuotas);
                          un_ServiceCuponesTransaccion.GrabarCuponTransaccion(0, decimal.Parse(this.CajaAdm), this.Usuario, itemAltaCuotas.nro_trans,
                                                                             itemAltaCuotas.nrLicencia.GetValueOrDefault(), null, itemAltaCuotas.fecha_vencimiento.Value.Date,

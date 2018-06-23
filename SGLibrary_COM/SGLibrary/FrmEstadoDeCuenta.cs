@@ -324,11 +324,6 @@ namespace SGLibrary
 
         }
 
-        private void ADGV_Titulares_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-                
-        }
-
         private void txtDescripcion_TextChanged(object sender, EventArgs e)
         {
             CargarGrillasTitularesCuotas();
@@ -418,7 +413,8 @@ namespace SGLibrary
                         var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>();
 
                         this.Titulares.Clear();
-                        this.ADGV_Titulares.DataSource = "";                        
+                        this.ADGV_Titulares.DataSource = "";
+                        this.ADGV_TitularesCuotas.DataSource = "";
 
                         Dictionary<string, ADGVFieldAdapter> lista_campo_tipo = new Dictionary<string, ADGVFieldAdapter>();
                         //lista_campo_tipo.Add("NOMBRE DE CAMPO", "TIPO DE CAMPO");
@@ -504,7 +500,8 @@ namespace SGLibrary
                 int nro_trans = int.Parse(row.Cells["nro_trans"].Value.ToString());
 
                 Obligaciones una_obligacion = ListaRegistrosObligaciones.Where(c => c.TB_transCab.nro_trans == nro_trans).First();
-                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas;
+
+                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas.Where(c => c.nrLicencia ==  int.Parse (this.txtnrLicencia.Text));
 
                 /*var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
                 IEnumerable<Obligaciones> lista_Obligaciones = una_TB_ObligacionesCuotas.Where( c=> c.); */
@@ -522,7 +519,7 @@ namespace SGLibrary
                 lista_campo_tipo.Add("importe", new ADGVFieldAdapter("importe", "IMPORTE", "importe", "System.String", true, true));
                 lista_campo_tipo.Add("fecha_vencimiento", new ADGVFieldAdapter("fecha_vencimiento", "VENCIMIENTO", "fecha_vencimiento", "System.DateTime", true, true));
                 lista_campo_tipo.Add("estado_registro", new ADGVFieldAdapter("estado_registro", "ESTADO", "estado_registro", "System.String", true, true));
-                lista_campo_tipo.Add("fecha_cobrado", new ADGVFieldAdapter("fecha_cobrado", "FECHA", "fecha_cobrado", "System.String", true, true));
+                lista_campo_tipo.Add("fecha_cobrado", new ADGVFieldAdapter("fecha_cobrado", "FECHA DE COBRO", "fecha_cobrado", "System.String", true, true));
 
                 cargarDataGridView_ADGV(this.ADGV_TitularesCuotas, una_TB_ObligacionesCuotas, this.dataSet2, this.bindingSource2, lista_campo_tipo);
 
@@ -556,12 +553,17 @@ namespace SGLibrary
 
         private void ADGV_Titulares_SelectionChanged(object sender, EventArgs e)
         {
-            VisualizarDetalledeCuotas();
+            /* VisualizarDetalledeCuotas();*/
         }
 
         private void ADGV_Titulares_RowEnter(object sender, DataGridViewCellEventArgs e)
         {
-            VisualizarDetalledeCuotas();
+            /* VisualizarDetalledeCuotas();*/
+        }
+
+        private void ADGV_Titulares_MouseClick(object sender, MouseEventArgs e)
+        {
+             VisualizarDetalledeCuotas();
         }
         
 

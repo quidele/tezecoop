@@ -66,7 +66,8 @@ namespace SGLibrary
 
             var un_ambiente = new Ambientes();
             String _nombreelemento="";
-            XmlTextReader reader = new XmlTextReader("ConfigBD.xml");
+ 
+            XmlTextReader reader = new XmlTextReader(  System.Windows.Forms.Application.StartupPath + "\\ConfigBD.xml");
 					        
             while (reader.Read()) 
             {

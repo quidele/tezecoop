@@ -10,7 +10,6 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.pdb
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe.config
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csprojResolveAssemblyReference.cache
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Form1.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Properties.Resources.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csproj.GenerateResource.Cache
