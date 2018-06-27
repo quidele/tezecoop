@@ -837,6 +837,9 @@ Dim objLoaderForms As Object
     objLog.Grabar_Log "optPresentacionesCAIAFIP_Click- Antes de  CajaActiva objCajas.nrCaja "
     objLoaderForms.CajaActiva CStr(objCajas.nrCaja)
 
+    objLog.Grabar_Log "Configurando el ambiente  objConfig.dsDSN " + objConfig.dsDSN
+    objLoaderForms.AmbienteActivo objConfig.dsDSN
+    
     objLog.Grabar_Log "optPresentacionesCAIAFIP_Click - Antes de  CajaActiva objCajas.nrCaja "
     objLoaderForms.execFormulario "ServiceTarifas"
     
