@@ -1,3 +1,11 @@
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe.config
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.pdb
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Form1.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Properties.Resources.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csproj.GenerateResource.Cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.exe
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe.config
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.pdb
@@ -7,11 +15,3 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Pro
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csproj.GenerateResource.Cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.exe
 C:\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe.config
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.exe
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\bin\Debug\SGLibrary_WSTest.pdb
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Form1.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.Properties.Resources.resources
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.csproj.GenerateResource.Cache
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.exe
-C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary_WSTest\obj\Debug\SGLibrary_WSTest.pdb

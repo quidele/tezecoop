@@ -35,6 +35,7 @@
             this.obligacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.conciliacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obligacionesEstadoDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.cargaDeTarifasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -60,7 +61,8 @@
             this.busquedaDeComprobantesToolStripMenuItem1,
             this.obligacionesToolStripMenuItem,
             this.conciliacionesToolStripMenuItem,
-            this.obligacionesEstadoDeCuentaToolStripMenuItem});
+            this.obligacionesEstadoDeCuentaToolStripMenuItem,
+            this.cargaDeTarifasToolStripMenuItem});
             this.busquedaDeComprobantesToolStripMenuItem.Name = "busquedaDeComprobantesToolStripMenuItem";
             this.busquedaDeComprobantesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.busquedaDeComprobantesToolStripMenuItem.Text = "Programas";
@@ -93,6 +95,13 @@
             this.obligacionesEstadoDeCuentaToolStripMenuItem.Text = "Estado de Cuenta - Obligaciones";
             this.obligacionesEstadoDeCuentaToolStripMenuItem.Click += new System.EventHandler(this.obligacionesEstadoDeCuentaToolStripMenuItem_Click);
             // 
+            // cargaDeTarifasToolStripMenuItem
+            // 
+            this.cargaDeTarifasToolStripMenuItem.Name = "cargaDeTarifasToolStripMenuItem";
+            this.cargaDeTarifasToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.cargaDeTarifasToolStripMenuItem.Text = "Carga de Tarifas";
+            this.cargaDeTarifasToolStripMenuItem.Click += new System.EventHandler(this.cargaDeTarifasToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -120,5 +129,6 @@
         private System.Windows.Forms.ToolStripMenuItem obligacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem conciliacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obligacionesEstadoDeCuentaToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem cargaDeTarifasToolStripMenuItem;
     }
 }

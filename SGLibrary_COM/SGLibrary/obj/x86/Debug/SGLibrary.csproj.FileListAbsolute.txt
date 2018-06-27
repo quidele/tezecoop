@@ -36,54 +36,6 @@ C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.res
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop_git\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.ES-ES.resx
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\Recursos Localizables\StringResources.EN-US.Designer.cs
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll.config
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\EN-US\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\SGLibrary.tlb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\CommonServiceLocator.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\JDO.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\CommonServiceLocator.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\JDO.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ControlesdeUsuario.BotonesForm.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMDocumentos.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarTitulares.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCircularProgressBar.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBuscarComprobantes.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifas.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmCargaTarifasEjemploADGV.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmObligaciones.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Frm_GroupByGrid.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmXLSSelect.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FormularioBase.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPresentacionesCAI.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmABMBase.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmConciliaciones.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmResumenNrosCAIs.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmSeleccionarImpresora.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Properties.Resources.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Reportes.rpt_AnalisisDeudores.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.UCCircularProgressBar.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.EN-US.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.Recursos_Localizables.StringResources.ES-ES.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csproj.GenerateResource.Cache
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\EN-US\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\ES-ES\SGLibrary.resources.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmBusquedaGenerica.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmPrincipal.resources
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
-C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmEstadoDeCuenta.resources
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_FON.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD_CASA.Xml
 C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\bin\x86\Debug\ConfigBD.Xml

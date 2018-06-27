@@ -68,5 +68,11 @@ namespace SGLibrary
             f1.serviceModel = this.serviceModel;  
             f1.ShowDialog();
         }
+
+        private void cargaDeTarifasToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            ServiceTarifas miServiceTarifas = new ServiceTarifas();
+            miServiceTarifas.cargarTarifas();
+        }
     }
 }

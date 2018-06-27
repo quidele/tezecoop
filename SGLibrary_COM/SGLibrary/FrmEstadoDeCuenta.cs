@@ -390,13 +390,26 @@ namespace SGLibrary
                         //serviceConciliaciones.obtenerUsuariosConciliaciones();
                         ServiceObligaciones un_ServiceObligaciones = new ServiceObligaciones(new dbSG2000Entities());
 
-                        int nrLicencia;
+                        int nrLicencia = 0;
 
-                        if (!int.TryParse(this.txtnrLicencia.Text, out nrLicencia))
+                        if (this.txtnrLicencia.Text.Trim().CompareTo("") != 0)
                         {
-                            MessageBox.Show("La licencia ingresada no es válida", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                            return;
+                            if (!int.TryParse(this.txtnrLicencia.Text, out nrLicencia))
+                            {
+                                MessageBox.Show("La licencia ingresada no es válida", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.txtnrLicencia.Focus();
+                                return;
+                            }
+                        }else{
+                            if (this.txtDescripcion.Text.Trim().CompareTo("") == 0)
+                            {
+                                MessageBox.Show("Debe completar un criterio de búsqueda: licencia o descripcion de un obligación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.txtDescripcion.Focus();
+                                return;
+                            }
                         }
+                        
+                        
 
                         if (this.cbUsuarios.Text.Trim() == "")
                         {
@@ -409,7 +422,7 @@ namespace SGLibrary
                         }
 
                         ListaRegistrosObligaciones = un_ServiceObligaciones.ObtenerObligaciones(this.fechadesde.Value,
-                                    this.fechahasta.Value, this.cbUsuarios.Text, nrLicencia, this.cbEstado.Text);
+                                    this.fechahasta.Value, this.cbUsuarios.Text, nrLicencia, this.cbEstado.Text, this.txtDescripcion.Text.Trim () );
 
 
                         var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>();
@@ -480,6 +493,8 @@ namespace SGLibrary
 
         private void txtnrLicencia_Enter(object sender, EventArgs e)
         {
+
+            if (this.txtnrLicencia.Text.Trim().CompareTo ("")==0) return;
             if (ObtenerNombreLicencia())
             {
                 this.cbEstado.Focus();
@@ -503,7 +518,15 @@ namespace SGLibrary
 
                 Obligaciones una_obligacion = ListaRegistrosObligaciones.Where(c => c.TB_transCab.nro_trans == nro_trans).First();
 
-                var una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas.Where(c => c.nrLicencia ==  int.Parse (this.txtnrLicencia.Text));
+                int nrLicencia = 0; 
+                int.TryParse  (this.txtnrLicencia.Text, out nrLicencia); 
+
+                IEnumerable<TB_ObligacionesCuotas> una_TB_ObligacionesCuotas;
+                if (nrLicencia != 0)
+                    una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas.Where(c => c.nrLicencia == nrLicencia);
+                else
+                    una_TB_ObligacionesCuotas = una_obligacion.TB_ObligacionesCuotas;
+                    
 
                 /*var  una_TB_ObligacionesCuotas = ListaRegistrosObligaciones.Select(c => c.TB_ObligacionesCuotas);
                 IEnumerable<Obligaciones> lista_Obligaciones = una_TB_ObligacionesCuotas.Where( c=> c.); */
