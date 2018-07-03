@@ -248,11 +248,11 @@ namespace SGLibrary
                         switch (dataGridView1.Rows[i].Cells[j].Value.GetType().FullName)
                         {
                             case "System.Date":
-                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/aaaa";
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
                                 worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
                                 break;
                             case "System.DateTime":
-                                worksheet.Cells[i + 2, j + 1].NumberFormat = "dd/MM/aaaa HH:mm:ss";
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
                                 worksheet.Cells[i + 2, j + 1].FormulaR1C1 = dataGridView1.Rows[i].Cells[j].Value;
                                 break;
                             default:
@@ -276,7 +276,101 @@ namespace SGLibrary
 
 
 
+        public void ExportarAExcel(System.Windows.Forms.DataGridView cabecera, System.Windows.Forms.DataGridView detalle, String NombreArchivo)
+        {
 
+            try
+            {
+
+                // creating Excel Application  
+                Microsoft.Office.Interop.Excel._Application app = new Microsoft.Office.Interop.Excel.Application();
+                // creating new WorkBook within Excel application  
+                Microsoft.Office.Interop.Excel._Workbook workbook = app.Workbooks.Add(Type.Missing);
+                // creating new Excelsheet in workbook  
+                Microsoft.Office.Interop.Excel._Worksheet worksheet = null;
+                // see the excel sheet behind the program  
+                app.Visible = false;
+                // get the reference of first sheet. By default its name is Sheet1.  
+                // store its reference to worksheet  
+                worksheet = workbook.Sheets[1];
+                worksheet = workbook.ActiveSheet;
+                // changing the name of active sheet  
+                worksheet.Name = "Hoja1";
+                // storing header part in Excel  
+                int filas_totales=1;
+                for (int i = 1; i < cabecera.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[1, i] = cabecera.Columns[i - 1].HeaderText;
+                }
+                filas_totales++;
+                // storing Each row and column value to excel sheet  
+                for (int i = 0; i < cabecera.Rows.Count; i++)
+                {
+                    for (int j = 0; j < cabecera.Columns.Count; j++)
+                    {
+                        switch (cabecera.Rows[i].Cells[j].Value.GetType().FullName)
+                        {
+                            case "System.Date":
+                                worksheet.Cells[i + 2, j + 1].NumberFormat = "[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
+                                worksheet.Cells[i + 2, j + 1].FormulaR1C1 = cabecera.Rows[i].Cells[j].Value;
+                                break;
+                            case "System.DateTime":
+                                worksheet.Cells[i + 2, j + 1].NumberFormat ="[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
+                                worksheet.Cells[i + 2, j + 1].FormulaR1C1 = cabecera.Rows[i].Cells[j].Value;
+                                break;
+                            default:
+                                worksheet.Cells[i + 2, j + 1] = cabecera.Rows[i].Cells[j].Value.ToString();
+                                break;
+                        }
+                    }
+                    filas_totales++; // avance por cada fila
+                }
+
+                filas_totales++;
+
+                // storing header part in Excel  
+                for (int i = filas_totales + 1; i < detalle.Columns.Count + 1; i++)
+                {
+                    worksheet.Cells[1, i] = detalle.Columns[i - 1].HeaderText;
+                }
+
+                filas_totales++;
+                // storing Each row and column value to excel sheet  
+                for (int i =  0; i < detalle.Rows.Count ; i++)
+                {
+                    for (int j = 0; j < detalle.Columns.Count; j++)
+                    {
+                        switch (detalle.Rows[i].Cells[j].Value.GetType().FullName)
+                        {
+                            case "System.Date":
+                                // worksheet.Cells[filas_totales + i + 2, j + 1].NumberFormat = "dd/MM/aaaa";
+                                worksheet.Cells[filas_totales + i + 2, j + 1].NumberFormat = "[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
+                                worksheet.Cells[filas_totales + i + 2, j + 1].FormulaR1C1 = detalle.Rows[i].Cells[j].Value;
+                                break;
+                            case "System.DateTime":
+                                //worksheet.Cells[filas_totales + i + 2, j + 1].NumberFormat = "dd/MM/aaaa HH:mm:ss";
+                                worksheet.Cells[filas_totales + i + 2, j + 1].NumberFormat = "[$-809]dd/mm/yyyy;@"; //"dd-mmm-yy";
+                                worksheet.Cells[filas_totales + i + 2, j + 1].FormulaR1C1 = detalle.Rows[i].Cells[j].Value;
+                                break;
+                            default:
+                                worksheet.Cells[filas_totales + i + 2, j + 1] = detalle.Rows[i].Cells[j].Value.ToString();
+                                break;
+                        }
+                    }
+                }
+
+
+                // save the application  
+                workbook.SaveAs(NombreArchivo, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Type.Missing, Microsoft.Office.Interop.Excel.XlSaveAsAccessMode.xlExclusive, Type.Missing, Type.Missing, Type.Missing, Type.Missing);
+                // Exit from the application  
+                app.Quit();
+
+            }
+            catch (Exception e)
+            {
+                throw new ExcelAppException("Error al intentar realizar la importación a Excel, error extendido: " + e.Message, e);
+            }
+        }
 
     } // cierra la declaracion de la clase 
 

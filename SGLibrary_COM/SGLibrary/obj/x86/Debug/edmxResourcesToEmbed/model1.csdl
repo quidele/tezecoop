@@ -1,0 +1,837 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbSG2000Model" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2008/09/edm">
+  <EntityContainer Name="dbSG2000Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TB_Productos" EntityType="dbSG2000Model.TB_Productos" />
+    <EntitySet Name="TB_Usuarios" EntityType="dbSG2000Model.TB_Usuarios" />
+    <EntitySet Name="TB_MovimientosContables" EntityType="dbSG2000Model.TB_MovimientosContables" />
+    <AssociationSet Name="FK_TB_MovimientosContables_TB_Usuarios" Association="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios">
+      <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+      <End Role="TB_MovimientosContables" EntitySet="TB_MovimientosContables" />
+    </AssociationSet>
+    <EntitySet Name="TB_Conceptos" EntityType="dbSG2000Model.TB_Conceptos" />
+    <FunctionImport Name="spu_conciliarAutomaticamente" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_Result)">
+      <Parameter Name="idArchivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <EntitySet Name="TB_ArchivoTarjetaDetalle" EntityType="dbSG2000Model.TB_ArchivoTarjetaDetalle" />
+    <EntitySet Name="TB_ConciliacionDetalle" EntityType="dbSG2000Model.TB_ConciliacionDetalle" />
+    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+    </AssociationSet>
+    <EntitySet Name="TB_MovimientosContablesPosdatados" EntityType="dbSG2000Model.TB_MovimientosContablesPosdatados" />
+    <AssociationSet Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios" Association="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+      <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+      <End Role="TB_MovimientosContablesPosdatados" EntitySet="TB_MovimientosContablesPosdatados" />
+    </AssociationSet>
+    <FunctionImport Name="spu_procesarMovimientosPosdatados" ReturnType="Collection(dbSG2000Model.spu_procesarMovimientosPosdatados_Result)">
+      <Parameter Name="nrCaja" Mode="In" Type="Decimal" />
+      <Parameter Name="dsUsuario" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TB_ArchivoTarjeta" EntityType="dbSG2000Model.TB_ArchivoTarjeta" />
+    <EntitySet Name="TB_Conciliacion" EntityType="dbSG2000Model.TB_Conciliacion" />
+    <AssociationSet Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_ArchivoTarjetaDetalle" EntitySet="TB_ArchivoTarjetaDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Conciliacion_TB_ArchivoTarjeta" Association="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta">
+      <End Role="TB_ArchivoTarjeta" EntitySet="TB_ArchivoTarjeta" />
+      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_ConciliacionDetalle_TB_Conciliacion" Association="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion">
+      <End Role="TB_Conciliacion" EntitySet="TB_Conciliacion" />
+      <End Role="TB_ConciliacionDetalle" EntitySet="TB_ConciliacionDetalle" />
+    </AssociationSet>
+    <FunctionImport Name="spu_generarPresentacionCAI_v4_9_4" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_4_Result)">
+      <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+      <Parameter Name="realizarLOG" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spu_obtenerDeudoresaFecha" ReturnType="Collection(dbSG2000Model.spu_obtenerDeudoresaFecha_Result)">
+      <Parameter Name="fecha" Mode="In" Type="DateTime" />
+    </FunctionImport>
+    <EntitySet Name="TB_PresentacionesCAI" EntityType="dbSG2000Model.TB_PresentacionesCAI" />
+    <EntitySet Name="TB_PresentacionesCAIDetalle" EntityType="dbSG2000Model.TB_PresentacionesCAIDetalle" />
+    <AssociationSet Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" Association="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+      <End Role="TB_PresentacionesCAI" EntitySet="TB_PresentacionesCAI" />
+      <End Role="TB_PresentacionesCAIDetalle" EntitySet="TB_PresentacionesCAIDetalle" />
+    </AssociationSet>
+    <FunctionImport Name="spu_conciliarAutomaticamente_v4_9_900" ReturnType="Collection(dbSG2000Model.spu_conciliarAutomaticamente_v4_9_900_Result)">
+      <Parameter Name="idArchivo" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spu_obtenerPresentacionCAIs">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spu_obtenerUltNroCAIsUsados" ReturnType="Collection(dbSG2000Model.spu_obtenerUltNroCAIsUsados_Result)">
+      <Parameter Name="mes" Mode="In" Type="Int32" />
+      <Parameter Name="anio" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="spu_generarPresentacionCAI_v4_9_41" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_41_Result)">
+      <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+      <Parameter Name="realizarLOG" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="spu_generarPresentacionCAI_v4_9_830" ReturnType="Collection(dbSG2000Model.spu_generarPresentacionCAI_v4_9_830_Result)">
+      <Parameter Name="IdPresentacion" Mode="In" Type="Int32" />
+      <Parameter Name="realizarLOG" Mode="In" Type="String" />
+    </FunctionImport>
+    <EntitySet Name="TB_Parametros" EntityType="dbSG2000Model.TB_Parametros" />
+    <EntitySet Name="TB_Comprobantes" EntityType="dbSG2000Model.TB_Comprobantes" />
+    <EntitySet Name="TB_ComprobantesDetalle" EntityType="dbSG2000Model.TB_ComprobantesDetalle" />
+    <AssociationSet Name="FK__TB_ComprobantesD__07E124C1" Association="dbSG2000Model.FK__TB_ComprobantesD__07E124C1">
+      <End Role="TB_Comprobantes" EntitySet="TB_Comprobantes" />
+      <End Role="TB_ComprobantesDetalle" EntitySet="TB_ComprobantesDetalle" />
+    </AssociationSet>
+    <AssociationSet Name="FK_TB_Comprobantes_TB_Usuarios" Association="dbSG2000Model.FK_TB_Comprobantes_TB_Usuarios">
+      <End Role="TB_Usuarios" EntitySet="TB_Usuarios" />
+      <End Role="TB_Comprobantes" EntitySet="TB_Comprobantes" />
+    </AssociationSet>
+    <EntitySet Name="TB_documentos" EntityType="dbSG2000Model.TB_documentos" />
+    <EntitySet Name="TB_numeradores" EntityType="dbSG2000Model.TB_numeradores" />
+    <EntitySet Name="TB_Cupones" EntityType="dbSG2000Model.TB_Cupones" />
+    <EntitySet Name="TB_Clientes" EntityType="dbSG2000Model.TB_Clientes" />
+    <EntitySet Name="TB_Proveedores" EntityType="dbSG2000Model.TB_Proveedores" />
+    <EntitySet Name="TB_ObligacionesTitulares" EntityType="dbSG2000Model.TB_ObligacionesTitulares" />
+    <EntitySet Name="TB_transCab" EntityType="dbSG2000Model.TB_transCab" />
+    <EntitySet Name="TB_ObligacionesCuotas" EntityType="dbSG2000Model.TB_ObligacionesCuotas" />
+  </EntityContainer>
+  <EntityType Name="TB_Productos">
+    <Key>
+      <PropertyRef Name="cdProducto" />
+    </Key>
+    <Property Name="cdProducto" Type="Int32" Nullable="false" />
+    <Property Name="dsProducto" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="vlPrecioViaje" Type="Double" />
+    <Property Name="vlPrecioPeaje" Type="Double" />
+    <Property Name="obsHoras" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vlPorcentaje" Type="Int32" />
+    <Property Name="tpOperacion" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flMuestra" Type="Boolean" Nullable="false" />
+    <Property Name="cdOrden" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="vlPrecioViajeSinPeaje" Type="Double" />
+    <Property Name="vlKilometros" Type="Double" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="vlPrecioxKilometro" Type="Double" />
+    <Property Name="flMuestraenlaWEB" Type="Boolean" />
+    <Property Name="flIncluyeComisionRetorno" Type="Boolean" />
+    <Property Name="tpDestino" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="cdComision" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TB_Usuarios">
+    <Key>
+      <PropertyRef Name="dsUsuario" />
+    </Key>
+    <Property Type="String" Name="dsUsuario" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpAcceso" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmNombre" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmApellido" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsPassword" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsDomicilio" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nmLocalidad" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="cdPostal" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nrTelefono" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsEmail" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsPassword_OLD" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="nrCUIL" />
+    <Property Type="Boolean" Name="flBloqueado" />
+    <Property Type="String" Name="tpNivelJerarquico" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="flEliminar" />
+    <NavigationProperty Name="TB_MovimientosContables" Relationship="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_MovimientosContables" />
+    <NavigationProperty Name="TB_MovimientosContablesPosdatados" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_MovimientosContablesPosdatados" />
+    <NavigationProperty Name="TB_Comprobantes" Relationship="dbSG2000Model.FK_TB_Comprobantes_TB_Usuarios" FromRole="TB_Usuarios" ToRole="TB_Comprobantes" />
+  </EntityType>
+  <EntityType Name="TB_MovimientosContables">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Type="Decimal" Name="IdMovimiento" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="String" Name="dsMovimiento" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="IdRecibo" Precision="18" Scale="0" />
+    <Property Type="String" Name="IdProveedor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsProveedor" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="cdConcepto" />
+    <Property Type="String" Name="tpConcepto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsConcepto" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpOperacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="vlPesos" />
+    <Property Type="Double" Name="vlDolares" />
+    <Property Type="Double" Name="vlEuros" />
+    <Property Type="String" Name="nrRecibo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nrFactura" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCaja" Precision="18" Scale="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtMovimiento" Precision="3" />
+    <Property Type="String" Name="dsObservacion" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Type="Int32" Name="nrAnio" />
+    <Property Type="String" Name="dsUsuario_Supervisor" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaPuesto" Precision="18" Scale="0" />
+    <Property Type="String" Name="tpCajaImputacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsUsuarioCajaPuesto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpMovimiento" MaxLength="20" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContables_TB_Usuarios" FromRole="TB_MovimientosContables" ToRole="TB_Usuarios" />
+    <Property Name="dtFechaPosdata" Type="DateTime" Precision="0" />
+    <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdConciliacion" Type="Int32" />
+    <Property Name="nro_trans" Type="Int32" />
+  </EntityType>
+  <Association Name="FK_TB_MovimientosContables_TB_Usuarios">
+    <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_MovimientosContables" Role="TB_MovimientosContables" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Usuarios">
+        <PropertyRef Name="dsUsuario" />
+      </Principal>
+      <Dependent Role="TB_MovimientosContables">
+        <PropertyRef Name="dsUsuario_Supervisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TB_Conceptos">
+    <Key>
+      <PropertyRef Name="cdConcepto" />
+    </Key>
+    <Property Type="Int32" Name="cdConcepto" Nullable="false" />
+    <Property Type="String" Name="tpConcepto" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="dsConcepto" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Type="Double" Name="vlConcepto" />
+    <Property Type="String" Name="tpOperacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtActualizacion" Precision="3" />
+    <Property Type="Boolean" Name="flEliminar" />
+    <Property Type="String" Name="tpCajaImputacion" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="tpCreadoPor" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Boolean" Name="flSumaenCajaAdm" />
+    <Property Type="Boolean" Name="flSumaenCajaCooperativa" />
+    <Property Type="Boolean" Name="flSumaenCajaLicenciatarios" />
+    <Property Type="Boolean" Name="flOcultadoenCajaAdm" />
+    <Property Type="Boolean" Name="flOcultadoCajaLicenciatario" />
+    <Property Type="Boolean" Name="flOcultadoCajaCooperativa" />
+    <Property Type="Boolean" Name="flOcultadoenRegistracion" />
+  </EntityType>
+  <ComplexType Name="spu_conciliarAutomaticamente_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="4" />
+  </ComplexType>
+  <EntityType Name="TB_ArchivoTarjetaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Type="Int64" Name="Id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="idarchivo" />
+    <Property Type="DateTime" Name="fechaPresentacion" Precision="0" />
+    <Property Type="Decimal" Name="importe" Precision="18" Scale="3" />
+    <Property Type="DateTime" Name="fechaPago" Precision="0" />
+    <Property Type="String" Name="tarjeta" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="comprobante" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="moneda" MaxLength="3" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="contenido" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtInsercion" Precision="3" />
+    <Property Type="Decimal" Name="nrCupon" Precision="18" Scale="0" />
+    <Property Type="Int16" Name="nrNivelConciliacion" />
+    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ConciliacionDetalle" />
+    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjetaDetalle" ToRole="TB_ArchivoTarjeta" />
+  </EntityType>
+  <EntityType Name="TB_ConciliacionDetalle">
+    <Key>
+      <PropertyRef Name="IdConciliacion" />
+      <PropertyRef Name="nrCupon" />
+    </Key>
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" />
+    <Property Type="Decimal" Name="nrCupon" Nullable="false" Precision="18" Scale="0" />
+    <Property Type="Int64" Name="IdArchivoTarjetaDetalle" />
+    <Property Type="DateTime" Name="fechaPago" Precision="0" />
+    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle" FromRole="TB_ConciliacionDetalle" ToRole="TB_ArchivoTarjetaDetalle" />
+    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_ConciliacionDetalle" ToRole="TB_Conciliacion" />
+  </EntityType>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_ArchivoTarjetaDetalle">
+    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdArchivoTarjetaDetalle" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TB_MovimientosContablesPosdatados">
+    <Key>
+      <PropertyRef Name="IdMovimiento" />
+    </Key>
+    <Property Name="IdMovimiento" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="dsMovimiento" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="IdRecibo" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdProveedor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsProveedor" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cdConcepto" Type="Int32" />
+    <Property Name="tpConcepto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsConcepto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tpOperacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="vlPesos" Type="Double" />
+    <Property Name="vlDolares" Type="Double" />
+    <Property Name="vlEuros" Type="Double" />
+    <Property Name="nrRecibo" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrFactura" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCaja" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtMovimiento" Type="DateTime" Precision="3" />
+    <Property Name="dsObservacion" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="nrAnio" Type="Int32" />
+    <Property Name="dsUsuario_Supervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCajaPuesto" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="tpCajaImputacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsUsuarioCajaPuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpMovimiento" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtFechaPosdata" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="nrCupon" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="IdConciliacion" Type="Int32" />
+    <Property Name="flProcesado" Type="Boolean" />
+    <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_MovimientosContablesPosdatados_TB_Usuarios" FromRole="TB_MovimientosContablesPosdatados" ToRole="TB_Usuarios" />
+    <Property Name="dtProcesado" Type="DateTime" Precision="3" />
+    <Property Name="IdMovimiento_Procesado" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="nro_trans" Type="Int32" />
+    <Property Type="String" Name="Error_Procesado" MaxLength="400" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK_TB_MovimientosContablesPosdatados_TB_Usuarios">
+    <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_MovimientosContablesPosdatados" Role="TB_MovimientosContablesPosdatados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Usuarios">
+        <PropertyRef Name="dsUsuario" />
+      </Principal>
+      <Dependent Role="TB_MovimientosContablesPosdatados">
+        <PropertyRef Name="dsUsuario_Supervisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spu_procesarMovimientosPosdatados_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="descripcion_error" Nullable="false" MaxLength="1" />
+  </ComplexType>
+  <EntityType Name="TB_ArchivoTarjeta">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Type="Int32" Name="id" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <Property Type="String" Name="nombrearchivo" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Type="DateTime" Name="dtproceso" Precision="3" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="String" Name="nombreArchivoCompleto" MaxLength="400" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_ArchivoTarjetaDetalle" Relationship="dbSG2000Model.FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_ArchivoTarjetaDetalle" />
+    <NavigationProperty Name="TB_Conciliacion" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_ArchivoTarjeta" ToRole="TB_Conciliacion" />
+  </EntityType>
+  <EntityType Name="TB_Conciliacion">
+    <Key>
+      <PropertyRef Name="IdConciliacion" />
+    </Key>
+    <Property Type="Int32" Name="IdConciliacion" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="DateTime" Name="dtConciliacion" Precision="0" />
+    <Property Type="String" Name="dsUsuario" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Type="Decimal" Name="nrCajaAdm" Precision="18" Scale="0" />
+    <Property Type="DateTime" Name="dtModificacion" Precision="3" />
+    <Property Type="String" Name="flestado" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Type="Int32" Name="idArchivo" />
+    <Property Type="String" Name="formato" MaxLength="15" FixedLength="true" Unicode="false" />
+    <NavigationProperty Name="TB_ArchivoTarjeta" Relationship="dbSG2000Model.FK_TB_Conciliacion_TB_ArchivoTarjeta" FromRole="TB_Conciliacion" ToRole="TB_ArchivoTarjeta" />
+    <NavigationProperty Name="TB_ConciliacionDetalle" Relationship="dbSG2000Model.FK_TB_ConciliacionDetalle_TB_Conciliacion" FromRole="TB_Conciliacion" ToRole="TB_ConciliacionDetalle" />
+  </EntityType>
+  <Association Name="FK_TB_ArchivoTarjetaDetalle_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_ArchivoTarjetaDetalle" Role="TB_ArchivoTarjetaDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_ArchivoTarjetaDetalle">
+        <PropertyRef Name="idarchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Conciliacion_TB_ArchivoTarjeta">
+    <End Type="dbSG2000Model.TB_ArchivoTarjeta" Role="TB_ArchivoTarjeta" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_ArchivoTarjeta">
+        <PropertyRef Name="id" />
+      </Principal>
+      <Dependent Role="TB_Conciliacion">
+        <PropertyRef Name="idArchivo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_ConciliacionDetalle_TB_Conciliacion">
+    <End Type="dbSG2000Model.TB_Conciliacion" Role="TB_Conciliacion" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_ConciliacionDetalle" Role="TB_ConciliacionDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Conciliacion">
+        <PropertyRef Name="IdConciliacion" />
+      </Principal>
+      <Dependent Role="TB_ConciliacionDetalle">
+        <PropertyRef Name="IdConciliacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_4_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="spu_obtenerDeudoresaFecha_Result">
+    <Property Type="String" Name="tpCupon" Nullable="true" MaxLength="20" />
+    <Property Type="Int32" Name="cantidad" Nullable="true" />
+    <Property Type="Double" Name="sumavlMontoCupon" Nullable="true" />
+  </ComplexType>
+  <EntityType Name="TB_PresentacionesCAI">
+    <Key>
+      <PropertyRef Name="IdPresentacion" />
+    </Key>
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nrAnio" Type="Int32" />
+    <Property Name="nrMes" Type="Int32" />
+    <Property Name="dtPresentacion" Type="DateTime" Precision="0" />
+    <Property Name="dsUsuario" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flestado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtModificacion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAIDetalle" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAI" ToRole="TB_PresentacionesCAIDetalle" />
+  </EntityType>
+  <EntityType Name="TB_PresentacionesCAIDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="IdPresentacion" Type="Int32" Nullable="false" />
+    <Property Name="tpComprobante" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+    <Property Name="nrCAI" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="PDV" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="Letra" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="nrUltNroComprobante" Type="Int32" />
+    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="TB_PresentacionesCAI" Relationship="dbSG2000Model.FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI" FromRole="TB_PresentacionesCAIDetalle" ToRole="TB_PresentacionesCAI" />
+  </EntityType>
+  <Association Name="FK_TB_PresentacionesCAIDetalle_TB_PresentacionesCAI">
+    <End Type="dbSG2000Model.TB_PresentacionesCAI" Role="TB_PresentacionesCAI" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_PresentacionesCAIDetalle" Role="TB_PresentacionesCAIDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_PresentacionesCAI">
+        <PropertyRef Name="IdPresentacion" />
+      </Principal>
+      <Dependent Role="TB_PresentacionesCAIDetalle">
+        <PropertyRef Name="IdPresentacion" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="spu_conciliarAutomaticamente_v4_9_900_Result" />
+  <ComplexType Name="spu_obtenerUltNroCAIsUsados_Result">
+    <Property Type="Int32" Name="AÑO" Nullable="true" />
+    <Property Type="Int32" Name="MES" Nullable="true" />
+    <Property Type="String" Name="DOC" Nullable="false" MaxLength="2" />
+    <Property Type="String" Name="PDV" Nullable="false" MaxLength="4" />
+    <Property Type="String" Name="LETRA" Nullable="false" MaxLength="1" />
+    <Property Type="String" Name="CAI" Nullable="true" MaxLength="20" />
+    <Property Type="String" Name="UltNroComprobante" Nullable="true" MaxLength="12" />
+  </ComplexType>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_41_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <ComplexType Name="spu_generarPresentacionCAI_v4_9_830_Result">
+    <Property Type="String" Name="resultado" Nullable="false" MaxLength="5" />
+    <Property Type="String" Name="Descrip" Nullable="true" MaxLength="56" />
+  </ComplexType>
+  <EntityType Name="TB_Parametros">
+    <Key>
+      <PropertyRef Name="dsParametro" />
+    </Key>
+    <Property Name="dsParametro" Type="String" Nullable="false" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="vlParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpParametro" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrTamanio" Type="Int32" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="grupo_parametro" Type="String" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="observacion" Type="String" MaxLength="500" FixedLength="false" Unicode="false" />
+    <Property Name="flEditable" Type="Boolean" />
+  </EntityType>
+  <EntityType Name="TB_Comprobantes">
+    <Key>
+      <PropertyRef Name="nrTalonario" />
+      <PropertyRef Name="nrComprobante" />
+      <PropertyRef Name="tpComprobante" />
+      <PropertyRef Name="tpLetra" />
+    </Key>
+    <Property Name="nrTalonario" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nrComprobante" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="tpComprobante" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="tpLetra" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="dtComprobante" Type="DateTime" Precision="3" />
+    <Property Name="cdCliente" Type="Int32" />
+    <Property Name="cdCondVenta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpComision" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpMoneda" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpIVA" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="vlTotalGeneral" Type="Double" />
+    <Property Name="vlPagoPesos" Type="Double" />
+    <Property Name="vlPagoEuros" Type="Double" />
+    <Property Name="vlPagoDolares" Type="Double" />
+    <Property Name="dsLeyenda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="flManual" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
+    <Property Name="flSincronizado" Type="Boolean" Nullable="false" />
+    <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCaja" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="dtCaja" Type="DateTime" Precision="3" />
+    <Property Name="nrPuesto" Type="Int16" />
+    <Property Name="dsDomicilio" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="nrBultos" Type="Int16" />
+    <Property Name="nrPasajeros" Type="Int16" />
+    <Property Name="nrDoc" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="dsRazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmLicenciatario" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="cdPostal" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="nmLocalidad" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="cdCodBar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dsEmail" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="nrTel" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrCAI" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="dtVencimiento" Type="DateTime" Precision="3" />
+    <Property Name="vlDiaDolar" Type="Double" />
+    <Property Name="vlDiaEuro" Type="Double" />
+    <Property Name="dsOpcional1" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsOpcional2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsOpcional3" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="dsOpcional4" Type="Int32" />
+    <Property Name="flAnulado" Type="Boolean" Nullable="false" />
+    <Property Name="dtAnulado" Type="DateTime" Precision="3" />
+    <Property Name="nmEmpleado" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="IdReciboCtaCte" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="flCargaErronea" Type="Boolean" />
+    <Property Name="problema" Type="Int32" />
+    <Property Name="dsUsuario_Supervisor" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtComprobante_hora" Type="DateTime" Precision="3" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="vlSubtotal" Type="Double" />
+    <Property Name="vlIVA" Type="Double" />
+    <Property Name="tpModificacionCajaPuesto" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsObservacionCajaPuesto" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="vlPagoReales" Type="Double" />
+    <Property Name="vlDiaReal" Type="Double" />
+    <Property Name="nrTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpDocTarjeta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="nrDocTarjeta" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="vlRecargoTarjeta" Type="Double" />
+    <Property Name="nrCuponPosnet" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="TB_ComprobantesDetalle" Relationship="dbSG2000Model.FK__TB_ComprobantesD__07E124C1" FromRole="TB_Comprobantes" ToRole="TB_ComprobantesDetalle" />
+    <NavigationProperty Name="TB_Usuarios" Relationship="dbSG2000Model.FK_TB_Comprobantes_TB_Usuarios" FromRole="TB_Comprobantes" ToRole="TB_Usuarios" />
+    <Property Name="dsRazonSocial_original" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="nrDoc_original" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_ComprobantesDetalle">
+    <Key>
+      <PropertyRef Name="nrTalonario" />
+      <PropertyRef Name="nrComprobante" />
+      <PropertyRef Name="tpComprobante" />
+      <PropertyRef Name="tpLetra" />
+      <PropertyRef Name="nrItem" />
+    </Key>
+    <Property Name="nrTalonario" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nrComprobante" Type="String" Nullable="false" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="tpComprobante" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="tpLetra" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nrItem" Type="Int16" Nullable="false" />
+    <Property Name="cdProducto" Type="Int32" />
+    <Property Name="dsProducto" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="tpOperacion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="qtCantidad" Type="Int16" />
+    <Property Name="vlPorcentaje" Type="Double" />
+    <Property Name="vlPrecioPeaje" Type="Double" />
+    <Property Name="vlPrecioViaje" Type="Double" />
+    <Property Name="vlTotalItem" Type="Double" />
+    <Property Name="dtInsercion" Type="DateTime" Precision="3" />
+    <Property Name="flSincronizado" Type="Boolean" Nullable="false" />
+    <Property Name="vlKilometros" Type="Double" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="nrPuesto" Type="Int32" />
+    <Property Name="nrCaja" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="vlPrecioTC" Type="Double" />
+    <Property Name="vlPrecioTD" Type="Double" />
+    <Property Name="vlRecargoTC" Type="Double" />
+    <Property Name="vlRecargoTD" Type="Double" />
+    <Property Name="vlPrecioTP" Type="Double" />
+    <Property Name="vlRecargoTP" Type="Double" />
+    <NavigationProperty Name="TB_Comprobantes" Relationship="dbSG2000Model.FK__TB_ComprobantesD__07E124C1" FromRole="TB_ComprobantesDetalle" ToRole="TB_Comprobantes" />
+  </EntityType>
+  <Association Name="FK__TB_ComprobantesD__07E124C1">
+    <End Type="dbSG2000Model.TB_Comprobantes" Role="TB_Comprobantes" Multiplicity="1" />
+    <End Type="dbSG2000Model.TB_ComprobantesDetalle" Role="TB_ComprobantesDetalle" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Comprobantes">
+        <PropertyRef Name="nrTalonario" />
+        <PropertyRef Name="nrComprobante" />
+        <PropertyRef Name="tpComprobante" />
+        <PropertyRef Name="tpLetra" />
+      </Principal>
+      <Dependent Role="TB_ComprobantesDetalle">
+        <PropertyRef Name="nrTalonario" />
+        <PropertyRef Name="nrComprobante" />
+        <PropertyRef Name="tpComprobante" />
+        <PropertyRef Name="tpLetra" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_TB_Comprobantes_TB_Usuarios">
+    <End Type="dbSG2000Model.TB_Usuarios" Role="TB_Usuarios" Multiplicity="0..1" />
+    <End Type="dbSG2000Model.TB_Comprobantes" Role="TB_Comprobantes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="TB_Usuarios">
+        <PropertyRef Name="dsUsuario" />
+      </Principal>
+      <Dependent Role="TB_Comprobantes">
+        <PropertyRef Name="dsUsuario_Supervisor" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="TB_documentos">
+    <Key>
+      <PropertyRef Name="cod_doc" />
+    </Key>
+    <Property Name="cod_doc" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nom_doc" Type="String" Nullable="false" MaxLength="40" FixedLength="true" Unicode="false" />
+    <Property Name="usuario_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_mod" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="TB_numeradores">
+    <Key>
+      <PropertyRef Name="numerador" />
+    </Key>
+    <Property Name="numerador" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="nombre" Type="String" MaxLength="40" FixedLength="false" Unicode="false" />
+    <Property Name="notas" Type="String" MaxLength="250" FixedLength="false" Unicode="false" />
+    <Property Name="valor_asignado" Type="Int32" Nullable="false" />
+    <Property Name="valor_defecto" Type="Int32" />
+    <Property Name="incremento" Type="Int16" Nullable="false" />
+    <Property Name="consecutivos" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="modificable" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="usuario_mod" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" Nullable="false" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="formulario" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="seccion" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="false" />
+    <Property Name="linea" Type="Int16" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_Cupones">
+    <Key>
+      <PropertyRef Name="nrCupon" />
+    </Key>
+    <Property Name="nrCupon" Type="Decimal" Nullable="false" Precision="18" Scale="0" />
+    <Property Name="cdCliente" Type="Int32" />
+    <Property Name="nrPuesto" Type="Int16" />
+    <Property Name="nrLicencia" Type="Int32" Nullable="false" />
+    <Property Name="nmLicenciatario" Type="String" MaxLength="70" FixedLength="false" Unicode="false" />
+    <Property Name="tpCupon" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="vlMontoCupon" Type="Double" />
+    <Property Name="vlaFavordelLicenciatario" Type="Double" />
+    <Property Name="vlafavorAdmin" Type="Double" />
+    <Property Name="vlPagoPesos" Type="Double" />
+    <Property Name="vlPagoEuros" Type="Double" />
+    <Property Name="vlPagoDolares" Type="Double" />
+    <Property Name="vlComision" Type="Double" />
+    <Property Name="nrCantidadBultos" Type="Int16" />
+    <Property Name="nrPasajeros" Type="Int16" />
+    <Property Name="dtCupon" Type="DateTime" Precision="3" />
+    <Property Name="nrTalonarioCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nrComprabanteCliente" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
+    <Property Name="tpComprobanteCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="tpLetraCliente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="flCobradoalCliente" Type="Boolean" Nullable="false" />
+    <Property Name="dtCobradoalCliente" Type="DateTime" Precision="3" />
+    <Property Name="nrCajaCliente" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dtCajaCliente" Type="DateTime" Precision="3" />
+    <Property Name="nrTalonarioProveedor" Type="Double" />
+    <Property Name="nrComprabanteProveedor" Type="Double" />
+    <Property Name="tpComprobanteProveedor" Type="String" MaxLength="2" FixedLength="false" Unicode="false" />
+    <Property Name="tpLetraLetraProveedor" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="flCompensado" Type="Boolean" Nullable="false" />
+    <Property Name="dtCompensado" Type="DateTime" Precision="3" />
+    <Property Name="nrCajaLicenciatario" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dtCajaLicenciatario" Type="DateTime" Precision="3" />
+    <Property Name="dsUsuario" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nrLiquidacionProveedores" Type="Int16" />
+    <Property Name="nrLiquidacionCliente" Type="Int16" />
+    <Property Name="cdCodBar" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="flAnulado" Type="Boolean" Nullable="false" />
+    <Property Name="dtAnulado" Type="DateTime" Precision="3" />
+    <Property Name="IdRecibo" Type="Int32" />
+    <Property Name="IdReciboCtaCte" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dsObservacion" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="dsDestino" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsHoraViaje" Type="String" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="problema" Type="Int32" />
+    <Property Name="Mellizo" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="flSincronizado" Type="Boolean" />
+    <Property Name="vlSubtotal" Type="Double" />
+    <Property Name="vlIVA" Type="Double" />
+    <Property Name="nrCajaCtaCte" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dtCajaCtaCte" Type="DateTime" Precision="3" />
+    <Property Name="dsLeyenda" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+    <Property Name="vlPagoReales" Type="Double" />
+    <Property Name="flNoCompensado" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="dtNoCompensado" Type="DateTime" Precision="0" />
+    <Property Name="nrTarjeta" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="tpDocTarjeta" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="nrDocTarjeta" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="vlRecargoTarjeta" Type="Double" />
+    <Property Name="nrCuponPosnet" Type="String" MaxLength="25" FixedLength="true" Unicode="true" />
+    <Property Name="dtFechaAcreditacion" Type="DateTime" Precision="0" />
+    <Property Name="vlMontoAcreditacion" Type="Double" />
+    <Property Name="IdConciliacion" Type="Int32" />
+    <Property Name="nmEmpresaTarjeta" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nro_trans" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TB_Clientes">
+    <Key>
+      <PropertyRef Name="cdCliente" />
+    </Key>
+    <Property Name="cdCliente" Type="Int32" Nullable="false" />
+    <Property Name="tpCliente" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsRazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsDomicilio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cdPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="nmLocalidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrFax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="dtAlta" Type="DateTime" Precision="0" />
+    <Property Name="dtBaja" Type="DateTime" Precision="0" />
+    <Property Name="tpDoc" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
+    <Property Name="nrDoc" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpIIBB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nrIIBB" Type="Decimal" Precision="18" Scale="0" />
+    <Property Name="dsLetraII" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="vlOrdenanza3337" Type="Double" />
+    <Property Name="dtFinOrdenanza" Type="DateTime" Precision="3" />
+    <Property Name="flBloqueado" Type="Boolean" Nullable="false" />
+    <Property Name="tpEstado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="vlTopeCredito" Type="Double" />
+    <Property Name="vlSaldo" Type="Double" />
+    <Property Name="tpIVA" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="tpFormadePago" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="nrPuesto" Type="Int16" />
+  </EntityType>
+  <EntityType Name="TB_Proveedores">
+    <Key>
+      <PropertyRef Name="cdProveedor" />
+    </Key>
+    <Property Name="cdProveedor" Type="Int32" Nullable="false" />
+    <Property Name="nrSocio" Type="String" MaxLength="10" FixedLength="false" Unicode="false" />
+    <Property Name="tpCategoria" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="dsRazonSocial" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="dsDomicilio" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="cdPostal" Type="String" MaxLength="8" FixedLength="false" Unicode="false" />
+    <Property Name="nmLocalidad" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrTel" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="nrFax" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsCargo" Type="String" MaxLength="30" FixedLength="false" Unicode="false" />
+    <Property Name="dsEmail" Type="String" MaxLength="60" FixedLength="false" Unicode="false" />
+    <Property Name="dtAlta" Type="DateTime" Precision="3" />
+    <Property Name="dtBaja" Type="DateTime" Precision="3" />
+    <Property Name="tpIVA" Type="Int16" />
+    <Property Name="nrCUIT" Type="String" MaxLength="20" FixedLength="false" Unicode="false" />
+    <Property Name="tpIIBB" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
+    <Property Name="nrIIBB" Type="Double" />
+    <Property Name="vlOrdenanza3337" Type="Double" />
+    <Property Name="dtFinOrdenanza" Type="DateTime" Precision="3" />
+    <Property Name="flBloqueado" Type="Boolean" Nullable="false" />
+    <Property Name="tpEstado" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="nrLicencia" Type="String" MaxLength="3" FixedLength="false" Unicode="false" />
+    <Property Name="dtActualizacion" Type="DateTime" Precision="3" />
+    <Property Name="flEliminar" Type="Boolean" />
+    <Property Name="tpmodeloauto" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="flcongas" Type="Boolean" />
+    <Property Name="chofer1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chofer2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="chofer3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer1" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer2" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="telchofer3" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="flGPS" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TB_ObligacionesTitulares">
+    <Key>
+      <PropertyRef Name="nro_trans" />
+      <PropertyRef Name="cod_tit" />
+    </Key>
+    <Property Name="nro_trans" Type="Int32" Nullable="false" />
+    <Property Name="cod_tit" Type="Int32" Nullable="false" />
+    <Property Name="nrLicencia" Type="Int32" />
+    <Property Name="nrTelefono" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmNombre" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="nmApellido" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_transCab">
+    <Key>
+      <PropertyRef Name="nro_trans" />
+    </Key>
+    <Property Name="cod_emp" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="cod_tit" Type="Int32" Nullable="false" />
+    <Property Name="letra_doc" Type="String" MaxLength="1" FixedLength="true" Unicode="false" />
+    <Property Name="fec_valor" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="com_mov" Type="String" MaxLength="400" FixedLength="false" Unicode="false" />
+    <Property Name="cod_moneda_ing" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="tc_ing" Type="Decimal" Precision="12" Scale="6" />
+    <Property Name="imp_subtot_ing" Type="Decimal" Precision="14" Scale="2" />
+    <Property Name="imp_ivatot_ing" Type="Decimal" Precision="14" Scale="2" />
+    <Property Name="imp_tot_ing" Type="Decimal" Precision="14" Scale="2" />
+    <Property Name="nro_int" Type="Int32" />
+    <Property Name="nro_trans" Type="Int32" Nullable="false" />
+    <Property Name="cod_doc" Type="String" Nullable="false" MaxLength="4" FixedLength="true" Unicode="false" />
+    <Property Name="nro_doc" Type="Int32" Nullable="false" />
+    <Property Name="fec_doc" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="serie_doc" Type="Int16" Nullable="false" />
+    <Property Name="formulario" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="seccion" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="bloque" Type="String" Nullable="false" MaxLength="16" FixedLength="true" Unicode="false" />
+    <Property Name="linea" Type="Int16" Nullable="false" />
+    <Property Name="usuario_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_mod" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="terminal_mod" Type="String" Nullable="false" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="operacion_mod" Type="String" Nullable="false" MaxLength="10" FixedLength="true" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="cuotas" Type="Int16" />
+    <Property Name="periodo" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="descripcion" Type="String" MaxLength="50" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="TB_ObligacionesCuotas">
+    <Key>
+      <PropertyRef Name="nro_trans" />
+      <PropertyRef Name="cod_tit" />
+      <PropertyRef Name="nro_cuota" />
+    </Key>
+    <Property Name="nro_trans" Type="Int32" Nullable="false" />
+    <Property Name="cod_tit" Type="Int32" Nullable="false" />
+    <Property Name="nro_cuota" Type="Int32" Nullable="false" />
+    <Property Name="fecha_vencimiento" Type="DateTime" Precision="0" />
+    <Property Name="importe" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="nrLicencia" Type="Int32" />
+    <Property Name="comentarios" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="estado_registro" Type="String" MaxLength="20" FixedLength="true" Unicode="false" />
+    <Property Name="fecha_cobrado" Type="DateTime" Precision="0" />
+  </EntityType>
+</Schema>

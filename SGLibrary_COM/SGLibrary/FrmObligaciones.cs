@@ -14,6 +14,7 @@ using SGLibrary.Services;
 using SGLibrary.GUIUtilities;
 using System.Globalization;
 using Microsoft.VisualBasic;
+using SGLibrary.Exceptions;
 
 
 namespace SGLibrary
@@ -290,6 +291,51 @@ namespace SGLibrary
                         this.Close();
                         break;
                     }
+                case "EXCEL":
+                    {
+                        exportaraExcel();
+                        break;
+                    }
+            }
+
+        }
+
+
+
+        public void exportaraExcel()
+        {
+            // Deshabilitamos el Evento que realizar el formateo
+
+            try
+            {
+
+                String nombreArchivo;
+                OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+                openFileDialog1.Title = "Excel Spreadsheet";
+                openFileDialog1.FileName = "";
+                openFileDialog1.DefaultExt = ".xlsx";
+                openFileDialog1.AddExtension = true;
+                openFileDialog1.Filter = "Excel Worksheets|*.xls; *.xlsx";
+                openFileDialog1.CheckFileExists = false;
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    /* MessageBox.Show ( openFileDialog1.FileName); */
+                    nombreArchivo = openFileDialog1.FileName;
+                    nombreArchivo = (nombreArchivo + "x").Replace(".xlsxx", ".xlsx");
+                    ServiceExcel miServiceExcel = new ServiceExcel();
+                    
+                    
+                    miServiceExcel.ExportarAExcel(this.ADGV_Titulares, this.ADGV_TitularesCuotas, nombreArchivo);
+                        // Habilitamos el Evento que realizar el formateo
+                    
+                    MessageBox.Show(this, "El archivo se ha generado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (ExcelAppException e)
+            {
+                MessageBox.Show(e.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
 
         }

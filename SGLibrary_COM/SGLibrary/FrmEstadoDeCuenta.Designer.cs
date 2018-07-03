@@ -30,6 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             this.panelcarga = new System.Windows.Forms.Panel();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
             this.cbUsuarios = new System.Windows.Forms.ComboBox();
             this.label5 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -38,15 +40,13 @@
             this.fechadesde = new System.Windows.Forms.DateTimePicker();
             this.label16 = new System.Windows.Forms.Label();
             this.label15 = new System.Windows.Forms.Label();
-            this.txtComMov = new System.Windows.Forms.TextBox();
-            this.label14 = new System.Windows.Forms.Label();
             this.ADGV_TitularesCuotas = new ADGV.AdvancedDataGridView();
             this.ADGV_Titulares = new ADGV.AdvancedDataGridView();
             this.cbEstado = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
             this.txtnrLicencia = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.txtNombreLicenciatario = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.panelbusqueda = new System.Windows.Forms.Panel();
             this.lblDgvBusquedaRegistros = new System.Windows.Forms.Label();
@@ -64,8 +64,6 @@
             this.bindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet2 = new System.Data.DataSet();
             this.botonesForm1 = new ControlesdeUsuario.BotonesForm();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.panelcarga.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_TitularesCuotas)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ADGV_Titulares)).BeginInit();
@@ -84,7 +82,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panelcarga.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.panelcarga.Controls.Add(this.textBox1);
+            this.panelcarga.Controls.Add(this.txtDescripcion);
             this.panelcarga.Controls.Add(this.label2);
             this.panelcarga.Controls.Add(this.cbUsuarios);
             this.panelcarga.Controls.Add(this.label5);
@@ -94,15 +92,13 @@
             this.panelcarga.Controls.Add(this.fechadesde);
             this.panelcarga.Controls.Add(this.label16);
             this.panelcarga.Controls.Add(this.label15);
-            this.panelcarga.Controls.Add(this.txtComMov);
-            this.panelcarga.Controls.Add(this.label14);
             this.panelcarga.Controls.Add(this.ADGV_TitularesCuotas);
             this.panelcarga.Controls.Add(this.ADGV_Titulares);
             this.panelcarga.Controls.Add(this.cbEstado);
             this.panelcarga.Controls.Add(this.label12);
             this.panelcarga.Controls.Add(this.txtnrLicencia);
             this.panelcarga.Controls.Add(this.label10);
-            this.panelcarga.Controls.Add(this.txtDescripcion);
+            this.panelcarga.Controls.Add(this.txtNombreLicenciatario);
             this.panelcarga.Controls.Add(this.label9);
             this.panelcarga.Location = new System.Drawing.Point(25, 44);
             this.panelcarga.Name = "panelcarga";
@@ -110,13 +106,33 @@
             this.panelcarga.TabIndex = 2;
             this.panelcarga.Paint += new System.Windows.Forms.PaintEventHandler(this.panelcarga_Paint);
             // 
+            // txtDescripcion
+            // 
+            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtDescripcion.Location = new System.Drawing.Point(368, 45);
+            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2);
+            this.txtDescripcion.MaxLength = 50;
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(326, 20);
+            this.txtDescripcion.TabIndex = 50;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(298, 52);
+            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(66, 13);
+            this.label2.TabIndex = 51;
+            this.label2.Text = "Descripcion:";
+            // 
             // cbUsuarios
             // 
             this.cbUsuarios.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbUsuarios.FlatStyle = System.Windows.Forms.FlatStyle.System;
             this.cbUsuarios.FormattingEnabled = true;
             this.cbUsuarios.Location = new System.Drawing.Point(570, 22);
-            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbUsuarios.Margin = new System.Windows.Forms.Padding(2);
             this.cbUsuarios.Name = "cbUsuarios";
             this.cbUsuarios.Size = new System.Drawing.Size(123, 21);
             this.cbUsuarios.TabIndex = 49;
@@ -155,7 +171,7 @@
             // 
             this.fechahasta.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechahasta.Location = new System.Drawing.Point(193, 46);
-            this.fechahasta.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechahasta.Margin = new System.Windows.Forms.Padding(2);
             this.fechahasta.Name = "fechahasta";
             this.fechahasta.Size = new System.Drawing.Size(101, 20);
             this.fechahasta.TabIndex = 45;
@@ -164,7 +180,7 @@
             // 
             this.fechadesde.Format = System.Windows.Forms.DateTimePickerFormat.Short;
             this.fechadesde.Location = new System.Drawing.Point(80, 46);
-            this.fechadesde.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.fechadesde.Margin = new System.Windows.Forms.Padding(2);
             this.fechadesde.Name = "fechadesde";
             this.fechadesde.Size = new System.Drawing.Size(85, 20);
             this.fechadesde.TabIndex = 44;
@@ -189,29 +205,6 @@
             this.label15.TabIndex = 42;
             this.label15.Text = "Detalle de vencimientos:";
             // 
-            // txtComMov
-            // 
-            this.txtComMov.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.txtComMov.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtComMov.Location = new System.Drawing.Point(6, 409);
-            this.txtComMov.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtComMov.MaxLength = 40;
-            this.txtComMov.Name = "txtComMov";
-            this.txtComMov.Size = new System.Drawing.Size(681, 20);
-            this.txtComMov.TabIndex = 40;
-            // 
-            // label14
-            // 
-            this.label14.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
-            this.label14.AutoSize = true;
-            this.label14.Location = new System.Drawing.Point(6, 392);
-            this.label14.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(81, 13);
-            this.label14.TabIndex = 41;
-            this.label14.Text = "Observaciones:";
-            // 
             // ADGV_TitularesCuotas
             // 
             this.ADGV_TitularesCuotas.AllowUserToAddRows = false;
@@ -223,7 +216,7 @@
             this.ADGV_TitularesCuotas.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGV_TitularesCuotas.DateWithTime = false;
             this.ADGV_TitularesCuotas.Location = new System.Drawing.Point(7, 286);
-            this.ADGV_TitularesCuotas.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADGV_TitularesCuotas.Margin = new System.Windows.Forms.Padding(2);
             this.ADGV_TitularesCuotas.Name = "ADGV_TitularesCuotas";
             this.ADGV_TitularesCuotas.RowTemplate.Height = 24;
             this.ADGV_TitularesCuotas.Size = new System.Drawing.Size(680, 100);
@@ -240,7 +233,7 @@
             this.ADGV_Titulares.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGV_Titulares.DateWithTime = false;
             this.ADGV_Titulares.Location = new System.Drawing.Point(5, 99);
-            this.ADGV_Titulares.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADGV_Titulares.Margin = new System.Windows.Forms.Padding(2);
             this.ADGV_Titulares.Name = "ADGV_Titulares";
             this.ADGV_Titulares.RowTemplate.Height = 24;
             this.ADGV_Titulares.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
@@ -264,7 +257,7 @@
             "PENDIENTE",
             "TODOS"});
             this.cbEstado.Location = new System.Drawing.Point(422, 21);
-            this.cbEstado.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cbEstado.Margin = new System.Windows.Forms.Padding(2);
             this.cbEstado.Name = "cbEstado";
             this.cbEstado.Size = new System.Drawing.Size(144, 21);
             this.cbEstado.TabIndex = 35;
@@ -285,7 +278,7 @@
             // 
             this.txtnrLicencia.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtnrLicencia.Location = new System.Drawing.Point(6, 22);
-            this.txtnrLicencia.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtnrLicencia.Margin = new System.Windows.Forms.Padding(2);
             this.txtnrLicencia.MaxLength = 40;
             this.txtnrLicencia.Name = "txtnrLicencia";
             this.txtnrLicencia.Size = new System.Drawing.Size(66, 20);
@@ -306,17 +299,17 @@
             this.label10.TabIndex = 31;
             this.label10.Text = "Licencia:";
             // 
-            // txtDescripcion
+            // txtNombreLicenciatario
             // 
-            this.txtDescripcion.BackColor = System.Drawing.SystemColors.ActiveCaption;
-            this.txtDescripcion.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.txtDescripcion.Location = new System.Drawing.Point(76, 22);
-            this.txtDescripcion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtDescripcion.MaxLength = 50;
-            this.txtDescripcion.Name = "txtDescripcion";
-            this.txtDescripcion.ReadOnly = true;
-            this.txtDescripcion.Size = new System.Drawing.Size(342, 20);
-            this.txtDescripcion.TabIndex = 28;
+            this.txtNombreLicenciatario.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.txtNombreLicenciatario.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtNombreLicenciatario.Location = new System.Drawing.Point(76, 22);
+            this.txtNombreLicenciatario.Margin = new System.Windows.Forms.Padding(2);
+            this.txtNombreLicenciatario.MaxLength = 50;
+            this.txtNombreLicenciatario.Name = "txtNombreLicenciatario";
+            this.txtNombreLicenciatario.ReadOnly = true;
+            this.txtNombreLicenciatario.Size = new System.Drawing.Size(342, 20);
+            this.txtNombreLicenciatario.TabIndex = 28;
             // 
             // label9
             // 
@@ -365,7 +358,7 @@
             this.ADGVBusqueda.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ADGVBusqueda.DateWithTime = false;
             this.ADGVBusqueda.Location = new System.Drawing.Point(13, 60);
-            this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.ADGVBusqueda.Margin = new System.Windows.Forms.Padding(2);
             this.ADGVBusqueda.MultiSelect = false;
             this.ADGVBusqueda.Name = "ADGVBusqueda";
             this.ADGVBusqueda.RowTemplate.Height = 24;
@@ -454,31 +447,12 @@
             this.botonesForm1.AutoSize = true;
             this.botonesForm1.Location = new System.Drawing.Point(0, -2);
             this.botonesForm1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.botonesForm1.MododeEdicion = ControlesdeUsuario.ABMBotonesForm.REPORT;
             this.botonesForm1.Name = "botonesForm1";
             this.botonesForm1.Size = new System.Drawing.Size(533, 27);
             this.botonesForm1.TabIndex = 6;
             this.botonesForm1.ClickEventDelegateHandler += new ControlesdeUsuario.BotonesForm.ClickDelegateHandler(this.botonesForm1_ClickEventDelegateHandler);
             this.botonesForm1.Load += new System.EventHandler(this.botonesForm1_Load_1);
-            // 
-            // textBox1
-            // 
-            this.textBox1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
-            this.textBox1.Location = new System.Drawing.Point(368, 45);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(2);
-            this.textBox1.MaxLength = 50;
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(326, 20);
-            this.textBox1.TabIndex = 50;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(298, 52);
-            this.label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(66, 13);
-            this.label2.TabIndex = 51;
-            this.label2.Text = "Descripcion:";
             // 
             // FrmEstadoDeCuenta
             // 
@@ -489,7 +463,7 @@
             this.Controls.Add(this.status_bar_usuario);
             this.Controls.Add(this.panelcarga);
             this.Controls.Add(this.panelbusqueda);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FrmEstadoDeCuenta";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Estado De Cuenta";
@@ -528,7 +502,7 @@
         private System.Windows.Forms.BindingSource bindingSource1;
         private System.Data.DataSet dataSet1;
         private System.Windows.Forms.Label lblDgvBusquedaRegistros;
-        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.TextBox txtNombreLicenciatario;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.TextBox txtnrLicencia;
         private System.Windows.Forms.Label label10;
@@ -538,8 +512,6 @@
         private ADGV.AdvancedDataGridView ADGV_TitularesCuotas;
         private System.Windows.Forms.Label label16;
         private System.Windows.Forms.Label label15;
-        private System.Windows.Forms.TextBox txtComMov;
-        private System.Windows.Forms.Label label14;
         private System.Windows.Forms.BindingSource bindingSource2;
         private System.Data.DataSet dataSet2;
         private System.Windows.Forms.ToolStripStatusLabel status_bar_ambiente;
@@ -550,7 +522,7 @@
         private System.Windows.Forms.DateTimePicker fechahasta;
         private System.Windows.Forms.DateTimePicker fechadesde;
         private ControlesdeUsuario.BotonesForm botonesForm1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtDescripcion;
         private System.Windows.Forms.Label label2;
     }
 }

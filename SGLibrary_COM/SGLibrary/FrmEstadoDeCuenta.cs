@@ -14,6 +14,7 @@ using SGLibrary.Services;
 using SGLibrary.GUIUtilities;
 using System.Globalization;
 using Microsoft.VisualBasic;
+using SGLibrary.Exceptions;
 
 
 namespace SGLibrary
@@ -71,8 +72,7 @@ namespace SGLibrary
         private void HabilitarDeshabilitarCampos(Boolean pEdicion){
             
             this.cbEstado.Enabled = (!pEdicion); 
-            this.txtDescripcion.Enabled =  (!pEdicion);
-            this.txtComMov.Enabled = (!pEdicion);
+            this.txtNombreLicenciatario.Enabled =  (!pEdicion);
             this.txtnrLicencia.Enabled = (!pEdicion);
 
         }
@@ -372,7 +372,7 @@ namespace SGLibrary
         void HandleContextMenuClick(object sender, EventArgs e)
         {
             ToolStripMenuItem menuItm = (ToolStripMenuItem)sender;
-            this.txtDescripcion.Text =  menuItm.Text;
+            this.txtNombreLicenciatario.Text =  menuItm.Text;
         }
 
 
@@ -403,8 +403,8 @@ namespace SGLibrary
                         }else{
                             if (this.txtDescripcion.Text.Trim().CompareTo("") == 0)
                             {
-                                MessageBox.Show("Debe completar un criterio de búsqueda: licencia o descripcion de un obligación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                                this.txtDescripcion.Focus();
+                                MessageBox.Show("Debe completar un criterio de búsqueda: licencia o descripción de una obligación", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                this.txtnrLicencia.Focus();
                                 return;
                             }
                         }
@@ -418,14 +418,14 @@ namespace SGLibrary
 
                         if (this.cbEstado.Text.Trim() == "")
                         {
-                            this.cbEstado.Text = "Todos";
+                            this.cbEstado.Text = "TODOS";
                         }
 
                         ListaRegistrosObligaciones = un_ServiceObligaciones.ObtenerObligaciones(this.fechadesde.Value,
                                     this.fechahasta.Value, this.cbUsuarios.Text, nrLicencia, this.cbEstado.Text, this.txtDescripcion.Text.Trim () );
 
 
-                        var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>();
+                        var listaRegistrosTrans_Cab = ListaRegistrosObligaciones.Select(c => c.TB_transCab).ToList<TB_transCab>().Distinct<TB_transCab>();
 
                         this.Titulares.Clear();
                         this.ADGV_Titulares.DataSource = "";
@@ -454,8 +454,57 @@ namespace SGLibrary
                         this.Close();
                         break;
                     }
+
+                case "EXCEL":
+                    {
+                        exportaraExcel();
+                        break;
+                    }
+
             }
         }
+
+
+
+
+        public void exportaraExcel()
+        {
+            // Deshabilitamos el Evento que realizar el formateo
+
+            try
+            {
+
+                String nombreArchivo;
+                OpenFileDialog openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+                openFileDialog1.Title = "Excel Spreadsheet";
+                openFileDialog1.FileName = "";
+                openFileDialog1.DefaultExt = ".xlsx";
+                openFileDialog1.AddExtension = true;
+                openFileDialog1.Filter = "Excel Worksheets|*.xls; *.xlsx";
+                openFileDialog1.CheckFileExists = false;
+
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    /* MessageBox.Show ( openFileDialog1.FileName); */
+                    nombreArchivo = openFileDialog1.FileName;
+                    nombreArchivo = (nombreArchivo + "x").Replace(".xlsxx", ".xlsx");
+                    ServiceExcel miServiceExcel = new ServiceExcel();
+
+
+                    miServiceExcel.ExportarAExcel(this.ADGV_Titulares, this.ADGV_TitularesCuotas, nombreArchivo);
+                    // Habilitamos el Evento que realizar el formateo
+
+                    MessageBox.Show(this, "El archivo se ha generado con éxito", "Atención", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+
+            }
+            catch (ExcelAppException e)
+            {
+                MessageBox.Show(e.Message, "Atención", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+
+        }
+
 
         private void botonesForm1_Load_1(object sender, EventArgs e)
         {
@@ -487,7 +536,7 @@ namespace SGLibrary
             ServiceLicenciatarios un_ServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
             var un_licenciatario = un_ServiceLicenciatarios.ObtenerRegistroxLicencia(this.txtnrLicencia.Text);
 
-            this.txtDescripcion.Text = un_licenciatario.nmNombre + " " + un_licenciatario.nmApellido;
+            this.txtNombreLicenciatario.Text = un_licenciatario.nmNombre + " " + un_licenciatario.nmApellido;
             return false;
         }
 
