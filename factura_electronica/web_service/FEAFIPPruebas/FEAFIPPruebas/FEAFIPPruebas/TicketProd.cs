@@ -14,10 +14,17 @@ namespace FEAFIPPruebas
     public class TicketProd : Ticket 
     {
 
+
+        /* C = ar
+           O = curtiembre fonseca s.a.
+           SERIALNUMBER = CUIT 30559697857
+           CN = ricardo badano
+         */
+
         // Valores por defecto, globales en esta clase 
         //public const string DEFAULT_URLWSAAWSDL = "https://wsaa.afip.gov.ar/ws/services/LoginCms?WSDL";
         public const string DEFAULT_SERVICIO = "wsfe";
-        public const string DEFAULT_CERTSIGNERSUBJECT = @"C=AR, O=Curtiembre Fonseca S.A., SERIALNUMBER=CUIT 30559697857, CN=Ricardo Badano";
+        public const string DEFAULT_CERTSIGNERSUBJECT = @"C=ar, O=curtiembre fonseca s.a., SERIALNUMBER=CUIT 30559697857, CN=ricardo badano";
 
         /// <summary> 
         /// Funcion Main (consola) 

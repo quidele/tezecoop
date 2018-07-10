@@ -28,6 +28,7 @@ namespace FEAFIPPruebas
             FERecuperaLastCbteResponse result = client.FECompUltimoAutorizado(feAuthRequest, 27, 1);
             Console.WriteLine(" ULTIMO COMPROBANTE PARA  EL PVTA 27 TIPO TIPO COMPROBANTE 1 - FACTURA ");
             Console.WriteLine(result.CbteNro);
+            Console.WriteLine(result.PtoVta );
             return new Comprobante();
 
         }

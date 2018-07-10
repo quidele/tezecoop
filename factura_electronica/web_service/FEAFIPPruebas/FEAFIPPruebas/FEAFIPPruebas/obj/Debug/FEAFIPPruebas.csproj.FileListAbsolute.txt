@@ -3,3 +3,8 @@ C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEA
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.pdb
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.exe
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.pdb
+C:\github\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.exe.config
+C:\github\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.exe
+C:\github\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.pdb
+C:\github\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.exe
+C:\github\tezecoop\factura_electronica\web_service\FEAFIPPruebas\FEAFIPPruebas\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.pdb
