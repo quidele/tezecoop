@@ -1895,3 +1895,28 @@ update x set  x.dsRazonSocial = 'Consumidor Final' , x.nrDoc =  null
    where  nrTalonario = '0001'   and nrComprobante = '00001563    '  
     and tpLetra ='M' and tpComprobante = 'FA'
 
+
+
+
+	----------------------------------------------
+  exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 6 , @anio = 2018, @renglon = 9699
+
+    --- 0001	00001568    	M	FA
+
+  select flAnulado ,  tpIVA, nrDOC, dsRazonSocial,  vlTotalGeneral,  * from TB_Comprobantes 
+   where  nrTalonario = '0001'  and nrComprobante = '00001568    ' 
+     and tpLetra ='M' and tpComprobante = 'FA'
+
+  update x set   x.tpIVA ='CF' , x.nrDoc = null , x.dsRazonSocial =    'Consumidor Final'      from TB_Comprobantes x  
+   where  nrTalonario = '0001'   and nrComprobante = '00001568    '  
+    and tpLetra ='M' and tpComprobante = 'FA'
+
+	
+
+	
+  update x set   x.nrDOC = '30-68266220-0' , dsRazonSocial = 'MARYTIME SERVISES LINE ARGENTINA S.A'         from TB_Comprobantes x  
+   where  nrTalonario = '0001'   and nrComprobante = '00001568    '  
+    and tpLetra ='M' and tpComprobante = 'FA'
+
+   exec spu_obtieneDatosCITIVentas_v4_9_4 @mes = 6 , @anio = 2018
+   exec spu_obtieneDatosCITIVentas_Alicuotas_v4_9 @mes = 6 , @anio = 2018
