@@ -40,3 +40,4 @@ C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.Registrati
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\bin\Debug\Unity.ServiceLocation.pdb
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.exe
 C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\PruebaUnityContainer.pdb
+C:\github\tezecoop\SGLibrary_COM\PruebaUnityContainer\obj\Debug\zPruebaUnityContainer.csprojResolveAssemblyReference.cache

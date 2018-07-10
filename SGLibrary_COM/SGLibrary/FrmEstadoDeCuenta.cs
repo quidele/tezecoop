@@ -532,6 +532,12 @@ namespace SGLibrary
                 return false;
             }
 
+            if (nrLicencia == 0)
+            {
+                this.txtNombreLicenciatario.Text = "";
+                return false; 
+            }
+
             // obtener el nombre de la licencia
             ServiceLicenciatarios un_ServiceLicenciatarios = new ServiceLicenciatarios(new dbSG2000Entities());
             var un_licenciatario = un_ServiceLicenciatarios.ObtenerRegistroxLicencia(this.txtnrLicencia.Text);
