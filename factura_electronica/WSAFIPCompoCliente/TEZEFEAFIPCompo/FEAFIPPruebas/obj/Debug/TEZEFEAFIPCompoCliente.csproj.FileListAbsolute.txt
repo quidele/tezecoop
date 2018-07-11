@@ -1,0 +1,6 @@
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.exe.config
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.exe
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\bin\Debug\FEAFIPPruebas.pdb
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\obj\Debug\TEZEFEAFIPCompoCliente.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.exe
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\FEAFIPPruebas\obj\Debug\FEAFIPPruebas.pdb

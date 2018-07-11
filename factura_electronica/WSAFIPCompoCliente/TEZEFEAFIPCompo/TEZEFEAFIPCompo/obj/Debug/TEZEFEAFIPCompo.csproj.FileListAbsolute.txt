@@ -1,0 +1,5 @@
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\TEZEFEAFIPCompo\bin\Debug\TEZEFEAFIPCompo.dll
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\TEZEFEAFIPCompo\bin\Debug\TEZEFEAFIPCompo.pdb
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\TEZEFEAFIPCompo\obj\Debug\TEZEFEAFIPCompo.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\TEZEFEAFIPCompo\obj\Debug\TEZEFEAFIPCompo.dll
+C:\github\tezecoop\factura_electronica\WSAFIPCompoCliente\TEZEFEAFIPCompo\TEZEFEAFIPCompo\obj\Debug\TEZEFEAFIPCompo.pdb

@@ -1,0 +1,6 @@
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\WCFWSFEAFIPTezecoop.dll.config
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\WCFWSFEAFIPTezecoop.dll
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\WCFWSFEAFIPTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.csprojResolveAssemblyReference.cache
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.dll
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.pdb
