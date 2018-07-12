@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   132972545
+         Format          =   140050433
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -5733,6 +5733,12 @@ Dim vlTotalGeneral    As Single
                      HabilitarCampos "vlPorcentaje", False
                      ObtenerCampo("vlPrecioViaje").Text = Abs(CSng(ObtenerValoresNumericos("vlPrecioViaje")))
                      cmdAgregarItemFactura_Click
+                Case "Retorno"
+                     HabilitarCampos "dsProducto", False
+                     HabilitarCampos "vlPrecioViaje", False
+                     HabilitarCampos "vlPorcentaje", False
+                     ObtenerCampo("vlPrecioViaje").Text = Abs(CSng(ObtenerValoresNumericos("vlPrecioViaje")))
+                     cmdAgregarItemFactura_Click
                 End Select
     Else
         Me.cmdAgregarItemFactura.Enabled = True
@@ -6419,6 +6425,14 @@ Dim lcdCliente       As String
         ObtenerCampo("tpComision").Clear
         ObtenerCampo("tpComision").AddItem "A Clientes"
         ObtenerCampo("tpComision").Text = "A Clientes"
+   Case "RETORNO-PAGO TARJETA"
+        ObtenerCampo("cdCondVenta").Clear
+        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Débito"
+        ObtenerCampo("cdCondVenta").AddItem "Tarjeta de Crédito"
+        ObtenerCampo("cdCondVenta").AddItem "Todo Pago"
+        ObtenerCampo("tpComision").Clear
+        ObtenerCampo("tpComision").AddItem "Retorno"
+        ObtenerCampo("tpComision") = "Retorno"
    End Select
         
     
@@ -6428,6 +6442,10 @@ End Sub
 Private Function obtenerTipoDestinoComision(pdsDestino As String) As String
 
 
+    If ObtenerTipoOperacion() = "Retorno" Then
+        obtenerTipoDestinoComision = "RETORNO-PAGO TARJETA"
+        Exit Function
+    End If
     
     If InStr(1, obtenerPrimerDestino(), "retorno", vbTextCompare) > 0 Then
         obtenerTipoDestinoComision = "RETORNO"
@@ -6465,6 +6483,17 @@ Dim strDato   As String
 
 End Function
 
+Private Function ObtenerTipoOperacion() As String
+
+    If Me.lstItemsFactura.ListItems.Count > 0 Then
+        ObtenerTipoOperacion = Me.lstItemsFactura.ListItems.Item(1).ListSubItems(const_tpOperacion).Text
+        Else
+        ObtenerTipoOperacion = ""
+    End If
+    
+    
+    
+End Function
 
 
 Private Function ExisteComprobante() As Boolean

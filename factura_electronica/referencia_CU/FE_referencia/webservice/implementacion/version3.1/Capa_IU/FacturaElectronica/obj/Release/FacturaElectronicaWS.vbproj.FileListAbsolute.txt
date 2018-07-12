@@ -135,3 +135,7 @@ C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\
 C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.vbproj.GenerateResource.Cache
 C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.exe.manifest
 C:\Fonseca\Facturacion_Electronica\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.application
+C:\github\tezecoop\factura_electronica\referencia_CU\FE_referencia\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\bin\Release\FacturaElectronicaWS.exe.config
+C:\github\tezecoop\factura_electronica\referencia_CU\FE_referencia\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.exe
+C:\github\tezecoop\factura_electronica\referencia_CU\FE_referencia\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.xml
+C:\github\tezecoop\factura_electronica\referencia_CU\FE_referencia\webservice\implementacion\version3.1\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.pdb

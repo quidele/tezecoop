@@ -235,7 +235,7 @@ declare @factura_comi             as float
 			FROM  TB_Comisiones WHERE (tpComision = 'Retorno') AND (flEliminar = 0)
 
 			-- informamos la comision de retorno	 
-			SELECT 	@vlComision 
+			SELECT 	@vlComision  as vlComision
 			RETURN;
 		END
 	END
