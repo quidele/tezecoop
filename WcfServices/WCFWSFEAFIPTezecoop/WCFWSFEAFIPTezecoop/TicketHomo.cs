@@ -47,7 +47,7 @@ namespace WCFWSFEAFIPTezecoop
             // MIGRAR LA BUSQUEDA A LA CLASE COMPROBANTE
 
            
-            IComprobante unComprobante = new ComprobanteHomo(this);
+            IComprobanteAFIP unComprobante = new ComprobanteAFIPHomo(this);
             unComprobante.ObtenerCompUltimoAutorizado();
 
             /* 

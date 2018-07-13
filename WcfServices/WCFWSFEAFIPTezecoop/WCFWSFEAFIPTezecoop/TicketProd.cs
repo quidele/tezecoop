@@ -61,7 +61,7 @@ namespace WCFWSFEAFIPTezecoop
             Console.WriteLine(" ULTIMO COMPROBANTE PARA  EL PVTA 27 TIPO TIPO COMPROBANTE 1 - FACTURA ");
             Console.WriteLine(result.CbteNro);*/
 
-            IComprobante unComprobante = new ComprobanteProd(this);
+            IComprobanteAFIP unComprobante = new ComprobanteAFIPProd(this);
             unComprobante.ObtenerCompUltimoAutorizado();
 
             /* 

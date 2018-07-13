@@ -28,6 +28,9 @@ namespace WCFWSFEAFIPTezecoop
                 composite.StringValue += "Suffix";
             }
             return composite;
+            
+
+
         }
 
 
