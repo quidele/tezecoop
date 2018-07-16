@@ -32,5 +32,19 @@ namespace WCFWSFEAFIPTezecoop
             return new ComprobanteAFIP();
 
         }
+
+        public FECAEResponse SolicitarCAE(FECAERequest p_FECAERequest)
+        {
+            FEAuthRequest feAuthRequest = new FEAuthRequest();
+            // MIGRAR LA BUSQUEDA A LA CLASE COMPROBANTE
+            feAuthRequest.Cuit = _ticket.Cuit;
+            feAuthRequest.Sign = _ticket.Sign;
+            feAuthRequest.Token = _ticket.Token;
+            ServiceSoapClient client = new ServiceSoapClient();
+            FECAEResponse result = client.FECAESolicitar(feAuthRequest, p_FECAERequest);
+            // falta inconporar los try - cacth
+            // falta loguear
+            return new FECAEResponse();
+        }
     } // cierra la clase 
 } // cierra el nanespace 

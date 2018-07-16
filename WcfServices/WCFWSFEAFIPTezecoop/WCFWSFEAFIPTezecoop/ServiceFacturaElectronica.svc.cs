@@ -17,11 +17,11 @@ namespace WCFWSFEAFIPTezecoop
 
 
 
-        SolicitarCAEResultado IServiceFacturaElectronica.SolicitarCAE(comprobantes_ml un_comprobante_ml)
+        ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(comprobantes_ml un_comprobante_ml)
         {
             // el objeto un_comprobante_ml dbera ser adaptado a la estructura de WEBServer AFIP 
             // throw new NotImplementedException();
-            return new SolicitarCAEResultado();
+            return new ResultadoSolicitarCAE();
         }
     }
 }

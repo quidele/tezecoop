@@ -8,6 +8,7 @@ namespace WCFWSFEAFIPTezecoop
 {
     interface IComprobanteAFIP
     {
-        ComprobanteAFIP ObtenerCompUltimoAutorizado(); 
+        ComprobanteAFIP ObtenerCompUltimoAutorizado();
+        
     }
 }
