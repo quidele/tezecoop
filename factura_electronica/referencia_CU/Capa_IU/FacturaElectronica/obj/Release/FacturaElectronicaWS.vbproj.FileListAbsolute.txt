@@ -92,3 +92,7 @@ C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\referencia_fons
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\referencia_fonseca\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.exe
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\referencia_fonseca\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.xml
 C:\Users\quidele\Documents\personal\tezecoop\factura_electronica\referencia_fonseca\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.pdb
+C:\github\tezecoop\factura_electronica\referencia_CU\Capa_IU\FacturaElectronica\bin\Release\FacturaElectronicaWS.exe.config
+C:\github\tezecoop\factura_electronica\referencia_CU\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.exe
+C:\github\tezecoop\factura_electronica\referencia_CU\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.xml
+C:\github\tezecoop\factura_electronica\referencia_CU\Capa_IU\FacturaElectronica\obj\Release\FacturaElectronicaWS.pdb

@@ -156,11 +156,117 @@ namespace WCFWSFEAFIPTezecoop
             detalle[0].MonId = p_comprobante_ml.MonId; //   "PES"; //moneda
             detalle[0].MonCotiz = p_comprobante_ml.MonCotiz;  // 1; //cotizacion
 
+            List<Tributo> detalle_tributos = new  List<Tributo>() ;
+            
+            foreach (var item in p_comprobante_ml.detalle_tributos)
+            {
+                var un_tributo = new Tributo();
+                un_tributo.Alic = Convert.ToDouble(item.Alic);
+                un_tributo.BaseImp = Convert.ToDouble( item.BaseImp);
+                un_tributo.Desc = item.Descripcion ;
+                un_tributo.Id = Convert.ToSByte  (item.Id);
+                un_tributo.Importe = Convert.ToDouble (item.Importe);
+                detalle_tributos.Add (un_tributo);
+            }
+            detalle[0].Tributos = detalle_tributos.ToArray<Tributo>();
+
+            List<AlicIva> detalle_iva = new List<AlicIva>();
+
+            foreach (var item in p_comprobante_ml.detalle_iva )
+            {
+                var un_AlicIva = new AlicIva();
+                un_AlicIva.BaseImp = Convert.ToDouble(item.BaseImp);
+                un_AlicIva.Id = Convert.ToSByte(item.Id);
+                un_AlicIva.Importe = Convert.ToDouble(item.Importe);
+                detalle_iva.Add(un_AlicIva);
+            }
+            detalle[0].Iva = detalle_iva.ToArray<AlicIva>();
+
             //como relacionarlo con fc.FeDetReq
             un_FECAERequest.FeDetReq[0] = detalle[0];
 
             return un_FECAERequest;
+         /*
+          * Private Function AdaptarFormatoAFIP(ByVal pObjProdFECAECabeceraRequest As ar.gov.afip.wshomofev1.FECAECabRequest, _
+                                        ByVal pObjProdFEDetalleRequest As ar.gov.afip.wshomofev1.FECAEDetRequest, _
+                                        ByVal pObjComprobanteFE As Comprobantes_ml) As Boolean
+        AdaptarFormatoAFIP = False
+        Try
+
+            'System.Diagnostics.Log.EscbribirLinea_Log("Adaptando formato Afip - Producción")
+            Dim existeDetalleIVA As Boolean = False
+            Dim existeDetalleTributo As Boolean = False
+            Dim existeCmpAsociados As Boolean = False
+
+            Dim ArrayOfTributosProd(0) As ar.gov.afip.wshomofev1.Tributo
+            Dim ArrayOfIvaProd(0) As ar.gov.afip.wshomofev1.AlicIva
+            Dim ArrayOfcbtesasocProd(0) As ar.gov.afip.wshomofev1.CbteAsoc
+            Dim ArrayOfFEDetalleRequestProd(0) As ar.gov.afip.wshomofev1.FECAEDetRequest
+            Dim objProdFECAERequest As New ar.gov.afip.wshomofev1.FECAERequest
+
+
             
+            Dim i As Integer = 0
+            For Each item As Detalle_tributos In pObjComprobanteFE.DetalleTributos
+                existeDetalleTributo = True
+                ReDim Preserve ArrayOfTributosProd(0 To i)
+                ArrayOfTributosProd(i) = New ar.gov.afip.wshomofev1.Tributo()
+                ArrayOfTributosProd(i).Alic = CDbl(item.alic.ToString)
+                ArrayOfTributosProd(i).BaseImp = CDbl(item.baseImp.ToString)
+                ArrayOfTributosProd(i).Desc = item.descripcion.ToString
+                ArrayOfTributosProd(i).Id = CInt(item.Id.ToString)
+                ArrayOfTributosProd(i).Importe = CDbl(item.importe.ToString)
+                i = i + 1
+            Next
+
+            i = 0
+            For Each item As Detalle_iva In pObjComprobanteFE.DetalleIVA
+                existeDetalleIVA = True
+                ReDim Preserve ArrayOfIvaProd(0 To i)
+                ArrayOfIvaProd(i) = New ar.gov.afip.wshomofev1.AlicIva()
+                ArrayOfIvaProd(i).BaseImp = item.baseImp.Valor
+                ArrayOfIvaProd(i).Id = item.Id.Valor
+                ArrayOfIvaProd(i).Importe = item.importe.Valor
+                i = i + 1
+            Next
+
+            i = 0
+            For Each item As CbtesAsoc In pObjComprobanteFE.CbtesAsociados
+                existeCmpAsociados = True
+                ReDim Preserve ArrayOfcbtesasocProd(0 To i)
+                ArrayOfcbtesasocProd(i) = New ar.gov.afip.wshomofev1.CbteAsoc
+                ArrayOfcbtesasocProd(i).Nro = item.Nro.Valor
+                ArrayOfcbtesasocProd(i).PtoVta = item.PtoVta.Valor
+                ArrayOfcbtesasocProd(i).Tipo = item.Tipo.Valor
+            Next
+
+            If existeDetalleIVA Then
+                pObjProdFEDetalleRequest.Iva = ArrayOfIvaProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Detalle_IVA creada")
+            End If
+            If existeDetalleTributo Then
+                pObjProdFEDetalleRequest.Tributos = ArrayOfTributosProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Detalle_tributo creada")
+            End If
+            If existeCmpAsociados Then
+                pObjProdFEDetalleRequest.CbtesAsoc = ArrayOfcbtesasocProd
+                'System.Diagnostics.Log.EscbribirLinea_Log("Lista de Comprobantes_Asoc creada")
+            End If
+
+            objProdFECAERequest.FeCabReq = pObjProdFECAECabeceraRequest
+            ArrayOfFEDetalleRequestProd(0) = pObjProdFEDetalleRequest
+            objProdFECAERequest.FeDetReq = ArrayOfFEDetalleRequestProd
+            'System.Diagnostics.Log.EscbribirLinea_Log("Adaptación Produccion Completa")
+
+            _objetoObtenido = objProdFECAERequest
+
+            AdaptarFormatoAFIP = True
+
+        Catch ex As Exception
+            Throw ex
+        End Try
+        End Function */
+
         }
 
     }
