@@ -182,6 +182,20 @@ namespace WCFWSFEAFIPTezecoop
             }
             detalle[0].Iva = detalle_iva.ToArray<AlicIva>();
 
+            List<CbteAsoc> detalle_CbtesAsoc = new List<CbteAsoc>();
+
+            foreach (var item in p_comprobante_ml.cbtesasoc)
+            {
+                var un_CbteAsoc = new CbteAsoc();
+                un_CbteAsoc.Tipo = item.Tipo;
+                un_CbteAsoc.PtoVta = item.PtoVta;
+                un_CbteAsoc.Nro = Convert.ToInt64  ( item.Nro) ;
+                // un_CbteAsoc.Cuit este dato quedaria pendiente de averiguar
+                detalle_CbtesAsoc.Add(un_CbteAsoc);
+            }
+
+            detalle[0].CbtesAsoc = detalle_CbtesAsoc.ToArray<CbteAsoc>();
+            
             //como relacionarlo con fc.FeDetReq
             un_FECAERequest.FeDetReq[0] = detalle[0];
 

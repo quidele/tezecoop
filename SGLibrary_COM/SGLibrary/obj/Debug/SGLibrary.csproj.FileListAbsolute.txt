@@ -65,6 +65,7 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\bin\Debug\JDO.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\ControlesdeUsuario.BotonesForm.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmBusquedaGenerica.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmEstadoDeCuenta.resources
+C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmFacturaElectronica.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmPrincipal.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmABMDocumentos.resources
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\Debug\SGLibrary.FrmBuscarTitulares.resources

@@ -13,6 +13,7 @@ namespace WCFWSFEAFIPTezecoop
     {
         public void DoWork()
         {
+            Console.WriteLine("Ha arribado un nuevo cliente");
         }
 
 
@@ -21,6 +22,22 @@ namespace WCFWSFEAFIPTezecoop
         {
             // el objeto un_comprobante_ml dbera ser adaptado a la estructura de WEBServer AFIP 
             // throw new NotImplementedException();
+            
+            // grabar modelo decimal datos
+
+            using (var context = new Entities())
+            {
+                /* var un_comprobantes_ml_BD = context.comprobantes_ml.Find(un_comprobante_ml.idsolicitud);
+                if (un_comprobantes_ml_BD == null) 
+                    context.comprobantes_ml.Add(un_comprobante_ml);
+                else */
+
+                    context.comprobantes_ml.Add(un_comprobante_ml);
+
+                context.SaveChanges();
+            }
+            
+
             return new ResultadoSolicitarCAE();
         }
     }

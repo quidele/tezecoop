@@ -74,5 +74,16 @@ namespace SGLibrary
             ServiceTarifas miServiceTarifas = new ServiceTarifas();
             miServiceTarifas.cargarTarifas();
         }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void facturaElectronicaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FrmFacturaElectronica f1 = new FrmFacturaElectronica();
+            f1.ShowDialog();
+        }
     }
 }

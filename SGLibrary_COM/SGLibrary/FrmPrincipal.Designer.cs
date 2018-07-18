@@ -36,6 +36,7 @@
             this.conciliacionesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.obligacionesEstadoDeCuentaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.cargaDeTarifasToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.facturaElectronicaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -62,7 +63,8 @@
             this.obligacionesToolStripMenuItem,
             this.conciliacionesToolStripMenuItem,
             this.obligacionesEstadoDeCuentaToolStripMenuItem,
-            this.cargaDeTarifasToolStripMenuItem});
+            this.cargaDeTarifasToolStripMenuItem,
+            this.facturaElectronicaToolStripMenuItem});
             this.busquedaDeComprobantesToolStripMenuItem.Name = "busquedaDeComprobantesToolStripMenuItem";
             this.busquedaDeComprobantesToolStripMenuItem.Size = new System.Drawing.Size(76, 20);
             this.busquedaDeComprobantesToolStripMenuItem.Text = "Programas";
@@ -102,6 +104,13 @@
             this.cargaDeTarifasToolStripMenuItem.Text = "Carga de Tarifas";
             this.cargaDeTarifasToolStripMenuItem.Click += new System.EventHandler(this.cargaDeTarifasToolStripMenuItem_Click);
             // 
+            // facturaElectronicaToolStripMenuItem
+            // 
+            this.facturaElectronicaToolStripMenuItem.Name = "facturaElectronicaToolStripMenuItem";
+            this.facturaElectronicaToolStripMenuItem.Size = new System.Drawing.Size(246, 22);
+            this.facturaElectronicaToolStripMenuItem.Text = "Factura Electronica";
+            this.facturaElectronicaToolStripMenuItem.Click += new System.EventHandler(this.facturaElectronicaToolStripMenuItem_Click);
+            // 
             // FrmPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -130,5 +139,6 @@
         private System.Windows.Forms.ToolStripMenuItem conciliacionesToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem obligacionesEstadoDeCuentaToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem cargaDeTarifasToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem facturaElectronicaToolStripMenuItem;
     }
 }

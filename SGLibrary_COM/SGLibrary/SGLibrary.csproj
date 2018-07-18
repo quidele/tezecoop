@@ -94,6 +94,7 @@
     <Reference Include="System.Management.Instrumentation" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Transactions" />
     <Reference Include="System.Web.Services" />
     <Reference Include="System.Windows.Forms" />
@@ -150,6 +151,12 @@
     </Compile>
     <Compile Include="FrmEstadoDeCuenta.Designer.cs">
       <DependentUpon>FrmEstadoDeCuenta.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmFacturaElectronica.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmFacturaElectronica.Designer.cs">
+      <DependentUpon>FrmFacturaElectronica.cs</DependentUpon>
     </Compile>
     <Compile Include="FrmPrincipal.cs">
       <SubType>Form</SubType>
@@ -283,6 +290,11 @@
     </Compile>
     <Compile Include="Reportes\rpt_AnalisisDeudores.Designer.cs">
       <DependentUpon>rpt_AnalisisDeudores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\ServiceFacturaElectronica\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
     <Compile Include="ServiceCAI.cs" />
     <Compile Include="ServiceConciliacion.cs" />
@@ -440,6 +452,13 @@
       <LastGenOutput>Model1.cs</LastGenOutput>
     </None>
     <None Include="packages.config" />
+    <None Include="Service References\ServiceFacturaElectronica\ServiceFacturaElectronica.wsdl" />
+    <None Include="Service References\ServiceFacturaElectronica\ServiceFacturaElectronica.xsd" />
+    <None Include="Service References\ServiceFacturaElectronica\ServiceFacturaElectronica1.xsd" />
+    <None Include="Service References\ServiceFacturaElectronica\ServiceFacturaElectronica2.xsd" />
+    <None Include="Service References\ServiceFacturaElectronica\SGLibrary.ServiceFacturaElectronica.ResultadoSolicitarCAE.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
     <None Include="SGLibCOM.pfx" />
     <None Include="SGLibCom2.pfx" />
   </ItemGroup>
@@ -452,6 +471,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="FrmEstadoDeCuenta.resx">
       <DependentUpon>FrmEstadoDeCuenta.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmFacturaElectronica.resx">
+      <DependentUpon>FrmFacturaElectronica.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FrmPrincipal.resx">
       <DependentUpon>FrmPrincipal.cs</DependentUpon>
@@ -730,6 +752,13 @@
     <Content Include="Imagenes_Varias\treeview_01.ico" />
     <Content Include="Imagenes_Varias\treeview_01.png" />
     <Content Include="Imagenes_Varias\treeview_02.gif" />
+    <None Include="Service References\ServiceFacturaElectronica\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\ServiceFacturaElectronica\configuration.svcinfo" />
+    <None Include="Service References\ServiceFacturaElectronica\configuration91.svcinfo" />
+    <None Include="Service References\ServiceFacturaElectronica\ServiceFacturaElectronica.disco" />
     <None Include="Resources\Image_btn_form_excel3.png" />
     <None Include="Resources\Image_btn_form_excel2.png" />
     <None Include="Resources\Image_btn_form_excel1.png" />
@@ -772,7 +801,9 @@
     <None Include="Imagenes_Varias\botones_form\btn_form_add11.png" />
     <None Include="Imagenes_Varias\botones_form\btn_form_add1.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <WCFMetadataStorage Include="Service References\ServiceFacturaElectronica\" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
