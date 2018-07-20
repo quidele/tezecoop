@@ -179,9 +179,8 @@ GO
 
 -- sp_helptext 'sp_obtenerComision_v4_7'
 
-
-
 GO
+
 
 
 ALTER procedure [dbo].[sp_obtenerComision_v4_7]
@@ -556,11 +555,156 @@ begin
 
 end;
   
+  
+
+GO
+
+IF   EXISTS (select * from sys.procedures where name  = 'sco_TB_Productos_v4_9_833') 
+BEGIN
+	DROP PROCEDURE  [dbo].sco_TB_Productos_v4_9_833
+END
+
+GO
 
 
+  -- Calcular el iva  para todos los productos que tengan precio x kilometro
+  /*
+	elemList.SubItems(8) = Round(CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100), 0)
+    elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    elemList.SubItems(12) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
+
+	create procedure [dbo].[SP_obtenerAlicuotaIVA]
+	@tpCategoriaIVA_param varchar(5)=null
+	as
+	begin
+
+		select vlParametro as PORC_IVA from tb_Parametros where dsParametro='PORC_IVA'
+		return;
+
+		if @tpCategoriaIVA_param='RI' 
+			select vlParametro as PORC_IVA from tb_Parametros where dsParametro='PORC_IVA'
+		else
+			select 0 as PORC_IVA
+	end 
 
 
+	vlIVA = objAFIP.CalcularIVA(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
+	
+	CREATE procedure [dbo].[SP_CalcularIVA]
+	@tpCategoriaIVA_param varchar(5),
+	@vlMonto_param float,
+	@vlAlicuota_param float,
+	@precio_menos_iva_param int=1
+	as
+	begin
+	declare @vlSubtotal float
+
+		if @precio_menos_iva_param=1
+		begin
+			if @vlAlicuota_param>=1
+				set @vlAlicuota_param=@vlAlicuota_param/100
+		
+			set @vlSubtotal = @vlMonto_param / (@vlAlicuota_param + 1)
+				select @vlSubtotal * @vlAlicuota_param as  IVA
+		end
+
+		if @precio_menos_iva_param=0
+		begin
+			if @vlAlicuota_param>=1
+				set @vlAlicuota_param=@vlAlicuota_param/100
+		
+			set @vlSubtotal =@vlMonto_param * @vlAlicuota_param 
+				select @vlSubtotal  as IVA
+		end
 
 
+	end 
+
+	Public Function CalcularCoeficienteTarjeta(ByVal vlIVA As Double, ByVal vlPorcentajeIVA As Double, ByVal vlPorcentajeTarjeta As Double) As Double
+	Dim resultado As Double
+    
+    If vlIVA = 0 Then
+        CalcularCoeficienteTarjeta = 1
+        Return
+    End If
+    
+    
+    resultado = 1 / ((2 + vlPorcentajeIVA / 100) + (vlPorcentajeTarjeta / 100) - (1 + vlPorcentajeIVA / 100) * (1 + vlPorcentajeTarjeta / 100))
+    CalcularCoeficienteTarjeta = resultado
+
+End Function
 
 
+    ListItemNuevo.SubItems(const_vlPrecioTC) = Round(CSng(lvlPrecioViaje) + (lvlPrecioViaje * PORC_RECARGO_TC / 100), 0)
+    ListItemNuevo.SubItems(const_vlPrecioTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
+    ListItemNuevo.SubItems(const_vlPrecioTP) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
+    ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTP) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
+                
+Public vlRecargo_TD       As Single
+Public vlRecargo_TC       As Single
+Public vlRecargo_TP       As Single
+Public vlPrecio_TD        As Single
+Public vlPrecio_TC        As Single
+Public vlPrecio_TP        As Single
+  */
+  Go
+
+
+CREATE PROCEDURE [dbo].sco_TB_Productos_v4_9_833 AS	
+BEGIN
+
+	/*DECLARE @PORC_IVA DECIMAL(4,2)
+	DECLARE @PORC_RECARGO_TC DECIMAL(4,2)
+	DECLARE @PORC_RECARGO_TD DECIMAL(4,2)
+	DECLARE @PORC_RECARGO_TP DECIMAL(4,2)
+
+	DECLARE @CalcularCoeficienteTD FLOAT
+	DECLARE @CalcularCoeficienteTC FLOAT
+	DECLARE @CalcularCoeficienteTP FLOAT
+
+	--- obtenemos la alicuota de iva
+	SELECT @PORC_IVA = REPLACE(vlParametro,',','.')   from tb_Parametros where dsParametro='PORC_IVA'
+	SELECT @PORC_RECARGO_TD = REPLACE(vlParametro,',','.')   from tb_Parametros where dsParametro='PORC_RECARGO_TD'
+	SELECT @PORC_RECARGO_TC = REPLACE(vlParametro,',','.')   from tb_Parametros where dsParametro='PORC_RECARGO_TC'
+	SELECT @PORC_RECARGO_TP = REPLACE(vlParametro,',','.')   from tb_Parametros where dsParametro='PORC_RECARGO_TP'
+
+	SELECT @CalcularCoeficienteTD = 1 / ((2 + @PORC_IVA / 100) + (@PORC_RECARGO_TD / 100) - (1 + @PORC_IVA / 100) * (1 + @PORC_RECARGO_TD / 100))
+	SELECT @CalcularCoeficienteTC = 1 / ((2 + @PORC_IVA / 100) + (@PORC_RECARGO_TC / 100) - (1 + @PORC_IVA / 100) * (1 + @PORC_RECARGO_TC / 100))
+	SELECT @CalcularCoeficienteTP = 1 / ((2 + @PORC_IVA / 100) + (@PORC_RECARGO_TP / 100) - (1 + @PORC_IVA / 100) * (1 + @PORC_RECARGO_TP / 100))
+	*/
+
+	SELECT  cdProducto,
+	        dsProducto,
+	        vlPrecioViaje,
+	        vlPrecioPeaje, 
+	        vlPorcentaje, 
+	        tpOperacion,
+			flMuestra, 
+			isnull(vlKilometros,0) as  vlKilometros,
+			tpDestino,
+			cdComision
+			
+			/**,
+			vlPrecioTC = CASE WHEN vlKilometros>0 THEN ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TC / 100) + @CalcularCoeficienteTC, 0)
+							  ELSE ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TC / 100), 0) END,
+			vlPrecioTD = CASE WHEN vlKilometros>0 THEN ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TD / 100) + @CalcularCoeficienteTD, 0)
+							  ELSE ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TD / 100), 0) END,
+			vlPrecioTP = CASE WHEN vlKilometros>0 THEN ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TP / 100) + @CalcularCoeficienteTP, 0)
+							  ELSE ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TP / 100), 0) END,
+			vlRecargo_TC  = CASE WHEN vlKilometros>0 THEN ROUND(vlPrecioViaje + (vlPrecioViaje * @PORC_RECARGO_TC / 100) + @CalcularCoeficienteTC, 0)
+							  ELSE ROUND((vlPrecioViaje * @PORC_RECARGO_TC / 100), 0) END,
+			vlRecargo_TD  = CASE WHEN vlKilometros>0 THEN ROUND((vlPrecioViaje * @PORC_RECARGO_TD / 100) + @CalcularCoeficienteTD, 0)
+							  ELSE ROUND((vlPrecioViaje * @PORC_RECARGO_TD / 100), 0) END,
+			vlRecargo_TP  = CASE WHEN vlKilometros>0 THEN ROUND((vlPrecioViaje * @PORC_RECARGO_TP / 100) + @CalcularCoeficienteTP, 0)
+							  ELSE ROUND((vlPrecioViaje * @PORC_RECARGO_TP / 100), 0) END
+			*/
+	FROM TB_Productos
+	where flEliminar=0 and
+	      flMuestra=1
+	Order by dsProducto;
+
+END
+
+GO 

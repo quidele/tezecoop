@@ -23,6 +23,7 @@ Public tpOperacion        As String
 Public vlKilometros       As String
 Public tpDestino          As String
 Public cdComision         As String
+Public PORC_IVA           As String
 Public PORC_RECARGO_TC    As Single
 Public PORC_RECARGO_TD    As Single
 Public PORC_RECARGO_TP    As Single
@@ -287,15 +288,28 @@ End Function
 
 
 Private Sub agregarValoresdeTarjetas(elemList As ListItem, Producto As rcProducto)
+Dim vlCoeficienteTC As Double
+Dim vlCoeficienteTD As Double
+Dim vlCoeficienteTP As Double
 
+    ' Version4.9.833 : Agregamos el coeficiente para el caso que tenga IVA
+    If Producto.vlKilometros > 0 Then
+        vlCoeficienteTC = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TC)
+        vlCoeficienteTD = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TD)
+        vlCoeficienteTP = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TP)
+    Else
+        vlCoeficienteTC = 1
+        vlCoeficienteTD = 1
+        vlCoeficienteTP = 1
+    End If
+        
     
-
     elemList.SubItems(10) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
     elemList.SubItems(11) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
     elemList.SubItems(13) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
-    elemList.SubItems(8) = Round(CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100), 0)
-    elemList.SubItems(9) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
-    elemList.SubItems(12) = Round(CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
+    elemList.SubItems(8) = Round((CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100)) * vlCoeficienteTC, 0)
+    elemList.SubItems(9) = Round((CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100)) * vlCoeficienteTD, 0)
+    elemList.SubItems(12) = Round((CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100)) * vlCoeficienteTP, 0)
     
 End Sub
 
@@ -305,7 +319,12 @@ Public Function esValorMontodelViajeunDestinoPredefinido _
 
 Dim vlPrecioViaje As Single
 Dim nI             As Long
+Dim vlCoeficienteTC As Double
+Dim vlCoeficienteTD As Double
+Dim vlCoeficienteTP As Double
 
+    
+        
     If vlMontoViajeIngresado = 0 Then
         esValorMontodelViajeunDestinoPredefinido = False
         Exit Function
@@ -333,12 +352,24 @@ Dim nI             As Long
                 Me.vlKilometros = lmProductos(nI).vlKilometros
                 Me.tpDestino = lmProductos(nI).tpDestino
                 Me.cdComision = lmProductos(nI).cdComision
+                
+                ' Version4.9.833 : Agregamos el coeficiente para el caso que tenga IVA
+                If lmProductos(nI).vlKilometros > 0 Then
+                    vlCoeficienteTC = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TC)
+                    vlCoeficienteTD = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TD)
+                    vlCoeficienteTP = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TP)
+                Else
+                    vlCoeficienteTC = 1
+                    vlCoeficienteTD = 1
+                    vlCoeficienteTP = 1
+                End If
+            
                 Me.vlRecargo_TD = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100, 0)
                 Me.vlRecargo_TC = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100, 0)
                 Me.vlRecargo_TP = Round(lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100, 0)
-                Me.vlPrecio_TD = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100), 0)
-                Me.vlPrecio_TC = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100), 0)
-                Me.vlPrecio_TP = Round(lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100), 0)
+                Me.vlPrecio_TD = Round((lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TD / 100)) * vlCoeficienteTD, 0)
+                Me.vlPrecio_TC = Round((lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TC / 100)) * vlCoeficienteTC, 0)
+                Me.vlPrecio_TP = Round((lmProductos(nI).vlPrecioViaje + (lmProductos(nI).vlPrecioViaje * Me.PORC_RECARGO_TP / 100)) * vlCoeficienteTP, 0)
                esValorMontodelViajeunDestinoPredefinido = True
                Exit Function
         End If

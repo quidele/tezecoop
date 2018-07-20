@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   140050433
+         Format          =   130023425
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2210,10 +2210,10 @@ Dim objCliente        As New CCliente
 Dim strMotivo         As String
 Dim flFacturaCtacte   As Boolean
 ' variables de la version 4.9
-Dim PORC_RECARGO_TD As Single
-Dim PORC_RECARGO_TC As Single
-Dim PORC_RECARGO_TP As Single
-Dim PORC_IVA As Single
+Public PORC_RECARGO_TD As Single
+Public PORC_RECARGO_TC As Single
+Public PORC_RECARGO_TP As Single
+Public PORC_IVA As Single
 
 
 
@@ -2429,23 +2429,40 @@ Dim vlTotalGeneral    As Single
     ListItemNuevo.SubItems(const_vlTotalViajes) = CStr(lvlPrecioViaje)
     ListItemNuevo.SubItems(const_cdComision) = ObtenerCampo("cdComision").Text
     
-        ' campos de la version 4.9
-    Dim PORC_RECARGO_TC    As Single
-    Dim PORC_RECARGO_TD    As Single
-    Dim PORC_RECARGO_TP    As Single
+    
+    Dim vlCoeficienteTC As Double
+    Dim vlCoeficienteTD As Double
+    Dim vlCoeficienteTP As Double
+
+    If ObtenerCampo("vlKilometros").Text = "" Then ObtenerCampo("vlKilometros").Text = "0"
+    
+    ' Version4.9.833 : Agregamos el coeficiente para el caso que tenga IVA
+    If ObtenerCampo("vlKilometros").Text > 0 Then
+        vlCoeficienteTC = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TC)
+        vlCoeficienteTD = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TD)
+        vlCoeficienteTP = objAFIP.CalcularCoeficienteTarjeta(1, Me.PORC_IVA, Me.PORC_RECARGO_TP)
+    Else
+        vlCoeficienteTC = 1
+        vlCoeficienteTD = 1
+        vlCoeficienteTP = 1
+    End If
         
+'    Realizado en la clase producto
+'    elemList.SubItems(10) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
+'    elemList.SubItems(11) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
+'    elemList.SubItems(13) = Round(CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
+'    elemList.SubItems(8) = Round((CSng(Producto.vlPrecioViaje) + (Producto.vlPrecioViaje * PORC_RECARGO_TC / 100)) * vlCoeficienteTC, 0)
+'    elemList.SubItems(9) = Round((CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TD / 100)) * vlCoeficienteTD, 0)
+'    elemList.SubItems(12) = Round((CSng(Producto.vlPrecioViaje) + (CSng(Producto.vlPrecioViaje) * PORC_RECARGO_TP / 100)) * vlCoeficienteTP, 0)
+
+
         
-    PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
-    PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
-    PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
-        
-        
-    ListItemNuevo.SubItems(const_vlPrecioTC) = Round(CSng(lvlPrecioViaje) + (lvlPrecioViaje * PORC_RECARGO_TC / 100), 0)
-    ListItemNuevo.SubItems(const_vlPrecioTD) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100), 0)
-    ListItemNuevo.SubItems(const_vlPrecioTP) = Round(CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100), 0)
-    ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TC / 100, 0)
-    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TD / 100, 0)
-    ListItemNuevo.SubItems(const_vlRecargoTP) = Round(CSng(lvlPrecioViaje) * PORC_RECARGO_TP / 100, 0)
+    ListItemNuevo.SubItems(const_vlPrecioTC) = Round((CSng(lvlPrecioViaje) + (lvlPrecioViaje * Me.PORC_RECARGO_TC / 100)) * vlCoeficienteTC, 0)
+    ListItemNuevo.SubItems(const_vlPrecioTD) = Round((CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * Me.PORC_RECARGO_TD / 100)) * vlCoeficienteTD, 0)
+    ListItemNuevo.SubItems(const_vlPrecioTP) = Round((CSng(lvlPrecioViaje) + (CSng(lvlPrecioViaje) * Me.PORC_RECARGO_TP / 100)) * vlCoeficienteTP, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTC) = Round(CSng(lvlPrecioViaje) * Me.PORC_RECARGO_TC / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTD) = Round(CSng(lvlPrecioViaje) * Me.PORC_RECARGO_TD / 100, 0)
+    ListItemNuevo.SubItems(const_vlRecargoTP) = Round(CSng(lvlPrecioViaje) * Me.PORC_RECARGO_TP / 100, 0)
                 
     setearCondicionVentayComision
     Recalculo_operaciones
@@ -2618,7 +2635,7 @@ On Error Resume Next
     ' AGREGAR LOGICA DEL COEFICIENTE
     ' MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
-    If objConfig.dsDSN = "SQL_Remoto_Pruebas" Then
+    If objConfig.dsDSN = "SQL_Remoto_PruebasXXXXXX" Then
         ' Solicitamos Puesto
         
         Dim coeficiente As Double
@@ -3585,15 +3602,16 @@ Dim strSQL_Params As String
     
     
     
-    PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
-    PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
-    PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
-    PORC_IVA = objParametros.ObtenerValorBD("PORC_IVA")
+    Me.PORC_RECARGO_TD = objParametros.ObtenerValorBD("PORC_RECARGO_TD")
+    Me.PORC_RECARGO_TC = objParametros.ObtenerValorBD("PORC_RECARGO_TC")
+    Me.PORC_RECARGO_TP = objParametros.ObtenerValorBD("PORC_RECARGO_TP")
+    Me.PORC_IVA = objParametros.ObtenerValorBD("PORC_IVA")
     
         
     objProductos.PORC_RECARGO_TC = PORC_RECARGO_TC
     objProductos.PORC_RECARGO_TD = PORC_RECARGO_TD
     objProductos.PORC_RECARGO_TP = PORC_RECARGO_TP
+    objProductos.PORC_IVA = PORC_IVA
     
         '-- ADD Version  4.7
     
@@ -5927,6 +5945,8 @@ Dim i    As Integer
     ' campos de la version 4.9
     ObtenerCampo("vlPrecioTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTC)
     ObtenerCampo("vlPrecioTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTD)
+    ObtenerCampo("vlPrecioTP").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlPrecioTP)
+    ObtenerCampo("vlRecargoTD").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTD)
     ObtenerCampo("vlRecargoTC").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTC)
     ObtenerCampo("vlRecargoTP").Text = Me.lstBusquedaProductos.SelectedItem.SubItems(const_vlRecargoTP)
     
