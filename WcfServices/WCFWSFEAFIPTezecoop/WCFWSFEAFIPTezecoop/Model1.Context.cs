@@ -13,10 +13,10 @@ namespace WCFWSFEAFIPTezecoop
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class FacturaElectronicaEntities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public FacturaElectronicaEntities()
+            : base("name=FacturaElectronicaEntities")
         {
         }
     
@@ -26,6 +26,7 @@ namespace WCFWSFEAFIPTezecoop
         }
     
         public virtual DbSet<cbtesasoc> cbtesasoc { get; set; }
+        public virtual DbSet<cmpasociados> cmpasociados { get; set; }
         public virtual DbSet<comprobante> comprobante { get; set; }
         public virtual DbSet<comprobantes_ml> comprobantes_ml { get; set; }
         public virtual DbSet<conceptos> conceptos { get; set; }
@@ -38,12 +39,12 @@ namespace WCFWSFEAFIPTezecoop
         public virtual DbSet<idioma> idioma { get; set; }
         public virtual DbSet<incoterms> incoterms { get; set; }
         public virtual DbSet<lote> lote { get; set; }
+        public virtual DbSet<mapeo_comprobantes> mapeo_comprobantes { get; set; }
         public virtual DbSet<moneda> moneda { get; set; }
         public virtual DbSet<observaciones> observaciones { get; set; }
         public virtual DbSet<paises> paises { get; set; }
         public virtual DbSet<permisodestino> permisodestino { get; set; }
         public virtual DbSet<simulacion> simulacion { get; set; }
-        public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<tipo_comprobante> tipo_comprobante { get; set; }
         public virtual DbSet<tipo_documento> tipo_documento { get; set; }
         public virtual DbSet<tipos_responsables> tipos_responsables { get; set; }

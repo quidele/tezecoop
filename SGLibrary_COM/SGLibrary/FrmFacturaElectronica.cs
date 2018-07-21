@@ -60,6 +60,10 @@ namespace SGLibrary
             EndpointAddress endpoint = new EndpointAddress("http://localhost:49857/ServiceFacturaElectronica.svc?wsdl");
             ServiceFacturaElectronicaClient client = new ServiceFacturaElectronicaClient (binding, endpoint);
 
+
+            var un_comprobante = new comprobantes_ml(); 
+            
+            client.SolicitarCAE(new comprobantes_ml());
             client.DoWork();
             client.Close();
         }

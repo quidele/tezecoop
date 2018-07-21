@@ -18,21 +18,21 @@ namespace WCFWSFEAFIPTezecoop
 
 
 
-        ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(comprobantes_ml un_comprobante_ml)
+        ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(decimal IdSolicitud)
         {
             // el objeto un_comprobante_ml dbera ser adaptado a la estructura de WEBServer AFIP 
             // throw new NotImplementedException();
             
             // grabar modelo decimal datos
 
-            using (var context = new Entities())
+            using (var context = new FacturaElectronicaEntities())
             {
                 /* var un_comprobantes_ml_BD = context.comprobantes_ml.Find(un_comprobante_ml.idsolicitud);
                 if (un_comprobantes_ml_BD == null) 
                     context.comprobantes_ml.Add(un_comprobante_ml);
                 else */
 
-                    context.comprobantes_ml.Add(un_comprobante_ml);
+                context.comprobantes_ml.Add(new comprobantes_ml());
 
                 context.SaveChanges();
             }

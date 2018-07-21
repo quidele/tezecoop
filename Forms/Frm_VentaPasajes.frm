@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -949,7 +949,7 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   300
          Index           =   1
-         Left            =   135
+         Left            =   120
          Locked          =   -1  'True
          TabIndex        =   5
          Tag             =   "dsProducto"
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   130023425
+         Format          =   154861569
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2434,7 +2434,7 @@ Dim vlTotalGeneral    As Single
     Dim vlCoeficienteTD As Double
     Dim vlCoeficienteTP As Double
 
-    If ObtenerCampo("vlKilometros").Text = "" Then ObtenerCampo("vlKilometros").Text = "0"
+    If Not IsNumeric(ObtenerCampo("vlKilometros").Text) Then ObtenerCampo("vlKilometros").Text = "0"
     
     ' Version4.9.833 : Agregamos el coeficiente para el caso que tenga IVA
     If ObtenerCampo("vlKilometros").Text > 0 Then

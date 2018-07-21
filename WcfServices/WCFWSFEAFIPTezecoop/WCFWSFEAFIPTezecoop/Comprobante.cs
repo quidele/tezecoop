@@ -16,6 +16,7 @@ namespace WCFWSFEAFIPTezecoop
     {
         public comprobante()
         {
+            this.cmpasociados = new HashSet<cmpasociados>();
             this.detalle = new HashSet<detalle>();
             this.formaspago = new HashSet<formaspago>();
             this.permisodestino = new HashSet<permisodestino>();
@@ -54,6 +55,7 @@ namespace WCFWSFEAFIPTezecoop
         public string nom_moneda_ingles { get; set; }
         public Nullable<int> nro_doc { get; set; }
     
+        public virtual ICollection<cmpasociados> cmpasociados { get; set; }
         public virtual conceptos conceptos { get; set; }
         public virtual destinos destinos { get; set; }
         public virtual idioma idioma1 { get; set; }

@@ -12,6 +12,18 @@
     <Property Name="PtoVta" Type="int" Nullable="false" />
     <Property Name="Nro" Type="numeric" Precision="8" Scale="0" Nullable="false" />
   </EntityType>
+  <EntityType Name="cmpasociados">
+    <Key>
+      <PropertyRef Name="idsolicitud" />
+      <PropertyRef Name="ptovtaasoc" />
+      <PropertyRef Name="nroasoc" />
+      <PropertyRef Name="Cbte_tipo" />
+    </Key>
+    <Property Name="idsolicitud" Type="int" Nullable="false" />
+    <Property Name="ptovtaasoc" Type="numeric" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="nroasoc" Type="numeric" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="Cbte_tipo" Type="nchar" MaxLength="10" Nullable="false" />
+  </EntityType>
   <EntityType Name="comprobante">
     <Key>
       <PropertyRef Name="idsolicitud" />
@@ -174,6 +186,18 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
     <Property Name="lote" Type="int" Nullable="false" />
     <Property Name="fecha" Type="datetime" />
   </EntityType>
+  <EntityType Name="mapeo_comprobantes">
+    <Key>
+      <PropertyRef Name="cod_doc_magma" />
+      <PropertyRef Name="nro_serie_magma" />
+      <PropertyRef Name="cod_doc_magma_afip" />
+      <PropertyRef Name="nro_serie_afip" />
+    </Key>
+    <Property Name="cod_doc_magma" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nro_serie_magma" Type="int" Nullable="false" />
+    <Property Name="cod_doc_magma_afip" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nro_serie_afip" Type="int" Nullable="false" />
+  </EntityType>
   <EntityType Name="moneda">
     <Key>
       <PropertyRef Name="cod_moneda" />
@@ -213,16 +237,6 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
       <PropertyRef Name="nro_simu" />
     </Key>
     <Property Name="nro_simu" Type="int" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
-    <Property Name="principal_id" Type="int" Nullable="false" />
-    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="version" Type="int" />
-    <Property Name="definition" Type="varbinary(max)" />
   </EntityType>
   <EntityType Name="tipo_comprobante">
     <Key>
@@ -278,6 +292,18 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
       </Principal>
       <Dependent Role="cbtesasoc">
         <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cmpasociados_comprobante">
+    <End Role="comprobante" Type="Self.comprobante" Multiplicity="1" />
+    <End Role="cmpasociados" Type="Self.cmpasociados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comprobante">
+        <PropertyRef Name="idsolicitud" />
+      </Principal>
+      <Dependent Role="cmpasociados">
+        <PropertyRef Name="idsolicitud" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -535,6 +561,7 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
   </Association>
   <EntityContainer Name="FacturaElectronicaModelStoreContainer">
     <EntitySet Name="cbtesasoc" EntityType="Self.cbtesasoc" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="cmpasociados" EntityType="Self.cmpasociados" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="comprobante" EntityType="Self.comprobante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="comprobantes_ml" EntityType="Self.comprobantes_ml" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="conceptos" EntityType="Self.conceptos" Schema="dbo" store:Type="Tables" />
@@ -547,12 +574,12 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
     <EntitySet Name="idioma" EntityType="Self.idioma" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="incoterms" EntityType="Self.incoterms" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="lote" EntityType="Self.lote" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="mapeo_comprobantes" EntityType="Self.mapeo_comprobantes" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="moneda" EntityType="Self.moneda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="observaciones" EntityType="Self.observaciones" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="paises" EntityType="Self.paises" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="permisodestino" EntityType="Self.permisodestino" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="simulacion" EntityType="Self.simulacion" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_comprobante" EntityType="Self.tipo_comprobante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="tipos_responsables" EntityType="Self.tipos_responsables" Schema="dbo" store:Type="Tables" />
@@ -564,6 +591,10 @@ advertencia 6013: La tabla o vista 'FacturaElectronica.dbo.cuit_paises' no tiene
     <AssociationSet Name="FK_cbtesasoc_tipo_comprobante" Association="Self.FK_cbtesasoc_tipo_comprobante">
       <End Role="tipo_comprobante" EntitySet="tipo_comprobante" />
       <End Role="cbtesasoc" EntitySet="cbtesasoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cmpasociados_comprobante" Association="Self.FK_cmpasociados_comprobante">
+      <End Role="comprobante" EntitySet="comprobante" />
+      <End Role="cmpasociados" EntitySet="cmpasociados" />
     </AssociationSet>
     <AssociationSet Name="FK_comprobante_conceptos" Association="Self.FK_comprobante_conceptos">
       <End Role="conceptos" EntitySet="conceptos" />

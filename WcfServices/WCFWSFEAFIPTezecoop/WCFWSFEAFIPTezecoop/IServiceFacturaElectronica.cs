@@ -15,7 +15,7 @@ namespace WCFWSFEAFIPTezecoop
         void DoWork();
 
         [OperationContract]
-        ResultadoSolicitarCAE SolicitarCAE(comprobantes_ml un_comprobante_ml);
+        ResultadoSolicitarCAE SolicitarCAE(decimal IdSolicitud);
         
     }
 }

@@ -132,3 +132,5 @@ C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.dll
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.pdb
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
 C:\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmFacturaElectronica.resources
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\SGLibrary_COM\SGLibrary\obj\x86\Debug\SGLibrary.FrmFacturaElectronica.resources

@@ -1,0 +1,281 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="FacturaElectronicaModelStoreContainer" CdmEntityContainer="FacturaElectronicaEntities">
+    <EntitySetMapping Name="cbtesasoc">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.cbtesasoc">
+        <MappingFragment StoreEntitySet="cbtesasoc">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="Tipo" ColumnName="Tipo" />
+          <ScalarProperty Name="PtoVta" ColumnName="PtoVta" />
+          <ScalarProperty Name="Nro" ColumnName="Nro" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="cmpasociados">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.cmpasociados">
+        <MappingFragment StoreEntitySet="cmpasociados">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="ptovtaasoc" ColumnName="ptovtaasoc" />
+          <ScalarProperty Name="nroasoc" ColumnName="nroasoc" />
+          <ScalarProperty Name="Cbte_tipo" ColumnName="Cbte_tipo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprobante">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.comprobante">
+        <MappingFragment StoreEntitySet="comprobante">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="tipo" ColumnName="tipo" />
+          <ScalarProperty Name="ptovta" ColumnName="ptovta" />
+          <ScalarProperty Name="cuitemisor" ColumnName="cuitemisor" />
+          <ScalarProperty Name="fechaemision" ColumnName="fechaemision" />
+          <ScalarProperty Name="idioma" ColumnName="idioma" />
+          <ScalarProperty Name="concepto" ColumnName="concepto" />
+          <ScalarProperty Name="ape" ColumnName="ape" />
+          <ScalarProperty Name="moneda" ColumnName="moneda" />
+          <ScalarProperty Name="tipocambio" ColumnName="tipocambio" />
+          <ScalarProperty Name="destinocmp" ColumnName="destinocmp" />
+          <ScalarProperty Name="tipodocreceptor" ColumnName="tipodocreceptor" />
+          <ScalarProperty Name="nrodocreceptor" ColumnName="nrodocreceptor" />
+          <ScalarProperty Name="idimpositivoreceptor" ColumnName="idimpositivoreceptor" />
+          <ScalarProperty Name="receptor" ColumnName="receptor" />
+          <ScalarProperty Name="domicilioreceptor" ColumnName="domicilioreceptor" />
+          <ScalarProperty Name="importetotal" ColumnName="importetotal" />
+          <ScalarProperty Name="incoterms" ColumnName="incoterms" />
+          <ScalarProperty Name="detalleincoterms" ColumnName="detalleincoterms" />
+          <ScalarProperty Name="otrosdatoscomerciales" ColumnName="otrosdatoscomerciales" />
+          <ScalarProperty Name="otrosdatosgenerales" ColumnName="otrosdatosgenerales" />
+          <ScalarProperty Name="estado_envio" ColumnName="estado_envio" />
+          <ScalarProperty Name="observa_envio" ColumnName="observa_envio" />
+          <ScalarProperty Name="codaut" ColumnName="codaut" />
+          <ScalarProperty Name="vtocodaut" ColumnName="vtocodaut" />
+          <ScalarProperty Name="nro" ColumnName="nro" />
+          <ScalarProperty Name="codtarea" ColumnName="codtarea" />
+          <ScalarProperty Name="estadocmp" ColumnName="estadocmp" />
+          <ScalarProperty Name="fechacreacion" ColumnName="fechacreacion" />
+          <ScalarProperty Name="lote" ColumnName="lote" />
+          <ScalarProperty Name="nom_moneda_ingles" ColumnName="nom_moneda_ingles" />
+          <ScalarProperty Name="nro_doc" ColumnName="nro_doc" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="comprobantes_ml">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.comprobantes_ml">
+        <MappingFragment StoreEntitySet="comprobantes_ml">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="CbteTipo" ColumnName="CbteTipo" />
+          <ScalarProperty Name="PtoVta" ColumnName="PtoVta" />
+          <ScalarProperty Name="Concepto" ColumnName="Concepto" />
+          <ScalarProperty Name="DocTipo" ColumnName="DocTipo" />
+          <ScalarProperty Name="DocNro" ColumnName="DocNro" />
+          <ScalarProperty Name="CbteDesde" ColumnName="CbteDesde" />
+          <ScalarProperty Name="CbteHasta" ColumnName="CbteHasta" />
+          <ScalarProperty Name="CbteFch" ColumnName="CbteFch" />
+          <ScalarProperty Name="ImpTotal" ColumnName="ImpTotal" />
+          <ScalarProperty Name="ImpTotConc" ColumnName="ImpTotConc" />
+          <ScalarProperty Name="ImpNeto" ColumnName="ImpNeto" />
+          <ScalarProperty Name="ImpOpEx" ColumnName="ImpOpEx" />
+          <ScalarProperty Name="ImpIVA" ColumnName="ImpIVA" />
+          <ScalarProperty Name="ImpTrib" ColumnName="ImpTrib" />
+          <ScalarProperty Name="FchServDesde" ColumnName="FchServDesde" />
+          <ScalarProperty Name="FchServHasta" ColumnName="FchServHasta" />
+          <ScalarProperty Name="FchVtoPago" ColumnName="FchVtoPago" />
+          <ScalarProperty Name="MonId" ColumnName="MonId" />
+          <ScalarProperty Name="MonCotiz" ColumnName="MonCotiz" />
+          <ScalarProperty Name="estado_envio" ColumnName="estado_envio" />
+          <ScalarProperty Name="CAE" ColumnName="CAE" />
+          <ScalarProperty Name="CAEFchVto" ColumnName="CAEFchVto" />
+          <ScalarProperty Name="nro_doc_afip" ColumnName="nro_doc_afip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="conceptos">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.conceptos">
+        <MappingFragment StoreEntitySet="conceptos">
+          <ScalarProperty Name="cod_concepto" ColumnName="cod_concepto" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="condicion_iva">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.condicion_iva">
+        <MappingFragment StoreEntitySet="condicion_iva">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="destinos">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.destinos">
+        <MappingFragment StoreEntitySet="destinos">
+          <ScalarProperty Name="cod_destino" ColumnName="cod_destino" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.detalle">
+        <MappingFragment StoreEntitySet="detalle">
+          <ScalarProperty Name="idItem" ColumnName="idItem" />
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="cod" ColumnName="cod" />
+          <ScalarProperty Name="desc" ColumnName="desc" />
+          <ScalarProperty Name="unimed" ColumnName="unimed" />
+          <ScalarProperty Name="cant" ColumnName="cant" />
+          <ScalarProperty Name="preciounit" ColumnName="preciounit" />
+          <ScalarProperty Name="importe" ColumnName="importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_iva">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.detalle_iva">
+        <MappingFragment StoreEntitySet="detalle_iva">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="BaseImp" ColumnName="BaseImp" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="detalle_tributos">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.detalle_tributos">
+        <MappingFragment StoreEntitySet="detalle_tributos">
+          <ScalarProperty Name="idtabla" ColumnName="idtabla" />
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Descripcion" ColumnName="Descripcion" />
+          <ScalarProperty Name="BaseImp" ColumnName="BaseImp" />
+          <ScalarProperty Name="Alic" ColumnName="Alic" />
+          <ScalarProperty Name="Importe" ColumnName="Importe" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="formaspago">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.formaspago">
+        <MappingFragment StoreEntitySet="formaspago">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="idioma">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.idioma">
+        <MappingFragment StoreEntitySet="idioma">
+          <ScalarProperty Name="cod_idioma" ColumnName="cod_idioma" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="incoterms">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.incoterms">
+        <MappingFragment StoreEntitySet="incoterms">
+          <ScalarProperty Name="cod_incoterms" ColumnName="cod_incoterms" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="lote">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.lote">
+        <MappingFragment StoreEntitySet="lote">
+          <ScalarProperty Name="lote1" ColumnName="lote" />
+          <ScalarProperty Name="fecha" ColumnName="fecha" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="mapeo_comprobantes">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.mapeo_comprobantes">
+        <MappingFragment StoreEntitySet="mapeo_comprobantes">
+          <ScalarProperty Name="cod_doc_magma" ColumnName="cod_doc_magma" />
+          <ScalarProperty Name="nro_serie_magma" ColumnName="nro_serie_magma" />
+          <ScalarProperty Name="cod_doc_magma_afip" ColumnName="cod_doc_magma_afip" />
+          <ScalarProperty Name="nro_serie_afip" ColumnName="nro_serie_afip" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="moneda">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.moneda">
+        <MappingFragment StoreEntitySet="moneda">
+          <ScalarProperty Name="cod_moneda" ColumnName="cod_moneda" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="observaciones">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.observaciones">
+        <MappingFragment StoreEntitySet="observaciones">
+          <ScalarProperty Name="idObservacion" ColumnName="idObservacion" />
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="Code" ColumnName="Code" />
+          <ScalarProperty Name="Msg" ColumnName="Msg" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="paises">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.paises">
+        <MappingFragment StoreEntitySet="paises">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="denominacion" ColumnName="denominacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="permisodestino">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.permisodestino">
+        <MappingFragment StoreEntitySet="permisodestino">
+          <ScalarProperty Name="idsolicitud" ColumnName="idsolicitud" />
+          <ScalarProperty Name="permisoemb" ColumnName="permisoemb" />
+          <ScalarProperty Name="destino" ColumnName="destino" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="simulacion">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.simulacion">
+        <MappingFragment StoreEntitySet="simulacion">
+          <ScalarProperty Name="nro_simu" ColumnName="nro_simu" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_comprobante">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.tipo_comprobante">
+        <MappingFragment StoreEntitySet="tipo_comprobante">
+          <ScalarProperty Name="cod_tipo_comprobante" ColumnName="cod_tipo_comprobante" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+          <ScalarProperty Name="permitidoenfonseca" ColumnName="permitidoenfonseca" />
+          <ScalarProperty Name="requiere_cmp_asociado" ColumnName="requiere_cmp_asociado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipo_documento">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.tipo_documento">
+        <MappingFragment StoreEntitySet="tipo_documento">
+          <ScalarProperty Name="cod_tipo_documento" ColumnName="cod_tipo_documento" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tipos_responsables">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.tipos_responsables">
+        <MappingFragment StoreEntitySet="tipos_responsables">
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="descripcion" ColumnName="descripcion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="unidad_medida">
+      <EntityTypeMapping TypeName="FacturaElectronicaModel.unidad_medida">
+        <MappingFragment StoreEntitySet="unidad_medida">
+          <ScalarProperty Name="cod_unidad_medida" ColumnName="cod_unidad_medida" />
+          <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+          <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
