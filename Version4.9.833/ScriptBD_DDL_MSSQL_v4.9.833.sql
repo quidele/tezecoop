@@ -558,12 +558,12 @@ end;
   
 
 GO
-
+/*
 IF   EXISTS (select * from sys.procedures where name  = 'sco_TB_Productos_v4_9_833') 
 BEGIN
 	DROP PROCEDURE  [dbo].sco_TB_Productos_v4_9_833
 END
-
+*/
 GO
 
 
@@ -652,7 +652,7 @@ Public vlPrecio_TP        As Single
   Go
 
 
-CREATE PROCEDURE [dbo].sco_TB_Productos_v4_9_833 AS	
+ALTER PROCEDURE [dbo].sco_TB_Productos_v4_1 AS	
 BEGIN
 
 	/*DECLARE @PORC_IVA DECIMAL(4,2)
@@ -708,3 +708,4 @@ BEGIN
 END
 
 GO 
+select  * from TB_Productos  where cdProducto = 90364

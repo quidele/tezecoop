@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   154861569
+         Format          =   304283649
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2214,6 +2214,7 @@ Public PORC_RECARGO_TD As Single
 Public PORC_RECARGO_TC As Single
 Public PORC_RECARGO_TP As Single
 Public PORC_IVA As Single
+Public nro_trans  As String
 
 
 
@@ -3013,12 +3014,17 @@ Private Function FacturarBD() As Boolean
 
     FacturarBD = False
     
+    
+    
     ' version 4.1
     If Not objCajas.esCajaAbierta(ObtenerCampo("nrCaja").Text) Then
         MsgBox "La caja puesto ' " + ObtenerCampo("nrCaja").Text + "' en la que intenta facturar se encuentra cerrada, el programa se cerrará.", vbCritical + vbDefaultButton1, "Atención"
         End
         Exit Function
     End If
+    
+    
+    Me.nro_trans = objbasededatos.SP_ObtenerMaxNumerador("nro_trans")
     
     
     
@@ -4194,6 +4200,10 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "nrCaja", "<-", ObtenerCampo("nrCaja").Text
         ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", ObtenerCampo("nrPuesto").Text
         
+        ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+        
+        
+        
         If ObjTablasIO.Insertar() Then
             GrabarItemsFactura = True
         Else
@@ -4344,6 +4354,11 @@ Dim vlComision    As Single
         ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
         
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
+        
+        If objConfig.dsDSN = "SQL_Remoto_Pruebas" Then
+            ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+        End If
+        
         
         If ObjTablasIO.Insertar() Then
             objDiccionariodeDatos.GuardarSiguienteValor "TB_Cupones", "nrCupon", objParametros.ObtenerValor("Frm_VentaPasajes.nrPuesto")
@@ -4507,7 +4522,6 @@ Dim strSQL       As String
         ObtenerCampo("tpComprobante").Text = "RE"  ' Recibo
     End If
     
-    
 
     Select Case objParametros.ObtenerValor("Frm_VentaPasajes.desde")
     Case "puesto"
@@ -4626,6 +4640,9 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor "nrTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrTarjeta")
     ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
     ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
+    
+    ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+    
     
     ' Datos agregados en la version 4.9
     

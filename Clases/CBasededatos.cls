@@ -1110,6 +1110,29 @@ Public Function rs_resultados_valor(pnom_valor As Variant) As String
     
 End Function
 
+
+Public Function SP_ObtenerMaxNumerador(pNumerador As String) As String
+Dim rsCmd  As Object
+Dim strSQL As String
+
+
+    Set rsCmd = CreateObject("ADODB.Command")
+    
+    ReabrirlaConexion
+    
+    Set rsCmd.ActiveConnection = lobjConn
+    
+    rsCmd.CommandTimeout = lCommandTimeout
+    rsCmd.CommandType = adCmdStoredProc
+    rsCmd.CommandText = "SP_ObtenerProximoValorNumerador"
+    rsCmd.Parameters(0) = rsCmd.CreateParameter("numerador", , adParamReturnValue)
+    rsCmd.Execute  ' obtiene e incrementa el parametro en transaccion
+    SP_ObtenerMaxNumerador = CDbl(rsCmd(0).value)
+    
+    
+End Function
+
+
 Private Sub Class_Initialize()
     lCommandTimeout = 120
 End Sub

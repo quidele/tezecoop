@@ -1884,6 +1884,3 @@ Dim vlPrecioxKilometro   As Double
     
 End Sub
 
-Private Sub txtLabel_Change(Index As Integer)
-
-End Sub
