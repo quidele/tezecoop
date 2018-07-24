@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   304283649
+         Format          =   76152833
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2636,7 +2636,7 @@ On Error Resume Next
     ' AGREGAR LOGICA DEL COEFICIENTE
     ' MsgBox "AGREGAR LOGICA DEL COEFICIENTE"
     
-    If objConfig.dsDSN = "SQL_Remoto_PruebasXXXXXX" Then
+    If AppVersionNumerico() >= 498333 Then
         ' Solicitamos Puesto
         
         Dim coeficiente As Double
@@ -3023,8 +3023,9 @@ Private Function FacturarBD() As Boolean
         Exit Function
     End If
     
-    
-    Me.nro_trans = objbasededatos.SP_ObtenerMaxNumerador("nro_trans")
+    If AppVersionNumerico() >= 498334 Then
+                Me.nro_trans = objbasededatos.SP_ObtenerMaxNumerador("nro_trans")
+    End If
     
     
     
@@ -3173,6 +3174,27 @@ Private Function FacturarBD() As Boolean
                 End If
                 
             End Select
+
+            ' FACTURA ELECTONICA
+            If AppVersionNumerico() >= 498334 Then
+                objLog.Grabar_Log ("--------- INICIA ---- Nueva logica de Factura Electronica--- ")
+                If objParametros.ObtenerValor("Frm_VentaPasajes.desde") = "puesto" Then
+                objLog.Grabar_Log ("Situacion puesto.cajapuesto ")
+                
+                Dim objServiceFacturaElectronica As Object
+    
+                ' v4.9.8334
+                objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceFacturaElectronica"
+                Set objServiceFacturaElectronica = CreateObject("SGLibrary.FacturaElectronica.ServiceFacturaElectronicaCliente")
+                objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServiceFacturaElectronica OK "
+    
+                Dim resp As Boolean
+                resp = objServiceFacturaElectronica.SolicitarCAE(nro_trans)
+                MsgBox resp
+                End If
+            End If
+                        
+            
             
            On Error Resume Next
            objbasededatos.CommitTrans
@@ -4199,8 +4221,10 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", "0"
         ObjTablasIO.setearCampoOperadorValor "nrCaja", "<-", ObtenerCampo("nrCaja").Text
         ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", ObtenerCampo("nrPuesto").Text
-        
-        ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+
+        If AppVersionNumerico() >= 498334 Then
+                ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+        End If
         
         
         
@@ -4355,7 +4379,7 @@ Dim vlComision    As Single
         
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
         
-        If objConfig.dsDSN = "SQL_Remoto_Pruebas" Then
+        If AppVersionNumerico() >= 498334 Then
             ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
         End If
         
@@ -4641,7 +4665,9 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
     ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
     
-    ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+    If AppVersionNumerico() >= 498334 Then
+            ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
+    End If
     
     
     ' Datos agregados en la version 4.9

@@ -61,9 +61,7 @@ namespace SGLibrary
             ServiceFacturaElectronicaClient client = new ServiceFacturaElectronicaClient (binding, endpoint);
 
 
-            var un_comprobante = new comprobantes_ml(); 
-            
-            client.SolicitarCAE(new comprobantes_ml());
+            client.SolicitarCAE(1326547);
             client.DoWork();
             client.Close();
         }

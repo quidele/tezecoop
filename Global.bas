@@ -470,3 +470,10 @@ Public Sub Error_de_Conexion()
     End
     
 End Sub
+
+' obtenemos la version en formato numerico
+Public Function AppVersionNumerico() As Single
+
+    AppVersionNumerico = (CLng(App.Major) * 100000) + (CLng(App.Minor) * 10000) + CLng(App.Revision)
+ 
+End Function

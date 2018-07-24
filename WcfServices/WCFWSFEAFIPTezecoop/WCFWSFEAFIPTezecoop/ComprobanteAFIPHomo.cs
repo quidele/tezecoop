@@ -42,6 +42,8 @@ namespace WCFWSFEAFIPTezecoop
             feAuthRequest.Token = _ticket.Token;
             ServiceSoapClient client = new ServiceSoapClient();
             FECAEResponse result = client.FECAESolicitar(feAuthRequest, AdaptarComprobanteaFECAERequest(p_comprobante_ml));
+
+            
             // falta inconporar los try - cacth
             // falta loguear
             return new ResultadoSolicitarCAE(); 

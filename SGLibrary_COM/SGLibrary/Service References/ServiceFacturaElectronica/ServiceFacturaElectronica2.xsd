@@ -14,14 +14,14 @@
   <xs:element name="SolicitarCAE">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFWSFEAFIPTezecoop" minOccurs="0" name="un_comprobante_ml" nillable="true" type="q1:comprobantes_ml" />
+        <xs:element minOccurs="0" name="IdSolicitud" type="xs:decimal" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>
   <xs:element name="SolicitarCAEResponse">
     <xs:complexType>
       <xs:sequence>
-        <xs:element xmlns:q2="http://schemas.datacontract.org/2004/07/WCFWSFEAFIPTezecoop" minOccurs="0" name="SolicitarCAEResult" nillable="true" type="q2:ResultadoSolicitarCAE" />
+        <xs:element xmlns:q1="http://schemas.datacontract.org/2004/07/WCFWSFEAFIPTezecoop" minOccurs="0" name="SolicitarCAEResult" nillable="true" type="q1:ResultadoSolicitarCAE" />
       </xs:sequence>
     </xs:complexType>
   </xs:element>

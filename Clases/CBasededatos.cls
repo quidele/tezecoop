@@ -1125,7 +1125,10 @@ Dim strSQL As String
     rsCmd.CommandTimeout = lCommandTimeout
     rsCmd.CommandType = adCmdStoredProc
     rsCmd.CommandText = "SP_ObtenerProximoValorNumerador"
-    rsCmd.Parameters(0) = rsCmd.CreateParameter("numerador", , adParamReturnValue)
+    rsCmd.Parameters(0) = rsCmd.CreateParameter("Retorno", , adParamReturnValue)
+    rsCmd.Parameters(1) = rsCmd.CreateParameter("numerador", , adParamInput, , pNumerador)
+    ' rsCmd.Parameters(3) = rsCmd.CreateParameter("dsUsuario", , adParamInput, , pdsUsuario)
+    
     rsCmd.Execute  ' obtiene e incrementa el parametro en transaccion
     SP_ObtenerMaxNumerador = CDbl(rsCmd(0).value)
     

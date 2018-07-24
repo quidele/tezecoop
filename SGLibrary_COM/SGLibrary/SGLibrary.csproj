@@ -140,6 +140,8 @@
     <Compile Include="Extensiones\GroupByGrid.cs">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="FacturaElectronica\IServiceFacturaElectronicaCliente.cs" />
+    <Compile Include="FacturaElectronica\ServiceFacturaElectronicaCliente.cs" />
     <Compile Include="FrmBusquedaGenerica.cs">
       <SubType>Form</SubType>
     </Compile>

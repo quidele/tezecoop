@@ -25,20 +25,24 @@ namespace WCFWSFEAFIPTezecoop
             
             // grabar modelo decimal datos
 
-            using (var context = new FacturaElectronicaEntities())
-            {
+            //using (var context = new FacturaElectronicaEntities())
+            //{
                 /* var un_comprobantes_ml_BD = context.comprobantes_ml.Find(un_comprobante_ml.idsolicitud);
                 if (un_comprobantes_ml_BD == null) 
                     context.comprobantes_ml.Add(un_comprobante_ml);
                 else */
 
-                context.comprobantes_ml.Add(new comprobantes_ml());
+                //context.comprobantes_ml.Add(new comprobantes_ml());
+                //context.SaveChanges();
+            //}
 
-                context.SaveChanges();
-            }
-            
+            var resultado = new ResultadoSolicitarCAE();
+            resultado.Resultado = "OK";
+            resultado.CAE ="11111111111111";
+            resultado.DocNro = "1";
+            resultado.CAEFchVto = "20180724";
 
-            return new ResultadoSolicitarCAE();
+            return resultado;
         }
     }
 }
