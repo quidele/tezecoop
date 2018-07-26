@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   76152833
+         Format          =   126025729
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -4138,12 +4138,12 @@ Private Function validarEntradadedatos() As Boolean
 '        End If
         
         
-    End If
+    End If ' cierra si es  If Me.flClienteNuevo.value = vbChecked Then
     
     
     
     If CSng(ObtenerCampo("vlPagoPesos").Text) > CSng(objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL")) Then
-        If ObtenerCampo("nrDoc").Text = "" Then
+        If Trim(ObtenerCampo("nrDoc").Text) = "" Then
             MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente y el CUIT o CUIL .", vbInformation + vbDefaultButton1, "Atención"
             AvisarError "nrDoc", True
             ObtenerCampo("nrDoc").SetFocus

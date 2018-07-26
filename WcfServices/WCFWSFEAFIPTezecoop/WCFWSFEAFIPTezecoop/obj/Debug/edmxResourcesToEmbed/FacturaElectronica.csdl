@@ -14,6 +14,19 @@
     <NavigationProperty Name="comprobantes_ml" Relationship="Self.FK_cbtesasoc_comprobantes_ml" FromRole="cbtesasoc" ToRole="comprobantes_ml" />
     <NavigationProperty Name="tipo_comprobante" Relationship="Self.FK_cbtesasoc_tipo_comprobante" FromRole="cbtesasoc" ToRole="tipo_comprobante" />
   </EntityType>
+  <EntityType Name="cmpasociados">
+    <Key>
+      <PropertyRef Name="idsolicitud" />
+      <PropertyRef Name="ptovtaasoc" />
+      <PropertyRef Name="nroasoc" />
+      <PropertyRef Name="Cbte_tipo" />
+    </Key>
+    <Property Name="idsolicitud" Type="Int32" Nullable="false" />
+    <Property Name="ptovtaasoc" Type="Decimal" Precision="4" Scale="0" Nullable="false" />
+    <Property Name="nroasoc" Type="Decimal" Precision="8" Scale="0" Nullable="false" />
+    <Property Name="Cbte_tipo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="comprobante" Relationship="Self.FK_cmpasociados_comprobante" FromRole="cmpasociados" ToRole="comprobante" />
+  </EntityType>
   <EntityType Name="comprobante">
     <Key>
       <PropertyRef Name="idsolicitud" />
@@ -50,6 +63,7 @@
     <Property Name="lote" Type="Int32" />
     <Property Name="nom_moneda_ingles" Type="String" MaxLength="120" FixedLength="false" Unicode="false" />
     <Property Name="nro_doc" Type="Int32" />
+    <NavigationProperty Name="cmpasociados" Relationship="Self.FK_cmpasociados_comprobante" FromRole="comprobante" ToRole="cmpasociados" />
     <NavigationProperty Name="conceptos" Relationship="Self.FK_comprobante_conceptos" FromRole="comprobante" ToRole="conceptos" />
     <NavigationProperty Name="destinos" Relationship="Self.FK_comprobante_destinos" FromRole="comprobante" ToRole="destinos" />
     <NavigationProperty Name="idioma1" Relationship="Self.FK_comprobante_idioma" FromRole="comprobante" ToRole="idioma" />
@@ -202,6 +216,18 @@
     <Property Name="fecha" Type="DateTime" Precision="3" />
     <NavigationProperty Name="comprobante" Relationship="Self.FK_comprobante_lote" FromRole="lote" ToRole="comprobante" />
   </EntityType>
+  <EntityType Name="mapeo_comprobantes">
+    <Key>
+      <PropertyRef Name="cod_doc_magma" />
+      <PropertyRef Name="nro_serie_magma" />
+      <PropertyRef Name="cod_doc_magma_afip" />
+      <PropertyRef Name="nro_serie_afip" />
+    </Key>
+    <Property Name="cod_doc_magma" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nro_serie_magma" Type="Int32" Nullable="false" />
+    <Property Name="cod_doc_magma_afip" Type="String" MaxLength="4" FixedLength="true" Unicode="false" Nullable="false" />
+    <Property Name="nro_serie_afip" Type="Int32" Nullable="false" />
+  </EntityType>
   <EntityType Name="moneda">
     <Key>
       <PropertyRef Name="cod_moneda" />
@@ -246,16 +272,6 @@
       <PropertyRef Name="nro_simu" />
     </Key>
     <Property Name="nro_simu" Type="Int32" Nullable="false" />
-  </EntityType>
-  <EntityType Name="sysdiagrams">
-    <Key>
-      <PropertyRef Name="diagram_id" />
-    </Key>
-    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
-    <Property Name="principal_id" Type="Int32" Nullable="false" />
-    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="version" Type="Int32" />
-    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
   </EntityType>
   <EntityType Name="tipo_comprobante">
     <Key>
@@ -317,6 +333,18 @@
       </Principal>
       <Dependent Role="cbtesasoc">
         <PropertyRef Name="Tipo" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_cmpasociados_comprobante">
+    <End Role="comprobante" Type="Self.comprobante" Multiplicity="1" />
+    <End Role="cmpasociados" Type="Self.cmpasociados" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="comprobante">
+        <PropertyRef Name="idsolicitud" />
+      </Principal>
+      <Dependent Role="cmpasociados">
+        <PropertyRef Name="idsolicitud" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -572,8 +600,9 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="FacturaElectronicaEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="cbtesasoc" EntityType="Self.cbtesasoc" />
+    <EntitySet Name="cmpasociados" EntityType="Self.cmpasociados" />
     <EntitySet Name="comprobante" EntityType="Self.comprobante" />
     <EntitySet Name="comprobantes_ml" EntityType="Self.comprobantes_ml" />
     <EntitySet Name="conceptos" EntityType="Self.conceptos" />
@@ -586,12 +615,12 @@
     <EntitySet Name="idioma" EntityType="Self.idioma" />
     <EntitySet Name="incoterms" EntityType="Self.incoterms" />
     <EntitySet Name="lote" EntityType="Self.lote" />
+    <EntitySet Name="mapeo_comprobantes" EntityType="Self.mapeo_comprobantes" />
     <EntitySet Name="moneda" EntityType="Self.moneda" />
     <EntitySet Name="observaciones" EntityType="Self.observaciones" />
     <EntitySet Name="paises" EntityType="Self.paises" />
     <EntitySet Name="permisodestino" EntityType="Self.permisodestino" />
     <EntitySet Name="simulacion" EntityType="Self.simulacion" />
-    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="tipo_comprobante" EntityType="Self.tipo_comprobante" />
     <EntitySet Name="tipo_documento" EntityType="Self.tipo_documento" />
     <EntitySet Name="tipos_responsables" EntityType="Self.tipos_responsables" />
@@ -603,6 +632,10 @@
     <AssociationSet Name="FK_cbtesasoc_tipo_comprobante" Association="Self.FK_cbtesasoc_tipo_comprobante">
       <End Role="tipo_comprobante" EntitySet="tipo_comprobante" />
       <End Role="cbtesasoc" EntitySet="cbtesasoc" />
+    </AssociationSet>
+    <AssociationSet Name="FK_cmpasociados_comprobante" Association="Self.FK_cmpasociados_comprobante">
+      <End Role="comprobante" EntitySet="comprobante" />
+      <End Role="cmpasociados" EntitySet="cmpasociados" />
     </AssociationSet>
     <AssociationSet Name="FK_comprobante_conceptos" Association="Self.FK_comprobante_conceptos">
       <End Role="conceptos" EntitySet="conceptos" />

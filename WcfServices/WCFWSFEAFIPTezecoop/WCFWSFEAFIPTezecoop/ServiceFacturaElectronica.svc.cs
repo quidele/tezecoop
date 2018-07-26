@@ -4,6 +4,8 @@ using System.Linq;
 using System.Runtime.Serialization;
 using System.ServiceModel;
 using System.Text;
+using WCFWSFEAFIPTezecoop.DataModeldbSG2000;
+using WCFWSFEAFIPTezecoop.DataModelFE;
 
 namespace WCFWSFEAFIPTezecoop
 {
@@ -36,11 +38,20 @@ namespace WCFWSFEAFIPTezecoop
                 //context.SaveChanges();
             //}
 
+
+            var context_FacturaElectronicaEntities = new FacturaElectronicaEntities(); 
+            var context_dbSG2000Entities = new dbSG2000Entities();
+            
+
             var resultado = new ResultadoSolicitarCAE();
             resultado.Resultado = "OK";
             resultado.CAE ="11111111111111";
             resultado.DocNro = "1";
             resultado.CAEFchVto = "20180724";
+
+            resultado.CodigoError = "CodigoError";
+            resultado.DescripcionError = "DescripcionError"; 
+            
 
             return resultado;
         }

@@ -25,6 +25,8 @@ namespace SGLibrary.FacturaElectronica
         private string _CAE ;
         private string _CAEFchVto ;
         private string _nro_doc_afip ;
+        private string _CodigoError;
+        private string _DescripcionError; 
 
         bool IServiceFacturaElectronicaCliente.SolicitarCAE(decimal IdSolicitud)
         {
@@ -73,9 +75,9 @@ namespace SGLibrary.FacturaElectronica
             this._CAE = resultado.CAE;
             this._CAEFchVto = resultado.CAEFchVto;
             this._nro_doc_afip = resultado.DocNro;
-
-            
-            client.DoWork();
+            this._CodigoError  = resultado.CodigoError;
+            this._DescripcionError = resultado.DescripcionError;
+            /* client.DoWork(); */
             client.Close();
             return true;
 
@@ -96,6 +98,20 @@ namespace SGLibrary.FacturaElectronica
         {
             return _nro_doc_afip;
         }
+
+
+        public string CodigoError()
+        {
+            return _CodigoError;
+        }
+
+        public string DescripcionError()
+        {
+            return _DescripcionError;
+        }
+
+        
+
 
     }
 }

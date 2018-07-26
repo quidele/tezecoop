@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using WCFWSFEAFIPTezecoop.wsfev1_homo;
+using WCFWSFEAFIPTezecoop.DataModelFE; 
 
 namespace WCFWSFEAFIPTezecoop
 {
