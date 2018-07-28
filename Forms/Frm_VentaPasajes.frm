@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   156827649
+         Format          =   124518401
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2844,11 +2844,30 @@ Dim objLicenciatario  As New CLicenciatario
     ' Facturacion tarjetas
     objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Imprimir"
     objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Confirme los valores de Pago"
+
+
+   
+    If CSng(ObtenerCampo("vlTotalGeneral").Text) > CSng(objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL")) Then
         
-    If Not validarEntradadedatos() Then
-        Me.Enabled = True
-        Me.cmdFacturar.Enabled = True
-        Exit Sub
+        If Trim(ObtenerCampo("dsRazonSocial").Text) = "Consumidor Final" Or Trim(ObtenerCampo("dsRazonSocial").Text) = "" Then
+            MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente: Razón Social / Nombre y CUIT / DNI.", vbInformation + vbDefaultButton1, "Atención"
+            AvisarError "dsRazonSocial", True
+            Me.cmdFacturar.Enabled = True
+            Me.Enabled = True
+            ObtenerCampo("dsRazonSocial").SetFocus
+            Exit Sub
+        End If
+        
+        If Trim(ObtenerCampo("nrDoc").Text) = "" Then
+            MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente y el CUIT o CUIL .", vbInformation + vbDefaultButton1, "Atención"
+            AvisarError "nrDoc", True
+            Me.cmdFacturar.Enabled = True
+            Me.Enabled = True
+            ObtenerCampo("nrDoc").SetFocus
+            Exit Sub
+        End If
+        
+
     End If
     
     Frm_VentaViajesTotales.Show 1
