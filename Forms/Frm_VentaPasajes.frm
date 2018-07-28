@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   254869505
+         Format          =   156827649
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2841,11 +2841,16 @@ Dim objLicenciatario  As New CLicenciatario
                 ObtenerCampo("vlPagoReales").Text = "0,00"
     End If
     
-   ' Facturacion tarjetas
-   objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Imprimir"
-   objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Confirme los valores de Pago"
+    ' Facturacion tarjetas
+    objParametros.GrabarValor "Frm_VentaViajesTotales.cmdAceptar.caption", "Imprimir"
+    objParametros.GrabarValor "Frm_VentaViajesTotales.caption", "         Confirme los valores de Pago"
         
-        
+    If Not validarEntradadedatos() Then
+        Me.Enabled = True
+        Me.cmdFacturar.Enabled = True
+        Exit Sub
+    End If
+    
     Frm_VentaViajesTotales.Show 1
     
     
@@ -4141,12 +4146,20 @@ Private Function validarEntradadedatos() As Boolean
     End If ' cierra si es  If Me.flClienteNuevo.value = vbChecked Then
     
     
-    
-    If CSng(ObtenerCampo("vlPagoPesos").Text) > CSng(objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL")) Then
+   
+    If CSng(ObtenerCampo("vlTotalGeneral").Text) > CSng(objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL")) Then
         If Trim(ObtenerCampo("nrDoc").Text) = "" Then
             MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente y el CUIT o CUIL .", vbInformation + vbDefaultButton1, "Atención"
             AvisarError "nrDoc", True
             ObtenerCampo("nrDoc").SetFocus
+            validarEntradadedatos = False
+            Exit Function
+        End If
+        
+        If Trim(ObtenerCampo("dsRazonSocial").Text) = "Consumidor Final" Or Trim(ObtenerCampo("dsRazonSocial").Text) = "" Then
+            MsgBox "El monto de la factura supera los $" + objParametros.ObtenerValorBD("MONTO_EXIGE_CUIT_CUIL") + ". Debe ingresar los datos del cliente: Razon Social o Nombre.", vbInformation + vbDefaultButton1, "Atención"
+            AvisarError "dsRazonSocial", True
+            ObtenerCampo("dsRazonSocial").SetFocus
             validarEntradadedatos = False
             Exit Function
         End If
