@@ -285,7 +285,7 @@ Dim resultado As Double
     
     If vlIVA = 0 Then
         CalcularCoeficienteTarjeta = 1
-        Return
+        Exit Function
     End If
     
     
