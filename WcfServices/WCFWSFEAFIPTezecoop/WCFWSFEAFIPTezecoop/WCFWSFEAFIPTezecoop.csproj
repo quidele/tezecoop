@@ -128,7 +128,6 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="DefinicionFormatos\FECAESolicitar.xml" />
-    <Content Include="Service1.svc" />
     <Content Include="ServiceFacturaElectronica.svc" />
     <Content Include="Web.config" />
     <Content Include="Service References\wsaa_homo\WCFWSFEAFIPTezecoop.wsaa_homo.loginCmsResponse.datasource">
@@ -376,10 +375,10 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="CertificadosX509Lib.cs" />
-    <Compile Include="ComprobanteAFIP.cs" />
-    <Compile Include="ComprobanteAFIPHomo.cs" />
-    <Compile Include="ComprobanteAFIPProd.cs" />
+    <Compile Include="AFIP\CertificadosX509Lib.cs" />
+    <Compile Include="AFIP\ComprobanteAFIP.cs" />
+    <Compile Include="AFIP\ComprobanteAFIPHomo.cs" />
+    <Compile Include="AFIP\ComprobanteAFIPProd.cs" />
     <Compile Include="DataModeldbSG2000\dbSG2000.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -489,14 +488,13 @@
       <DependentUpon>FacturaElectronica.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\Repositorio.cs" />
-    <Compile Include="IComprobanteAFIP.cs" />
-    <Compile Include="ILoginCMSClient.cs" />
+    <Compile Include="AFIP\IComprobanteAFIP.cs" />
+    <Compile Include="AFIP\ILoginCMSClient.cs" />
     <Compile Include="IServiceFacturaElectronica.cs" />
-    <Compile Include="LoginCMSClientHomo.cs" />
-    <Compile Include="LoginCMSClientProd.cs" />
-    <Compile Include="LoginTicket.cs" />
-    <Compile Include="Program.cs" />
-    <Compile Include="ResultadoSolicitarCAE.cs" />
+    <Compile Include="AFIP\LoginCMSClientHomo.cs" />
+    <Compile Include="AFIP\LoginCMSClientProd.cs" />
+    <Compile Include="AFIP\LoginTicket.cs" />
+    <Compile Include="AFIP\ResultadoSolicitarCAE.cs" />
     <Compile Include="Service References\wsaa_homo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -517,17 +515,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
-    <Compile Include="Service1.svc.cs">
-      <DependentUpon>Service1.svc</DependentUpon>
-    </Compile>
-    <Compile Include="IService1.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ServiceFacturaElectronica.svc.cs">
       <DependentUpon>ServiceFacturaElectronica.svc</DependentUpon>
     </Compile>
-    <Compile Include="Ticket.cs" />
-    <Compile Include="TicketHomo.cs" />
-    <Compile Include="TicketProd.cs" />
+    <Compile Include="AFIP\Ticket.cs" />
+    <Compile Include="AFIP\TicketHomo.cs" />
+    <Compile Include="AFIP\TicketProd.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

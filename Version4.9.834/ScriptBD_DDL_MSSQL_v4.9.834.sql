@@ -50,7 +50,45 @@ DECLARE   @resultado NUMERIC;
 
 END
 
+Go
 
+
+
+
+IF   EXISTS (select * from sys.procedures where name  = 'ufn_obtnerCodComprobanteAFIP_v4_9_834') 
+BEGIN
+	DROP FUNCTION  [dbo].ufn_obtnerCodComprobanteAFIP_v4_9_834
+END
+
+GO
+
+
+sp_helptext 'ufn_obtnerCodComprobanteAFIP_v4_7'
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+/*  
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','B')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','A')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','C')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','C')
+	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','C')
+*/
+
+create function  dbo.ufn_obtnerCodComprobanteAFIP_v1 ( @tpcompprobante char(2), @tpLetra char(1))
+RETURNS int
+AS
+BEGIN
+declare  @cod_tipo_comprobante int 
+
+	select  @cod_tipo_comprobante = cod_tipo_comprobante  from tipo_comprobanteAFIP  where  tpComprobante = @tpcompprobante
+																		and  tpLetra = @tpLetra
+	return @cod_tipo_comprobante
+
+END
 
 
 
