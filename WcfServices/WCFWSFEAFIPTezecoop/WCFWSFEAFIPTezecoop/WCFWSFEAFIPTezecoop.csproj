@@ -47,6 +47,9 @@
       <HintPath>..\packages\EntityFramework.6.1.1\lib\net45\EntityFramework.SqlServer.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.Compatibility.Data" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Security" />
     <Reference Include="System.Web.DynamicData" />
@@ -375,6 +378,7 @@
     </Content>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="AFIP\AFIP.cs" />
     <Compile Include="AFIP\CertificadosX509Lib.cs" />
     <Compile Include="AFIP\ComprobanteAFIP.cs" />
     <Compile Include="AFIP\ComprobanteAFIPHomo.cs" />

@@ -1,18 +1,24 @@
 
--- Cambios de DML version 4.9.833
+-- Cambios de DML version 4.9.834
 use dbSG2000
 go 
 
 
-delete from TB_NivelAccesoOpcionesMenu where IdOpcionMenu in ( select IdOpcionMenu from TB_OpcionesMenues where nmOpcionMenu = 'opt_estadodecuenta')
- 
-delete from TB_OpcionesMenues where nmOpcionMenu = 'opt_estadodecuenta'
 
-declare @IdOpcionMenu int
+DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Comprobantes' and nmCampo = 'nro_trans' 
 
-select  @IdOpcionMenu  =  max(IdOpcionMenu) + 1 from TB_OpcionesMenues
+INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTamanio, flClave, flClaveForanea, flBusqueda, nrOrdenBusqueda, vlPuesto1, vlPuesto2, vlPuesto3, vlPuesto9, Actualizar, vlPuesto4, vlPuesto5) VALUES 
+  ('TB_Comprobantes','nro_trans','nro_trans','integer','10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
-INSERT INTO TB_OpcionesMenues (IdOpcionMenu,dsOpcionMenu,nmOpcionMenu,tpNivelJerarquico,nrorden,nrNivelHoja,flvisible,flCajaAdm)  
-VALUES (@IdOpcionMenu,'Estado de Cuenta - Obligaciones','opt_estadodecuenta','Empleado',220,1,1,0);
 
-exec SP_GenerarNuevasOpcionesdeMenues
+
+DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_ComprobantesDetalle' and nmCampo = 'nro_trans' 
+
+INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTamanio, flClave, flClaveForanea, flBusqueda, nrOrdenBusqueda, vlPuesto1, vlPuesto2, vlPuesto3, vlPuesto9, Actualizar, vlPuesto4, vlPuesto5) VALUES 
+  ('TB_ComprobantesDetalle','nro_trans','nro_trans','integer','10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+
+
+DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Cupones' and nmCampo = 'nro_trans' 
+
+INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTamanio, flClave, flClaveForanea, flBusqueda, nrOrdenBusqueda, vlPuesto1, vlPuesto2, vlPuesto3, vlPuesto9, Actualizar, vlPuesto4, vlPuesto5) VALUES 
+  ('TB_Cupones','nro_trans','nro_trans','integer','10',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);

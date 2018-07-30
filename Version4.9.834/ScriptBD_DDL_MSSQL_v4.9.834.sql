@@ -1,5 +1,5 @@
 
--- Cambios de DDL version 4.9.832
+-- Cambios de DDL version 4.9.834
 use dbSG2000
 go
 
@@ -50,45 +50,43 @@ DECLARE   @resultado NUMERIC;
 
 END
 
-Go
-
-
-
-
-IF   EXISTS (select * from sys.procedures where name  = 'ufn_obtnerCodComprobanteAFIP_v4_9_834') 
-BEGIN
-	DROP FUNCTION  [dbo].ufn_obtnerCodComprobanteAFIP_v4_9_834
-END
-
 GO
 
 
-sp_helptext 'ufn_obtnerCodComprobanteAFIP_v4_7'
+
+IF   EXISTS (select * from sys.objects  where name  = 'ufn_obtenerCodComprobanteAFIP_v4_9_834') 
+BEGIN
+	DROP FUNCTION  [dbo].[ufn_obtenerCodComprobanteAFIP_v4_9_834]
+END
+GO
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
 /*  
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','B')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','B')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','B')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','A')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','A')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','A')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('FA','C')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('ND','C')
-	select  dbo.ufn_obtnerCodComprobanteAFIP_v4_9_834 ('NC','C')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('FA','B')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('ND','B')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('NC','B')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('FA','A')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('ND','A')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('NC','A')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('FA','C')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('ND','C')
+	select  dbo.ufn_obtenerCodComprobanteAFIP_v4_9_834 ('NC','C')
 */
 
-create function  dbo.ufn_obtnerCodComprobanteAFIP_v1 ( @tpcompprobante char(2), @tpLetra char(1))
-RETURNS int
+CREATE FUNCTION  [dbo].[ufn_obtenerCodComprobanteAFIP_v4_9_834] ( @tpcomprobante char(2), @tpLetra char(1))
+RETURNS varchar(2)
 AS
 BEGIN
 declare  @cod_tipo_comprobante int 
 
-	select  @cod_tipo_comprobante = cod_tipo_comprobante  from tipo_comprobanteAFIP  where  tpComprobante = @tpcompprobante
+	select  @cod_tipo_comprobante = cod_tipo_comprobante  from tipo_comprobanteAFIP  
+	where  tpComprobante = @tpcomprobante
 																		and  tpLetra = @tpLetra
-	return @cod_tipo_comprobante
+	return RIGHT('0' + convert(varchar,@cod_tipo_comprobante),2)
 
 END
 
+GO
 
-
+-- select * from tipo_comprobanteAFIP
