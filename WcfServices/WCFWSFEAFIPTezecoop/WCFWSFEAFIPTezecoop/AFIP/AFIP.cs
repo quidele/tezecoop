@@ -39,8 +39,8 @@ namespace WCFWSFEAFIPTezecoop.AFIP
 
 	    while (l_x < 10)
         {
-            int l_digitoValidador  = int.Parse ( l_codes.Substring ( l_x + 1, 1));
-		    int l_digito  = int.Parse ( l_cuit_nro.Substring( l_x + 1, 1)); 
+            int l_digitoValidador  = int.Parse ( l_codes.Substring ( l_x , 1));
+		    int l_digito  = int.Parse ( l_cuit_nro.Substring( l_x , 1)); 
 		    int l_digitoValidacion  = l_digitoValidador * l_digito;
 		    l_resultado = l_resultado + l_digitoValidacion;
 		    l_x = l_x + 1;
@@ -49,16 +49,12 @@ namespace WCFWSFEAFIPTezecoop.AFIP
 		
 	    l_resultado = l_resultado % 11; 
 
-	    if l_resultado = l_verificador
-	begin
-		set l_validacion = 1
-	end
-	else
-	begin
-		set l_validacion = 0
-	End
+	    if (l_resultado == l_verificador)
+		    l_validacion = 1;
+	    else
+		    l_validacion = 0;
 
-	return l_validacion
+        return l_validacion; 
             
         }
     }

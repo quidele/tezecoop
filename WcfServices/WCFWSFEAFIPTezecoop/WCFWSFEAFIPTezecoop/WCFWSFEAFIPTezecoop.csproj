@@ -106,6 +106,32 @@
       <DependentUpon>dbSG2000.edmx</DependentUpon>
       <LastGenOutput>dbSG2000.cs</LastGenOutput>
     </Content>
+    <None Include="Service References\personaServiceA5_homo\PersonaServiceA5.wsdl" />
+    <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.dummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.dummyReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.getPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.personaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Service References\personaServiceA5_prod\PersonaServiceA5.wsdl" />
+    <Content Include="Service References\personaServiceA5_prod\WCFWSFEAFIPTezecoop.personaServiceA5_prod.dummyResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_prod\WCFWSFEAFIPTezecoop.personaServiceA5_prod.dummyReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_prod\WCFWSFEAFIPTezecoop.personaServiceA5_prod.getPersonaResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <Content Include="Service References\personaServiceA5_prod\WCFWSFEAFIPTezecoop.personaServiceA5_prod.personaReturn.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
     <None Include="Service References\wsaa_homo\configuration91.svcinfo" />
     <None Include="Service References\wsaa_homo\configuration.svcinfo" />
     <None Include="Service References\wsaa_homo\Reference.svcmap">
@@ -131,8 +157,22 @@
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
     <Content Include="DefinicionFormatos\FECAESolicitar.xml" />
+    <None Include="Service References\personaServiceA5_homo\configuration91.svcinfo" />
+    <None Include="Service References\personaServiceA5_homo\configuration.svcinfo" />
+    <None Include="Service References\personaServiceA5_homo\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Service References\personaServiceA5_prod\configuration91.svcinfo" />
+    <None Include="Service References\personaServiceA5_prod\configuration.svcinfo" />
+    <None Include="Service References\personaServiceA5_prod\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="ServiceFacturaElectronica.svc" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Service References\wsaa_homo\WCFWSFEAFIPTezecoop.wsaa_homo.loginCmsResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -499,6 +539,16 @@
     <Compile Include="AFIP\LoginCMSClientProd.cs" />
     <Compile Include="AFIP\LoginTicket.cs" />
     <Compile Include="AFIP\ResultadoSolicitarCAE.cs" />
+    <Compile Include="Service References\personaServiceA5_homo\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Service References\personaServiceA5_prod\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="Service References\wsaa_homo\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -543,6 +593,8 @@
     <WCFMetadata Include="Service References\" />
   </ItemGroup>
   <ItemGroup>
+    <WCFMetadataStorage Include="Service References\personaServiceA5_homo\" />
+    <WCFMetadataStorage Include="Service References\personaServiceA5_prod\" />
     <WCFMetadataStorage Include="Service References\wsaa_homo\" />
     <WCFMetadataStorage Include="Service References\wsaa_prod\" />
     <WCFMetadataStorage Include="Service References\wsfev1_homo\" />
