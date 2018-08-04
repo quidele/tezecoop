@@ -85,6 +85,7 @@ declare  @cod_tipo_comprobante int
 																		and  tpLetra = @tpLetra
 	return RIGHT('0' + convert(varchar,@cod_tipo_comprobante),2)
 
+	select * from tipo_comprobanteAFIP
 END
 
 GO

@@ -140,7 +140,7 @@
           <Property Name="dtCupon" Type="datetime" />
           <Property Name="nrTalonarioCliente" Type="char" MaxLength="4" />
           <Property Name="nrComprabanteCliente" Type="char" MaxLength="12" />
-          <Property Name="tpComprobanteCliente" Type="char" MaxLength="4" />
+          <Property Name="tpComprobanteCliente" Type="varchar" MaxLength="4" />
           <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
           <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
           <Property Name="dtCobradoalCliente" Type="datetime" />
@@ -189,14 +189,28 @@
           <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
           <Property Name="nro_trans" Type="int" />
         </EntityType>
-        <Function Name="ufn_obtenerCodComprobanteAFIP_v4_9_834" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int">
-          <Parameter Name="tpcomprobante" Type="char" Mode="In" />
-          <Parameter Name="tpLetra" Type="char" Mode="In" />
-        </Function>
+        <EntityType Name="TB_TiposComprobantes">
+          <Key>
+            <PropertyRef Name="tpComprobante" />
+          </Key>
+          <Property Name="tpComprobante" Type="varchar" MaxLength="2" Nullable="false" />
+          <Property Name="dsComprobante" Type="varchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="tipo_comprobanteAFIP">
+          <Key>
+            <PropertyRef Name="cod_tipo_comprobante" />
+          </Key>
+          <Property Name="cod_tipo_comprobante" Type="int" Nullable="false" />
+          <Property Name="Descripción" Type="nvarchar" MaxLength="255" />
+          <Property Name="tpComprobante" Type="nchar" MaxLength="2" />
+          <Property Name="tpLetra" Type="nchar" MaxLength="10" />
+        </EntityType>
         <EntityContainer Name="dbSG2000ModelStoreContainer">
           <EntitySet Name="TB_Comprobantes" EntityType="Self.TB_Comprobantes" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_ComprobantesDetalle" EntityType="Self.TB_ComprobantesDetalle" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TB_TiposComprobantes" EntityType="Self.TB_TiposComprobantes" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="tipo_comprobanteAFIP" EntityType="Self.tipo_comprobanteAFIP" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -337,7 +351,7 @@
           <Property Name="dtCupon" Type="DateTime" Precision="3" />
           <Property Name="nrTalonarioCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
           <Property Name="nrComprabanteCliente" Type="String" MaxLength="12" FixedLength="true" Unicode="false" />
-          <Property Name="tpComprobanteCliente" Type="String" MaxLength="4" FixedLength="true" Unicode="false" />
+          <Property Name="tpComprobanteCliente" Type="String" MaxLength="4" FixedLength="false" Unicode="false" />
           <Property Name="tpLetraCliente" Type="String" MaxLength="1" FixedLength="false" Unicode="false" />
           <Property Name="flCobradoalCliente" Type="Boolean" Nullable="false" />
           <Property Name="dtCobradoalCliente" Type="DateTime" Precision="3" />
@@ -390,7 +404,25 @@
           <EntitySet Name="TB_Comprobantes" EntityType="Self.TB_Comprobantes" />
           <EntitySet Name="TB_ComprobantesDetalle" EntityType="Self.TB_ComprobantesDetalle" />
           <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" />
+          <EntitySet Name="TB_TiposComprobantes" EntityType="dbSG2000Model.TB_TiposComprobantes" />
+          <EntitySet Name="tipo_comprobanteAFIP" EntityType="dbSG2000Model.tipo_comprobanteAFIP" />
         </EntityContainer>
+        <EntityType Name="TB_TiposComprobantes">
+          <Key>
+            <PropertyRef Name="tpComprobante" />
+          </Key>
+          <Property Name="tpComprobante" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="false" />
+          <Property Name="dsComprobante" Type="String" MaxLength="255" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="tipo_comprobanteAFIP">
+          <Key>
+            <PropertyRef Name="cod_tipo_comprobante" />
+          </Key>
+          <Property Name="cod_tipo_comprobante" Type="Int32" Nullable="false" />
+          <Property Name="Descripción" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+          <Property Name="tpComprobante" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+          <Property Name="tpLetra" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -574,6 +606,24 @@
                 <ScalarProperty Name="IdConciliacion" ColumnName="IdConciliacion" />
                 <ScalarProperty Name="nmEmpresaTarjeta" ColumnName="nmEmpresaTarjeta" />
                 <ScalarProperty Name="nro_trans" ColumnName="nro_trans" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TB_TiposComprobantes">
+            <EntityTypeMapping TypeName="dbSG2000Model.TB_TiposComprobantes">
+              <MappingFragment StoreEntitySet="TB_TiposComprobantes">
+                <ScalarProperty Name="dsComprobante" ColumnName="dsComprobante" />
+                <ScalarProperty Name="tpComprobante" ColumnName="tpComprobante" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="tipo_comprobanteAFIP">
+            <EntityTypeMapping TypeName="dbSG2000Model.tipo_comprobanteAFIP">
+              <MappingFragment StoreEntitySet="tipo_comprobanteAFIP">
+                <ScalarProperty Name="tpLetra" ColumnName="tpLetra" />
+                <ScalarProperty Name="tpComprobante" ColumnName="tpComprobante" />
+                <ScalarProperty Name="Descripción" ColumnName="Descripción" />
+                <ScalarProperty Name="cod_tipo_comprobante" ColumnName="cod_tipo_comprobante" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

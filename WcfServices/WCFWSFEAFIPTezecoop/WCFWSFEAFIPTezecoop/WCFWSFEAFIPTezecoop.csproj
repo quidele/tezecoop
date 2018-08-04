@@ -447,6 +447,12 @@
     <Compile Include="DataModeldbSG2000\TB_Cupones.cs">
       <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModeldbSG2000\TB_TiposComprobantes.cs">
+      <DependentUpon>dbSG2000.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModeldbSG2000\tipo_comprobanteAFIP.cs">
+      <DependentUpon>dbSG2000.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModelFE\cbtesasoc.cs">
       <DependentUpon>FacturaElectronica.tt</DependentUpon>
     </Compile>
@@ -531,7 +537,7 @@
     <Compile Include="DataModelFE\unidad_medida.cs">
       <DependentUpon>FacturaElectronica.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataModel\Repositorio.cs" />
+    <Compile Include="DataModel\AdaptaRepositorios.cs" />
     <Compile Include="AFIP\IComprobanteAFIP.cs" />
     <Compile Include="AFIP\ILoginCMSClient.cs" />
     <Compile Include="IServiceFacturaElectronica.cs" />

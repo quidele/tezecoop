@@ -1206,6 +1206,7 @@ namespace SGLibrary
                 txtNombreArchivoTarjeta.Text = openFileDialog1.FileName;
                 Cursor.Current = Cursors.WaitCursor;
                 Application.DoEvents();
+                // Procesamos los Archivos de Conciliacion Automatica
                 procesarArchivo(openFileDialog1.FileName);
                 Cursor.Current = Cursors.Default;
                 this.dataGridView1.Focus(); // hacemos foco en la grilla para evitar errores re seleccion de archivo

@@ -1,0 +1,9 @@
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\WCFWSFEAFIPTezecoopTesting.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\WCFWSFEAFIPTezecoopTesting.pdb
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\WCFWSFEAFIPTezecoop.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\EntityFramework.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\WCFWSFEAFIPTezecoop.pdb
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\bin\Debug\EntityFramework.xml
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\obj\Debug\WCFWSFEAFIPTezecoopTesting.csprojResolveAssemblyReference.cache
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\obj\Debug\WCFWSFEAFIPTezecoopTesting.dll
+C:\Users\Euli\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoopTesting\obj\Debug\WCFWSFEAFIPTezecoopTesting.pdb

@@ -1,0 +1,210 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="dbSG2000Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="TB_Comprobantes">
+    <Key>
+      <PropertyRef Name="nrTalonario" />
+      <PropertyRef Name="nrComprobante" />
+      <PropertyRef Name="tpComprobante" />
+      <PropertyRef Name="tpLetra" />
+    </Key>
+    <Property Name="nrTalonario" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nrComprobante" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="tpComprobante" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="tpLetra" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="dtComprobante" Type="datetime" />
+    <Property Name="cdCliente" Type="int" />
+    <Property Name="cdCondVenta" Type="varchar" MaxLength="20" />
+    <Property Name="tpComision" Type="varchar" MaxLength="20" />
+    <Property Name="tpMoneda" Type="varchar" MaxLength="10" />
+    <Property Name="tpIVA" Type="varchar" MaxLength="255" />
+    <Property Name="vlTotalGeneral" Type="float" />
+    <Property Name="vlPagoPesos" Type="float" />
+    <Property Name="vlPagoEuros" Type="float" />
+    <Property Name="vlPagoDolares" Type="float" />
+    <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
+    <Property Name="flManual" Type="char" MaxLength="1" />
+    <Property Name="dtInsercion" Type="datetime" />
+    <Property Name="flSincronizado" Type="bit" Nullable="false" />
+    <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="nrCaja" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="dtCaja" Type="datetime" />
+    <Property Name="nrPuesto" Type="smallint" />
+    <Property Name="dsDomicilio" Type="varchar" MaxLength="60" />
+    <Property Name="nrLicencia" Type="varchar" MaxLength="3" />
+    <Property Name="nrBultos" Type="smallint" />
+    <Property Name="nrPasajeros" Type="smallint" />
+    <Property Name="nrDoc" Type="char" MaxLength="20" />
+    <Property Name="dsRazonSocial" Type="varchar" MaxLength="100" />
+    <Property Name="nmNombre" Type="varchar" MaxLength="50" />
+    <Property Name="nmApellido" Type="varchar" MaxLength="50" />
+    <Property Name="nmLicenciatario" Type="varchar" MaxLength="60" />
+    <Property Name="cdPostal" Type="varchar" MaxLength="10" />
+    <Property Name="nmLocalidad" Type="varchar" MaxLength="50" />
+    <Property Name="cdCodBar" Type="varchar" MaxLength="20" />
+    <Property Name="dsEmail" Type="varchar" MaxLength="70" />
+    <Property Name="nrTel" Type="varchar" MaxLength="50" />
+    <Property Name="nrCAI" Type="varchar" MaxLength="20" />
+    <Property Name="dtVencimiento" Type="datetime" />
+    <Property Name="vlDiaDolar" Type="float" />
+    <Property Name="vlDiaEuro" Type="float" />
+    <Property Name="dsOpcional1" Type="varchar" MaxLength="50" />
+    <Property Name="dsOpcional2" Type="varchar" MaxLength="100" />
+    <Property Name="dsOpcional3" Type="varchar" MaxLength="40" />
+    <Property Name="dsOpcional4" Type="int" />
+    <Property Name="flAnulado" Type="bit" Nullable="false" />
+    <Property Name="dtAnulado" Type="datetime" />
+    <Property Name="nmEmpleado" Type="varchar" MaxLength="60" />
+    <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="flCargaErronea" Type="bit" />
+    <Property Name="problema" Type="int" />
+    <Property Name="dsUsuario_Supervisor" Type="varchar" MaxLength="50" />
+    <Property Name="dtComprobante_hora" Type="datetime" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="vlSubtotal" Type="float" />
+    <Property Name="vlIVA" Type="float" />
+    <Property Name="tpModificacionCajaPuesto" Type="varchar" MaxLength="50" />
+    <Property Name="dsObservacionCajaPuesto" Type="varchar" MaxLength="400" />
+    <Property Name="vlPagoReales" Type="float" />
+    <Property Name="vlDiaReal" Type="float" />
+    <Property Name="nrTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="tpDocTarjeta" Type="nchar" MaxLength="10" />
+    <Property Name="nrDocTarjeta" Type="nchar" MaxLength="25" />
+    <Property Name="vlRecargoTarjeta" Type="float" />
+    <Property Name="nrCuponPosnet" Type="nchar" MaxLength="25" />
+    <Property Name="dsRazonSocial_original" Type="varchar" MaxLength="100" />
+    <Property Name="nrDoc_original" Type="char" MaxLength="20" />
+    <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="10" />
+    <Property Name="nro_trans" Type="int" />
+  </EntityType>
+  <EntityType Name="TB_ComprobantesDetalle">
+    <Key>
+      <PropertyRef Name="nrTalonario" />
+      <PropertyRef Name="nrComprobante" />
+      <PropertyRef Name="tpComprobante" />
+      <PropertyRef Name="tpLetra" />
+      <PropertyRef Name="nrItem" />
+    </Key>
+    <Property Name="nrTalonario" Type="char" MaxLength="4" Nullable="false" />
+    <Property Name="nrComprobante" Type="char" MaxLength="12" Nullable="false" />
+    <Property Name="tpComprobante" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="tpLetra" Type="varchar" MaxLength="1" Nullable="false" />
+    <Property Name="nrItem" Type="smallint" Nullable="false" />
+    <Property Name="cdProducto" Type="int" />
+    <Property Name="dsProducto" Type="varchar" MaxLength="100" />
+    <Property Name="tpOperacion" Type="varchar" MaxLength="50" />
+    <Property Name="qtCantidad" Type="smallint" />
+    <Property Name="vlPorcentaje" Type="float" />
+    <Property Name="vlPrecioPeaje" Type="float" />
+    <Property Name="vlPrecioViaje" Type="float" />
+    <Property Name="vlTotalItem" Type="float" />
+    <Property Name="dtInsercion" Type="datetime" />
+    <Property Name="flSincronizado" Type="bit" Nullable="false" />
+    <Property Name="vlKilometros" Type="float" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="nrPuesto" Type="int" />
+    <Property Name="nrCaja" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="vlPrecioTC" Type="float" />
+    <Property Name="vlPrecioTD" Type="float" />
+    <Property Name="vlRecargoTC" Type="float" />
+    <Property Name="vlRecargoTD" Type="float" />
+    <Property Name="vlPrecioTP" Type="float" />
+    <Property Name="vlRecargoTP" Type="float" />
+    <Property Name="nro_trans" Type="int" />
+  </EntityType>
+  <EntityType Name="TB_Cupones">
+    <Key>
+      <PropertyRef Name="nrCupon" />
+    </Key>
+    <Property Name="nrCupon" Type="numeric" Precision="18" Scale="0" Nullable="false" />
+    <Property Name="cdCliente" Type="int" />
+    <Property Name="nrPuesto" Type="smallint" />
+    <Property Name="nrLicencia" Type="int" Nullable="false" />
+    <Property Name="nmLicenciatario" Type="varchar" MaxLength="70" />
+    <Property Name="tpCupon" Type="varchar" MaxLength="20" />
+    <Property Name="vlMontoCupon" Type="float" />
+    <Property Name="vlaFavordelLicenciatario" Type="float" />
+    <Property Name="vlafavorAdmin" Type="float" />
+    <Property Name="vlPagoPesos" Type="float" />
+    <Property Name="vlPagoEuros" Type="float" />
+    <Property Name="vlPagoDolares" Type="float" />
+    <Property Name="vlComision" Type="float" />
+    <Property Name="nrCantidadBultos" Type="smallint" />
+    <Property Name="nrPasajeros" Type="smallint" />
+    <Property Name="dtCupon" Type="datetime" />
+    <Property Name="nrTalonarioCliente" Type="char" MaxLength="4" />
+    <Property Name="nrComprabanteCliente" Type="char" MaxLength="12" />
+    <Property Name="tpComprobanteCliente" Type="varchar" MaxLength="4" />
+    <Property Name="tpLetraCliente" Type="varchar" MaxLength="1" />
+    <Property Name="flCobradoalCliente" Type="bit" Nullable="false" />
+    <Property Name="dtCobradoalCliente" Type="datetime" />
+    <Property Name="nrCajaCliente" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="dtCajaCliente" Type="datetime" />
+    <Property Name="nrTalonarioProveedor" Type="float" />
+    <Property Name="nrComprabanteProveedor" Type="float" />
+    <Property Name="tpComprobanteProveedor" Type="varchar" MaxLength="2" />
+    <Property Name="tpLetraLetraProveedor" Type="varchar" MaxLength="1" />
+    <Property Name="flCompensado" Type="bit" Nullable="false" />
+    <Property Name="dtCompensado" Type="datetime" />
+    <Property Name="nrCajaLicenciatario" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="dtCajaLicenciatario" Type="datetime" />
+    <Property Name="dsUsuario" Type="varchar" MaxLength="50" />
+    <Property Name="nrLiquidacionProveedores" Type="smallint" />
+    <Property Name="nrLiquidacionCliente" Type="smallint" />
+    <Property Name="cdCodBar" Type="varchar" MaxLength="20" />
+    <Property Name="flAnulado" Type="bit" Nullable="false" />
+    <Property Name="dtAnulado" Type="datetime" />
+    <Property Name="IdRecibo" Type="int" />
+    <Property Name="IdReciboCtaCte" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="dsObservacion" Type="varchar" MaxLength="400" />
+    <Property Name="dsDestino" Type="varchar" MaxLength="100" />
+    <Property Name="dsHoraViaje" Type="char" MaxLength="10" />
+    <Property Name="problema" Type="int" />
+    <Property Name="Mellizo" Type="char" MaxLength="1" />
+    <Property Name="dtActualizacion" Type="datetime" />
+    <Property Name="flEliminar" Type="bit" />
+    <Property Name="flSincronizado" Type="bit" />
+    <Property Name="vlSubtotal" Type="float" />
+    <Property Name="vlIVA" Type="float" />
+    <Property Name="nrCajaCtaCte" Type="numeric" Precision="18" Scale="0" />
+    <Property Name="dtCajaCtaCte" Type="datetime" />
+    <Property Name="dsLeyenda" Type="varchar" MaxLength="255" />
+    <Property Name="vlPagoReales" Type="float" />
+    <Property Name="flNoCompensado" Type="char" MaxLength="1" />
+    <Property Name="dtNoCompensado" Type="date" />
+    <Property Name="nrTarjeta" Type="varchar" MaxLength="50" />
+    <Property Name="tpDocTarjeta" Type="nchar" MaxLength="10" />
+    <Property Name="nrDocTarjeta" Type="nchar" MaxLength="25" />
+    <Property Name="vlRecargoTarjeta" Type="float" />
+    <Property Name="nrCuponPosnet" Type="nchar" MaxLength="25" />
+    <Property Name="dtFechaAcreditacion" Type="date" />
+    <Property Name="vlMontoAcreditacion" Type="float" />
+    <Property Name="IdConciliacion" Type="int" />
+    <Property Name="nmEmpresaTarjeta" Type="varchar" MaxLength="20" />
+    <Property Name="nro_trans" Type="int" />
+  </EntityType>
+  <EntityType Name="TB_TiposComprobantes">
+    <Key>
+      <PropertyRef Name="tpComprobante" />
+    </Key>
+    <Property Name="tpComprobante" Type="varchar" MaxLength="2" Nullable="false" />
+    <Property Name="dsComprobante" Type="varchar" MaxLength="255" />
+  </EntityType>
+  <EntityType Name="tipo_comprobanteAFIP">
+    <Key>
+      <PropertyRef Name="cod_tipo_comprobante" />
+    </Key>
+    <Property Name="cod_tipo_comprobante" Type="int" Nullable="false" />
+    <Property Name="Descripción" Type="nvarchar" MaxLength="255" />
+    <Property Name="tpComprobante" Type="nchar" MaxLength="2" />
+    <Property Name="tpLetra" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityContainer Name="dbSG2000ModelStoreContainer">
+    <EntitySet Name="TB_Comprobantes" EntityType="Self.TB_Comprobantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_ComprobantesDetalle" EntityType="Self.TB_ComprobantesDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_Cupones" EntityType="Self.TB_Cupones" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="TB_TiposComprobantes" EntityType="Self.TB_TiposComprobantes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="tipo_comprobanteAFIP" EntityType="Self.tipo_comprobanteAFIP" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>
