@@ -146,7 +146,7 @@ namespace WCFWSFEAFIPTezecoop
             detalle[0].DocNro = Convert.ToInt64(p_comprobante_ml.DocNro); // Nro de documento del comprador
             detalle[0].CbteDesde = Convert.ToInt32(p_comprobante_ml.CbteDesde); //Nro comprobante desde
             detalle[0].CbteHasta = Convert.ToInt32(p_comprobante_ml.CbteHasta); //Nro comprobante hasta
-            detalle[0].CbteFch =  DateTime.Now.ToString("yyyyMMdd");
+            detalle[0].CbteFch = DateTime.Now.ToString("yyyyMMdd");  //  
             detalle[0].ImpTotal = Convert.ToDouble(p_comprobante_ml.ImpTotal); //Total = no gravado + exento + neto + todos los iva + tributos (ej. perc.iibb)
             detalle[0].ImpTotConc = double.Parse  (p_comprobante_ml.ImpTotConc.ToString());  // 0; //No gravado
             detalle[0].ImpNeto = double.Parse(p_comprobante_ml.ImpNeto.ToString()); // Convert.ToDouble(100); // neto gravado

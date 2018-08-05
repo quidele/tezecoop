@@ -19,7 +19,7 @@ namespace WCFWSFEAFIPTezecoop.DataModel
 
         public string DescripcionError { get; set; }
 
-        public bool AdaptarComprobante(decimal pIdSolicitud){
+        public bool AdaptarComprobante(int pIdSolicitud){
 
             // recuperamos la cabecera del comprobante
             var un_TB_Comprobantes = (from c in _ContextOrigen.TB_Comprobantes
@@ -30,14 +30,51 @@ namespace WCFWSFEAFIPTezecoop.DataModel
                 DescripcionError = "El comprobante origen no existe";
                 return false;
             }
+
+            var un_comprobantes_ml = new comprobantes_ml();
+
+            un_comprobantes_ml.idsolicitud = pIdSolicitud;
+            un_comprobantes_ml.CbteTipo = this.ObtenerCodComprobanteAFIP(un_TB_Comprobantes.tpComprobante, un_TB_Comprobantes.tpLetra);
  
+            un_comprobantes_ml.PtoVta = 0; // Determinar logica de puntos de Venta 
+            un_comprobantes_ml.Concepto = 2;  // Servicios
+
+            un_comprobantes_ml.DocTipo = this.ObtenerCodTipoDocumentoClienteAFIP(un_TB_Comprobantes.tpIVA, un_TB_Comprobantes.nrDoc);
+            un_comprobantes_ml.DocNro = decimal.Parse( this.ObtenerNroDocumentoClienteAFIP(un_TB_Comprobantes.tpIVA, un_TB_Comprobantes.nrDoc)) ;
+            un_comprobantes_ml.CbteDesde = 1;
+            un_comprobantes_ml.CbteHasta = 1;
+            un_comprobantes_ml.CbteFch = DateTime.Now;
+            un_comprobantes_ml.ImpTotal = decimal.Parse ( un_TB_Comprobantes.vlTotalGeneral.ToString());
+            un_comprobantes_ml.ImpTotConc = 0;
+            un_comprobantes_ml.ImpNeto = decimal.Parse(un_TB_Comprobantes.vlSubtotal.ToString());
+
+            if (un_TB_Comprobantes.vlIVA == 0.0)
+                un_comprobantes_ml.ImpOpEx = decimal.Parse(un_TB_Comprobantes.vlTotalGeneral.ToString());
+            else
+                un_comprobantes_ml.ImpOpEx = 0;
+
+            un_comprobantes_ml.FchServDesde = un_comprobantes_ml.CbteFch;
+            un_comprobantes_ml.FchServHasta = un_comprobantes_ml.CbteFch;
+            un_comprobantes_ml.FchServHasta = un_comprobantes_ml.CbteFch;
+            un_comprobantes_ml.ImpIVA = decimal.Parse (un_TB_Comprobantes.vlIVA.ToString());
+            un_comprobantes_ml.ImpTrib = 0;
+            un_comprobantes_ml.MonId = "PES";
+            un_comprobantes_ml.MonCotiz = 1;
             
-            return true; 
+            return true;
         }
 
-        private  int ObtenerDocTipoAFIP()
+        private  int ObtenerCodTipoDocumentoClienteAFIP(string ptpIVA , string pnrDoc)
         {
-            return 1; 
+            if (ptpIVA == "RI") return 80;  // CUIT
+            return 99;  // venta local diario 
+        }
+
+
+        private string ObtenerNroDocumentoClienteAFIP(string ptpIVA, string pnrDoc)
+        {
+            if (ptpIVA == "RI") return pnrDoc.Replace("-","").Trim();  // CUIT
+            return "00000000000";  // venta local diario 
         }
 
         private int ObtenerCodComprobanteAFIP(string tpComprobante , string tpLetra)
@@ -46,7 +83,6 @@ namespace WCFWSFEAFIPTezecoop.DataModel
             /*= (from c in pContextOrigen.TB_Comprobantes
              where c.nro_trans == pIdSolicitud
              select c).First<TB_Comprobantes>();
-             
              * var codCompAFIP = (from c in pContextOrigen.tipo 
              */
 
@@ -54,8 +90,8 @@ namespace WCFWSFEAFIPTezecoop.DataModel
                                 && c.tpLetra == tpLetra select c.cod_tipo_comprobante).First()  ;
 
             return codCompAFIP;
-
         }
+
 
 
     }
