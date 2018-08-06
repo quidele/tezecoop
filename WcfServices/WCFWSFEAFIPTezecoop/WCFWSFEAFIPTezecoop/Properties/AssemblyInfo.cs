@@ -21,6 +21,7 @@ using System.Runtime.InteropServices;
 
 // El siguiente GUID sirve como identificador de la biblioteca de tipos si este proyecto se expone a COM
 [assembly: Guid("52dcd696-8517-4478-8b53-bb23d16ed2f3")]
+[assembly: log4net.Config.XmlConfigurator(ConfigFile = "Web.config", Watch = true)]
 
 // La información de versión de un ensamblado consta de los siguientes cuatro valores:
 //

@@ -3,7 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using WCFWSFEAFIPTezecoop.DataModeldbSG2000;
-using WCFWSFEAFIPTezecoop.DataModelFE; 
+using WCFWSFEAFIPTezecoop.DataModelFE;
+using System.Transactions; 
 
 namespace WCFWSFEAFIPTezecoop.DataModel
 {
@@ -60,9 +61,43 @@ namespace WCFWSFEAFIPTezecoop.DataModel
             un_comprobantes_ml.ImpTrib = 0;
             un_comprobantes_ml.MonId = "PES";
             un_comprobantes_ml.MonCotiz = 1;
-            
+
+            // resolvemos el detalle del Iva
+            var un_detalle_iva = new detalle_iva();
+            un_detalle_iva.idsolicitud = pIdSolicitud;
+            un_detalle_iva.Id = 5;
+            un_detalle_iva.BaseImp = decimal.Parse(un_TB_Comprobantes.vlTotalGeneral.ToString());
+            un_detalle_iva.Importe = decimal.Parse(un_TB_Comprobantes.vlIVA.ToString());
+
+            using (TransactionScope transaction = new TransactionScope())
+            {
+
+                this._ContextDestino.comprobantes_ml.Add(un_comprobantes_ml);
+                this._ContextDestino.detalle_iva.Add(un_detalle_iva);
+                this._ContextDestino.SaveChanges();
+                transaction.Complete();
+
+            }
+
             return true;
         }
+
+         //try
+         //{
+         //}
+         //catch (DbEntityValidationException e)
+         //   {
+         //       foreach (var eve in e.EntityValidationErrors)
+         //   {
+         //       Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+         //           eve.Entry.Entity.GetType().Name, eve.Entry.State);
+         //       foreach (var ve in eve.ValidationErrors)
+         //       {
+         //           Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+         //               ve.PropertyName, ve.ErrorMessage);
+         //       }
+         //   }
+
 
         private  int ObtenerCodTipoDocumentoClienteAFIP(string ptpIVA , string pnrDoc)
         {

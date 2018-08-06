@@ -13,12 +13,15 @@ namespace WCFWSFEAFIPTezecoop
     // NOTA: para iniciar el Cliente de prueba WCF para probar este servicio, seleccione ServiceFacturaElectronica.svc o ServiceFacturaElectronica.svc.cs en el Explorador de soluciones e inicie la depuración.
     public class ServiceFacturaElectronica : IServiceFacturaElectronica
     {
+
+
         public void DoWork()
         {
             Console.WriteLine("Ha arribado un nuevo cliente");
+
         }
 
-
+        
 
         ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(decimal IdSolicitud)
         {
