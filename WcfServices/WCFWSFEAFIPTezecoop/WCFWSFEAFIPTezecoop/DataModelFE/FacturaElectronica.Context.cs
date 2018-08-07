@@ -48,5 +48,6 @@ namespace WCFWSFEAFIPTezecoop.DataModelFE
         public virtual DbSet<tipo_documento> tipo_documento { get; set; }
         public virtual DbSet<tipos_responsables> tipos_responsables { get; set; }
         public virtual DbSet<unidad_medida> unidad_medida { get; set; }
+        public virtual DbSet<LogApp> LogApp { get; set; }
     }
 }

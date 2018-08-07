@@ -51,6 +51,7 @@
         <AssociationConnector Association="FacturaElectronicaModel.FK_detalle_iva_condicion_iva" ManuallyRouted="false" />
         <AssociationConnector Association="FacturaElectronicaModel.FK_permisodestino_destinos" ManuallyRouted="false" />
         <AssociationConnector Association="FacturaElectronicaModel.FK_detalle_unidad_medida" ManuallyRouted="false" />
+        <EntityTypeShape EntityType="FacturaElectronicaModel.LogApp" Width="1.5" PointX="11.375" PointY="3.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

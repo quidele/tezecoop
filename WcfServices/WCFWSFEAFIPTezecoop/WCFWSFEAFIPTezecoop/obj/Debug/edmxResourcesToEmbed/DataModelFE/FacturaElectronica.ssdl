@@ -160,6 +160,18 @@
     <Property Name="cod_incoterms" Type="char" MaxLength="3" Nullable="false" />
     <Property Name="Descripción" Type="nvarchar" MaxLength="255" />
   </EntityType>
+  <EntityType Name="LogApp">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+    <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+    <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+    <Property Name="Exception" Type="varchar" MaxLength="2000" />
+  </EntityType>
   <EntityType Name="lote">
     <Key>
       <PropertyRef Name="lote" />
@@ -539,6 +551,7 @@
     <EntitySet Name="formaspago" EntityType="Self.formaspago" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="idioma" EntityType="Self.idioma" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="incoterms" EntityType="Self.incoterms" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="LogApp" EntityType="Self.LogApp" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="lote" EntityType="Self.lote" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="moneda" EntityType="Self.moneda" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="observaciones" EntityType="Self.observaciones" Schema="dbo" store:Type="Tables" />

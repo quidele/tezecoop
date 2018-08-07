@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="FacturaElectronicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="FacturaElectronicaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="cbtesasoc">
           <Key>
             <PropertyRef Name="idsolicitud" />
@@ -164,6 +164,18 @@
           </Key>
           <Property Name="cod_incoterms" Type="char" MaxLength="3" Nullable="false" />
           <Property Name="Descripción" Type="nvarchar" MaxLength="255" />
+        </EntityType>
+        <EntityType Name="LogApp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="Thread" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Level" Type="varchar" MaxLength="50" Nullable="false" />
+          <Property Name="Logger" Type="varchar" MaxLength="255" Nullable="false" />
+          <Property Name="Message" Type="varchar" MaxLength="4000" Nullable="false" />
+          <Property Name="Exception" Type="varchar" MaxLength="2000" />
         </EntityType>
         <EntityType Name="lote">
           <Key>
@@ -544,6 +556,7 @@
           <EntitySet Name="formaspago" EntityType="Self.formaspago" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="idioma" EntityType="Self.idioma" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="incoterms" EntityType="Self.incoterms" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="LogApp" EntityType="Self.LogApp" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="lote" EntityType="Self.lote" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="moneda" EntityType="Self.moneda" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="observaciones" EntityType="Self.observaciones" Schema="dbo" store:Type="Tables" />
@@ -648,8 +661,7 @@
             <End Role="permisodestino" EntitySet="permisodestino" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="FacturaElectronicaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
@@ -1341,7 +1353,20 @@
             <End Role="unidad_medida" EntitySet="unidad_medida" />
             <End Role="detalle" EntitySet="detalle" />
           </AssociationSet>
+          <EntitySet Name="LogApp" EntityType="FacturaElectronicaModel.LogApp" />
         </EntityContainer>
+        <EntityType Name="LogApp">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Thread" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Level" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="false" />
+          <Property Name="Logger" Type="String" Nullable="false" MaxLength="255" FixedLength="false" Unicode="false" />
+          <Property Name="Message" Type="String" Nullable="false" MaxLength="4000" FixedLength="false" Unicode="false" />
+          <Property Name="Exception" Type="String" MaxLength="2000" FixedLength="false" Unicode="false" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -1612,6 +1637,19 @@
                 <ScalarProperty Name="cod_unidad_medida" ColumnName="cod_unidad_medida" />
                 <ScalarProperty Name="Descripción" ColumnName="Descripción" />
                 <ScalarProperty Name="Codigo_magma" ColumnName="Codigo_magma" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LogApp">
+            <EntityTypeMapping TypeName="FacturaElectronicaModel.LogApp">
+              <MappingFragment StoreEntitySet="LogApp">
+                <ScalarProperty Name="Exception" ColumnName="Exception" />
+                <ScalarProperty Name="Message" ColumnName="Message" />
+                <ScalarProperty Name="Logger" ColumnName="Logger" />
+                <ScalarProperty Name="Level" ColumnName="Level" />
+                <ScalarProperty Name="Thread" ColumnName="Thread" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

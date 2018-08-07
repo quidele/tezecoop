@@ -505,6 +505,9 @@
     <Compile Include="DataModelFE\incoterms.cs">
       <DependentUpon>FacturaElectronica.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModelFE\LogApp.cs">
+      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataModelFE\lote.cs">
       <DependentUpon>FacturaElectronica.tt</DependentUpon>
     </Compile>
@@ -583,6 +586,7 @@
     <Compile Include="AFIP\Ticket.cs" />
     <Compile Include="AFIP\TicketHomo.cs" />
     <Compile Include="AFIP\TicketProd.cs" />
+    <Compile Include="ServiciosDeComponentes\ServicioLog.cs" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

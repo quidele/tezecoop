@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using WCFWSFEAFIPTezecoop.DataModeldbSG2000;
 using WCFWSFEAFIPTezecoop.DataModelFE;
+using WCFWSFEAFIPTezecoop.Servicios; 
 
 namespace WCFWSFEAFIPTezecoop
 {
@@ -18,7 +19,7 @@ namespace WCFWSFEAFIPTezecoop
         public void DoWork()
         {
             Console.WriteLine("Ha arribado un nuevo cliente");
-
+            ServiceLog.Debug("DoWork", "Ha arribado un nuevo cliente", ""); 
         }
 
         

@@ -12,9 +12,7 @@ C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\WCFWS
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\WCFWSFEAFIPTezecoop.pdb
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\EntityFramework.dll
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\EntityFramework.SqlServer.dll
-C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\log4net.dll
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\EntityFramework.xml
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\EntityFramework.SqlServer.xml
-C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\log4net.xml
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.dll
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.pdb
