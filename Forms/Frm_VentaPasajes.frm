@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   124518401
+         Format          =   155844609
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -2640,6 +2640,7 @@ On Error Resume Next
         ' Solicitamos Puesto
 
         Dim coeficiente As Double
+        Dim vlRecargoTarjeta_aux As Double
 
         coeficiente = 1
 
@@ -2647,21 +2648,22 @@ On Error Resume Next
         Case "Tarjeta de Débito"
             coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TD)
             ' vlTotalPesos = vlTotalPesos * coeficiente
-            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TD / 100))
+            vlRecargoTarjeta_aux = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TD / 100))
         Case "Tarjeta de Crédito"
             coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TC)
             ' vlTotalPesos = vlTotalPesos * coeficiente
-            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TC / 100))
+            vlRecargoTarjeta_aux = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TC / 100))
         Case "Todo Pago"
             coeficiente = objAFIP.CalcularCoeficienteTarjeta(vlIVA, PORC_IVA, PORC_RECARGO_TP)
             ' vlTotalPesos = vlTotalPesos * coeficiente
-            vlRecargoTarjeta = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TP / 100))
+            vlRecargoTarjeta_aux = vlTotalPesos - (vlTotalPesos / (1 + PORC_RECARGO_TP / 100))
         End Select
 
         If coeficiente <> 1 Then
             'recalcular IVA y Regardo de la tarjeta
              vlIVA = objAFIP.CalcularIVA(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
              vlSubtotal = objAFIP.CalcularSubtotal(ObtenerCampo("tpIVA"), vlTotalPesos, objAFIP.obtenerAlicuotaIVA(ObtenerCampo("tpIVA")))
+             vlRecargoTarjeta = vlRecargoTarjeta_aux
         End If
 
     End If
@@ -2684,7 +2686,7 @@ On Error Resume Next
     ObtenerCampo("vlSaldoPesos").Text = "0,00"
     ObtenerCampo("vlSaldoDolares").Text = "0,00"
     ObtenerCampo("vlSaldoReales").Text = "0,00"
-    ObtenerCampo("vlRecargoTarjeta").Text = vlRecargoTarjeta
+    ObtenerCampo("vlRecargoTarjeta").Text = FormatNumber(vlRecargoTarjeta, 0)
     
     'Me.lblComision.Caption = "Comisión: $ " + FormatNumber(objComision.obtenerComision(vlTotalPesos, ObtenerCampo("cdCondVenta").Text, _
     '                    ObtenerCampo("tpComision").Text, obtenerGrillaDatosLiquidaComision(), ObtenerCampo("tpComprobante").Text), 2)
