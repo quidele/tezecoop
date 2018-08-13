@@ -15,7 +15,8 @@ namespace WCFWSFEAFIPTezecoop
         void DoWork();
 
         [OperationContract]
-        ResultadoSolicitarCAE SolicitarCAE(decimal IdSolicitud);
+        ResultadoSolicitarCAE SolicitarCAE(decimal pIdSolicitud,string pAmbiente);
         
+
     }
 }

@@ -107,6 +107,23 @@
       <DependentUpon>dbSG2000.edmx</DependentUpon>
       <LastGenOutput>dbSG2000.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="DataModeldbSG2000\dbSG2000_Pruebas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbSG2000_Pruebas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataModeldbSG2000\dbSG2000_Pruebas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
+      <LastGenOutput>dbSG2000_Pruebas.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModeldbSG2000\dbSG2000_Pruebas.edmx.diagram">
+      <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataModeldbSG2000\dbSG2000_Pruebas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
+      <LastGenOutput>dbSG2000_Pruebas.cs</LastGenOutput>
+    </Content>
     <None Include="Service References\personaServiceA5_homo\PersonaServiceA5.wsdl" />
     <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.dummyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -439,14 +456,29 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>dbSG2000.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataModeldbSG2000\dbSG2000_Pruebas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSG2000_Pruebas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModeldbSG2000\dbSG2000_Pruebas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModeldbSG2000\dbSG2000_Pruebas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataModeldbSG2000\TB_Comprobantes.cs">
-      <DependentUpon>dbSG2000.tt</DependentUpon>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_ComprobantesDetalle.cs">
-      <DependentUpon>dbSG2000.tt</DependentUpon>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_Cupones.cs">
-      <DependentUpon>dbSG2000.tt</DependentUpon>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_TiposComprobantes.cs">
       <DependentUpon>dbSG2000.tt</DependentUpon>

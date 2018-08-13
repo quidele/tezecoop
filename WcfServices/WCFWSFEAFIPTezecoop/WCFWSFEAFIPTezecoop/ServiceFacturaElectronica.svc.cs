@@ -6,6 +6,7 @@ using System.ServiceModel;
 using System.Text;
 using WCFWSFEAFIPTezecoop.DataModeldbSG2000;
 using WCFWSFEAFIPTezecoop.DataModelFE;
+using WCFWSFEAFIPTezecoop.DataModel;
 using WCFWSFEAFIPTezecoop.Servicios; 
 
 namespace WCFWSFEAFIPTezecoop
@@ -24,7 +25,7 @@ namespace WCFWSFEAFIPTezecoop
 
         
 
-        ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(decimal IdSolicitud)
+        ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(decimal IdSolicitud, string pAmbiente)
         {
             // el objeto un_comprobante_ml dbera ser adaptado a la estructura de WEBServer AFIP 
             // throw new NotImplementedException();
@@ -54,8 +55,10 @@ namespace WCFWSFEAFIPTezecoop
             resultado.CAEFchVto = "20180724";
 
             resultado.CodigoError = "CodigoError";
-            resultado.DescripcionError = "DescripcionError"; 
-            
+            resultado.DescripcionError = "DescripcionError";
+
+
+            var un_adaptarRepositorio = new AdaptaRepositorios(context_dbSG2000Entities, context_FacturaElectronicaEntities);
 
             return resultado;
         }
