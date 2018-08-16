@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   155844609
+         Format          =   139198465
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3202,7 +3202,7 @@ Private Function FacturarBD() As Boolean
             End Select
 
             ' FACTURA ELECTONICA
-            If AppVersionNumerico() >= 498334 Then
+            If AppVersionNumerico() >= 498335 Then
                 objLog.Grabar_Log ("--------- INICIA ---- Nueva logica de Factura Electronica--- ")
                 If objParametros.ObtenerValor("Frm_VentaPasajes.desde") = "puesto" Then
                 objLog.Grabar_Log ("Situacion puesto.cajapuesto ")

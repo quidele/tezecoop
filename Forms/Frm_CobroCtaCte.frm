@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Liquidar / Facturar / Adelantos  a Cuentas Corrientes"
@@ -832,9 +832,18 @@ Dim i             As Integer
     objParametros.GrabarValor "FacturarCtaCte.nrCAI", Trim(objbasededatos.rs_resultados("nrCAI"))
     objParametros.GrabarValor "FacturarCtaCte.dtVencimiento", Trim(objbasededatos.rs_resultados("dtCAI"))
     objParametros.GrabarValor "FacturarCtaCte.flManual", IIf(Me.cbTipoFacturacion.Text = "Automática", "N", "M")
+    objParametros.GrabarValor "FacturarCtaCte.FacturaElectronica", IIf(Me.cbTipoFacturacion.Text = "Electrónica Manual", "S", "N")
     
-    ' REVEER CTA. CTES
-    Frm_FacturaCtaCte.Show 1
+    
+    If Me.cbTipoFacturacion.Text = "Electrónica Manual" Then
+        ' REVEER CTA. CTES
+        Frm_FacturaCtaCteFEManual.Show 1
+    Else
+        ' REVEER CTA. CTES
+        Frm_FacturaCtaCte.Show 1
+    End If
+    
+    
     
     If objParametros.ObtenerValor("FacturarCtaCte.Facturado") = "SI" Then
         objbasededatos.BeginTrans

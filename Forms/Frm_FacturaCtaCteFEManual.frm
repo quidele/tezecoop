@@ -1,13 +1,13 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_FacturaCtaCteFEManual 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte. Eletrónica Manual"
    ClientHeight    =   5925
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   9840
+   ClientWidth     =   9825
    Icon            =   "Frm_FacturaCtaCteFEManual.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,7 +15,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   5925
-   ScaleWidth      =   9840
+   ScaleWidth      =   9825
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtFields 
@@ -26,9 +26,10 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       Height          =   315
       Index           =   2
       Left            =   1485
+      MaxLength       =   14
       TabIndex        =   44
-      Tag             =   "nrDoc"
-      Top             =   4590
+      Tag             =   "nrCAE"
+      Top             =   4635
       Width           =   2100
    End
    Begin MSComctlLib.Toolbar tlb_ABM 
@@ -37,8 +38,8 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       Left            =   0
       TabIndex        =   5
       Top             =   0
-      Width           =   9840
-      _ExtentX        =   17357
+      Width           =   9825
+      _ExtentX        =   17330
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -241,7 +242,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          _ExtentX        =   2381
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   153944065
+         Format          =   139329537
          CurrentDate     =   43327
       End
       Begin VB.TextBox txtFields 
@@ -537,15 +538,15 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       End
       Begin MSComCtl2.DTPicker DTPicker2 
          Height          =   345
-         Left            =   3555
+         Left            =   3510
          TabIndex        =   47
-         Tag             =   "dtComprobante"
-         Top             =   3900
+         Tag             =   "dtVencimientoCAE"
+         Top             =   3990
          Width           =   1800
          _ExtentX        =   3175
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   153944065
+         Format          =   289865729
          CurrentDate     =   43327
       End
       Begin MSComctlLib.ListView lstItemsFactura 
@@ -635,9 +636,9 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Index           =   2
-         Left            =   3570
+         Left            =   3525
          TabIndex        =   48
-         Top             =   3675
+         Top             =   3765
          Width           =   2175
       End
       Begin VB.Label Label7 
@@ -653,9 +654,9 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   1440
+         Left            =   1380
          TabIndex        =   46
-         Top             =   3720
+         Top             =   3750
          Width           =   1275
       End
       Begin VB.Label lblLabels 
@@ -1678,6 +1679,42 @@ Private Function validarEntradadedatos() As Boolean
         validarEntradadedatos = False
     End If
     
+    If Trim(ObtenerCampo("nrTalonario").Text) = "" Then
+        MsgBox "Debe ingresar el punto de venta del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "nrComprobante", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
+    
+    If Trim(ObtenerCampo("nrComprobante").Text) = "" Then
+        MsgBox "Debe ingresar el número del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "nrComprobante", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
+    
+    If Trim(ObtenerCampo("tpLetra").Text) = "" Then
+        MsgBox "Debe ingresar la letra del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "tpLetra", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
+    
+        
+    If Trim(ObtenerCampo("nrCAE").Text) = "" Then
+        MsgBox "Debe ingresar el CAE otorgado por AFIP", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "nrCAE", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
+    
+    If Trim(ObtenerCampo("dtVencimientoCAE").Text) = "" Then
+        MsgBox "Debe ingresar la fecha de vencimiento del CAE otorgado por AFIP", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "dtVencimientoCAE", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
+    
     
     validarEntradadedatos = Not ExisteComprobante()
     
@@ -2145,9 +2182,12 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor _
               "flManual", "<-", objParametros.ObtenerValor("FacturarCtaCte.flManual")
               
-          
-
-    
+    ' nuevos datos de la fatura local
+    ObjTablasIO.setearCampoOperadorValor _
+              "nrCAE", "<-", objParametros.ObtenerValor("nrCAE")
+    ObjTablasIO.setearCampoOperadorValor _
+              "dtVencimientoCAE", "<-", objParametros.ObtenerValor("dtVencimientoCAE")
+              
     Select Case EstadoABM
     Case modificacion
             ObjTablasIO.setearCampoOperadorValor "cdComprobante", _
