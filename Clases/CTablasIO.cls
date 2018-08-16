@@ -508,7 +508,7 @@ Public Function FormatearValor _
             pValor = ReemplazarPalabra(pValor, ".", "")
             pValor = ReemplazarPalabra(pValor, ",", ".")
             FormatearValor = pValor
-        Case "SMALLDATETIME"
+        Case "SMALLDATETIME", "DATE"
             If pValor = "/  /" Or pValor = "__/__/____" Then
                 FormatearValor = "null"
             Else
@@ -542,7 +542,7 @@ Dim strLike    As String
         Case "BIT", "COUNTER", "DOUBLE", "INTEGER":
             strLike = " " + pstrCampo + " Like ('" + InsertarOperadorenLIKE(pValor, tpLike, "%") + "')"
             ArmarLikeSegunMotorSQL = strLike + pstrConjuncion
-        Case "SMALLDATETIME", "DATETIME"
+        Case "SMALLDATETIME", "DATETIME", "DATE"
             strLike = " CONVERT(char," + pstrCampo + ",103) LIKE ('" + InsertarOperadorenLIKE(pValor, tpLike, "%") + "')"
             ArmarLikeSegunMotorSQL = strLike + pstrConjuncion
         Case "VARCHAR"
@@ -566,7 +566,7 @@ Dim strLike    As String
         Case "BIT", "COUNTER", "DOUBLE", "INTEGER":
             strLike = " " + pstrCampo + " Like ('" + InsertarOperadorenLIKE(pValor, tpLike, "*") + "')"
             ArmarLikeSegunMotorMDB = strLike + pstrConjuncion
-        Case "SMALLDATETIME", "DATETIME"
+        Case "SMALLDATETIME", "DATETIME", "DATE"
             strLike = " cstr(" + pstrCampo + ") LIKE ('" + InsertarOperadorenLIKE(pValor, tpLike, "*") + "')"
             ArmarLikeSegunMotorMDB = strLike + pstrConjuncion
         Case "VARCHAR"

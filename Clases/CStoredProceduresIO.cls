@@ -236,7 +236,7 @@ Dim anio   As String
                 FormatearValorSQL = Chr(39) + Format(pValor, "YYYY/MM/DD HH:MM:SS") + Chr(39)
             End Select
           End If
-    Case "SMALLDATETIME"
+    Case "SMALLDATETIME", "DATE"
           If pValor = "/  /" Or pValor = "__/__/____" Then
             FormatearValorSQL = "null"
           Else

@@ -142,7 +142,7 @@ Dim strDato                 As String
         Case "DATETIME"
             strDato = pLista.ListItems.Item(cantidadItems).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "dd/mm/yyyy HH:mm:ss"
-        Case "SMALLDATETIME"
+        Case "SMALLDATETIME", "DATE"
             strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "dd/mm/yyyy"
         Case "CHAR", "VARCHAR"
@@ -184,7 +184,7 @@ Dim strDato                 As String
                     Case "DATETIME"
                         strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
                         xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "dd/mm/yyyy HH:mm:ss"
-                    Case "SMALLDATETIME"
+                    Case "SMALLDATETIME", "DATE"
                         strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
                         xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "dd/mm/yyyy"
                     Case "CHAR", "VARCHAR", "NRO_COMPROBANTE"
@@ -348,7 +348,7 @@ Dim strDato                 As String
         Case "DATETIME"
             strDato = pLista.ListItems.Item(cantidadItems).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "dd/mm/yyyy HH:mm:ss"
-        Case "SMALLDATETIME"
+        Case "SMALLDATETIME", "DATE"
             strDato = pLista.ListItems.Item(cantidadItems).Text
             xlSheet(nrCantApp).Cells(nJ, 1).NumberFormat = "dd/mm/yyyy"
         Case "CHAR", "VARCHAR"
@@ -379,7 +379,7 @@ Dim strDato                 As String
                 Case "DATETIME"
                     strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
                     xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "dd/mm/yyyy HH:mm:ss"
-                Case "SMALLDATETIME"
+                Case "SMALLDATETIME", "DATE"
                     strDato = pLista.ListItems.Item(cantidadItems).ListSubItems(nI).Text
                     xlSheet(nrCantApp).Cells(nJ, nI + 1).NumberFormat = "dd/mm/yyyy"
                 Case "CHAR", "VARCHAR", "NRO_COMPROBANTE"

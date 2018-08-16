@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Liquidar / Facturar / Adelantos  a Cuentas Corrientes"
@@ -73,7 +73,7 @@ Begin VB.Form frm_CobroCtaCte
       Height          =   315
       ItemData        =   "Frm_CobroCtaCte.frx":030A
       Left            =   2640
-      List            =   "Frm_CobroCtaCte.frx":0314
+      List            =   "Frm_CobroCtaCte.frx":0317
       Style           =   2  'Dropdown List
       TabIndex        =   19
       Top             =   6405
@@ -82,9 +82,9 @@ Begin VB.Form frm_CobroCtaCte
    Begin VB.ComboBox cmbCampos 
       BackColor       =   &H00E0E0E0&
       Height          =   315
-      ItemData        =   "Frm_CobroCtaCte.frx":032C
+      ItemData        =   "Frm_CobroCtaCte.frx":0343
       Left            =   135
-      List            =   "Frm_CobroCtaCte.frx":032E
+      List            =   "Frm_CobroCtaCte.frx":0345
       Locked          =   -1  'True
       Style           =   2  'Dropdown List
       TabIndex        =   7
@@ -241,7 +241,7 @@ Begin VB.Form frm_CobroCtaCte
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_CobroCtaCte.frx":0330
+      MouseIcon       =   "Frm_CobroCtaCte.frx":0347
       Begin MSComctlLib.ImageList imgCobroClientesResaltado 
          Left            =   5850
          Top             =   885
@@ -255,47 +255,47 @@ Begin VB.Form frm_CobroCtaCte
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0492
+               Picture         =   "Frm_CobroCtaCte.frx":04A9
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":05AE
+               Picture         =   "Frm_CobroCtaCte.frx":05C5
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0702
+               Picture         =   "Frm_CobroCtaCte.frx":0719
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0812
+               Picture         =   "Frm_CobroCtaCte.frx":0829
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0914
+               Picture         =   "Frm_CobroCtaCte.frx":092B
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0A68
+               Picture         =   "Frm_CobroCtaCte.frx":0A7F
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":0B74
+               Picture         =   "Frm_CobroCtaCte.frx":0B8B
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":11F0
+               Picture         =   "Frm_CobroCtaCte.frx":1207
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":1358
+               Picture         =   "Frm_CobroCtaCte.frx":136F
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":17AC
+               Picture         =   "Frm_CobroCtaCte.frx":17C3
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":1C00
+               Picture         =   "Frm_CobroCtaCte.frx":1C17
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -313,47 +313,47 @@ Begin VB.Form frm_CobroCtaCte
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":227A
+               Picture         =   "Frm_CobroCtaCte.frx":2291
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":2392
+               Picture         =   "Frm_CobroCtaCte.frx":23A9
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":24E6
+               Picture         =   "Frm_CobroCtaCte.frx":24FD
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":25FE
+               Picture         =   "Frm_CobroCtaCte.frx":2615
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":270A
+               Picture         =   "Frm_CobroCtaCte.frx":2721
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":285E
+               Picture         =   "Frm_CobroCtaCte.frx":2875
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":2966
+               Picture         =   "Frm_CobroCtaCte.frx":297D
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":2FE2
+               Picture         =   "Frm_CobroCtaCte.frx":2FF9
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":3142
+               Picture         =   "Frm_CobroCtaCte.frx":3159
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":3596
+               Picture         =   "Frm_CobroCtaCte.frx":35AD
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_CobroCtaCte.frx":39EA
+               Picture         =   "Frm_CobroCtaCte.frx":3A01
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -372,27 +372,27 @@ Begin VB.Form frm_CobroCtaCte
       BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
          NumListImages   =   6
          BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":4064
+            Picture         =   "Frm_CobroCtaCte.frx":407B
             Key             =   "Similar"
          EndProperty
          BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":4176
+            Picture         =   "Frm_CobroCtaCte.frx":418D
             Key             =   "Igual"
          EndProperty
          BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":4288
+            Picture         =   "Frm_CobroCtaCte.frx":429F
             Key             =   "MayoroIgual"
          EndProperty
          BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":439A
+            Picture         =   "Frm_CobroCtaCte.frx":43B1
             Key             =   "Mayor"
          EndProperty
          BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":44AC
+            Picture         =   "Frm_CobroCtaCte.frx":44C3
             Key             =   "MenoroIgual"
          EndProperty
          BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-            Picture         =   "Frm_CobroCtaCte.frx":45BE
+            Picture         =   "Frm_CobroCtaCte.frx":45D5
             Key             =   "Menor"
          EndProperty
       EndProperty
@@ -995,7 +995,7 @@ Private Sub Form_Load()
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Buscar")
     EstadoABM = Consulta
     Me.cmbCampos.ListIndex = 3
-    Me.cbTipoFacturacion.ListIndex = 0
+    Me.cbTipoFacturacion.ListIndex = 2
       
     
 End Sub

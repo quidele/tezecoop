@@ -580,7 +580,7 @@ Dim pos          As Integer
                 FormatearValorSQL = Chr(39) + Format(pValor, "YYYY/MM/DD HH:MM:SS") + Chr(39)
             End Select
           End If
-    Case "SMALLDATETIME"
+    Case "SMALLDATETIME", "DATE"
           If pValor = "/  /" Or pValor = "__/__/____" Then
             FormatearValorSQL = "null"
           Else
@@ -621,7 +621,7 @@ Dim pos          As Integer
                 FormatearValorSQL = Chr(39) + Format(pValor, "YYYY/MM/YY") + Chr(39)
             End Select
           End If
-    Case "SMALLDATETIME_DOWN"
+    Case "SMALLDATETIME_DOWN", "DATE"
           If pValor = "/  /" Or pValor = "__/__/____" Then
             FormatearValorSQL = "null"
           Else
@@ -662,7 +662,7 @@ Dim pos          As Integer
                 FormatearValorSQL = Chr(39) + Format(pValor, "YYYY/MM/YY") + Chr(39)
             End Select
           End If
-    Case "SMALLDATETIME_UP"
+    Case "SMALLDATETIME_UP", "DATE"
           If pValor = "/  /" Or pValor = "__/__/____" Then
             FormatearValorSQL = "null"
           Else

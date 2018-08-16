@@ -1,13 +1,14 @@
 VERSION 5.00
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
 Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
-Begin VB.Form Frm_FacturaCtaCte 
+Begin VB.Form Frm_FacturaCtaCteFEManual 
    BorderStyle     =   3  'Fixed Dialog
-   Caption         =   "Facturar la Cta. Cte."
+   Caption         =   "Facturar la Cta. Cte. Eletrónica Manual"
    ClientHeight    =   5925
    ClientLeft      =   45
    ClientTop       =   435
    ClientWidth     =   9840
-   Icon            =   "Frm_FacturaCtaCte.frx":0000
+   Icon            =   "Frm_FacturaCtaCteFEManual.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
    MaxButton       =   0   'False
@@ -17,6 +18,19 @@ Begin VB.Form Frm_FacturaCtaCte
    ScaleWidth      =   9840
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
+   Begin VB.TextBox txtFields 
+      Appearance      =   0  'Flat
+      BackColor       =   &H00FFFFFF&
+      CausesValidation=   0   'False
+      DataField       =   "dsRazonSocial"
+      Height          =   315
+      Index           =   2
+      Left            =   1485
+      TabIndex        =   44
+      Tag             =   "nrDoc"
+      Top             =   4590
+      Width           =   2100
+   End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
       Height          =   660
@@ -88,7 +102,7 @@ Begin VB.Form Frm_FacturaCtaCte
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_FacturaCtaCte.frx":030A
+      MouseIcon       =   "Frm_FacturaCtaCteFEManual.frx":030A
       Begin MSComctlLib.ImageList imgVentaPasajesResaltado 
          Left            =   5850
          Top             =   885
@@ -102,43 +116,43 @@ Begin VB.Form Frm_FacturaCtaCte
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   10
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":046C
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":046C
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":0588
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":0588
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":06DC
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":06DC
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":07EC
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":07EC
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":08EE
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":08EE
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":0A42
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":0A42
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":0B4E
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":0B4E
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":11CA
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":11CA
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1332
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1332
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1786
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1786
                Key             =   "Salir"
             EndProperty
          EndProperty
@@ -156,47 +170,47 @@ Begin VB.Form Frm_FacturaCtaCte
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   11
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1BDA
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1BDA
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1CF2
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1CF2
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1E46
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1E46
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":1F5E
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":1F5E
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":206A
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":206A
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":21BE
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":21BE
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":22C6
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":22C6
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":2942
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":2942
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":2AA2
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":2AA2
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":2EF6
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":2EF6
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_FacturaCtaCte.frx":334A
+               Picture         =   "Frm_FacturaCtaCteFEManual.frx":334A
                Key             =   "Imprimir"
             EndProperty
          EndProperty
@@ -205,10 +219,31 @@ Begin VB.Form Frm_FacturaCtaCte
    Begin VB.Frame fraVentaPasajes 
       Caption         =   "Datos de la Factura"
       Height          =   5055
-      Left            =   75
+      Left            =   105
       TabIndex        =   7
-      Top             =   705
-      Width           =   9720
+      Top             =   645
+      Width           =   9480
+      Begin VB.TextBox txtDetalleFactura 
+         Appearance      =   0  'Flat
+         Height          =   300
+         Left            =   135
+         TabIndex        =   43
+         Top             =   1650
+         Width           =   8535
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   315
+         Left            =   3930
+         TabIndex        =   42
+         Tag             =   "dtComprobante"
+         Top             =   465
+         Width           =   1350
+         _ExtentX        =   2381
+         _ExtentY        =   556
+         _Version        =   393216
+         Format          =   153944065
+         CurrentDate     =   43327
+      End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
          BackColor       =   &H00E0E0E0&
@@ -218,7 +253,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Index           =   25
          Left            =   2985
          Locked          =   -1  'True
-         TabIndex        =   40
+         TabIndex        =   39
          TabStop         =   0   'False
          Tag             =   "tpComprobante"
          Top             =   480
@@ -226,14 +261,13 @@ Begin VB.Form Frm_FacturaCtaCte
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
+         BackColor       =   &H00FFFFFF&
          DataField       =   "cdComprobante"
          ForeColor       =   &H00000000&
          Height          =   285
          Index           =   26
          Left            =   3555
-         Locked          =   -1  'True
-         TabIndex        =   39
+         TabIndex        =   38
          TabStop         =   0   'False
          Tag             =   "tpLetra"
          Top             =   480
@@ -244,12 +278,12 @@ Begin VB.Form Frm_FacturaCtaCte
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   2
-         ItemData        =   "Frm_FacturaCtaCte.frx":39C4
+         ItemData        =   "Frm_FacturaCtaCteFEManual.frx":39C4
          Left            =   120
-         List            =   "Frm_FacturaCtaCte.frx":39DA
+         List            =   "Frm_FacturaCtaCteFEManual.frx":39DA
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   38
+         TabIndex        =   37
          TabStop         =   0   'False
          Tag             =   "tpIVA"
          Top             =   480
@@ -273,11 +307,11 @@ Begin VB.Form Frm_FacturaCtaCte
          Left            =   4845
          Locked          =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   34
+         TabIndex        =   33
          TabStop         =   0   'False
          Tag             =   "nmLicenciatario"
          Text            =   "Coop. Taxi Ezeiza"
-         Top             =   4485
+         Top             =   4605
          Visible         =   0   'False
          Width           =   2475
       End
@@ -288,10 +322,10 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   285
          Index           =   13
          Left            =   4020
-         TabIndex        =   33
+         TabIndex        =   32
          Tag             =   "nrLicencia"
          Text            =   "999"
-         Top             =   4485
+         Top             =   4620
          Visible         =   0   'False
          Width           =   795
       End
@@ -299,9 +333,9 @@ Begin VB.Form Frm_FacturaCtaCte
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   1
-         ItemData        =   "Frm_FacturaCtaCte.frx":39F6
+         ItemData        =   "Frm_FacturaCtaCteFEManual.frx":39F6
          Left            =   1890
-         List            =   "Frm_FacturaCtaCte.frx":3A03
+         List            =   "Frm_FacturaCtaCteFEManual.frx":3A03
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   1
@@ -319,7 +353,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Left            =   3750
          TabIndex        =   8
          Tag             =   "nrDoc"
-         Top             =   1020
+         Top             =   1035
          Width           =   2100
       End
       Begin VB.TextBox txtFields 
@@ -364,28 +398,13 @@ Begin VB.Form Frm_FacturaCtaCte
          Width           =   900
       End
       Begin VB.CommandButton cmdFacturar 
-         Caption         =   "&Facturar"
+         Caption         =   "&Guardar"
          Height          =   375
-         Left            =   165
+         Left            =   180
          TabIndex        =   3
          ToolTipText     =   "Imprimir la Factura"
-         Top             =   4485
+         Top             =   4470
          Width           =   2940
-      End
-      Begin VB.TextBox txtFields 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
-         CausesValidation=   0   'False
-         DataField       =   "dsRazonSocial"
-         Height          =   285
-         Index           =   23
-         Left            =   3945
-         Locked          =   -1  'True
-         TabIndex        =   16
-         TabStop         =   0   'False
-         Tag             =   "dtComprobante"
-         Top             =   480
-         Width           =   1335
       End
       Begin VB.TextBox txtFields 
          Alignment       =   2  'Center
@@ -415,22 +434,22 @@ Begin VB.Form Frm_FacturaCtaCte
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
+         BackColor       =   &H00FFFFFF&
          DataField       =   "cdComprobante"
          ForeColor       =   &H00000000&
          Height          =   285
          Index           =   0
-         Left            =   1725
+         Left            =   1710
          Locked          =   -1  'True
          TabIndex        =   14
          TabStop         =   0   'False
          Tag             =   "nrComprobante"
-         Top             =   495
-         Width           =   1320
+         Top             =   480
+         Width           =   1245
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
-         BackColor       =   &H00E0E0E0&
+         BackColor       =   &H00FFFFFF&
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
          Height          =   285
@@ -447,9 +466,9 @@ Begin VB.Form Frm_FacturaCtaCte
          BackColor       =   &H00E0E0E0&
          Height          =   315
          Index           =   0
-         ItemData        =   "Frm_FacturaCtaCte.frx":3A29
+         ItemData        =   "Frm_FacturaCtaCteFEManual.frx":3A29
          Left            =   120
-         List            =   "Frm_FacturaCtaCte.frx":3A3F
+         List            =   "Frm_FacturaCtaCteFEManual.frx":3A3F
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
          TabIndex        =   0
@@ -513,17 +532,30 @@ Begin VB.Form Frm_FacturaCtaCte
          TabIndex        =   9
          TabStop         =   0   'False
          Tag             =   "nrCaja"
-         Top             =   465
+         Top             =   480
          Width           =   1080
       End
+      Begin MSComCtl2.DTPicker DTPicker2 
+         Height          =   345
+         Left            =   3555
+         TabIndex        =   47
+         Tag             =   "dtComprobante"
+         Top             =   3900
+         Width           =   1800
+         _ExtentX        =   3175
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   153944065
+         CurrentDate     =   43327
+      End
       Begin MSComctlLib.ListView lstItemsFactura 
-         Height          =   1350
-         Left            =   180
-         TabIndex        =   43
-         Top             =   1665
-         Width           =   8640
-         _ExtentX        =   15240
-         _ExtentY        =   2381
+         Height          =   990
+         Left            =   120
+         TabIndex        =   49
+         Top             =   1995
+         Width           =   8565
+         _ExtentX        =   15108
+         _ExtentY        =   1746
          View            =   3
          LabelEdit       =   1
          LabelWrap       =   -1  'True
@@ -590,6 +622,42 @@ Begin VB.Form Frm_FacturaCtaCte
             Object.Width           =   2558
          EndProperty
       End
+      Begin VB.Label Label7 
+         Caption         =   "Fec. Venc. CAE"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   2
+         Left            =   3570
+         TabIndex        =   48
+         Top             =   3675
+         Width           =   2175
+      End
+      Begin VB.Label Label7 
+         Caption         =   "CAE"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   1
+         Left            =   1440
+         TabIndex        =   46
+         Top             =   3720
+         Width           =   1275
+      End
       Begin VB.Label lblLabels 
          Caption         =   "Doc"
          BeginProperty Font 
@@ -604,7 +672,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Index           =   8
          Left            =   2970
-         TabIndex        =   42
+         TabIndex        =   41
          Top             =   240
          Width           =   375
       End
@@ -622,7 +690,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Index           =   7
          Left            =   3465
-         TabIndex        =   41
+         TabIndex        =   40
          Top             =   240
          Width           =   465
       End
@@ -640,7 +708,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   240
          Index           =   4
          Left            =   90
-         TabIndex        =   37
+         TabIndex        =   36
          Top             =   240
          Width           =   690
       End
@@ -657,8 +725,8 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   4860
-         TabIndex        =   36
-         Top             =   4245
+         TabIndex        =   35
+         Top             =   4380
          Visible         =   0   'False
          Width           =   1455
       End
@@ -675,8 +743,8 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   4005
-         TabIndex        =   35
-         Top             =   4245
+         TabIndex        =   34
+         Top             =   4380
          Visible         =   0   'False
          Width           =   750
       End
@@ -694,12 +762,12 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   225
          Index           =   5
          Left            =   1920
-         TabIndex        =   32
+         TabIndex        =   31
          Top             =   3105
          Width           =   1620
       End
       Begin VB.Label Label30 
-         Caption         =   "Descripción"
+         Caption         =   "Detalle "
          BeginProperty Font 
             Name            =   "Verdana"
             Size            =   8.25
@@ -711,7 +779,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   165
-         TabIndex        =   31
+         TabIndex        =   30
          Top             =   1440
          Width           =   1455
       End
@@ -727,9 +795,10 @@ Begin VB.Form Frm_FacturaCtaCte
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
+         Index           =   0
          Left            =   3765
-         TabIndex        =   30
-         Top             =   795
+         TabIndex        =   29
+         Top             =   810
          Width           =   1275
       End
       Begin VB.Label Label18 
@@ -745,7 +814,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   5865
-         TabIndex        =   29
+         TabIndex        =   28
          Top             =   810
          Width           =   930
       End
@@ -762,7 +831,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   1095
-         TabIndex        =   28
+         TabIndex        =   27
          Top             =   795
          Width           =   2565
       End
@@ -779,7 +848,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   210
-         TabIndex        =   27
+         TabIndex        =   26
          Top             =   825
          Width           =   1140
       End
@@ -797,7 +866,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   135
-         TabIndex        =   26
+         TabIndex        =   25
          Top             =   3750
          Width           =   1080
       End
@@ -815,7 +884,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   255
          Index           =   0
          Left            =   1740
-         TabIndex        =   25
+         TabIndex        =   24
          Top             =   240
          Width           =   1170
       End
@@ -833,7 +902,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   225
          Index           =   12
          Left            =   3945
-         TabIndex        =   24
+         TabIndex        =   23
          Top             =   255
          Width           =   1050
       End
@@ -851,7 +920,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   225
          Left            =   825
-         TabIndex        =   23
+         TabIndex        =   22
          Top             =   255
          Width           =   780
       End
@@ -869,7 +938,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   225
          Index           =   2
          Left            =   135
-         TabIndex        =   22
+         TabIndex        =   21
          Top             =   3090
          Width           =   1620
       End
@@ -887,7 +956,7 @@ Begin VB.Form Frm_FacturaCtaCte
          Height          =   240
          Index           =   3
          Left            =   180
-         TabIndex        =   21
+         TabIndex        =   20
          Top             =   240
          Width           =   690
       End
@@ -904,7 +973,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   3660
-         TabIndex        =   20
+         TabIndex        =   19
          Top             =   3120
          Width           =   4230
       End
@@ -921,7 +990,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   5280
-         TabIndex        =   19
+         TabIndex        =   18
          Top             =   240
          Width           =   1785
       End
@@ -938,7 +1007,7 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   7065
-         TabIndex        =   18
+         TabIndex        =   17
          Top             =   240
          Width           =   615
       End
@@ -955,13 +1024,30 @@ Begin VB.Form Frm_FacturaCtaCte
          EndProperty
          Height          =   255
          Left            =   7710
-         TabIndex        =   17
+         TabIndex        =   16
          Top             =   240
          Width           =   870
       End
    End
+   Begin VB.Label Label1 
+      Caption         =   "CUIT / DNI"
+      BeginProperty Font 
+         Name            =   "Verdana"
+         Size            =   8.25
+         Charset         =   0
+         Weight          =   400
+         Underline       =   0   'False
+         Italic          =   0   'False
+         Strikethrough   =   0   'False
+      EndProperty
+      Height          =   255
+      Left            =   1500
+      TabIndex        =   45
+      Top             =   4440
+      Width           =   1275
+   End
 End
-Attribute VB_Name = "Frm_FacturaCtaCte"
+Attribute VB_Name = "Frm_FacturaCtaCteFEManual"
 Attribute VB_GlobalNameSpace = False
 Attribute VB_Creatable = False
 Attribute VB_PredeclaredId = True
@@ -1003,6 +1089,7 @@ Dim strtag  As String
     Next
     
     Me.lstItemsFactura.ListItems.Clear
+    Me.txtDetalleFactura.Text = ""
     ObtenerCampo("vlTotalGeneral").Text = "0,00"
     Me.Combox1(0).ListIndex = 0
     
@@ -1512,6 +1599,7 @@ Dim ItemList    As ListItem
                 ObtenerCampo("tpIVA").Text = objParametros.ObtenerValor("FacturarCtaCte.tpIVA")
            End If
            
+           Me.txtDetalleFactura.Text = objParametros.ObtenerValor("FacturarCtaCte.dsDetalle")
            Set ItemList = lstItemsFactura.ListItems.Add(1, , "999")
            ItemList.SubItems(1) = objParametros.ObtenerValor("FacturarCtaCte.dsDetalle")
            ItemList.SubItems(5) = objParametros.ObtenerValor("FacturarCtaCte.vlTotal")
@@ -2932,7 +3020,7 @@ Dim cdCodBarLic         As String
            DoEvents
             Sleep (500)
             Frm_Principal.CrystalReport1.Action = 1
-            objParametros.GrabarValor "Frm_FacturaCtaCte.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
+            objParametros.GrabarValor "Frm_FacturaCtaCteFEManual.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
          End If
     On Error GoTo 0
     

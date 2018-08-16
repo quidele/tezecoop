@@ -702,7 +702,7 @@ Dim strNro   As String
                 ValidarEntrada = vbKeyReturn
             End If
         End If
-    Case "DATETIME", "FECHA CORTA", "FECHA LARGA"
+    Case "DATETIME", "DATE", "FECHA CORTA", "FECHA LARGA"
         If (KeyAscii >= 48 And KeyAscii <= 57) Or (KeyAscii = 47) Or _
            (KeyAscii = 45) Or (KeyAscii = 42) Or (KeyAscii = 37) Then
            ValidarEntrada = KeyAscii
@@ -733,7 +733,7 @@ Dim strNro   As String
     
     Select Case UCase(Me.tpTipo)
     Case "BIT", "COUNTER", "INTEGER", "VARCHAR", "NRO_COMPROBANTE", "SMALLINT", "INT", "INT_CERO_POSITIVO", "CUIT", "CUIL":
-    Case "SMALLDATETIME":
+    Case "SMALLDATETIME", "DATE":
             If IsNull(pControl.Text) And pControl.Text = "" Then
                 pControl.Text = ""
             Else
@@ -804,7 +804,7 @@ Dim strNro   As String
         Else
             FormatearCampoValor = CStr(pValor)
         End If
-    Case "SMALLDATETIME":
+    Case "SMALLDATETIME", "DATE":
             If IsNull(pValor) And pValor = "" Then
                 FormatearCampoValor = ""
             Else

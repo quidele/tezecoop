@@ -724,7 +724,7 @@ Dim lValor   As String
     
     Select Case UCase(Me.tpTipo)
     Case "BIT", "COUNTER", "INTEGER", "VARCHAR", "CHAR", "NVARCHAR", "TELEFONO", "NRO_COMPROBANTE", "NRO_TALONARIO":
-    Case "SMALLDATETIME":
+    Case "SMALLDATETIME", "DATE":
             If IsNull(pControl.Text) And pControl.Text = "" Then
                 pControl.Text = ""
             Else
@@ -824,7 +824,7 @@ Dim strMinutos   As String
         Else
             FormatearCampoValor = CStr(pValor)
         End If
-    Case "SMALLDATETIME":
+    Case "SMALLDATETIME", "DATE":
             If IsNull(pValor) And pValor = "" Then
                 FormatearCampoValor = ""
             Else
