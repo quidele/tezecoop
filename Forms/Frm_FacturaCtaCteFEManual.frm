@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_FacturaCtaCteFEManual 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Facturar la Cta. Cte. Eletrónica Manual"
@@ -11,6 +11,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
    Icon            =   "Frm_FacturaCtaCteFEManual.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
+   LockControls    =   -1  'True
    MaxButton       =   0   'False
    MinButton       =   0   'False
    Moveable        =   0   'False
@@ -25,9 +26,9 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       DataField       =   "dsRazonSocial"
       Height          =   315
       Index           =   2
-      Left            =   1485
+      Left            =   2205
       MaxLength       =   14
-      TabIndex        =   44
+      TabIndex        =   17
       Tag             =   "nrCAE"
       Top             =   4635
       Width           =   2100
@@ -36,7 +37,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       Align           =   1  'Align Top
       Height          =   660
       Left            =   0
-      TabIndex        =   5
+      TabIndex        =   7
       Top             =   0
       Width           =   9825
       _ExtentX        =   17330
@@ -221,28 +222,28 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       Caption         =   "Datos de la Factura"
       Height          =   5055
       Left            =   105
-      TabIndex        =   7
+      TabIndex        =   9
       Top             =   645
       Width           =   9480
       Begin VB.TextBox txtDetalleFactura 
          Appearance      =   0  'Flat
          Height          =   300
          Left            =   135
-         TabIndex        =   43
+         TabIndex        =   14
          Top             =   1650
          Width           =   8535
       End
       Begin MSComCtl2.DTPicker DTPicker1 
          Height          =   315
          Left            =   3930
-         TabIndex        =   42
+         TabIndex        =   4
          Tag             =   "dtComprobante"
          Top             =   465
          Width           =   1350
          _ExtentX        =   2381
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   139329537
+         Format          =   226754561
          CurrentDate     =   43327
       End
       Begin VB.TextBox txtFields 
@@ -252,13 +253,13 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          ForeColor       =   &H00000000&
          Height          =   285
          Index           =   25
-         Left            =   2985
+         Left            =   2970
          Locked          =   -1  'True
-         TabIndex        =   39
+         TabIndex        =   42
          TabStop         =   0   'False
          Tag             =   "tpComprobante"
          Top             =   480
-         Width           =   585
+         Width           =   570
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
@@ -268,8 +269,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   26
          Left            =   3555
-         TabIndex        =   38
-         TabStop         =   0   'False
+         TabIndex        =   2
          Tag             =   "tpLetra"
          Top             =   480
          Width           =   405
@@ -284,7 +284,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          List            =   "Frm_FacturaCtaCteFEManual.frx":39DA
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   37
+         TabIndex        =   41
          TabStop         =   0   'False
          Tag             =   "tpIVA"
          Top             =   480
@@ -308,7 +308,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Left            =   4845
          Locked          =   -1  'True
          ScrollBars      =   2  'Vertical
-         TabIndex        =   33
+         TabIndex        =   37
          TabStop         =   0   'False
          Tag             =   "nmLicenciatario"
          Text            =   "Coop. Taxi Ezeiza"
@@ -323,7 +323,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   13
          Left            =   4020
-         TabIndex        =   32
+         TabIndex        =   36
          Tag             =   "nrLicencia"
          Text            =   "999"
          Top             =   4620
@@ -339,7 +339,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          List            =   "Frm_FacturaCtaCteFEManual.frx":3A03
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   1
+         TabIndex        =   3
          Tag             =   "tpComision"
          Top             =   3330
          Width           =   1725
@@ -352,7 +352,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   3
          Left            =   3750
-         TabIndex        =   8
+         TabIndex        =   10
          Tag             =   "nrDoc"
          Top             =   1035
          Width           =   2100
@@ -365,7 +365,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   50
          Left            =   5880
-         TabIndex        =   10
+         TabIndex        =   12
          Tag             =   "dsEmail"
          Top             =   1035
          Width           =   2925
@@ -378,7 +378,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   6
          Left            =   1080
-         TabIndex        =   6
+         TabIndex        =   8
          Tag             =   "dsRazonSocial"
          Text            =   "Consumidor Final"
          Top             =   1035
@@ -392,7 +392,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   5
          Left            =   150
-         TabIndex        =   4
+         TabIndex        =   6
          TabStop         =   0   'False
          Tag             =   "cdCliente"
          Top             =   1035
@@ -402,7 +402,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Caption         =   "&Guardar"
          Height          =   375
          Left            =   180
-         TabIndex        =   3
+         TabIndex        =   5
          ToolTipText     =   "Imprimir la Factura"
          Top             =   4470
          Width           =   2940
@@ -422,16 +422,16 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
             Strikethrough   =   0   'False
          EndProperty
          ForeColor       =   &H000000FF&
-         Height          =   285
+         Height          =   300
          Index           =   7
          Left            =   165
          Locked          =   -1  'True
-         TabIndex        =   15
+         TabIndex        =   19
          TabStop         =   0   'False
          Tag             =   "vlTotalGeneral"
          Text            =   "0"
          Top             =   4005
-         Width           =   1020
+         Width           =   1455
       End
       Begin VB.TextBox txtFields 
          Appearance      =   0  'Flat
@@ -441,9 +441,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   0
          Left            =   1710
-         Locked          =   -1  'True
-         TabIndex        =   14
-         TabStop         =   0   'False
+         TabIndex        =   1
          Tag             =   "nrComprobante"
          Top             =   480
          Width           =   1245
@@ -456,9 +454,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   1
          Left            =   930
-         Locked          =   -1  'True
-         TabIndex        =   13
-         TabStop         =   0   'False
+         TabIndex        =   0
          Tag             =   "nrTalonario"
          Top             =   480
          Width           =   765
@@ -472,7 +468,8 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          List            =   "Frm_FacturaCtaCteFEManual.frx":3A3F
          Locked          =   -1  'True
          Style           =   2  'Dropdown List
-         TabIndex        =   0
+         TabIndex        =   49
+         TabStop         =   0   'False
          Tag             =   "cdCondVenta"
          Top             =   3345
          Width           =   1725
@@ -485,7 +482,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   285
          Index           =   8
          Left            =   3645
-         TabIndex        =   2
+         TabIndex        =   16
          TabStop         =   0   'False
          Tag             =   "dsLeyenda"
          Top             =   3345
@@ -500,7 +497,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Index           =   10
          Left            =   5295
          Locked          =   -1  'True
-         TabIndex        =   12
+         TabIndex        =   15
          TabStop         =   0   'False
          Tag             =   "nmEmpleado"
          Top             =   480
@@ -515,7 +512,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Index           =   11
          Left            =   7110
          Locked          =   -1  'True
-         TabIndex        =   11
+         TabIndex        =   13
          TabStop         =   0   'False
          Tag             =   "nrPuesto"
          Top             =   480
@@ -530,7 +527,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Index           =   12
          Left            =   7740
          Locked          =   -1  'True
-         TabIndex        =   9
+         TabIndex        =   11
          TabStop         =   0   'False
          Tag             =   "nrCaja"
          Top             =   480
@@ -538,21 +535,21 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
       End
       Begin MSComCtl2.DTPicker DTPicker2 
          Height          =   345
-         Left            =   3510
-         TabIndex        =   47
+         Left            =   4245
+         TabIndex        =   18
          Tag             =   "dtVencimientoCAE"
          Top             =   3990
-         Width           =   1800
-         _ExtentX        =   3175
+         Width           =   1515
+         _ExtentX        =   2672
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   289865729
+         Format          =   226164737
          CurrentDate     =   43327
       End
       Begin MSComctlLib.ListView lstItemsFactura 
          Height          =   990
          Left            =   120
-         TabIndex        =   49
+         TabIndex        =   48
          Top             =   1995
          Width           =   8565
          _ExtentX        =   15108
@@ -636,8 +633,8 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Index           =   2
-         Left            =   3525
-         TabIndex        =   48
+         Left            =   4260
+         TabIndex        =   47
          Top             =   3765
          Width           =   2175
       End
@@ -654,7 +651,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Index           =   1
-         Left            =   1380
+         Left            =   2115
          TabIndex        =   46
          Top             =   3750
          Width           =   1275
@@ -673,7 +670,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   255
          Index           =   8
          Left            =   2970
-         TabIndex        =   41
+         TabIndex        =   44
          Top             =   240
          Width           =   375
       End
@@ -691,7 +688,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   255
          Index           =   7
          Left            =   3465
-         TabIndex        =   40
+         TabIndex        =   43
          Top             =   240
          Width           =   465
       End
@@ -709,7 +706,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   240
          Index           =   4
          Left            =   90
-         TabIndex        =   36
+         TabIndex        =   40
          Top             =   240
          Width           =   690
       End
@@ -726,7 +723,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   225
          Left            =   4860
-         TabIndex        =   35
+         TabIndex        =   39
          Top             =   4380
          Visible         =   0   'False
          Width           =   1455
@@ -744,7 +741,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   225
          Left            =   4005
-         TabIndex        =   34
+         TabIndex        =   38
          Top             =   4380
          Visible         =   0   'False
          Width           =   750
@@ -763,7 +760,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   225
          Index           =   5
          Left            =   1920
-         TabIndex        =   31
+         TabIndex        =   35
          Top             =   3105
          Width           =   1620
       End
@@ -780,7 +777,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   225
          Left            =   165
-         TabIndex        =   30
+         TabIndex        =   34
          Top             =   1440
          Width           =   1455
       End
@@ -798,7 +795,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   255
          Index           =   0
          Left            =   3765
-         TabIndex        =   29
+         TabIndex        =   33
          Top             =   810
          Width           =   1275
       End
@@ -815,7 +812,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   5865
-         TabIndex        =   28
+         TabIndex        =   32
          Top             =   810
          Width           =   930
       End
@@ -832,7 +829,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   1095
-         TabIndex        =   27
+         TabIndex        =   31
          Top             =   795
          Width           =   2565
       End
@@ -849,7 +846,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   210
-         TabIndex        =   26
+         TabIndex        =   30
          Top             =   825
          Width           =   1140
       End
@@ -867,7 +864,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   135
-         TabIndex        =   25
+         TabIndex        =   29
          Top             =   3750
          Width           =   1080
       End
@@ -885,7 +882,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   255
          Index           =   0
          Left            =   1740
-         TabIndex        =   24
+         TabIndex        =   28
          Top             =   240
          Width           =   1170
       End
@@ -903,7 +900,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   225
          Index           =   12
          Left            =   3945
-         TabIndex        =   23
+         TabIndex        =   27
          Top             =   255
          Width           =   1050
       End
@@ -921,7 +918,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   225
          Left            =   825
-         TabIndex        =   22
+         TabIndex        =   26
          Top             =   255
          Width           =   780
       End
@@ -939,7 +936,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   225
          Index           =   2
          Left            =   135
-         TabIndex        =   21
+         TabIndex        =   25
          Top             =   3090
          Width           =   1620
       End
@@ -957,7 +954,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          Height          =   240
          Index           =   3
          Left            =   180
-         TabIndex        =   20
+         TabIndex        =   24
          Top             =   240
          Width           =   690
       End
@@ -974,7 +971,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   3660
-         TabIndex        =   19
+         TabIndex        =   23
          Top             =   3120
          Width           =   4230
       End
@@ -991,7 +988,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   5280
-         TabIndex        =   18
+         TabIndex        =   22
          Top             =   240
          Width           =   1785
       End
@@ -1008,7 +1005,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   7065
-         TabIndex        =   17
+         TabIndex        =   21
          Top             =   240
          Width           =   615
       End
@@ -1025,7 +1022,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          EndProperty
          Height          =   255
          Left            =   7710
-         TabIndex        =   16
+         TabIndex        =   20
          Top             =   240
          Width           =   870
       End
@@ -1092,7 +1089,6 @@ Dim strtag  As String
     Me.lstItemsFactura.ListItems.Clear
     Me.txtDetalleFactura.Text = ""
     ObtenerCampo("vlTotalGeneral").Text = "0,00"
-    Me.Combox1(0).ListIndex = 0
     
 End Function
 
@@ -1290,17 +1286,6 @@ Dim resp   As Integer
            End If
                         
                         
-           If UCase(objParametros.ObtenerValor("FacturarCtaCte.tipofacturacion")) <> "MANUAL" Then
-                '**********************************************************
-                ' Version 4.7 VERIFICAR EL PROCEDIMIENTO
-                 If Not grabarPuesto() Then
-                     objbasededatos.RollBackTrans
-                     MsgBox "ERROR: " + objbasededatos.Error, vbInformation + vbDefaultButton1, "Atención"
-                     Exit Sub
-                 End If
-                '**********************************************************
-           End If
-           
            On Error Resume Next
            objbasededatos.CommitTrans
            If Err Then
@@ -1311,9 +1296,9 @@ Dim resp   As Integer
                Exit Sub
            End If
            On Error GoTo 0
-           ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra")
+           ' ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra")
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "SI"
-           Sleep (8000)
+           ' Sleep (8000)
            Unload Me
     Else
          objbasededatos.RollBackTrans
@@ -1480,9 +1465,7 @@ Dim strValor   As String
 
     
         ' v4.6
-    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter"
-    Set objServicePrinter = CreateObject("SGLibrary.ServicePrinter")
-    objLog.Grabar_Log "Inicializando Servicio SGLibrary.ServicePrinter OK "
+
     
     ' Eulises: obtener parametro PUESTO_FACTURACION_CTA_CTE
     vlparametro_PUESTO_FACTURACION_CTA_CTE = objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE")
@@ -1496,57 +1479,13 @@ Dim strValor   As String
     limpiarControles
     SelecionarItemCombo
 
-    
-    
-    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrTalonario")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrComprobante")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
     ObtenerCampo("tpComprobante").Text = "FA"
-    
-    strValor = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "tpLetra", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    
-  
-      ObtenerCampo("tpLetra").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
-    '***********************************************************
-    ' Agregado en la version 1.8  - autoimpresion Empresas RI
-    ' hasta que se habiliten la facturacion en la adm se setean el null
-    strValor = objParametros.ObtenerValor("FacturarCtaCte.nrCAI")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    strValor = objParametros.ObtenerValor("FacturarCtaCte.dtVencimiento")
-    objDiccionariodeDatos.GuardarValorCampo "TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE, strValor
-    '***********************************************************
-
     tlb_ABM_ButtonClick Me.tlb_ABM.Buttons("Agregar")
     
     
 End Sub
 
 
-' Version 4.7 VERIFICAR EL PROCEDIMIENTO
-' MDY Modificado en la version 4.7
-Private Function grabarPuesto() As Boolean
-
-        grabarPuesto = False
-
-        '***********************************************************
-        objSPs.nmStoredProcedure = "spu_actualizar_puntosdeventa_facturacion_v4_7"
-        objSPs.setearCampoValor "@nrPuesto_param", vlparametro_PUESTO_FACTURACION_CTA_CTE
-        objSPs.setearCampoValor "@tipo_iva", ObtenerCampo("tpIVA").Text
-        objSPs.setearCampoValor "@auto_impresor", IIf(UCase(objParametros.ObtenerValor("FacturarCtaCte.tipofacturacion")) = "MANUAL", "N", "S")
-        objSPs.setearCampoValor "@tpComprobante", ObtenerCampo("tpComprobante").Text
-        objSPs.setearCampoValor "@nrComprobante", CStr(CLng(ObtenerCampo("nrComprobante")))
-    
-        If Not objSPs.ExecSP Then
-            MsgBox "No se puedo actualizar el numero de comprobante " + _
-                   vbCrLf + " para el puesto o punto de venta que ingresó al sistema.", vbCritical + vbDefaultButton1, "Atención"
-            End
-        End If
-        
-        grabarPuesto = True
-           
-End Function
 
 
 
@@ -1577,10 +1516,7 @@ Dim ItemList    As ListItem
            
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "NO"
            
-           strValor = objDiccionariodeDatos.ObtenerSiguienteValor("TB_Comprobantes", "nrComprobante", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-           ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(strValor, 8)
-           strValor = objDiccionariodeDatos.ObtenerValorFijo("TB_Comprobantes", "nrTalonario", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-           ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(strValor, 4)
+           ObtenerCampo("nrComprobante").Text = ""
            ObtenerCampo("dtComprobante") = Format(Date, "dd/MM/YYYY")
            ObtenerCampo("nrCaja").Text = objParametros.ObtenerValor("FacturarCtaCte.nrCaja")
            ObtenerCampo("nrPuesto").Text = objParametros.ObtenerValor("nrPuesto")
@@ -1591,7 +1527,7 @@ Dim ItemList    As ListItem
            ObtenerCampo("nrDoc").Text = objParametros.ObtenerValor("FacturarCtaCte.nrDoc")
            ObtenerCampo("dsEmail").Text = objParametros.ObtenerValor("FacturarCtaCte.dsEmail")
            ObtenerCampo("tpComprobante").Text = objParametros.ObtenerValor("FacturarCtaCte.tpComprobante")
-           ObtenerCampo("tpLetra").Text = objParametros.ObtenerValor("FacturarCtaCte.tpLetra")
+           ObtenerCampo("tpLetra").Text = ""
            
            ' version 1.4
            If objParametros.ObtenerValor("FacturarCtaCte.tpIVA") = "" Then
@@ -1611,10 +1547,15 @@ Dim ItemList    As ListItem
            HabilitarCampos "nrDoc", False
            HabilitarCampos "dsEmail", False
            
-           If objParametros.ObtenerValor("FacturarCtaCte.TipoFacturacion") = "Manual" Then
-            HabilitarCampos "nrComprobante", True
-           End If
-               
+
+           HabilitarCampos "nrComprobante", True
+           HabilitarCampos "nrTalonario", True
+           HabilitarCampos "nrCAE", True
+           Me.DTPicker1.Enabled = True
+           Me.DTPicker2.Enabled = True
+           Me.DTPicker1.value = Now
+           Me.DTPicker2.value = Now
+           HabilitarCampos "tpLetra", True
            PresentarPantalla Button
            
     Case "Salir"
@@ -1700,6 +1641,13 @@ Private Function validarEntradadedatos() As Boolean
         Exit Function
     End If
     
+    
+    If Me.txtDetalleFactura.Text = "" Then
+        MsgBox "Debe ingresar el detalle de la factura", vbCritical + vbDefaultButton1, "Atención"
+        AvisarError "nrCAE", True
+        validarEntradadedatos = False
+        Exit Function
+    End If
         
     If Trim(ObtenerCampo("nrCAE").Text) = "" Then
         MsgBox "Debe ingresar el CAE otorgado por AFIP", vbCritical + vbDefaultButton1, "Atención"
@@ -1708,12 +1656,7 @@ Private Function validarEntradadedatos() As Boolean
         Exit Function
     End If
     
-    If Trim(ObtenerCampo("dtVencimientoCAE").Text) = "" Then
-        MsgBox "Debe ingresar la fecha de vencimiento del CAE otorgado por AFIP", vbCritical + vbDefaultButton1, "Atención"
-        AvisarError "dtVencimientoCAE", True
-        validarEntradadedatos = False
-        Exit Function
-    End If
+
     
     
     validarEntradadedatos = Not ExisteComprobante()
@@ -2122,10 +2065,6 @@ Dim strSQL       As String
     Next
             
             
-    cdCodBarAFIP = ObtenerCodBarrasAFIP()
-    
-    ObjTablasIO.setearCampoOperadorValor _
-              "dsOpcional3", "<-", cdCodBarAFIP
     
     cdCodBarLic = CompletarCerosaIzquierda(ObtenerCampo("nrTalonario").Text, 4)
     cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(ObtenerCampo("nrComprobante").Text, 8)
@@ -2145,16 +2084,7 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor "IdReciboCtaCte", "<-", objParametros.ObtenerValor("FacturarCtaCte.IdRecibo")
 
               
-    strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    ObjTablasIO.setearCampoOperadorValor _
-    "nrCAI", "<-", strValor
-    
-    strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    ObjTablasIO.setearCampoOperadorValor _
-    "dtVencimiento", "<-", strValor
-    
+
     
     ObjTablasIO.setearCampoOperadorValor _
               "vlPagoPesos", "<-", ObtenerCampo("vlTotalGeneral").Text
@@ -2183,8 +2113,8 @@ Dim strSQL       As String
               "flManual", "<-", objParametros.ObtenerValor("FacturarCtaCte.flManual")
               
     ' nuevos datos de la fatura local
-    ObjTablasIO.setearCampoOperadorValor _
-              "nrCAE", "<-", objParametros.ObtenerValor("nrCAE")
+    'ObjTablasIO.setearCampoOperadorValor _
+    '          "nrCAE", "<-", objParametros.ObtenerValor("nrCAE")
     ObjTablasIO.setearCampoOperadorValor _
               "dtVencimientoCAE", "<-", objParametros.ObtenerValor("dtVencimientoCAE")
               
@@ -2267,11 +2197,6 @@ Dim strValor     As String
         End If
     Next
             
-            
-    cdCodBarAFIP = ObtenerCodBarrasAFIP()
-    
-    ObjTablasIO.setearCampoOperadorValor _
-              "dsOpcional3", "<-", cdCodBarAFIP
     
     cdCodBarLic = CompletarCerosaIzquierda(ObtenerCampo("nrTalonario").Text, 4)
     cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(ObtenerCampo("nrComprobante").Text, 8)
@@ -2288,15 +2213,11 @@ Dim strValor     As String
     ObjTablasIO.setearCampoOperadorValor _
               "dsOpcional1", "<-", CStr(Format(Now, "HH:MM"))
                 
-    strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
+    ' ObjTablasIO.setearCampoOperadorValor _
+    '           "nrCAE", "<-", objParametros.ObtenerValor("nrCAE")
+              
     ObjTablasIO.setearCampoOperadorValor _
-    "nrCAI", "<-", strValor
-    
-    strValor = objDiccionariodeDatos.ObtenerValorActual _
-    ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    ObjTablasIO.setearCampoOperadorValor _
-    "dtVencimiento", "<-", strValor
+              "dtVencimientoCAE", "<-", objParametros.ObtenerValor("dtVencimientoCAE")
     
     ObjTablasIO.setearCampoOperadorValor _
               "vlDiaDolar", "<-", objParametros.ObtenerValor("vlDiaDolar")
@@ -2329,27 +2250,7 @@ Dim strValor     As String
 End Function
 
 
-Public Function ObtenerCodBarrasAFIP() As String
-' - C.U.I.T. (Clave Unica de Identificación Tributaria) del emisor (11 caracteres).
-' - Código de tipo de comprobante (2 caracteres).
-' - Punto de venta (4 caracteres).
-' - Código de Autorización de Impresión (14 caracteres).
-' - Fecha de vencimiento (8 caracteres).
-' - Dígito verificador (1 carácter).
-Dim strCodAFIP   As String
 
-    strCodAFIP = objConfig.nrCUIT
-    strCodAFIP = strCodAFIP + objAFIP.obtenerTipodeComprobante()
-    strCodAFIP = strCodAFIP + CompletarCerosaIzquierda(ObtenerCampo("nrTalonario").Text, 4)
-    strCodAFIP = strCodAFIP + objDiccionariodeDatos.ObtenerValorActual _
-                ("TB_Comprobantes", "nrCAI", vlparametro_PUESTO_FACTURACION_CTA_CTE)
-    
-    strCodAFIP = strCodAFIP + Format(objDiccionariodeDatos.ObtenerValorActual _
-                ("TB_Comprobantes", "dtVencimiento", vlparametro_PUESTO_FACTURACION_CTA_CTE), "DDMMYYYY")
-                
-   ObtenerCodBarrasAFIP = strCodAFIP
-
-End Function
 
 
 
@@ -2367,7 +2268,7 @@ Dim i  As Integer
            Me.tlb_ABM.Buttons("Salir").Visible = False
            Me.tlb_ABM.Buttons("Aceptar").Visible = True
            Me.tlb_ABM.Buttons("Cancelar").Visible = True
-    
+
     Case "Agregar"
            Me.fraVentaPasajes.Visible = True
            Me.tlb_ABM.Buttons("Buscar").Visible = False
@@ -2378,7 +2279,7 @@ Dim i  As Integer
            Me.tlb_ABM.Buttons("Salir").Visible = True
            Me.tlb_ABM.Buttons("Aceptar").Visible = True
            Me.tlb_ABM.Buttons("Cancelar").Visible = True
-
+          '  ObtenerCampo("nrTalonario").SetFocus
     Case "Eliminar"
            Me.fraVentaPasajes.Visible = False
            Me.tlb_ABM.Buttons("Buscar").Visible = True
@@ -2452,6 +2353,15 @@ End Sub
 
 
 
+
+Private Sub txtDetalleFactura_Change()
+Dim ItemList As Object
+
+           If lstItemsFactura.ListItems.Count = 0 Then Exit Sub
+           Set ItemList = lstItemsFactura.ListItems.Item(1)
+           ItemList.SubItems(1) = Me.txtDetalleFactura.Text
+           ItemList.SubItems(5) = objParametros.ObtenerValor("FacturarCtaCte.vlTotal")
+End Sub
 
 Private Sub txtFields_Change(Index As Integer)
 
@@ -2901,171 +2811,5 @@ Dim strNombreCompleto As String
 End Function
             
             
-Private Function ImprimirFactura(ByVal pnrTalonario As String, _
-ByVal pnrComprobante As String, ByVal tpComprobante As String, ByVal ptpLetra As String) As Boolean
-Dim strCodbarAFIP       As String
-Dim strCodbarAFIPI2to5  As String
-Dim strValorPromo       As String
-Dim cdCodBarLic         As String
-        
-    strValorPromo = objConfig.vlValorPromo
-    
-        
-    cdCodBarLic = CompletarCerosaIzquierda(Trim(ObtenerCampo("nrTalonario").Text), 4)
-    cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(Trim(ObtenerCampo("nrComprobante").Text), 8)
-    cdCodBarLic = cdCodBarLic + CompletarCerosaIzquierda(Trim(ObtenerCampo("nrLicencia").Text), 3)
-    cdCodBarLic = objAFIP.StrToI2of5(cdCodBarLic)
-    
-    objbasededatos.Exec_SP_PrepararReimpresiondeComprobante _
-    pnrTalonario, pnrComprobante, tpComprobante, ptpLetra, objUsuario.dsUsuario
-
-    strCodbarAFIP = ObtenerCodBarrasAFIP()
-    strCodbarAFIPI2to5 = objAFIP.StrToI2of5(strCodbarAFIP)
-    strCodbarAFIP = strCodbarAFIP + objAFIP.DigitoVerificador(strCodbarAFIP)
-    
-    Frm_Principal.LimpiarReporte
-    
-    Select Case ptpLetra
-    Case "X"
-        Select Case objConfig.tpImpresion
-        Case "BLANCO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_CuponChico_Imprime.rpt"
-        Case "PREIMPRESO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_CuponChico_Imprime_preimpreso.rpt"
-        Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_CuponChico_Imprime_Continuo.rpt"
-        End Select
-    Case Else
-        Select Case objConfig.tpImpresion
-        Case "BLANCO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime.rpt"
-        Case "PREIMPRESO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturaChico_Imprime_preimpreso.rpt"
-        Case "CONTINUO"
-            Frm_Principal.CrystalReport1.ReportFileName = objConfig.Sub_Path_Reportes & "\rpt_facturachico_imprime_continuo_v4_9.rpt"
-        End Select
-    End Select
-    
-
-    '/******************************************************
-    '/* Version 4.6  Solicitamos la impreso en la cual se desea imprimir
-    ' MsgBox "SELECCIONE LA IMPRESORA"
-    objServicePrinter.ConfigPrinter "impresion de la factura"
-    '/*  Cierrre Version 4.6
-    '/******************************************************
-    
-    
-    
-    Frm_Principal.CrystalReport1.Destination = crptToPrinter  ' crptToPrinter , crptToWindow
-    Frm_Principal.CrystalReport1.PrinterStartPage = 1
-    Frm_Principal.CrystalReport1.PrinterStopPage = 1
-    
-    Select Case ptpLetra
-    Case "X"
-        Frm_Principal.CrystalReport1.WindowTitle = "Cupon a Imprimir - ORIGINAL"
-    Case Else
-        Frm_Principal.CrystalReport1.WindowTitle = "Factura a Imprimir - ORIGINAL"
-    End Select
-    
-    If objConfig.tpImpresion = "CONTINUO" Then
-        Frm_Principal.CrystalReport1.Formulas(0) = "Copia = '" + objConfig.dsleyendaCopia + "'"
-    Else
-        Frm_Principal.CrystalReport1.Formulas(0) = "Copia = 'ORIGINAL'"
-    End If
-    
-    Frm_Principal.CrystalReport1.Formulas(1) = "NroComprobante = '" + pnrComprobante + "'"
-    Frm_Principal.CrystalReport1.Formulas(2) = "cdCodBarAFIP = '" + strCodbarAFIP + "'"
-    Frm_Principal.CrystalReport1.Formulas(3) = "cdCodBarAFIP_I2to5 = '" + strCodbarAFIPI2to5 + "'"
-    Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
-    Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
-    Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
-    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
-    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
-        
-    ' Aparece la venta duplicado
-    On Error Resume Next
-    DoEvents
-    Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
-    Frm_Principal.CrystalReport1.Action = 1
-    If Err Then
-        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
-        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
-        If Not objSPs.ExecSP Then
-            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
-            Exit Function
-        End If
-        MsgBox "Error al facturar la cta cte. " + Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
-    End If
-    On Error GoTo 0
-    
-
-    Sleep (5)
-    ' MsgBox "antes de RollbackPrinter "
-    objServicePrinter.RollbackPrinter
-    
-    objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
-    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
-    If Not objSPs.ExecSP Then
-    
-        objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
-        objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
-        If Not objSPs.ExecSP Then
-            MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
-            Exit Function
-        End If
-        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
-        Exit Function
-    End If
-    
-    Exit Function
-    
-    
-   objSPs.nmStoredProcedure = "SP_eliminarTablasImpresion_v4_7"
-    objSPs.setearCampoValor "@dsUsuario", objUsuario.dsUsuario
-    If Not objSPs.ExecSP Then
-        MsgBox " Error al intentar eliminar tablas de impresion Functión: SP_eliminarTablasImpresion_v4_7", vbCritical, "Atención"
-        Exit Function
-    End If
-    
-'    Siempre Imprimiremos Original y duplicado
-'    If objConfig.tpImpresion = "CONTINUO" Then
-'        ImprimirFactura = True
-'        Exit Function
-'    End If
-
-    ' IMPRESION DEL DUPLICADO
-    
-    Select Case ptpLetra
-    Case "X"
-        Frm_Principal.CrystalReport1.WindowTitle = "Cupon a Imprimir - DUPLICADO"
-    Case Else
-        Frm_Principal.CrystalReport1.WindowTitle = "Factura a Imprimir - DUPLICADO"
-    End Select
-    
-    Frm_Principal.CrystalReport1.Formulas(0) = "Copia = 'DUPLICADO'"
-    Frm_Principal.CrystalReport1.Formulas(1) = "NroComprobante = '" + pnrComprobante + "'"
-    Frm_Principal.CrystalReport1.Formulas(2) = "cdCodBarAFIP = '" + strCodbarAFIP + "'"
-    Frm_Principal.CrystalReport1.Formulas(3) = "cdCodBarAFIP_I2to5 = '" + strCodbarAFIPI2to5 + "'"
-    Frm_Principal.CrystalReport1.Formulas(4) = "NroTalonario = '" + pnrTalonario + "'"
-    Frm_Principal.CrystalReport1.Formulas(5) = "ValorPromo = '" + strValorPromo + "'"
-    Frm_Principal.CrystalReport1.Formulas(6) = "cdCodBarLicencia = '" + cdCodBarLic + "'"
-    Frm_Principal.CrystalReport1.Formulas(7) = "tpComprobante = '" + tpComprobante + "'"
-    Frm_Principal.CrystalReport1.Formulas(8) = "tpLetra = '" + ptpLetra + "'"
-
-    ' Aparece la venta duplicado
-    On Error Resume Next
-    Frm_Principal.CrystalReport1.WindowTitle = Frm_Principal.CrystalReport1.WindowTitle + " - (" + Frm_Principal.CrystalReport1.ReportFileName + ")"
-    Frm_Principal.CrystalReport1.PrintReport
-         If Err Then
-           DoEvents
-            Sleep (500)
-            Frm_Principal.CrystalReport1.Action = 1
-            objParametros.GrabarValor "Frm_FacturaCtaCteFEManual.Error", Err.Description + " Nombre del archivo : " + Frm_Principal.CrystalReport1.ReportFileName
-         End If
-    On Error GoTo 0
-    
-    ImprimirFactura = True
-    
-End Function
 
 

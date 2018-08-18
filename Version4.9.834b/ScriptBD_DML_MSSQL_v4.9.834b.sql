@@ -5,10 +5,10 @@ go
 
 
 
-DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Comprobantes' and nmCampo = 'nrcae' 
+DELETE FROM DiccionariodeDatos WHERE nmTabla='TB_Comprobantes' and nmCampo = 'nrCAE' 
 
 INSERT INTO diccionariodedatos (nmTabla, nmCampo, nmCampoExterno, tpTipo, nrTamanio, flClave, flClaveForanea, flBusqueda, nrOrdenBusqueda, vlPuesto1, vlPuesto2, vlPuesto3, vlPuesto9, Actualizar, vlPuesto4, vlPuesto5) VALUES 
-  ('TB_Comprobantes','nrcae','nrcae','VARCHAR','15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
+  ('TB_Comprobantes','nrCAE','nrCAE','DECIMAL','15',NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL,NULL);
 
 
   
