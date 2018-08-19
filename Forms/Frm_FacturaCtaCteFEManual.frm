@@ -243,7 +243,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          _ExtentX        =   2381
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   226754561
+         Format          =   232521729
          CurrentDate     =   43327
       End
       Begin VB.TextBox txtFields 
@@ -543,7 +543,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          _ExtentX        =   2672
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   226164737
+         Format          =   232521729
          CurrentDate     =   43327
       End
       Begin MSComctlLib.ListView lstItemsFactura 
@@ -1468,7 +1468,7 @@ Dim strValor   As String
 
     
     ' Eulises: obtener parametro PUESTO_FACTURACION_CTA_CTE
-    vlparametro_PUESTO_FACTURACION_CTA_CTE = objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE")
+    vlparametro_PUESTO_FACTURACION_CTA_CTE = 9 ' objParametros.ObtenerValorBD("PUESTO_FACTURACION_CTA_CTE")
 
     objParametros.GrabarValor "Facturar", "NO"
     
@@ -1615,27 +1615,27 @@ Private Function validarEntradadedatos() As Boolean
     validarEntradadedatos = True
     
     If Trim(ObtenerCampo("cdCliente").Text) = "" Then
-        MsgBox "Debe ingresar un 'Cliente'", vbCritical + vbDefaultButton1, "Atención"
+        MsgBox "Debe ingresar un 'Cliente'", vbInformation + vbDefaultButton1, "Atención"
         AvisarError "cdCliente", True
         validarEntradadedatos = False
     End If
     
     If Trim(ObtenerCampo("nrTalonario").Text) = "" Then
-        MsgBox "Debe ingresar el punto de venta del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        MsgBox "Debe ingresar el punto de venta del comprobante", vbInformation + vbDefaultButton1, "Atención"
         AvisarError "nrComprobante", True
         validarEntradadedatos = False
         Exit Function
     End If
     
     If Trim(ObtenerCampo("nrComprobante").Text) = "" Then
-        MsgBox "Debe ingresar el número del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        MsgBox "Debe ingresar el número del comprobante", vbInformation + vbDefaultButton1, "Atención"
         AvisarError "nrComprobante", True
         validarEntradadedatos = False
         Exit Function
     End If
     
     If Trim(ObtenerCampo("tpLetra").Text) = "" Then
-        MsgBox "Debe ingresar la letra del comprobante", vbCritical + vbDefaultButton1, "Atención"
+        MsgBox "Debe ingresar la letra del comprobante", vbInformation + vbDefaultButton1, "Atención"
         AvisarError "tpLetra", True
         validarEntradadedatos = False
         Exit Function
@@ -1643,14 +1643,14 @@ Private Function validarEntradadedatos() As Boolean
     
     
     If Me.txtDetalleFactura.Text = "" Then
-        MsgBox "Debe ingresar el detalle de la factura", vbCritical + vbDefaultButton1, "Atención"
-        AvisarError "nrCAE", True
+        MsgBox "Debe ingresar el detalle de la factura", vbInformation + vbDefaultButton1, "Atención"
+        Me.txtDetalleFactura.SetFocus
         validarEntradadedatos = False
         Exit Function
     End If
         
     If Trim(ObtenerCampo("nrCAE").Text) = "" Then
-        MsgBox "Debe ingresar el CAE otorgado por AFIP", vbCritical + vbDefaultButton1, "Atención"
+        MsgBox "Debe ingresar el CAE otorgado por AFIP", vbInformation + vbDefaultButton1, "Atención"
         AvisarError "nrCAE", True
         validarEntradadedatos = False
         Exit Function
@@ -2112,11 +2112,16 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor _
               "flManual", "<-", objParametros.ObtenerValor("FacturarCtaCte.flManual")
               
+              
+        ObjTablasIO.setearCampoOperadorValor _
+              "dtComprobante", "<-", Left(Me.DTPicker1.value, 10)
+              
     ' nuevos datos de la fatura local
     'ObjTablasIO.setearCampoOperadorValor _
     '          "nrCAE", "<-", objParametros.ObtenerValor("nrCAE")
+    
     ObjTablasIO.setearCampoOperadorValor _
-              "dtVencimientoCAE", "<-", objParametros.ObtenerValor("dtVencimientoCAE")
+              "dtVencimientoCAE", "<-", Left(Me.DTPicker2.value, 10)
               
     Select Case EstadoABM
     Case modificacion

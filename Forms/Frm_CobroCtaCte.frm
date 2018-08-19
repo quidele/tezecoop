@@ -1,5 +1,5 @@
 VERSION 5.00
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form frm_CobroCtaCte 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Liquidar / Facturar / Adelantos  a Cuentas Corrientes"
@@ -115,7 +115,7 @@ Begin VB.Form frm_CobroCtaCte
       Left            =   135
       TabIndex        =   4
       Tag             =   "cmdCompensar"
-      Top             =   6135
+      Top             =   6120
       Width           =   2175
    End
    Begin VB.TextBox txtSaldos 
