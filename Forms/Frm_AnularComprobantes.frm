@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "mscomctl.ocx"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_AnularComprobantes 
    Caption         =   "Anular Comprobantes"
    ClientHeight    =   7800
@@ -15,331 +15,6 @@ Begin VB.Form Frm_AnularComprobantes
    ScaleHeight     =   7800
    ScaleWidth      =   10875
    StartUpPosition =   2  'CenterScreen
-   Begin VB.Frame fraBusqComprobantes 
-      BorderStyle     =   0  'None
-      Height          =   6885
-      Left            =   15
-      TabIndex        =   31
-      Top             =   690
-      Width           =   10815
-      Begin VB.Frame fra_ProgressBar 
-         Appearance      =   0  'Flat
-         BackColor       =   &H80000005&
-         Caption         =   "Exportando los datos ....."
-         ForeColor       =   &H80000008&
-         Height          =   1650
-         Left            =   2265
-         TabIndex        =   72
-         Top             =   2610
-         Visible         =   0   'False
-         Width           =   5340
-         Begin MSComctlLib.ProgressBar ProgressBar 
-            Height          =   480
-            Left            =   315
-            TabIndex        =   73
-            Top             =   615
-            Width           =   4575
-            _ExtentX        =   8070
-            _ExtentY        =   847
-            _Version        =   393216
-            Appearance      =   0
-         End
-         Begin VB.Label Label24 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "Porcentaje "
-            Height          =   255
-            Index           =   0
-            Left            =   315
-            TabIndex        =   76
-            Top             =   375
-            Width           =   855
-         End
-         Begin VB.Label lblvlPorcentaje 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "10 %"
-            Height          =   255
-            Left            =   1155
-            TabIndex        =   75
-            Top             =   375
-            Width           =   510
-         End
-         Begin VB.Label Label20 
-            BackColor       =   &H00FFFFFF&
-            Caption         =   "100 %"
-            Height          =   240
-            Left            =   4365
-            TabIndex        =   74
-            Top             =   390
-            Width           =   510
-         End
-      End
-      Begin VB.CommandButton cmdBuscar 
-         Height          =   360
-         Left            =   5760
-         Picture         =   "Frm_AnularComprobantes.frx":030A
-         Style           =   1  'Graphical
-         TabIndex        =   71
-         Top             =   780
-         Width           =   375
-      End
-      Begin VB.TextBox txtBusqueda 
-         Appearance      =   0  'Flat
-         BackColor       =   &H00FFFFFF&
-         Height          =   330
-         Left            =   4305
-         TabIndex        =   28
-         Text            =   "*"
-         Top             =   315
-         Width           =   4920
-      End
-      Begin MSComctlLib.ImageList ImgOperadores 
-         Left            =   7215
-         Top             =   1560
-         _ExtentX        =   1005
-         _ExtentY        =   1005
-         BackColor       =   -2147483648
-         ImageWidth      =   16
-         ImageHeight     =   16
-         MaskColor       =   12632256
-         _Version        =   393216
-         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
-            NumListImages   =   6
-            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":040C
-               Key             =   "Similar"
-            EndProperty
-            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":051E
-               Key             =   "Igual"
-            EndProperty
-            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0630
-               Key             =   "MayoroIgual"
-            EndProperty
-            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0742
-               Key             =   "Mayor"
-            EndProperty
-            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0854
-               Key             =   "MenoroIgual"
-            EndProperty
-            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0966
-               Key             =   "Menor"
-            EndProperty
-         EndProperty
-      End
-      Begin MSComctlLib.ImageCombo ImageCombo1 
-         Height          =   330
-         Left            =   2565
-         TabIndex        =   30
-         Top             =   315
-         Width           =   1680
-         _ExtentX        =   2963
-         _ExtentY        =   582
-         _Version        =   393216
-         ForeColor       =   -2147483640
-         BackColor       =   14737632
-         OLEDropMode     =   1
-         Indentation     =   1
-         Locked          =   -1  'True
-         ImageList       =   "ImgOperadores"
-      End
-      Begin VB.ComboBox cmbCampos 
-         BackColor       =   &H00E0E0E0&
-         Height          =   315
-         Left            =   150
-         Style           =   2  'Dropdown List
-         TabIndex        =   29
-         Top             =   330
-         Width           =   2400
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   360
-         Index           =   0
-         Left            =   1470
-         TabIndex        =   67
-         Tag             =   "dtDesde"
-         Top             =   750
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   635
-         _Version        =   393216
-         Format          =   133890049
-         CurrentDate     =   38267
-      End
-      Begin MSComCtl2.DTPicker DTPicker1 
-         Height          =   345
-         Index           =   1
-         Left            =   3975
-         TabIndex        =   68
-         Tag             =   "dtHasta"
-         Top             =   780
-         Width           =   1695
-         _ExtentX        =   2990
-         _ExtentY        =   609
-         _Version        =   393216
-         Format          =   133890049
-         CurrentDate     =   38267
-      End
-      Begin MSComctlLib.ListView lstBusqueda 
-         Height          =   5445
-         Left            =   90
-         TabIndex        =   78
-         Top             =   1185
-         Width           =   9135
-         _ExtentX        =   16113
-         _ExtentY        =   9604
-         View            =   3
-         LabelEdit       =   1
-         LabelWrap       =   -1  'True
-         HideSelection   =   -1  'True
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         FullRowSelect   =   -1  'True
-         _Version        =   393217
-         ForeColor       =   -2147483640
-         BackColor       =   -2147483643
-         BorderStyle     =   1
-         Appearance      =   0
-         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         OLEDragMode     =   1
-         OLEDropMode     =   1
-         NumItems        =   12
-         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            Object.Tag             =   "nrComprobante"
-            Text            =   "Comprobante"
-            Object.Width           =   2646
-         EndProperty
-         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   1
-            Object.Tag             =   "nrTalonario"
-            Text            =   "Talonario"
-            Object.Width           =   1764
-         EndProperty
-         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   2
-            Object.Tag             =   "tpComprobante"
-            Text            =   "Doc"
-            Object.Width           =   1411
-         EndProperty
-         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   3
-            Object.Tag             =   "tpLetra"
-            Text            =   "Letra"
-            Object.Width           =   1411
-         EndProperty
-         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   4
-            Object.Tag             =   "dtComprobante"
-            Text            =   "Fecha "
-            Object.Width           =   2293
-         EndProperty
-         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   5
-            Object.Tag             =   "flManual"
-            Text            =   "Facturado"
-            Object.Width           =   2822
-         EndProperty
-         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   6
-            Object.Tag             =   "cdCondVenta"
-            Text            =   "Cond. Venta"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   7
-            Object.Tag             =   "cdCliente"
-            Text            =   "Cliente"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   8
-            Object.Tag             =   "dsRazonSocial"
-            Text            =   "Razon Social"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   9
-            Object.Tag             =   "nrLicencia"
-            Text            =   "Licencia"
-            Object.Width           =   2540
-         EndProperty
-         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   10
-            Object.Tag             =   "nrCaja"
-            Text            =   "Caja"
-            Object.Width           =   2734
-         EndProperty
-         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
-            SubItemIndex    =   11
-            Object.Tag             =   "dsUsuario"
-            Text            =   "Usuario"
-            Object.Width           =   2540
-         EndProperty
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Fecha Desde"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   10
-         Left            =   150
-         TabIndex        =   70
-         Top             =   870
-         Width           =   1200
-      End
-      Begin VB.Label lblLabels 
-         Caption         =   "Hasta"
-         BeginProperty Font 
-            Name            =   "Verdana"
-            Size            =   8.25
-            Charset         =   0
-            Weight          =   400
-            Underline       =   0   'False
-            Italic          =   0   'False
-            Strikethrough   =   0   'False
-         EndProperty
-         Height          =   255
-         Index           =   9
-         Left            =   3255
-         TabIndex        =   69
-         Top             =   855
-         Width           =   645
-      End
-      Begin VB.Label Label2 
-         Caption         =   "Valor para la busqueda"
-         Height          =   210
-         Left            =   4305
-         TabIndex        =   33
-         Top             =   90
-         Width           =   1755
-      End
-      Begin VB.Label Label1 
-         Caption         =   "Campo"
-         Height          =   210
-         Left            =   165
-         TabIndex        =   32
-         Top             =   105
-         Width           =   795
-      End
-   End
    Begin MSComctlLib.Toolbar tlb_ABM 
       Align           =   1  'Align Top
       Height          =   660
@@ -410,7 +85,7 @@ Begin VB.Form Frm_AnularComprobantes
       EndProperty
       BorderStyle     =   1
       MousePointer    =   99
-      MouseIcon       =   "Frm_AnularComprobantes.frx":0A78
+      MouseIcon       =   "Frm_AnularComprobantes.frx":030A
       Begin MSComctlLib.ImageList imgReimpComprobantesResaltado 
          Left            =   7005
          Top             =   30
@@ -424,51 +99,51 @@ Begin VB.Form Frm_AnularComprobantes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   12
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0BDA
+               Picture         =   "Frm_AnularComprobantes.frx":046C
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0CF6
+               Picture         =   "Frm_AnularComprobantes.frx":0588
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0E4A
+               Picture         =   "Frm_AnularComprobantes.frx":06DC
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":0F5A
+               Picture         =   "Frm_AnularComprobantes.frx":07EC
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":105C
+               Picture         =   "Frm_AnularComprobantes.frx":08EE
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":11B0
+               Picture         =   "Frm_AnularComprobantes.frx":0A42
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":12BC
+               Picture         =   "Frm_AnularComprobantes.frx":0B4E
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1938
+               Picture         =   "Frm_AnularComprobantes.frx":11CA
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1AA0
+               Picture         =   "Frm_AnularComprobantes.frx":1332
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":1EF4
+               Picture         =   "Frm_AnularComprobantes.frx":1786
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2348
+               Picture         =   "Frm_AnularComprobantes.frx":1BDA
                Key             =   "Imprimir"
             EndProperty
             BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":29C2
+               Picture         =   "Frm_AnularComprobantes.frx":2254
                Key             =   "Anular"
             EndProperty
          EndProperty
@@ -486,51 +161,51 @@ Begin VB.Form Frm_AnularComprobantes
          BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
             NumListImages   =   12
             BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2AD2
+               Picture         =   "Frm_AnularComprobantes.frx":2364
                Key             =   "Buscar"
             EndProperty
             BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2BEA
+               Picture         =   "Frm_AnularComprobantes.frx":247C
                Key             =   "Seleccionar"
             EndProperty
             BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2D3E
+               Picture         =   "Frm_AnularComprobantes.frx":25D0
                Key             =   "Agregar"
             EndProperty
             BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2E56
+               Picture         =   "Frm_AnularComprobantes.frx":26E8
                Key             =   "Aceptar"
             EndProperty
             BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":2F62
+               Picture         =   "Frm_AnularComprobantes.frx":27F4
                Key             =   "Cancelar"
             EndProperty
             BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":30B6
+               Picture         =   "Frm_AnularComprobantes.frx":2948
                Key             =   "Eliminar"
             EndProperty
             BeginProperty ListImage7 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":31BE
+               Picture         =   "Frm_AnularComprobantes.frx":2A50
                Key             =   "Nuevo"
             EndProperty
             BeginProperty ListImage8 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":383A
+               Picture         =   "Frm_AnularComprobantes.frx":30CC
                Key             =   "Linterna3"
             EndProperty
             BeginProperty ListImage9 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":399A
+               Picture         =   "Frm_AnularComprobantes.frx":322C
                Key             =   "Exportar"
             EndProperty
             BeginProperty ListImage10 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":3DEE
+               Picture         =   "Frm_AnularComprobantes.frx":3680
                Key             =   "Salir"
             EndProperty
             BeginProperty ListImage11 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":4242
+               Picture         =   "Frm_AnularComprobantes.frx":3AD4
                Key             =   "Imprimir"
             EndProperty
             BeginProperty ListImage12 {2C247F27-8591-11D1-B16A-00C0F0283628} 
-               Picture         =   "Frm_AnularComprobantes.frx":48BC
+               Picture         =   "Frm_AnularComprobantes.frx":414E
                Key             =   "Anular"
             EndProperty
          EndProperty
@@ -868,11 +543,37 @@ Begin VB.Form Frm_AnularComprobantes
       End
       Begin VB.Frame Frame2 
          Caption         =   "Datos de la Factura"
-         Height          =   4815
+         Height          =   5145
          Left            =   255
          TabIndex        =   43
          Top             =   1920
          Width           =   9540
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            Height          =   285
+            Index           =   29
+            Left            =   4890
+            Locked          =   -1  'True
+            TabIndex        =   88
+            Tag             =   "dtVencimientoCAE"
+            Top             =   4695
+            Width           =   1800
+         End
+         Begin VB.TextBox txtFields 
+            Appearance      =   0  'Flat
+            BackColor       =   &H00E0E0E0&
+            CausesValidation=   0   'False
+            Height          =   285
+            Index           =   28
+            Left            =   2505
+            Locked          =   -1  'True
+            TabIndex        =   87
+            Tag             =   "nrCAE"
+            Top             =   4695
+            Width           =   2370
+         End
          Begin VB.TextBox txtFields 
             Appearance      =   0  'Flat
             BackColor       =   &H00E0E0E0&
@@ -909,12 +610,12 @@ Begin VB.Form Frm_AnularComprobantes
             DataField       =   "flBloqueado"
             Enabled         =   0   'False
             ForeColor       =   &H80000008&
-            Height          =   285
+            Height          =   195
             Index           =   25
-            Left            =   225
+            Left            =   960
             TabIndex        =   81
             Tag             =   "flAnulado"
-            Top             =   4350
+            Top             =   4710
             Width           =   285
          End
          Begin VB.TextBox txtFields 
@@ -953,7 +654,7 @@ Begin VB.Form Frm_AnularComprobantes
             TabIndex        =   77
             TabStop         =   0   'False
             Tag             =   "IdReciboCtaCte"
-            Top             =   4575
+            Top             =   4800
             Visible         =   0   'False
             Width           =   1110
          End
@@ -968,7 +669,7 @@ Begin VB.Form Frm_AnularComprobantes
             Locked          =   -1  'True
             TabIndex        =   66
             Tag             =   "tpLetra"
-            Top             =   4575
+            Top             =   4800
             Visible         =   0   'False
             Width           =   615
          End
@@ -977,9 +678,9 @@ Begin VB.Form Frm_AnularComprobantes
             BackColor       =   &H00E0E0E0&
             Height          =   315
             Index           =   2
-            ItemData        =   "Frm_AnularComprobantes.frx":49CC
+            ItemData        =   "Frm_AnularComprobantes.frx":425E
             Left            =   240
-            List            =   "Frm_AnularComprobantes.frx":49E5
+            List            =   "Frm_AnularComprobantes.frx":4277
             Style           =   2  'Dropdown List
             TabIndex        =   65
             Tag             =   "cdCondVenta"
@@ -996,7 +697,7 @@ Begin VB.Form Frm_AnularComprobantes
             Locked          =   -1  'True
             TabIndex        =   64
             Tag             =   "dsOpcional3"
-            Top             =   4575
+            Top             =   4800
             Visible         =   0   'False
             Width           =   2640
          End
@@ -1223,7 +924,7 @@ Begin VB.Form Frm_AnularComprobantes
             TabStop         =   0   'False
             Tag             =   "nrCaja"
             Top             =   660
-            Width           =   825
+            Width           =   1635
          End
          Begin VB.TextBox txtFields 
             Appearance      =   0  'Flat
@@ -1316,6 +1017,40 @@ Begin VB.Form Frm_AnularComprobantes
                Object.Width           =   2858
             EndProperty
          End
+         Begin VB.Label Label27 
+            Caption         =   "Fecha Venc. CAE"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   4875
+            TabIndex        =   90
+            Top             =   4425
+            Width           =   1785
+         End
+         Begin VB.Label Label26 
+            Caption         =   "CAE"
+            BeginProperty Font 
+               Name            =   "Verdana"
+               Size            =   8.25
+               Charset         =   0
+               Weight          =   400
+               Underline       =   0   'False
+               Italic          =   0   'False
+               Strikethrough   =   0   'False
+            EndProperty
+            Height          =   255
+            Left            =   2505
+            TabIndex        =   89
+            Top             =   4425
+            Width           =   1170
+         End
          Begin VB.Label lblLabels 
             Caption         =   "Doc"
             BeginProperty Font 
@@ -1368,9 +1103,9 @@ Begin VB.Form Frm_AnularComprobantes
             ForeColor       =   &H80000008&
             Height          =   270
             Index           =   1
-            Left            =   525
+            Left            =   210
             TabIndex        =   82
-            Top             =   4395
+            Top             =   4425
             Width           =   1965
          End
          Begin VB.Label Label25 
@@ -1406,7 +1141,7 @@ Begin VB.Form Frm_AnularComprobantes
             TabIndex        =   62
             Top             =   4560
             Visible         =   0   'False
-            Width           =   4950
+            Width           =   4065
          End
          Begin VB.Label Label22 
             Alignment       =   2  'Center
@@ -1429,7 +1164,6 @@ Begin VB.Form Frm_AnularComprobantes
          Begin VB.Label Label21 
             Alignment       =   2  'Center
             Appearance      =   0  'Flat
-            BackColor       =   &H80000005&
             Caption         =   "Total u$s"
             BeginProperty Font 
                Name            =   "Verdana"
@@ -1444,7 +1178,7 @@ Begin VB.Form Frm_AnularComprobantes
             Height          =   255
             Left            =   6900
             TabIndex        =   58
-            Top             =   3765
+            Top             =   3750
             Width           =   1170
          End
          Begin VB.Label Label8 
@@ -1692,6 +1426,331 @@ Begin VB.Form Frm_AnularComprobantes
             Top             =   945
             Width           =   945
          End
+      End
+   End
+   Begin VB.Frame fraBusqComprobantes 
+      BorderStyle     =   0  'None
+      Height          =   6885
+      Left            =   15
+      TabIndex        =   31
+      Top             =   690
+      Width           =   10815
+      Begin VB.Frame fra_ProgressBar 
+         Appearance      =   0  'Flat
+         BackColor       =   &H80000005&
+         Caption         =   "Exportando los datos ....."
+         ForeColor       =   &H80000008&
+         Height          =   1650
+         Left            =   2265
+         TabIndex        =   72
+         Top             =   2610
+         Visible         =   0   'False
+         Width           =   5340
+         Begin MSComctlLib.ProgressBar ProgressBar 
+            Height          =   480
+            Left            =   315
+            TabIndex        =   73
+            Top             =   615
+            Width           =   4575
+            _ExtentX        =   8070
+            _ExtentY        =   847
+            _Version        =   393216
+            Appearance      =   0
+         End
+         Begin VB.Label Label24 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "Porcentaje "
+            Height          =   255
+            Index           =   0
+            Left            =   315
+            TabIndex        =   76
+            Top             =   375
+            Width           =   855
+         End
+         Begin VB.Label lblvlPorcentaje 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "10 %"
+            Height          =   255
+            Left            =   1155
+            TabIndex        =   75
+            Top             =   375
+            Width           =   510
+         End
+         Begin VB.Label Label20 
+            BackColor       =   &H00FFFFFF&
+            Caption         =   "100 %"
+            Height          =   240
+            Left            =   4365
+            TabIndex        =   74
+            Top             =   390
+            Width           =   510
+         End
+      End
+      Begin VB.CommandButton cmdBuscar 
+         Height          =   360
+         Left            =   5760
+         Picture         =   "Frm_AnularComprobantes.frx":42E3
+         Style           =   1  'Graphical
+         TabIndex        =   71
+         Top             =   780
+         Width           =   375
+      End
+      Begin VB.TextBox txtBusqueda 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         Height          =   330
+         Left            =   4305
+         TabIndex        =   28
+         Text            =   "*"
+         Top             =   315
+         Width           =   4920
+      End
+      Begin MSComctlLib.ImageList ImgOperadores 
+         Left            =   7215
+         Top             =   1560
+         _ExtentX        =   1005
+         _ExtentY        =   1005
+         BackColor       =   -2147483648
+         ImageWidth      =   16
+         ImageHeight     =   16
+         MaskColor       =   12632256
+         _Version        =   393216
+         BeginProperty Images {2C247F25-8591-11D1-B16A-00C0F0283628} 
+            NumListImages   =   6
+            BeginProperty ListImage1 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":43E5
+               Key             =   "Similar"
+            EndProperty
+            BeginProperty ListImage2 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":44F7
+               Key             =   "Igual"
+            EndProperty
+            BeginProperty ListImage3 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":4609
+               Key             =   "MayoroIgual"
+            EndProperty
+            BeginProperty ListImage4 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":471B
+               Key             =   "Mayor"
+            EndProperty
+            BeginProperty ListImage5 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":482D
+               Key             =   "MenoroIgual"
+            EndProperty
+            BeginProperty ListImage6 {2C247F27-8591-11D1-B16A-00C0F0283628} 
+               Picture         =   "Frm_AnularComprobantes.frx":493F
+               Key             =   "Menor"
+            EndProperty
+         EndProperty
+      End
+      Begin MSComctlLib.ImageCombo ImageCombo1 
+         Height          =   330
+         Left            =   2565
+         TabIndex        =   30
+         Top             =   315
+         Width           =   1680
+         _ExtentX        =   2963
+         _ExtentY        =   582
+         _Version        =   393216
+         ForeColor       =   -2147483640
+         BackColor       =   14737632
+         OLEDropMode     =   1
+         Indentation     =   1
+         Locked          =   -1  'True
+         ImageList       =   "ImgOperadores"
+      End
+      Begin VB.ComboBox cmbCampos 
+         BackColor       =   &H00E0E0E0&
+         Height          =   315
+         Left            =   150
+         Style           =   2  'Dropdown List
+         TabIndex        =   29
+         Top             =   330
+         Width           =   2400
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   360
+         Index           =   0
+         Left            =   1470
+         TabIndex        =   67
+         Tag             =   "dtDesde"
+         Top             =   750
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   635
+         _Version        =   393216
+         Format          =   70320129
+         CurrentDate     =   38267
+      End
+      Begin MSComCtl2.DTPicker DTPicker1 
+         Height          =   345
+         Index           =   1
+         Left            =   3975
+         TabIndex        =   68
+         Tag             =   "dtHasta"
+         Top             =   780
+         Width           =   1695
+         _ExtentX        =   2990
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   70320129
+         CurrentDate     =   38267
+      End
+      Begin MSComctlLib.ListView lstBusqueda 
+         Height          =   5445
+         Left            =   90
+         TabIndex        =   78
+         Top             =   1185
+         Width           =   9135
+         _ExtentX        =   16113
+         _ExtentY        =   9604
+         View            =   3
+         LabelEdit       =   1
+         LabelWrap       =   -1  'True
+         HideSelection   =   -1  'True
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         FullRowSelect   =   -1  'True
+         _Version        =   393217
+         ForeColor       =   -2147483640
+         BackColor       =   -2147483643
+         BorderStyle     =   1
+         Appearance      =   0
+         BeginProperty Font {0BE35203-8F91-11CE-9DE3-00AA004BB851} 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         OLEDragMode     =   1
+         OLEDropMode     =   1
+         NumItems        =   12
+         BeginProperty ColumnHeader(1) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            Object.Tag             =   "nrComprobante"
+            Text            =   "Comprobante"
+            Object.Width           =   2646
+         EndProperty
+         BeginProperty ColumnHeader(2) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   1
+            Object.Tag             =   "nrTalonario"
+            Text            =   "Talonario"
+            Object.Width           =   1764
+         EndProperty
+         BeginProperty ColumnHeader(3) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   2
+            Object.Tag             =   "tpComprobante"
+            Text            =   "Doc"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(4) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   3
+            Object.Tag             =   "tpLetra"
+            Text            =   "Letra"
+            Object.Width           =   1411
+         EndProperty
+         BeginProperty ColumnHeader(5) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   4
+            Object.Tag             =   "dtComprobante"
+            Text            =   "Fecha "
+            Object.Width           =   2293
+         EndProperty
+         BeginProperty ColumnHeader(6) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   5
+            Object.Tag             =   "flManual"
+            Text            =   "Facturado"
+            Object.Width           =   2822
+         EndProperty
+         BeginProperty ColumnHeader(7) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   6
+            Object.Tag             =   "cdCondVenta"
+            Text            =   "Cond. Venta"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(8) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   7
+            Object.Tag             =   "cdCliente"
+            Text            =   "Cliente"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(9) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   8
+            Object.Tag             =   "dsRazonSocial"
+            Text            =   "Razon Social"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(10) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   9
+            Object.Tag             =   "nrLicencia"
+            Text            =   "Licencia"
+            Object.Width           =   2540
+         EndProperty
+         BeginProperty ColumnHeader(11) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   10
+            Object.Tag             =   "nrCaja"
+            Text            =   "Caja"
+            Object.Width           =   2734
+         EndProperty
+         BeginProperty ColumnHeader(12) {BDD1F052-858B-11D1-B16A-00C0F0283628} 
+            SubItemIndex    =   11
+            Object.Tag             =   "dsUsuario"
+            Text            =   "Usuario"
+            Object.Width           =   2540
+         EndProperty
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Fecha Desde"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   10
+         Left            =   150
+         TabIndex        =   70
+         Top             =   870
+         Width           =   1200
+      End
+      Begin VB.Label lblLabels 
+         Caption         =   "Hasta"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   9
+         Left            =   3255
+         TabIndex        =   69
+         Top             =   855
+         Width           =   645
+      End
+      Begin VB.Label Label2 
+         Caption         =   "Valor para la busqueda"
+         Height          =   210
+         Left            =   4305
+         TabIndex        =   33
+         Top             =   90
+         Width           =   1755
+      End
+      Begin VB.Label Label1 
+         Caption         =   "Campo"
+         Height          =   210
+         Left            =   165
+         TabIndex        =   32
+         Top             =   105
+         Width           =   795
       End
    End
 End
@@ -2123,6 +2182,8 @@ Dim Valor   As Variant
     ObjTablasIO.setearCampoOperadorValor "flAnulado", "->", ""
     ObjTablasIO.setearCampoOperadorValor "flManual", "->", ""
     ObjTablasIO.setearCampoOperadorValor "vlPagoReales", "->", ""
+    ObjTablasIO.setearCampoOperadorValor "nrCAE", "->", ""
+    ObjTablasIO.setearCampoOperadorValor "dtVencimientoCAE", "->", ""
 
     ObjTablasIO.Seleccionar
     
@@ -2251,6 +2312,7 @@ Dim strSQL   As String
     ObjTablasIO.setearCampoOperadorValor "flCompensado", "=", "1"
     ObjTablasIO.setearCampoOperadorValor "flCompensado", "->", ""
     ObjTablasIO.Seleccionar
+    
     If Not ObjTablasIO.rs_resultados.EOF Then
         MsgBox "No puede eliminarse el comprobante porque ya fue compensado", vbCritical + vbDefaultButton1, "Atención"
         Exit Function
@@ -2258,104 +2320,151 @@ Dim strSQL   As String
     
     objbasededatos.BeginTrans
     
-    If anularCupon() Then
-         ' Anular el recibo en caso de ser una factura de cta. cte.
-         If ObtenerCampo("IdReciboCtaCte").Text <> "" Then
-            strSQL = " SP_AnularFacturaCtaCte " + ObtenerCampo("IdReciboCtaCte").Text + ","
-            strSQL = strSQL + objUsuario.dsUsuario
-            If Not objbasededatos.ExecStoredProcedures(strSQL) Then
-                objbasededatos.RollBackTrans
-                MsgBox "Error: " + objbasededatos.Error, vbInformation + vbYesNo, "Atención"
-                Exit Function
-            End If
-         End If
-         
-         ' Si se anularon lo CUPONES
-         ObjTablasIO.nmTabla = "TB_Comprobantes"
-         ObjTablasIO.setearCampoOperadorValor "nrComprobante", _
-         "=", ObtenerCampo("nrComprobante"), " AND "
-         ObjTablasIO.setearCampoOperadorValor "nrTalonario", _
-         "=", ObtenerCampo("nrTalonario"), " AND "
-         ObjTablasIO.setearCampoOperadorValor "tpLetra", _
-         "=", ObtenerCampo("tpLetra"), " AND "
-         ObjTablasIO.setearCampoOperadorValor "tpComprobante", _
-         "=", ObtenerCampo("tpComprobante")
-         
-         ObjTablasIO.setearCampoOperadorValor "flAnulado", "<-", "1"
-         ObjTablasIO.setearCampoOperadorValor "dtAnulado", "<-", CStr(Now())
-         ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", 0
-         ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
-         
-         If ObjTablasIO.Actualizar() Then
-             ' Pasar a la versión 1.3
-             ' actualizamos la fecha de actualizacion para la sincronizacion
-             If Not actualizarFechaActualizaciondelaCaja() Then
-                  objbasededatos.RollBackTrans
-                  MsgBox "Error al grabar la tabla de caja, por favor intente mas tarde. Error extendido" + ObjTablasIO.Error, vbCritical, "Atención"
-                  AnularComprobante = False
-                  Exit Function
-             End If
-             
-             ' actualizamos la caja correspondiente en el siguiente caso
-             ' que sea una caja de los puestos y ademas esta abierta
-             If objCajas.esCajaAbierta(ObtenerCampo("nrCaja")) And _
-                objCajas.esCajaPuesto(ObtenerCampo("nrCaja")) Then
-                    Select Case ObtenerCampo("cdCondVenta").Text
-                       Case "Contado"
-                                             
-                             Dim lvlPesos As Single
-                             Dim lvlDolares As Single
-                             Dim lvlEuros As Single
-                             Dim lvlReales As Single
-                             
-                             lvlPesos = CSng(ObtenerCampo("vlPagoPesos").Text)
-                             lvlDolares = CSng(ObtenerCampo("vlPagoDolares").Text)
-                             lvlEuros = CSng(ObtenerCampo("vlPagoEuros").Text)
-                             lvlReales = CSng(ObtenerCampo("vlPagoReales").Text)
-                                             
-                             lvlPesos = lvlPesos * (-1)
-                             lvlDolares = lvlDolares * (-1)
-                             lvlEuros = lvlEuros * (-1)
-                             lvlReales = lvlReales * (-1)
-            
-                             objCajas.nrCaja = ObtenerCampo("nrCaja")
-                             objCajas.vlPesos = lvlPesos
-                             objCajas.vlDolares = lvlDolares
-                             objCajas.vlEuros = lvlEuros
-                             objCajas.vlReales = lvlReales
-       
-                            If objCajas.ActualizarCaja(True) Then
-                                objbasededatos.CommitTrans
-                                MsgBox "El Comprobante se ha anulado con éxito.", vbInformation + vbDefaultButton1, "Atención"
-                                Me.lstBusqueda.ListItems.Remove Me.lstBusqueda.SelectedItem.Index
-                                AnularComprobante = True
-                            Else
-                                AnularComprobante = False
-                                objbasededatos.RollBackTrans
-                                MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
-                            End If
-                        Case Else
-                            objbasededatos.CommitTrans
-                            MsgBox "El Comprobante se ha anulado con éxito.", vbInformation + vbDefaultButton1, "Atención"
-                            Me.lstBusqueda.ListItems.Remove Me.lstBusqueda.SelectedItem.Index
-                            AnularComprobante = True
-                        End Select
-             Else
-                 objbasededatos.CommitTrans
-                 MsgBox "El Comprobante se ha anulado con éxito.", vbInformation + vbDefaultButton1, "Atención"
-                 Me.lstBusqueda.ListItems.Remove Me.lstBusqueda.SelectedItem.Index
-                 AnularComprobante = True
-             End If
-         Else
-            AnularComprobante = False
-             objbasededatos.RollBackTrans
-             MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
-         End If
-    Else
+    If Not anularCupon() Then
+        AnularComprobante = False
+        objbasededatos.RollBackTrans
+        MsgBox " No se puede anular este comprobante ", vbInformation + vbYesNo, "Atención"
+        Exit Function
+    End If
+    
+    
+    ' Anular el recibo en caso de ser una factura de cta. cte.
+    If ObtenerCampo("IdReciboCtaCte").Text <> "" Then
+       strSQL = " SP_AnularFacturaCtaCte " + ObtenerCampo("IdReciboCtaCte").Text + ","
+       strSQL = strSQL + objUsuario.dsUsuario
+       If Not objbasededatos.ExecStoredProcedures(strSQL) Then
+           objbasededatos.RollBackTrans
+           MsgBox "Error: " + objbasededatos.Error, vbInformation + vbYesNo, "Atención"
+           Exit Function
+       End If
+    End If
+        
+     ' Si se anularon lo CUPONES
+     ObjTablasIO.nmTabla = "TB_Comprobantes"
+     ObjTablasIO.setearCampoOperadorValor "nrComprobante", _
+     "=", ObtenerCampo("nrComprobante"), " AND "
+     ObjTablasIO.setearCampoOperadorValor "nrTalonario", _
+     "=", ObtenerCampo("nrTalonario"), " AND "
+     ObjTablasIO.setearCampoOperadorValor "tpLetra", _
+     "=", ObtenerCampo("tpLetra"), " AND "
+     ObjTablasIO.setearCampoOperadorValor "tpComprobante", _
+     "=", ObtenerCampo("tpComprobante")
+     
+     ObjTablasIO.setearCampoOperadorValor "flAnulado", "<-", "1"
+     ObjTablasIO.setearCampoOperadorValor "dtAnulado", "<-", CStr(Now())
+     ObjTablasIO.setearCampoOperadorValor "flSincronizado", "<-", 0
+     ObjTablasIO.setearCampoOperadorValor "dtActualizacion", "<-", objbasededatos.getDateasString()
+     
+     If Not ObjTablasIO.Actualizar() Then
          AnularComprobante = False
          objbasededatos.RollBackTrans
-         MsgBox " No se puede anular este comprobante ", vbInformation + vbYesNo, "Atención"
+         MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
+     End If
+      
+      
+    
+    ' Pasar a la versión 1.3
+    ' actualizamos la fecha de actualizacion para la sincronizacion
+    If Not actualizarFechaActualizaciondelaCaja() Then
+         objbasededatos.RollBackTrans
+         MsgBox "Error al grabar la tabla de caja, por favor intente mas tarde. Error extendido" + ObjTablasIO.Error, vbCritical, "Atención"
+         AnularComprobante = False
+         Exit Function
     End If
+      
+    ' actualizamos la caja correspondiente en el siguiente caso
+    ' que sea una caja de los puestos y ademas esta abierta
+    If objCajas.esCajaAbierta(ObtenerCampo("nrCaja")) And _
+        objCajas.esCajaPuesto(ObtenerCampo("nrCaja")) Then
+    
+        Select Case ObtenerCampo("cdCondVenta").Text
+        Case "Contado"
+        Dim lvlPesos As Single
+        Dim lvlDolares As Single
+        Dim lvlEuros As Single
+        Dim lvlReales As Single
+        
+        lvlPesos = CSng(ObtenerCampo("vlPagoPesos").Text)
+        lvlDolares = CSng(ObtenerCampo("vlPagoDolares").Text)
+        lvlEuros = CSng(ObtenerCampo("vlPagoEuros").Text)
+        lvlReales = CSng(ObtenerCampo("vlPagoReales").Text)
+                        
+        lvlPesos = lvlPesos * (-1)
+        lvlDolares = lvlDolares * (-1)
+        lvlEuros = lvlEuros * (-1)
+        lvlReales = lvlReales * (-1)
+        
+        objCajas.nrCaja = ObtenerCampo("nrCaja")
+        objCajas.vlPesos = lvlPesos
+        objCajas.vlDolares = lvlDolares
+        objCajas.vlEuros = lvlEuros
+        objCajas.vlReales = lvlReales
+        
+        If Not objCajas.ActualizarCaja(True) Then
+           AnularComprobante = False
+           objbasededatos.RollBackTrans
+           MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
+           Exit Function
+        End If
+        End Select
+    End If
+    
+    ' si se trata de una factura electronica - y es una factura de liquidacion de cta cte
+    If ObtenerCampo("nrCAE").Text <> "" And ObtenerCampo("IdReciboCtaCte").Text <> "" Then
+        ' Eliminamos fisicamente el comprobante , la cta cte y el detalle de la factura
+        ' MsgBox "Eliminamos fisicamente el comprobante , la cta cte y el detalle de la factura"
+        
+        ObjTablasIO.nmTabla = "TB_Cupones"
+        ObjTablasIO.setearCampoOperadorValor "nrComprabanteCliente", "=", ObtenerCampo("nrComprobante").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrTalonarioCliente", "=", ObtenerCampo("nrTalonario").Text, " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobanteCliente", "=", ObtenerCampo("tpComprobante").Text, " AND"
+        ObjTablasIO.setearCampoOperadorValor "tpLetraCliente", "=", ObtenerCampo("tpLetra").Text
+
+
+
+        If Not ObjTablasIO.Eliminar() Then
+             AnularComprobante = False
+             objbasededatos.RollBackTrans
+             MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
+             Exit Function
+         End If
+            
+
+        ObjTablasIO.nmTabla = "TB_ComprobantesDetalle"
+        ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante")
+        
+        If Not ObjTablasIO.Eliminar() Then
+             AnularComprobante = False
+             objbasededatos.RollBackTrans
+             MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
+             Exit Function
+         End If
+
+        ObjTablasIO.nmTabla = "TB_Comprobantes"
+        ObjTablasIO.setearCampoOperadorValor "nrComprobante", "=", ObtenerCampo("nrComprobante"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "nrTalonario", "=", ObtenerCampo("nrTalonario"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpLetra", "=", ObtenerCampo("tpLetra"), " AND "
+        ObjTablasIO.setearCampoOperadorValor "tpComprobante", "=", ObtenerCampo("tpComprobante")
+
+        If Not ObjTablasIO.Eliminar() Then
+             AnularComprobante = False
+             objbasededatos.RollBackTrans
+             MsgBox "Error: " + ObjTablasIO.Error, vbInformation + vbYesNo, "Atención"
+             Exit Function
+         End If
+         
+    End If
+    
+    
+        
+    objbasededatos.CommitTrans
+    MsgBox "El Comprobante se ha anulado con éxito.", vbInformation + vbDefaultButton1, "Atención"
+    Me.lstBusqueda.ListItems.Remove Me.lstBusqueda.SelectedItem.Index
+    AnularComprobante = True
+    
 
 End Function
 

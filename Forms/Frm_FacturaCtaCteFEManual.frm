@@ -243,7 +243,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          _ExtentX        =   2381
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   232521729
+         Format          =   157024257
          CurrentDate     =   43327
       End
       Begin VB.TextBox txtFields 
@@ -543,7 +543,7 @@ Begin VB.Form Frm_FacturaCtaCteFEManual
          _ExtentX        =   2672
          _ExtentY        =   609
          _Version        =   393216
-         Format          =   232521729
+         Format          =   157024257
          CurrentDate     =   43327
       End
       Begin MSComctlLib.ListView lstItemsFactura 
@@ -1298,6 +1298,7 @@ Dim resp   As Integer
            On Error GoTo 0
            ' ImprimirFactura ObtenerCampo("nrTalonario"), ObtenerCampo("nrComprobante"), ObtenerCampo("tpComprobante"), ObtenerCampo("tpLetra")
            objParametros.GrabarValor "FacturarCtaCte.Facturado", "SI"
+           MsgBox "La factura se ha cargado con éxito", vbInformation + vbDefaultButton1, "Atención"
            ' Sleep (8000)
            Unload Me
     Else
@@ -2784,6 +2785,10 @@ Private Sub txtFields_LostFocus(Index As Integer)
                 ObtenerCampo("cdCondVenta").Text <> "Tarjeta de Crédito" Then
                 CalcularSaldos Me.txtFields(Index).Tag
             End If
+        Case "nrTalonario"
+            ObtenerCampo("nrTalonario").Text = CompletarCerosaIzquierda(ObtenerCampo("nrTalonario").Text, 4)
+        Case "nrComprobante"
+            ObtenerCampo("nrComprobante").Text = CompletarCerosaIzquierda(ObtenerCampo("nrComprobante").Text, 8)
         End Select
         
     End If

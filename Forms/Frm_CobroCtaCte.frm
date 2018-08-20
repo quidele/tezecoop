@@ -862,7 +862,9 @@ Dim i             As Integer
             Exit Sub
         Else
             objbasededatos.CommitTrans
-            imprimirCobroCliente IdRecibo, Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text
+            If Me.cbTipoFacturacion.Text <> "Electrónica Manual" Then
+                imprimirCobroCliente IdRecibo, Me.lstBusqueda.SelectedItem.Text, ObtenerCampo("dsRazonSocial").Text
+            End If
         End If
     Else
          eliminarRecibo (IdRecibo)  ' en caso de no facturar, eliminamos el remito grabado inicialmente
