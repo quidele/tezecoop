@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   139198465
+         Format          =   155385857
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -3049,15 +3049,16 @@ Private Function FacturarBD() As Boolean
         Exit Function
     End If
     
-    If AppVersionNumerico() >= 498334 Then
-                Me.nro_trans = objbasededatos.SP_ObtenerMaxNumerador("nro_trans")
-    End If
-    
+  
     
     
     objbasededatos.BeginTrans
 
-            
+         
+    If AppVersionNumerico() >= 498335 Then
+                Me.nro_trans = objbasededatos.SP_ObtenerMaxNumerador("nro_trans")
+    End If
+         
     
     ' Finalmente no se quiere guardar los nuevos destinos cargados por las operadoras
     ' If Not GrabarDatosdeProductos() Then
