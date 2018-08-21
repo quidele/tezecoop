@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b2829428bb774d7daf6e5762ff49bad0" Name="Diagram1" >
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.cbtesasoc" Width="1.5" PointX="11.25" PointY="9.875" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.comprobante" Width="1.5" PointX="3" PointY="6.375" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.comprobantes_ml" Width="1.5" PointX="6" PointY="7.375" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.conceptos" Width="1.5" PointX="0.75" PointY="4.375" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.condicion_iva" Width="1.5" PointX="9" PointY="3.125" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.destinos" Width="1.5" PointX="0.75" PointY="13.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.detalle" Width="1.5" PointX="8.25" PointY="9.5" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.detalle_iva" Width="1.5" PointX="11.25" PointY="6.875" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.detalle_tributos" Width="1.5" PointX="8.25" PointY="15.5" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.formaspago" Width="1.5" PointX="5.25" PointY="16.5" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.idioma" Width="1.5" PointX="0.75" PointY="18.875" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.incoterms" Width="1.5" PointX="0.75" PointY="16.5" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.LogApp" Width="1.5" PointX="2.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.lote" Width="1.5" PointX="0.75" PointY="2" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.moneda" Width="1.5" PointX="0.75" PointY="9.875" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.observaciones" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.paises" Width="1.5" PointX="6.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.permisodestino" Width="1.5" PointX="8.25" PointY="6" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.simulacion" Width="1.5" PointX="8.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.sysdiagrams" Width="1.5" PointX="11.75" PointY="0.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.tipo_comprobante" Width="1.5" PointX="0.75" PointY="21.375" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.tipo_documento" Width="1.5" PointX="0.75" PointY="7" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.tipos_responsables" Width="1.5" PointX="11.75" PointY="3.75" />
+        <EntityTypeShape EntityType="FacturaElectronica_PruebasModel.unidad_medida" Width="1.5" PointX="6" PointY="4.125" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_cbtesasoc_comprobantes_ml" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_cbtesasoc_tipo_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_conceptos" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_destinos" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_idioma" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_incoterms" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_lote" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_moneda" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_tipo_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobante_tipo_documento" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_detalle_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_formaspago_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_permisodestino_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobantes_ml_conceptos" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobantes_ml_moneda" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobantes_ml_moneda1" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobantes_ml_tipo_comprobante" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_comprobantes_ml_tipo_documento" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_detalle_iva_comprobantes_ml" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_detalle_tributos_comprobantes_ml" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_detalle_iva_condicion_iva" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_permisodestino_destinos" />
+        <AssociationConnector Association="FacturaElectronica_PruebasModel.FK_detalle_unidad_medida" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

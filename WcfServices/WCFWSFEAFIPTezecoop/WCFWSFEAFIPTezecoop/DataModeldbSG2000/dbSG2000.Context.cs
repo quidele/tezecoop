@@ -25,10 +25,10 @@ namespace WCFWSFEAFIPTezecoop.DataModeldbSG2000
             throw new UnintentionalCodeFirstException();
         }
     
-        public virtual DbSet<TB_Comprobantes> TB_Comprobantes { get; set; }
-        public virtual DbSet<TB_ComprobantesDetalle> TB_ComprobantesDetalle { get; set; }
         public virtual DbSet<TB_Cupones> TB_Cupones { get; set; }
         public virtual DbSet<TB_TiposComprobantes> TB_TiposComprobantes { get; set; }
         public virtual DbSet<tipo_comprobanteAFIP> tipo_comprobanteAFIP { get; set; }
+        public virtual DbSet<TB_Comprobantes> TB_Comprobantes { get; set; }
+        public virtual DbSet<TB_ComprobantesDetalle> TB_ComprobantesDetalle { get; set; }
     }
 }

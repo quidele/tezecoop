@@ -40,5 +40,6 @@ namespace WCFWSFEAFIPTezecoop.DataModeldbSG2000
         public Nullable<double> vlRecargoTD { get; set; }
         public Nullable<double> vlPrecioTP { get; set; }
         public Nullable<double> vlRecargoTP { get; set; }
+        public Nullable<int> nro_trans { get; set; }
     }
 }

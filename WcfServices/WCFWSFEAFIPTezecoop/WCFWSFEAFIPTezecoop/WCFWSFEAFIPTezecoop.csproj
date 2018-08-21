@@ -124,6 +124,23 @@
       <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
       <LastGenOutput>dbSG2000_Pruebas.cs</LastGenOutput>
     </Content>
+    <EntityDeploy Include="DataModelFE\FacturaElectronica_Pruebas.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>FacturaElectronica_Pruebas.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="DataModelFE\FacturaElectronica_Pruebas.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturaElectronica_Pruebas.edmx</DependentUpon>
+      <LastGenOutput>FacturaElectronica_Pruebas.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataModelFE\FacturaElectronica_Pruebas.edmx.diagram">
+      <DependentUpon>FacturaElectronica_Pruebas.edmx</DependentUpon>
+    </Content>
+    <Content Include="DataModelFE\FacturaElectronica_Pruebas.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>FacturaElectronica_Pruebas.edmx</DependentUpon>
+      <LastGenOutput>FacturaElectronica_Pruebas.cs</LastGenOutput>
+    </Content>
     <None Include="Service References\personaServiceA5_homo\PersonaServiceA5.wsdl" />
     <Content Include="Service References\personaServiceA5_homo\WCFWSFEAFIPTezecoop.personaServiceA5_homo.dummyResponse.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
@@ -481,37 +498,37 @@
       <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_TiposComprobantes.cs">
-      <DependentUpon>dbSG2000.tt</DependentUpon>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\tipo_comprobanteAFIP.cs">
-      <DependentUpon>dbSG2000.tt</DependentUpon>
+      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\cbtesasoc.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\comprobante.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\comprobantes_ml.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\conceptos.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\condicion_iva.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\destinos.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\detalle.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\detalle_iva.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\detalle_tributos.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\FacturaElectronica.Context.cs">
       <AutoGen>True</AutoGen>
@@ -528,50 +545,65 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>FacturaElectronica.edmx</DependentUpon>
     </Compile>
+    <Compile Include="DataModelFE\FacturaElectronica_Pruebas.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaElectronica_Pruebas.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModelFE\FacturaElectronica_Pruebas.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataModelFE\FacturaElectronica_Pruebas.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>FacturaElectronica_Pruebas.edmx</DependentUpon>
+    </Compile>
     <Compile Include="DataModelFE\formaspago.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\idioma.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\incoterms.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\LogApp.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\lote.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\moneda.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\observaciones.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\paises.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\permisodestino.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\simulacion.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\sysdiagrams.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\tipos_responsables.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\tipo_comprobante.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\tipo_documento.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\unidad_medida.cs">
-      <DependentUpon>FacturaElectronica.tt</DependentUpon>
+      <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModel\AdaptaRepositorios.cs" />
     <Compile Include="AFIP\IComprobanteAFIP.cs" />

@@ -4,12 +4,12 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="5bb23c0c5d884b4c9b259357ca005a89" Name="Diagram1" ZoomLevel="42">
-        <EntityTypeShape EntityType="dbSG2000Model.TB_Comprobantes" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_ComprobantesDetalle" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+      <Diagram DiagramId="5bb23c0c5d884b4c9b259357ca005a89" Name="Diagram1" ZoomLevel="37">
         <EntityTypeShape EntityType="dbSG2000Model.TB_Cupones" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbSG2000Model.TB_TiposComprobantes" Width="1.5" PointX="7.375" PointY="0.75" />
-        <EntityTypeShape EntityType="dbSG2000Model.tipo_comprobanteAFIP" Width="1.5" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_TiposComprobantes" Width="2.875" PointX="7.375" PointY="0.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.tipo_comprobanteAFIP" Width="3.125" PointX="7.375" PointY="3.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_Comprobantes" Width="3.875" PointX="0.75" PointY="0.75" />
+        <EntityTypeShape EntityType="dbSG2000Model.TB_ComprobantesDetalle" Width="3.875" PointX="7.75" PointY="6.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

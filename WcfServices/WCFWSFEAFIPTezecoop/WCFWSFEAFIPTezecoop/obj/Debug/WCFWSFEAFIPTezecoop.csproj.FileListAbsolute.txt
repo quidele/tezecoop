@@ -16,3 +16,4 @@ C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\Entit
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\bin\EntityFramework.SqlServer.xml
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.dll
 C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.pdb
+C:\github\tezecoop\WcfServices\WCFWSFEAFIPTezecoop\WCFWSFEAFIPTezecoop\obj\Debug\WCFWSFEAFIPTezecoop.csprojResolveAssemblyReference.cache

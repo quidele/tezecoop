@@ -82,5 +82,8 @@ namespace WCFWSFEAFIPTezecoop.DataModeldbSG2000
         public string dsRazonSocial_original { get; set; }
         public string nrDoc_original { get; set; }
         public string nmEmpresaTarjeta { get; set; }
+        public Nullable<int> nro_trans { get; set; }
+        public string nrCAE { get; set; }
+        public string dtVencimientoCAE { get; set; }
     }
 }
