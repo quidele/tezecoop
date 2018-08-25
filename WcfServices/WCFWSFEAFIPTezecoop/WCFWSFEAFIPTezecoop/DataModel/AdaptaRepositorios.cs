@@ -4,7 +4,9 @@ using System.Linq;
 using System.Web;
 using WCFWSFEAFIPTezecoop.DataModeldbSG2000;
 using WCFWSFEAFIPTezecoop.DataModelFE;
-using System.Transactions; 
+using System.Transactions;
+using System.Data.Entity.Validation;
+using System.Data.Entity.Infrastructure; 
 
 namespace WCFWSFEAFIPTezecoop.DataModel
 {
@@ -23,11 +25,14 @@ namespace WCFWSFEAFIPTezecoop.DataModel
 
         public string DescripcionError { get; set; }
 
-        public bool AdaptarComprobante(int pIdSolicitud){
+        public bool AdaptarComprobante(int pIdSolicitud)
+        {
+
 
             // recuperamos la cabecera del comprobante
             var un_TB_Comprobantes = (from c in _ContextOrigen.TB_Comprobantes
-                                      where c.nro_trans == pIdSolicitud  select c).First<TB_Comprobantes>();
+                                      where c.nro_trans == pIdSolicitud
+                                      select c).First<TB_Comprobantes>();
 
             if (un_TB_Comprobantes == null)
             {
@@ -39,16 +44,16 @@ namespace WCFWSFEAFIPTezecoop.DataModel
 
             un_comprobantes_ml.idsolicitud = pIdSolicitud;
             un_comprobantes_ml.CbteTipo = this.ObtenerCodComprobanteAFIP(un_TB_Comprobantes.tpComprobante, un_TB_Comprobantes.tpLetra);
- 
+
             un_comprobantes_ml.PtoVta = 0; // Determinar logica de puntos de Venta 
             un_comprobantes_ml.Concepto = 2;  // Servicios
 
             un_comprobantes_ml.DocTipo = this.ObtenerCodTipoDocumentoClienteAFIP(un_TB_Comprobantes.tpIVA, un_TB_Comprobantes.nrDoc);
-            un_comprobantes_ml.DocNro = decimal.Parse( this.ObtenerNroDocumentoClienteAFIP(un_TB_Comprobantes.tpIVA, un_TB_Comprobantes.nrDoc)) ;
+            un_comprobantes_ml.DocNro = decimal.Parse(this.ObtenerNroDocumentoClienteAFIP(un_TB_Comprobantes.tpIVA, un_TB_Comprobantes.nrDoc));
             un_comprobantes_ml.CbteDesde = 1;
             un_comprobantes_ml.CbteHasta = 1;
             un_comprobantes_ml.CbteFch = DateTime.Now;
-            un_comprobantes_ml.ImpTotal = decimal.Parse ( un_TB_Comprobantes.vlTotalGeneral.ToString());
+            un_comprobantes_ml.ImpTotal = decimal.Parse(un_TB_Comprobantes.vlTotalGeneral.ToString());
             un_comprobantes_ml.ImpTotConc = 0;
             un_comprobantes_ml.ImpNeto = decimal.Parse(un_TB_Comprobantes.vlSubtotal.ToString());
 
@@ -60,7 +65,7 @@ namespace WCFWSFEAFIPTezecoop.DataModel
             un_comprobantes_ml.FchServDesde = un_comprobantes_ml.CbteFch;
             un_comprobantes_ml.FchServHasta = un_comprobantes_ml.CbteFch;
             un_comprobantes_ml.FchServHasta = un_comprobantes_ml.CbteFch;
-            un_comprobantes_ml.ImpIVA = decimal.Parse (un_TB_Comprobantes.vlIVA.ToString());
+            un_comprobantes_ml.ImpIVA = decimal.Parse(un_TB_Comprobantes.vlIVA.ToString());
             un_comprobantes_ml.ImpTrib = 0;
             un_comprobantes_ml.MonId = "PES";
             un_comprobantes_ml.MonCotiz = 1;
@@ -72,35 +77,46 @@ namespace WCFWSFEAFIPTezecoop.DataModel
             un_detalle_iva.BaseImp = decimal.Parse(un_TB_Comprobantes.vlTotalGeneral.ToString());
             un_detalle_iva.Importe = decimal.Parse(un_TB_Comprobantes.vlIVA.ToString());
 
-            using (TransactionScope transaction = new TransactionScope())
+            try
             {
+                using (TransactionScope transaction = new TransactionScope())
+                {
 
-                this._ContextDestino.comprobantes_ml.Add(un_comprobantes_ml);
-                this._ContextDestino.detalle_iva.Add(un_detalle_iva);
-                this._ContextDestino.SaveChanges();
-                transaction.Complete();
+                    this._ContextDestino.comprobantes_ml.Add(un_comprobantes_ml);
+                    this._ContextDestino.detalle_iva.Add(un_detalle_iva);
+                    this._ContextDestino.SaveChanges();
+                    transaction.Complete();
+
+                }
+                return true;
+            }
+            catch (DbEntityValidationException e)
+            {
+                foreach (var eve in e.EntityValidationErrors)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
+                        eve.Entry.Entity.GetType().Name, eve.Entry.State);
+                    foreach (var ve in eve.ValidationErrors)
+                    {
+                        Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
+                            ve.PropertyName, ve.ErrorMessage);
+                    }
+                }
 
             }
+            catch (DbUpdateException ex)
+            {
+                foreach (var eve in ex.Entries)
+                {
+                    Console.WriteLine("Entity of type \"{0}\" was part of the problem",
+                        eve.Entity.GetType().Name);
+                    Console.WriteLine(ex.Message);  
+                }
+                throw ex;
 
-            return true;
+            }
+            return false;
         }
-
-         //try
-         //{
-         //}
-         //catch (DbEntityValidationException e)
-         //   {
-         //       foreach (var eve in e.EntityValidationErrors)
-         //   {
-         //       Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
-         //           eve.Entry.Entity.GetType().Name, eve.Entry.State);
-         //       foreach (var ve in eve.ValidationErrors)
-         //       {
-         //           Console.WriteLine("- Property: \"{0}\", Error: \"{1}\"",
-         //               ve.PropertyName, ve.ErrorMessage);
-         //       }
-         //   }
-
 
         private  int ObtenerCodTipoDocumentoClienteAFIP(string ptpIVA , string pnrDoc)
         {

@@ -489,19 +489,19 @@
       <DependentUpon>dbSG2000_Pruebas.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_Comprobantes.cs">
-      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+      <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_ComprobantesDetalle.cs">
-      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+      <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_Cupones.cs">
-      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+      <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\TB_TiposComprobantes.cs">
-      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+      <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModeldbSG2000\tipo_comprobanteAFIP.cs">
-      <DependentUpon>dbSG2000_Pruebas.tt</DependentUpon>
+      <DependentUpon>dbSG2000.tt</DependentUpon>
     </Compile>
     <Compile Include="DataModelFE\cbtesasoc.cs">
       <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
