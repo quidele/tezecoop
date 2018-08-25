@@ -27,26 +27,47 @@ namespace WCFWSFEAFIPTezecoop
 
         ResultadoSolicitarCAE IServiceFacturaElectronica.SolicitarCAE(decimal IdSolicitud, string pAmbiente)
         {
-            // el objeto un_comprobante_ml dbera ser adaptado a la estructura de WEBServer AFIP 
-            // throw new NotImplementedException();
+
+            try
+            {
+
+                FacturaElectronicaEntities  una_FacturaElectronicaEntities;
+                dbSG2000Entities una_dbSG2000Entities;
+                dbSG2000_PruebasEntities una_dbSG2000_PruebasEntities;
+                FacturaElectronica_PruebasEntities una_FacturaElectronica_PruebasEntities;
+                
+
+                switch (pAmbiente)
+                {
+                    case "SQL_Remoto":
+                        una_dbSG2000Entities = new dbSG2000Entities();
+                        una_FacturaElectronicaEntities = new FacturaElectronicaEntities();
+                        var un_adaptarRepositorio = new AdaptaRepositorios(una_dbSG2000Entities, una_FacturaElectronicaEntities);
+                        if (un_adaptarRepositorio.AdaptarComprobante(int.Parse(IdSolicitud.ToString())))
+                        {
+                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica ");
+                        }
+                        break;
+                    case "SQL_Remoto_Pruebas":
+                        una_dbSG2000_PruebasEntities = new dbSG2000_PruebasEntities();
+                        una_FacturaElectronica_PruebasEntities = new FacturaElectronica_PruebasEntities();
+                        var un_adaptarRepositorio_Pruebas = new AdaptaRepositorios_Pruebas(una_dbSG2000_PruebasEntities, una_FacturaElectronica_PruebasEntities);
+                        if ( un_adaptarRepositorio_Pruebas.AdaptarComprobante(int.Parse(IdSolicitud.ToString())))
+                        {
+                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica ");
+                        }
+                        break;
+                    default:
+                        break;
+                }
+
             
-            // grabar modelo decimal datos
 
-            //using (var context = new FacturaElectronicaEntities())
-            //{
-                /* var un_comprobantes_ml_BD = context.comprobantes_ml.Find(un_comprobante_ml.idsolicitud);
-                if (un_comprobantes_ml_BD == null) 
-                    context.comprobantes_ml.Add(un_comprobante_ml);
-                else */
-
-                //context.comprobantes_ml.Add(new comprobantes_ml());
-                //context.SaveChanges();
-            //}
-
-
-            var context_FacturaElectronicaEntities = new FacturaElectronicaEntities(); 
-            var context_dbSG2000Entities = new dbSG2000Entities();
             
+            /* 
+             var un_cupon = context_dbSG2000Entities.TB_Cupones.Where(c => c.nrCupon == 1).ToList<TB_Cupones>(); 
+             un_cupon = una_dbSG2000Generica.TB_Cupones.Where(c => c.nrCupon == 1 ).ToList<TB_Cupones>(); 
+            */
 
             var resultado = new ResultadoSolicitarCAE();
             resultado.Resultado = "OK";
@@ -57,10 +78,18 @@ namespace WCFWSFEAFIPTezecoop
             resultado.CodigoError = "CodigoError";
             resultado.DescripcionError = "DescripcionError";
 
-
-            var un_adaptarRepositorio = new AdaptaRepositorios(context_dbSG2000Entities, context_FacturaElectronicaEntities);
-
             return resultado;
+
+            }
+            catch (Exception ex )
+            {
+            
+                var resultado = new ResultadoSolicitarCAE();
+                resultado.Resultado = "ERROR";
+                resultado.CodigoError = "CodigoError";
+                resultado.DescripcionError = ex.Message ;
+                return resultado;
+            }
         }
     }
 }

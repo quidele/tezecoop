@@ -8,13 +8,13 @@ using System.Transactions;
 
 namespace WCFWSFEAFIPTezecoop.DataModel
 {
-    public class AdaptaRepositorios
+    public class AdaptaRepositorios_Pruebas
     {
-        private dbSG2000Entities _ContextOrigen;  
-        private FacturaElectronicaEntities _ContextDestino;
-        
+        private dbSG2000_PruebasEntities _ContextOrigen;
+        private FacturaElectronica_PruebasEntities _ContextDestino;
 
-        public AdaptaRepositorios(dbSG2000Entities pContextOrigen, FacturaElectronicaEntities pContextDestino)
+
+        public AdaptaRepositorios_Pruebas(dbSG2000_PruebasEntities pContextOrigen, FacturaElectronica_PruebasEntities pContextDestino)
         {
             _ContextOrigen = pContextOrigen  ;
             _ContextDestino = pContextDestino; 

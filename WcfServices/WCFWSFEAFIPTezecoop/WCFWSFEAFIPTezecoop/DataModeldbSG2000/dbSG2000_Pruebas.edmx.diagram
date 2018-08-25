@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="1f5b3c3019bc48fb9b7b59f687159b25" Name="Diagram1" ZoomLevel="39">
+      <Diagram DiagramId="1f5b3c3019bc48fb9b7b59f687159b25" Name="Diagram1" ZoomLevel="37">
         <EntityTypeShape EntityType="dbSG2000_PruebasModel.TB_Comprobantes" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000_PruebasModel.TB_ComprobantesDetalle" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="dbSG2000_PruebasModel.TB_Cupones" Width="1.5" PointX="4.75" PointY="0.75" />

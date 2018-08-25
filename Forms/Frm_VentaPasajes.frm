@@ -1,6 +1,6 @@
 VERSION 5.00
 Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_VentaPasajes 
    BorderStyle     =   3  'Fixed Dialog
    Caption         =   "Venta de Viajes"
@@ -1124,7 +1124,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   155385857
+         Format          =   286261249
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -4257,7 +4257,7 @@ Dim i     As Integer
         ObjTablasIO.setearCampoOperadorValor "nrCaja", "<-", ObtenerCampo("nrCaja").Text
         ObjTablasIO.setearCampoOperadorValor "nrPuesto", "<-", ObtenerCampo("nrPuesto").Text
 
-        If AppVersionNumerico() >= 498334 Then
+        If AppVersionNumerico() >= 498335 Then
                 ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
         End If
         
@@ -4414,7 +4414,7 @@ Dim vlComision    As Single
         
         ObjTablasIO.setearCampoOperadorValor "vlRecargoTarjeta", "<-", ObtenerCampo("vlRecargoTarjeta").Text
         
-        If AppVersionNumerico() >= 498334 Then
+        If AppVersionNumerico() >= 498335 Then
             ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
         End If
         
@@ -4700,7 +4700,7 @@ Dim strSQL       As String
     ObjTablasIO.setearCampoOperadorValor "tpDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.tpDocTarjeta")
     ObjTablasIO.setearCampoOperadorValor "nrDocTarjeta", "<-", objParametros.ObtenerValor("Frm_VentaViajesTotales.nrDocTarjeta")
     
-    If AppVersionNumerico() >= 498334 Then
+    If AppVersionNumerico() >= 498335 Then
             ObjTablasIO.setearCampoOperadorValor "nro_trans", "<-", Me.nro_trans
     End If
     

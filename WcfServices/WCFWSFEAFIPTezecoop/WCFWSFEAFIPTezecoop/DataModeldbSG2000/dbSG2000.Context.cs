@@ -13,6 +13,8 @@ namespace WCFWSFEAFIPTezecoop.DataModeldbSG2000
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
+    
+    
     public partial class dbSG2000Entities : DbContext
     {
         public dbSG2000Entities()

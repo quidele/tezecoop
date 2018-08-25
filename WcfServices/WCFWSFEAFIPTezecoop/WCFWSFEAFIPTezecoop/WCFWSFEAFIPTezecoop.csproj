@@ -605,6 +605,7 @@
     <Compile Include="DataModelFE\unidad_medida.cs">
       <DependentUpon>FacturaElectronica_Pruebas.tt</DependentUpon>
     </Compile>
+    <Compile Include="DataModel\AdaptaRepositorios_Pruebas.cs" />
     <Compile Include="DataModel\AdaptaRepositorios.cs" />
     <Compile Include="AFIP\IComprobanteAFIP.cs" />
     <Compile Include="AFIP\ILoginCMSClient.cs" />
