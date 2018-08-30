@@ -28,7 +28,6 @@ namespace WCFWSFEAFIPTezecoop.DataModel
         public bool AdaptarComprobante(int pIdSolicitud)
         {
 
-
             // recuperamos la cabecera del comprobante
             var un_TB_Comprobantes = (from c in _ContextOrigen.TB_Comprobantes
                                       where c.nro_trans == pIdSolicitud
@@ -90,9 +89,9 @@ namespace WCFWSFEAFIPTezecoop.DataModel
                 }
                 return true;
             }
-            catch (DbEntityValidationException e)
+            catch (DbEntityValidationException ex)
             {
-                foreach (var eve in e.EntityValidationErrors)
+                foreach (var eve in ex.EntityValidationErrors)
                 {
                     Console.WriteLine("Entity of type \"{0}\" in state \"{1}\" has the following validation errors:",
                         eve.Entry.Entity.GetType().Name, eve.Entry.State);
@@ -102,7 +101,7 @@ namespace WCFWSFEAFIPTezecoop.DataModel
                             ve.PropertyName, ve.ErrorMessage);
                     }
                 }
-
+                throw ex;
             }
             catch (DbUpdateException ex)
             {
@@ -113,10 +112,12 @@ namespace WCFWSFEAFIPTezecoop.DataModel
                     Console.WriteLine(ex.Message);  
                 }
                 throw ex;
-
             }
-            return false;
+
         }
+
+
+
 
         private  int ObtenerCodTipoDocumentoClienteAFIP(string ptpIVA , string pnrDoc)
         {

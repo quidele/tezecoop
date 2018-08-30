@@ -20,7 +20,7 @@ namespace WCFWSFEAFIPTezecoop
         public void DoWork()
         {
             Console.WriteLine("Ha arribado un nuevo cliente");
-            ServiceLog.Debug("DoWork", "Ha arribado un nuevo cliente", ""); 
+            ServiceLog.Debug("DoWork", "Ha arribado un nuevo cliente","","SQL_Remoto"); 
         }
 
         
@@ -42,19 +42,56 @@ namespace WCFWSFEAFIPTezecoop
                     case "SQL_Remoto":
                         una_dbSG2000Entities = new dbSG2000Entities();
                         una_FacturaElectronicaEntities = new FacturaElectronicaEntities();
-                        var un_adaptarRepositorio = new AdaptaRepositorios(una_dbSG2000Entities, una_FacturaElectronicaEntities);
-                        if (un_adaptarRepositorio.AdaptarComprobante(int.Parse(IdSolicitud.ToString())))
+                        var un_RepositorioFacturaElectronica  = new RepositorioFacturaElectronica(una_FacturaElectronicaEntities);
+
+                        if (un_RepositorioFacturaElectronica.EsSolicitudEnviada(decimal.Parse(IdSolicitud.ToString())))
                         {
-                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica ");
+                            var un_comprobante_ml = un_RepositorioFacturaElectronica.ObtenerDatosSolicitudEnviada (decimal.Parse(IdSolicitud.ToString()));
+                            var resultadoSE = new ResultadoSolicitarCAE();
+                            resultadoSE.Resultado = "OK";
+                            resultadoSE.CAE = un_comprobante_ml.CAE;      
+                            resultadoSE.DocNro = un_comprobante_ml.nro_doc_afip.ToString ();
+                            resultadoSE.CAEFchVto =  un_comprobante_ml.CAEFchVto ;
+                            resultadoSE.CodigoError = "1000";
+                            resultadoSE.DescripcionError = "Solicitud existente";
+                            return resultadoSE; 
+                        }
+
+                        // Si la solicitud es fallida eliminar para volver a enviarla a la AFIP
+                        un_RepositorioFacturaElectronica.EliminarSolicitudEnviadaFallida (decimal.Parse(IdSolicitud.ToString())); 
+
+                        var un_adaptarRepositorio = new AdaptaRepositorios(una_dbSG2000Entities, una_FacturaElectronicaEntities);
+                        if (!(un_adaptarRepositorio.AdaptarComprobante(int.Parse(IdSolicitud.ToString()))))
+                        {
+                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica");   
                         }
                         break;
                     case "SQL_Remoto_Pruebas":
                         una_dbSG2000_PruebasEntities = new dbSG2000_PruebasEntities();
                         una_FacturaElectronica_PruebasEntities = new FacturaElectronica_PruebasEntities();
+
+                        var un_RepositorioFacturaElectronica_Pruebas  = new RepositorioFacturaElectronica_Pruebas(una_FacturaElectronica_PruebasEntities);
+
+                        if (un_RepositorioFacturaElectronica_Pruebas.EsSolicitudEnviada(decimal.Parse(IdSolicitud.ToString())))
+                        {
+                            var un_comprobante_ml = un_RepositorioFacturaElectronica_Pruebas.ObtenerDatosSolicitudEnviada (decimal.Parse(IdSolicitud.ToString()));    
+                            var resultadoSE = new ResultadoSolicitarCAE();
+                            resultadoSE.Resultado = "OK";
+                            resultadoSE.CAE = un_comprobante_ml.CAE;      
+                            resultadoSE.DocNro = un_comprobante_ml.nro_doc_afip.ToString ();
+                            resultadoSE.CAEFchVto =  un_comprobante_ml.CAEFchVto ;
+                            resultadoSE.CodigoError = "1000";
+                            resultadoSE.DescripcionError = "Solicitud existente";
+                            return resultadoSE; 
+                        }
+
+                        // Si la solicitud es fallida eliminar para volver a enviarla a la AFIP
+                        un_RepositorioFacturaElectronica_Pruebas.EliminarSolicitudEnviadaFallida (decimal.Parse(IdSolicitud.ToString())); 
+
                         var un_adaptarRepositorio_Pruebas = new AdaptaRepositorios_Pruebas(una_dbSG2000_PruebasEntities, una_FacturaElectronica_PruebasEntities);
                         if ( un_adaptarRepositorio_Pruebas.AdaptarComprobante(int.Parse(IdSolicitud.ToString())))
                         {
-                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica ");
+                            throw new Exception("Error al intentar Adaptar Formato BD Factura Electronica");
                         }
                         break;
                     default:
@@ -75,15 +112,16 @@ namespace WCFWSFEAFIPTezecoop
             resultado.DocNro = "1";
             resultado.CAEFchVto = "20180724";
 
-            resultado.CodigoError = "CodigoError";
-            resultado.DescripcionError = "DescripcionError";
+            resultado.CodigoError = "";
+            resultado.DescripcionError = "";
 
             return resultado;
 
             }
             catch (Exception ex )
             {
-            
+
+                ServiceLog.Error("SolicitarCAE", ex.Message, ex.ToString(), pAmbiente ); 
                 var resultado = new ResultadoSolicitarCAE();
                 resultado.Resultado = "ERROR";
                 resultado.CodigoError = "CodigoError";

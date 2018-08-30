@@ -73,7 +73,7 @@ namespace WCFWSFEAFIPTezecoop.Servicios
 
         private static void saveData()
         {
-           if (Ambiente == "PRODUCCION")
+           if (Ambiente == "SQL_Remoto")
                saveDataProduccion ();
            else
                saveDataPruebas ();

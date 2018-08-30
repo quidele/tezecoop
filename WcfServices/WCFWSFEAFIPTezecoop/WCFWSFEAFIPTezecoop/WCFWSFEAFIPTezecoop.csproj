@@ -609,6 +609,8 @@
     <Compile Include="DataModel\AdaptaRepositorios.cs" />
     <Compile Include="AFIP\IComprobanteAFIP.cs" />
     <Compile Include="AFIP\ILoginCMSClient.cs" />
+    <Compile Include="DataModel\RepositorioFacturaElectronica_Pruebas.cs" />
+    <Compile Include="DataModel\RepositorioFacturaElectronica.cs" />
     <Compile Include="IServiceFacturaElectronica.cs" />
     <Compile Include="AFIP\LoginCMSClientHomo.cs" />
     <Compile Include="AFIP\LoginCMSClientProd.cs" />
