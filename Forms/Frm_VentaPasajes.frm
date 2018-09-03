@@ -7,7 +7,7 @@ Begin VB.Form Frm_VentaPasajes
    ClientHeight    =   8190
    ClientLeft      =   45
    ClientTop       =   435
-   ClientWidth     =   11985
+   ClientWidth     =   13230
    Icon            =   "Frm_VentaPasajes.frx":0000
    KeyPreview      =   -1  'True
    LinkTopic       =   "Form1"
@@ -15,7 +15,7 @@ Begin VB.Form Frm_VentaPasajes
    MinButton       =   0   'False
    Moveable        =   0   'False
    ScaleHeight     =   8190
-   ScaleWidth      =   11985
+   ScaleWidth      =   13230
    ShowInTaskbar   =   0   'False
    StartUpPosition =   2  'CenterScreen
    Begin VB.TextBox txtItemFactura 
@@ -25,27 +25,41 @@ Begin VB.Form Frm_VentaPasajes
       DataField       =   "nmNombre"
       Height          =   255
       Index           =   12
-      Left            =   9570
+      Left            =   11700
       Locked          =   -1  'True
       TabIndex        =   100
       Tag             =   "vlRecargoTD"
-      Top             =   6795
+      Top             =   5235
       Visible         =   0   'False
       Width           =   1170
    End
    Begin VB.Frame fraVentaPasajes 
       Caption         =   "Datos del Comprobate"
       Height          =   7425
-      Left            =   15
+      Left            =   45
       TabIndex        =   2
-      Top             =   630
-      Width           =   11790
+      Top             =   705
+      Width           =   13155
+      Begin VB.TextBox txtFields 
+         Appearance      =   0  'Flat
+         BackColor       =   &H00FFFFFF&
+         CausesValidation=   0   'False
+         DataField       =   "dsRazonSocial"
+         Height          =   315
+         Index           =   20
+         Left            =   9750
+         MaxLength       =   14
+         TabIndex        =   112
+         Tag             =   "nrCAE"
+         Top             =   5910
+         Width           =   2190
+      End
       Begin VB.TextBox txtPreguntaIVA 
          Height          =   780
-         Left            =   10830
+         Left            =   11895
          TabIndex        =   108
          Tag             =   "PreguntaIVA"
-         Top             =   6045
+         Top             =   2595
          Visible         =   0   'False
          Width           =   765
       End
@@ -67,11 +81,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   15
-         Left            =   10710
+         Left            =   11745
          Locked          =   -1  'True
          TabIndex        =   105
          Tag             =   "vlRecargoTP"
-         Top             =   5385
+         Top             =   3540
          Visible         =   0   'False
          Width           =   1170
       End
@@ -95,11 +109,11 @@ Begin VB.Form Frm_VentaPasajes
          CausesValidation=   0   'False
          DataField       =   "nmNombre"
          Height          =   255
-         Left            =   9555
+         Left            =   11655
          Locked          =   -1  'True
          TabIndex        =   102
          Tag             =   "nrCupon"
-         Top             =   6930
+         Top             =   5100
          Visible         =   0   'False
          Width           =   1170
       End
@@ -110,11 +124,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   13
-         Left            =   9570
+         Left            =   11775
          Locked          =   -1  'True
          TabIndex        =   101
          Tag             =   "vlRecargoTarjeta"
-         Top             =   6525
+         Top             =   4815
          Visible         =   0   'False
          Width           =   1170
       End
@@ -125,11 +139,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   11
-         Left            =   9555
+         Left            =   11775
          Locked          =   -1  'True
          TabIndex        =   99
          Tag             =   "vlRecargoTC"
-         Top             =   5805
+         Top             =   4230
          Visible         =   0   'False
          Width           =   1170
       End
@@ -198,11 +212,11 @@ Begin VB.Form Frm_VentaPasajes
          DataField       =   "nmNombre"
          Height          =   255
          Index           =   8
-         Left            =   9510
+         Left            =   11745
          Locked          =   -1  'True
          TabIndex        =   90
          Tag             =   "cdComision"
-         Top             =   5385
+         Top             =   3870
          Visible         =   0   'False
          Width           =   1170
       End
@@ -1124,7 +1138,7 @@ Begin VB.Form Frm_VentaPasajes
          _ExtentX        =   2355
          _ExtentY        =   556
          _Version        =   393216
-         Format          =   286261249
+         Format          =   243073025
          CurrentDate     =   38435
       End
       Begin VB.TextBox txtFields 
@@ -1270,6 +1284,55 @@ Begin VB.Form Frm_VentaPasajes
             Text            =   "vlRecargoTP"
             Object.Width           =   2
          EndProperty
+      End
+      Begin MSComCtl2.DTPicker DTPicker2 
+         Height          =   345
+         Left            =   9750
+         TabIndex        =   109
+         Tag             =   "dtVencimientoCAE"
+         Top             =   6585
+         Width           =   1515
+         _ExtentX        =   2672
+         _ExtentY        =   609
+         _Version        =   393216
+         Format          =   243073025
+         CurrentDate     =   43327
+      End
+      Begin VB.Label Label7 
+         Caption         =   "Fec. Venc. CAE"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   2
+         Left            =   9765
+         TabIndex        =   111
+         Top             =   6255
+         Width           =   1455
+      End
+      Begin VB.Label Label7 
+         Caption         =   "CAE"
+         BeginProperty Font 
+            Name            =   "Verdana"
+            Size            =   8.25
+            Charset         =   0
+            Weight          =   400
+            Underline       =   0   'False
+            Italic          =   0   'False
+            Strikethrough   =   0   'False
+         EndProperty
+         Height          =   255
+         Index           =   1
+         Left            =   9750
+         TabIndex        =   110
+         Top             =   5685
+         Width           =   1275
       End
       Begin VB.Label Label20 
          Caption         =   "Tipo Facturación"
@@ -1812,6 +1875,7 @@ Begin VB.Form Frm_VentaPasajes
             Strikethrough   =   0   'False
          EndProperty
          Height          =   255
+         Index           =   0
          Left            =   3765
          TabIndex        =   53
          Top             =   810
@@ -1998,8 +2062,8 @@ Begin VB.Form Frm_VentaPasajes
       TabIndex        =   1
       Tag             =   "PreguntaIVA"
       Top             =   0
-      Width           =   11985
-      _ExtentX        =   21140
+      Width           =   13230
+      _ExtentX        =   23336
       _ExtentY        =   1164
       ButtonWidth     =   2566
       ButtonHeight    =   1111
@@ -3795,6 +3859,10 @@ Private Sub SelecionarItemCombo()
         End If
     Next i
     
+End Sub
+
+Private Sub Label7_Click(Index As Integer)
+
 End Sub
 
 Private Sub lstBusquedaProductos_ColumnClick(ByVal ColumnHeader As MSComctlLib.ColumnHeader)

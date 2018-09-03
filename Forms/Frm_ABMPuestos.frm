@@ -1,6 +1,6 @@
 VERSION 5.00
-Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "MSCOMCT2.OCX"
-Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.1#0"; "MSCOMCTL.OCX"
+Object = "{86CF1D34-0C5F-11D2-A9FC-0000F8754DA1}#2.0#0"; "mscomct2.ocx"
+Object = "{831FDD16-0C5C-11D2-A9FC-0000F8754DA1}#2.2#0"; "MSCOMCTL.OCX"
 Begin VB.Form Frm_ABMPuestos 
    Caption         =   "Maestro de Puestos"
    ClientHeight    =   7110
@@ -249,7 +249,19 @@ Begin VB.Form Frm_ABMPuestos
             Left            =   150
             TabIndex        =   36
             Top             =   2820
-            Width           =   9780
+            Width           =   10515
+            Begin VB.CheckBox Check3 
+               Appearance      =   0  'Flat
+               BackColor       =   &H00FFC0C0&
+               Caption         =   "Es Factura Electrónica Manual "
+               ForeColor       =   &H80000008&
+               Height          =   192
+               Left            =   7680
+               TabIndex        =   79
+               Tag             =   "flFacturaManualElectronica"
+               Top             =   915
+               Width           =   2640
+            End
             Begin VB.TextBox txtFields 
                Alignment       =   2  'Center
                Appearance      =   0  'Flat
@@ -906,7 +918,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   156631041
+               Format          =   139722753
                CurrentDate     =   38267
             End
             Begin MSComCtl2.DTPicker DTPicker1 
@@ -920,7 +932,7 @@ Begin VB.Form Frm_ABMPuestos
                _ExtentX        =   450
                _ExtentY        =   582
                _Version        =   393216
-               Format          =   281280513
+               Format          =   139722753
                CurrentDate     =   38267
             End
             Begin VB.Label lblLabels 
@@ -2295,7 +2307,8 @@ Dim strSQL      As String
             strSQL = strSQL + "@nrComprobante_manual_empresa_nc_ult=" + objbasededatos.FormatearValorSQL(objDicCampoValorModificado.ObtenerValor("nrComprobante_manual_empresa_nc_ult"), "NUMERIC") + ", "
             strSQL = strSQL + "@nrComprobante_manual_ctacte_nc_ult=null, "
             
-            strSQL = strSQL + "@flFacturaCtacte=" + objbasededatos.FormatearValorSQL(ObtenerCampo("flFacturaCtacte"), "BIT", "flFacturaCtacte")
+            strSQL = strSQL + "@flFacturaCtacte=" + objbasededatos.FormatearValorSQL(ObtenerCampo("flFacturaCtacte"), "BIT", "flFacturaCtacte") + ", "
+            strSQL = strSQL + "@flFacturaManualElectronica=" + objbasededatos.FormatearValorSQL(ObtenerCampo("flFacturaManualElectronica"), "BIT", "flFacturaManualElectronica")
             
             
             objbasededatos.getDateasString
